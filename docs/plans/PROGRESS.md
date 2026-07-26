@@ -19,7 +19,7 @@ Umgebungs-Fallstricke: `docs/plans/HANDOVER.md`
 | 2 | Kern-Module: `state.py`, `project.py`, `timeline.py` | ✅ fertig | `2a2a3d0` |
 | 3 | CLI (`cli.py`) + restliche Modul-Stubs | ✅ fertig | `51eda74` |
 | 4 | Gate-Hook `.claude/hooks/gate.py` + `settings.json` | ✅ fertig | `ea9190a` |
-| 5 | 8 Agenten + 9 Slash-Commands | ⬜ offen | |
+| 5 | 8 Agenten + 9 Slash-Commands | ✅ fertig | siehe Notizen |
 | 6 | Docs: `CLAUDE.md`, `process.md`, `style-catalog.md`, `README.md`, Templates | ⬜ offen | |
 | 7 | Tests + M0-Abnahme | ⬜ offen | |
 
@@ -151,6 +151,26 @@ echten Subprozess-Aufruf mit JSON-Payload (verifiziert Exit-Code 2 + Meldung auf
 einen nackten `ffmpeg`-Aufruf, Exit-Code 0 für Nicht-Bash-Tools). Unit-Tests decken blockierte
 und erlaubte `ffmpeg`-Varianten, alle fünf gate-pflichtigen `frameforge`-Unterbefehle vor/nach
 Phasenerreichung sowie unbekannte Projekte ab. 70 Tests insgesamt grün, `ruff` sauber.
+
+### Task 5 — Agenten + Commands (2026-07-27)
+
+8 Agenten unter `.claude/agents/` laut Plan §5, Modellzuordnung wie vorgegeben:
+`story-architect` und `qc-reviewer` = `model: opus`, Rest `model: sonnet`. Tool-Zugriff pro
+Agent aus der Plan-Tabelle übernommen (`qc-reviewer` z.B. nur `Read, Bash`, kein `Write` —
+er prüft, er ändert nichts; `story-architect` nur `Read, Write`, kein `Bash` — er trifft
+Entscheidungen, führt keine Kommandos aus).
+
+9 Slash-Commands unter `.claude/commands/` (`ff-new`, `ff-ingest`, `ff-index`, `ff-design`,
+`ff-brief`, `ff-build`, `ff-preview`, `ff-render`, `ff-status`) — jeder verweist auf die
+passenden `frameforge`-CLI-Kommandos aus Task 3 und die Agenten, an die delegiert wird.
+`ff-status` leitet aus der State-Machine-Phase explizit den nächsten erlaubten Schritt ab
+(Tabelle Phase → Befehl), statt nur den rohen State auszugeben.
+
+Kein `pytest`-Abnahmekriterium für diesen Task (reine Markdown-Definitionen) — verifiziert
+über ein Skript, das alle 17 Dateien parst und das YAML-Frontmatter validiert (`name`/
+`description`/`tools`/`model` bei Agenten, `description`/`argument-hint` bei Commands).
+Bestehende 70 Tests weiterhin grün, `ruff` unverändert sauber (diese Dateien sind kein
+Python-Code).
 
 ### Hinweis zu Commit `849ff6d`
 
