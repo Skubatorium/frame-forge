@@ -43,7 +43,7 @@ Task-Nummerierung (M1.1, M1.2, ...), da M0 abgeschlossen ist.
 | M1.3 | `index.write_asset` (echt), Merge-Logik für `.md`-Freitext, `cli.py` `ingest`/`index` funktionsfähig gemacht | ✅ fertig | `6b6b824` |
 | M1.4 | `gpx.py` (Parsing, Asset↔Ort-Zuordnung) | ✅ fertig | `0ad8142` |
 | M1.5 | `design.py` Rendering (SVG→PNG), minimale SVG-Templates | ✅ fertig | `f6bf4de` |
-| M1.6 | `map.py` Route-Reveal-Frames | ✅ fertig | siehe Notizen |
+| M1.6 | `map.py` Route-Reveal-Frames | ✅ fertig | `0b4f4f0` |
 | M1.7 | `render.py` (Filtergraph-Bau, Proxy-Render) | ⬜ offen | |
 | M1.8 | `projects/proto/` anlegen, komplett durch die Pipeline bis zum Preview | ⬜ offen | |
 
