@@ -39,7 +39,7 @@ Task-Nummerierung (M1.1, M1.2, ...), da M0 abgeschlossen ist.
 | # | Schritt | Status | Commit |
 |---|------|--------|--------|
 | M1.1 | `probe.py` (ffprobe/exiftool-Wrapper), `ingest.scan_media`/`build_proxies`, winzige Test-Fixtures (`tests/fixtures/clip.mp4`, `photo.jpg` + `generate.py`), Gate-Hook-Heredoc-Bugfix | ✅ fertig | `216d303` |
-| M1.2 | `analyze.py` (Schärfe/Stabilität/Belichtung/Scenes), `keyframes.py` | ✅ fertig | siehe Notizen |
+| M1.2 | `analyze.py` (Schärfe/Stabilität/Belichtung/Scenes), `keyframes.py` | ✅ fertig | `6b5e9af` |
 | M1.3 | `index.write_asset` (echt), Merge-Logik für `.md`-Freitext | ⬜ offen | |
 | M1.4 | `gpx.py` (Parsing, Asset↔Ort-Zuordnung) | ⬜ offen | |
 | M1.5 | `design.py` Rendering (SVG→PNG), minimale SVG-Templates | ⬜ offen | |
