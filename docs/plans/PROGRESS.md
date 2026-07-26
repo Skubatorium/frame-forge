@@ -59,7 +59,7 @@ LLM-getrieben) — die deterministischen Code-Bausteine dafür sind hier Aufgabe
 | # | Schritt | Status | Commit |
 |---|------|--------|--------|
 | M2.1 | `audio.py` (BPM/Beat-Grid/Energiekurve echt, gecacht; `duck_curve`) | ✅ fertig | `76f4f0a` |
-| M2.2 | `qc.py` echtes Regelsatz (schwarze Frames, Audio-Clipping, Clip-Doppler, Text-Lesbarkeit) | ⬜ offen | |
+| M2.2 | `qc.py` echtes Regelsatz (schwarze Frames, Audio-Clipping, Clip-Doppler, Text-Lesbarkeit) | ✅ fertig | siehe Notizen |
 
 ### M2.1 — Notizen (2026-07-27)
 
@@ -89,6 +89,38 @@ fälschlich von reiner Inhaltsdeduplizierung aus. Korrigiert auf `shutil.copy2` 
 `mtime`), Testname und Kommentar angepasst.
 
 119 Tests grün, `ruff` sauber, `doctor` grün.
+
+### M2.2 — Notizen (2026-07-27)
+
+`qc.validate(timeline, *, brief=None)` — Signatur um optionales `brief`-Dict erweitert,
+rückwärtskompatibel (ohne Brief laufen nur die timeline-internen Regeln). Neue Checks:
+
+- **Video-Lücken/Überlappungen** statt echter "schwarzer Frames": der M1-Renderer schneidet
+  Clips hart hintereinander unabhängig von `tl_in` (Plan/PROGRESS M1.7) — eine Lücke in der
+  Timeline führt dort zu fehlendem Inhalt, nicht zu einem sichtbaren schwarzen Frame. Der
+  Check prüft deshalb Lücken/Überlappungen zwischen `tl_in`-Positionen der Video-Clips
+  (sortiert), das ist das, was aus reinen Timeline-Daten *tatsächlich* prüfbar ist. Echte
+  Schwarzbild-Erkennung (`ffmpeg`-`blackdetect` auf einem gerenderten Preview) bräuchte einen
+  fertigen Render als Eingabe — bewusst nicht Teil dieser Funktion, die synchron vor dem
+  Render laufen soll.
+- **Audio-Clipping-Risiko**: jeder `AudioClip` mit `gain_db > 0` wird geflaggt — die Pipeline
+  soll nur abschwächen, nie verstärken; positiver Gain ist der einzige aus Timeline-Metadaten
+  ableitbare Clipping-Indikator ohne echte Pegel-Analyse.
+- **Text-Lesbarkeit**: Overlays unter `MIN_OVERLAY_READABLE_S = 1.2s` gelten als kaum lesbar.
+- **Clip-Wiederholung**: mehr als `MAX_ASSET_REPEATS = 2` Verwendungen desselben Assets in der
+  Video-Spur werden geflaggt.
+- **Brief-Abgleich** (nur falls `brief` übergeben): Ziellänge (`target_duration_s`, Toleranz
+  `DURATION_TOLERANCE_S = 2.0`), verbotene Shots (`forbidden_shots`), fehlende Muss-Shots
+  (`must_shots`).
+
+`cli.py preview` lädt jetzt `brief.yaml` (falls vorhanden) und reicht es an `qc.validate`
+durch — vorher wurde der Brief bei der QC-Prüfung komplett ignoriert.
+
+Gegen `projects/proto/` (aus M1.8) verifiziert: `validate(timeline, brief=brief)` liefert
+`[]` — das Testprojekt besteht die neuen Regeln, ohne neu gebaut werden zu müssen.
+
+16 neue Tests in `tests/test_qc.py` (vorher 2, jetzt jede Regel einzeln negativ+positiv
+geprüft). 133 Tests insgesamt grün, `ruff` sauber, `doctor` grün.
 
 ### M1.1 — Notizen (2026-07-27)
 

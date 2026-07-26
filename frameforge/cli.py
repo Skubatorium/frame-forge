@@ -16,6 +16,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 import typer
+import yaml
 from rich.console import Console
 from rich.table import Table
 
@@ -323,7 +324,8 @@ def preview(project: str, export: str) -> None:
         raise _fail(str(exc)) from exc
 
     timeline = Timeline.load(exp.timeline_path)
-    issues = qc.validate(timeline)
+    brief = yaml.safe_load(exp.brief_path.read_text()) if exp.brief_path.exists() else None
+    issues = qc.validate(timeline, brief=brief)
     if issues:
         for issue in issues:
             console.print(f"[red]QC:[/red] {issue}")
