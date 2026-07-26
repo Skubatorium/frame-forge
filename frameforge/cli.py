@@ -22,6 +22,7 @@ from rich.table import Table
 from frameforge import design, qc
 from frameforge import index as index_module
 from frameforge import ingest as ingest_module
+from frameforge import render as render_module
 from frameforge.project import (
     CACHE_ROOT,
     PROJECTS_DIR,
@@ -328,8 +329,14 @@ def preview(project: str, export: str) -> None:
             console.print(f"[red]QC:[/red] {issue}")
         raise typer.Exit(code=1)
 
-    console.print("[yellow]Noch nicht implementiert:[/yellow] render.render_proxy kommt in M1")
-    raise typer.Exit(code=1)
+    try:
+        out_path = render_module.render_proxy(proj, exp, timeline)
+    except render_module.RenderError as exc:
+        raise _fail(str(exc)) from exc
+
+    state.advance_export(export, Phase.PREVIEWED)
+    state.save()
+    console.print(f"[green]Preview gerendert:[/green] {out_path}")
 
 
 @app.command()

@@ -44,7 +44,7 @@ Task-Nummerierung (M1.1, M1.2, ...), da M0 abgeschlossen ist.
 | M1.4 | `gpx.py` (Parsing, Asset↔Ort-Zuordnung) | ✅ fertig | `0ad8142` |
 | M1.5 | `design.py` Rendering (SVG→PNG), minimale SVG-Templates | ✅ fertig | `f6bf4de` |
 | M1.6 | `map.py` Route-Reveal-Frames | ✅ fertig | `0b4f4f0` |
-| M1.7 | `render.py` (Filtergraph-Bau, Proxy-Render) | ⬜ offen | |
+| M1.7 | `render.py` (Filtergraph-Bau, Proxy-Render), `cli.py` `preview` verdrahtet | ✅ fertig | siehe Notizen |
 | M1.8 | `projects/proto/` anlegen, komplett durch die Pipeline bis zum Preview | ⬜ offen | |
 
 ### M1.1 — Notizen (2026-07-27)
@@ -171,6 +171,38 @@ importiert (keine Netzwerkabhängigkeit in Tests).
 
 102 Tests grün (`tests/test_map.py` neu: Frame-Anzahl, RGBA-Transparenz, wachsende Route,
 konfigurierbare Auflösung, Fehler bei <2 Punkten), `ruff` sauber, `doctor` grün.
+
+### M1.7 — Notizen (2026-07-27)
+
+`render.py`: `build_filtergraph` baut Input-Liste + `-filter_complex`-String rein aus
+`Timeline` + einem `resolve_asset`-Callback (kein I/O, daher ohne echte Dateien testbar).
+Video-Spur: pro Clip `trim`/`setpts` (Fotos: `-loop 1` + `trim=duration=…`), dann
+`scale+pad` auf `timeline.resolution`, hart aneinandergeschnitten (`concat`). Overlay-PNGs
+und Karten-Clips werden per `overlay`-Filter mit `enable='between(t,…)'`-Zeitfenstern
+komponiert (Karten-Clips zusätzlich per `setpts=PTS+{tl_in}/TB` auf ihre Timeline-Position
+verschoben, da sie als eigenständige Clips bei `t=0` beginnen). Audio: pro Clip
+`atrim`/`adelay`/`volume`, alle Spuren per `amix` gemischt; Ducking ist eine statische
+`volume`-Filterkette mit `enable`-Fenstern auf der Musikspur (kein echtes Sidechain-
+Compressing).
+
+**Bewusst nicht in M1:** `transition_in`/`effects` (Crossfades, Ken-Burns-Zoompan) werden aus
+der Timeline gelesen, aber noch nicht gerendert — harte Schnitte reichen für "abspielbares
+Video, das den Brief erfüllt" (Plan §10-Abnahme), echte Übergänge/Zoompan sind Kandidat für
+M2. Kein Rendering von `transition_in`/`transition_out` heißt: die entsprechenden JSON-Felder
+sind schema-gültig, werden vom Renderer aber ignoriert.
+
+Nebenbei zwei kaputte CLI-Stellen geschlossen: `cli.py preview` rief bisher nur den
+Platzhalter-Text auf — ruft jetzt `render.render_proxy` echt auf und setzt die Export-Phase
+auf `PREVIEWED`. `render_proxy` löst Asset-IDs über `assets.json` + `ingest.proxy_path` auf
+(nicht per Dateiname-Glob — Asset-IDs und Dateinamen sind unterschiedliche Namensräume).
+
+End-to-end manuell verifiziert: `frameforge new` → `ingest` → (Asset per `write_asset`
+eingetragen, Timeline von Hand geschrieben) → `frameforge preview` erzeugt ein abspielbares
+320×240-MP4 (~1.5s, H.264), Export-Phase springt korrekt auf `PREVIEWED`.
+
+111 Tests grün (`tests/test_render.py` neu: 7 reine Filtergraph-String-Tests + 2 Tests mit
+echtem `ffmpeg`-Lauf gegen die Fixture, inkl. `probe_video`-Verifikation der Ausgabe), `ruff`
+sauber, `doctor` grün.
 
 ---
 
