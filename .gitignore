@@ -1,0 +1,32 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# OS
+.DS_Store
+
+# --- FrameForge Projekt-Daten ---
+# Projekte werden getrackt, aber nur ihre Konfiguration und der Index.
+# Alles Schwere (Medien, Proxies, Renders, Musik) bleibt draussen.
+projects/*/music/*
+!projects/*/music/analysis/
+projects/*/media/
+projects/*/exports/*/preview/
+projects/*/exports/*/final/
+projects/*/exports/*/overlays/
+projects/*/exports/*/map/
+projects/*/design/fonts/
+projects/*/design/assets/
+
+# Cache (liegt normalerweise in ~/.cache/frameforge, hier als Fallback)
+.cache/
+cache/
+
+# Testartefakte
+tests/tmp/
