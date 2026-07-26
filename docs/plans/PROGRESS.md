@@ -19,7 +19,7 @@ Umgebungs-Fallstricke: `docs/plans/HANDOVER.md`
 | 2 | Kern-Module: `state.py`, `project.py`, `timeline.py` | ✅ fertig | `2a2a3d0` |
 | 3 | CLI (`cli.py`) + restliche Modul-Stubs | ✅ fertig | `51eda74` |
 | 4 | Gate-Hook `.claude/hooks/gate.py` + `settings.json` | ✅ fertig | `ea9190a` |
-| 5 | 8 Agenten + 9 Slash-Commands | ✅ fertig | siehe Notizen |
+| 5 | 8 Agenten + 9 Slash-Commands | ✅ fertig | `db3d2b0` |
 | 6 | Docs: `CLAUDE.md`, `process.md`, `style-catalog.md`, `README.md`, Templates | ⬜ offen | |
 | 7 | Tests + M0-Abnahme | ⬜ offen | |
 
