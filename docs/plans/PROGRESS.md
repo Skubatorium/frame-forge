@@ -44,7 +44,7 @@ Task-Nummerierung (M1.1, M1.2, ...), da M0 abgeschlossen ist.
 | M1.4 | `gpx.py` (Parsing, Asset↔Ort-Zuordnung) | ✅ fertig | `0ad8142` |
 | M1.5 | `design.py` Rendering (SVG→PNG), minimale SVG-Templates | ✅ fertig | `f6bf4de` |
 | M1.6 | `map.py` Route-Reveal-Frames | ✅ fertig | `0b4f4f0` |
-| M1.7 | `render.py` (Filtergraph-Bau, Proxy-Render), `cli.py` `preview` verdrahtet | ✅ fertig | siehe Notizen |
+| M1.7 | `render.py` (Filtergraph-Bau, Proxy-Render), `cli.py` `preview` verdrahtet | ✅ fertig | `44fffda` |
 | M1.8 | `projects/proto/` anlegen, komplett durch die Pipeline bis zum Preview | ⬜ offen | |
 
 ### M1.1 — Notizen (2026-07-27)
