@@ -104,8 +104,30 @@ def generate_proto_media() -> None:
     )
 
 
+def generate_tone() -> None:
+    """Kurzer Ton mit Tremolo — erzeugt eine sichtbare Energiekurve fuer `audio.analyze_track`."""
+    out = FIXTURES_DIR / "tone.wav"
+    subprocess.run(
+        [
+            "ffmpeg",
+            "-y",
+            "-f",
+            "lavfi",
+            "-i",
+            "sine=frequency=220:duration=4",
+            "-af",
+            "tremolo=f=2:d=0.9",
+            "-loglevel",
+            "error",
+            str(out),
+        ],
+        check=True,
+    )
+
+
 if __name__ == "__main__":
     generate_clip()
     generate_photo()
     generate_proto_media()
+    generate_tone()
     print("Fixtures erzeugt:", FIXTURES_DIR)

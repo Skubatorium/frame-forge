@@ -10,15 +10,13 @@ from pathlib import Path
 
 import pytest
 
-from frameforge import audio, nle
+from frameforge import nle
 from frameforge import render as render_module
 
 
 @pytest.mark.parametrize(
     "call",
     [
-        lambda: audio.analyze_track(Path("x.wav")),
-        lambda: audio.duck_curve({}, [], duck_db=-14),
         lambda: render_module.render_final(None, None, None),
         lambda: nle.export_fcpxml(None, Path("x.fcpxml")),
         lambda: nle.export_otio(None, Path("x.otio")),

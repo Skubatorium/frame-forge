@@ -47,6 +47,49 @@ Task-Nummerierung (M1.1, M1.2, ...), da M0 abgeschlossen ist.
 | M1.7 | `render.py` (Filtergraph-Bau, Proxy-Render), `cli.py` `preview` verdrahtet | ✅ fertig | `44fffda` |
 | M1.8 | `projects/proto/` anlegen, komplett durch die Pipeline bis zum Preview | ✅ fertig | `ee50426` |
 
+---
+
+## M2 — Story-Engine vertiefen
+
+Plan Abschnitt 8: "Beat-Sheet-Logik, Clip-Scoring gegen Brief-Ziele, Vermeidung von
+Wiederholung, Musik-Sync auf Beat-Grid, `qc-reviewer` mit echtem Regelsatz." Beat-Sheet-Logik
+und Clip-Scoring sind kreative Agenten-Entscheidungen (`story-architect`/`timeline-builder`,
+LLM-getrieben) — die deterministischen Code-Bausteine dafür sind hier Aufgabe.
+
+| # | Schritt | Status | Commit |
+|---|------|--------|--------|
+| M2.1 | `audio.py` (BPM/Beat-Grid/Energiekurve echt, gecacht; `duck_curve`) | ✅ fertig | siehe Notizen |
+| M2.2 | `qc.py` echtes Regelsatz (schwarze Frames, Audio-Clipping, Clip-Doppler, Text-Lesbarkeit) | ⬜ offen | |
+
+### M2.1 — Notizen (2026-07-27)
+
+`audio.py`: `analyze_track` nutzt `librosa.beat.beat_track` (BPM + Beat-Grid) und
+`librosa.feature.rms` (Energiekurve), auf `0.5s`-Schritte heruntergesampelt — die native
+RMS-Auflösung wäre für Sync-Zwecke unnötig groß. `analyze_and_cache` cached das Ergebnis
+unter `music/analysis/<hash>.json`, Hash über `ingest.hash_file` — dieselbe
+Token-Disziplin-Regel ("Analyse genau einmal pro Datei") wie bei Video-/Foto-Assets, jetzt
+auch für Musik. `duck_curve` liefert Gain-Keyframes mit sanften Rampen (`fade_s`, Default
+0.3s) statt harter Sprünge.
+
+**Ducking-Kurve noch nicht in `render.py` verdrahtet.** `render.build_filtergraph` nutzt
+weiterhin die in M1.7 gebaute statische `volume`-Filterkette mit `enable`-Fenstern (harte
+Sprünge, keine Rampen). `duck_curve` liefert die Datengrundlage für eine sanftere Umsetzung,
+die Integration in den Filtergraph ist bewusst zurückgestellt (kein Teil von M2 laut Plan,
+eher eine spätere Politur-Aufgabe an `render.py`).
+
+Neue Test-Fixture `tests/fixtures/tone.wav` (4s Sinuston mit Tremolo — erzeugt eine
+sichtbare Energiekurve, ohne dass die BPM-Erkennung an echtem Musikmaterial hängt, das nicht
+im Repo landen darf).
+
+**Kleiner Testfehler beim Schreiben selbst gefunden:** `hash_file` nimmt `size + mtime` in
+den Hash auf (Plan §3) — eine per `shutil.copy` (ohne `2`) kopierte Datei hat trotz
+identischem Inhalt eine andere `mtime` und damit einen anderen Cache-Schlüssel. Das ist
+beabsichtigtes Verhalten des Cache-Schlüssels, nicht ein Bug; der ursprüngliche Test ging
+fälschlich von reiner Inhaltsdeduplizierung aus. Korrigiert auf `shutil.copy2` (erhält
+`mtime`), Testname und Kommentar angepasst.
+
+119 Tests grün, `ruff` sauber, `doctor` grün.
+
 ### M1.1 — Notizen (2026-07-27)
 
 `probe.py`: `probe_video` (ffprobe `-show_format -show_streams`, parst `r_frame_rate` wie
