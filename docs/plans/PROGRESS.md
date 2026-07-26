@@ -39,7 +39,7 @@ Task-Nummerierung (M1.1, M1.2, ...), da M0 abgeschlossen ist.
 | # | Schritt | Status | Commit |
 |---|------|--------|--------|
 | M1.1 | `probe.py` (ffprobe/exiftool-Wrapper), `ingest.scan_media`/`build_proxies`, winzige Test-Fixtures (`tests/fixtures/clip.mp4`, `photo.jpg` + `generate.py`), Gate-Hook-Heredoc-Bugfix | ✅ fertig | `216d303` |
-| M1.2 | `analyze.py` (Schärfe/Stabilität/Belichtung/Scenes), `keyframes.py` | ⬜ offen | |
+| M1.2 | `analyze.py` (Schärfe/Stabilität/Belichtung/Scenes), `keyframes.py` | ✅ fertig | siehe Notizen |
 | M1.3 | `index.write_asset` (echt), Merge-Logik für `.md`-Freitext | ⬜ offen | |
 | M1.4 | `gpx.py` (Parsing, Asset↔Ort-Zuordnung) | ⬜ offen | |
 | M1.5 | `design.py` Rendering (SVG→PNG), minimale SVG-Templates | ⬜ offen | |
@@ -81,6 +81,25 @@ Regressionstests in `tests/test_gate_hook.py`.
 
 78 Tests grün (`tests/test_probe.py`, `tests/test_ingest.py` neu/erweitert, `tests/test_gate_hook.py`
 um den Heredoc-Fix ergänzt), `ruff` sauber.
+
+### M1.2 — Notizen (2026-07-27)
+
+`analyze.py`: Heuristiken statt ML — Schärfe über Laplacian-Varianz (normiert, gedeckelt bei
+1.0), Belichtung über Nähe des mittleren Grauwerts zu Mittelgrau (128), Stabilität über die
+mittlere Frame-zu-Frame-Differenz dreier Sample-Frames (10/50/85 % der Dauer). Bewusst grob —
+Ziel ist Material grob zu sortieren, nicht präzise Bildqualität zu messen. `detect_scenes`
+nutzt `scenedetect.ContentDetector`, Fallback: eine Szene über die ganze Clip-Dauer, falls
+keine Schnitte erkannt werden. `analyze_photo` liefert nur `quality` (kein `motion`/`scenes` —
+nicht anwendbar auf Standbilder).
+
+`keyframes.py`: 3 Frames je Video (10/50/85 % der Dauer) plus 1 Frame pro erkannter Szene
+(Szenen-Mittelpunkt), auf `MAX_KEYFRAMES = 6` gedeckelt und dedupliziert; Fotos liefern 1
+Frame (das Foto selbst). Alle Keyframes auf 768 px lange Kante skaliert, JPEG q80 — exakt die
+Werte aus der Token-Disziplin-Regel in `CLAUDE.md`.
+
+Manuell gegen die Fixtures verifiziert (`clip.mp4`: 2s Testsrc → 3 Keyframes 320×240 unter
+768px, daher unskaliert; `photo.jpg`: 1 Keyframe). 85 Tests grün (`tests/test_analyze.py`,
+`tests/test_keyframes.py` neu), `ruff` sauber, keine Deprecation-Warnings.
 
 ---
 

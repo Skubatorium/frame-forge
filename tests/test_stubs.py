@@ -10,15 +10,13 @@ from pathlib import Path
 
 import pytest
 
-from frameforge import analyze, audio, gpx, keyframes, nle, render
+from frameforge import audio, gpx, nle, render
 from frameforge import map as map_module
 
 
 @pytest.mark.parametrize(
     "call",
     [
-        lambda: analyze.analyze_clip(Path("x.mp4"), {}),
-        lambda: keyframes.extract_keyframes(Path("x.mp4")),
         lambda: gpx.parse_gpx(Path("x.gpx")),
         lambda: gpx.nearest_location(__import__("datetime").datetime.now(), []),
         lambda: audio.analyze_track(Path("x.wav")),
