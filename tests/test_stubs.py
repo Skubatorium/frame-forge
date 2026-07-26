@@ -11,7 +11,6 @@ from pathlib import Path
 import pytest
 
 from frameforge import audio, nle, render
-from frameforge import map as map_module
 
 
 @pytest.mark.parametrize(
@@ -19,7 +18,6 @@ from frameforge import map as map_module
     [
         lambda: audio.analyze_track(Path("x.wav")),
         lambda: audio.duck_curve({}, [], duck_db=-14),
-        lambda: map_module.render_route_frames([], Path("."), fps=25, dur=5.0),
         lambda: render.build_filtergraph(None),
         lambda: nle.export_fcpxml(None, Path("x.fcpxml")),
         lambda: nle.export_otio(None, Path("x.otio")),

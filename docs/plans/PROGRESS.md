@@ -43,7 +43,7 @@ Task-Nummerierung (M1.1, M1.2, ...), da M0 abgeschlossen ist.
 | M1.3 | `index.write_asset` (echt), Merge-Logik für `.md`-Freitext, `cli.py` `ingest`/`index` funktionsfähig gemacht | ✅ fertig | `6b6b824` |
 | M1.4 | `gpx.py` (Parsing, Asset↔Ort-Zuordnung) | ✅ fertig | `0ad8142` |
 | M1.5 | `design.py` Rendering (SVG→PNG), minimale SVG-Templates | ✅ fertig | `f6bf4de` |
-| M1.6 | `map.py` Route-Reveal-Frames | ⬜ offen | |
+| M1.6 | `map.py` Route-Reveal-Frames | ✅ fertig | siehe Notizen |
 | M1.7 | `render.py` (Filtergraph-Bau, Proxy-Render) | ⬜ offen | |
 | M1.8 | `projects/proto/` anlegen, komplett durch die Pipeline bis zum Preview | ⬜ offen | |
 
@@ -154,6 +154,23 @@ damit ein gemeinsames Tokens-Set aus `design/tokens.yaml` für alle vier reicht.
 
 98 Tests grün (`tests/test_design.py` erweitert um Templating/Rendering-Tests, inkl. PNG-Magic-
 Byte-Check und allen 4 Templates gegen ein gemeinsames Token-Set), `ruff` sauber.
+
+### M1.6 — Notizen (2026-07-27)
+
+`map.py`: PNG-Sequenz mit Alpha, Route als wachsende Linie über die Dauer (`reveal_count`
+proportional zum Frame-Fortschritt) plus Positions-Marker am aktuellen Ende. Projektion ist
+eine einfache Equirectangular-Projektion auf die Bounding-Box des Tracks — **kein
+Tile-Fetch**. Bewusste Scope-Entscheidung: Plan Abschnitt 8 listet "Tile-Cache" explizit erst
+unter M3 ("Route-Reveal mit Easing, Marker-Typen, Figur/Auto entlang der Spur, Tile-Cache,
+Kapitelkarten"), eine Basiskarte aus OSM-Tiles ist damit kein M1-Abnahmekriterium. Für den
+Mini-Prototyp reicht die Routen-Linie als eigene Alpha-Ebene, die später über Video gelegt
+wird — passt zum Datenmodell (`MapClip.blend`).
+
+`staticmap` bleibt als Dependency in `pyproject.toml` für M3 stehen, wird in M1 nicht
+importiert (keine Netzwerkabhängigkeit in Tests).
+
+102 Tests grün (`tests/test_map.py` neu: Frame-Anzahl, RGBA-Transparenz, wachsende Route,
+konfigurierbare Auflösung, Fehler bei <2 Punkten), `ruff` sauber, `doctor` grün.
 
 ---
 
