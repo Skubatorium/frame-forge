@@ -31,9 +31,10 @@ kommt in den Notizen-Abschnitt von `PROGRESS.md`.
 
 **Abweichungen vom Plan** gehören in den Notizen-Abschnitt von `PROGRESS.md`, mit Begründung.
 
-## Prozess-Constraints (gelten ab M0 Task 4)
+## Prozess-Constraints
 
-Der Prozess wird technisch erzwungen, nicht nur dokumentiert:
+Der Prozess wird technisch erzwungen, nicht nur dokumentiert (Gate-Hook `.claude/hooks/gate.py`
+ist aktiv, siehe `docs/plans/PROGRESS.md` Task 4):
 
 ```
 INIT → INGESTED → INDEXED → DESIGNED → BRIEFED → STORYBOARDED
@@ -65,7 +66,8 @@ Das Material umfasst ~100 GB. Ohne Disziplin verbrennt jeder Schnittversuch die 
 
 - Python 3.12 in `.venv/` (via `uv`). Immer `.venv/bin/python` oder aktivierte venv nutzen.
 - Systemtools via Homebrew: ffmpeg, ffprobe, exiftool, cairo.
-- `python -m frameforge doctor` prüft die Umgebung (ab Task 3 verfügbar).
+- `python -m frameforge doctor` prüft die Umgebung: ffmpeg, ffprobe, exiftool, libcairo,
+  Python-Version, Cache-Schreibrechte. Muss grün sein, bevor irgendein Pipeline-Schritt läuft.
 - Bekannte Fallstricke bei `numba` und `libcairo`: siehe `docs/plans/HANDOVER.md`.
 
 ## Struktur
@@ -74,4 +76,14 @@ Das Material umfasst ~100 GB. Ohne Disziplin verbrennt jeder Schnittversuch die 
 - `projects/<name>/` — pro Videoprojekt: Config, Index, Designsystem, Exporte.
   Rohmedien liegen **extern**, Pfad steht in `project.yaml`.
 - `.claude/agents/` — die Sub-Agenten, an die der Orchestrator delegiert
+- `.claude/commands/` — die `/ff-*`-Slash-Commands, ein Wrapper pro Pipeline-Schritt
+- `.claude/hooks/gate.py` — erzwingt die State-Machine auch bei direkten Bash-Aufrufen
 - `docs/` — Plan, Fortschritt, Prozess, Stil-Katalog
+
+## Aktueller Stand der Werkzeugschicht
+
+Bis M1 sind `probe.py`, `analyze.py`, `keyframes.py`, `gpx.py`, `audio.py`, `design.py`
+(Rendering-Teil), `map.py`, `render.py`, `nle.py` Stubs, die `NotImplementedError` werfen —
+das ist erwartetes Verhalten, kein Bug. Bereits echt implementiert: `state.py`, `project.py`,
+`timeline.py`, `cli.py`, `ingest.hash_file`, `index.query_assets`/`load_assets`, `qc.validate`
+(Schema-Ebene), `design.preload_cairo`. Genauer Stand: `docs/plans/PROGRESS.md`.

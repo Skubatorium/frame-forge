@@ -20,7 +20,7 @@ Umgebungs-Fallstricke: `docs/plans/HANDOVER.md`
 | 3 | CLI (`cli.py`) + restliche Modul-Stubs | ✅ fertig | `51eda74` |
 | 4 | Gate-Hook `.claude/hooks/gate.py` + `settings.json` | ✅ fertig | `ea9190a` |
 | 5 | 8 Agenten + 9 Slash-Commands | ✅ fertig | `db3d2b0` |
-| 6 | Docs: `CLAUDE.md`, `process.md`, `style-catalog.md`, `README.md`, Templates | ⬜ offen | |
+| 6 | Docs: `CLAUDE.md`, `process.md`, `style-catalog.md`, `README.md`, Templates | ✅ fertig | siehe Notizen |
 | 7 | Tests + M0-Abnahme | ⬜ offen | |
 
 Legende: ⬜ offen · 🔄 in Arbeit · ✅ fertig
@@ -171,6 +171,21 @@ Kein `pytest`-Abnahmekriterium für diesen Task (reine Markdown-Definitionen) �
 `description`/`tools`/`model` bei Agenten, `description`/`argument-hint` bei Commands).
 Bestehende 70 Tests weiterhin grün, `ruff` unverändert sauber (diese Dateien sind kein
 Python-Code).
+
+### Task 6 — Docs (2026-07-27)
+
+`CLAUDE.md` erweitert: "ab Task 4"-Vorbehalt beim Prozess-Constraint-Abschnitt entfernt
+(Gate-Hook ist jetzt aktiv), `doctor`-Beschreibung präzisiert, neuer Abschnitt "Aktueller
+Stand der Werkzeugschicht" (welche Module echt implementiert vs. Stub sind, Verweis auf
+PROGRESS.md), `.claude/commands/` und `.claude/hooks/` in der Struktur ergänzt.
+
+Neu: `docs/process.md` (Prozess als Referenz für Menschen — Phasentabelle, Gate-Tabelle,
+Invalidierung, Agenten-Rollen), `docs/styles/style-catalog.md` (alle 6 Presets aus Plan §6
+als YAML-Fragmente), `README.md` (Setup, Nutzung, Struktur), `templates/project/README.md`
+(dokumentiert die von `frameforge new` erzeugte Struktur — kein Template-Engine-Input, `new`
+baut die Ordner direkt in `cli.py`).
+
+Keine funktionalen Code-Änderungen. 70 Tests weiterhin grün, `ruff` sauber, `doctor` grün.
 
 ### Hinweis zu Commit `849ff6d`
 
