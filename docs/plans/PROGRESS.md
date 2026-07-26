@@ -41,7 +41,7 @@ Task-Nummerierung (M1.1, M1.2, ...), da M0 abgeschlossen ist.
 | M1.1 | `probe.py` (ffprobe/exiftool-Wrapper), `ingest.scan_media`/`build_proxies`, winzige Test-Fixtures (`tests/fixtures/clip.mp4`, `photo.jpg` + `generate.py`), Gate-Hook-Heredoc-Bugfix | ✅ fertig | `216d303` |
 | M1.2 | `analyze.py` (Schärfe/Stabilität/Belichtung/Scenes), `keyframes.py` | ✅ fertig | `6b5e9af` |
 | M1.3 | `index.write_asset` (echt), Merge-Logik für `.md`-Freitext, `cli.py` `ingest`/`index` funktionsfähig gemacht | ✅ fertig | `6b6b824` |
-| M1.4 | `gpx.py` (Parsing, Asset↔Ort-Zuordnung) | ✅ fertig | siehe Notizen |
+| M1.4 | `gpx.py` (Parsing, Asset↔Ort-Zuordnung) | ✅ fertig | `0ad8142` |
 | M1.5 | `design.py` Rendering (SVG→PNG), minimale SVG-Templates | ⬜ offen | |
 | M1.6 | `map.py` Route-Reveal-Frames | ⬜ offen | |
 | M1.7 | `render.py` (Filtergraph-Bau, Proxy-Render) | ⬜ offen | |
