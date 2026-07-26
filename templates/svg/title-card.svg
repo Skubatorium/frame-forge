@@ -1,0 +1,6 @@
+<svg width="{{width}}" height="{{height}}" xmlns="http://www.w3.org/2000/svg">
+  <text x="50%" y="46%" font-family="{{font_display}}" font-size="{{title_size}}"
+        fill="{{text_color}}" text-anchor="middle" dominant-baseline="middle">{{title}}</text>
+  <text x="50%" y="58%" font-family="{{font_text}}" font-size="{{subtitle_size}}"
+        fill="{{accent_color}}" text-anchor="middle" dominant-baseline="middle">{{subtitle}}</text>
+</svg>

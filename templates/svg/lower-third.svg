@@ -1,0 +1,8 @@
+<svg width="{{width}}" height="{{height}}" xmlns="http://www.w3.org/2000/svg">
+  <rect x="{{margin}}" y="{{bar_y}}" width="{{bar_width}}" height="{{bar_height}}"
+        fill="{{primary_color}}" opacity="{{bar_opacity}}"/>
+  <text x="{{text_x}}" y="{{title_y}}" font-family="{{font_display}}" font-size="{{title_size}}"
+        fill="{{text_color}}">{{title}}</text>
+  <text x="{{text_x}}" y="{{subtitle_y}}" font-family="{{font_text}}" font-size="{{subtitle_size}}"
+        fill="{{accent_color}}">{{subtitle}}</text>
+</svg>

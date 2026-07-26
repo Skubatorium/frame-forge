@@ -42,7 +42,7 @@ Task-Nummerierung (M1.1, M1.2, ...), da M0 abgeschlossen ist.
 | M1.2 | `analyze.py` (Schärfe/Stabilität/Belichtung/Scenes), `keyframes.py` | ✅ fertig | `6b5e9af` |
 | M1.3 | `index.write_asset` (echt), Merge-Logik für `.md`-Freitext, `cli.py` `ingest`/`index` funktionsfähig gemacht | ✅ fertig | `6b6b824` |
 | M1.4 | `gpx.py` (Parsing, Asset↔Ort-Zuordnung) | ✅ fertig | `0ad8142` |
-| M1.5 | `design.py` Rendering (SVG→PNG), minimale SVG-Templates | ⬜ offen | |
+| M1.5 | `design.py` Rendering (SVG→PNG), minimale SVG-Templates | ✅ fertig | siehe Notizen |
 | M1.6 | `map.py` Route-Reveal-Frames | ⬜ offen | |
 | M1.7 | `render.py` (Filtergraph-Bau, Proxy-Render) | ⬜ offen | |
 | M1.8 | `projects/proto/` anlegen, komplett durch die Pipeline bis zum Preview | ⬜ offen | |
@@ -139,6 +139,21 @@ Toleranz zu setzen ist Sache des Aufrufers (Ingest-Pipeline), nicht dieser Funkt
 
 Neue Fixture `tests/fixtures/route.gpx` (3 Punkte, eine Etappe). 94 Tests grün, `ruff`
 sauber.
+
+### M1.5 — Notizen (2026-07-27)
+
+`design.py`: `build_svg_from_tokens` ersetzt `{{key}}`-Platzhalter per einfachem String-Replace
+(kein Jinja — Templates sind klein und statisch, eine Template-Engine wäre unnötiges Gewicht).
+Bricht mit `TemplateError` ab, wenn nach dem Ersetzen noch ein `{{...}}` übrig ist, statt den
+Platzhalter still im SVG stehen zu lassen. `render_svg_to_png` ruft `preload_cairo()` auf und
+delegiert an `cairosvg.svg2png`.
+
+4 minimale SVG-Templates unter `templates/svg/` (`title-card`, `lower-third`, `chapter`,
+`credits`) laut Plan §1 — alle mit `{{width}}`/`{{height}}`/Farb-/Font-Tokens parametrisiert,
+damit ein gemeinsames Tokens-Set aus `design/tokens.yaml` für alle vier reicht.
+
+98 Tests grün (`tests/test_design.py` erweitert um Templating/Rendering-Tests, inkl. PNG-Magic-
+Byte-Check und allen 4 Templates gegen ein gemeinsames Token-Set), `ruff` sauber.
 
 ---
 

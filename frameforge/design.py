@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import ctypes.util
 import glob
+import re
 from pathlib import Path
 
 _CAIRO_NAMES = ("cairo-2", "cairo", "libcairo-2")
@@ -60,11 +61,32 @@ def preload_cairo() -> None:
     _patched = True
 
 
+class TemplateError(RuntimeError):
+    """Ein SVG-Template referenziert einen Platzhalter, der nicht in `tokens` vorkommt."""
+
+
 def build_svg_from_tokens(template_path: Path, tokens: dict) -> str:
-    """Fuellt ein SVG-Template (lower-third, title-card, ...) mit Design-Tokens."""
-    raise NotImplementedError("design.build_svg_from_tokens kommt mit dem Designsystem in M1")
+    """Fuellt ein SVG-Template (lower-third, title-card, ...) mit Design-Tokens.
+
+    Einfaches `{{key}}`-Templating, kein Jinja — die Templates sind klein und statisch,
+    eine zusaetzliche Abhaengigkeit dafuer lohnt sich nicht. Bricht mit `TemplateError` ab,
+    wenn nach dem Ersetzen noch ein `{{...}}`-Platzhalter uebrig ist (fehlender Token), statt
+    ihn still im gerenderten SVG stehen zu lassen.
+    """
+    svg = template_path.read_text()
+    for key, value in tokens.items():
+        svg = svg.replace(f"{{{{{key}}}}}", str(value))
+
+    remaining = re.findall(r"{{\s*[\w.]+\s*}}", svg)
+    if remaining:
+        raise TemplateError(f"{template_path.name}: fehlende Tokens {sorted(set(remaining))}")
+    return svg
 
 
 def render_svg_to_png(svg: str, out_path: Path) -> None:
     """Rendert SVG-Markup zu PNG mit Alphakanal. Ruft vorher `preload_cairo()` auf."""
-    raise NotImplementedError("design.render_svg_to_png kommt mit dem Designsystem in M1")
+    preload_cairo()
+    import cairosvg
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    cairosvg.svg2png(bytestring=svg.encode("utf-8"), write_to=str(out_path))

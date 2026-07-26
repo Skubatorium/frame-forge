@@ -1,0 +1,10 @@
+<svg width="{{width}}" height="{{height}}" xmlns="http://www.w3.org/2000/svg">
+  <text x="50%" y="46%" font-family="{{font_display}}" font-size="{{title_size}}"
+        fill="{{text_color}}" text-anchor="middle">{{heading}}</text>
+  <text x="50%" y="56%" font-family="{{font_text}}" font-size="{{line_size}}"
+        fill="{{accent_color}}" text-anchor="middle">
+    <tspan x="50%" dy="0">{{line1}}</tspan>
+    <tspan x="50%" dy="1.4em">{{line2}}</tspan>
+    <tspan x="50%" dy="1.4em">{{line3}}</tspan>
+  </text>
+</svg>
