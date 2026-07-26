@@ -17,7 +17,7 @@ Umgebungs-Fallstricke: `docs/plans/HANDOVER.md`
 |---|------|--------|--------|
 | 1 | Repo-Fundament: git init, pyproject, gitignore, venv, Systemtools | ✅ fertig | — |
 | 2 | Kern-Module: `state.py`, `project.py`, `timeline.py` | ✅ fertig | `2a2a3d0` |
-| 3 | CLI (`cli.py`) + restliche Modul-Stubs | ⬜ offen | |
+| 3 | CLI (`cli.py`) + restliche Modul-Stubs | ✅ fertig | siehe Notizen |
 | 4 | Gate-Hook `.claude/hooks/gate.py` + `settings.json` | ⬜ offen | |
 | 5 | 8 Agenten + 9 Slash-Commands | ⬜ offen | |
 | 6 | Docs: `CLAUDE.md`, `process.md`, `style-catalog.md`, `README.md`, Templates | ⬜ offen | |
@@ -97,6 +97,37 @@ Persistenz-Roundtrip), `tests/test_timeline.py` (Feld- und Semantik-Validierung,
 CLAUDE.md fordert explizite Freigabe nach jedem Preview — auch ein Re-Render eines bereits
 `RENDERED`-Exports muss also erneut durch `APPROVED`. Kommentar im Code verweist auf diese
 Begründung, damit die Entscheidung nicht erneut aufgemacht wird.
+
+### Task 3 — CLI + Stubs (2026-07-27)
+
+`cli.py` (typer) mit `doctor`, `new`, `status`, `list`, `ingest`, `index`, `query`, `design`,
+`brief`, `build`, `preview`, `render`, `approve`. Jedes gate-pflichtige Kommando ruft die
+passende `gate_*`-Funktion aus `state.py` selbst auf (Gürtel + Hosenträger vor dem Hook aus
+Task 4). Übrige Module als Stubs — `probe`, `analyze`, `keyframes`, `gpx`, `audio`, `map`,
+`render`, `nle` werfen `NotImplementedError` mit Verweis auf den zuständigen Meilenstein.
+Drei Module haben bereits echte (kleine) Implementierung statt reinem Stub, weil sie ohne
+CV-/FFmpeg-Pipeline auskommen: `ingest.hash_file` (Cache-Schlüssel aus Plan §3),
+`index.query_assets`/`load_assets` (liest/filtert `assets.json`), `qc.validate` (delegiert an
+`Timeline.validate_semantics()`).
+
+**Cairo-Fix aus HANDOVER.md korrigiert.** Der dort vorgeschlagene Ansatz (libcairo per
+`ctypes.CDLL(pfad, RTLD_GLOBAL)` vorladen) wurde beim Implementieren empirisch widerlegt —
+macOS' Loader dedupliziert beim Nachladen per nacktem Namen (`libcairo.2.dylib`) nicht über
+bereits geladene Images, egal mit welchem `mode`. Ebenso wirkungslos: `DYLD_FALLBACK_LIBRARY_PATH`
+zur Laufzeit in `os.environ` setzen — dyld liest `DYLD_*` nur beim Prozessstart, nicht bei
+jedem `dlopen`. Tatsächlicher Fix in `frameforge/design.py::preload_cairo()`: `cairocffi`
+importiert `find_library` aus `ctypes.util` beim eigenen Modul-Import und nutzt dessen
+Rückgabewert für `ffi.dlopen()`. Patcht man `ctypes.util.find_library`, bevor `cairosvg`/
+`cairocffi` zum ersten Mal importiert werden, damit es für `cairo-2`/`cairo`/`libcairo-2` den
+Homebrew-Pfad liefert, funktioniert `import cairosvg` reproduzierbar. Verifiziert über
+`python -m frameforge doctor` (libcairo-Check jetzt grün) und `tests/test_design.py`.
+**HANDOVER.md ist an dieser Stelle veraltet** — der dortige Codeblock beschreibt den
+verworfenen Ansatz, nicht den tatsächlich verwendeten.
+
+**Abnahme erfüllt:** `python -m frameforge doctor` grün (Exit 0, alle 6 Checks OK). Gate-Test
+manuell verifiziert: `render` vor `approve` liefert `GateError` (Export-Phase NEW, erforderlich
+APPROVED), `index` vor `ingest` liefert `GateError` (Projekt-Phase INIT, erforderlich INGESTED).
+55 Tests grün, `ruff` sauber.
 
 ### Hinweis zu Commit `849ff6d`
 

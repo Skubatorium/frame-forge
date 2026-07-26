@@ -27,7 +27,13 @@ Verifiziert funktionierend:
 DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib .venv/bin/python -c "import cairosvg"
 ```
 
-**Zu implementierende Lösung** (gehört in `frameforge/design.py`, vor dem `cairosvg`-Import): libcairo per absolutem Pfad vorladen, dann findet der spätere `dlopen` sie über den bereits geladenen Namen.
+**Update Task 3 (2026-07-27): dieser Ansatz ist widerlegt, nicht mehr verwenden.** CDLL-Preload
+per absolutem Pfad dedupliziert auf macOS nicht gegen einen späteren `dlopen` per nacktem Namen.
+Der tatsächlich funktionierende Fix (Monkeypatch von `ctypes.util.find_library` vor dem ersten
+`import cairosvg`) steht in `frameforge/design.py::preload_cairo()` und ist in
+`docs/plans/PROGRESS.md` unter Task 3 begründet. Codeblock unten nur noch zur Historie.
+
+**Ursprünglich geplante (verworfene) Lösung:**
 
 ```python
 import ctypes.util, ctypes, glob
