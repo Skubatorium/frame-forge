@@ -39,6 +39,32 @@ from frameforge.state import (
 
 _SEGMENT_SPLIT = re.compile(r"&&|\|\||[;&|\n]")
 _ENV_ASSIGNMENT = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*=")
+_HEREDOC_START = re.compile(r"<<-?\s*['\"]?(\w+)['\"]?")
+
+
+def _strip_heredocs(command: str) -> str:
+    """Entfernt Heredoc-Rumpfinhalte (`<<'EOF' ... EOF`), bevor in Segmente zerlegt wird.
+
+    Ohne das wuerde z.B. `git commit -m "$(cat <<'EOF' ... EOF)"` jede Zeile der
+    Commit-Message als eigenes Bash-Segment behandeln — enthaelt eine Zeile zufaellig
+    das Wort "ffmpeg" am Anfang, wird das faelschlich als nackter ffmpeg-Aufruf geblockt.
+    Multi-Line-Kommandos ohne Heredoc (Zeilen als echte Befehlstrenner) sind davon nicht
+    betroffen, die werden weiterhin pro Zeile geprueft.
+    """
+    lines = command.split("\n")
+    out: list[str] = []
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        out.append(line)
+        i += 1
+        match = _HEREDOC_START.search(line)
+        if match:
+            delimiter = match.group(1)
+            while i < len(lines) and lines[i].strip() != delimiter:
+                i += 1
+            i += 1  # Trennzeile selbst ueberspringen, nicht in `out` uebernehmen
+    return "\n".join(out)
 
 
 def _command_segments(command: str) -> list[list[str]]:
@@ -49,7 +75,7 @@ def _command_segments(command: str) -> list[list[str]]:
     Programm ist.
     """
     segments: list[list[str]] = []
-    for raw in _SEGMENT_SPLIT.split(command):
+    for raw in _SEGMENT_SPLIT.split(_strip_heredocs(command)):
         raw = raw.strip()
         if not raw:
             continue

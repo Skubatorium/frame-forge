@@ -10,15 +10,13 @@ from pathlib import Path
 
 import pytest
 
-from frameforge import analyze, audio, gpx, ingest, keyframes, nle, probe, render
+from frameforge import analyze, audio, gpx, keyframes, nle, render
 from frameforge import map as map_module
 
 
 @pytest.mark.parametrize(
     "call",
     [
-        lambda: probe.probe_video(Path("x.mp4")),
-        lambda: probe.probe_photo_exif(Path("x.jpg")),
         lambda: analyze.analyze_clip(Path("x.mp4"), {}),
         lambda: keyframes.extract_keyframes(Path("x.mp4")),
         lambda: gpx.parse_gpx(Path("x.gpx")),
@@ -29,8 +27,6 @@ from frameforge import map as map_module
         lambda: render.build_filtergraph(None),
         lambda: nle.export_fcpxml(None, Path("x.fcpxml")),
         lambda: nle.export_otio(None, Path("x.otio")),
-        lambda: ingest.scan_media(Path(".")),
-        lambda: ingest.build_proxies([], Path(".")),
     ],
 )
 def test_stub_raises_not_implemented(call):

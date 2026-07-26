@@ -101,6 +101,27 @@ def test_render_after_approved_passes(proj):
     assert gate.evaluate_command("frameforge render proto teaser-90s") is None
 
 
+def test_heredoc_body_mentioning_ffmpeg_is_not_blocked():
+    """Regressionstest: eine Commit-Message per Heredoc, die zufaellig mit 'ffmpeg' beginnt,
+
+    darf nicht als nackter ffmpeg-Aufruf durchgehen (jede Zeile wurde vorher faelschlich
+    als eigenes Bash-Segment behandelt).
+    """
+    command = (
+        "git commit -m \"$(cat <<'EOF'\n"
+        "Proxy-Encoding nutzt ffmpeg intern per subprocess.\n"
+        "ffmpeg direkt aus Bash bleibt trotzdem verboten.\n"
+        "EOF\n"
+        ")\""
+    )
+    assert gate.evaluate_command(command) is None
+
+
+def test_real_multiline_ffmpeg_call_without_heredoc_is_still_blocked():
+    command = "cd /tmp\nffmpeg -i in.mp4 out.mp4"
+    assert gate.evaluate_command(command) is not None
+
+
 def test_unknown_project_is_blocked(proj):
     reason = gate.evaluate_command("python -m frameforge index gibts-nicht")
     assert reason is not None
