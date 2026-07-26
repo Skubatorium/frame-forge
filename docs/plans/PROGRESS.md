@@ -72,7 +72,7 @@ Projekts/Designsystems, nicht dieses Codes. Kein Norwegen-spezifisches Styling.
 
 | # | Schritt | Status | Commit |
 |---|------|--------|--------|
-| M3.1 | `map.py`: Tile-Cache (XYZ, injizierbarer Fetcher), `render_basemap`, generischer Marker (Icon statt fest verdrahtetem Punkt) | ✅ fertig | siehe Notizen |
+| M3.1 | `map.py`: Tile-Cache (XYZ, injizierbarer Fetcher), `render_basemap`, generischer Marker (Icon statt fest verdrahtetem Punkt) | ✅ fertig | `b87925f` |
 
 ### M3.1 — Notizen (2026-07-27)
 
