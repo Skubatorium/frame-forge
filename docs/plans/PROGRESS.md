@@ -1,5 +1,8 @@
 # Fortschritt M0 — Gerüst
 
+**M0 ist fertig (alle 7 Tasks, 2026-07-27).** Nächster Meilenstein: M1 (Mini-Prototyp
+end-to-end, siehe Notizen zu Task 7 unten und Plan Abschnitt 8).
+
 Diese Datei ist die **einzige verlässliche Quelle** für den Arbeitsstand. Chat-Verläufe und
 Task-Listen überleben ein Session-Limit nicht, diese Datei schon.
 
@@ -21,7 +24,7 @@ Umgebungs-Fallstricke: `docs/plans/HANDOVER.md`
 | 4 | Gate-Hook `.claude/hooks/gate.py` + `settings.json` | ✅ fertig | `ea9190a` |
 | 5 | 8 Agenten + 9 Slash-Commands | ✅ fertig | `db3d2b0` |
 | 6 | Docs: `CLAUDE.md`, `process.md`, `style-catalog.md`, `README.md`, Templates | ✅ fertig | `a206a81` |
-| 7 | Tests + M0-Abnahme | ⬜ offen | |
+| 7 | Tests + M0-Abnahme | ✅ fertig | siehe Notizen |
 
 Legende: ⬜ offen · 🔄 in Arbeit · ✅ fertig
 
@@ -186,6 +189,35 @@ als YAML-Fragmente), `README.md` (Setup, Nutzung, Struktur), `templates/project/
 baut die Ordner direkt in `cli.py`).
 
 Keine funktionalen Code-Änderungen. 70 Tests weiterhin grün, `ruff` sauber, `doctor` grün.
+
+### Task 7 — M0-Abnahme (2026-07-27)
+
+Alle Kriterien aus Plan §10 erfüllt:
+
+- `pytest tests/ -v` — **70/70 grün**.
+- `ruff check frameforge/ tests/ .claude/hooks/gate.py` — sauber.
+- `python -m frameforge.cli doctor` — **Exit 0**, alle 6 Checks (Python, ffmpeg, ffprobe,
+  exiftool, libcairo, Cache-Verzeichnis) grün.
+- Gate-Test auf beiden Durchsetzungs-Ebenen verifiziert (frisches Test-Projekt `proto`,
+  danach wieder entfernt): `frameforge render proto teaser-90s` vor jedem vorgelagerten
+  Schritt → Exit 1, Meldung "Export-Phase NEW — erforderlich mindestens: APPROVED". Derselbe
+  Aufruf simuliert als Hook-Payload (`echo '{"tool_name":"Bash",...}' | gate.py`) → Exit 2,
+  identische Meldung auf stderr. Nackter `ffmpeg`-Aufruf über den Hook → Exit 2, Verweis auf
+  `frameforge render`/`preview`.
+
+**Abweichung von Plan §10 dokumentiert:** Die dortige Beispielsyntax
+(`frameforge render --project proto --export teaser-90s`) nutzt Flag-Optionen; `cli.py`
+(Task 3) implementiert `project`/`export` als **positionale** Argumente
+(`frameforge render proto teaser-90s`). Funktional identisch, nur andere Aufrufsyntax —
+wurde beim Schreiben von `cli.py` so entschieden (typer-Konvention für Pflichtargumente)
+und hier nachträglich vermerkt, weil Plan §10 das Original-Beispiel zeigt.
+
+**M0 ist damit fertig.** Alle 7 Tasks abgeschlossen und gepusht. Nächster Schritt laut Plan:
+M1 — Mini-Prototyp end-to-end (`projects/proto/` mit 3–5 Clips, 2 Fotos, kurzer GPX-Spur,
+komplett durch die Pipeline bis zu einem abspielbaren 60–90-s-Preview). Das erfordert, die
+bisherigen Stubs (`ingest.scan_media`, `probe.py`, `analyze.py`, `keyframes.py`, `index.
+write_asset`, `render.build_filtergraph`/`render_proxy`, `design.build_svg_from_tokens`/
+`render_svg_to_png`, `map.render_route_frames`) durch echte Implementierungen zu ersetzen.
 
 ### Hinweis zu Commit `849ff6d`
 
