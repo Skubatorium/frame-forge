@@ -73,6 +73,56 @@ def test_query_without_filters_returns_all(proj):
     assert {a["id"] for a in query_assets(proj)} == {"a1", "a2"}
 
 
-def test_write_asset_not_yet_implemented(proj):
-    with pytest.raises(NotImplementedError):
-        write_asset(proj, {})
+NEW_ASSET = {
+    "id": "a3",
+    "kind": "video",
+    "path": "video/day01/clip.mp4",
+    "captured_at": "2026-07-14T09:12:33+02:00",
+    "rating": 5,
+    "gps": {"place": "Trollstigen"},
+    "tech": {"w": 1920, "h": 1080, "fps": 25.0, "dur": 12.4, "codec": "h264"},
+    "quality": {"sharpness": 0.8, "stability": 0.9, "exposure": 0.75, "score": 0.82},
+    "content": {"summary": "Serpentinen von oben.", "tags": ["berge", "strasse"]},
+}
+
+
+def test_write_asset_appends_new_entry_to_assets_json(proj):
+    write_asset(proj, NEW_ASSET)
+
+    ids = {a["id"] for a in load_assets(proj)}
+    assert ids == {"a1", "a2", "a3"}
+
+
+def test_write_asset_upserts_existing_entry_by_id(proj):
+    updated = dict(NEW_ASSET, rating=1)
+    write_asset(proj, NEW_ASSET)
+    write_asset(proj, updated)
+
+    assets = load_assets(proj)
+    matches = [a for a in assets if a["id"] == "a3"]
+    assert len(matches) == 1
+    assert matches[0]["rating"] == 1
+
+
+def test_write_asset_creates_markdown_with_content(proj):
+    write_asset(proj, NEW_ASSET)
+
+    md_path = proj.assets_dir / "a3.md"
+    text = md_path.read_text()
+    assert "# a3" in text
+    assert "Trollstigen" in text
+    assert "Serpentinen von oben." in text
+    assert "berge, strasse" in text
+
+
+def test_write_asset_preserves_user_notes_on_reindex(proj):
+    write_asset(proj, NEW_ASSET)
+    md_path = proj.assets_dir / "a3.md"
+    original = md_path.read_text()
+    md_path.write_text(original + "\nMeine eigene Notiz zu diesem Clip.\n")
+
+    write_asset(proj, dict(NEW_ASSET, rating=3))
+
+    text = md_path.read_text()
+    assert "Meine eigene Notiz zu diesem Clip." in text
+    assert "**Rating:** 3/5" in text

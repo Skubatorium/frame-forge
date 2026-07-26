@@ -196,32 +196,65 @@ def status(project: str) -> None:
 
 
 # -- Pipeline-Kommandos ---------------------------------------------------
-# Gates werden hier geprueft; die eigentliche Verarbeitung ist bis M1 ein Stub.
+# Gates werden hier geprueft; Module ohne CV-/LLM-Abhaengigkeit sind bereits echt
+# implementiert (siehe docs/plans/PROGRESS.md, M1), der Rest bis M1 abgeschlossen ist Stub.
 
 
 @app.command()
 def ingest(project: str) -> None:
-    """Scan + Proxy-Erzeugung fuer das Rohmaterial. Verarbeitung kommt in M1."""
+    """Scan + Proxy-Erzeugung fuer das Rohmaterial. Setzt Projekt-Phase auf INGESTED."""
     proj = _resolve_or_fail(project)
     try:
-        ingest_module.scan_media(proj.config.media_root)
-    except NotImplementedError as exc:
-        raise _not_implemented(exc) from exc
+        found = ingest_module.scan_media(proj.config.media_root)
+    except FileNotFoundError as exc:
+        raise _fail(str(exc)) from exc
+
+    proxies_dir = proj.cache_dir / "proxies"
+    proxies = ingest_module.build_proxies(found, proxies_dir)
+
+    state = proj.load_state()
+    state.advance_project(Phase.INGESTED)
+    state.save()
+    console.print(
+        f"[green]{len(found)} Assets gefunden, {len(proxies)} Proxies erzeugt.[/green] "
+        f"Proxy-Verzeichnis: {proxies_dir}"
+    )
 
 
 @app.command(name="index")
 def index_cmd(project: str) -> None:
-    """Analyse + `.md`-Beschreibungen. Erfordert Projekt-Phase >= INGESTED."""
+    """CV-Analyse (Schaerfe/Belichtung/Scenes) + Keyframe-Extraktion fuer noch nicht
+
+    indizierte Assets. Erfordert Projekt-Phase >= INGESTED. Schreibt noch keine
+    `assets.json`-Eintraege — Beschreibung/Tags/Rating brauchen den `media-indexer`-Agenten
+    (Claude Vision auf den hier erzeugten Keyframes), siehe `/ff-index`.
+    """
     proj = _resolve_or_fail(project)
     state = proj.load_state()
     try:
         gate_index(state)
     except GateError as exc:
         raise _fail(str(exc)) from exc
+
     try:
-        index_module.write_asset(proj, {})
-    except NotImplementedError as exc:
-        raise _not_implemented(exc) from exc
+        found = ingest_module.scan_media(proj.config.media_root)
+    except FileNotFoundError as exc:
+        raise _fail(str(exc)) from exc
+
+    existing_hashes = {a.get("hash") for a in index_module.load_assets(proj)}
+    pending = [p for p in found if ingest_module.hash_file(p) not in existing_hashes]
+
+    console.print(f"{len(found)} Mediendateien gefunden, {len(pending)} noch nicht indiziert.")
+    if not pending:
+        return
+
+    keyframes_dir = proj.cache_dir / "keyframes"
+    for path in pending:
+        console.print(f"  {path.name}: Hash noch nicht in assets.json")
+    console.print(
+        f"[yellow]Naechster Schritt:[/yellow] Keyframes nach {keyframes_dir} extrahieren und "
+        "an den media-indexer-Agenten delegieren (siehe /ff-index)."
+    )
 
 
 @app.command()

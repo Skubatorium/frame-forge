@@ -40,7 +40,7 @@ Task-Nummerierung (M1.1, M1.2, ...), da M0 abgeschlossen ist.
 |---|------|--------|--------|
 | M1.1 | `probe.py` (ffprobe/exiftool-Wrapper), `ingest.scan_media`/`build_proxies`, winzige Test-Fixtures (`tests/fixtures/clip.mp4`, `photo.jpg` + `generate.py`), Gate-Hook-Heredoc-Bugfix | ✅ fertig | `216d303` |
 | M1.2 | `analyze.py` (Schärfe/Stabilität/Belichtung/Scenes), `keyframes.py` | ✅ fertig | `6b5e9af` |
-| M1.3 | `index.write_asset` (echt), Merge-Logik für `.md`-Freitext | ⬜ offen | |
+| M1.3 | `index.write_asset` (echt), Merge-Logik für `.md`-Freitext, `cli.py` `ingest`/`index` funktionsfähig gemacht | ✅ fertig | siehe Notizen |
 | M1.4 | `gpx.py` (Parsing, Asset↔Ort-Zuordnung) | ⬜ offen | |
 | M1.5 | `design.py` Rendering (SVG→PNG), minimale SVG-Templates | ⬜ offen | |
 | M1.6 | `map.py` Route-Reveal-Frames | ⬜ offen | |
@@ -100,6 +100,34 @@ Werte aus der Token-Disziplin-Regel in `CLAUDE.md`.
 Manuell gegen die Fixtures verifiziert (`clip.mp4`: 2s Testsrc → 3 Keyframes 320×240 unter
 768px, daher unskaliert; `photo.jpg`: 1 Keyframe). 85 Tests grün (`tests/test_analyze.py`,
 `tests/test_keyframes.py` neu), `ruff` sauber, keine Deprecation-Warnings.
+
+### M1.3 — Notizen (2026-07-27)
+
+`index.write_asset`: Upsert nach `asset["id"]` in `assets.json` (Liste, sortiert nach ID für
+stabile Diffs). `.md`-Datei wird neu generiert, aber alles nach dem Marker `<!-- ff:notes -->`
+bleibt über Re-Indexierung erhalten (`_existing_notes()` liest den bestehenden Freitext vor
+dem Überschreiben aus) — genau das Merge-Verhalten aus Plan §1.
+
+**Zwei kaputte CLI-Kommandos beim Verdrahten gefunden und mitgefixt** (Bug, keine
+Scope-Erweiterung — beide waren durch die vorherigen Stub-Exceptions verdeckt):
+- `frameforge index` rief bisher `index_module.write_asset(proj, {})` als Platzhalter auf.
+  Seit `write_asset` echt ist, wirft das `KeyError: 'id'` statt der vorherigen sauberen
+  `NotImplementedError`. Neues Verhalten: `index` scannt Medien, vergleicht Hashes gegen
+  `assets.json`, meldet, wie viele Assets noch keine Beschreibung haben — schreibt aber
+  bewusst noch nichts, weil `content.summary`/`tags`/`rating` den `media-indexer`-Agenten
+  (Claude Vision) brauchen. Phase wird hier noch nicht auf `INDEXED` gesetzt.
+- `frameforge ingest` rief `ingest_module.scan_media(...)` auf und **verwarf das Ergebnis**,
+  seit `scan_media` kein Stub mehr ist — tat also nichts Sichtbares und advancte nie die
+  Phase, wodurch jeder folgende Schritt an einem Gate hängen geblieben wäre, ohne dass der
+  Grund ersichtlich war. Jetzt: scannt, baut Proxies über `ingest.build_proxies` in
+  `<cache_dir>/proxies/`, setzt Projekt-Phase auf `INGESTED`.
+
+Beide manuell end-to-end mit den Fixtures verifiziert (`frameforge new` → `ingest` → `index`
+→ `status` zeigt `INGESTED`, Proxies liegen im Cache-Verzeichnis). Neue Tests in
+`tests/test_cli.py` (Typer `CliRunner`) und `tests/test_index.py` (Upsert, Markdown-Inhalt,
+Notizen-Erhalt).
+
+92 Tests grün, `ruff` sauber, `doctor` grün.
 
 ---
 
