@@ -21,6 +21,9 @@ from pydantic import BaseModel, Field
 class Phase(IntEnum):
     """Reihenfolge der Prozess-Phasen. Werte sind monoton — Vergleiche (`<`, `>=`) sind erlaubt."""
 
+    NEW = -1
+    """Nur interner Default fuer Exports, die noch nie angelegt/gebrieft wurden. Keine
+    echte Prozessphase — kann nicht per `advance_export` gesetzt werden."""
     INIT = 0
     INGESTED = 1
     INDEXED = 2
@@ -39,6 +42,7 @@ PROJECT_PHASES = frozenset({Phase.INIT, Phase.INGESTED, Phase.INDEXED, Phase.DES
 EXPORT_PHASES = frozenset(p for p in Phase if p >= Phase.BRIEFED)
 
 _PHASE_NAMES_DE = {
+    Phase.NEW: "NEW (kein brief.yaml)",
     Phase.INIT: "INIT",
     Phase.INGESTED: "INGESTED (ff-ingest)",
     Phase.INDEXED: "INDEXED (ff-index)",
@@ -78,7 +82,7 @@ class GateError(StateError):
 class ExportState(BaseModel):
     """Sub-State eines einzelnen Exports."""
 
-    phase: Phase = Phase.BRIEFED
+    phase: Phase = Phase.NEW
     content_hashes: dict[str, str] = Field(default_factory=dict)
 
 
@@ -160,16 +164,17 @@ class ProjectState:
 
     # -- Export-Phase --------------------------------------------------------
 
-    def _export(self, name: str) -> ExportState:
-        return self.data.exports.setdefault(name, ExportState())
+    def _peek_export(self, name: str) -> ExportState:
+        """Nicht-mutierender Lesezugriff — legt keinen Phantom-Eintrag in `.state.json` an."""
+        return self.data.exports.get(name, ExportState())
 
     def export_phase(self, name: str) -> Phase:
-        return self._export(name).phase
+        return self._peek_export(name).phase
 
     def advance_export(self, name: str, phase: Phase, *, content_hash: str | None = None) -> None:
         if phase not in EXPORT_PHASES:
             raise StateError(f"{phase.name} ist keine gueltige Export-Phase")
-        export = self._export(name)
+        export = self.data.exports.setdefault(name, ExportState())
         export.phase = phase
         if content_hash is not None:
             export.content_hashes["_export"] = content_hash
@@ -217,7 +222,13 @@ def gate_preview(state: ProjectState, export: str, *, timeline_exists: bool) -> 
 
 
 def gate_render_final(state: ProjectState, export: str) -> None:
-    """`ff-render` (final) erfordert Export-Phase == APPROVED (explizite Freigabe)."""
+    """`ff-render` (final) erfordert Export-Phase == APPROVED (explizite Freigabe).
+
+    Bewusst strikte Gleichheit, nicht `>=`: Plan Abschnitt 2 verlangt wortwoertlich
+    "Export-Phase = APPROVED". Ein bereits gerenderter Export (Phase RENDERED) braucht
+    fuer einen erneuten Final-Render wieder eine explizite Freigabe nach Preview — sonst
+    koennte ein veralteter Render ohne neue Kontrolle wiederholt werden.
+    """
     current = state.export_phase(export)
     if current != Phase.APPROVED:
         raise GateError(Phase.APPROVED, current, context=f"Export '{export}'")

@@ -16,7 +16,7 @@ Umgebungs-Fallstricke: `docs/plans/HANDOVER.md`
 | # | Task | Status | Commit |
 |---|------|--------|--------|
 | 1 | Repo-Fundament: git init, pyproject, gitignore, venv, Systemtools | ✅ fertig | — |
-| 2 | Kern-Module: `state.py`, `project.py`, `timeline.py` | ⬜ offen | |
+| 2 | Kern-Module: `state.py`, `project.py`, `timeline.py` | ✅ fertig | siehe Notizen |
 | 3 | CLI (`cli.py`) + restliche Modul-Stubs | ⬜ offen | |
 | 4 | Gate-Hook `.claude/hooks/gate.py` + `settings.json` | ⬜ offen | |
 | 5 | 8 Agenten + 9 Slash-Commands | ⬜ offen | |
@@ -77,4 +77,32 @@ Projekt-Skeleton unter `templates/project/`.
 
 ## Notizen / Entscheidungen während der Umsetzung
 
-<!-- Hier festhalten, was vom Plan abweicht und warum. -->
+### Task 2 — Nachbesserung (2026-07-27)
+
+Die drei Punkte aus der Prüfung sind behoben:
+
+**1. Gate-Loch geschlossen.** Neuer Sentinel-Wert `Phase.NEW = -1` (keine echte Prozessphase,
+liegt unterhalb `INIT`) ist jetzt der Default für `ExportState.phase`. `ProjectState` trennt
+Lesen (`_peek_export`, nicht-mutierend) von Schreiben (`advance_export`, `setdefault` nur dort).
+`export_phase()`/`require_export()`/die Gates lesen jetzt nur noch — kein Phantom-Eintrag mehr
+in `.state.json`. `gate_build(state, "gibts-nicht")` wirft korrekt `GateError`.
+
+**2. Tests ergänzt.** `tests/test_state.py` (Phasensprünge, Gate-Loch als Regressionstest,
+Persistenz-Roundtrip), `tests/test_timeline.py` (Feld- und Semantik-Validierung, Roundtrip),
+`tests/test_project.py` (Pfadauflösung, `project.yaml`-Roundtrip). 26 Tests, alle grün,
+`ruff` sauber.
+
+**3. Designentscheidung getroffen:** `gate_render_final` bleibt bei strikter Gleichheit
+(`!= APPROVED`). Grund: Plan Abschnitt 2 verlangt wörtlich "Export-Phase = APPROVED", und
+CLAUDE.md fordert explizite Freigabe nach jedem Preview — auch ein Re-Render eines bereits
+`RENDERED`-Exports muss also erneut durch `APPROVED`. Kommentar im Code verweist auf diese
+Begründung, damit die Entscheidung nicht erneut aufgemacht wird.
+
+### Hinweis zu Commit `849ff6d`
+
+Der Initial-Commit hat den damals frisch geschriebenen Task-2-Code versehentlich mit
+eingesammelt (zwei Sessions liefen kurzzeitig parallel im selben Repo). Die Commit-Message
+sagt deshalb fälschlich, es gäbe noch keinen Anwendungscode. Rein kosmetisch — nicht
+nachträglich reparieren, der nächste Commit stellt es gerade.
+
+**Regel daraus:** immer nur eine Session gleichzeitig in diesem Repo arbeiten lassen.
