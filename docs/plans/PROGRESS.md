@@ -59,7 +59,7 @@ LLM-getrieben) — die deterministischen Code-Bausteine dafür sind hier Aufgabe
 | # | Schritt | Status | Commit |
 |---|------|--------|--------|
 | M2.1 | `audio.py` (BPM/Beat-Grid/Energiekurve echt, gecacht; `duck_curve`) | ✅ fertig | `76f4f0a` |
-| M2.2 | `qc.py` echtes Regelsatz (schwarze Frames, Audio-Clipping, Clip-Doppler, Text-Lesbarkeit) | ✅ fertig | siehe Notizen |
+| M2.2 | `qc.py` echtes Regelsatz (schwarze Frames, Audio-Clipping, Clip-Doppler, Text-Lesbarkeit) | ✅ fertig | `6a68c6f` |
 
 ### M2.1 — Notizen (2026-07-27)
 
