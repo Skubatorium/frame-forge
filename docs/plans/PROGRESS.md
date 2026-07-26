@@ -17,7 +17,7 @@ Umgebungs-Fallstricke: `docs/plans/HANDOVER.md`
 |---|------|--------|--------|
 | 1 | Repo-Fundament: git init, pyproject, gitignore, venv, Systemtools | ✅ fertig | — |
 | 2 | Kern-Module: `state.py`, `project.py`, `timeline.py` | ✅ fertig | `2a2a3d0` |
-| 3 | CLI (`cli.py`) + restliche Modul-Stubs | ✅ fertig | siehe Notizen |
+| 3 | CLI (`cli.py`) + restliche Modul-Stubs | ✅ fertig | `51eda74` |
 | 4 | Gate-Hook `.claude/hooks/gate.py` + `settings.json` | ⬜ offen | |
 | 5 | 8 Agenten + 9 Slash-Commands | ⬜ offen | |
 | 6 | Docs: `CLAUDE.md`, `process.md`, `style-catalog.md`, `README.md`, Templates | ⬜ offen | |
