@@ -61,6 +61,50 @@ LLM-getrieben) — die deterministischen Code-Bausteine dafür sind hier Aufgabe
 | M2.1 | `audio.py` (BPM/Beat-Grid/Energiekurve echt, gecacht; `duck_curve`) | ✅ fertig | `76f4f0a` |
 | M2.2 | `qc.py` echtes Regelsatz (schwarze Frames, Audio-Clipping, Clip-Doppler, Text-Lesbarkeit) | ✅ fertig | `6a68c6f` |
 
+---
+
+## M3 — Karte & Grafik ausbauen
+
+**Nutzer-Klarstellung (2026-07-27):** M3 liefert die generische *Fähigkeit* (Tile-Cache,
+Marker-Typen, Kapitelkarten, Bauchbinden-Varianten) — **keine** projektspezifische Gestaltung.
+"Wie es aussieht" (Farben, Icons, Kartenstil, konkrete Marker) ist Sache des jeweiligen
+Projekts/Designsystems, nicht dieses Codes. Kein Norwegen-spezifisches Styling.
+
+| # | Schritt | Status | Commit |
+|---|------|--------|--------|
+| M3.1 | `map.py`: Tile-Cache (XYZ, injizierbarer Fetcher), `render_basemap`, generischer Marker (Icon statt fest verdrahtetem Punkt) | ✅ fertig | siehe Notizen |
+
+### M3.1 — Notizen (2026-07-27)
+
+`map.py` erweitert, nichts Neues an Dateien:
+
+- **Tile-Cache**: `fetch_tile(z, x, y, cache_dir, *, tile_server_url=..., fetcher=None)` lädt
+  eine XYZ-Kachel und cached sie unter `cache_dir/<z>/<x>/<y>.png`. `fetcher` ist injizierbar
+  (`Callable[[str], bytes]`) — Tests/CI laufen komplett offline gegen einen Fake-Fetcher,
+  nichts hier hängt an echtem Netzwerkzugriff während `pytest`. Ohne eigenen `fetcher` lädt
+  `_default_tile_fetcher` per `urllib` gegen `DEFAULT_TILE_SERVER` (OpenStreetMap) — bei
+  produktivem Einsatz Nutzungsbedingungen/eigenen Tile-Server beachten, das ist bewusst nicht
+  Teil dieses Codes (projektspezifische Entscheidung).
+- **`render_basemap(bbox, zoom, cache_dir, ...)`**: setzt eine Basiskarte aus gecachten Kacheln
+  zu einem RGBA-Bild zusammen (`latlon_to_tile` = Standard-Slippy-Map/Web-Mercator-Formel).
+- **Marker generalisiert**: `render_route_frames(..., marker_icon=None, basemap=None, route_color=ROUTE_COLOR, route_width_px=ROUTE_WIDTH_PX)`.
+  Ohne `marker_icon` unverändertes M1-Verhalten (Punkt, `MARKER_COLOR`/`MARKER_RADIUS_PX`).
+  Mit `marker_icon`: beliebiges PNG-Icon (Auto, Figur, was auch immer das Projekt liefert)
+  wird mittig auf die aktuelle Position gestempelt — **kein** Icon ist hier hart codiert.
+  `basemap` ersetzt den transparenten Hintergrund durch ein vorgerendertes Kartenbild
+  (Größen-Mismatch wirft `ValueError`, nicht stiller Crop/Stretch).
+
+**Kapitelkarten/Bauchbinden-Varianten brauchten keinen neuen Code.** Die SVG-Templates aus
+Task 5 (`templates/svg/chapter.svg`, `lower-third.svg`) sind bereits vollständig
+token-parametrisiert (Position, Farben, Schrift, Größe) — "Varianten" sind schon heute nur
+ein anderes Tokens-Set, keine Code-Änderung. Damit ist der einzige noch offene M3-Punkt aus
+Plan Abschnitt 8 mit echtem Code-Bedarf der Tile-Cache/Marker-Teil gewesen.
+
+13 neue/erweiterte Tests in `tests/test_map.py` (Marker-Icon-Kompositing, Basemap-Nutzung,
+Größen-Validierung, Tile-Cache-Hit/Miss, Basemap-Zusammensetzung — alle mit injiziertem
+Fake-Fetcher, kein echter Netzwerkzugriff). 140 Tests insgesamt grün, `ruff` sauber, `doctor`
+grün.
+
 ### M2.1 — Notizen (2026-07-27)
 
 `audio.py`: `analyze_track` nutzt `librosa.beat.beat_track` (BPM + Beat-Grid) und
