@@ -18,7 +18,7 @@ Umgebungs-Fallstricke: `docs/plans/HANDOVER.md`
 | 1 | Repo-Fundament: git init, pyproject, gitignore, venv, Systemtools | ✅ fertig | — |
 | 2 | Kern-Module: `state.py`, `project.py`, `timeline.py` | ✅ fertig | `2a2a3d0` |
 | 3 | CLI (`cli.py`) + restliche Modul-Stubs | ✅ fertig | `51eda74` |
-| 4 | Gate-Hook `.claude/hooks/gate.py` + `settings.json` | ⬜ offen | |
+| 4 | Gate-Hook `.claude/hooks/gate.py` + `settings.json` | ✅ fertig | siehe Notizen |
 | 5 | 8 Agenten + 9 Slash-Commands | ⬜ offen | |
 | 6 | Docs: `CLAUDE.md`, `process.md`, `style-catalog.md`, `README.md`, Templates | ⬜ offen | |
 | 7 | Tests + M0-Abnahme | ⬜ offen | |
@@ -128,6 +128,29 @@ verworfenen Ansatz, nicht den tatsächlich verwendeten.
 manuell verifiziert: `render` vor `approve` liefert `GateError` (Export-Phase NEW, erforderlich
 APPROVED), `index` vor `ingest` liefert `GateError` (Projekt-Phase INIT, erforderlich INGESTED).
 55 Tests grün, `ruff` sauber.
+
+### Task 4 — Gate-Hook (2026-07-27)
+
+`.claude/hooks/gate.py` als `PreToolUse`-Hook auf `Bash`, verdrahtet in `.claude/settings.json`
+über `$CLAUDE_PROJECT_DIR/.venv/bin/python $CLAUDE_PROJECT_DIR/.claude/hooks/gate.py` (Pfade
+über die von Claude Code bereitgestellte Variable, damit der Hook unabhängig vom `cwd` der
+Session funktioniert).
+
+Der Hook zerlegt `tool_input.command` in einzelne Segmente (getrennt durch `&&`, `;`, `|`,
+Zeilenumbrüche) und blockt mit Exit-Code 2, sobald ein Segment:
+- `ffmpeg`/`ffprobe` nackt aufruft (immer verboten, unabhängig vom Pfad/Argumenten), oder
+- einen `frameforge`-Unterbefehl (`index`, `brief`, `build`, `preview`, `render`) mit einem
+  Projekt/Export aufruft, dessen `.state.json`-Phase die jeweilige `gate_*`-Funktion aus
+  `state.py` nicht erfüllt — dieselbe Logik, die `cli.py` bereits selbst prüft.
+
+Bewusst **kein** eigenes Regelwerk im Hook — er importiert `frameforge.state`/`frameforge.project`
+direkt, damit Gate-Logik nur an einer Stelle gepflegt wird.
+
+**Abnahme erfüllt:** 15 neue Tests in `tests/test_gate_hook.py`, davon zwei End-to-End über
+echten Subprozess-Aufruf mit JSON-Payload (verifiziert Exit-Code 2 + Meldung auf stderr für
+einen nackten `ffmpeg`-Aufruf, Exit-Code 0 für Nicht-Bash-Tools). Unit-Tests decken blockierte
+und erlaubte `ffmpeg`-Varianten, alle fünf gate-pflichtigen `frameforge`-Unterbefehle vor/nach
+Phasenerreichung sowie unbekannte Projekte ab. 70 Tests insgesamt grün, `ruff` sauber.
 
 ### Hinweis zu Commit `849ff6d`
 
