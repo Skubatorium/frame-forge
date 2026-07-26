@@ -10,15 +10,13 @@ from pathlib import Path
 
 import pytest
 
-from frameforge import audio, gpx, nle, render
+from frameforge import audio, nle, render
 from frameforge import map as map_module
 
 
 @pytest.mark.parametrize(
     "call",
     [
-        lambda: gpx.parse_gpx(Path("x.gpx")),
-        lambda: gpx.nearest_location(__import__("datetime").datetime.now(), []),
         lambda: audio.analyze_track(Path("x.wav")),
         lambda: audio.duck_curve({}, [], duck_db=-14),
         lambda: map_module.render_route_frames([], Path("."), fps=25, dur=5.0),
