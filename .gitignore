@@ -23,6 +23,7 @@ projects/*/exports/*/overlays/
 projects/*/exports/*/map/
 projects/*/design/fonts/
 projects/*/design/assets/
+projects/*/.state.lock
 
 # Cache (liegt normalerweise in ~/.cache/frameforge, hier als Fallback)
 .cache/

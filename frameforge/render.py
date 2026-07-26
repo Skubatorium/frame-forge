@@ -94,12 +94,14 @@ def build_filtergraph(
 
     # -- Overlay: PNGs mit Alpha, Zeitfenster ueber `enable` -------------------------
     for j, overlay in enumerate(timeline.tracks.overlay):
-        idx = add_input(["-loop", "1", "-i", str(export_root / overlay.png)])
+        idx = add_input(
+            ["-loop", "1", "-framerate", str(timeline.fps), "-i", str(export_root / overlay.png)]
+        )
         ov_label = f"ov{j}"
         next_video = f"vov{j}"
         filters.append(f"[{idx}:v]format=rgba[{ov_label}]")
         filters.append(
-            f"[{cur_video}][{ov_label}]overlay=x=0:y=0:"
+            f"[{cur_video}][{ov_label}]overlay=x=0:y=0:shortest=1:"
             f"enable='between(t,{overlay.tl_in},{overlay.tl_in + overlay.dur})'[{next_video}]"
         )
         cur_video = next_video
@@ -111,7 +113,7 @@ def build_filtergraph(
         next_video = f"vmap{k}"
         filters.append(f"[{idx}:v]setpts=PTS+{map_clip.tl_in}/TB[{shifted}]")
         filters.append(
-            f"[{cur_video}][{shifted}]overlay=x=W-w-20:y=H-h-20:"
+            f"[{cur_video}][{shifted}]overlay=x=W-w-20:y=H-h-20:shortest=1:"
             f"enable='between(t,{map_clip.tl_in},{map_clip.tl_in + map_clip.dur})'[{next_video}]"
         )
         cur_video = next_video
@@ -190,7 +192,19 @@ def _run_ffmpeg(graph: FilterGraph, timeline: Timeline, out_path: Path) -> None:
             str(out_path),
         ]
     )
-    result = subprocess.run(cmd, capture_output=True, text=True, check=False)
+    # Grosszuegiges, aber endliches Timeout als Sicherheitsnetz: ein Filtergraph-Fehler
+    # (z.B. ein unbegrenzter `-loop 1`-Input ohne `shortest=1` an einem `overlay`) darf den
+    # Prozess nicht auf unbestimmte Zeit haengen lassen.
+    timeout_s = max(120.0, timeline.duration * 30)
+    try:
+        result = subprocess.run(
+            cmd, capture_output=True, text=True, check=False, timeout=timeout_s
+        )
+    except subprocess.TimeoutExpired as exc:
+        raise RenderError(
+            f"ffmpeg hat nach {timeout_s:.0f}s nicht terminiert (moeglicher Filtergraph-Fehler, "
+            f"z.B. unbegrenzter Input ohne 'shortest=1' an einem overlay-Filter)"
+        ) from exc
     if result.returncode != 0:
         raise RenderError(f"ffmpeg fehlgeschlagen: {result.stderr.strip()}")
 

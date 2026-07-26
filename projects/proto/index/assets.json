@@ -1,0 +1,212 @@
+[
+  {
+    "id": "20260714-clip-drive",
+    "hash": "sha256:1e05ac08cf9642c3b91c8c2ea420cafd7292645ea132e458970d229237134d11",
+    "path": "clip-drive.mp4",
+    "kind": "video",
+    "captured_at": "2026-07-14T09:00:00+00:00",
+    "gps": {
+      "lat": 62.1049,
+      "lon": 6.9394,
+      "place": "Trollstigen"
+    },
+    "content": {
+      "summary": "Fahrt entlang der Serpentine, Motorengeraeusch im O-Ton.",
+      "tags": [
+        "strasse",
+        "fahrt",
+        "auto"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "outro"
+      ]
+    },
+    "rating": 4,
+    "tech": {
+      "w": 320,
+      "h": 240,
+      "fps": 25.0,
+      "dur": 2.0,
+      "bitrate": 91856,
+      "codec": "h264"
+    },
+    "quality": {
+      "sharpness": 0.957,
+      "stability": 1.0,
+      "exposure": 0.725,
+      "score": 0.894
+    },
+    "motion": {
+      "type": "static",
+      "speed": 0.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 2.0
+      }
+    ]
+  },
+  {
+    "id": "20260714-clip-fjord",
+    "hash": "sha256:600e15c65209577341fbca1d257b6427f99565f8d02df1789a23232a4c76c3b3",
+    "path": "clip-fjord.mp4",
+    "kind": "video",
+    "captured_at": "2026-07-14T09:03:00+00:00",
+    "gps": {
+      "lat": 62.1049,
+      "lon": 6.9394,
+      "place": "Trollstigen"
+    },
+    "content": {
+      "summary": "Weite Einstellung auf den Fjord, ruhiges Wasser, klares Licht.",
+      "tags": [
+        "fjord",
+        "wasser",
+        "weitwinkel",
+        "ruhig"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    },
+    "rating": 4,
+    "tech": {
+      "w": 320,
+      "h": 240,
+      "fps": 25.0,
+      "dur": 2.52,
+      "bitrate": 48101,
+      "codec": "h264"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.851,
+      "exposure": 0.982,
+      "score": 0.944
+    },
+    "motion": {
+      "type": "static",
+      "speed": 0.149
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 2.52
+      }
+    ]
+  },
+  {
+    "id": "20260714-clip-water",
+    "hash": "sha256:d1e80a3dd99c36c542c85130f1bfc6a25760016874909cda67d6f56ffdcc7997",
+    "path": "clip-water.mp4",
+    "kind": "video",
+    "captured_at": "2026-07-14T09:06:00+00:00",
+    "gps": {
+      "lat": 62.11,
+      "lon": 6.945,
+      "place": "Trollstigen"
+    },
+    "content": {
+      "summary": "Nahaufnahme von Wellenbewegung am Ufer.",
+      "tags": [
+        "wasser",
+        "detail",
+        "bewegung"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "rating": 3,
+    "tech": {
+      "w": 320,
+      "h": 240,
+      "fps": 25.0,
+      "dur": 2.0,
+      "bitrate": 276200,
+      "codec": "h264"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.822,
+      "exposure": 0.964,
+      "score": 0.929
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.178
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 2.0
+      }
+    ]
+  },
+  {
+    "id": "20260714-photo-cabin",
+    "hash": "sha256:b91ff6c53b11437abdddc518f4c2093a91a62d337cb2a9f46df95b41d065d271",
+    "path": "photo-cabin.jpg",
+    "kind": "photo",
+    "captured_at": "2026-07-14T09:09:00+00:00",
+    "gps": {
+      "lat": 62.11,
+      "lon": 6.945,
+      "place": "Trollstigen"
+    },
+    "content": {
+      "summary": "Huette am Wasser in blauem Licht.",
+      "tags": [
+        "huette",
+        "architektur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    },
+    "rating": 5,
+    "quality": {
+      "sharpness": 0.0,
+      "exposure": 0.969,
+      "score": 0.484
+    }
+  },
+  {
+    "id": "20260714-photo-family",
+    "hash": "sha256:9793b940c79acd19a581a03e1573c5392a50681b351d06780468e9cfbdea2f9a",
+    "path": "photo-family.jpg",
+    "kind": "photo",
+    "captured_at": "2026-07-14T09:12:00+00:00",
+    "gps": {
+      "lat": 62.11,
+      "lon": 6.945,
+      "place": "Trollstigen"
+    },
+    "content": {
+      "summary": "Warmes Abendlicht ueber der Landschaft.",
+      "tags": [
+        "abend",
+        "landschaft",
+        "warm"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "outro"
+      ]
+    },
+    "rating": 4,
+    "quality": {
+      "sharpness": 0.0,
+      "exposure": 0.766,
+      "score": 0.383
+    }
+  }
+]

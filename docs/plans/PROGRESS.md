@@ -1,7 +1,7 @@
-# Fortschritt M0 — Gerüst
+# Fortschritt
 
-**M0 ist fertig (alle 7 Tasks, 2026-07-27).** Nächster Meilenstein: M1 (Mini-Prototyp
-end-to-end, siehe Notizen zu Task 7 unten und Plan Abschnitt 8).
+**M0 (Gerüst) und M1 (Mini-Prototyp end-to-end) sind fertig (2026-07-27).** Nächster
+Meilenstein: M2 — Story-Engine vertiefen (siehe Notizen zu M1.8 unten und Plan Abschnitt 8).
 
 Diese Datei ist die **einzige verlässliche Quelle** für den Arbeitsstand. Chat-Verläufe und
 Task-Listen überleben ein Session-Limit nicht, diese Datei schon.
@@ -45,7 +45,7 @@ Task-Nummerierung (M1.1, M1.2, ...), da M0 abgeschlossen ist.
 | M1.5 | `design.py` Rendering (SVG→PNG), minimale SVG-Templates | ✅ fertig | `f6bf4de` |
 | M1.6 | `map.py` Route-Reveal-Frames | ✅ fertig | `0b4f4f0` |
 | M1.7 | `render.py` (Filtergraph-Bau, Proxy-Render), `cli.py` `preview` verdrahtet | ✅ fertig | `44fffda` |
-| M1.8 | `projects/proto/` anlegen, komplett durch die Pipeline bis zum Preview | ⬜ offen | |
+| M1.8 | `projects/proto/` anlegen, komplett durch die Pipeline bis zum Preview | ✅ fertig | siehe Notizen |
 
 ### M1.1 — Notizen (2026-07-27)
 
@@ -394,6 +394,71 @@ komplett durch die Pipeline bis zu einem abspielbaren 60–90-s-Preview). Das er
 bisherigen Stubs (`ingest.scan_media`, `probe.py`, `analyze.py`, `keyframes.py`, `index.
 write_asset`, `render.build_filtergraph`/`render_proxy`, `design.build_svg_from_tokens`/
 `render_svg_to_png`, `map.render_route_frames`) durch echte Implementierungen zu ersetzen.
+
+### M1.8 — Notizen (2026-07-27)
+
+`projects/proto/` komplett durch die Pipeline gebaut: `new` → `ingest` → `index` (CV-Analyse +
+Keyframes + Beschreibungen für 3 Clips + 2 Fotos, deterministisch statt über den
+`media-indexer`-Agenten — siehe unten) → `design` (Tokens) → `brief` → Beat-Sheet →
+`timeline.json` (5 Video-Clips, 1 Titel-Overlay, 1 Karten-Clip, Musik + 1 O-Ton-Fenster mit
+Ducking) → `frameforge preview` liefert ein abspielbares 10.5s/320×240-H.264-MP4.
+
+**Abweichung vom Plan, bewusst und begründet:** Das Testmaterial
+(`tests/fixtures/proto_media/`, winzige synthetische FFmpeg-Testsrc-Clips + generierte
+Fotos) ist absichtlich sekundenkurz — echtes 60–90s-Footage für einen "Norwegen-Roadtrip"
+zu simulieren wäre unehrlich. `brief.yaml` setzt `target_duration_s: 12` statt der
+60–90s aus Plan §8; die Pipeline-Mechanik (Gates, Ingest, Index, Design, Brief, Timeline,
+Render mit Overlay/Karte/Audio-Mix/Ducking) ist dieselbe, die auch ein echtes Projekt
+durchläuft. Aufbau-Skript: `tests/fixtures/build_proto_project.py` (reproduzierbar via
+`.venv/bin/python tests/fixtures/build_proto_project.py`).
+
+**`media-indexer`-Agent nicht live aufgerufen.** Asset-Beschreibungen/Tags/Ratings für die
+5 synthetischen Test-Assets sind im Build-Skript hart codiert statt von Claude Vision
+generiert — bei reinem FFmpeg-Testsrc-Rauschen und Einfarb-Fotos gäbe es nichts Sinnvolles
+zu beschreiben. Die reale Nutzung über `/ff-index` mit dem `media-indexer`-Agenten ist davon
+unberührt (Task 5), dieses Skript ersetzt sie nur für das Test-Fixture.
+
+**Zwei Bugs beim ersten echten End-to-End-Lauf gefunden und behoben, beide in
+`render.build_filtergraph`:**
+
+1. **Runaway (unendliche Render-Laufzeit).** `ffmpeg`s `overlay`-Filter hat einen eigenen
+   `shortest`-Parameter (default `0`), unabhängig vom globalen `-shortest`-Flag. Das
+   Titel-Overlay-PNG kommt als `-loop 1`-Input ohne Ende herein; ohne `shortest=1` am
+   Overlay-Filter wartet `ffmpeg` auf das Ende des **längeren** Inputs (des unendlichen
+   Bildes) statt auf das Ende des kürzeren Hauptvideos — der Render lief 30+ Minuten und
+   wuchs unbegrenzt (38 MB und weiter), bis er manuell gekillt wurde. Fix: `shortest=1` an
+   beiden `overlay`-Aufrufen (Titel- und Karten-Kompositing).
+2. **Deadlock im ffmpeg-Scheduler** (nach Fix 1 reproduziert, mit `sample`/`sch_wait`
+   diagnostiziert): der komplexe Graph mit 9 Inputs (davon zwei `-loop 1`-Bilder, eines
+   *ohne* `-framerate`) blockierte den internen Scheduler dauerhaft — 0 % CPU, keine
+   Fortschritt über 5+ Minuten. Fix: `-framerate {timeline.fps}` auch am Overlay-PNG-Input
+   gesetzt (Konsistenz mit den bereits `-framerate`-versehenen Foto-Inputs der Video-Spur).
+   Nach beiden Fixes lief der komplette 9-Input-Graph durch, ohne zu hängen.
+
+**Zusätzliches Sicherheitsnetz ergänzt:** `render._run_ffmpeg` hat jetzt ein Timeout
+(`max(120, duration*30)` Sekunden) und wirft `RenderError` statt den Prozess unbegrenzt
+laufen zu lassen — hätte Bug 1 automatisch nach 315s abgebrochen statt manuellen Eingriff
+zu brauchen. Regressionstests: `tests/test_render.py` prüft jetzt explizit `shortest=1` im
+generierten Filtergraph und rendert einen echten Clip mit Overlay End-to-End.
+
+**Nebenbei gefundener Infrastruktur-Bug:** die editable Installation aus Task 1
+(`uv pip install -e ".[dev]"`) hatte keinen funktionierenden Editable-Finder in
+`site-packages` — `import frameforge` funktionierte nur zufällig, weil `pytest` und
+`python -m frameforge` immer mit `cwd` = Repo-Root liefen (das setzt `sys.path[0]`
+implizit auf den Ort, an dem `frameforge/` liegt). Ein eigenständiges Skript wie
+`build_proto_project.py`, aus einem anderen Verzeichnis oder direkt per Dateipfad gestartet,
+schlug fehl. Fix: `uv pip install -e ".[dev]" --reinstall-package frameforge` — legt jetzt
+`_editable_impl_frameforge.pth` in `site-packages` an. Kein Code-Fix nötig, reine
+Umgebungskorrektur; für zukünftige Sessions relevant, falls `.venv/` neu aufgesetzt wird.
+
+`.gitignore` um `projects/*/.state.lock` ergänzt (Lock-Datei-Artefakt, gehört nicht ins Repo).
+
+**M1 (Mini-Prototyp end-to-end) ist damit komplett.** Alle 8 Teilschritte fertig. `pytest`
+grün (113 Tests), `ruff` sauber, `doctor` grün, `projects/proto/` mit Config/Index/Design/
+Route/Brief/Beatsheet/Timeline im Repo (Render-Artefakte wie gehabt via `.gitignore`
+draussen). Nächster Meilenstein laut Plan: M2 — Story-Engine vertiefen (Clip-Scoring,
+Musik-Sync auf Beat-Grid, `qc-reviewer` mit echtem Regelsatz, echte Übergänge/Ken-Burns im
+Renderer).
 
 ### Hinweis zu Commit `849ff6d`
 

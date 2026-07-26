@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "export": "teaser",
+  "fps": 25.0,
+  "resolution": [
+    320,
+    240
+  ],
+  "duration": 10.5,
+  "tracks": {
+    "video": [
+      {
+        "id": "c1",
+        "asset": "20260714-clip-fjord",
+        "src_in": 0.0,
+        "src_out": 2.2,
+        "tl_in": 0.0,
+        "speed": 1.0,
+        "transition_in": {
+          "type": "fade",
+          "dur": 0.3
+        },
+        "effects": []
+      },
+      {
+        "id": "c2",
+        "asset": "20260714-photo-cabin",
+        "src_in": 0.0,
+        "src_out": 2.0,
+        "tl_in": 2.2,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c3",
+        "asset": "20260714-clip-drive",
+        "src_in": 0.0,
+        "src_out": 2.0,
+        "tl_in": 4.2,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c4",
+        "asset": "20260714-clip-water",
+        "src_in": 0.0,
+        "src_out": 2.0,
+        "tl_in": 6.2,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c5",
+        "asset": "20260714-photo-family",
+        "src_in": 0.0,
+        "src_out": 2.0,
+        "tl_in": 8.2,
+        "speed": 1.0,
+        "effects": []
+      }
+    ],
+    "overlay": [
+      {
+        "id": "o1",
+        "png": "overlays/title.png",
+        "tl_in": 0.0,
+        "dur": 2.2
+      }
+    ],
+    "map": [
+      {
+        "id": "m1",
+        "clip": "map/leg-01.mov",
+        "tl_in": 6.2,
+        "dur": 2.0,
+        "blend": "over"
+      }
+    ],
+    "audio": [
+      {
+        "id": "a1",
+        "src": "music/theme.wav",
+        "tl_in": 0.0,
+        "gain_db": -8.0
+      },
+      {
+        "id": "a2",
+        "asset": "20260714-clip-drive",
+        "type": "original",
+        "tl_in": 4.2,
+        "dur": 2.0,
+        "duck_music_db": -14.0
+      }
+    ]
+  }
+}

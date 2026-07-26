@@ -8,6 +8,7 @@ Teil des Mini-Prototyps.
 
 from __future__ import annotations
 
+import subprocess
 from pathlib import Path
 
 from PIL import Image, ImageDraw
@@ -77,3 +78,29 @@ def render_route_frames(
         outputs.append(target)
 
     return outputs
+
+
+def encode_alpha_video(frames_dir: Path, out_path: Path, *, fps: float) -> Path:
+    """Kodiert eine `frame_%04d.png`-Sequenz zu einem `.mov` mit Alphakanal (QuickTime Animation).
+
+    `render.build_filtergraph` erwartet `MapClip.clip` als fertigen Videoclip (Plan §4:
+    `"clip": "map/leg-01.mov"`) — dieser Schritt macht aus `render_route_frames`-Output genau das.
+    """
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    subprocess.run(
+        [
+            "ffmpeg",
+            "-y",
+            "-framerate",
+            str(fps),
+            "-i",
+            str(frames_dir / "frame_%04d.png"),
+            "-c:v",
+            "qtrle",
+            "-loglevel",
+            "error",
+            str(out_path),
+        ],
+        check=True,
+    )
+    return out_path

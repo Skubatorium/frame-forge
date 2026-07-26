@@ -9,7 +9,8 @@ import pytest
 from PIL import Image
 
 from frameforge.gpx import parse_gpx
-from frameforge.map import render_route_frames
+from frameforge.map import encode_alpha_video, render_route_frames
+from frameforge.probe import probe_video
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
@@ -54,3 +55,17 @@ def test_render_route_frames_respects_custom_resolution(track, tmp_path):
 def test_render_route_frames_requires_at_least_two_points(tmp_path):
     with pytest.raises(ValueError, match="mindestens 2"):
         render_route_frames([{"lat": 0.0, "lon": 0.0}], tmp_path, fps=1, dur=1.0)
+
+
+def test_encode_alpha_video_produces_probeable_clip(track, tmp_path):
+    frames_dir = tmp_path / "frames"
+    render_route_frames(track, frames_dir, fps=5, dur=1.0, width=320, height=180)
+    out = tmp_path / "map" / "leg-01.mov"
+
+    result = encode_alpha_video(frames_dir, out, fps=5)
+
+    assert result == out
+    assert out.exists()
+    probed = probe_video(out)
+    assert probed["w"] == 320
+    assert probed["h"] == 180

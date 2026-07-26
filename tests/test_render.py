@@ -80,8 +80,14 @@ def test_build_filtergraph_overlay_adds_input_and_enable_window():
         export_root=Path("/export"),
         project_root=Path("/project"),
     )
-    assert graph.input_args[1] == ["-loop", "1", "-i", "/export/overlays/title.png"]
+    assert graph.input_args[1] == [
+        "-loop", "1", "-framerate", "25.0", "-i", "/export/overlays/title.png",
+    ]
     assert "between(t,0.5,1.5)" in graph.filter_complex
+    assert "shortest=1" in graph.filter_complex, (
+        "overlay-Filter braucht shortest=1, sonst laeuft ffmpeg mit einem '-loop 1'-Bild "
+        "als unendlichem Input nie ab (siehe PROGRESS.md M1.8 — Runaway-Bug)"
+    )
 
 
 def test_build_filtergraph_map_clip_shifts_by_tl_in():
@@ -190,6 +196,32 @@ def test_render_proxy_produces_playable_video(proj):
     assert result["dur"] == pytest.approx(1.5, abs=0.3)
     assert result["w"] == 320
     assert result["h"] == 240
+
+
+def test_render_proxy_with_overlay_terminates(proj):
+    """Regressionstest: `-loop 1`-Overlay-PNG darf `ffmpeg` nicht endlos laufen lassen
+
+    (siehe PROGRESS.md M1.8 — Runaway-Bug, gefunden beim Bau von `projects/proto/`).
+    """
+    export = proj.export("teaser")
+    export.overlays_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copy(FIXTURES / "photo.jpg", export.overlays_dir / "title.png")
+
+    timeline = Timeline(
+        export="teaser",
+        fps=25,
+        resolution=(320, 240),
+        duration=1.5,
+        tracks={
+            "video": [{"id": "c1", "asset": "clip1", "src_in": 0, "src_out": 1.5, "tl_in": 0}],
+            "overlay": [{"id": "o1", "png": "overlays/title.png", "tl_in": 0.0, "dur": 1.5}],
+        },
+    )
+
+    out_path = render_proxy(proj, export, timeline)
+
+    result = probe_video(out_path)
+    assert result["dur"] == pytest.approx(1.5, abs=0.3)
 
 
 def test_render_proxy_missing_asset_raises(proj):
