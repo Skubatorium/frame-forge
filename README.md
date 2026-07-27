@@ -157,11 +157,22 @@ frameforge query norwegen-2026 --tag fjord --min-rating 4
 ```
 
 Der **`design-system`-Agent** führt durch Stimmung → Farbpalette → Typo → Motion und schreibt
-`design/tokens.yaml`. Fehlende Grafiken (Logo, Marker-Icon …) landen als fertige Prompts in
-`design/prompts.md`; die Bilder legst du selbst in `design/assets/` ab. → Phase `DESIGNED`.
+`design/tokens.yaml` (Aufbau als Referenz: `templates/project/tokens.example.yaml`). → Phase
+`DESIGNED`.
 
-`tokens.yaml` speist alle SVG-Overlays (Titel, Bauchbinde, Kapitelkarte, Credits) — **ein**
-Designsystem für alle Exporte des Projekts, damit Teaser und Hauptfilm wie eine Familie wirken.
+**Was Claude macht vs. was du machst:**
+- **Farben/Schrift/Motion** (`tokens.yaml`) — macht Claude im Gespräch, **kein externes Tool**.
+- **Text-Overlays** (Titel, Bauchbinde, Kapitelkarte, Credits) — entstehen **automatisch** aus
+  `tokens.yaml` + den SVG-Vorlagen (`templates/svg/`). Gestaltest du nicht selbst.
+- **Echte Grafiken** (Logo, Marker-Icon, Freisteller) — das Einzige „extern" und **optional**:
+  der Agent schreibt fertige Prompts nach `design/prompts.md` (Vorlage:
+  `templates/prompts/graphics.md`, Konvention PNG mit Alpha). Du erzeugst die Bilder in einem
+  Bildgenerator und legst sie in `design/assets/`; der Wizard pausiert und macht dann weiter.
+  Ohne eigene Grafiken läuft das Projekt trotzdem durch.
+- **Eigene Schriftdatei** (statt System-Schrift): `.ttf` nach `design/fonts/`.
+
+`tokens.yaml` speist alle SVG-Overlays — **ein** Designsystem für alle Exporte des Projekts,
+damit Teaser und Hauptfilm wie eine Familie wirken.
 
 ### Schritt 5 — Export briefen
 
@@ -314,7 +325,7 @@ Build** klären:
 | Audio-Quelle | Wo / wie |
 |---|---|
 | **Eigene Musik** (lizenziert) | Datei nach `projects/<projekt>/music/*.wav` legen. Projektweit — alle Exporte können daraus wählen. |
-| **KI-Musik** (kein Track zur Hand) | Der `audio-designer` schreibt einen Prompt (Tempo/Stimmung/Länge). Du erzeugst den Track extern (z. B. Suno/Udio), lädst ihn herunter, legst ihn nach `music/` — der Ablauf pausiert und macht danach weiter (wie bei den Design-Tokens). |
+| **KI-Musik** (kein Track zur Hand) | Der `audio-designer` schreibt einen Prompt (Vorlage `templates/prompts/music.md`: instrumental, Länge, Energieverlauf). Du erzeugst den Track extern (z. B. Suno/Udio), lädst ihn herunter, legst ihn nach `music/` — der Ablauf pausiert und macht danach weiter (wie bei den Design-Tokens). |
 | **O-Ton** (Ton aus den Clips) | Kommt automatisch, wo der Brief es vorsieht; die Musik wird an diesen Stellen automatisch abgesenkt (**Ducking**). |
 
 Ein neuer Export mit **anderem Sound** braucht also nur andere Tracks in `music/` (oder eine

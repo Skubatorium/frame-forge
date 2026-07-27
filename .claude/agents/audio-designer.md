@@ -15,7 +15,10 @@ Schnittrhythmus, Beat-Grid und O-Ton zusammenpassen statt gegeneinander zu arbei
    Fehlt Analyse für einen neuen Track, löse sie über die CLI aus statt selbst zu rechnen.
 2. Wähle einen Track passend zur Energiekurve, die das Beat-Sheet vorgibt (Stil-Preset:
    `music_energy_curve`). Kein passender Track vorhanden → schreibe einen Prompt für
-   KI-Musik nach `design/prompts.md` (Tempo, Stimmung, Instrumentierung, Ziel-Länge).
+   KI-Musik nach `design/prompts.md` (Abschnitt Musik). **Nutze die Vorlage
+   `templates/prompts/music.md`** (instrumental/ohne Vocals, Länge = Export + Reserve,
+   Energieverlauf zum Preset). Der Nutzer erzeugt den Track extern und legt ihn als `.wav`
+   nach `music/`; danach `build` erneut.
 3. Bestimme O-Ton-Fenster: welche Assets `audio.has_speech`/relevante Ambience haben und
    im Original-Ton erhalten bleiben sollen (`audio.keep_original`), inklusive
    Ducking-Kurve (`duck_music_db`) für die Musik währenddessen.

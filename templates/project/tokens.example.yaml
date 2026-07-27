@@ -1,0 +1,30 @@
+# Beispiel fuer design/tokens.yaml — das Designsystem eines Projekts.
+#
+# Der design-system-Agent schreibt diese Datei aus einem kurzen Gespraech (Stimmung ->
+# Palette + Schriften). Du musst sie in der Regel nicht von Hand pflegen — dies ist nur eine
+# Referenz, damit du siehst, was drinsteht und was die Text-Overlays daraus nutzen.
+#
+# Ein Projekt hat EIN tokens.yaml fuer ALLE Exporte (gemeinsame visuelle Familie).
+
+# -- Farben (werden von den SVG-Overlays direkt genutzt) ---------------------
+primary_color: "#12222f"    # Basis/Flaechen (z. B. Bauchbinden-Balken)
+accent_color: "#e0a458"     # Akzent (Untertitel, Kapitel-Nummer, Marker)
+text_color: "#ffffff"       # Text auf Bild — auf Kontrast zu hellem UND dunklem Grund achten
+secondary_color: "#3a5a6b"  # optionale Zweitfarbe (reserviert)
+
+# -- Schriften (werden von den SVG-Overlays direkt genutzt) ------------------
+# Namen installierter System-Schriften ODER Dateien in design/fonts/ (dann exakter Name).
+font_display: "Helvetica Neue"   # Titel/Display (Titelkarte, Kapitel-Titel)
+font_text: "Helvetica Neue"      # Fliesstext (Bauchbinde, Credits-Zeilen)
+
+# -- Motion (Designsystem-Ebene; von den Agenten fuer Ein-/Ausblenden genutzt) -
+motion:
+  fade_in_s: 0.4
+  fade_out_s: 0.5
+  overlay_hold_min_s: 1.5   # Overlays nicht kuerzer einblenden (QC-Lesbarkeit)
+
+# -- Typo-Skala (reserviert; Overlay-Groessen kommen aktuell beim Rendern) ----
+type_scale:
+  title: 96
+  subtitle: 36
+  caption: 28
