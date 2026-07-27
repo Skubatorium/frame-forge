@@ -125,6 +125,8 @@ def test_build_filtergraph_audio_mixes_and_applies_gain():
     assert graph.audio_label == "aout"
     assert "/project/music/track.wav" in str(graph.input_args)
     assert "amix=inputs=1" in graph.filter_complex
+    # normalize=0, sonst wuerde amix die gesetzten Pegel automatisch mit 1/n skalieren.
+    assert "normalize=0" in graph.filter_complex
 
 
 def test_build_filtergraph_duck_window_reduces_music_volume():

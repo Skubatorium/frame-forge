@@ -173,8 +173,12 @@ def build_filtergraph(
 
     if audio_labels:
         mix_inputs = "".join(f"[{lbl}]" for lbl in audio_labels)
+        # normalize=0: amix skaliert sonst automatisch mit 1/n und macht die explizit
+        # gesetzten gain_db-/Ducking-Werte bedeutungslos (halbierter Pegel bei 2 Spuren).
+        # Die absoluten Pegel steuern wir ueber die volume-Gains + loudnorm (Final).
         filters.append(
-            f"{mix_inputs}amix=inputs={len(audio_labels)}:duration=longest:dropout_transition=0[aout]"
+            f"{mix_inputs}amix=inputs={len(audio_labels)}:normalize=0:"
+            f"duration=longest:dropout_transition=0[aout]"
         )
         graph.audio_label = "aout"
         if loudness_normalize:
