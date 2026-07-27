@@ -205,8 +205,10 @@ def status(project: str) -> None:
 
 
 # -- Pipeline-Kommandos ---------------------------------------------------
-# Gates werden hier geprueft; Module ohne CV-/LLM-Abhaengigkeit sind bereits echt
-# implementiert (siehe docs/plans/PROGRESS.md, M1), der Rest bis M1 abgeschlossen ist Stub.
+# Gates werden hier geprueft (Guertel), zusaetzlich vom PreToolUse-Hook (Hosentraeger).
+# `brief`/`build` sind bewusst reine Gate-Wrapper: die kreative Arbeit (Beat-Sheet,
+# Timeline-Bau) macht ein Sub-Agent, nicht die CLI (siehe .claude/commands/ff-brief,
+# ff-build). Sie brechen daher nach dem Gate mit Hinweis ab.
 
 
 @app.command()
@@ -318,7 +320,10 @@ def design_cmd(project: str) -> None:
 
 @app.command()
 def brief(project: str, export: str) -> None:
-    """Export-Briefing. Erfordert Projekt-Phase >= DESIGNED. Wizard kommt mit Task 5 (`/ff-brief`)."""
+    """Prueft nur das Gate (Projekt-Phase >= DESIGNED). Das Briefing selbst fuehrt der
+
+    `/ff-brief`-Wizard mit dem Nutzer durch und schreibt `brief.yaml` — nicht diese CLI.
+    """
     proj = _resolve_or_fail(project)
     state = proj.load_state()
     try:
@@ -326,22 +331,28 @@ def brief(project: str, export: str) -> None:
     except GateError as exc:
         raise _fail(str(exc)) from exc
     console.print(
-        f"[yellow]Noch nicht implementiert:[/yellow] brief-Wizard fuer '{export}' kommt mit "
-        "dem `/ff-brief`-Slash-Command (Task 5)"
+        f"[yellow]Gate offen fuer '{export}'.[/yellow] Das Briefing macht der /ff-brief-Wizard "
+        "(schreibt brief.yaml), nicht dieses Kommando."
     )
     raise typer.Exit(code=1)
 
 
 @app.command()
 def build(project: str, export: str) -> None:
-    """Story -> Timeline. Erfordert Export-Phase >= BRIEFED. Timeline-Builder kommt in M1."""
+    """Prueft nur das Gate (Export-Phase >= BRIEFED). Beat-Sheet und `timeline.json` bauen
+
+    die Sub-Agenten `story-architect`/`timeline-builder` (siehe `/ff-build`), nicht diese CLI.
+    """
     proj = _resolve_or_fail(project)
     state = proj.load_state()
     try:
         gate_build(state, export)
     except GateError as exc:
         raise _fail(str(exc)) from exc
-    console.print("[yellow]Noch nicht implementiert:[/yellow] timeline-builder kommt in M1")
+    console.print(
+        f"[yellow]Gate offen fuer '{export}'.[/yellow] Timeline baut der /ff-build-Ablauf "
+        "(story-architect + timeline-builder), nicht dieses Kommando."
+    )
     raise typer.Exit(code=1)
 
 

@@ -18,12 +18,16 @@ Arbeitsstand: `docs/plans/PROGRESS.md`. Prozess als Referenz für Menschen: `doc
 ## Setup
 
 ```bash
-uv venv
-uv pip install -e ".[dev]"
+uv sync --extra dev    # reproduzierbar aus uv.lock
 .venv/bin/python -m frameforge doctor
 ```
 
-`doctor` muss grün sein, bevor irgendein Pipeline-Schritt läuft.
+`uv sync` installiert exakt die in `uv.lock` festgehaltenen Versionen (reproduzierbare
+Umgebung). `doctor` muss grün sein, bevor irgendein Pipeline-Schritt läuft.
+
+`face_recognition`/`dlib` werden aus C++ kompiliert (einmalig einige Minuten). Nach einem
+Neuaufbau von `.venv` das Package editable installieren, damit `import frameforge` von überall
+funktioniert: `uv pip install -e ".[dev]"` bzw. `uv sync` verwendet es bereits als lokales Paket.
 
 ## Nutzung
 
