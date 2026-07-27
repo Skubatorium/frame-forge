@@ -23,6 +23,7 @@ from rich.table import Table
 from frameforge import design, qc
 from frameforge import index as index_module
 from frameforge import ingest as ingest_module
+from frameforge import nle as nle_module
 from frameforge import render as render_module
 from frameforge.project import (
     CACHE_ROOT,
@@ -59,11 +60,6 @@ def _resolve_or_fail(project: str) -> Project:
         return resolve_project(project)
     except ProjectNotFoundError as exc:
         raise _fail(str(exc)) from exc
-
-
-def _not_implemented(exc: NotImplementedError) -> typer.Exit:
-    console.print(f"[yellow]Noch nicht implementiert:[/yellow] {exc}")
-    return typer.Exit(code=1)
 
 
 # -- doctor -------------------------------------------------------------
@@ -275,12 +271,22 @@ def query(
 
 @app.command(name="design")
 def design_cmd(project: str) -> None:
-    """Designsystem-Wizard: Tokens, SVG-Templates, Grafik-Prompts. Verarbeitung kommt in M1."""
+    """Uebernimmt `design/tokens.yaml` als Designsystem, setzt Projekt-Phase auf DESIGNED.
+
+    Der eigentliche Wizard (Stimmung -> Farbpalette/Typo -> Motion -> Asset-Inventur) ist
+    Sache des `design-system`-Agenten (`/ff-design`, Task 5) — der schreibt `tokens.yaml`,
+    bevor dieses Kommando läuft. SVG-Rendering selbst passiert erst beim Timeline-Bau
+    (`design.render_svg_to_png` pro Overlay), nicht hier global fuer das ganze Projekt.
+    """
     proj = _resolve_or_fail(project)
-    try:
-        design.build_svg_from_tokens(proj.design_dir / "tokens.yaml", {})
-    except NotImplementedError as exc:
-        raise _not_implemented(exc) from exc
+    if not proj.design_tokens_path.exists():
+        raise _fail(
+            f"{proj.design_tokens_path} fehlt — zuerst Tokens definieren (siehe /ff-design)"
+        )
+    state = proj.load_state()
+    state.advance_project(Phase.DESIGNED)
+    state.save()
+    console.print(f"[green]Designsystem uebernommen:[/green] {proj.design_tokens_path}")
 
 
 @app.command()
@@ -345,13 +351,53 @@ def preview(project: str, export: str) -> None:
 def render(project: str, export: str) -> None:
     """Final-Render (4K). Erfordert Export-Phase == APPROVED (explizite Freigabe nach Preview)."""
     proj = _resolve_or_fail(project)
+    exp = proj.export(export)
     state = proj.load_state()
     try:
         gate_render_final(state, export)
     except GateError as exc:
         raise _fail(str(exc)) from exc
-    console.print("[yellow]Noch nicht implementiert:[/yellow] render.render_final kommt in M4")
-    raise typer.Exit(code=1)
+
+    timeline = Timeline.load(exp.timeline_path)
+    try:
+        out_path = render_module.render_final(proj, exp, timeline)
+    except render_module.RenderError as exc:
+        raise _fail(str(exc)) from exc
+
+    state.advance_export(export, Phase.RENDERED)
+    state.save()
+    console.print(f"[green]Final-Render fertig:[/green] {out_path}")
+
+
+@app.command()
+def nle(
+    project: str,
+    export: str,
+    nle_format: str = typer.Option("fcpxml", "--format", help="fcpxml oder otio"),
+) -> None:
+    """FCPXML/OTIO-Export fuer DaVinci Resolve. Erfordert eine gebaute `timeline.json`."""
+    if nle_format not in ("fcpxml", "otio"):
+        raise _fail("--format muss 'fcpxml' oder 'otio' sein")
+
+    proj = _resolve_or_fail(project)
+    exp = proj.export(export)
+    if not exp.timeline_path.exists():
+        raise _fail(f"{exp.timeline_path} existiert nicht — zuerst 'frameforge build' ausfuehren")
+
+    timeline = Timeline.load(exp.timeline_path)
+    assets_by_id = {a["id"]: a for a in index_module.load_assets(proj)}
+
+    def resolve(asset_id: str) -> Path:
+        asset = assets_by_id.get(asset_id)
+        if asset is None:
+            raise _fail(f"Asset '{asset_id}' nicht in assets.json gefunden")
+        return (proj.config.media_root / asset["path"]).resolve()
+
+    exp.nle_dir.mkdir(parents=True, exist_ok=True)
+    out_path = exp.nle_dir / f"{export}.{nle_format}"
+    export_fn = nle_module.export_fcpxml if nle_format == "fcpxml" else nle_module.export_otio
+    export_fn(timeline, out_path, resolve_asset=resolve, project_root=proj.root)
+    console.print(f"[green]NLE-Export fertig:[/green] {out_path}")
 
 
 @app.command()

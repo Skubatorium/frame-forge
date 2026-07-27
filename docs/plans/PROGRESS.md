@@ -105,6 +105,92 @@ Größen-Validierung, Tile-Cache-Hit/Miss, Basemap-Zusammensetzung — alle mit 
 Fake-Fetcher, kein echter Netzwerkzugriff). 140 Tests insgesamt grün, `ruff` sauber, `doctor`
 grün.
 
+---
+
+## M4 — Final-Pipeline
+
+Plan Abschnitt 8: "4K-Mapping auf die Originale, Farbkorrektur-Stufe, Loudness-Normalisierung
+(EBU R128), NLE-Export FCPXML + OTIO, Render-Versionierung."
+
+| # | Schritt | Status | Commit |
+|---|------|--------|--------|
+| M4.1 | `render.render_final` (4K-Mapping, EBU-R128-Loudnorm, optionale LUT, Render-Versionierung), `cli.py` `render` verdrahtet | ✅ fertig | siehe Notizen |
+| M4.2 | `nle.py` (FCPXML/OTIO-Export), `cli.py nle`-Kommando | ✅ fertig | siehe Notizen |
+
+### M4.1 — Notizen (2026-07-27)
+
+`render_final(project, export, timeline, *, lut_path=None)`: löst Assets über `assets.json`
+direkt auf die **Original**-Dateien unter `project.config.media_root` auf (kein Proxy-Downscale
+— das "4K-Mapping" ist damit einfach die Konsequenz aus "kein Downscale", `build_filtergraph`
+skaliert ohnehin generisch auf `timeline.resolution`, dafür war kein Sonder-Code nötig).
+
+`build_filtergraph` um zwei generische Hooks erweitert (M3-Prinzip: Infrastruktur, keine feste
+Optik):
+- `lut_path`: optionale 3D-LUT (`.cube`) über den `lut3d`-Filter — keine Grade ist hier fest
+  eingebaut, das liefert das Projekt (Plan §11: "Farbmanagement bei HLG/D-Log-Material").
+- `loudness_normalize`: EBU-R128-Normalisierung (`loudnorm`, Ziel -16 LUFS/-1.5 dBTP) auf
+  den gemischten Audio-Output — nur in `render_final` aktiv, `render_proxy` bleibt unverändert
+  (Preview muss nicht normiert sein).
+
+**Render-Versionierung**: `_next_version_path` scannt `exports/<export>/final/` nach
+`<export>_v<N>.mp4` und wählt das nächste `N` — überschreibt nie einen vorherigen Final-Render.
+
+`cli.py render` rief bisher nur den Platzhalter-Text auf (wie `preview` vor M1.7) — ruft jetzt
+`render.render_final` echt auf, setzt Export-Phase auf `RENDERED`. Kompletter End-to-End-Flow
+manuell verifiziert: `new → ingest → preview → render (vor approve, blockiert) → approve →
+render (nach approve, erfolgreich)`.
+
+13 neue Tests (`tests/test_render.py`: 3 String-Tests für `lut_path`/`loudness_normalize`,
+3 echte Render-Tests inkl. Versionierung und fehlendem Original). 145 Tests insgesamt grün.
+
+### M4.2 — Notizen (2026-07-27)
+
+`nle.py`: `build_otio_timeline` baut aus `Timeline` eine `opentimelineio`-Timeline (eine
+Video-Spur, N parallele Audio-Spuren), `export_otio`/`export_fcpxml` schreiben sie als
+natives `.otio` (JSON, OTIO-Core) bzw. FCPXML.
+
+**Abhängigkeits-Fund:** der FCPXML-Adapter ist seit OTIO 0.17 nicht mehr im Core enthalten
+(aus `opentimelineio-contrib` ausgelagert). Gefunden über `uv pip install --dry-run` einiger
+Kandidaten-Paketnamen — `otio-fcpx-xml-adapter` (Adapter-Name `fcpx_xml`, FCPX-Format statt
+des älteren FCP7-XML, wird von DaVinci Resolve ebenfalls importiert) existiert und ist
+installierbar. Als Dependency in `pyproject.toml` ergänzt.
+
+**Zwei echte Bugs beim ersten Lauf gegen `projects/proto/` gefunden:**
+
+1. **Fehlende `available_range`.** Der `fcpx_xml`-Adapter braucht `media_reference.
+   available_range` (die volle Dauer des Quellmaterials), nicht nur `source_range` (den
+   genutzten Ausschnitt) — ohne das: `AttributeError: 'NoneType' object has no attribute
+   'duration'`. Da `resolve_asset` nur einen Pfad liefert, keine Metadaten, ist die
+   konservative Annahme `available_range = source_range` (mindestens das Genutzte ist
+   verfügbar) — keine echte Asset-Gesamtdauer, aber ausreichend für einen validen Export.
+2. **Überlappende Audio-Clips in einem Track.** `otio.schema.Track`-Items dürfen sich nicht
+   überlappen (wie unsere Video-Spur) — Musikbett + gleichzeitiger O-Ton wurden aber beide in
+   einen einzigen Audio-Track geschrieben, was den `fcpx_xml`-Adapter mit `AttributeError:
+   'NoneType' object has no attribute 'get'` zum Absturz brachte (kaputte
+   Offset-Berechnung bei impliziten Overlaps). Fix: `_pack_lanes()` (Greedy-Interval-Packing)
+   verteilt überlappende Audio-Clips auf so viele parallele Audio-Spuren wie nötig — exakt
+   wie ein NLE das normalerweise darstellt.
+
+`cli.py` neues Kommando `nle <projekt> <export> --format fcpxml|otio`, schreibt nach
+`exports/<export>/nle/<export>.<format>`. `.gitignore` um `projects/*/exports/*/nle/`
+ergänzt (generiertes Artefakt aus `timeline.json`, wie `preview/`/`final/`).
+
+Nebenbei denselben Bug-Typ wie in M1.3 (`write_asset({})`) noch einmal gefunden und gefixt:
+`cli.py design` rief `design.build_svg_from_tokens(tokens.yaml-Pfad, {})` auf — seit
+`build_svg_from_tokens` in M1.5 echt ist, ist das kein sinnvoller Aufruf mehr (Tokens-Datei
+wird nicht als SVG-Template gelesen). Fix: `design` prüft jetzt, ob `design/tokens.yaml`
+existiert, und setzt bei Erfolg die Projekt-Phase auf `DESIGNED` — kein Platzhalter-Aufruf
+mehr. `tests/test_stubs.py` gelöscht: nach M4.2 gibt es im gesamten Package keine
+`NotImplementedError`-Stubs mehr, die Datei hatte keinen Zweck mehr.
+
+16 neue Tests (`tests/test_nle.py`: 9, `tests/test_cli.py`: 7 neue für `design`/`nle`).
+157 Tests insgesamt grün, `ruff` sauber, `doctor` grün.
+
+**M4 ist damit komplett — alle Punkte aus Plan Abschnitt 8 (M0–M4) umgesetzt**, inklusive der
+generischen M3-Infrastruktur. Was laut Plan explizit offen bleibt: M5 (Norwegen-Realbetrieb —
+echtes Material, kein Code-Meilenstein) und die in Plan §11 gelisteten "Offenen Punkte für
+später" (Gesichtserkennung, automatische Untertitel, Musik-Lizenz-Nachweis).
+
 ### M2.1 — Notizen (2026-07-27)
 
 `audio.py`: `analyze_track` nutzt `librosa.beat.beat_track` (BPM + Beat-Grid) und

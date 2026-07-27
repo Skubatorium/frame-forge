@@ -21,6 +21,9 @@ dependencies = [
     "staticmap>=0.5.7",
     "cairosvg>=2.7",
     "opentimelineio>=0.17",
+    # Kein FCPXML-Adapter im OTIO-Core mehr (aus opentimelineio-contrib ausgelagert) -
+    # otio-fcpx-xml-adapter liefert den "fcpx_xml"-Adapter fuer nle.export_fcpxml.
+    "otio-fcpx-xml-adapter>=1.0",
 ]
 
 [project.optional-dependencies]

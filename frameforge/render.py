@@ -51,6 +51,8 @@ def build_filtergraph(
     resolve_asset: Callable[[str], Path],
     export_root: Path,
     project_root: Path,
+    lut_path: Path | None = None,
+    loudness_normalize: bool = False,
 ) -> FilterGraph:
     """Baut Input-Liste und `filter_complex`-String aus einer validierten Timeline.
 
@@ -58,6 +60,12 @@ def build_filtergraph(
     Overlay-PNGs/Karten-Clips werden relativ zu `export_root` aufgeloest (`overlays/…`,
     `map/…`), Musik relativ zu `project_root` (`music/…`) — passend zur Projekt-Struktur
     aus Plan §1.
+
+    `lut_path`: optionale 3D-LUT (`.cube`) fuer Farbkorrektur — generischer Hook, keine
+    Grade ist hier fest eingebaut, das liefert das Projekt (siehe Plan §11: "Farbmanagement
+    bei HLG/D-Log-Material"). `loudness_normalize`: EBU-R128-Loudness-Normalisierung
+    (`loudnorm`, Ziel -16 LUFS/-1.5 dBTP — Streaming-Standardwerte) auf den gemischten
+    Audio-Output.
     """
     graph = FilterGraph()
     filters: list[str] = []
@@ -118,6 +126,11 @@ def build_filtergraph(
         )
         cur_video = next_video
 
+    if lut_path is not None:
+        graded = f"{cur_video}_graded"
+        filters.append(f"[{cur_video}]lut3d=file='{lut_path}'[{graded}]")
+        cur_video = graded
+
     graph.video_label = cur_video
 
     # -- Audio: pro Clip trimmen/verzoegern/Pegel, Musik-Ducking, dann amix ----------
@@ -164,6 +177,9 @@ def build_filtergraph(
             f"{mix_inputs}amix=inputs={len(audio_labels)}:duration=longest:dropout_transition=0[aout]"
         )
         graph.audio_label = "aout"
+        if loudness_normalize:
+            filters.append(f"[{graph.audio_label}]loudnorm=I=-16:TP=-1.5:LRA=11[aout_norm]")
+            graph.audio_label = "aout_norm"
 
     graph.filter_complex = ";".join(filters)
     return graph
@@ -232,6 +248,45 @@ def render_proxy(project: Project, export: Export, timeline: Timeline) -> Path:
     return out_path
 
 
-def render_final(project: Project, export: Export, timeline: Timeline) -> Path:
-    """4K-Final-Render, mappt automatisch auf die Original-Assets. Kommt in M4."""
-    raise NotImplementedError("render.render_final (4K-Mapping, EBU R128) kommt in M4")
+def _next_version_path(directory: Path, stem: str, ext: str) -> Path:
+    """Naechster freier `<stem>_v<N><ext>`-Pfad — Render-Versionierung statt Overschreiben."""
+    directory.mkdir(parents=True, exist_ok=True)
+    existing = sorted(directory.glob(f"{stem}_v*{ext}"))
+    max_version = 0
+    for path in existing:
+        suffix = path.stem.rsplit("_v", 1)[-1]
+        if suffix.isdigit():
+            max_version = max(max_version, int(suffix))
+    return directory / f"{stem}_v{max_version + 1}{ext}"
+
+
+def render_final(
+    project: Project, export: Export, timeline: Timeline, *, lut_path: Path | None = None
+) -> Path:
+    """4K-Final-Render: mappt auf die Original-Assets (kein Proxy-Downscale), EBU-R128-
+
+    Loudness-Normalisierung, optionale Farbkorrektur-LUT, versionierte Ausgabedatei
+    (`<export>_v<N>.mp4` statt Überschreiben).
+    """
+    assets_by_id = {a["id"]: a for a in load_assets(project)}
+
+    def resolve(asset_id: str) -> Path:
+        asset = assets_by_id.get(asset_id)
+        if asset is None:
+            raise RenderError(f"Asset '{asset_id}' nicht in assets.json gefunden")
+        original = project.config.media_root / asset["path"]
+        if not original.exists():
+            raise RenderError(f"Original-Asset '{asset_id}' nicht gefunden unter {original}")
+        return original
+
+    graph = build_filtergraph(
+        timeline,
+        resolve_asset=resolve,
+        export_root=export.root,
+        project_root=project.root,
+        lut_path=lut_path,
+        loudness_normalize=True,
+    )
+    out_path = _next_version_path(export.final_dir, export.name, ".mp4")
+    _run_ffmpeg(graph, timeline, out_path)
+    return out_path

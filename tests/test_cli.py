@@ -76,3 +76,63 @@ def test_index_skips_assets_already_in_assets_json(env):
     result = runner.invoke(app, ["index", "proto"])
 
     assert "1 noch nicht indiziert" in result.output
+
+
+# -- design: Regressionstest fuer den write_asset({})-Klasse-Bug ------------------
+
+
+def test_design_without_tokens_yaml_fails_cleanly(env):
+    result = runner.invoke(app, ["design", "proto"])
+    assert result.exit_code == 1
+    assert "tokens.yaml" in result.output
+
+
+def test_design_with_tokens_yaml_advances_phase(env):
+    env.design_dir.mkdir(parents=True, exist_ok=True)
+    env.design_tokens_path.write_text("primary_color: '#000000'\n")
+
+    result = runner.invoke(app, ["design", "proto"])
+
+    assert result.exit_code == 0, result.output
+    assert env.load_state().project_phase == Phase.DESIGNED
+
+
+# -- nle: FCPXML/OTIO-Export ---------------------------------------------------
+
+
+def test_nle_requires_timeline(env):
+    result = runner.invoke(app, ["nle", "proto", "teaser"])
+    assert result.exit_code == 1
+    assert "existiert nicht" in result.output
+
+
+def test_nle_rejects_invalid_format(env):
+    result = runner.invoke(app, ["nle", "proto", "teaser", "--format", "premiere"])
+    assert result.exit_code == 1
+    assert "--format" in result.output
+
+
+def test_nle_exports_fcpxml_and_otio(env):
+    from frameforge.timeline import Timeline
+
+    write_asset(
+        env,
+        {"id": "clip1", "kind": "video", "path": "clip.mp4", "hash": hash_file(env.config.media_root / "clip.mp4")},
+    )
+    export = env.export("teaser")
+    export.ensure_dirs()
+    Timeline(
+        export="teaser",
+        fps=25,
+        resolution=(320, 240),
+        duration=2.0,
+        tracks={"video": [{"id": "c1", "asset": "clip1", "src_in": 0, "src_out": 2, "tl_in": 0}]},
+    ).save(export.timeline_path)
+
+    fcpxml_result = runner.invoke(app, ["nle", "proto", "teaser", "--format", "fcpxml"])
+    otio_result = runner.invoke(app, ["nle", "proto", "teaser", "--format", "otio"])
+
+    assert fcpxml_result.exit_code == 0, fcpxml_result.output
+    assert otio_result.exit_code == 0, otio_result.output
+    assert (export.nle_dir / "teaser.fcpxml").exists()
+    assert (export.nle_dir / "teaser.otio").exists()

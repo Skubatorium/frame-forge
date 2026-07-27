@@ -12,7 +12,13 @@ from frameforge.index import write_asset
 from frameforge.ingest import hash_file, proxy_path
 from frameforge.probe import probe_video
 from frameforge.project import ProjectConfig, resolve_project
-from frameforge.render import FilterGraph, RenderError, build_filtergraph, render_proxy
+from frameforge.render import (
+    FilterGraph,
+    RenderError,
+    build_filtergraph,
+    render_final,
+    render_proxy,
+)
 from frameforge.timeline import Timeline
 
 FIXTURES = Path(__file__).parent / "fixtures"
@@ -147,6 +153,46 @@ def test_build_filtergraph_duck_window_reduces_music_volume():
     assert "amix=inputs=2" in graph.filter_complex
 
 
+def test_build_filtergraph_lut_path_applies_lut3d_filter():
+    timeline = _timeline(video=[{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0}])
+    graph = build_filtergraph(
+        timeline,
+        resolve_asset=lambda aid: Path(f"/media/{aid}.mp4"),
+        export_root=Path("/export"),
+        project_root=Path("/project"),
+        lut_path=Path("/luts/log-to-rec709.cube"),
+    )
+    assert "lut3d=file='/luts/log-to-rec709.cube'" in graph.filter_complex
+    assert graph.video_label.endswith("_graded")
+
+
+def test_build_filtergraph_without_lut_path_skips_lut3d():
+    timeline = _timeline(video=[{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0}])
+    graph = build_filtergraph(
+        timeline,
+        resolve_asset=lambda aid: Path(f"/media/{aid}.mp4"),
+        export_root=Path("/export"),
+        project_root=Path("/project"),
+    )
+    assert "lut3d" not in graph.filter_complex
+
+
+def test_build_filtergraph_loudness_normalize_appends_loudnorm():
+    timeline = _timeline(
+        video=[{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0}],
+        audio=[{"id": "au1", "src": "music/track.wav", "tl_in": 0}],
+    )
+    graph = build_filtergraph(
+        timeline,
+        resolve_asset=lambda aid: Path(f"/media/{aid}.mp4"),
+        export_root=Path("/export"),
+        project_root=Path("/project"),
+        loudness_normalize=True,
+    )
+    assert "loudnorm=I=-16:TP=-1.5:LRA=11" in graph.filter_complex
+    assert graph.audio_label == "aout_norm"
+
+
 # -- render_proxy: echter ffmpeg-Lauf gegen die Fixture ------------------------------
 
 
@@ -235,3 +281,68 @@ def test_render_proxy_missing_asset_raises(proj):
     )
     with pytest.raises(RenderError):
         render_proxy(proj, export, timeline)
+
+
+# -- render_final: mappt auf Originale, Loudness-Normalisierung, Versionierung -------
+
+
+def test_render_final_maps_to_original_and_normalizes_audio(proj):
+    export = proj.export("teaser")
+    proj.music_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copy(FIXTURES / "tone.wav", proj.music_dir / "theme.wav")
+    timeline = Timeline(
+        export="teaser",
+        fps=25,
+        resolution=(320, 240),
+        duration=1.5,
+        tracks={
+            "video": [{"id": "c1", "asset": "clip1", "src_in": 0, "src_out": 1.5, "tl_in": 0}],
+            # `clip.mp4` (Fixture) hat keinen eigenen Audio-Stream — Musik-Track statt
+            # "original"-O-Ton, um trotzdem echt durch die Loudnorm-Kette zu laufen.
+            "audio": [{"id": "au1", "src": "music/theme.wav", "tl_in": 0, "gain_db": -6}],
+        },
+    )
+
+    out_path = render_final(proj, export, timeline)
+
+    assert out_path.name == "teaser_v1.mp4"
+    assert out_path.parent == export.final_dir
+    result = probe_video(out_path)
+    assert result["dur"] == pytest.approx(1.5, abs=0.3)
+    assert result["w"] == 320
+    assert result["h"] == 240
+
+
+def test_render_final_versions_instead_of_overwriting(proj):
+    export = proj.export("teaser")
+    timeline = Timeline(
+        export="teaser",
+        fps=25,
+        resolution=(320, 240),
+        duration=1.5,
+        tracks={"video": [{"id": "c1", "asset": "clip1", "src_in": 0, "src_out": 1.5, "tl_in": 0}]},
+    )
+
+    first = render_final(proj, export, timeline)
+    second = render_final(proj, export, timeline)
+
+    assert first.name == "teaser_v1.mp4"
+    assert second.name == "teaser_v2.mp4"
+    assert first.exists()
+    assert second.exists()
+
+
+def test_render_final_missing_original_raises(proj, tmp_path):
+    # Proxy existiert (aus der `proj`-Fixture), das Original unter media_root wurde entfernt.
+    (proj.config.media_root / "clip.mp4").unlink()
+
+    export = proj.export("teaser")
+    timeline = Timeline(
+        export="teaser",
+        fps=25,
+        resolution=(320, 240),
+        duration=1.5,
+        tracks={"video": [{"id": "c1", "asset": "clip1", "src_in": 0, "src_out": 1.5, "tl_in": 0}]},
+    )
+    with pytest.raises(RenderError, match="Original-Asset"):
+        render_final(proj, export, timeline)
