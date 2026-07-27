@@ -1,28 +1,21 @@
 ---
-description: Zeigt State und den nächsten erlaubten Schritt
+description: Visuelle Pipeline-Übersicht + nächster erlaubter Schritt
 argument-hint: [projekt-name]
 ---
 
 Arbeitsstand anzeigen.
 
 - Ohne Argument: `frameforge list` — alle Projekte auflisten.
-- Mit `$ARGUMENTS` (Projektname): `frameforge status $ARGUMENTS` — Projekt-Phase und alle
-  Export-Phasen zeigen.
+- Mit `$ARGUMENTS` (Projektname): `frameforge status $ARGUMENTS` — die **visuelle
+  Pipeline-Karte** ausgeben. Sie zeigt pro Schritt:
+  - `✓` erledigt · `→` jetzt dran · ` ` (leer) offen,
+  - die Projekt-Ebene (ingest → index → design) und jede Export-Spur einzeln
+    (brief → build → preview → approve → render),
+  - unten den **nächsten fälligen Befehl**.
 
-Danach den **nächsten erlaubten Schritt** ableiten und explizit benennen (nicht nur den
-State roh wiedergeben):
+Gib die Ausgabe von `frameforge status` unverändert wieder und ergänze bei Bedarf einen Satz,
+was der nächste Schritt inhaltlich bedeutet. Wenn der Nutzer geführt weitermachen will, biete
+`/ff-wizard $ARGUMENTS` an — der übernimmt die Führung durch den nächsten Schritt.
 
-| Aktuelle Phase | Nächster Befehl |
-|---|---|
-| `INIT` | `/ff-ingest` |
-| `INGESTED` | `/ff-index` |
-| `INDEXED` | `/ff-design` |
-| `DESIGNED` | `/ff-brief` (pro Export) |
-| Export `BRIEFED` | `/ff-build` |
-| Export `TIMELINE`/`ASSETS_BUILT` | `/ff-preview` |
-| Export `PREVIEWED` | Preview ansehen lassen, dann `frameforge approve` |
-| Export `APPROVED` | `/ff-render` |
-| Export `RENDERED` | fertig, oder erneute Freigabe für Re-Render |
-
-Bei mehreren Exporten pro Projekt: pro Export den nächsten Schritt einzeln nennen, nicht
-nur den am weitesten fortgeschrittenen.
+Die Reihenfolge ist erzwungen (Gates); `frameforge status` sagt zuverlässig, wo das Projekt
+steht und was als Nächstes möglich ist — nicht raten.

@@ -70,6 +70,16 @@ Läuft er nicht grün, siehe **Abschnitt 8 (Troubleshooting)**.
 
 ## 3. Schritt für Schritt: von null zum fertigen Film
 
+> **Der einfachste Weg: `/ff-wizard`.** In Claude Code startest du
+> `/ff-wizard [projekt-name]` und wirst geführt — der Wizard zeigt die Pipeline-Karte, sagt dir
+> den nächsten Schritt, fragt genau das ab, was er braucht, und führt ihn aus. **Jederzeit
+> abbrechbar**, der Stand bleibt erhalten (`.state.json`); beim nächsten `/ff-wizard` geht es
+> dort weiter. Die folgenden manuellen Schritte sind das, was der Wizard unter der Haube macht —
+> nützlich zum Verstehen und für gezielte Einzelaktionen.
+>
+> Jederzeit `frameforge status <projekt>` (oder `/ff-status <projekt>`) zeigt die Pipeline als
+> Karte: `✓` erledigt · `→` jetzt dran · ` ` offen, plus den nächsten Befehl.
+
 Beispiel-Projekt „norwegen-2026", Beispiel-Export „teaser-90s". In Claude Code tippst du die
 `/ff-*`-Befehle; die zugehörige CLI steht jeweils darunter.
 
@@ -224,12 +234,25 @@ NLE weiterschneiden kannst.
 ### Jederzeit — Status & nächster Schritt
 
 ```bash
-frameforge status norwegen-2026     # Projekt-Phase + alle Export-Phasen
+frameforge status norwegen-2026     # visuelle Pipeline-Karte + nächster Befehl
 frameforge list                     # alle Projekte
 ```
+
+Beispiel-Ausgabe:
+
 ```
-/ff-status norwegen-2026            # nennt zusätzlich den nächsten erlaubten Schritt
+Pipeline  norwegen-2026
+
+  [✓] ingest
+  [✓] index
+  [→] design
+
+Naechster Schritt: design: /ff-design norwegen-2026
 ```
+
+Sobald Exporte existieren, zeigt die Karte pro Export eine eigene Spur
+(brief → build → preview → approve → render) mit eigener „du bist hier"-Markierung.
+`/ff-wizard norwegen-2026` übernimmt von hier die Führung durch den nächsten Schritt.
 
 ### Optional — Gesichtserkennung
 

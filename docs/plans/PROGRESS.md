@@ -280,6 +280,31 @@ abgesichert; das komplette proto-Projekt danach end-to-end (`ingest → … → 
   umgehen den Hook. Er ist bewusst **Belt-and-suspenders gegen ein Versehen des
   Orchestrators**, keine adversariale Grenze — die CLI erzwingt die Gates ohnehin selbst.
 
+---
+
+## Wizard & visueller Status (2026-07-27, auf Nutzerwunsch)
+
+Nutzer wollte eine geführte, abbrechbare, resumierbare Bedienung („Wizard") mit
+Status-/Fortschritts-Übersicht. Bewusst **kein Web-Frontend**: die kreativen Schritte (Index,
+Design, Brief, Story→Timeline) brauchen Claude/die Agenten, eine Website wäre nur eine zweite
+Steuerungsebene, die vom `.state.json` abdriften kann. Stattdessen auf der bestehenden
+State-Machine aufgesetzt:
+
+- **`frameforge/pipeline.py`** (neu): leitet aus dem `ProjectState` die Pipeline-Karte ab —
+  pro Schritt `✓`/`→`/` `, Projekt-Ebene + je Export eine Spur, plus den nächsten fälligen
+  Befehl. Reine Ableitung, kein I/O, voll testbar (7 Tests in `tests/test_pipeline.py`).
+- **`frameforge status`** zeigt jetzt diese visuelle Karte (farbige Marker) statt einer nackten
+  Phasen-Tabelle. `frameforge/pipeline.py` ist die gemeinsame Quelle für Status und Wizard,
+  damit „du bist hier" nie auseinanderläuft.
+- **`/ff-wizard [projekt]`** (neu): geführter Ablauf — Stand zeigen, nächsten Schritt erklären,
+  nur die dafür nötigen Eingaben abfragen, ausführen, Status erneut zeigen, weiter/pausieren
+  fragen. Jederzeit abbrechbar (Stand in `.state.json`), resumierbar. Behandelt den
+  „Design-Tokens extern erstellen → ablegen → später weiter"-Fall als bewusste Pause.
+- `/ff-status` aktualisiert (visuelle Karte + Verweis auf `/ff-wizard`), README um Wizard-
+  Callout und Beispiel-Ausgabe ergänzt.
+
+208 Tests grün, `ruff` sauber, `doctor` grün.
+
 ### M2.1 — Notizen (2026-07-27)
 
 `audio.py`: `analyze_track` nutzt `librosa.beat.beat_track` (BPM + Beat-Grid) und

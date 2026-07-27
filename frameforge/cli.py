@@ -25,6 +25,7 @@ from frameforge import index as index_module
 from frameforge import ingest as ingest_module
 from frameforge import nle as nle_module
 from frameforge import people as people_module
+from frameforge import pipeline as pipeline_module
 from frameforge import render as render_module
 from frameforge.project import (
     CACHE_ROOT,
@@ -185,23 +186,22 @@ def new(
         console.print(f"[yellow]Hinweis:[/yellow] media_root {media_root} existiert (noch) nicht")
 
 
+def _colorize_pipeline_line(line: str) -> str:
+    """Faerbt die Marker in einer Pipeline-Zeile fuer die Terminal-Ausgabe."""
+    line = line.replace(pipeline_module.DONE, "[green][✓][/green]")
+    line = line.replace(pipeline_module.CURRENT, "[bold yellow][→][/bold yellow]")
+    line = line.replace(pipeline_module.PENDING, "[dim][ ][/dim]")
+    return line
+
+
 @app.command()
 def status(project: str) -> None:
-    """Zeigt Projekt-Phase und alle Export-Phasen."""
+    """Visuelle Pipeline-Uebersicht: was erledigt (✓), was jetzt dran (→), was offen ( )."""
     proj = _resolve_or_fail(project)
     state = proj.load_state()
-
-    console.print(f"[bold]{proj.name}[/bold] — Projekt-Phase: {state.project_phase.name}")
-    exports = proj.list_exports()
-    if not exports:
-        console.print("keine Exporte")
-        return
-    table = Table()
-    table.add_column("Export")
-    table.add_column("Phase")
-    for export_name in exports:
-        table.add_row(export_name, state.export_phase(export_name).name)
-    console.print(table)
+    pipeline = pipeline_module.build_pipeline(project, state, exports=proj.list_exports())
+    for line in pipeline_module.format_pipeline(pipeline):
+        console.print(_colorize_pipeline_line(line) if line.strip() else line)
 
 
 # -- Pipeline-Kommandos ---------------------------------------------------
