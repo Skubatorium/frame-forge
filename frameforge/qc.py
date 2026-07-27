@@ -11,11 +11,23 @@ Shots.
 
 from __future__ import annotations
 
+import hashlib
+from pathlib import Path
+
 from frameforge.timeline import Timeline, TimelineValidationError
 
 MIN_OVERLAY_READABLE_S = 1.2
 MAX_ASSET_REPEATS = 2
 DURATION_TOLERANCE_S = 2.0
+
+
+def timeline_fingerprint(path: Path) -> str:
+    """SHA256 der `timeline.json`-Bytes — bindet eine Freigabe an den exakten Timeline-Stand.
+
+    Aendert sich die Timeline nach der Freigabe, weicht der Fingerprint ab und der
+    Final-Render kann die Freigabe als veraltet erkennen (Audit-Findings P2/P3).
+    """
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def _check_video_coverage(timeline: Timeline) -> list[str]:

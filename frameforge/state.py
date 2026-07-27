@@ -188,6 +188,16 @@ class ProjectState:
         if content_hash is not None:
             export.content_hashes["_export"] = content_hash
 
+    def set_export_hash(self, name: str, key: str, value: str) -> None:
+        """Speichert einen benannten Content-Hash fuer einen Export (z.B. Timeline-Stand
+
+        zum Freigabe-Zeitpunkt), damit spaetere Schritte Aenderungen erkennen koennen.
+        """
+        self.data.exports.setdefault(name, ExportState()).content_hashes[key] = value
+
+    def get_export_hash(self, name: str, key: str) -> str | None:
+        return self._peek_export(name).content_hashes.get(key)
+
     def invalidate_export(self, name: str, to: Phase = Phase.BRIEFED) -> None:
         """Faellt auf `to` zurueck, z.B. wenn `brief.yaml` sich geaendert hat."""
         self.advance_export(name, to)

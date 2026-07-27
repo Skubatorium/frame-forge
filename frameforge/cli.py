@@ -386,7 +386,25 @@ def render(project: str, export: str) -> None:
     except GateError as exc:
         raise _fail(str(exc)) from exc
 
+    # Freigabe an den Timeline-Stand binden: wurde timeline.json seit dem approve geaendert,
+    # ist die Freigabe veraltet und der Final-Render wird blockiert (Audit P3).
+    approved_fp = state.get_export_hash(export, "timeline")
+    current_fp = qc.timeline_fingerprint(exp.timeline_path)
+    if approved_fp is not None and current_fp != approved_fp:
+        raise _fail(
+            "timeline.json wurde seit der Freigabe geaendert — Freigabe ist veraltet. "
+            "Erneut 'frameforge preview' und 'frameforge approve' ausfuehren."
+        )
+
     timeline = Timeline.load(exp.timeline_path)
+    # QC vor dem Final-Render wiederholen (nicht nur beim Preview vertrauen).
+    brief = yaml.safe_load(exp.brief_path.read_text()) if exp.brief_path.exists() else None
+    issues = qc.validate(timeline, brief=brief)
+    if issues:
+        for issue in issues:
+            console.print(f"[red]QC:[/red] {issue}")
+        raise typer.Exit(code=1)
+
     try:
         out_path = render_module.render_final(proj, exp, timeline)
     except render_module.RenderError as exc:
@@ -479,6 +497,7 @@ def faces(project: str) -> None:
 def approve(project: str, export: str) -> None:
     """Explizite Freigabe eines Exports nach dem Preview. Erfordert Export-Phase == PREVIEWED."""
     proj = _resolve_or_fail(project)
+    exp = proj.export(export)
     state = proj.load_state()
     current = state.export_phase(export)
     if current != Phase.PREVIEWED:
@@ -488,6 +507,9 @@ def approve(project: str, export: str) -> None:
     if not typer.confirm(f"Export '{export}' fuer Final-Render freigeben?"):
         raise typer.Exit(code=1)
     state.advance_export(export, Phase.APPROVED)
+    # Freigabe an den exakten Timeline-Stand binden, damit render eine nachtraegliche
+    # Aenderung erkennt (Audit P3).
+    state.set_export_hash(export, "timeline", qc.timeline_fingerprint(exp.timeline_path))
     state.save()
     console.print(f"[green]Export '{export}' freigegeben (APPROVED)[/green]")
 

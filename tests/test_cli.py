@@ -204,3 +204,58 @@ def test_faces_writes_gitignored_output_files(env):
     assert "0 Gesichter" in result.output
     assert (env.index_dir / "people.json").exists()
     assert (env.index_dir / "people_clusters.json").exists()
+
+
+# -- Audit P3: Freigabe an Timeline-Stand gebunden -----------------------------
+
+
+def _make_timeline(env, duration=2.0):
+    from frameforge.timeline import Timeline
+
+    export = env.export("teaser")
+    export.ensure_dirs()
+    Timeline(
+        export="teaser",
+        fps=25,
+        resolution=(320, 240),
+        duration=duration,
+        tracks={"video": [{"id": "c1", "asset": "clip1", "src_in": 0, "src_out": duration, "tl_in": 0}]},
+    ).save(export.timeline_path)
+    return export
+
+
+def test_render_blocks_when_timeline_changed_after_approve(env):
+    from frameforge.qc import timeline_fingerprint
+
+    export = _make_timeline(env)
+    state = env.load_state()
+    state.advance_export("teaser", Phase.APPROVED)
+    state.set_export_hash("teaser", "timeline", timeline_fingerprint(export.timeline_path))
+    state.save()
+
+    # Timeline nach der Freigabe veraendern.
+    _make_timeline(env, duration=3.0)
+
+    result = runner.invoke(app, ["render", "proto", "teaser"])
+
+    assert result.exit_code == 1
+    assert "veraltet" in result.output
+    assert env.load_state().export_phase("teaser") == Phase.APPROVED  # nicht gerendert
+
+
+def test_approve_requires_previewed(env):
+    _make_timeline(env)
+    result = runner.invoke(app, ["approve", "proto", "teaser"], input="y\n")
+    assert result.exit_code == 1
+    assert "PREVIEWED" in result.output
+
+
+# -- Audit S1: Namens-Validierung in new ---------------------------------------
+
+
+def test_new_rejects_traversal_name(env):
+    result = runner.invoke(
+        app, ["new", "../evil", "--media-root", str(env.config.media_root)]
+    )
+    assert result.exit_code == 1
+    assert "unzulaessig" in result.output
