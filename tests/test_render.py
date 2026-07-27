@@ -369,3 +369,29 @@ def test_build_filtergraph_ducks_all_music_tracks():
     )
     assert "m0_duck0" in graph.filter_complex
     assert "m1_duck0" in graph.filter_complex
+
+
+def test_render_final_resolution_override(proj):
+    """B3: --resolution rendert in einer anderen Aufloesung als die Timeline."""
+    export = proj.export("teaser")
+    timeline = Timeline(
+        export="teaser", fps=25, resolution=(320, 240), duration=1.0,
+        tracks={"video": [{"id": "c1", "asset": "clip1", "src_in": 0, "src_out": 1.0, "tl_in": 0}]},
+    )
+    out = render_final(proj, export, timeline, resolution=(160, 120), crf=28, preset="ultrafast")
+    result = probe_video(out)
+    assert result["w"] == 160
+    assert result["h"] == 120
+
+
+def test_build_filtergraph_resolution_override_scales_to_target():
+    timeline = _timeline(video=[{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0}])
+    graph = build_filtergraph(
+        timeline,
+        resolve_asset=lambda aid: Path(f"/media/{aid}.mp4"),
+        export_root=Path("/export"),
+        project_root=Path("/project"),
+        resolution=(1920, 1080),
+    )
+    assert "scale=1920:1080" in graph.filter_complex
+    assert "320:240" not in graph.filter_complex

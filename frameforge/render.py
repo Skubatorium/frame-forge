@@ -53,6 +53,7 @@ def build_filtergraph(
     project_root: Path,
     lut_path: Path | None = None,
     loudness_normalize: bool = False,
+    resolution: tuple[int, int] | None = None,
 ) -> FilterGraph:
     """Baut Input-Liste und `filter_complex`-String aus einer validierten Timeline.
 
@@ -61,12 +62,12 @@ def build_filtergraph(
     `map/…`), Musik relativ zu `project_root` (`music/…`) — passend zur Projekt-Struktur
     aus Plan §1.
 
-    `lut_path`: optionale 3D-LUT (`.cube`) fuer Farbkorrektur — generischer Hook, keine
-    Grade ist hier fest eingebaut, das liefert das Projekt (siehe Plan §11: "Farbmanagement
-    bei HLG/D-Log-Material"). `loudness_normalize`: EBU-R128-Loudness-Normalisierung
-    (`loudnorm`, Ziel -16 LUFS/-1.5 dBTP — Streaming-Standardwerte) auf den gemischten
-    Audio-Output.
+    `resolution`: Ziel-Auflösung `(w, h)` — überschreibt `timeline.resolution` (z.B. ein
+    1080p-Deliverable aus einer 4K-Timeline). `lut_path`: optionale 3D-LUT (`.cube`) fuer
+    Farbkorrektur. `loudness_normalize`: EBU-R128-Loudness-Normalisierung (`loudnorm`,
+    Ziel -16 LUFS/-1.5 dBTP) auf den gemischten Audio-Output.
     """
+    target_res = resolution or timeline.resolution
     graph = FilterGraph()
     filters: list[str] = []
 
@@ -83,13 +84,13 @@ def build_filtergraph(
             idx = add_input(["-loop", "1", "-framerate", str(timeline.fps), "-i", str(source)])
             filters.append(
                 f"[{idx}:v]trim=duration={clip.duration:.3f},setpts=PTS-STARTPTS,"
-                f"{_scale_pad(*timeline.resolution)}[{label}]"
+                f"{_scale_pad(*target_res)}[{label}]"
             )
         else:
             idx = add_input(["-i", str(source)])
             filters.append(
                 f"[{idx}:v]trim=start={clip.src_in}:end={clip.src_out},"
-                f"setpts=(PTS-STARTPTS)/{clip.speed},{_scale_pad(*timeline.resolution)}[{label}]"
+                f"setpts=(PTS-STARTPTS)/{clip.speed},{_scale_pad(*target_res)}[{label}]"
             )
         video_labels.append(label)
 
@@ -191,7 +192,14 @@ def build_filtergraph(
     return graph
 
 
-def _run_ffmpeg(graph: FilterGraph, timeline: Timeline, out_path: Path) -> None:
+def _run_ffmpeg(
+    graph: FilterGraph,
+    timeline: Timeline,
+    out_path: Path,
+    *,
+    crf: int | None = None,
+    preset: str | None = None,
+) -> None:
     out_path.parent.mkdir(parents=True, exist_ok=True)
     cmd = ["ffmpeg", "-y"]
     for args in graph.input_args:
@@ -199,21 +207,12 @@ def _run_ffmpeg(graph: FilterGraph, timeline: Timeline, out_path: Path) -> None:
     cmd.extend(["-filter_complex", graph.filter_complex, "-map", f"[{graph.video_label}]"])
     if graph.audio_label:
         cmd.extend(["-map", f"[{graph.audio_label}]"])
-    cmd.extend(
-        [
-            "-r",
-            str(timeline.fps),
-            "-c:v",
-            "libx264",
-            "-pix_fmt",
-            "yuv420p",
-            "-c:a",
-            "aac",
-            "-loglevel",
-            "error",
-            str(out_path),
-        ]
-    )
+    cmd.extend(["-r", str(timeline.fps), "-c:v", "libx264", "-pix_fmt", "yuv420p"])
+    if crf is not None:
+        cmd.extend(["-crf", str(crf)])
+    if preset is not None:
+        cmd.extend(["-preset", preset])
+    cmd.extend(["-c:a", "aac", "-loglevel", "error", str(out_path)])
     # Grosszuegiges, aber endliches Timeout als Sicherheitsnetz: ein Filtergraph-Fehler
     # (z.B. ein unbegrenzter `-loop 1`-Input ohne `shortest=1` an einem `overlay`) darf den
     # Prozess nicht auf unbestimmte Zeit haengen lassen.
@@ -270,12 +269,23 @@ def _next_version_path(directory: Path, stem: str, ext: str) -> Path:
 
 
 def render_final(
-    project: Project, export: Export, timeline: Timeline, *, lut_path: Path | None = None
+    project: Project,
+    export: Export,
+    timeline: Timeline,
+    *,
+    lut_path: Path | None = None,
+    resolution: tuple[int, int] | None = None,
+    crf: int = 18,
+    preset: str = "medium",
 ) -> Path:
-    """4K-Final-Render: mappt auf die Original-Assets (kein Proxy-Downscale), EBU-R128-
+    """Final-Render: mappt auf die Original-Assets (kein Proxy-Downscale), EBU-R128-
 
     Loudness-Normalisierung, optionale Farbkorrektur-LUT, versionierte Ausgabedatei
     (`<export>_v<N>.mp4` statt Überschreiben).
+
+    `resolution` überschreibt die Timeline-Auflösung (z.B. ein 1080p-Deliverable aus einer
+    4K-Timeline). `crf`/`preset` steuern Qualität vs. Dateigröße/Encoding-Zeit (kleineres CRF =
+    bessere Qualität; Default 18 = visuell nahezu verlustfrei).
     """
     assets_by_id = {a["id"]: a for a in load_assets(project)}
 
@@ -298,7 +308,8 @@ def render_final(
         project_root=project.root,
         lut_path=lut_path,
         loudness_normalize=True,
+        resolution=resolution,
     )
     out_path = _next_version_path(export.final_dir, export.name, ".mp4")
-    _run_ffmpeg(graph, timeline, out_path)
+    _run_ffmpeg(graph, timeline, out_path, crf=crf, preset=preset)
     return out_path

@@ -455,13 +455,23 @@ def render(
     project: str,
     export: str,
     lut: Path = typer.Option(None, "--lut", help="Optionale 3D-LUT (.cube) fuer Farbkorrektur"),  # noqa: B008
+    resolution: str = typer.Option(None, "--resolution", help="Ausgabe-Aufloesung, z.B. 1920x1080"),
+    crf: int = typer.Option(18, "--crf", help="Qualitaet (kleiner = besser, groesser = kleinere Datei)"),
+    preset: str = typer.Option("medium", "--preset", help="x264-Preset (fast/medium/slow)"),
 ) -> None:
-    """Final-Render (4K). Erfordert Export-Phase == APPROVED (explizite Freigabe nach Preview)."""
+    """Final-Render. Erfordert Export-Phase == APPROVED (explizite Freigabe nach Preview)."""
     proj = _resolve_or_fail(project)
     exp = proj.export(export)
     if lut is not None and not lut.exists():
         raise _fail(f"LUT-Datei nicht gefunden: {lut}")
     lut_path = lut
+    res_tuple = None
+    if resolution is not None:
+        try:
+            w, h = (int(x) for x in resolution.lower().split("x"))
+            res_tuple = (w, h)
+        except ValueError:
+            raise _fail(f"--resolution '{resolution}' ungueltig — Format WxH, z.B. 1920x1080") from None
     state = proj.load_state()
     try:
         gate_render_final(state, export)
@@ -492,7 +502,9 @@ def render(
         raise typer.Exit(code=1)
 
     try:
-        out_path = render_module.render_final(proj, exp, timeline, lut_path=lut_path)
+        out_path = render_module.render_final(
+            proj, exp, timeline, lut_path=lut_path, resolution=res_tuple, crf=crf, preset=preset
+        )
     except render_module.RenderError as exc:
         raise _fail(str(exc)) from exc
 
