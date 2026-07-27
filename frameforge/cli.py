@@ -24,6 +24,7 @@ from frameforge import design, qc
 from frameforge import index as index_module
 from frameforge import ingest as ingest_module
 from frameforge import nle as nle_module
+from frameforge import people as people_module
 from frameforge import render as render_module
 from frameforge.project import (
     CACHE_ROOT,
@@ -398,6 +399,50 @@ def nle(
     export_fn = nle_module.export_fcpxml if nle_format == "fcpxml" else nle_module.export_otio
     export_fn(timeline, out_path, resolve_asset=resolve, project_root=proj.root)
     console.print(f"[green]NLE-Export fertig:[/green] {out_path}")
+
+
+@app.command()
+def faces(project: str) -> None:
+    """Gesichtserkennung fuer Foto-Assets — expliziter Opt-in, kein Teil von `frameforge index`.
+
+    Verarbeitet biometrische Daten (siehe `frameforge.people`-Datenschutzhinweis). Schreibt
+    `index/people.json` (Encodings pro Asset) und `index/people_clusters.json`
+    (Personen-Cluster) — beide sind per `.gitignore` vom Tracking ausgeschlossen.
+    """
+    proj = _resolve_or_fail(project)
+    photo_assets = [a for a in index_module.load_assets(proj) if a.get("kind") == "photo"]
+    if not photo_assets:
+        console.print("Keine Foto-Assets in assets.json gefunden.")
+        return
+
+    faces_by_asset: dict[str, list] = {}
+    for asset in photo_assets:
+        path = proj.config.media_root / asset["path"]
+        try:
+            detected = people_module.detect_faces(path)
+        except people_module.FaceDetectionError as exc:
+            console.print(f"[yellow]Warnung:[/yellow] {exc}")
+            continue
+        if detected:
+            faces_by_asset[asset["id"]] = detected
+
+    proj.index_dir.mkdir(parents=True, exist_ok=True)
+    people_path = proj.index_dir / "people.json"
+    people_path.write_text(json.dumps(faces_by_asset, indent=2))
+
+    encodings_by_asset = {
+        asset_id: [face["encoding"] for face in faces] for asset_id, faces in faces_by_asset.items()
+    }
+    clusters = people_module.cluster_people(encodings_by_asset)
+    clusters_path = proj.index_dir / "people_clusters.json"
+    clusters_path.write_text(json.dumps(clusters, indent=2))
+
+    total_faces = sum(len(v) for v in faces_by_asset.values())
+    console.print(
+        f"[green]{total_faces} Gesichter in {len(faces_by_asset)} von {len(photo_assets)} "
+        f"Fotos, {len(clusters)} Personen-Cluster.[/green]"
+    )
+    console.print(f"Ergebnis: {people_path}, {clusters_path}")
 
 
 @app.command()

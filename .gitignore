@@ -26,6 +26,10 @@ projects/*/design/fonts/
 projects/*/design/assets/
 projects/*/.state.lock
 
+# Gesichtserkennung: biometrische Daten (Encodings), niemals ins Repo (frameforge faces)
+projects/*/index/people.json
+projects/*/index/people_clusters.json
+
 # Cache (liegt normalerweise in ~/.cache/frameforge, hier als Fallback)
 .cache/
 cache/

@@ -1,10 +1,9 @@
 # Fortschritt
 
-**M0–M4 sind fertig (2026-07-27) — alle Punkte aus Plan Abschnitt 8 umgesetzt.** Offen bleibt
-laut Plan nur noch M5 (Norwegen-Realbetrieb, kein Code-Meilenstein — echtes Material statt
-Test-Fixtures) und die "Offenen Punkte für später" aus Plan §11 (Gesichtserkennung, Untertitel,
-Musik-Lizenz-Nachweis, LUT-Handling für Log-Material — Letzteres inzwischen als generischer
-Hook in `render.build_filtergraph` vorbereitet, siehe M4.1).
+**M0–M4 plus Gesichtserkennung (M-Extra) sind fertig (2026-07-27).** Offen bleibt laut Plan nur
+noch M5 (Norwegen-Realbetrieb, kein Code-Meilenstein — echtes Material statt Test-Fixtures)
+und, auf Nutzerwunsch zurückgestellt, automatische Untertitel und Musik-Lizenz-Nachweis aus
+Plan §11.
 
 Diese Datei ist die **einzige verlässliche Quelle** für den Arbeitsstand. Chat-Verläufe und
 Task-Listen überleben ein Session-Limit nicht, diese Datei schon.
@@ -193,6 +192,53 @@ mehr. `tests/test_stubs.py` gelöscht: nach M4.2 gibt es im gesamten Package kei
 generischen M3-Infrastruktur. Was laut Plan explizit offen bleibt: M5 (Norwegen-Realbetrieb —
 echtes Material, kein Code-Meilenstein) und die in Plan §11 gelisteten "Offenen Punkte für
 später" (Gesichtserkennung, automatische Untertitel, Musik-Lizenz-Nachweis).
+
+---
+
+## M-Extra — Gesichtserkennung (Plan §11, auf Nutzerwunsch vorgezogen)
+
+**Nutzer-Entscheidung (2026-07-27):** Von den vier "Offenen Punkten für später" nur
+Gesichtserkennung jetzt umsetzen, automatische Untertitel und Musik-Lizenz-Nachweis bleiben
+zurückgestellt. M5 (Norwegen-Realbetrieb) startet erst mit echtem Material.
+
+| # | Schritt | Status | Commit |
+|---|------|--------|--------|
+| ME.1 | `people.py` (Gesichtserkennung + Clustering), `cli.py faces`-Kommando (Opt-in) | ✅ fertig | siehe Notizen |
+
+### ME.1 — Notizen (2026-07-27)
+
+**Datenschutz zuerst:** `people.py` wird **nicht** automatisch von `frameforge index`
+aufgerufen — Gesichtserkennung verarbeitet biometrische Daten, das ist ein expliziter Opt-in
+(`frameforge faces <projekt>`). Ergebnisdateien (`index/people.json`,
+`index/people_clusters.json`, enthalten 128-d-Encodings) sind per `.gitignore` vom Tracking
+ausgeschlossen, obwohl `index/` sonst getrackt wird — die Encodings sind biometrische Daten,
+die nie in ein (hier: öffentliches) GitHub-Repo gehören.
+
+**Installations-Fallstricke, beide gelöst:**
+1. `face_recognition` zieht `dlib` — kompiliert aus C++ (kein vorgebautes Wheel für diese
+   Plattform), Build-Dauer ~3:20 Min (LTO-Linking des finalen `.so` ist der langsamste Schritt).
+   Kein Bug, nur Geduld nötig.
+2. `face_recognition_models` nutzt intern noch `from pkg_resources import resource_filename` —
+   `setuptools >= 81` hat `pkg_resources` entfernt, das aktuelle venv hatte `setuptools==83`.
+   Fix: `setuptools<81` als direkte Dependency gepinnt (analog zum `numba`-Pin aus
+   HANDOVER.md — beides "transitive Abhängigkeit braucht eine ältere Version, die von selbst
+   nicht aufgelöst worden wäre").
+
+**Umsetzung:** `detect_faces(path)` — echt, via `face_recognition`/`dlib` (HOG-Detektor +
+128-d-Encodings pro Gesicht), kein Mock. `cluster_people(faces_by_asset, tolerance=0.6)` —
+reine Vektor-Arithmetik (Greedy-Clustering gegen Cluster-Centroide via `face_recognition.
+face_distance`), ordnet Gesichter über Assets hinweg Personen zu (`person_1`, `person_2`, ...
+— welche Person das ist, z.B. "Oskar", liefert der Nutzer/Orchestrator, nicht dieses Modul).
+
+**Test-Strategie ohne echte Gesichtsfotos im Repo:** `detect_faces` wird nur gegen die
+bestehende Solid-Color-Fixture (`photo.jpg`, 0 Gesichter — echter Negativ-Test) und den
+Fehlerfall (fehlende Datei) getestet. `cluster_people` ist reine Vektor-Arithmetik und wird
+mit synthetischen 128-d-Zufallsvektoren getestet (zwei "Personen"-Cluster um verschiedene
+Zentren, mit Rauschen) — keine echten/fremden Gesichter nötig, um die Clustering-Logik zu
+verifizieren.
+
+17 neue Tests (`tests/test_people.py`: 6, `tests/test_cli.py`: 2 neue für `faces`, plus
+Aktualisierungen). 165 Tests insgesamt grün, `ruff` sauber, `doctor` grün.
 
 ### M2.1 — Notizen (2026-07-27)
 

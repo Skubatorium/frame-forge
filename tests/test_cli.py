@@ -136,3 +136,31 @@ def test_nle_exports_fcpxml_and_otio(env):
     assert otio_result.exit_code == 0, otio_result.output
     assert (export.nle_dir / "teaser.fcpxml").exists()
     assert (export.nle_dir / "teaser.otio").exists()
+
+
+# -- faces: Opt-in-Gesichtserkennung ------------------------------------------
+
+
+def test_faces_without_photo_assets_reports_nothing(env):
+    result = runner.invoke(app, ["faces", "proto"])
+    assert result.exit_code == 0, result.output
+    assert "Keine Foto-Assets" in result.output
+
+
+def test_faces_writes_gitignored_output_files(env):
+    write_asset(
+        env,
+        {
+            "id": "photo1",
+            "kind": "photo",
+            "path": "photo.jpg",
+            "hash": hash_file(env.config.media_root / "photo.jpg"),
+        },
+    )
+
+    result = runner.invoke(app, ["faces", "proto"])
+
+    assert result.exit_code == 0, result.output
+    assert "0 Gesichter" in result.output
+    assert (env.index_dir / "people.json").exists()
+    assert (env.index_dir / "people_clusters.json").exists()
