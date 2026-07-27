@@ -23,7 +23,17 @@ from __future__ import annotations
 import ctypes.util
 import glob
 import re
+from dataclasses import dataclass
 from pathlib import Path
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from frameforge.project import Project
+
+# Dateiendungen, die als Design-Grafik zaehlen.
+_GRAPHIC_EXTS = (".png", ".jpg", ".jpeg", ".svg", ".webp")
+# Bildschirm-Dateinamen in prompts.md erkennen (z.B. "logo.png", "marker-icon.png").
+_FILENAME_RE = re.compile(r"\b([\w-]+\.(?:png|jpe?g|svg|webp))\b", re.IGNORECASE)
 
 _CAIRO_NAMES = ("cairo-2", "cairo", "libcairo-2")
 _CAIRO_LIB_PATTERNS = (
@@ -90,3 +100,53 @@ def render_svg_to_png(svg: str, out_path: Path) -> None:
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     cairosvg.svg2png(bytestring=svg.encode("utf-8"), write_to=str(out_path))
+
+
+# -- Design-Asset-Inventar (fuer Resume nach externem Grafik-Erstellen) -------
+
+
+@dataclass
+class AssetInventory:
+    """Abgleich: welche in `prompts.md` angeforderten Grafiken liegen schon in `design/assets/`?"""
+
+    requested: list[str]  # in prompts.md genannte Dateinamen
+    present: list[str]  # tatsaechlich in design/assets/ vorhandene Grafiken
+    missing: list[str]  # angefordert, aber noch nicht abgelegt
+    extra: list[str]  # abgelegt, aber nicht in prompts.md genannt
+
+    @property
+    def complete(self) -> bool:
+        """True, wenn nichts Angefordertes mehr fehlt (auch True, wenn nichts angefordert war)."""
+        return not self.missing
+
+
+def requested_graphics(prompts_md: Path) -> list[str]:
+    """Dateinamen der in `prompts.md` angeforderten Grafiken (aus dem Freitext extrahiert)."""
+    if not prompts_md.exists():
+        return []
+    found = _FILENAME_RE.findall(prompts_md.read_text())
+    # dedupliziert, Reihenfolge stabil
+    return list(dict.fromkeys(name.lower() for name in found))
+
+
+def present_graphics(assets_dir: Path) -> list[str]:
+    """Grafiken, die tatsaechlich in `design/assets/` liegen."""
+    if not assets_dir.is_dir():
+        return []
+    return sorted(
+        p.name for p in assets_dir.iterdir() if p.is_file() and p.suffix.lower() in _GRAPHIC_EXTS
+    )
+
+
+def asset_inventory(project: Project) -> AssetInventory:
+    """Gleicht angeforderte Grafiken (`design/prompts.md`) gegen vorhandene (`design/assets/`) ab.
+
+    Damit sieht man beim Wiedereinstieg sofort, welche extern erstellten Grafiken schon abgelegt
+    sind und welche noch fehlen (Resume nach dem Bildgenerator-Schritt).
+    """
+    requested = requested_graphics(project.design_prompts_path)
+    present = present_graphics(project.design_assets_dir)
+    present_lower = {p.lower() for p in present}
+    missing = [r for r in requested if r not in present_lower]
+    extra = [p for p in present if p.lower() not in set(requested)]
+    return AssetInventory(requested=requested, present=present, missing=missing, extra=extra)

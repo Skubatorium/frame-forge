@@ -113,3 +113,62 @@ def test_all_svg_templates_render_with_consistent_tokens(tmp_path):
         out = tmp_path / f"{template.stem}.png"
         render_svg_to_png(svg, out)
         assert out.stat().st_size > 0
+
+
+# -- Design-Asset-Inventar (Resume nach externem Grafik-Erstellen) ------------
+
+
+def _proj(tmp_path, monkeypatch):
+    from frameforge import project as project_module
+    from frameforge.project import ProjectConfig, resolve_project
+
+    projects_dir = tmp_path / "projects"
+    projects_dir.mkdir()
+    monkeypatch.setattr(project_module, "PROJECTS_DIR", projects_dir)
+    root = projects_dir / "p"
+    root.mkdir()
+    ProjectConfig(name="p", media_root=tmp_path / "media").save(root / "project.yaml")
+    project = resolve_project("p")
+    project.design_assets_dir.mkdir(parents=True)
+    return project
+
+
+def test_asset_inventory_matches_requested_and_present(tmp_path, monkeypatch):
+    proj = _proj(tmp_path, monkeypatch)
+    proj.design_prompts_path.write_text(
+        "## Logo\nDateiname: logo.png\n## Marker\nmarker-icon.png\n## Freisteller\nfreisteller.png\n"
+    )
+    (proj.design_assets_dir / "logo.png").write_bytes(b"x")
+    (proj.design_assets_dir / "bonus.png").write_bytes(b"x")
+
+    inv = design.asset_inventory(proj)
+
+    assert set(inv.requested) == {"logo.png", "marker-icon.png", "freisteller.png"}
+    assert "logo.png" in inv.present
+    assert set(inv.missing) == {"marker-icon.png", "freisteller.png"}
+    assert inv.extra == ["bonus.png"]
+    assert inv.complete is False
+
+
+def test_asset_inventory_complete_when_all_present(tmp_path, monkeypatch):
+    proj = _proj(tmp_path, monkeypatch)
+    proj.design_prompts_path.write_text("marker-icon.png")
+    (proj.design_assets_dir / "marker-icon.png").write_bytes(b"x")
+    assert design.asset_inventory(proj).complete is True
+
+
+def test_asset_inventory_no_prompts_is_complete(tmp_path, monkeypatch):
+    proj = _proj(tmp_path, monkeypatch)
+    inv = design.asset_inventory(proj)
+    assert inv.requested == []
+    assert inv.complete is True  # nichts angefordert -> nichts fehlt
+
+
+def test_requested_graphics_is_case_insensitive_and_deduped(tmp_path, monkeypatch):
+    proj = _proj(tmp_path, monkeypatch)
+    proj.design_prompts_path.write_text("Logo.PNG und nochmal logo.png und marker-icon.png")
+    from frameforge.design import requested_graphics
+
+    req = requested_graphics(proj.design_prompts_path)
+    assert req.count("logo.png") == 1
+    assert "marker-icon.png" in req

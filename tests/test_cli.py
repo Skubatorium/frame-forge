@@ -361,3 +361,21 @@ def test_query_filters_by_source(env):
     assert result.exit_code == 0, result.output
     assert "d1" in result.output
     assert "ph1" not in result.output
+
+
+# -- design-status: Grafik-Inventar -------------------------------------------
+
+
+def test_design_status_shows_missing_graphics(env):
+    env.design_dir.mkdir(parents=True, exist_ok=True)
+    env.design_tokens_path.write_text("primary_color: '#000'\n")
+    env.design_prompts_path.write_text("Logo: logo.png\nMarker: marker-icon.png\n")
+    env.design_assets_dir.mkdir(parents=True, exist_ok=True)
+    (env.design_assets_dir / "logo.png").write_bytes(b"x")
+
+    result = runner.invoke(app, ["design-status", "proto"])
+
+    assert result.exit_code == 0, result.output
+    assert "logo.png" in result.output
+    assert "marker-icon.png" in result.output
+    assert "fehlt" in result.output.lower()

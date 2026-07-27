@@ -346,6 +346,20 @@ zeigt beides mit %-Anteilen; das Export-Datenblatt bekommt eine „Fundus-Zusamm
 
 21 neue Tests. 229 Tests grün, `ruff` sauber, `doctor` grün.
 
+### Nachtrag: Design-Asset-Inventar + Prompt-Vorlagen (2026-07-27)
+
+Damit der Wizard-Pausenfall „Grafiken extern erstellen → ablegen → weiter" idiotensicher ist:
+`design.asset_inventory` gleicht die in `design/prompts.md` angeforderten Grafik-Dateinamen
+gegen `design/assets/` ab (requested/present/missing/extra). Neues read-only-Kommando
+`frameforge design-status` zeigt tokens.yaml-Status, Schriften und das Grafik-Inventar
+(✓ abgelegt / ✗ fehlt noch); `frameforge design` zeigt es nach dem Übernehmen ebenfalls. Der
+Wizard prüft beim Wiedereinstieg `design-status`, bevor er `design` ausführt. Kein
+Hintergrund-Warten — Stand in `.state.json`, Nutzer sagt „weiter".
+
+Zusätzlich Starter-Prompt-Vorlagen (`templates/prompts/graphics.md`, `music.md`) und
+`templates/project/tokens.example.yaml`; `design-system`/`audio-designer`-Agenten verweisen
+darauf. Grafiken/Musik sind optional — Text-Overlays laufen ohne. 5 neue Tests. 246 Tests grün.
+
 ### Nachtrag: feste Quelle/Kamera-Kategorie (2026-07-27)
 
 Nutzer wollte „nur Drohnen-Shots" als saubere, wiederholbare Auswahl. Neues kontrolliertes

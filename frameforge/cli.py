@@ -307,14 +307,60 @@ def query(
     console.print_json(json.dumps(results))
 
 
+def _print_design_inventory(proj: Project) -> None:
+    """Zeigt Tokens-Status, Schriften und das Grafik-Inventar (angefordert vs. abgelegt)."""
+    tokens_ok = proj.design_tokens_path.exists()
+    console.print(
+        f"tokens.yaml: {'[green]✓ vorhanden[/green]' if tokens_ok else '[yellow]✗ fehlt[/yellow]'}"
+    )
+    fonts = (
+        sorted(p.name for p in proj.design_fonts_dir.iterdir() if p.is_file())
+        if proj.design_fonts_dir.is_dir()
+        else []
+    )
+    if fonts:
+        console.print(f"Schriften (design/fonts/): {', '.join(fonts)}")
+
+    inv = design.asset_inventory(proj)
+    if not inv.requested and not inv.present:
+        console.print("Grafiken: keine angefordert, keine abgelegt (Text-Overlays reichen).")
+        return
+    table = Table(title="Design-Grafiken (design/assets/)")
+    table.add_column("Datei")
+    table.add_column("Status")
+    for name in inv.requested:
+        present = name in {p.lower() for p in inv.present}
+        table.add_row(name, "[green]✓ abgelegt[/green]" if present else "[yellow]✗ fehlt noch[/yellow]")
+    for name in inv.extra:
+        table.add_row(name, "[dim]zusätzlich (nicht angefordert)[/dim]")
+    console.print(table)
+    if inv.missing:
+        console.print(
+            f"[yellow]{len(inv.missing)} Grafik(en) fehlen noch:[/yellow] {', '.join(inv.missing)}. "
+            "Prompts in design/prompts.md, Bilder nach design/assets/ ablegen — sind optional."
+        )
+    else:
+        console.print("[green]Alle angeforderten Grafiken sind abgelegt.[/green]")
+
+
+@app.command(name="design-status")
+def design_status(project: str) -> None:
+    """Read-only: Design-Stand zeigen (tokens.yaml, Schriften, Grafik-Inventar).
+
+    Praktisch beim Wiedereinstieg nach dem externen Erstellen von Logo/Marker/Freistellern:
+    zeigt, welche angeforderten Grafiken schon in `design/assets/` liegen und welche fehlen.
+    """
+    proj = _resolve_or_fail(project)
+    _print_design_inventory(proj)
+
+
 @app.command(name="design")
 def design_cmd(project: str) -> None:
     """Uebernimmt `design/tokens.yaml` als Designsystem, setzt Projekt-Phase auf DESIGNED.
 
     Der eigentliche Wizard (Stimmung -> Farbpalette/Typo -> Motion -> Asset-Inventur) ist
-    Sache des `design-system`-Agenten (`/ff-design`, Task 5) — der schreibt `tokens.yaml`,
-    bevor dieses Kommando läuft. SVG-Rendering selbst passiert erst beim Timeline-Bau
-    (`design.render_svg_to_png` pro Overlay), nicht hier global fuer das ganze Projekt.
+    Sache des `design-system`-Agenten (`/ff-design`) — der schreibt `tokens.yaml`, bevor dieses
+    Kommando läuft. Zeigt danach das Grafik-Inventar (angefordert vs. abgelegt).
     """
     proj = _resolve_or_fail(project)
     if not proj.design_tokens_path.exists():
@@ -328,6 +374,7 @@ def design_cmd(project: str) -> None:
     except GateError as exc:
         raise _fail(str(exc)) from exc
     console.print(f"[green]Designsystem uebernommen:[/green] {proj.design_tokens_path}")
+    _print_design_inventory(proj)
 
 
 @app.command()

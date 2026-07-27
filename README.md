@@ -167,9 +167,21 @@ Der **`design-system`-Agent** führt durch Stimmung → Farbpalette → Typo →
 - **Echte Grafiken** (Logo, Marker-Icon, Freisteller) — das Einzige „extern" und **optional**:
   der Agent schreibt fertige Prompts nach `design/prompts.md` (Vorlage:
   `templates/prompts/graphics.md`, Konvention PNG mit Alpha). Du erzeugst die Bilder in einem
-  Bildgenerator und legst sie in `design/assets/`; der Wizard pausiert und macht dann weiter.
+  Bildgenerator und legst sie **unter den Namen aus `prompts.md`** in `design/assets/`.
   Ohne eigene Grafiken läuft das Projekt trotzdem durch.
 - **Eigene Schriftdatei** (statt System-Schrift): `.ttf` nach `design/fonts/`.
+
+**Pausieren & Wiedereinstieg:** Der Ablauf *wartet nicht* im Hintergrund — er pausiert und der
+Stand bleibt in `.state.json`. Du legst die Grafiken ab, wann immer du willst, und sagst dann
+„weiter" (oder startest `/ff-wizard` neu). `frameforge design-status norwegen-2026` zeigt
+jederzeit, was schon da ist und was fehlt:
+
+```
+tokens.yaml: ✓ vorhanden
+Design-Grafiken (design/assets/)
+  logo.png         ✓ abgelegt
+  marker-icon.png  ✗ fehlt noch
+```
 
 `tokens.yaml` speist alle SVG-Overlays — **ein** Designsystem für alle Exporte des Projekts,
 damit Teaser und Hauptfilm wie eine Familie wirken.

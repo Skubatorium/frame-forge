@@ -46,12 +46,18 @@ Der `Naechster Schritt`-Hinweis aus `frameforge status` sagt dir, welcher dran i
   Beschreibung/Tags/Rating schreiben). Kläre vorher, ob der Nutzer das jetzt laufen lassen
   will (kann bei viel Material dauern). Danach `frameforge index <projekt>` erneut, bis die
   Phase auf INDEXED steht.
-- **design** — Führe den `/ff-design`-Ablauf. **Wichtiger Sonderfall:** Wenn der Nutzer die
-  Design-Tokens extern erstellt (z. B. über einen separaten Claude-Designer) und die Datei
-  selbst ablegen will — erzeuge/zeige den Design-Prompt, sage ihm **genau**, dass die fertige
-  `tokens.yaml` nach `projects/<projekt>/design/tokens.yaml` gehört, und **pausiere**. Beim
-  nächsten `/ff-wizard`-Aufruf prüfst du, ob die Datei da ist, und machst mit
-  `frameforge design <projekt>` weiter.
+- **design** — Führe den `/ff-design`-Ablauf. Die **Tokens** (Farben/Schrift/Motion) schreibst
+  du selbst nach `design/tokens.yaml` — dafür braucht es kein externes Tool.
+  **Fehlende Grafiken** (Logo, Marker-Icon, Freisteller) sind optional: schreibe die Prompts
+  nach `design/prompts.md` (Vorlage `templates/prompts/graphics.md`), sag dem Nutzer **genau**,
+  welche Datei mit welchem Namen nach `projects/<projekt>/design/assets/` gehört, und
+  **pausiere**. Der Nutzer erzeugt die Bilder extern und legt sie ab.
+  **Wiedereinstieg (wichtig):** Der Nutzer sagt „weiter" oder startet `/ff-wizard` neu — es
+  läuft **kein** Hintergrund-Warten. Prüfe dann mit **`frameforge design-status <projekt>`**
+  das Grafik-Inventar (✓ abgelegt / ✗ fehlt noch). Sind alle angeforderten Grafiken da (oder
+  waren keine nötig), führe `frameforge design <projekt>` aus (Phase → DESIGNED). Fehlt noch
+  etwas, nenne konkret welche Datei — der Nutzer kann trotzdem weitermachen (Grafiken sind
+  optional) oder erst die fehlenden nachreichen.
 - **brief** (pro Export) — Folge `/ff-brief`. Frag Export-Name, Stil-Preset (aus
   `docs/styles/style-catalog.md`), Ziellänge, Muss-/verbotene Shots. Schreibe `brief.yaml`.
 - **build** (pro Export) — Folge `/ff-build` (story-architect → timeline-builder, ggf.
