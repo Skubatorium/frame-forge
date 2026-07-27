@@ -182,3 +182,18 @@ def test_person_presence_counts_named_only(proj):
     presence = person_presence(proj)
     assert presence["Oskar"]["assets"] == 2
     assert presence["Oskar"]["seconds"] == pytest.approx(20.0)  # v1 12s + v2 8s
+
+
+def test_content_composition_by_source(proj):
+    assets = json.loads(proj.assets_json_path.read_text())
+    assets[0]["source"] = "drone"
+    assets[1]["source"] = "phone"
+    # p1 (Foto) ohne source -> "unknown"
+    proj.assets_json_path.write_text(json.dumps(assets))
+
+    from frameforge.stats import content_composition
+
+    comp = content_composition(proj)
+    assert comp["by_source"]["drone"]["seconds"] == pytest.approx(12.0)
+    assert comp["by_source"]["phone"]["count"] == 1
+    assert comp["by_source"]["unknown"]["count"] == 1

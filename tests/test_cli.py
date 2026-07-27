@@ -348,3 +348,16 @@ def test_name_person_unknown_cluster_fails(env):
     _write_clusters(env, {"person_1": ["a1"]})
     result = runner.invoke(app, ["name-person", "proto", "person_9", "X"])
     assert result.exit_code == 1
+
+
+def test_query_filters_by_source(env):
+    write_asset(env, {"id": "d1", "kind": "video", "source": "drone", "path": "clip.mp4",
+                      "hash": hash_file(env.config.media_root / "clip.mp4")})
+    write_asset(env, {"id": "ph1", "kind": "video", "source": "phone", "path": "photo.jpg",
+                      "hash": hash_file(env.config.media_root / "photo.jpg")})
+
+    result = runner.invoke(app, ["query", "proto", "--source", "drone"])
+
+    assert result.exit_code == 0, result.output
+    assert "d1" in result.output
+    assert "ph1" not in result.output

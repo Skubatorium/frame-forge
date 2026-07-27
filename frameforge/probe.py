@@ -12,6 +12,45 @@ class ProbeError(RuntimeError):
     """ffprobe/exiftool ist fehlgeschlagen oder lieferte kein auswertbares Ergebnis."""
 
 
+# Kontrolliertes Vokabular fuer `asset["source"]` (Aufnahme-Quelle). Der media-indexer-Agent
+# setzt das Feld; `guess_source` liefert einen Vorschlag aus EXIF-Kamera-Angaben.
+SOURCE_TYPES = ("drone", "phone", "camera", "action_cam", "unknown")
+
+# Marker in Make/Model/Handler -> Quelle. Reihenfolge = Prioritaet.
+_SOURCE_MARKERS: tuple[tuple[str, str], ...] = (
+    ("dji", "drone"),
+    ("autel", "drone"),
+    ("skydio", "drone"),
+    ("parrot", "drone"),
+    ("gopro", "action_cam"),
+    ("insta360", "action_cam"),
+    ("osmo action", "action_cam"),
+    ("iphone", "phone"),
+    ("ipad", "phone"),
+    ("pixel", "phone"),
+    ("galaxy", "phone"),
+    ("samsung sm-", "phone"),
+    ("xiaomi", "phone"),
+    ("oneplus", "phone"),
+)
+
+
+def guess_source(*hints: str | None) -> str:
+    """Raet die Aufnahme-Quelle aus EXIF-Kamera-Angaben (Make/Model/Handler).
+
+    Best-effort-Vorschlag fuer den media-indexer — der Agent darf ihn ueberschreiben, wenn die
+    Keyframes etwas anderes zeigen. Ohne Treffer: `"camera"` bei vorhandener Angabe, sonst
+    `"unknown"`.
+    """
+    blob = " ".join(h for h in hints if h).lower()
+    if not blob.strip():
+        return "unknown"
+    for marker, source in _SOURCE_MARKERS:
+        if marker in blob:
+            return source
+    return "camera"
+
+
 def _run_json(cmd: list[str]) -> dict:
     result = subprocess.run(cmd, capture_output=True, text=True, timeout=30, check=False)
     if result.returncode != 0:
@@ -54,6 +93,10 @@ def probe_video(path: Path) -> dict:
     duration = float(fmt.get("duration") or video_stream.get("duration") or 0.0)
     bitrate = int(fmt.get("bit_rate") or video_stream.get("bit_rate") or 0)
 
+    # Kamera-Hinweise aus Container-/Stream-Tags (DJI, GoPro ... setzen z.B. make/handler_name).
+    tags = {**fmt.get("tags", {}), **video_stream.get("tags", {})}
+    hints = [tags.get(k) for k in ("make", "model", "handler_name", "encoder", "com.apple.quicktime.make")]
+
     return {
         "w": int(video_stream.get("width", 0)),
         "h": int(video_stream.get("height", 0)),
@@ -61,6 +104,7 @@ def probe_video(path: Path) -> dict:
         "dur": duration,
         "bitrate": bitrate,
         "codec": video_stream.get("codec_name", "unknown"),
+        "source_guess": guess_source(*hints),
     }
 
 
@@ -91,7 +135,14 @@ def probe_photo_exif(path: Path) -> dict:
     if lat is not None and lon is not None:
         gps = {"lat": _to_signed_degrees(lat), "lon": _to_signed_degrees(lon)}
 
-    return {"captured_at": captured_at, "gps": gps}
+    make, model = entry.get("Make"), entry.get("Model")
+    return {
+        "captured_at": captured_at,
+        "gps": gps,
+        "make": make,
+        "model": model,
+        "source_guess": guess_source(make, model),
+    }
 
 
 def _to_signed_degrees(value: float | str) -> float:

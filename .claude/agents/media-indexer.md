@@ -17,7 +17,14 @@ Für jedes zugewiesene Asset:
 2. Schreibe `content.summary` (1 Satz, faktenbasiert: was ist zu sehen, Licht, Bewegung),
    `content.tags` (4–8 kurze Tags, deutsch, für Suche gedacht — nicht literarisch),
    `content.people` (bool), `content.usable_as` (z.B. `establisher`, `b-roll`, `outro`),
-   `rating` (1–5, Nutzbarkeit für einen Schnitt, nicht Kunstgeschmack).
+   `rating` (1–5, Nutzbarkeit für einen Schnitt, nicht Kunstgeschmack), und **`source`** —
+   die Aufnahme-Quelle aus dem **kontrollierten Vokabular** `drone` / `phone` / `camera` /
+   `action_cam` / `unknown` (`frameforge.probe.SOURCE_TYPES`). Das `probe`-Ergebnis liefert
+   dir unter `source_guess` einen Vorschlag aus den EXIF-/Container-Kamera-Angaben (DJI →
+   drone, iPhone → phone, GoPro → action_cam …). Übernimm ihn, **außer** die Keyframes zeigen
+   klar etwas anderes (z.B. eindeutiger Drohnen-Vogelperspektive-Flug trotz fehlender EXIF).
+   Setze das Feld immer — es macht Auswahl wie „nur Drohnen-Shots" (`query --source drone`)
+   erst möglich.
 3. Schreibe das Ergebnis über `frameforge query`/den Index-Writer in `assets.json` und die
    `.md`-Datei unter `index/assets/<id>.md` (Schema: Plan §4, `docs/plans/0001-initial-structure.md`).
 

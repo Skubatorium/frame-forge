@@ -24,8 +24,13 @@ def query_assets(
     place: str | None = None,
     min_rating: int | None = None,
     kind: str | None = None,
+    source: str | None = None,
 ) -> list[dict]:
-    """Filtert `assets.json` nach Tag, Ort, Mindest-Rating und Asset-Art (video/photo)."""
+    """Filtert `assets.json` nach Tag, Ort, Mindest-Rating, Art (video/photo) und Quelle/Kamera.
+
+    `source` filtert auf die Aufnahme-Quelle (`drone`/`phone`/`camera`/`action_cam`, siehe
+    `frameforge.probe.SOURCE_TYPES`) — z.B. "nur Drohnen-Shots".
+    """
 
     def matches(asset: dict) -> bool:
         if tag is not None and tag not in asset.get("content", {}).get("tags", []):
@@ -34,7 +39,9 @@ def query_assets(
             return False
         if min_rating is not None and asset.get("rating", 0) < min_rating:
             return False
-        return kind is None or asset.get("kind") == kind
+        if kind is not None and asset.get("kind") != kind:
+            return False
+        return source is None or asset.get("source") == source
 
     return [asset for asset in load_assets(project) if matches(asset)]
 

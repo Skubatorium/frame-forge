@@ -128,12 +128,20 @@ def content_composition(project: Project) -> dict:
         motion[mtype]["count"] += 1
         motion[mtype]["seconds"] = round(motion[mtype]["seconds"] + _video_seconds(a), 1)
 
+    by_source: dict[str, dict] = {}
+    for a in assets:
+        src = a.get("source", "unknown")
+        by_source.setdefault(src, {"count": 0, "seconds": 0.0})
+        by_source[src]["count"] += 1
+        by_source[src]["seconds"] = round(by_source[src]["seconds"] + _video_seconds(a), 1)
+
     tags = Counter(t for a in assets for t in a.get("content", {}).get("tags", []))
 
     return {
         "total_assets": len(assets),
         "total_video_seconds": round(total_seconds, 1),
         "by_kind": {"video": bucket(videos), "photo": bucket(photos)},
+        "by_source": dict(sorted(by_source.items(), key=lambda kv: -kv[1]["count"])),
         "people": {"mit_personen": bucket(with_people), "ohne_personen": bucket(without_people)},
         "motion": dict(sorted(motion.items(), key=lambda kv: -kv[1]["seconds"])),
         "top_tags": tags.most_common(10),
@@ -321,6 +329,9 @@ def build_report(project: Project, export: Export, timeline: Timeline) -> str:
         f"- **Mit Personen:** {_share(comp['people']['mit_personen'])} · "
         f"**Ohne (Landschaft o.ä.):** {_share(comp['people']['ohne_personen'])}"
     )
+    if comp.get("by_source"):
+        src = " · ".join(f"{k}: {_share(v)}" for k, v in comp["by_source"].items())
+        lines.append(f"- **Quelle/Kamera:** {src}")
     if comp["motion"]:
         motion = " · ".join(f"{k}: {_share(v)}" for k, v in comp["motion"].items())
         lines.append(f"- **Kamera/Motion:** {motion}")

@@ -42,30 +42,35 @@ DESCRIPTIONS = {
         "tags": ["fjord", "wasser", "weitwinkel", "ruhig"],
         "usable_as": ["establisher", "b-roll"],
         "rating": 4,
+        "source": "drone",
     },
     "clip-water.mp4": {
         "summary": "Nahaufnahme von Wellenbewegung am Ufer.",
         "tags": ["wasser", "detail", "bewegung"],
         "usable_as": ["b-roll"],
         "rating": 3,
+        "source": "phone",
     },
     "clip-drive.mp4": {
         "summary": "Fahrt entlang der Serpentine, Motorengeraeusch im O-Ton.",
         "tags": ["strasse", "fahrt", "auto"],
         "usable_as": ["b-roll", "outro"],
         "rating": 4,
+        "source": "action_cam",
     },
     "photo-cabin.jpg": {
         "summary": "Huette am Wasser in blauem Licht.",
         "tags": ["huette", "architektur"],
         "usable_as": ["establisher"],
         "rating": 5,
+        "source": "camera",
     },
     "photo-family.jpg": {
         "summary": "Warmes Abendlicht ueber der Landschaft.",
         "tags": ["abend", "landschaft", "warm"],
         "usable_as": ["b-roll", "outro"],
         "rating": 4,
+        "source": "camera",
     },
 }
 
@@ -156,6 +161,7 @@ def step_index(project, track: list[dict]) -> dict[str, str]:
                 "usable_as": desc["usable_as"],
             },
             "rating": desc["rating"],
+            "source": desc["source"],
             **({"tech": tech} if tech else {}),
             **analysis,
         }

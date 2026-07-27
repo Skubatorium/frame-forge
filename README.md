@@ -294,9 +294,16 @@ Kein Re-Ingest, kein Re-Index, kein Re-Design. `frameforge status` zeigt für ei
 Projekt aktiv den Hinweis „Optional: weiteren Export anlegen"; `/ff-wizard norwegen-2026` bietet
 es geführt an. Jeder Export bekommt eine eigene Spur in der Status-Karte.
 
-**„Nur Landschaften, keine Personen"** ist einfach ein anderer Brief: verbotene Shots über die
-Personen-Cluster (`frameforge faces`) oder über Tags setzen — `story-architect`/
-`timeline-builder` filtern den Fundus via `frameforge query`.
+Solche Varianten sind einfach ein anderer Brief; `story-architect`/`timeline-builder` filtern
+den Fundus via `frameforge query`:
+
+- **„Nur Drohnen-Shots"** → `frameforge query norwegen-2026 --source drone` (Quellen:
+  `drone` / `phone` / `camera` / `action_cam`). Die Quelle setzt der `media-indexer` beim
+  Indizieren automatisch (aus EXIF/Kamera-Angaben; DJI → drone, iPhone → phone, GoPro →
+  action_cam …).
+- **„Nur Landschaften, keine Personen"** → verbotene Shots über die Personen-Cluster
+  (`frameforge faces`) oder über Tags/`content.people`.
+- Kombinierbar mit `--tag`, `--place`, `--min-rating`, `--person`.
 
 ## 3b. Audio & Musik — wo, was, wann
 

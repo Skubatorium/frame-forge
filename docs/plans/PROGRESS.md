@@ -344,9 +344,18 @@ Crops, fragt „wer ist das?", ruft `name-person`).
 (Tags); `person_presence` zählt pro benannter Person Assets + Video-Sekunden. `frameforge stats`
 zeigt beides mit %-Anteilen; das Export-Datenblatt bekommt eine „Fundus-Zusammensetzung"-Sektion.
 
-Drohne-vs-Handy hängt an sauberem Tagging durch den `media-indexer` (der `analyze.py`-
-Heuristik-`motion.type` unterscheidet nur static/handheld) — die Statistik nutzt, was der Index
-liefert. 21 neue Tests. 229 Tests grün, `ruff` sauber, `doctor` grün.
+21 neue Tests. 229 Tests grün, `ruff` sauber, `doctor` grün.
+
+### Nachtrag: feste Quelle/Kamera-Kategorie (2026-07-27)
+
+Nutzer wollte „nur Drohnen-Shots" als saubere, wiederholbare Auswahl. Neues kontrolliertes
+Vokabular `asset["source"]` = `drone`/`phone`/`camera`/`action_cam`/`unknown`
+(`probe.SOURCE_TYPES`). `probe.guess_source` schlägt es aus EXIF-/Container-Kamera-Angaben vor
+(DJI→drone, iPhone→phone, GoPro→action_cam …), `probe_video`/`probe_photo_exif` liefern
+`source_guess` mit; der `media-indexer`-Agent setzt `source` (Vorschlag übernehmen, außer die
+Keyframes zeigen klar etwas anderes). Auswahl: `frameforge query --source drone`. `stats` +
+Report zeigen die Quelle-Verteilung (Sekunden + %). 4 neue Tests (guess_source, by_source,
+query --source), proto-Fixtures mit `source` versehen. 241 Tests grün.
 
 ### M2.1 — Notizen (2026-07-27)
 

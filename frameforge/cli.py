@@ -290,14 +290,17 @@ def query(
     min_rating: int = typer.Option(None),
     kind: str = typer.Option(None),
     person: str = typer.Option(None, help="Nur Assets mit dieser (benannten) Person"),
+    source: str = typer.Option(None, help="Nur diese Quelle: drone/phone/camera/action_cam"),
 ) -> None:
     """Kompaktes JSON aus `assets.json`, gefiltert — statt ganze Verzeichnisse zu lesen.
 
-    `--person <name>` filtert auf Assets, in denen die per `name-person` benannte Person
-    vorkommt (setzt `frameforge faces` + Benennung voraus).
+    `--source drone` liefert z.B. nur Drohnen-Shots; `--person <name>` filtert auf Assets, in
+    denen die per `name-person` benannte Person vorkommt (setzt `frameforge faces` voraus).
     """
     proj = _resolve_or_fail(project)
-    results = index_module.query_assets(proj, tag=tag, place=place, min_rating=min_rating, kind=kind)
+    results = index_module.query_assets(
+        proj, tag=tag, place=place, min_rating=min_rating, kind=kind, source=source
+    )
     if person is not None:
         allowed = set(people_module.assets_for_person(proj, person))
         results = [a for a in results if a.get("id") in allowed]
@@ -683,6 +686,10 @@ def stats(project: str) -> None:
             },
         )
     )
+    if comp.get("by_source"):
+        console.print(
+            _stats_table("Quelle/Kamera", {k: _share(v) for k, v in comp["by_source"].items()})
+        )
     if comp["motion"]:
         console.print(
             _stats_table("Kamera/Motion (Video)", {k: _share(v) for k, v in comp["motion"].items()})
