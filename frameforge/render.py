@@ -45,6 +45,44 @@ def _scale_pad(width: int, height: int) -> str:
     )
 
 
+# Grobe, bewusst dezente Übersetzung der Preset-`color_grade`-Stimmung in FFmpeg-Filter.
+# Keine Ersatz für eine echte Farbkorrektur (dafür `--lut`), aber gibt jedem Stil-Preset
+# automatisch einen passenden Grundton. Werte konservativ gehalten, damit nichts "kaputt" aussieht.
+_CONTRAST_MAP = {"low": 0.95, "medium": 1.05, "medium_high": 1.12, "high": 1.20}
+_MOOD_MAP: dict[str, dict] = {
+    "cool_highlights_warm_lights": {"saturation": 1.05, "temperature": -0.06},
+    "punchy": {"saturation": 1.22, "contrast_boost": 0.05},
+    "natural": {"saturation": 1.02},
+    "consistent_across_theme": {"saturation": 1.05},
+    "raw": {"saturation": 0.9, "contrast_boost": -0.05},
+    "vivid": {"saturation": 1.28, "contrast_boost": 0.03},
+}
+
+
+def grade_filter(color_grade: dict | None) -> str | None:
+    """Baut einen `eq`(+`colorbalance`)-Filterstring aus `color_grade` (`{mood, contrast}`).
+
+    `None`, wenn kein `color_grade` gesetzt ist oder die Stimmung unbekannt ist (dann keine
+    automatische Gradierung — der Look bleibt neutral).
+    """
+    if not color_grade:
+        return None
+    mood = color_grade.get("mood")
+    params = _MOOD_MAP.get(mood, {}) if mood else {}
+    contrast = _CONTRAST_MAP.get(color_grade.get("contrast", ""), 1.0)
+    contrast *= 1.0 + params.get("contrast_boost", 0.0)
+    saturation = params.get("saturation", 1.0)
+    if not params and contrast == 1.0:
+        return None
+
+    chain = f"eq=contrast={contrast:.3f}:saturation={saturation:.3f}"
+    temp = params.get("temperature")
+    if temp:
+        # warm = mehr Rot/weniger Blau in den Schatten (negatives temp => kühler in Highlights)
+        chain += f",colorbalance=rs={-temp:.3f}:bs={temp:.3f}"
+    return chain
+
+
 def build_filtergraph(
     timeline: Timeline,
     *,
@@ -54,6 +92,7 @@ def build_filtergraph(
     lut_path: Path | None = None,
     loudness_normalize: bool = False,
     resolution: tuple[int, int] | None = None,
+    color_grade: dict | None = None,
 ) -> FilterGraph:
     """Baut Input-Liste und `filter_complex`-String aus einer validierten Timeline.
 
@@ -127,8 +166,16 @@ def build_filtergraph(
         )
         cur_video = next_video
 
+    # Automatischer Grundton aus dem Preset (dezent) …
+    grade = grade_filter(color_grade)
+    if grade is not None:
+        next_video = f"{cur_video}_grade"
+        filters.append(f"[{cur_video}]{grade}[{next_video}]")
+        cur_video = next_video
+
+    # … dann optional eine echte Projekt-LUT obendrauf.
     if lut_path is not None:
-        graded = f"{cur_video}_graded"
+        graded = f"{cur_video}_lut"
         filters.append(f"[{cur_video}]lut3d=file='{lut_path}'[{graded}]")
         cur_video = graded
 
@@ -230,8 +277,14 @@ def _run_ffmpeg(
         raise RenderError(f"ffmpeg fehlgeschlagen: {result.stderr.strip()}")
 
 
-def render_proxy(project: Project, export: Export, timeline: Timeline) -> Path:
-    """1080p-Proxy-Render fuer `ff-preview`, mappt auf die Proxy-Assets im Cache."""
+def render_proxy(
+    project: Project, export: Export, timeline: Timeline, *, color_grade: dict | None = None
+) -> Path:
+    """1080p-Proxy-Render fuer `ff-preview`, mappt auf die Proxy-Assets im Cache.
+
+    `color_grade` (aus dem Brief-Preset) wird auch im Preview angewandt, damit der Preview
+    schon wie der Final-Look aussieht.
+    """
     proxies_dir = project.cache_dir / "proxies"
     assets_by_id = {a["id"]: a for a in load_assets(project)}
 
@@ -249,7 +302,11 @@ def render_proxy(project: Project, export: Export, timeline: Timeline) -> Path:
         return proxy
 
     graph = build_filtergraph(
-        timeline, resolve_asset=resolve, export_root=export.root, project_root=project.root
+        timeline,
+        resolve_asset=resolve,
+        export_root=export.root,
+        project_root=project.root,
+        color_grade=color_grade,
     )
     out_path = export.preview_dir / f"{export.name}_preview.mp4"
     _run_ffmpeg(graph, timeline, out_path)
@@ -277,6 +334,7 @@ def render_final(
     resolution: tuple[int, int] | None = None,
     crf: int = 18,
     preset: str = "medium",
+    color_grade: dict | None = None,
 ) -> Path:
     """Final-Render: mappt auf die Original-Assets (kein Proxy-Downscale), EBU-R128-
 
@@ -309,6 +367,7 @@ def render_final(
         lut_path=lut_path,
         loudness_normalize=True,
         resolution=resolution,
+        color_grade=color_grade,
     )
     out_path = _next_version_path(export.final_dir, export.name, ".mp4")
     _run_ffmpeg(graph, timeline, out_path, crf=crf, preset=preset)

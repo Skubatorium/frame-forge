@@ -165,7 +165,7 @@ def test_build_filtergraph_lut_path_applies_lut3d_filter():
         lut_path=Path("/luts/log-to-rec709.cube"),
     )
     assert "lut3d=file='/luts/log-to-rec709.cube'" in graph.filter_complex
-    assert graph.video_label.endswith("_graded")
+    assert graph.video_label.endswith("_lut")
 
 
 def test_build_filtergraph_without_lut_path_skips_lut3d():
@@ -395,3 +395,35 @@ def test_build_filtergraph_resolution_override_scales_to_target():
     )
     assert "scale=1920:1080" in graph.filter_complex
     assert "320:240" not in graph.filter_complex
+
+
+def test_build_filtergraph_applies_color_grade():
+
+    timeline = _timeline(video=[{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0}])
+    graph = build_filtergraph(
+        timeline,
+        resolve_asset=lambda aid: Path(f"/media/{aid}.mp4"),
+        export_root=Path("/export"),
+        project_root=Path("/project"),
+        color_grade={"mood": "punchy", "contrast": "high"},
+    )
+    assert "eq=contrast=" in graph.filter_complex
+    assert graph.video_label.endswith("_grade")
+
+
+def test_grade_filter_unknown_mood_returns_none():
+    from frameforge.render import grade_filter
+
+    assert grade_filter({"mood": "gibts-nicht"}) is None
+    assert grade_filter(None) is None
+
+
+def test_render_final_with_color_grade_still_renders(proj):
+    export = proj.export("teaser")
+    timeline = Timeline(
+        export="teaser", fps=25, resolution=(320, 240), duration=1.0,
+        tracks={"video": [{"id": "c1", "asset": "clip1", "src_in": 0, "src_out": 1.0, "tl_in": 0}]},
+    )
+    out = render_final(proj, export, timeline, color_grade={"mood": "vivid", "contrast": "high"},
+                       crf=28, preset="ultrafast")
+    assert probe_video(out)["w"] == 320

@@ -441,7 +441,9 @@ def preview(project: str, export: str) -> None:
         raise typer.Exit(code=1)
 
     try:
-        out_path = render_module.render_proxy(proj, exp, timeline)
+        out_path = render_module.render_proxy(
+            proj, exp, timeline, color_grade=(brief or {}).get("color_grade")
+        )
     except render_module.RenderError as exc:
         raise _fail(str(exc)) from exc
 
@@ -503,7 +505,8 @@ def render(
 
     try:
         out_path = render_module.render_final(
-            proj, exp, timeline, lut_path=lut_path, resolution=res_tuple, crf=crf, preset=preset
+            proj, exp, timeline, lut_path=lut_path, resolution=res_tuple, crf=crf, preset=preset,
+            color_grade=(brief or {}).get("color_grade"),
         )
     except render_module.RenderError as exc:
         raise _fail(str(exc)) from exc
