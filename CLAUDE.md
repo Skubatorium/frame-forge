@@ -82,8 +82,8 @@ Das Material umfasst ~100 GB. Ohne Disziplin verbrennt jeder Schnittversuch die 
 
 ## Aktueller Stand der Werkzeugschicht
 
-Bis M1 sind `probe.py`, `analyze.py`, `keyframes.py`, `gpx.py`, `audio.py`, `design.py`
-(Rendering-Teil), `map.py`, `render.py`, `nle.py` Stubs, die `NotImplementedError` werfen —
-das ist erwartetes Verhalten, kein Bug. Bereits echt implementiert: `state.py`, `project.py`,
-`timeline.py`, `cli.py`, `ingest.hash_file`, `index.query_assets`/`load_assets`, `qc.validate`
-(Schema-Ebene), `design.preload_cairo`. Genauer Stand: `docs/plans/PROGRESS.md`.
+M0–M4 sind fertig — jedes Modul in `frameforge/` ist echt implementiert, keine
+`NotImplementedError`-Stubs mehr im Package. Offen ist nur noch, was inhärent an einem echten
+Projekt mit echtem Material hängt (M5 laut Plan, kein Code-Meilenstein) und die "Offenen
+Punkte für später" aus Plan §11 (Gesichtserkennung, automatische Untertitel,
+Musik-Lizenz-Nachweis). Genauer Stand inkl. aller Design-Entscheidungen: `docs/plans/PROGRESS.md`.
