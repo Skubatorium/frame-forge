@@ -203,7 +203,7 @@ zurückgestellt. M5 (Norwegen-Realbetrieb) startet erst mit echtem Material.
 
 | # | Schritt | Status | Commit |
 |---|------|--------|--------|
-| ME.1 | `people.py` (Gesichtserkennung + Clustering), `cli.py faces`-Kommando (Opt-in) | ✅ fertig | siehe Notizen |
+| ME.1 | `people.py` (Gesichtserkennung + Clustering), `cli.py faces`-Kommando (Opt-in) | ✅ fertig | `d2bd4a5` |
 
 ### ME.1 — Notizen (2026-07-27)
 
