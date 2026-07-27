@@ -20,7 +20,7 @@ from pathlib import Path
 
 from frameforge.index import load_assets
 from frameforge.ingest import PHOTO_EXTENSIONS, proxy_path
-from frameforge.project import Export, Project
+from frameforge.project import Export, Project, UnsafePathError, resolve_media_path
 from frameforge.timeline import Timeline
 
 
@@ -238,7 +238,10 @@ def render_proxy(project: Project, export: Export, timeline: Timeline) -> Path:
         asset = assets_by_id.get(asset_id)
         if asset is None:
             raise RenderError(f"Asset '{asset_id}' nicht in assets.json gefunden")
-        original = project.config.media_root / asset["path"]
+        try:
+            original = resolve_media_path(project.config.media_root, asset["path"])
+        except UnsafePathError as exc:
+            raise RenderError(str(exc)) from exc
         proxy = proxy_path(original, proxies_dir, media_root=project.config.media_root)
         if not proxy.exists():
             raise RenderError(f"Kein Proxy fuer Asset '{asset_id}' unter {proxy}")
@@ -278,7 +281,10 @@ def render_final(
         asset = assets_by_id.get(asset_id)
         if asset is None:
             raise RenderError(f"Asset '{asset_id}' nicht in assets.json gefunden")
-        original = project.config.media_root / asset["path"]
+        try:
+            original = resolve_media_path(project.config.media_root, asset["path"])
+        except UnsafePathError as exc:
+            raise RenderError(str(exc)) from exc
         if not original.exists():
             raise RenderError(f"Original-Asset '{asset_id}' nicht gefunden unter {original}")
         return original

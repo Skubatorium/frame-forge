@@ -8,6 +8,7 @@ nur Pfade und die `project.yaml`-Konfiguration.
 from __future__ import annotations
 
 import hashlib
+import re
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -20,9 +21,45 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 PROJECTS_DIR = REPO_ROOT / "projects"
 CACHE_ROOT = Path.home() / ".cache" / "frameforge"
 
+# Projekt-/Export-Namen werden zu Verzeichnisnamen — ohne Validierung waere ein Name wie
+# "../../etc" ein Path-Traversal (Audit-Finding S1). Erlaubt: Buchstaben/Ziffern/._- , kein
+# fuehrender Punkt, kein Slash.
+_NAME_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*$")
+
 
 class ProjectNotFoundError(RuntimeError):
     """Projektordner oder `project.yaml` fehlt."""
+
+
+class UnsafeNameError(ValueError):
+    """Ein Projekt-/Export-Name enthaelt unerlaubte Zeichen (Path-Traversal-Schutz)."""
+
+
+class UnsafePathError(ValueError):
+    """Ein aufgeloester Medienpfad liegt ausserhalb von `media_root` (Path-Traversal-Schutz)."""
+
+
+def validate_name(name: str, *, kind: str = "Name") -> str:
+    """Wirft `UnsafeNameError`, wenn `name` als Verzeichnisname unsicher waere."""
+    if not _NAME_RE.match(name) or ".." in name:
+        raise UnsafeNameError(
+            f"{kind} '{name}' ist unzulaessig — erlaubt sind nur Buchstaben, Ziffern, '.', '_', '-' "
+            f"(kein '/', kein fuehrender Punkt, kein '..')."
+        )
+    return name
+
+
+def resolve_media_path(media_root: Path, rel: str) -> Path:
+    """Loest `media_root / rel` auf und stellt sicher, dass das Ergebnis unter `media_root`
+
+    bleibt. `rel` stammt aus `assets.json` (vom media-indexer-Agenten geschrieben) — ein
+    `../`-Pfad wuerde `media_root` sonst verlassen (Audit-Finding S2).
+    """
+    root = media_root.resolve()
+    candidate = (root / rel).resolve()
+    if root != candidate and root not in candidate.parents:
+        raise UnsafePathError(f"Asset-Pfad '{rel}' verlaesst media_root ({candidate})")
+    return candidate
 
 
 class ProjectConfig(BaseModel):
@@ -185,6 +222,7 @@ class Project:
         return self.root / "exports"
 
     def export(self, name: str) -> Export:
+        validate_name(name, kind="Export-Name")
         return Export(self, name)
 
     def list_exports(self) -> list[str]:
@@ -220,8 +258,10 @@ def resolve_project(name: str) -> Project:
     """Loest einen Projektnamen zu einem `Project` auf.
 
     Raises:
+        UnsafeNameError: wenn der Name als Verzeichnisname unsicher waere.
         ProjectNotFoundError: wenn der Ordner oder `project.yaml` fehlt.
     """
+    validate_name(name, kind="Projekt-Name")
     root = PROJECTS_DIR / name
     config_path = root / "project.yaml"
     if not config_path.exists():

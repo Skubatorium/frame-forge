@@ -32,8 +32,12 @@ from frameforge.project import (
     Project,
     ProjectConfig,
     ProjectNotFoundError,
+    UnsafeNameError,
+    UnsafePathError,
     list_projects,
+    resolve_media_path,
     resolve_project,
+    validate_name,
 )
 from frameforge.state import (
     GateError,
@@ -150,6 +154,10 @@ def new(
     language: str = typer.Option("de"),
 ) -> None:
     """Legt ein neues Projekt unter `projects/<name>/` an."""
+    try:
+        validate_name(name, kind="Projekt-Name")
+    except UnsafeNameError as exc:
+        raise _fail(str(exc)) from exc
     root = PROJECTS_DIR / name
     if root.exists():
         raise _fail(f"Projekt '{name}' existiert bereits unter {root}")
@@ -411,7 +419,10 @@ def nle(
         asset = assets_by_id.get(asset_id)
         if asset is None:
             raise _fail(f"Asset '{asset_id}' nicht in assets.json gefunden")
-        return (proj.config.media_root / asset["path"]).resolve()
+        try:
+            return resolve_media_path(proj.config.media_root, asset["path"])
+        except UnsafePathError as exc:
+            raise _fail(str(exc)) from exc
 
     exp.nle_dir.mkdir(parents=True, exist_ok=True)
     out_path = exp.nle_dir / f"{export}.{nle_format}"
@@ -436,10 +447,10 @@ def faces(project: str) -> None:
 
     faces_by_asset: dict[str, list] = {}
     for asset in photo_assets:
-        path = proj.config.media_root / asset["path"]
         try:
+            path = resolve_media_path(proj.config.media_root, asset["path"])
             detected = people_module.detect_faces(path)
-        except people_module.FaceDetectionError as exc:
+        except (people_module.FaceDetectionError, UnsafePathError) as exc:
             console.print(f"[yellow]Warnung:[/yellow] {exc}")
             continue
         if detected:
