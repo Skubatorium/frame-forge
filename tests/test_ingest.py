@@ -70,22 +70,74 @@ def test_scan_media_missing_root_raises():
 
 
 def test_proxy_path_normalizes_video_extension_to_mp4(tmp_path):
-    assert proxy_path(Path("clip.MOV"), tmp_path) == tmp_path / "clip.mp4"
+    result = proxy_path(Path("/media/clip.MOV"), tmp_path, media_root=Path("/media"))
+    assert result.parent == tmp_path
+    assert result.suffix == ".mp4"
+    assert result.stem.startswith("clip_")
 
 
-def test_proxy_path_keeps_photo_name(tmp_path):
-    assert proxy_path(Path("photo.jpg"), tmp_path) == tmp_path / "photo.jpg"
+def test_proxy_path_keeps_photo_extension(tmp_path):
+    result = proxy_path(Path("/media/photo.jpg"), tmp_path, media_root=Path("/media"))
+    assert result.suffix == ".jpg"
+    assert result.stem.startswith("photo_")
+
+
+def test_proxy_path_disambiguates_same_basename_in_different_dirs(tmp_path):
+    """Regressionstest fuer K1 (Audit): gleicher Basename in verschiedenen Ordnern
+
+    (z.B. DJI_0001.MP4 pro SD-Karte) darf nicht auf denselben Proxy zeigen.
+    """
+    media_root = Path("/media")
+    a = proxy_path(media_root / "day01/DJI_0001.MP4", tmp_path, media_root=media_root)
+    b = proxy_path(media_root / "day02/DJI_0001.MP4", tmp_path, media_root=media_root)
+    assert a != b
+
+
+def test_proxy_path_is_stable_for_same_file(tmp_path):
+    media_root = Path("/media")
+    p = media_root / "day01/DJI_0001.MP4"
+    assert proxy_path(p, tmp_path, media_root=media_root) == proxy_path(
+        p, tmp_path, media_root=media_root
+    )
 
 
 def test_build_proxies_transcodes_video_and_copies_photo(media_root, tmp_path):
     assets = scan_media(media_root)
     out_dir = tmp_path / "proxies"
 
-    proxies = build_proxies(assets, out_dir)
+    result = build_proxies(assets, out_dir, media_root=media_root)
 
-    assert len(proxies) == 3
-    for proxy in proxies:
+    assert len(result.proxies) == 3
+    assert result.failures == []
+    for proxy in result.proxies:
         assert proxy.exists()
         assert proxy.stat().st_size > 0
-    video_proxy = next(p for p in proxies if p.suffix == ".mp4")
+    video_proxy = next(p for p in result.proxies if p.suffix == ".mp4")
     assert video_proxy.parent == out_dir
+
+
+def test_build_proxies_skips_existing_proxies(media_root, tmp_path):
+    """Idempotenz/Resume: ein zweiter Lauf baut nichts neu."""
+    assets = scan_media(media_root)
+    out_dir = tmp_path / "proxies"
+    first = build_proxies(assets, out_dir, media_root=media_root)
+    mtimes = {p: p.stat().st_mtime_ns for p in first.proxies}
+
+    second = build_proxies(assets, out_dir, media_root=media_root)
+
+    assert {p for p in second.proxies} == set(mtimes)
+    for p in second.proxies:
+        assert p.stat().st_mtime_ns == mtimes[p]  # nicht neu geschrieben
+
+
+def test_build_proxies_skips_corrupt_video_without_aborting(media_root, tmp_path):
+    """Eine kaputte Datei bricht nicht den ganzen Lauf ab, wird als failure gesammelt."""
+    bad = media_root / "corrupt.mp4"
+    bad.write_bytes(b"not a real video")
+    out_dir = tmp_path / "proxies"
+
+    result = build_proxies(scan_media(media_root), out_dir, media_root=media_root)
+
+    assert any(f.asset.name == "corrupt.mp4" for f in result.failures)
+    # Die intakten Assets sind trotzdem da.
+    assert len(result.proxies) == 3

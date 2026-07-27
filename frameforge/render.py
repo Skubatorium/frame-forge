@@ -235,7 +235,7 @@ def render_proxy(project: Project, export: Export, timeline: Timeline) -> Path:
         if asset is None:
             raise RenderError(f"Asset '{asset_id}' nicht in assets.json gefunden")
         original = project.config.media_root / asset["path"]
-        proxy = proxy_path(original, proxies_dir)
+        proxy = proxy_path(original, proxies_dir, media_root=project.config.media_root)
         if not proxy.exists():
             raise RenderError(f"Kein Proxy fuer Asset '{asset_id}' unter {proxy}")
         return proxy

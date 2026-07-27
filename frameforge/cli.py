@@ -209,15 +209,19 @@ def ingest(project: str) -> None:
         raise _fail(str(exc)) from exc
 
     proxies_dir = proj.cache_dir / "proxies"
-    proxies = ingest_module.build_proxies(found, proxies_dir)
+    result = ingest_module.build_proxies(found, proxies_dir, media_root=proj.config.media_root)
 
     state = proj.load_state()
     state.advance_project(Phase.INGESTED)
     state.save()
     console.print(
-        f"[green]{len(found)} Assets gefunden, {len(proxies)} Proxies erzeugt.[/green] "
+        f"[green]{len(found)} Assets gefunden, {len(result.proxies)} Proxies bereit.[/green] "
         f"Proxy-Verzeichnis: {proxies_dir}"
     )
+    if result.failures:
+        console.print(f"[yellow]{len(result.failures)} Asset(s) uebersprungen (Proxy fehlgeschlagen):[/yellow]")
+        for failure in result.failures:
+            console.print(f"  {failure.asset.name}: {failure.reason}")
 
 
 @app.command(name="index")

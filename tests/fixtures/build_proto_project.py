@@ -99,7 +99,7 @@ def step_new(root: Path) -> None:
 
 def step_ingest(project) -> None:
     found = scan_media(MEDIA_ROOT)
-    build_proxies(found, project.cache_dir / "proxies")
+    build_proxies(found, project.cache_dir / "proxies", media_root=MEDIA_ROOT)
     state = project.load_state()
     state.advance_project(Phase.INGESTED)
     state.save()

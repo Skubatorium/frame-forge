@@ -215,7 +215,7 @@ def proj(tmp_path, monkeypatch):
 
     proxies_dir = project.cache_dir / "proxies"
     proxies_dir.mkdir(parents=True)
-    proxy = proxy_path(media_root / "clip.mp4", proxies_dir)
+    proxy = proxy_path(media_root / "clip.mp4", proxies_dir, media_root=media_root)
     shutil.copy(media_root / "clip.mp4", proxy)
 
     write_asset(

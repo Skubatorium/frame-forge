@@ -39,12 +39,16 @@ def env(tmp_path, monkeypatch):
 
 
 def test_ingest_creates_proxies_and_advances_phase(env):
+    from frameforge.ingest import proxy_path
+
     result = runner.invoke(app, ["ingest", "proto"])
 
     assert result.exit_code == 0, result.output
     assert env.load_state().project_phase == Phase.INGESTED
-    assert (env.cache_dir / "proxies" / "clip.mp4").exists()
-    assert (env.cache_dir / "proxies" / "photo.jpg").exists()
+    proxies_dir = env.cache_dir / "proxies"
+    mr = env.config.media_root
+    assert proxy_path(mr / "clip.mp4", proxies_dir, media_root=mr).exists()
+    assert proxy_path(mr / "photo.jpg", proxies_dir, media_root=mr).exists()
 
 
 def test_index_before_ingest_is_blocked(env):
