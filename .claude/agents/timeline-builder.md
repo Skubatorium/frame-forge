@@ -15,8 +15,15 @@ konkrete, gültige `timeline.json` gemäß dem Schema aus `frameforge/timeline.p
    `frameforge query` (Filter: Tag, Ort, Rating, `usable_as`) — nie die ganze `assets.json`.
 2. Wähle pro Beat konkrete Clips mit `src_in`/`src_out` (aus den `scenes`/`quality`-Daten
    des jeweiligen Assets), setze `tl_in` fortlaufend passend zur Beat-Dauer.
-3. Setze Übergänge (`transition_in`/`transition_out`) und Effekte (z.B. Ken-Burns bei Fotos)
-   entsprechend dem Stil-Preset aus dem Brief.
+3. Setze Übergänge und Effekte entsprechend dem Stil-Preset aus dem Brief — **diese werden
+   tatsächlich gerendert**:
+   - `transition_in` vom Typ `fade`/`dissolve`/`crossfade` (mit `dur`) auf einem Clip erzeugt
+     einen **Crossfade** vom vorherigen Clip (der Renderer überlappt sie entsprechend). Ohne
+     `transition_in` gibt es einen harten Schnitt. Passe die Timeline-Dauer/`tl_in` an die
+     Überlappung an (ein Crossfade von `d` verkürzt die Gesamtdauer um `d`).
+   - Ein Effekt `{"type": "kenburns", "from": [x,y,zoom], "to": [x,y,zoom]}` auf einem
+     **Foto-Clip** erzeugt einen langsamen Ken-Burns-Zoom (das dritte Element ist der Zoom,
+     z.B. `1.0` → `1.12`). Setze ihn gemäß `photo_treatment.ken_burns` des Presets.
 4. Platziere Overlay-, Map- und Audio-Spuren an den vom Beat-Sheet vorgesehenen Stellen.
 5. Schreibe `exports/<export>/timeline.json` über `Timeline.save()` (nicht händisch JSON
    zusammenbauen) und validiere sofort mit `Timeline.validate_semantics()`.

@@ -427,3 +427,61 @@ def test_render_final_with_color_grade_still_renders(proj):
     out = render_final(proj, export, timeline, color_grade={"mood": "vivid", "contrast": "high"},
                        crf=28, preset="ultrafast")
     assert probe_video(out)["w"] == 320
+
+
+# -- B1: Uebergaenge (xfade) + Ken-Burns (zoompan) ----------------------------
+
+
+def test_no_transitions_uses_single_concat():
+    tl = _timeline(video=[
+        {"id": "c1", "asset": "a1", "src_in": 0, "src_out": 1, "tl_in": 0},
+        {"id": "c2", "asset": "a2", "src_in": 0, "src_out": 1, "tl_in": 1},
+    ])
+    graph = build_filtergraph(tl, resolve_asset=lambda a: Path(f"/m/{a}.mp4"),
+                              export_root=Path("/e"), project_root=Path("/p"))
+    assert "concat=n=2:v=1:a=0" in graph.filter_complex  # rueckwaertskompatibel
+    assert "xfade" not in graph.filter_complex
+
+
+def test_crossfade_transition_emits_xfade():
+    tl = _timeline(video=[
+        {"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0},
+        {"id": "c2", "asset": "a2", "src_in": 0, "src_out": 2, "tl_in": 1.5,
+         "transition_in": {"type": "fade", "dur": 0.5}},
+    ])
+    graph = build_filtergraph(tl, resolve_asset=lambda a: Path(f"/m/{a}.mp4"),
+                              export_root=Path("/e"), project_root=Path("/p"))
+    assert "xfade=transition=fade:duration=0.500:offset=1.500" in graph.filter_complex
+
+
+def test_kenburns_effect_emits_zoompan():
+    tl = _timeline(video=[
+        {"id": "c1", "asset": "photo1", "src_in": 0, "src_out": 2, "tl_in": 0,
+         "effects": [{"type": "kenburns", "from": [0, 0, 1.0], "to": [0, 0, 1.12]}]},
+    ])
+    graph = build_filtergraph(tl, resolve_asset=lambda a: Path(f"/m/{a}.jpg"),
+                              export_root=Path("/e"), project_root=Path("/p"))
+    assert "zoompan=" in graph.filter_complex
+
+
+def test_render_crossfade_and_kenburns_end_to_end(proj):
+    """Echter Render mit Crossfade (clip->foto) und Ken-Burns auf dem Foto."""
+    export = proj.export("teaser")
+    shutil.copy(FIXTURES / "photo.jpg", proj.config.media_root / "photo.jpg")
+    from frameforge.index import write_asset
+    from frameforge.ingest import hash_file, proxy_path
+    write_asset(proj, {"id": "photo1", "kind": "photo", "path": "photo.jpg",
+                       "hash": hash_file(proj.config.media_root / "photo.jpg")})
+    px = proxy_path(proj.config.media_root / "photo.jpg", proj.cache_dir / "proxies",
+                    media_root=proj.config.media_root)
+    shutil.copy(proj.config.media_root / "photo.jpg", px)
+
+    timeline = Timeline(export="teaser", fps=25, resolution=(320, 240), duration=3.0, tracks={
+        "video": [
+            {"id": "c1", "asset": "clip1", "src_in": 0, "src_out": 1.5, "tl_in": 0},
+            {"id": "c2", "asset": "photo1", "src_in": 0, "src_out": 2.0, "tl_in": 1.0,
+             "transition_in": {"type": "fade", "dur": 0.5},
+             "effects": [{"type": "kenburns", "from": [0, 0, 1.0], "to": [0, 0, 1.12]}]},
+        ]})
+    out = render_proxy(proj, export, timeline)
+    assert probe_video(out)["w"] == 320

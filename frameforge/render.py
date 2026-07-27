@@ -4,11 +4,11 @@
 `ffmpeg`-Aufrufe sind verboten"). Baut den Filtergraph ausschliesslich aus
 `timeline.json` (`frameforge.timeline.Timeline`), damit jeder Render reproduzierbar ist.
 
-M1-Scope (siehe `docs/plans/PROGRESS.md`): Video-Spur als harte Schnitte (kein Crossfade,
-kein Ken-Burns-Zoompan — `transition_in`/`effects` werden aus der Timeline gelesen, aber noch
-nicht gerendert, das ist M2-Scope), Overlay-/Karten-Kompositing per `overlay`-Filter mit
-Zeitfenstern, Audio-Mix mit einfachem Ducking (statische `volume`-Fenster, kein echtes
-Sidechain-Compressing).
+Umfang: Video-Spur als harte Schnitte **oder** Crossfade (`xfade`, wo ein Clip ein
+`transition_in` vom Typ fade/dissolve trägt), Ken-Burns-Zoom (`zoompan`) auf Foto-Clips mit
+einem `kenburns`-Effekt, Overlay-/Karten-Kompositing per `overlay`-Filter mit Zeitfenstern,
+automatischer Color-Grade aus dem Preset (`grade_filter`) + optionale Projekt-LUT, Audio-Mix
+mit Ducking (statische `volume`-Fenster) und optionaler EBU-R128-Loudnorm im Final.
 """
 
 from __future__ import annotations
@@ -57,6 +57,76 @@ _MOOD_MAP: dict[str, dict] = {
     "raw": {"saturation": 0.9, "contrast_boost": -0.05},
     "vivid": {"saturation": 1.28, "contrast_boost": 0.03},
 }
+
+
+# Übergangstypen, die als Crossfade (xfade) gerendert werden.
+_CROSSFADE_TYPES = {"fade", "dissolve", "slow_dissolve", "crossfade"}
+
+
+def _kenburns_expr(clip, dur: float, fps: float, res: tuple[int, int]) -> str | None:
+    """`zoompan`-Ausdruck für Ken-Burns (langsamer Zoom) auf einem Foto-Clip.
+
+    Aktiv nur, wenn der Clip einen Effekt vom Typ `kenburns` trägt (Timeline = Single Source of
+    Truth). Zoomrichtung/-stärke aus `from`/`to` (falls gesetzt), sonst dezenter Default-Zoom.
+    """
+    kb = next((e for e in clip.effects if e.type == "kenburns"), None)
+    if kb is None:
+        return None
+    frames = max(1, round(dur * fps))
+    data = kb.model_dump()
+    z_from = 1.0
+    z_to = 1.10
+    if isinstance(data.get("from"), (list, tuple)) and len(data["from"]) >= 3:
+        z_from = float(data["from"][2])
+    if isinstance(data.get("to"), (list, tuple)) and len(data["to"]) >= 3:
+        z_to = float(data["to"][2])
+    z_from = max(1.0, z_from)
+    z_to = max(z_from + 0.001, z_to)
+    step = (z_to - z_from) / frames
+    w, h = res
+    # Auf höherer Auflösung samplen (zoompan-Ruckel-Vermeidung), dann auf Zielgröße zurück.
+    return (
+        f"scale={w * 2}:{h * 2},"
+        f"zoompan=z='min({z_from:.4f}+on*{step:.6f},{z_to:.4f})'"
+        f":x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={frames}:s={w}x{h}:fps={fps:g}"
+    )
+
+
+def _join_video_segments(clips, labels: list[str], filters: list[str]) -> str:
+    """Verbindet die Video-Segmente: harte Schnitte (concat), Crossfades (xfade) wo im
+
+    `transition_in` eines Clips gefordert. Ohne Crossfade bleibt es beim einzelnen concat
+    (identisch zum bisherigen Verhalten), damit sich an bestehenden Timelines nichts ändert.
+    """
+    has_crossfade = any(
+        c.transition_in and c.transition_in.type in _CROSSFADE_TYPES for c in clips[1:]
+    )
+    if not has_crossfade:
+        cur = "vbase"
+        joined = "".join(f"[{lbl}]" for lbl in labels)
+        filters.append(f"{joined}concat=n={len(labels)}:v=1:a=0[{cur}]")
+        return cur
+
+    # Sequenzielle Kette: pro Folgeclip entweder xfade (Crossfade) oder concat (harter Schnitt).
+    cur = labels[0]
+    cur_dur = clips[0].duration
+    for i in range(1, len(clips)):
+        clip = clips[i]
+        t = clip.transition_in
+        if t and t.type in _CROSSFADE_TYPES:
+            d = min(t.dur, cur_dur, clip.duration)
+            offset = max(0.0, cur_dur - d)
+            out = f"vx{i}"
+            filters.append(
+                f"[{cur}][{labels[i]}]xfade=transition=fade:duration={d:.3f}:offset={offset:.3f}[{out}]"
+            )
+            cur_dur = cur_dur + clip.duration - d
+        else:
+            out = f"vc{i}"
+            filters.append(f"[{cur}][{labels[i]}]concat=n=2:v=1:a=0[{out}]")
+            cur_dur = cur_dur + clip.duration
+        cur = out
+    return cur
 
 
 def grade_filter(color_grade: dict | None) -> str | None:
@@ -114,31 +184,36 @@ def build_filtergraph(
         graph.input_args.append(args)
         return len(graph.input_args) - 1
 
-    # -- Video: pro Clip trimmen/skalieren, dann hart aneinanderschneiden -----------
-    video_labels = []
-    for i, clip in enumerate(timeline.tracks.video):
-        source = resolve_asset(clip.asset)
-        label = f"v{i}"
-        if source.suffix.lower() in PHOTO_EXTENSIONS:
-            idx = add_input(["-loop", "1", "-framerate", str(timeline.fps), "-i", str(source)])
-            filters.append(
-                f"[{idx}:v]trim=duration={clip.duration:.3f},setpts=PTS-STARTPTS,"
-                f"{_scale_pad(*target_res)}[{label}]"
-            )
-        else:
-            idx = add_input(["-i", str(source)])
-            filters.append(
-                f"[{idx}:v]trim=start={clip.src_in}:end={clip.src_out},"
-                f"setpts=(PTS-STARTPTS)/{clip.speed},{_scale_pad(*target_res)}[{label}]"
-            )
-        video_labels.append(label)
-
-    if not video_labels:
+    # -- Video: pro Clip als Segment (skaliert, ggf. Ken-Burns), dann verbinden --------
+    clips = timeline.tracks.video
+    if not clips:
         raise RenderError("Timeline hat keine Video-Clips — nichts zu rendern")
 
-    cur_video = "vbase"
-    concat_inputs = "".join(f"[{lbl}]" for lbl in video_labels)
-    filters.append(f"{concat_inputs}concat=n={len(video_labels)}:v=1:a=0[{cur_video}]")
+    fps = timeline.fps
+    video_labels = []
+    for i, clip in enumerate(clips):
+        source = resolve_asset(clip.asset)
+        label = f"v{i}"
+        chain: list[str] = []
+        if source.suffix.lower() in PHOTO_EXTENSIONS:
+            idx = add_input(["-loop", "1", "-framerate", str(fps), "-i", str(source)])
+            chain.append(f"trim=duration={clip.duration:.3f}")
+            chain.append("setpts=PTS-STARTPTS")
+            chain.append(_scale_pad(*target_res))
+            kb = _kenburns_expr(clip, clip.duration, fps, target_res)
+            if kb:
+                chain.append(kb)
+        else:
+            idx = add_input(["-i", str(source)])
+            chain.append(f"trim=start={clip.src_in}:end={clip.src_out}")
+            chain.append(f"setpts=(PTS-STARTPTS)/{clip.speed}")
+            chain.append(_scale_pad(*target_res))
+        # Konstante fps sichern, damit concat/xfade sauber zusammenpassen.
+        chain.append(f"fps={fps:g}")
+        filters.append(f"[{idx}:v]{','.join(chain)}[{label}]")
+        video_labels.append(label)
+
+    cur_video = _join_video_segments(clips, video_labels, filters)
 
     # -- Overlay: PNGs mit Alpha, Zeitfenster ueber `enable` -------------------------
     for j, overlay in enumerate(timeline.tracks.overlay):
