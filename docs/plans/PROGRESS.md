@@ -1,7 +1,10 @@
 # Fortschritt
 
-**M0 (Gerüst) und M1 (Mini-Prototyp end-to-end) sind fertig (2026-07-27).** Nächster
-Meilenstein: M2 — Story-Engine vertiefen (siehe Notizen zu M1.8 unten und Plan Abschnitt 8).
+**M0–M4 sind fertig (2026-07-27) — alle Punkte aus Plan Abschnitt 8 umgesetzt.** Offen bleibt
+laut Plan nur noch M5 (Norwegen-Realbetrieb, kein Code-Meilenstein — echtes Material statt
+Test-Fixtures) und die "Offenen Punkte für später" aus Plan §11 (Gesichtserkennung, Untertitel,
+Musik-Lizenz-Nachweis, LUT-Handling für Log-Material — Letzteres inzwischen als generischer
+Hook in `render.build_filtergraph` vorbereitet, siehe M4.1).
 
 Diese Datei ist die **einzige verlässliche Quelle** für den Arbeitsstand. Chat-Verläufe und
 Task-Listen überleben ein Session-Limit nicht, diese Datei schon.
@@ -114,8 +117,8 @@ Plan Abschnitt 8: "4K-Mapping auf die Originale, Farbkorrektur-Stufe, Loudness-N
 
 | # | Schritt | Status | Commit |
 |---|------|--------|--------|
-| M4.1 | `render.render_final` (4K-Mapping, EBU-R128-Loudnorm, optionale LUT, Render-Versionierung), `cli.py` `render` verdrahtet | ✅ fertig | siehe Notizen |
-| M4.2 | `nle.py` (FCPXML/OTIO-Export), `cli.py nle`-Kommando | ✅ fertig | siehe Notizen |
+| M4.1 | `render.render_final` (4K-Mapping, EBU-R128-Loudnorm, optionale LUT, Render-Versionierung), `cli.py` `render` verdrahtet | ✅ fertig | `4cb21aa` |
+| M4.2 | `nle.py` (FCPXML/OTIO-Export), `cli.py nle`-Kommando | ✅ fertig | `4cb21aa` |
 
 ### M4.1 — Notizen (2026-07-27)
 
