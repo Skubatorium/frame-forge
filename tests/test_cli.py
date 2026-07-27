@@ -379,3 +379,33 @@ def test_design_status_shows_missing_graphics(env):
     assert "logo.png" in result.output
     assert "marker-icon.png" in result.output
     assert "fehlt" in result.output.lower()
+
+
+def test_preview_rejects_unknown_preset_in_brief(env):
+    import yaml as _yaml
+
+    from frameforge.timeline import Timeline
+
+    write_asset(env, {"id": "clip1", "kind": "video", "path": "clip.mp4",
+                      "hash": hash_file(env.config.media_root / "clip.mp4")})
+    export = env.export("teaser")
+    export.ensure_dirs()
+    Timeline(export="teaser", fps=25, resolution=(320, 240), duration=1.5,
+             tracks={"video": [{"id": "c1", "asset": "clip1", "src_in": 0, "src_out": 1.5, "tl_in": 0}]}
+             ).save(export.timeline_path)
+    export.brief_path.write_text(_yaml.safe_dump({"preset": "tippfehler-preset"}))
+    state = env.load_state()
+    state.advance_export("teaser", Phase.TIMELINE)
+    state.save()
+
+    result = runner.invoke(app, ["preview", "proto", "teaser"])
+
+    assert result.exit_code == 1
+    assert "Preset" in result.output
+
+
+def test_presets_command_lists_all(env):
+    result = runner.invoke(app, ["presets"])
+    assert result.exit_code == 0
+    assert "nordic-cinematic" in result.output
+    assert "punch-teaser" in result.output

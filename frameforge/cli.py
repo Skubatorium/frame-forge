@@ -16,10 +16,10 @@ from dataclasses import dataclass
 from pathlib import Path
 
 import typer
-import yaml
 from rich.console import Console
 from rich.table import Table
 
+from frameforge import brief as brief_module
 from frameforge import design, qc
 from frameforge import index as index_module
 from frameforge import ingest as ingest_module
@@ -428,7 +428,10 @@ def preview(project: str, export: str) -> None:
         raise _fail(str(exc)) from exc
 
     timeline = Timeline.load(exp.timeline_path)
-    brief = yaml.safe_load(exp.brief_path.read_text()) if exp.brief_path.exists() else None
+    try:
+        brief = brief_module.Brief.load(exp.brief_path).merged() if exp.brief_path.exists() else None
+    except brief_module.BriefError as exc:
+        raise _fail(str(exc)) from exc
     known_ids = {a["id"] for a in index_module.load_assets(proj)}
     issues = qc.validate(timeline, brief=brief, known_asset_ids=known_ids)
     if issues:
@@ -476,7 +479,10 @@ def render(
 
     timeline = Timeline.load(exp.timeline_path)
     # QC vor dem Final-Render wiederholen (nicht nur beim Preview vertrauen).
-    brief = yaml.safe_load(exp.brief_path.read_text()) if exp.brief_path.exists() else None
+    try:
+        brief = brief_module.Brief.load(exp.brief_path).merged() if exp.brief_path.exists() else None
+    except brief_module.BriefError as exc:
+        raise _fail(str(exc)) from exc
     known_ids = {a["id"] for a in index_module.load_assets(proj)}
     issues = qc.validate(timeline, brief=brief, known_asset_ids=known_ids)
     if issues:
