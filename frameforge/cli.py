@@ -29,6 +29,7 @@ from frameforge import pipeline as pipeline_module
 from frameforge import presets as presets_module
 from frameforge import render as render_module
 from frameforge import stats as stats_module
+from frameforge import themes as themes_module
 from frameforge.project import (
     CACHE_ROOT,
     PROJECTS_DIR,
@@ -800,6 +801,38 @@ def list_cmd() -> None:
         return
     for name in projects:
         console.print(name)
+
+
+@app.command(name="themes")
+def themes_cmd() -> None:
+    """Design-Token-Themes auflisten (Farb-/Typo-Startsets fuer das Designsystem).
+
+    Mit `frameforge apply-theme <projekt> <slug>` als Ausgangspunkt nach design/tokens.yaml
+    schreiben und dann anpassen.
+    """
+    table = Table(title="Design-Themes")
+    table.add_column("Slug", style="bold")
+    table.add_column("Name")
+    for t in themes_module.list_themes():
+        table.add_row(t["slug"], t["name"])
+    console.print(table)
+    for t in themes_module.list_themes():
+        console.print(f"\n[bold]{t['slug']}[/bold] — {t['description']}")
+
+
+@app.command(name="apply-theme")
+def apply_theme_cmd(project: str, theme: str) -> None:
+    """Schreibt ein Design-Theme als Startpunkt nach `design/tokens.yaml` (dann anpassen)."""
+    proj = _resolve_or_fail(project)
+    if proj.design_tokens_path.exists() and not typer.confirm(
+        f"{proj.design_tokens_path} existiert bereits — mit Theme '{theme}' ueberschreiben?"
+    ):
+        raise typer.Exit(code=1)
+    try:
+        out = themes_module.apply_theme(theme, proj.design_tokens_path)
+    except themes_module.ThemeNotFoundError as exc:
+        raise _fail(str(exc)) from exc
+    console.print(f"[green]Theme '{theme}' uebernommen:[/green] {out}  (jetzt anpassen)")
 
 
 @app.command(name="presets")

@@ -409,3 +409,17 @@ def test_presets_command_lists_all(env):
     assert result.exit_code == 0
     assert "nordic-cinematic" in result.output
     assert "punch-teaser" in result.output
+
+
+def test_themes_command_lists_all(env):
+    result = runner.invoke(app, ["themes"])
+    assert result.exit_code == 0
+    assert "nordic-cold" in result.output
+
+
+def test_apply_theme_writes_tokens(env):
+    result = runner.invoke(app, ["apply-theme", "proto", "warm-sunset"])
+    assert result.exit_code == 0, result.output
+    assert env.design_tokens_path.exists()
+    import yaml as _yaml
+    assert _yaml.safe_load(env.design_tokens_path.read_text())["accent_color"] == "#f2b04c"

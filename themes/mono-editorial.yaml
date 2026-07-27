@@ -1,0 +1,14 @@
+slug: mono-editorial
+name: Mono Editorial
+description: >-
+  Schwarz-weiss, redaktionell, textbetont. Hoher Kontrast, ein einziger dezenter Akzent.
+  Passt zu Diary/Handheld oder einer nuechtern-eleganten Fassung.
+
+primary_color: "#111111"
+secondary_color: "#3a3a3a"
+accent_color: "#c8c8c8"
+text_color: "#ffffff"
+font_display: "Times New Roman"
+font_text: "Helvetica Neue"
+motion: { fade_in_s: 0.3, fade_out_s: 0.4, overlay_hold_min_s: 1.5 }
+type_scale: { title: 88, subtitle: 32, caption: 24 }

@@ -1,0 +1,14 @@
+slug: warm-sunset
+name: Warm Sunset
+description: >-
+  Warme, goldene Palette — tiefes Terrakotta, Sonnengelb-Akzent, cremiger Text.
+  Passt zu Abendlicht, Lagerfeuer, Roadtrip-Stimmung.
+
+primary_color: "#3a1f1a"
+secondary_color: "#7a3b2e"
+accent_color: "#f2b04c"
+text_color: "#fdf3e7"
+font_display: "Georgia"
+font_text: "Helvetica Neue"
+motion: { fade_in_s: 0.4, fade_out_s: 0.5, overlay_hold_min_s: 1.8 }
+type_scale: { title: 92, subtitle: 34, caption: 26 }
