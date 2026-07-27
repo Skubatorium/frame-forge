@@ -32,6 +32,7 @@ from frameforge.state import (
     StateError,
     gate_brief,
     gate_build,
+    gate_design,
     gate_index,
     gate_preview,
     gate_render_final,
@@ -133,15 +134,16 @@ def _check_frameforge_gate(rest: list[str]) -> str | None:
             return str(exc)
         return None
 
-    if subcommand == "brief":
+    if subcommand in ("design", "brief"):
         if not positional:
             return None
         loaded = _load_state_or_reason(positional[0])
         if isinstance(loaded, str):
             return loaded
         _, state = loaded
+        gate = gate_design if subcommand == "design" else gate_brief
         try:
-            gate_brief(state)
+            gate(state)
         except (GateError, StateError) as exc:
             return str(exc)
         return None

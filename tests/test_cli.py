@@ -85,13 +85,33 @@ def test_index_skips_assets_already_in_assets_json(env):
 # -- design: Regressionstest fuer den write_asset({})-Klasse-Bug ------------------
 
 
+def _reach_indexed(env):
+    state = env.load_state()
+    state.advance_project(Phase.INDEXED)
+    state.save()
+
+
+def test_design_before_indexed_is_blocked(env):
+    """Audit-Finding P1: design darf INGESTED/INDEXED nicht ueberspringen."""
+    env.design_dir.mkdir(parents=True, exist_ok=True)
+    env.design_tokens_path.write_text("primary_color: '#000000'\n")
+
+    result = runner.invoke(app, ["design", "proto"])
+
+    assert result.exit_code == 1
+    assert "INDEXED" in result.output
+    assert env.load_state().project_phase != Phase.DESIGNED
+
+
 def test_design_without_tokens_yaml_fails_cleanly(env):
+    _reach_indexed(env)
     result = runner.invoke(app, ["design", "proto"])
     assert result.exit_code == 1
     assert "tokens.yaml" in result.output
 
 
 def test_design_with_tokens_yaml_advances_phase(env):
+    _reach_indexed(env)
     env.design_dir.mkdir(parents=True, exist_ok=True)
     env.design_tokens_path.write_text("primary_color: '#000000'\n")
 
@@ -99,6 +119,22 @@ def test_design_with_tokens_yaml_advances_phase(env):
 
     assert result.exit_code == 0, result.output
     assert env.load_state().project_phase == Phase.DESIGNED
+
+
+def test_index_sets_indexed_when_nothing_pending(env):
+    """Audit-Finding P1b: index hebt die Phase auf INDEXED, sobald alle Assets erfasst sind."""
+    runner.invoke(app, ["ingest", "proto"])
+    for name, path in (("clip", "clip.mp4"), ("photo", "photo.jpg")):
+        write_asset(
+            env,
+            {"id": name, "path": path, "kind": "video", "hash": hash_file(env.config.media_root / path)},
+        )
+
+    result = runner.invoke(app, ["index", "proto"])
+
+    assert result.exit_code == 0, result.output
+    assert "INDEXED" in result.output
+    assert env.load_state().project_phase == Phase.INDEXED
 
 
 # -- nle: FCPXML/OTIO-Export ---------------------------------------------------

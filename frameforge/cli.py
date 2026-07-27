@@ -41,6 +41,7 @@ from frameforge.state import (
     StateError,
     gate_brief,
     gate_build,
+    gate_design,
     gate_index,
     gate_preview,
     gate_render_final,
@@ -212,7 +213,7 @@ def ingest(project: str) -> None:
     result = ingest_module.build_proxies(found, proxies_dir, media_root=proj.config.media_root)
 
     state = proj.load_state()
-    state.advance_project(Phase.INGESTED)
+    state.ensure_project_at_least(Phase.INGESTED)
     state.save()
     console.print(
         f"[green]{len(found)} Assets gefunden, {len(result.proxies)} Proxies bereit.[/green] "
@@ -248,7 +249,16 @@ def index_cmd(project: str) -> None:
     pending = [p for p in found if ingest_module.hash_file(p) not in existing_hashes]
 
     console.print(f"{len(found)} Mediendateien gefunden, {len(pending)} noch nicht indiziert.")
+    if not found:
+        raise _fail("Keine Mediendateien gefunden — media_root pruefen, dann erneut ingest/index.")
     if not pending:
+        # Alle gescannten Assets haben einen Eintrag in assets.json (vom media-indexer-Agenten
+        # geschrieben) -> das Projekt gilt als vollstaendig indiziert. Das ist der einzige Ort,
+        # der die Phase auf INDEXED hebt (Audit-Finding P1b: vorher erreichte kein Kommando
+        # INDEXED, damit war design/brief nach dem P1-Gate unerreichbar).
+        state.ensure_project_at_least(Phase.INDEXED)
+        state.save()
+        console.print("[green]Alle Assets indiziert — Projekt-Phase: INDEXED.[/green]")
         return
 
     keyframes_dir = proj.cache_dir / "keyframes"
@@ -256,7 +266,8 @@ def index_cmd(project: str) -> None:
         console.print(f"  {path.name}: Hash noch nicht in assets.json")
     console.print(
         f"[yellow]Naechster Schritt:[/yellow] Keyframes nach {keyframes_dir} extrahieren und "
-        "an den media-indexer-Agenten delegieren (siehe /ff-index)."
+        "an den media-indexer-Agenten delegieren (siehe /ff-index). Danach 'frameforge index' "
+        "erneut ausfuehren, um die Phase auf INDEXED zu heben."
     )
 
 
@@ -284,11 +295,15 @@ def design_cmd(project: str) -> None:
     (`design.render_svg_to_png` pro Overlay), nicht hier global fuer das ganze Projekt.
     """
     proj = _resolve_or_fail(project)
+    state = proj.load_state()
+    try:
+        gate_design(state)
+    except GateError as exc:
+        raise _fail(str(exc)) from exc
     if not proj.design_tokens_path.exists():
         raise _fail(
             f"{proj.design_tokens_path} fehlt — zuerst Tokens definieren (siehe /ff-design)"
         )
-    state = proj.load_state()
     state.advance_project(Phase.DESIGNED)
     state.save()
     console.print(f"[green]Designsystem uebernommen:[/green] {proj.design_tokens_path}")

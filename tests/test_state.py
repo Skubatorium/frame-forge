@@ -11,6 +11,7 @@ from frameforge.state import (
     StateError,
     gate_brief,
     gate_build,
+    gate_design,
     gate_index,
     gate_preview,
     gate_render_final,
@@ -112,12 +113,28 @@ def test_gate_index_requires_ingested(state):
     gate_index(state)
 
 
+def test_gate_design_requires_indexed(state):
+    state.advance_project(Phase.INGESTED)
+    with pytest.raises(GateError):
+        gate_design(state)
+    state.advance_project(Phase.INDEXED)
+    gate_design(state)
+
+
 def test_gate_brief_requires_designed(state):
     state.advance_project(Phase.INDEXED)
     with pytest.raises(GateError):
         gate_brief(state)
     state.advance_project(Phase.DESIGNED)
     gate_brief(state)
+
+
+def test_ensure_project_at_least_never_regresses(state):
+    state.advance_project(Phase.DESIGNED)
+    state.ensure_project_at_least(Phase.INGESTED)
+    assert state.project_phase == Phase.DESIGNED
+    state.ensure_project_at_least(Phase.DESIGNED)
+    assert state.project_phase == Phase.DESIGNED
 
 
 def test_gate_preview_requires_timeline_file_and_phase(state):

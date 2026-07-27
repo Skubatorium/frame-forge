@@ -151,6 +151,15 @@ class ProjectState:
         if content_hash is not None:
             self.data.content_hashes["_project"] = content_hash
 
+    def ensure_project_at_least(self, phase: Phase) -> None:
+        """Hebt die Projekt-Phase auf `phase`, aber nur vorwaerts (nie zurueck).
+
+        Fuer idempotente Kommandos: `ingest`/`index` erneut auszufuehren darf eine bereits
+        weiter fortgeschrittene Phase (z.B. DESIGNED) nicht zuruecksetzen (Audit-Finding P5).
+        """
+        if self.data.project_phase < phase:
+            self.advance_project(phase)
+
     def invalidate_project(self, to: Phase = Phase.INGESTED) -> None:
         """Faellt auf `to` zurueck. Analyse-Cache (assets.json) bleibt unberuehrt —
 
@@ -198,6 +207,16 @@ class ProjectState:
 def gate_index(state: ProjectState) -> None:
     """`ff-index` erfordert Projekt-Phase >= INGESTED."""
     state.require_project(Phase.INGESTED)
+
+
+def gate_design(state: ProjectState) -> None:
+    """`ff-design` erfordert Projekt-Phase >= INDEXED.
+
+    Ohne dieses Gate koennte `design` die Phase direkt von INIT auf DESIGNED heben und damit
+    INGESTED/INDEXED ueberspringen — dann waere die von `gate_brief` vorausgesetzte Invariante
+    "DESIGNED impliziert INDEXED" verletzt (Audit-Finding P1).
+    """
+    state.require_project(Phase.INDEXED)
 
 
 def gate_brief(state: ProjectState) -> None:
