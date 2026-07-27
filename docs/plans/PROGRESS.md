@@ -1,9 +1,10 @@
 # Fortschritt
 
-**M0–M4 plus Gesichtserkennung (M-Extra) sind fertig (2026-07-27).** Offen bleibt laut Plan nur
-noch M5 (Norwegen-Realbetrieb, kein Code-Meilenstein — echtes Material statt Test-Fixtures)
-und, auf Nutzerwunsch zurückgestellt, automatische Untertitel und Musik-Lizenz-Nachweis aus
-Plan §11.
+**M0–M4 plus Gesichtserkennung (M-Extra) sind fertig (2026-07-27), gefolgt von einem
+vollständigen Audit mit umgesetzten Fixes (Abschnitt „Audit-Fixes" unten).** Offen bleibt laut
+Plan nur noch M5 (Norwegen-Realbetrieb, kein Code-Meilenstein — echtes Material statt
+Test-Fixtures) und, auf Nutzerwunsch zurückgestellt, automatische Untertitel und
+Musik-Lizenz-Nachweis aus Plan §11.
 
 Diese Datei ist die **einzige verlässliche Quelle** für den Arbeitsstand. Chat-Verläufe und
 Task-Listen überleben ein Session-Limit nicht, diese Datei schon.
@@ -239,6 +240,45 @@ verifizieren.
 
 17 neue Tests (`tests/test_people.py`: 6, `tests/test_cli.py`: 2 neue für `faces`, plus
 Aktualisierungen). 165 Tests insgesamt grün, `ruff` sauber, `doctor` grün.
+
+---
+
+## Audit-Fixes (2026-07-27, Opus)
+
+Nach Abschluss von M0–M4 + Gesichtserkennung ein vollständiges Audit (Code, Gate-Hook,
+State-Machine, Render-/Ingest-Pfad, Security/Prozess). Alle Findings umgesetzt und mit Tests
+abgesichert; das komplette proto-Projekt danach end-to-end (`ingest → … → render → nle`)
+über die echte CLI validiert. **201 Tests grün, `ruff` sauber, `doctor` grün.**
+
+| Fix | Finding | Commit |
+|---|---|---|
+| K1 | Proxy-Namenskollision (gleicher Basename in versch. Ordnern → falsches Material) — Proxy-Name trägt jetzt Pfad-Hash | `c10df4f` |
+| K3 | Ingest ohne Timeout/Resume — pro-Datei-Timeout, Fehler überspringen statt abbrechen, existierende Proxies überspringen | `c10df4f` |
+| K2 | `amix` ohne `normalize=0` halbierte die Pegel — Gains/Ducking gelten jetzt wie gesetzt | `e62fccf` |
+| P1 | `design` übersprang INGESTED/INDEXED — neues `gate_design` (erfordert INDEXED) | `04a7774` |
+| P1b | kein Kommando erreichte je INDEXED — `index` hebt die Phase, sobald nichts mehr pending ist | `04a7774` |
+| P5 | Ingest warf die Phase zurück — `ensure_project_at_least` (forward-only) | `04a7774` |
+| S1 | Path-Traversal über Projekt-/Export-Namen — `validate_name` | `d5d944b` |
+| S2 | Path-Traversal über `asset["path"]` aus assets.json — `resolve_media_path` (bounds-check) | `d5d944b` |
+| P3 | Final-Render vertraute stale APPROVED — Timeline-Fingerprint bei approve, Prüfung + QC-Wiederholung bei render | `9672670` |
+| P2 | Content-Hash-Mechanismus war ungenutzt — erstmals real verdrahtet (Timeline-Fingerprint) | `9672670` |
+| P4 | State read-modify-write nicht transaktional — `ProjectState.transaction` (Lock über die ganze Transaktion) | `47fca91` |
+| K4 | `map.encode_alpha_video` ohne Timeout — ergänzt | `47fca91` |
+| K5 | Ducking traf nur die erste Musik-Spur — jetzt alle | `47fca91` |
+| K6 | QC prüfte Asset-Existenz nicht — `known_asset_ids`-Check | `47fca91` |
+| Q1 | LUT-Hook war CLI-seitig tot — `frameforge render --lut` | `47fca91` |
+| Q4 | Gate-Hook crashte bei kaputtem venv — fail-open (nackte ffmpeg-Sperre bleibt) | `47fca91` |
+| S4 | kein Lockfile — `uv.lock` committet, README auf `uv sync` | `ca2aa03` |
+| Q2 | veraltete "kommt in M1"-Kommentare — bereinigt | `ca2aa03` |
+
+**Bewusst offen gelassen (dokumentiert, nicht "Bug"):**
+- **P2 (brief.yaml-Invalidierung):** „brief geändert → Export zurück auf BRIEFED" ist nicht
+  automatisiert, weil `brief`/`build` agentengetriebene Platzhalter sind (kein CLI-Kommando
+  schreibt `brief.yaml`). Die risikoreichere Variante — Timeline nach Freigabe geändert — ist
+  über den Fingerprint (P3) geschlossen.
+- **S3 (Gate-Hook-Umgehbarkeit):** `bash -c "ffmpeg …"`, `uv run frameforge`, `$(…)` etc.
+  umgehen den Hook. Er ist bewusst **Belt-and-suspenders gegen ein Versehen des
+  Orchestrators**, keine adversariale Grenze — die CLI erzwingt die Gates ohnehin selbst.
 
 ### M2.1 — Notizen (2026-07-27)
 
