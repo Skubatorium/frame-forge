@@ -135,7 +135,7 @@ def build_filtergraph(
 
     # -- Audio: pro Clip trimmen/verzoegern/Pegel, Musik-Ducking, dann amix ----------
     audio_labels: list[str] = []
-    music_label: str | None = None
+    music_labels: list[str] = []  # alle src-basierten (Musik-)Spuren, alle werden geduckt
     duck_windows: list[tuple[float, float, float]] = []
 
     for k, audio in enumerate(timeline.tracks.audio):
@@ -155,21 +155,23 @@ def build_filtergraph(
         )
         audio_labels.append(label)
 
-        if audio.src is not None and music_label is None:
-            music_label = label
+        if audio.src is not None:
+            music_labels.append(label)
         if audio.asset is not None and audio.duck_music_db is not None:
             duck_windows.append((audio.tl_in, audio.tl_in + dur, audio.duck_music_db))
 
-    if music_label is not None:
+    # Jede Musik-Spur bekommt die gesamte Duck-Kette (nicht nur die erste — Audit K5).
+    for m, music_label in enumerate(music_labels):
+        current = music_label
         for w, (start, end, duck_db) in enumerate(duck_windows):
             duck_gain = 10 ** (duck_db / 20)
-            ducked = f"{music_label}_duck{w}"
+            ducked = f"m{m}_duck{w}"
             filters.append(
-                f"[{music_label}]volume=volume={duck_gain}:enable='between(t,{start},{end})'"
-                f"[{ducked}]"
+                f"[{current}]volume=volume={duck_gain}:enable='between(t,{start},{end})'[{ducked}]"
             )
-            audio_labels[audio_labels.index(music_label)] = ducked
-            music_label = ducked
+            current = ducked
+        if current != music_label:
+            audio_labels[audio_labels.index(music_label)] = current
 
     if audio_labels:
         mix_inputs = "".join(f"[{lbl}]" for lbl in audio_labels)

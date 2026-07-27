@@ -173,3 +173,25 @@ def test_validate_passes_matching_brief():
         brief={"target_duration_s": 10, "must_shots": ["hero-shot"], "forbidden_shots": ["other"]},
     )
     assert issues == []
+
+
+# -- K6: Asset-Existenz gegen assets.json -------------------------------------
+
+
+def test_validate_flags_unknown_asset_id():
+    tl = _timeline(video=[{"id": "c1", "asset": "fehlt", "src_in": 0, "src_out": 5, "tl_in": 0}])
+    issues = validate(tl, known_asset_ids={"vorhanden"})
+    assert any("fehlt" in i and "assets.json" in i for i in issues)
+
+
+def test_validate_passes_when_all_assets_known():
+    tl = _timeline(
+        video=[{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 5, "tl_in": 0}],
+        audio=[{"id": "au1", "asset": "a1", "type": "original", "tl_in": 0, "dur": 5}],
+    )
+    assert validate(tl, known_asset_ids={"a1"}) == []
+
+
+def test_validate_without_known_asset_ids_skips_existence_check():
+    tl = _timeline(video=[{"id": "c1", "asset": "irgendwas", "src_in": 0, "src_out": 5, "tl_in": 0}])
+    assert validate(tl) == []

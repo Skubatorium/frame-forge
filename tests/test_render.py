@@ -348,3 +348,24 @@ def test_render_final_missing_original_raises(proj, tmp_path):
     )
     with pytest.raises(RenderError, match="Original-Asset"):
         render_final(proj, export, timeline)
+
+
+def test_build_filtergraph_ducks_all_music_tracks():
+    """Audit K5: bei mehreren Musik-Spuren muessen alle geduckt werden, nicht nur die erste."""
+    timeline = _timeline(
+        video=[{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0}],
+        audio=[
+            {"id": "m1", "src": "music/bed1.wav", "tl_in": 0},
+            {"id": "m2", "src": "music/bed2.wav", "tl_in": 0},
+            {"id": "oton", "asset": "a1", "type": "original", "tl_in": 0.5, "dur": 0.5,
+             "duck_music_db": -14},
+        ],
+    )
+    graph = build_filtergraph(
+        timeline,
+        resolve_asset=lambda aid: Path(f"/media/{aid}.mp4"),
+        export_root=Path("/export"),
+        project_root=Path("/project"),
+    )
+    assert "m0_duck0" in graph.filter_complex
+    assert "m1_duck0" in graph.filter_complex

@@ -110,11 +110,31 @@ def _check_against_brief(timeline: Timeline, brief: dict) -> list[str]:
     return issues
 
 
-def validate(timeline: Timeline, *, brief: dict | None = None) -> list[str]:
+def _check_known_assets(timeline: Timeline, known_asset_ids: set[str]) -> list[str]:
+    """Jede in der Timeline referenzierte Asset-ID muss in `assets.json` existieren.
+
+    Sonst schlaegt der Render erst spaet mit einem kryptischen Fehler fehl (Audit K6) —
+    besser hier fruehzeitig und klar melden.
+    """
+    referenced = {c.asset for c in timeline.tracks.video}
+    referenced |= {c.asset for c in timeline.tracks.audio if c.asset is not None}
+    return [
+        f"Asset '{asset_id}' aus der Timeline fehlt in assets.json"
+        for asset_id in sorted(referenced - known_asset_ids)
+    ]
+
+
+def validate(
+    timeline: Timeline,
+    *,
+    brief: dict | None = None,
+    known_asset_ids: set[str] | None = None,
+) -> list[str]:
     """Liste gefundener Probleme; leer heisst "besteht die Pruefung".
 
     `brief` ist optional (z.B. aus `yaml.safe_load(export.brief_path.read_text())`) —
-    ohne Brief werden nur die timeline-internen Regeln geprüft.
+    ohne Brief werden nur die timeline-internen Regeln geprüft. `known_asset_ids` (z.B. die
+    IDs aus `assets.json`) aktiviert die Pruefung, dass alle referenzierten Assets existieren.
     """
     try:
         timeline.validate_semantics()
@@ -127,6 +147,8 @@ def validate(timeline: Timeline, *, brief: dict | None = None) -> list[str]:
         *_check_overlay_readability(timeline),
         *_check_clip_repetition(timeline),
     ]
+    if known_asset_ids is not None:
+        issues.extend(_check_known_assets(timeline, known_asset_ids))
     if brief is not None:
         issues.extend(_check_against_brief(timeline, brief))
     return issues

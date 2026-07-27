@@ -159,3 +159,32 @@ def test_gate_render_final_requires_exact_approved(state):
     state.advance_export("teaser-90s", Phase.RENDERED)
     with pytest.raises(GateError):
         gate_render_final(state, "teaser-90s")
+
+
+# -- P4: transaktionales Lesen-Aendern-Schreiben ------------------------------
+
+
+def test_transaction_persists_changes(tmp_path):
+    path = tmp_path / ".state.json"
+    with ProjectState.transaction(path) as st:
+        st.advance_project(Phase.INGESTED)
+    assert ProjectState.load(path).project_phase == Phase.INGESTED
+
+
+def test_transaction_sees_previous_write(tmp_path):
+    path = tmp_path / ".state.json"
+    with ProjectState.transaction(path) as st:
+        st.advance_project(Phase.INGESTED)
+    with ProjectState.transaction(path) as st:
+        assert st.project_phase == Phase.INGESTED
+        st.advance_project(Phase.INDEXED)
+    assert ProjectState.load(path).project_phase == Phase.INDEXED
+
+
+def test_transaction_does_not_write_on_exception(tmp_path):
+    path = tmp_path / ".state.json"
+    ProjectState.load(path).save()  # INIT
+    with pytest.raises(RuntimeError), ProjectState.transaction(path) as st:
+        st.advance_project(Phase.INGESTED)
+        raise RuntimeError("boom")
+    assert ProjectState.load(path).project_phase == Phase.INIT

@@ -42,6 +42,7 @@ from frameforge.project import (
 from frameforge.state import (
     GateError,
     Phase,
+    ProjectState,
     StateError,
     gate_brief,
     gate_build,
@@ -220,9 +221,8 @@ def ingest(project: str) -> None:
     proxies_dir = proj.cache_dir / "proxies"
     result = ingest_module.build_proxies(found, proxies_dir, media_root=proj.config.media_root)
 
-    state = proj.load_state()
-    state.ensure_project_at_least(Phase.INGESTED)
-    state.save()
+    with ProjectState.transaction(proj.state_path) as state:
+        state.ensure_project_at_least(Phase.INGESTED)
     console.print(
         f"[green]{len(found)} Assets gefunden, {len(result.proxies)} Proxies bereit.[/green] "
         f"Proxy-Verzeichnis: {proxies_dir}"
@@ -264,8 +264,8 @@ def index_cmd(project: str) -> None:
         # geschrieben) -> das Projekt gilt als vollstaendig indiziert. Das ist der einzige Ort,
         # der die Phase auf INDEXED hebt (Audit-Finding P1b: vorher erreichte kein Kommando
         # INDEXED, damit war design/brief nach dem P1-Gate unerreichbar).
-        state.ensure_project_at_least(Phase.INDEXED)
-        state.save()
+        with ProjectState.transaction(proj.state_path) as tx:
+            tx.ensure_project_at_least(Phase.INDEXED)
         console.print("[green]Alle Assets indiziert — Projekt-Phase: INDEXED.[/green]")
         return
 
@@ -303,17 +303,16 @@ def design_cmd(project: str) -> None:
     (`design.render_svg_to_png` pro Overlay), nicht hier global fuer das ganze Projekt.
     """
     proj = _resolve_or_fail(project)
-    state = proj.load_state()
-    try:
-        gate_design(state)
-    except GateError as exc:
-        raise _fail(str(exc)) from exc
     if not proj.design_tokens_path.exists():
         raise _fail(
             f"{proj.design_tokens_path} fehlt — zuerst Tokens definieren (siehe /ff-design)"
         )
-    state.advance_project(Phase.DESIGNED)
-    state.save()
+    try:
+        with ProjectState.transaction(proj.state_path) as state:
+            gate_design(state)
+            state.advance_project(Phase.DESIGNED)
+    except GateError as exc:
+        raise _fail(str(exc)) from exc
     console.print(f"[green]Designsystem uebernommen:[/green] {proj.design_tokens_path}")
 
 
@@ -359,7 +358,8 @@ def preview(project: str, export: str) -> None:
 
     timeline = Timeline.load(exp.timeline_path)
     brief = yaml.safe_load(exp.brief_path.read_text()) if exp.brief_path.exists() else None
-    issues = qc.validate(timeline, brief=brief)
+    known_ids = {a["id"] for a in index_module.load_assets(proj)}
+    issues = qc.validate(timeline, brief=brief, known_asset_ids=known_ids)
     if issues:
         for issue in issues:
             console.print(f"[red]QC:[/red] {issue}")
@@ -370,16 +370,23 @@ def preview(project: str, export: str) -> None:
     except render_module.RenderError as exc:
         raise _fail(str(exc)) from exc
 
-    state.advance_export(export, Phase.PREVIEWED)
-    state.save()
+    with ProjectState.transaction(proj.state_path) as tx:
+        tx.advance_export(export, Phase.PREVIEWED)
     console.print(f"[green]Preview gerendert:[/green] {out_path}")
 
 
 @app.command()
-def render(project: str, export: str) -> None:
+def render(
+    project: str,
+    export: str,
+    lut: Path = typer.Option(None, "--lut", help="Optionale 3D-LUT (.cube) fuer Farbkorrektur"),  # noqa: B008
+) -> None:
     """Final-Render (4K). Erfordert Export-Phase == APPROVED (explizite Freigabe nach Preview)."""
     proj = _resolve_or_fail(project)
     exp = proj.export(export)
+    if lut is not None and not lut.exists():
+        raise _fail(f"LUT-Datei nicht gefunden: {lut}")
+    lut_path = lut
     state = proj.load_state()
     try:
         gate_render_final(state, export)
@@ -399,19 +406,20 @@ def render(project: str, export: str) -> None:
     timeline = Timeline.load(exp.timeline_path)
     # QC vor dem Final-Render wiederholen (nicht nur beim Preview vertrauen).
     brief = yaml.safe_load(exp.brief_path.read_text()) if exp.brief_path.exists() else None
-    issues = qc.validate(timeline, brief=brief)
+    known_ids = {a["id"] for a in index_module.load_assets(proj)}
+    issues = qc.validate(timeline, brief=brief, known_asset_ids=known_ids)
     if issues:
         for issue in issues:
             console.print(f"[red]QC:[/red] {issue}")
         raise typer.Exit(code=1)
 
     try:
-        out_path = render_module.render_final(proj, exp, timeline)
+        out_path = render_module.render_final(proj, exp, timeline, lut_path=lut_path)
     except render_module.RenderError as exc:
         raise _fail(str(exc)) from exc
 
-    state.advance_export(export, Phase.RENDERED)
-    state.save()
+    with ProjectState.transaction(proj.state_path) as tx:
+        tx.advance_export(export, Phase.RENDERED)
     console.print(f"[green]Final-Render fertig:[/green] {out_path}")
 
 
@@ -498,19 +506,22 @@ def approve(project: str, export: str) -> None:
     """Explizite Freigabe eines Exports nach dem Preview. Erfordert Export-Phase == PREVIEWED."""
     proj = _resolve_or_fail(project)
     exp = proj.export(export)
-    state = proj.load_state()
-    current = state.export_phase(export)
+    current = proj.load_state().export_phase(export)
     if current != Phase.PREVIEWED:
         raise _fail(
             f"Export '{export}' ist in Phase {current.name} — Freigabe erst nach PREVIEWED moeglich"
         )
     if not typer.confirm(f"Export '{export}' fuer Final-Render freigeben?"):
         raise typer.Exit(code=1)
-    state.advance_export(export, Phase.APPROVED)
-    # Freigabe an den exakten Timeline-Stand binden, damit render eine nachtraegliche
-    # Aenderung erkennt (Audit P3).
-    state.set_export_hash(export, "timeline", qc.timeline_fingerprint(exp.timeline_path))
-    state.save()
+    with ProjectState.transaction(proj.state_path) as state:
+        # Innerhalb der Transaktion erneut pruefen — zwischen Anzeige und Bestaetigung koennte
+        # sich der Zustand geaendert haben.
+        if state.export_phase(export) != Phase.PREVIEWED:
+            raise _fail(f"Export '{export}' ist nicht mehr in Phase PREVIEWED — abgebrochen.")
+        state.advance_export(export, Phase.APPROVED)
+        # Freigabe an den exakten Timeline-Stand binden, damit render eine nachtraegliche
+        # Aenderung erkennt (Audit P3).
+        state.set_export_hash(export, "timeline", qc.timeline_fingerprint(exp.timeline_path))
     console.print(f"[green]Export '{export}' freigegeben (APPROVED)[/green]")
 
 

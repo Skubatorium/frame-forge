@@ -25,18 +25,26 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT))
 
-from frameforge.project import Project, ProjectNotFoundError, resolve_project
-from frameforge.state import (
-    GateError,
-    ProjectState,
-    StateError,
-    gate_brief,
-    gate_build,
-    gate_design,
-    gate_index,
-    gate_preview,
-    gate_render_final,
-)
+try:
+    from frameforge.project import Project, ProjectNotFoundError, resolve_project
+    from frameforge.state import (
+        GateError,
+        ProjectState,
+        StateError,
+        gate_brief,
+        gate_build,
+        gate_design,
+        gate_index,
+        gate_preview,
+        gate_render_final,
+    )
+except Exception:  # noqa: BLE001
+    # Fail-open (Audit Q4): kann frameforge nicht importiert werden (z.B. venv neu gebaut,
+    # Editable-Install kaputt), darf der Hook nicht auf JEDEM Bash-Command crashen und alles
+    # blockieren. Dann lieber durchlassen — die CLI prueft die Gates ohnehin selbst.
+    _IMPORT_OK = False
+else:
+    _IMPORT_OK = True
 
 _SEGMENT_SPLIT = re.compile(r"&&|\|\||[;&|\n]")
 _ENV_ASSIGNMENT = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*=")
@@ -181,11 +189,14 @@ def evaluate_command(command: str) -> str | None:
                 f"FFmpeg aufrufen — nutze 'frameforge preview <projekt> <export>' bzw. "
                 f"'frameforge render <projekt> <export>'."
             )
-        rest = _frameforge_invocation(tokens)
-        if rest is not None:
-            reason = _check_frameforge_gate(rest)
-            if reason:
-                return reason
+        # frameforge-Gate-Pruefung nur, wenn das Package importierbar war (Fail-open, Q4).
+        # Die nackte ffmpeg/ffprobe-Sperre oben braucht frameforge nicht und gilt immer.
+        if _IMPORT_OK:
+            rest = _frameforge_invocation(tokens)
+            if rest is not None:
+                reason = _check_frameforge_gate(rest)
+                if reason:
+                    return reason
     return None
 
 

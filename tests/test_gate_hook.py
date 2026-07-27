@@ -161,3 +161,21 @@ def test_main_allows_non_bash_tools():
         check=False,
     )
     assert result.returncode == 0
+
+
+# -- Q4: Fail-open bei kaputtem frameforge-Import ------------------------------
+
+
+def test_ffmpeg_still_blocked_when_import_failed(monkeypatch):
+    """Selbst wenn frameforge nicht importierbar ist (venv kaputt), muss die nackte
+
+    ffmpeg-Sperre greifen — aber frameforge-Gates werden uebersprungen (fail-open).
+    """
+    monkeypatch.setattr(gate, "_IMPORT_OK", False)
+    assert gate.evaluate_command("ffmpeg -i in.mp4 out.mp4") is not None
+
+
+def test_frameforge_gate_skipped_when_import_failed(monkeypatch):
+    monkeypatch.setattr(gate, "_IMPORT_OK", False)
+    # Ohne Import kann kein Gate geprueft werden -> durchlassen statt crashen.
+    assert gate.evaluate_command("frameforge render gibts-nicht teaser") is None

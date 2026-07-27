@@ -117,21 +117,47 @@ class ProjectState:
         self.path = path
         self.data = data
 
+    @staticmethod
+    def _read_data(path: Path) -> ProjectStateData:
+        if not path.exists():
+            return ProjectStateData()
+        return ProjectStateData.model_validate(json.loads(path.read_text()))
+
+    @staticmethod
+    def _write_data(path: Path, data: ProjectStateData) -> None:
+        tmp = path.with_suffix(".json.tmp")
+        tmp.write_text(data.model_dump_json(indent=2))
+        tmp.replace(path)
+
     @classmethod
     def load(cls, path: Path) -> ProjectState:
-        """Laedt `.state.json`. Existiert die Datei nicht, wird Phase INIT angenommen."""
-        if not path.exists():
-            return cls(path, ProjectStateData())
+        """Laedt `.state.json`. Existiert die Datei nicht, wird Phase INIT angenommen.
+
+        Fuer reines Lesen. Fuer Lesen-Aendern-Schreiben `transaction` nutzen — `load` + spaeteres
+        `save` sind zwei getrennte Locks und nicht gegen ein paralleles Update geschuetzt.
+        """
         with _locked(path.with_suffix(".lock")):
-            raw = json.loads(path.read_text())
-        return cls(path, ProjectStateData.model_validate(raw))
+            return cls(path, cls._read_data(path))
 
     def save(self) -> None:
         """Schreibt `.state.json` atomar (tmp-Datei + rename) unter Lock."""
         with _locked(self.path.with_suffix(".lock")):
-            tmp = self.path.with_suffix(".json.tmp")
-            tmp.write_text(self.data.model_dump_json(indent=2))
-            tmp.replace(self.path)
+            self._write_data(self.path, self.data)
+
+    @classmethod
+    @contextmanager
+    def transaction(cls, path: Path) -> Iterator[ProjectState]:
+        """Haelt den Lock ueber das komplette Lesen-Aendern-Schreiben (Audit-Finding P4).
+
+        Innerhalb liest die Transaktion frisch (nicht ein evtl. veralteter Vorab-Load), yieldet
+        den State zum Mutieren und schreibt am Ende atomar zurueck — alles unter demselben
+        exklusiven Lock, sodass zwei parallele Prozesse sich nicht gegenseitig ueberschreiben.
+        `save()` darf innerhalb **nicht** aufgerufen werden (wuerde denselben Lock erneut anfordern).
+        """
+        with _locked(path.with_suffix(".lock")):
+            state = cls(path, cls._read_data(path))
+            yield state
+            cls._write_data(path, state.data)
 
     # -- Projekt-Phase -----------------------------------------------------
 

@@ -185,7 +185,9 @@ def render_basemap(
     return canvas
 
 
-def encode_alpha_video(frames_dir: Path, out_path: Path, *, fps: float) -> Path:
+def encode_alpha_video(
+    frames_dir: Path, out_path: Path, *, fps: float, timeout_s: float = 300.0
+) -> Path:
     """Kodiert eine `frame_%04d.png`-Sequenz zu einem `.mov` mit Alphakanal (QuickTime Animation).
 
     `render.build_filtergraph` erwartet `MapClip.clip` als fertigen Videoclip (Plan §4:
@@ -207,5 +209,6 @@ def encode_alpha_video(frames_dir: Path, out_path: Path, *, fps: float) -> Path:
             str(out_path),
         ],
         check=True,
+        timeout=timeout_s,
     )
     return out_path
