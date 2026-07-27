@@ -115,10 +115,19 @@ def build_pipeline(project: str, state: ProjectState, *, exports: list[str] | No
             next_command = nxt.command
             next_hint = f"Export '{name}' — {nxt.key}: {nxt.command}"
 
-    # Projekt fertig (DESIGNED), aber noch kein Export gebrieft.
-    if next_command is None and state.project_phase >= Phase.DESIGNED and not exports:
-        next_command = f"/ff-brief {project} <export>"
-        next_hint = "Ersten Export anlegen und briefen (Name frei waehlbar)"
+    # Projekt ist DESIGNED und kein Export hat mehr einen offenen Schritt: dann ist der
+    # naechste sinnvolle Zug ein *neuer* Export aus derselben Basis (Quereinstieg — kein
+    # Re-Ingest/Index/Design noetig). Ein Projekt ist nie "fertig", man kann immer weitere
+    # Filme aus dem Fundus schneiden (Teaser, Landschaften-Version, Einzelszenen ...).
+    if next_command is None and state.project_phase >= Phase.DESIGNED:
+        next_command = f"/ff-brief {project} <neuer-export>"
+        if exports:
+            next_hint = (
+                "Optional: weiteren Export aus derselben Basis anlegen "
+                "(z.B. Trailer, Landschaften-Version) — kein Re-Ingest/Index/Design noetig."
+            )
+        else:
+            next_hint = "Ersten Export anlegen und briefen (Name frei waehlbar)."
 
     if next_command is None and not next_hint:
         next_hint = "Alles erledigt — nichts offen."

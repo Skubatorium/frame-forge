@@ -63,11 +63,39 @@ Der `Naechster Schritt`-Hinweis aus `frameforge status` sagt dir, welcher dran i
 - **render** (pro Export) — `frameforge render <projekt> <export>` (optional `--lut <datei>`).
   Meldet den versionierten Final-Pfad. Optional danach `frameforge nle <projekt> <export>`.
 
-## Mehrere Exporte
+## Weitere Exporte / Quereinstieg (wichtig)
 
-Ein Projekt kann mehrere Exporte haben (Teaser, Hauptfilm …). `frameforge status` zeigt jede
-Export-Spur einzeln mit eigener „du bist hier"-Markierung. Frag den Nutzer, an welchem Export
-er weiterarbeiten will, wenn mehrere offen sind.
+Ein Projekt kann beliebig viele Exporte haben (Teaser, 15-Minuten-Film, Landschaften-Version,
+Einzelszenen …). **Die Projekt-Basis — Material, Index, Designsystem — wird nur einmal gemacht
+und von allen Exporten geteilt.** Will der Nutzer einen weiteren Film aus demselben Fundus, ist
+das **kein** kompletter Durchlauf: es startet direkt bei `brief` mit einem neuen Export-Namen.
+
+- Ist das Projekt bereits `DESIGNED`, biete jederzeit „weiteren Export anlegen" an
+  (`frameforge status` weist mit „Optional: weiteren Export …" darauf hin). Kein Re-Ingest,
+  kein Re-Index, kein Re-Design.
+- Der neue Export durchläuft nur `brief → build → preview → approve → render`.
+- `frameforge status` zeigt jede Export-Spur einzeln mit eigener „du bist hier"-Markierung;
+  frag, an welchem Export weitergearbeitet werden soll, wenn mehrere offen sind.
+- Beispiel „nur Landschaften, keine Personen": im `brief.yaml` verbotene Shots setzen (über die
+  Personen-Cluster aus `frameforge faces` oder über Tags); der `story-architect`/
+  `timeline-builder` filtert via `frameforge query`.
+
+## Audio & Musik (passiert beim `build`)
+
+Die Audio-Entscheidungen fallen im **build**-Schritt (`audio-designer` + `timeline-builder`
+schreiben die Audio-Spur in `timeline.json`). Kläre **vor** dem Build:
+
+- **Musik**: liegt als Datei in `projects/<projekt>/music/*.wav` (projektweit, von allen
+  Exporten nutzbar). Frag, ob passende Tracks da sind.
+- **Keine Musik zur Hand?** Der `audio-designer` schreibt einen Prompt für KI-Musik
+  (Tempo/Stimmung/Länge). Der Nutzer erzeugt den Track extern, lädt ihn herunter und legt ihn
+  nach `music/` — **pausiere** analog zum Design-Tokens-Fall und mach danach weiter.
+- **O-Ton** (Ton aus den Clips selbst) kommt automatisch, wo im Brief gewünscht; die Musik wird
+  an diesen Stellen automatisch abgesenkt (Ducking).
+
+Ein neuer Export mit **anderem Sound** braucht also nur andere Tracks in `music/` (oder eine
+andere Auswahl/Energie im Brief) — die `music/`-Ablage ist projektweit, der Brief bestimmt, was
+dieser eine Export daraus nutzt.
 
 ## Nach jedem Schritt
 

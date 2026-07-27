@@ -44,7 +44,7 @@ def test_designed_without_exports_suggests_brief(state):
     p = build_pipeline("norwegen", state)
     assert all(s.done for s in p.project_steps)
     assert "ff-brief" in p.next_command
-    assert "<export>" in p.next_command
+    assert "export" in p.next_command.lower()
 
 
 def test_export_progression_marks_next_export_step(state):
@@ -75,12 +75,17 @@ def test_one_current_per_lane_and_single_next_command(state):
     assert p.next_command == "/ff-build norwegen a"
 
 
-def test_fully_rendered_has_no_next_command(state):
+def test_fully_rendered_offers_new_export(state):
+    """Quereinstieg: ist alles gerendert, ist der naechste Zug ein weiterer Export aus
+
+    derselben Basis (kein Re-Ingest/Index/Design).
+    """
     state.advance_project(Phase.DESIGNED)
     state.advance_export("teaser", Phase.RENDERED)
     p = build_pipeline("norwegen", state, exports=["teaser"])
-    assert p.next_command is None
     assert all(s.done for s in p.export_steps["teaser"])
+    assert p.next_command == "/ff-brief norwegen <neuer-export>"
+    assert "weiteren Export" in p.next_hint
 
 
 def test_format_pipeline_renders_markers(state):

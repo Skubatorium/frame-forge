@@ -266,6 +266,47 @@ abgebildeten Personen nutzen.
 
 ---
 
+## 3a. Weitere Exporte aus derselben Basis (Quereinstieg)
+
+Der wichtigste Punkt fürs Wiederverwenden: **Material, Index und Designsystem machst du nur
+einmal — sie gehören dem Projekt.** Ein *Export* ist nur „welcher Film aus diesem Fundus". Ein
+neuer Film (Trailer, 15-Minuten-Fassung, Landschaften-Version, Einzelszenen zum Verkauf …)
+bedeutet **keinen** neuen Durchlauf, sondern nur einen neuen Export ab `brief`:
+
+```bash
+frameforge brief   norwegen-2026 landschaften-4k    # neuer Export, Projekt ist schon DESIGNED
+frameforge build   norwegen-2026 landschaften-4k
+frameforge preview norwegen-2026 landschaften-4k
+frameforge approve norwegen-2026 landschaften-4k
+frameforge render  norwegen-2026 landschaften-4k
+```
+
+Kein Re-Ingest, kein Re-Index, kein Re-Design. `frameforge status` zeigt für ein fertiges
+Projekt aktiv den Hinweis „Optional: weiteren Export anlegen"; `/ff-wizard norwegen-2026` bietet
+es geführt an. Jeder Export bekommt eine eigene Spur in der Status-Karte.
+
+**„Nur Landschaften, keine Personen"** ist einfach ein anderer Brief: verbotene Shots über die
+Personen-Cluster (`frameforge faces`) oder über Tags setzen — `story-architect`/
+`timeline-builder` filtern den Fundus via `frameforge query`.
+
+## 3b. Audio & Musik — wo, was, wann
+
+Die Audio-Entscheidungen fallen im **`build`-Schritt** (der `audio-designer` wählt Tracks, setzt
+Ducking, der `timeline-builder` schreibt die Audio-Spur in `timeline.json`). Also **vor dem
+Build** klären:
+
+| Audio-Quelle | Wo / wie |
+|---|---|
+| **Eigene Musik** (lizenziert) | Datei nach `projects/<projekt>/music/*.wav` legen. Projektweit — alle Exporte können daraus wählen. |
+| **KI-Musik** (kein Track zur Hand) | Der `audio-designer` schreibt einen Prompt (Tempo/Stimmung/Länge). Du erzeugst den Track extern (z. B. Suno/Udio), lädst ihn herunter, legst ihn nach `music/` — der Ablauf pausiert und macht danach weiter (wie bei den Design-Tokens). |
+| **O-Ton** (Ton aus den Clips) | Kommt automatisch, wo der Brief es vorsieht; die Musik wird an diesen Stellen automatisch abgesenkt (**Ducking**). |
+
+Ein neuer Export mit **anderem Sound** braucht also nur andere Tracks in `music/` (oder eine
+andere Auswahl/Energie im Brief). BPM/Beats/Energiekurve jedes Tracks werden einmalig analysiert
+und in `music/analysis/` gecacht, damit die Musik auf den Schnitt gelegt werden kann.
+
+---
+
 ## 4. Verzeichnis-Referenz eines Projekts
 
 ```
