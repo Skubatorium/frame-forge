@@ -65,14 +65,19 @@ def scan_media(media_root: Path) -> list[Path]:
 def _path_key(asset_path: Path, media_root: Path) -> str:
     """Stabiler, eindeutiger Schluessel fuer ein Asset: relativer Pfad unter `media_root`.
 
-    Faellt auf den absoluten Pfad zurueck, falls `asset_path` nicht unter `media_root` liegt.
-    Ingest und Render bilden beide denselben Schluessel (Ingest ueber die gescannten Pfade,
-    Render ueber `media_root / asset["path"]`), damit sie auf denselben Proxy zeigen.
+    **Beide Seiten werden `resolve()`-t**, damit Ingest (gescannte, evtl. un-aufgeloeste Pfade)
+    und Render (`resolve_media_path` liefert aufgeloeste Pfade) denselben Schluessel bilden —
+    sonst zeigen sie bei symlink-behaftetem `media_root` (macOS `/var`→`/private/var`, gemountete
+    Platten) auf unterschiedliche Proxy-Dateinamen und der Render findet den Proxy nicht.
+    Faellt auf den aufgeloesten absoluten Pfad zurueck, falls `asset_path` nicht unter
+    `media_root` liegt.
     """
+    root = media_root.resolve()
+    resolved = asset_path.resolve()
     try:
-        return asset_path.relative_to(media_root).as_posix()
+        return resolved.relative_to(root).as_posix()
     except ValueError:
-        return str(asset_path)
+        return str(resolved)
 
 
 def proxy_path(asset_path: Path, out_dir: Path, *, media_root: Path) -> Path:

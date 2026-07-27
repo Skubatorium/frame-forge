@@ -141,3 +141,19 @@ def test_build_proxies_skips_corrupt_video_without_aborting(media_root, tmp_path
     assert any(f.asset.name == "corrupt.mp4" for f in result.failures)
     # Die intakten Assets sind trotzdem da.
     assert len(result.proxies) == 3
+
+
+def test_proxy_path_stable_across_symlinked_media_root(tmp_path):
+    """Regressionstest: media_root ueber einen Symlink (wie macOS /var) und aufgeloest muessen
+
+    denselben Proxy-Schluessel ergeben — sonst findet Render den vom Ingest gebauten Proxy nicht.
+    """
+    real = tmp_path / "real_media"
+    (real / "day01").mkdir(parents=True)
+    (real / "day01" / "clip.mp4").write_bytes(b"x")
+    link = tmp_path / "linked_media"
+    link.symlink_to(real)
+
+    via_link = proxy_path(link / "day01" / "clip.mp4", tmp_path / "px", media_root=link)
+    via_real = proxy_path(real / "day01" / "clip.mp4", tmp_path / "px", media_root=real)
+    assert via_link == via_real
