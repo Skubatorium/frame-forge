@@ -162,3 +162,11 @@ def test_render_basemap_composites_tiles_into_one_image(tmp_path):
     assert basemap.width % TILE_SIZE_PX == 0
     assert basemap.height % TILE_SIZE_PX == 0
     assert basemap.getpixel((0, 0)) == (50, 100, 150, 255)
+
+
+def test_render_route_frames_with_pois_draws_them(track, tmp_path):
+    pois = [{"name": "Geiranger", "lat": track[0]["lat"], "lon": track[0]["lon"]}]
+    frames = render_route_frames(track, tmp_path, fps=1, dur=1.0, width=320, height=180, pois=pois)
+    # POI-Punkt (weiss) muss irgendwo gezeichnet sein.
+    img = np.array(Image.open(frames[0]).convert("RGBA"))
+    assert ((img == (255, 255, 255, 255)).all(axis=-1)).any()

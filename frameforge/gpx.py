@@ -1,11 +1,48 @@
-"""GPX-Parsing, Zuordnung Asset <-> Ort."""
+"""GPX-Parsing, Zuordnung Asset <-> Ort, Orte/POIs aus `locations.csv`."""
 
 from __future__ import annotations
 
+import csv
 from datetime import datetime
 from pathlib import Path
 
 import gpxpy
+
+
+class LocationsError(ValueError):
+    """`locations.csv` fehlt eine Pflichtspalte oder enthält ungültige Koordinaten."""
+
+
+def parse_locations(path: Path) -> list[dict]:
+    """Liest `route/locations.csv` — Übernachtungen/POIs/manuelle Korrekturen.
+
+    Erwartete Spalten (Header): `name`, `lat`, `lon`, optional `type` (`overnight`/`poi`/…)
+    und `day` (Etappen-/Tagesnummer). Rückgabe:
+    `[{"name", "lat", "lon", "type", "day"}, ...]`. Leere Liste, wenn die Datei fehlt.
+    """
+    if not path.exists():
+        return []
+    out: list[dict] = []
+    with path.open(newline="") as fh:
+        reader = csv.DictReader(fh)
+        missing = {"name", "lat", "lon"} - set(reader.fieldnames or [])
+        if missing:
+            raise LocationsError(f"{path}: Spalten fehlen: {sorted(missing)} (erwartet: name,lat,lon)")
+        for i, row in enumerate(reader, start=2):  # Zeile 1 = Header
+            try:
+                lat, lon = float(row["lat"]), float(row["lon"])
+            except (TypeError, ValueError) as exc:
+                raise LocationsError(f"{path} Zeile {i}: ungültige Koordinate ({exc})") from exc
+            out.append(
+                {
+                    "name": (row.get("name") or "").strip(),
+                    "lat": lat,
+                    "lon": lon,
+                    "type": (row.get("type") or "poi").strip(),
+                    "day": (row.get("day") or "").strip(),
+                }
+            )
+    return out
 
 
 def parse_gpx(path: Path) -> list[dict]:

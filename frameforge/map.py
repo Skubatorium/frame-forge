@@ -34,21 +34,31 @@ DEFAULT_TILE_USER_AGENT = "frameforge/0.1 (+https://github.com/Skubatorium/frame
 TileFetcher = Callable[[str], bytes]
 
 
-def _project(track: list[dict], width: int, height: int, margin: int) -> list[tuple[float, float]]:
-    """Equirectangular-Projektion der Track-Punkte auf Pixelkoordinaten der Bounding-Box."""
+def _make_projector(track: list[dict], width: int, height: int, margin: int):
+    """Liefert eine Funktion `(lat, lon) -> (x, y)`, die auf die Bounding-Box des Tracks abbildet.
+
+    So landen Track-Punkte UND POIs (aus `locations.csv`) im selben Koordinatensystem.
+    """
     lats = [p["lat"] for p in track]
     lons = [p["lon"] for p in track]
-    lat_span = max(max(lats) - min(lats), 1e-9)
-    lon_span = max(max(lons) - min(lons), 1e-9)
+    lat_min, lon_min = min(lats), min(lons)
+    lat_span = max(max(lats) - lat_min, 1e-9)
+    lon_span = max(max(lons) - lon_min, 1e-9)
     usable_w = width - 2 * margin
     usable_h = height - 2 * margin
 
-    points = []
-    for p in track:
-        x = margin + (p["lon"] - min(lons)) / lon_span * usable_w
-        y = margin + (1 - (p["lat"] - min(lats)) / lat_span) * usable_h
-        points.append((x, y))
-    return points
+    def project(lat: float, lon: float) -> tuple[float, float]:
+        x = margin + (lon - lon_min) / lon_span * usable_w
+        y = margin + (1 - (lat - lat_min) / lat_span) * usable_h
+        return x, y
+
+    return project
+
+
+def _project(track: list[dict], width: int, height: int, margin: int) -> list[tuple[float, float]]:
+    """Equirectangular-Projektion der Track-Punkte auf Pixelkoordinaten der Bounding-Box."""
+    project = _make_projector(track, width, height, margin)
+    return [project(p["lat"], p["lon"]) for p in track]
 
 
 def render_route_frames(
@@ -63,6 +73,7 @@ def render_route_frames(
     basemap: Image.Image | None = None,
     route_color: tuple[int, int, int, int] = ROUTE_COLOR,
     route_width_px: int = ROUTE_WIDTH_PX,
+    pois: list[dict] | None = None,
 ) -> list[Path]:
     """PNG-Sequenz mit Alpha: Route-Reveal (Linie waechst ueber die Dauer) + Positions-Marker.
 
@@ -74,6 +85,8 @@ def render_route_frames(
     liefert sein eigenes (`design/assets/`).
     `basemap`: vorgerendertes Kartenbild (siehe `render_basemap`) als Hintergrund statt
     transparent — Grösse muss zu `(width, height)` passen.
+    `pois`: feste Orte (aus `frameforge.gpx.parse_locations` / `locations.csv`) — auf jedem
+    Frame als kleiner Punkt + Name eingezeichnet, im selben Koordinatensystem wie die Route.
     """
     if len(track) < 2:
         raise ValueError("track braucht mindestens 2 Punkte fuer eine Route")
@@ -81,7 +94,9 @@ def render_route_frames(
         raise ValueError(f"basemap-Groesse {basemap.size} passt nicht zu ({width}, {height})")
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    points_px = _project(track, width, height, MARGIN_PX)
+    project = _make_projector(track, width, height, MARGIN_PX)
+    points_px = [project(p["lat"], p["lon"]) for p in track]
+    poi_px = [(project(p["lat"], p["lon"]), p.get("name", "")) for p in (pois or [])]
     frame_count = max(1, round(fps * dur))
     icon = Image.open(marker_icon).convert("RGBA") if marker_icon else None
 
@@ -93,6 +108,10 @@ def render_route_frames(
 
         image = basemap.copy() if basemap is not None else Image.new("RGBA", (width, height), (0, 0, 0, 0))
         draw = ImageDraw.Draw(image)
+        for (px, py), name in poi_px:
+            draw.ellipse((px - 4, py - 4, px + 4, py + 4), fill=MARKER_COLOR)
+            if name:
+                draw.text((px + 6, py - 6), name, fill=MARKER_COLOR)
         draw.line(visible, fill=route_color, width=route_width_px, joint="curve")
         cx, cy = visible[-1]
         if icon is not None:

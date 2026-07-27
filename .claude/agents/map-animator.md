@@ -10,12 +10,14 @@ die Timeline eingesetzt werden.
 
 ## Aufgabe
 
-1. Lies `route/roadtrip.gpx` und `route/locations.csv` (Übernachtungen, POIs, manuelle
-   Korrekturen) über `frameforge.gpx`.
+1. Lies `route/roadtrip.gpx` (`frameforge.gpx.parse_gpx`) und `route/locations.csv`
+   (`frameforge.gpx.parse_locations` — Übernachtungen/POIs, Spalten `name,lat,lon,type,day`).
 2. Bestimme, welche Etappe/welcher Ausschnitt für den jeweiligen Beat gebraucht wird
    (Vorgabe kommt vom Beat-Sheet bzw. direkt vom Orchestrator).
-3. Rendere eine PNG-Sequenz mit Alpha über `frameforge.map.render_route_frames`: Route-Reveal
-   mit Easing, Marker an POIs, optional Figur/Auto-Symbol entlang der Spur.
+3. Rendere eine PNG-Sequenz mit Alpha über `frameforge.map.render_route_frames`: Route-Reveal,
+   die POIs aus `locations.csv` per `pois=`-Parameter als beschriftete Marker, optional ein
+   Figur/Auto-Icon per `marker_icon=` entlang der Spur, optional eine Basiskarte per `basemap=`
+   (`frameforge.map.render_basemap`).
 4. Melde Pfad, Dauer und `fps` der erzeugten Sequenz zurück, damit der `timeline-builder`
    sie als `MapClip` (`tracks.map`) einsetzen kann.
 
