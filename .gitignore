@@ -22,6 +22,7 @@ projects/*/exports/*/final/
 projects/*/exports/*/overlays/
 projects/*/exports/*/map/
 projects/*/exports/*/nle/
+projects/*/exports/*/report.md
 projects/*/design/fonts/
 projects/*/design/assets/
 projects/*/.state.lock

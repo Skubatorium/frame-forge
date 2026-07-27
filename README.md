@@ -305,6 +305,31 @@ Ein neuer Export mit **anderem Sound** braucht also nur andere Tracks in `music/
 andere Auswahl/Energie im Brief). BPM/Beats/Energiekurve jedes Tracks werden einmalig analysiert
 und in `music/analysis/` gecacht, damit die Musik auf den Schnitt gelegt werden kann.
 
+## 3c. Statistik & Report — Überblick über den Fundus und jeden Export
+
+**Index-Statistik** (was liegt im Projekt, wie wurde es analysiert, wie viel wird genutzt):
+
+```bash
+frameforge stats norwegen-2026
+```
+
+Zeigt: Anzahl Assets (Video/Foto), wie viele der Dateien im Quellordner schon indiziert sind,
+Rohmaterial-Gesamtdauer, durchschnittliche Qualität (Schärfe/Stabilität/Belichtung),
+Rating-Verteilung, Auflösungen, Codecs, Orte, und **pro Export, wie viele Assets genutzt
+werden** (plus „gesamt genutzt" über alle Exporte).
+
+**Export-Datenblatt** (ein Markdown-Report, der beschreibt, was in diesem Film passiert ist):
+
+```bash
+frameforge report norwegen-2026 teaser-90s      # schreibt exports/teaser-90s/report.md
+```
+
+Beim **Final-Render entsteht der Report automatisch** neben dem MP4 (`teaser-90s_v1.report.md`).
+Er enthält: Projekt & Quellordner, Umfang, **welche Clips genutzt wurden** (mit In/Out und
+Beschreibung) und wie viel Prozent des Fundus, Dramaturgie (Preset, Länge, Beat-Sheet), Audio
+(Tracks, O-Ton, Ducking), Design (Schrift, Farben), und Technik (Auflösung, Spuren,
+Fundus-Qualität). Ein „was-wurde-hier-gemacht"-Bericht zum Nachschlagen und Weitergeben.
+
 ---
 
 ## 4. Verzeichnis-Referenz eines Projekts

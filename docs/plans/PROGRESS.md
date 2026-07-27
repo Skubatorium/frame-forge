@@ -305,6 +305,25 @@ State-Machine aufgesetzt:
 
 208 Tests grün, `ruff` sauber, `doctor` grün.
 
+## Statistik & Report (2026-07-27, auf Nutzerwunsch)
+
+Nutzer wollte einen Überblick über den indizierten Fundus und ein „was-wurde-hier-gemacht"-
+Datenblatt pro Export (neben dem MP4). Beides rein aus vorhandenen Daten abgeleitet
+(`frameforge/stats.py`, kein Neu-Analysieren):
+
+- **`frameforge stats <projekt>`**: Fundus-Umfang (Video/Foto), Deckung indiziert vs. Dateien
+  im Quellordner (media_root offline → sauber übersprungen), Rohmaterial-Dauer, Ø-Qualität,
+  Rating-Verteilung, Auflösungen, Codecs, Orte, Personen-Assets, plus Nutzung je Export +
+  Gesamt-Deckung.
+- **`frameforge report <projekt> <export>`** und **automatisch beim Final-Render**
+  (`<export>_vN.report.md` neben dem MP4): Markdown-Datenblatt mit Quelle/Umfang, genutzten
+  Clips (In/Out + Beschreibung) und %-Anteil am Fundus, Dramaturgie (Preset/Länge/Beat-Sheet),
+  Audio (Musik/O-Ton/Ducking), Design (Schrift/Farben), Technik (Auflösung/Spuren/Ø-Qualität).
+
+`exports/*/report.md` ist gitignored (regenerierbar); der Render-Report liegt ohnehin im
+gitignorierten `final/`. 14 neue Tests (`tests/test_stats.py`: 7, `tests/test_cli.py`: 3 für
+stats/report, Rest Regression). 215 Tests grün, `ruff` sauber.
+
 ### M2.1 — Notizen (2026-07-27)
 
 `audio.py`: `analyze_track` nutzt `librosa.beat.beat_track` (BPM + Beat-Grid) und

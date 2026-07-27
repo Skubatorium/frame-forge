@@ -27,6 +27,7 @@ from frameforge import nle as nle_module
 from frameforge import people as people_module
 from frameforge import pipeline as pipeline_module
 from frameforge import render as render_module
+from frameforge import stats as stats_module
 from frameforge.project import (
     CACHE_ROOT,
     PROJECTS_DIR,
@@ -431,7 +432,12 @@ def render(
 
     with ProjectState.transaction(proj.state_path) as tx:
         tx.advance_export(export, Phase.RENDERED)
+
+    # Datenblatt neben den Final-Render legen (<stem>.report.md).
+    report_path = out_path.parent / f"{out_path.stem}.report.md"
+    report_path.write_text(stats_module.build_report(proj, exp, timeline))
     console.print(f"[green]Final-Render fertig:[/green] {out_path}")
+    console.print(f"[green]Report:[/green] {report_path}")
 
 
 @app.command()
@@ -534,6 +540,84 @@ def approve(project: str, export: str) -> None:
         # Aenderung erkennt (Audit P3).
         state.set_export_hash(export, "timeline", qc.timeline_fingerprint(exp.timeline_path))
     console.print(f"[green]Export '{export}' freigegeben (APPROVED)[/green]")
+
+
+def _stats_table(title: str, rows: dict) -> Table:
+    table = Table(title=title, show_header=False)
+    table.add_column()
+    table.add_column(justify="right")
+    for key, value in rows.items():
+        table.add_row(str(key), str(value))
+    return table
+
+
+@app.command()
+def stats(project: str) -> None:
+    """Index-Statistik: Fundus-Umfang, Qualitaet, Aufloesungen, Orte, Nutzung je Export."""
+    proj = _resolve_or_fail(project)
+    idx = stats_module.index_stats(proj)
+    usage = stats_module.usage_stats(proj)
+
+    if idx.indexed == 0:
+        console.print("Noch nichts indiziert — zuerst 'frameforge index' ausfuehren.")
+        return
+
+    coverage = (
+        f"{idx.indexed}/{idx.on_disk} indiziert ({idx.indexed_coverage:.0%})"
+        if idx.on_disk
+        else f"{idx.indexed} indiziert (Quellordner nicht erreichbar)"
+    )
+    console.print(
+        _stats_table(
+            f"{proj.name} — Fundus",
+            {
+                "Assets (Index)": f"{idx.indexed}  ({idx.videos} Video, {idx.photos} Foto)",
+                "Dateien im Quellordner": coverage,
+                "Rohmaterial (Video)": f"{idx.total_video_seconds:.0f} s",
+                "mit Personen": idx.with_people,
+            },
+        )
+    )
+    if idx.avg_quality:
+        console.print(_stats_table("Qualitaet (Ø Video)", idx.avg_quality))
+    if idx.rating_hist:
+        console.print(_stats_table("Ratings", {f"{k}★": v for k, v in idx.rating_hist.items()}))
+    if idx.resolutions:
+        console.print(_stats_table("Aufloesungen", idx.resolutions))
+    if idx.codecs:
+        console.print(_stats_table("Codecs", idx.codecs))
+    if idx.places:
+        console.print(_stats_table("Orte", idx.places))
+
+    if usage.per_export:
+        rows = {name: f"{n} Assets" for name, n in usage.per_export.items()}
+        union = (
+            f"{len(usage.used_union)}/{usage.total_assets} ({usage.union_coverage:.0%})"
+            if usage.union_coverage is not None
+            else str(len(usage.used_union))
+        )
+        rows["— gesamt genutzt"] = union
+        console.print(_stats_table("Nutzung je Export", rows))
+    else:
+        console.print("Noch kein Export mit Timeline — Nutzungsstatistik folgt nach 'build'.")
+
+
+@app.command()
+def report(project: str, export: str) -> None:
+    """Schreibt ein Markdown-Datenblatt zum Export nach `exports/<export>/report.md`.
+
+    Beim Final-Render entsteht ohnehin automatisch ein Report neben dem MP4; dieses Kommando
+    erzeugt ihn auch ohne (erneuten) Render, z.B. nach dem Preview.
+    """
+    proj = _resolve_or_fail(project)
+    exp = proj.export(export)
+    if not exp.timeline_path.exists():
+        raise _fail(f"{exp.timeline_path} existiert nicht — zuerst 'frameforge build' ausfuehren")
+    timeline = Timeline.load(exp.timeline_path)
+    out_path = exp.root / "report.md"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(stats_module.build_report(proj, exp, timeline))
+    console.print(f"[green]Report geschrieben:[/green] {out_path}")
 
 
 @app.command(name="list")

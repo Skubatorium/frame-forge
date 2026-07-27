@@ -61,7 +61,17 @@ Der `Naechster Schritt`-Hinweis aus `frameforge status` sagt dir, welcher dran i
 - **approve** (pro Export) — Nur nach ausdrücklicher Zustimmung des Nutzers zum Preview:
   `frameforge approve <projekt> <export>` (interaktive Rückfrage).
 - **render** (pro Export) — `frameforge render <projekt> <export>` (optional `--lut <datei>`).
-  Meldet den versionierten Final-Pfad. Optional danach `frameforge nle <projekt> <export>`.
+  Meldet den versionierten Final-Pfad **und ein automatisch erzeugtes Datenblatt**
+  (`<export>_vN.report.md` neben dem MP4: Quelle, genutzte Clips, Dramaturgie, Audio, Design,
+  Technik). Optional danach `frameforge nle <projekt> <export>`.
+
+## Überblick auf Wunsch
+
+- **`frameforge stats <projekt>`** — Index-Statistik: wie viel Material da ist, wie es
+  analysiert wurde (Qualität, Auflösungen, Orte, Ratings), und wie viel je Export genutzt wird.
+  Gut, um dem Nutzer einen Überblick über den Fundus zu geben.
+- **`frameforge report <projekt> <export>`** — schreibt das Export-Datenblatt auch ohne
+  (erneuten) Render, z.B. nach dem Preview.
 
 ## Weitere Exporte / Quereinstieg (wichtig)
 

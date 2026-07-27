@@ -259,3 +259,52 @@ def test_new_rejects_traversal_name(env):
     )
     assert result.exit_code == 1
     assert "unzulaessig" in result.output
+
+
+# -- stats / report -----------------------------------------------------------
+
+
+def test_stats_reports_index_summary(env):
+    write_asset(
+        env,
+        {
+            "id": "clip1", "kind": "video", "path": "clip.mp4",
+            "hash": hash_file(env.config.media_root / "clip.mp4"),
+            "tech": {"w": 320, "h": 240, "fps": 25, "dur": 2.0, "codec": "h264"},
+            "quality": {"sharpness": 0.9, "stability": 0.8, "exposure": 0.7, "score": 0.8},
+            "rating": 4,
+        },
+    )
+    result = runner.invoke(app, ["stats", "proto"])
+    assert result.exit_code == 0, result.output
+    assert "Fundus" in result.output
+
+
+def test_stats_empty_index_hint(env):
+    result = runner.invoke(app, ["stats", "proto"])
+    assert result.exit_code == 0
+    assert "index" in result.output.lower()
+
+
+def test_report_writes_markdown(env):
+    from frameforge.timeline import Timeline
+
+    write_asset(
+        env,
+        {"id": "clip1", "kind": "video", "path": "clip.mp4",
+         "hash": hash_file(env.config.media_root / "clip.mp4"),
+         "content": {"summary": "Testclip"}},
+    )
+    export = env.export("teaser")
+    export.ensure_dirs()
+    Timeline(
+        export="teaser", fps=25, resolution=(320, 240), duration=2.0,
+        tracks={"video": [{"id": "c1", "asset": "clip1", "src_in": 0, "src_out": 2, "tl_in": 0}]},
+    ).save(export.timeline_path)
+
+    result = runner.invoke(app, ["report", "proto", "teaser"])
+
+    assert result.exit_code == 0, result.output
+    report = export.root / "report.md"
+    assert report.exists()
+    assert "Testclip" in report.read_text()
