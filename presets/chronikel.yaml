@@ -1,0 +1,15 @@
+slug: chronikel
+name: Chronikel
+description: >-
+  Strikt chronologisch erzaehlt. Tages-Kapitelkarten, Karte zwischen den Etappen, ruhiger
+  Rhythmus. Der "was haben wir gemacht"-Film fuer Familie und Freunde.
+best_for: Familienfilm, Tag-fuer-Tag
+
+pacing: { min_s: 3, max_s: 6, rhythm: steady }
+transition_vocabulary: [cut, fade]
+color_grade: { mood: natural, contrast: medium }
+text_density: chapter_cards
+music_energy_curve: flat_calm
+map_usage: between_legs
+photo_treatment: { ken_burns: moderate }
+original_audio_policy: selective_keep

@@ -1,0 +1,15 @@
+slug: thematisch-assoziativ
+name: Thematisch / Assoziativ
+description: >-
+  Nicht chronologisch, sondern nach Motiv gruppiert (Wasser, Strassen, Essen, Abende),
+  verbunden durch Match-Cuts. Eine Zweitfassung mit anderem Blick auf dasselbe Material.
+best_for: Zweitfassung, motivische Montage
+
+pacing: { min_s: 2, max_s: 5, rhythm: associative }
+transition_vocabulary: [match_cut, dissolve]
+color_grade: { mood: consistent_across_theme, contrast: medium }
+text_density: minimal
+music_energy_curve: per_theme_block
+map_usage: none
+photo_treatment: { ken_burns: moderate }
+original_audio_policy: selective_keep

@@ -1,0 +1,15 @@
+slug: punch-teaser
+name: Punch Teaser
+description: >-
+  Schnell und laut. Harte Cuts auf den Beat, Whip-Pans, grosse Typo, Eskalation zum Drop.
+  Fuer 60–90-Sekunden-Trailer, die Lust auf den ganzen Film machen.
+best_for: 60–90 s Trailer / Teaser
+
+pacing: { min_s: 0.4, max_s: 1.5, rhythm: beat_driven }
+transition_vocabulary: [hard_cut, whip_pan]
+color_grade: { mood: punchy, contrast: high }
+text_density: bold_large
+music_energy_curve: escalate_to_drop
+map_usage: none_or_flash
+photo_treatment: { ken_burns: aggressive }
+original_audio_policy: none

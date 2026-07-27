@@ -1,0 +1,15 @@
+slug: timelapse-journey
+name: Timelapse Journey
+description: >-
+  Bewegungslastig, die Karte als Leitmotiv. Zeitraffer-Bloecke, Speed-Ramps, minimaler Text —
+  der Roadtrip als Fahrt durch Zeit und Landschaft.
+best_for: Roadtrip-Fokus, Bewegung
+
+pacing: { min_s: 1, max_s: 8, rhythm: variable }
+transition_vocabulary: [cut, speed_ramp]
+color_grade: { mood: vivid, contrast: medium_high }
+text_density: minimal
+music_energy_curve: sustained_motion
+map_usage: leitmotif
+photo_treatment: { ken_burns: moderate }
+original_audio_policy: ambience_only

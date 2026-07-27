@@ -1,0 +1,15 @@
+slug: nordic-cinematic
+name: Nordic Cinematic
+description: >-
+  Ruhig und weit. Lange Establisher, langsamer Push, kalte Highlights auf warmen Lichtern,
+  viel Ambiente, sparsamer Text. Der klassische 10–15-Minuten-Reisefilm.
+best_for: 15-Minuten-Reisefilm, gefühlvolle Fassung
+
+pacing: { min_s: 4, max_s: 8, rhythm: slow }
+transition_vocabulary: [fade, slow_dissolve]
+color_grade: { mood: cool_highlights_warm_lights, contrast: medium }
+text_density: sparse
+music_energy_curve: gradual_build
+map_usage: between_chapters
+photo_treatment: { ken_burns: subtle }
+original_audio_policy: ambience_only

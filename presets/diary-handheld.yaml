@@ -1,0 +1,15 @@
+slug: diary-handheld
+name: Diary / Handheld
+description: >-
+  Roh und persoenlich. O-Ton dominant, Musik nur als Bett, handschriftliche Typo, ungeschoenter
+  Look. Der intime, tagebuchartige Schnitt.
+best_for: persoenlicher, intimer Schnitt
+
+pacing: { min_s: 1.5, max_s: 4, rhythm: loose }
+transition_vocabulary: [cut, whip_pan]
+color_grade: { mood: raw, contrast: low }
+text_density: handwritten_sparse
+music_energy_curve: bed_only
+map_usage: none
+photo_treatment: { ken_burns: minimal }
+original_audio_policy: dominant

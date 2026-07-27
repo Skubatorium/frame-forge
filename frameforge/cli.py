@@ -26,6 +26,7 @@ from frameforge import ingest as ingest_module
 from frameforge import nle as nle_module
 from frameforge import people as people_module
 from frameforge import pipeline as pipeline_module
+from frameforge import presets as presets_module
 from frameforge import render as render_module
 from frameforge import stats as stats_module
 from frameforge.project import (
@@ -793,6 +794,24 @@ def list_cmd() -> None:
         return
     for name in projects:
         console.print(name)
+
+
+@app.command(name="presets")
+def presets_cmd() -> None:
+    """Verfuegbare Stil-Presets auflisten (fuer den Brief eines Exports).
+
+    Ein Preset gibt den Grundton vor (Pacing, Uebergaenge, Color-Grade, Musik-Energie ...).
+    Im brief.yaml `preset: <slug>` setzen; einzelne Parameter kann man dort ueberschreiben.
+    """
+    table = Table(title="Stil-Presets")
+    table.add_column("Slug", style="bold")
+    table.add_column("Name")
+    table.add_column("Passt zu")
+    for p in presets_module.list_presets():
+        table.add_row(p["slug"], p["name"], p["best_for"])
+    console.print(table)
+    for p in presets_module.list_presets():
+        console.print(f"\n[bold]{p['slug']}[/bold] — {p['description']}")
 
 
 if __name__ == "__main__":
