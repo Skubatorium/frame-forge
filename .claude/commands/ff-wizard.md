@@ -65,11 +65,28 @@ Der `Naechster Schritt`-Hinweis aus `frameforge status` sagt dir, welcher dran i
   (`<export>_vN.report.md` neben dem MP4: Quelle, genutzte Clips, Dramaturgie, Audio, Design,
   Technik). Optional danach `frameforge nle <projekt> <export>`.
 
+## Personen benennen (optional, für „mehr Oskar")
+
+Will der Nutzer Filme nach Personen steuern („mehr Oskar", „nur Landschaften ohne Personen"),
+brauchen die Gesichts-Cluster **Namen**. Ablauf:
+
+1. `frameforge faces <projekt>` — erkennt Gesichter, bildet Cluster (`person_1`, `person_2` …)
+   und schreibt pro Cluster einen **Gesichts-Ausschnitt** in den Cache
+   (`<cache>/people_crops/<cluster>.jpg`).
+2. `frameforge people <projekt>` zeigt die Cluster. **Sieh dir die Crop-Bilder an** (öffne die
+   JPEGs mit dem Read-Tool) und frag den Nutzer pro noch unbenanntem Cluster: „Wer ist das?".
+3. Für jede Antwort: `frameforge name-person <projekt> <cluster> <name>` (z.B.
+   `… person_1 Oskar`). Der Name wird projektweit gemerkt (`index/people_names.json`).
+4. Danach versteht der Brief den Namen: „mehr Oskar" → im `brief.yaml` als Muss-Präferenz;
+   `frameforge query --person Oskar` liefert die passenden Assets, der `story-architect`
+   priorisiert sie. „Keine Personen" → verbotene Shots über die Personen-Cluster/`people`-Tags.
+
 ## Überblick auf Wunsch
 
 - **`frameforge stats <projekt>`** — Index-Statistik: wie viel Material da ist, wie es
-  analysiert wurde (Qualität, Auflösungen, Orte, Ratings), und wie viel je Export genutzt wird.
-  Gut, um dem Nutzer einen Überblick über den Fundus zu geben.
+  analysiert wurde (Qualität, Auflösungen, Orte, Ratings), **Zusammensetzung** (Video/Foto,
+  mit/ohne Personen, Kamera/Motion, Top-Motive in Sekunden + %), benannte Personen, und wie
+  viel je Export genutzt wird. Gut für einen Überblick über den Fundus.
 - **`frameforge report <projekt> <export>`** — schreibt das Export-Datenblatt auch ohne
   (erneuten) Render, z.B. nach dem Preview.
 

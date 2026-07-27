@@ -289,10 +289,18 @@ def query(
     place: str = typer.Option(None),
     min_rating: int = typer.Option(None),
     kind: str = typer.Option(None),
+    person: str = typer.Option(None, help="Nur Assets mit dieser (benannten) Person"),
 ) -> None:
-    """Kompaktes JSON aus `assets.json`, gefiltert — statt ganze Verzeichnisse zu lesen."""
+    """Kompaktes JSON aus `assets.json`, gefiltert — statt ganze Verzeichnisse zu lesen.
+
+    `--person <name>` filtert auf Assets, in denen die per `name-person` benannte Person
+    vorkommt (setzt `frameforge faces` + Benennung voraus).
+    """
     proj = _resolve_or_fail(project)
     results = index_module.query_assets(proj, tag=tag, place=place, min_rating=min_rating, kind=kind)
+    if person is not None:
+        allowed = set(people_module.assets_for_person(proj, person))
+        results = [a for a in results if a.get("id") in allowed]
     console.print_json(json.dumps(results))
 
 
@@ -474,13 +482,66 @@ def nle(
     console.print(f"[green]NLE-Export fertig:[/green] {out_path}")
 
 
+def _print_people(proj: Project, crops: dict[str, Path] | None = None) -> None:
+    """Zeigt die Personen-Cluster als Tabelle: Cluster, Name (falls gesetzt), #Assets, Crop."""
+    clusters = people_module.load_clusters(proj)
+    if not clusters:
+        console.print("Noch keine Personen-Cluster — zuerst 'frameforge faces' ausfuehren.")
+        return
+    names = people_module.load_people_names(proj)
+    crops = crops or {}
+    table = Table(title="Personen")
+    table.add_column("Cluster")
+    table.add_column("Name")
+    table.add_column("#Assets", justify="right")
+    table.add_column("Gesichts-Ausschnitt")
+    for key in sorted(clusters):
+        table.add_row(
+            key,
+            names.get(key, "[dim]—[/dim]"),
+            str(len(clusters[key])),
+            str(crops.get(key, "")),
+        )
+    console.print(table)
+    unnamed = [k for k in clusters if k not in names]
+    if unnamed:
+        console.print(
+            f"[yellow]{len(unnamed)} Cluster noch ohne Namen.[/yellow] Benennen: "
+            "'frameforge name-person <projekt> <cluster> <name>'."
+        )
+
+
+@app.command()
+def people(project: str) -> None:
+    """Personen-Cluster anzeigen (Cluster, Name, Anzahl Assets). Namen setzt `name-person`."""
+    proj = _resolve_or_fail(project)
+    _print_people(proj)
+
+
+@app.command(name="name-person")
+def name_person(project: str, cluster: str, name: str) -> None:
+    """Benennt einen Personen-Cluster (`person_1` → z.B. `Oskar`).
+
+    `cluster` darf ein Cluster-Key (`person_1`) oder ein bereits vergebener Name (Umbenennen)
+    sein. Danach versteht `frameforge query --person <name>` bzw. der Brief den Namen.
+    """
+    proj = _resolve_or_fail(project)
+    try:
+        key = people_module.set_person_name(proj, cluster, name)
+    except KeyError as exc:
+        raise _fail(str(exc)) from exc
+    n_assets = len(people_module.load_clusters(proj).get(key, []))
+    console.print(f"[green]{key} = '{name}'[/green] ({n_assets} Assets)")
+
+
 @app.command()
 def faces(project: str) -> None:
     """Gesichtserkennung fuer Foto-Assets — expliziter Opt-in, kein Teil von `frameforge index`.
 
     Verarbeitet biometrische Daten (siehe `frameforge.people`-Datenschutzhinweis). Schreibt
     `index/people.json` (Encodings pro Asset) und `index/people_clusters.json`
-    (Personen-Cluster) — beide sind per `.gitignore` vom Tracking ausgeschlossen.
+    (Personen-Cluster) — beide sind per `.gitignore` vom Tracking ausgeschlossen. Die
+    Gesichts-Ausschnitte pro Cluster (fuers Benennen) landen im Cache.
     """
     proj = _resolve_or_fail(project)
     photo_assets = [a for a in index_module.load_assets(proj) if a.get("kind") == "photo"]
@@ -506,16 +567,31 @@ def faces(project: str) -> None:
     encodings_by_asset = {
         asset_id: [face["encoding"] for face in faces] for asset_id, faces in faces_by_asset.items()
     }
-    clusters = people_module.cluster_people(encodings_by_asset)
+    detailed = people_module.cluster_people_detailed(encodings_by_asset)
+    clusters = {key: sorted({aid for aid, _ in members}) for key, members in detailed.items()}
     clusters_path = proj.index_dir / "people_clusters.json"
     clusters_path.write_text(json.dumps(clusters, indent=2))
+
+    # Repraesentative Gesichts-Ausschnitte pro Cluster (fuers Benennen) in den Cache.
+    def _resolve(asset_id: str) -> Path:
+        asset = next(a for a in photo_assets if a["id"] == asset_id)
+        return resolve_media_path(proj.config.media_root, asset["path"])
+
+    crops_dir = proj.cache_dir / "people_crops"
+    crops = people_module.write_representative_crops(faces_by_asset, detailed, _resolve, crops_dir)
 
     total_faces = sum(len(v) for v in faces_by_asset.values())
     console.print(
         f"[green]{total_faces} Gesichter in {len(faces_by_asset)} von {len(photo_assets)} "
         f"Fotos, {len(clusters)} Personen-Cluster.[/green]"
     )
-    console.print(f"Ergebnis: {people_path}, {clusters_path}")
+    if crops:
+        console.print(
+            f"Gesichts-Ausschnitte pro Cluster: {crops_dir}\n"
+            "Zum Benennen: die Crops ansehen und 'frameforge name-person "
+            "<projekt> <cluster> <name>' setzen (oder ueber /ff-wizard fuehren lassen)."
+        )
+    _print_people(proj, crops)
 
 
 @app.command()
@@ -588,6 +664,40 @@ def stats(project: str) -> None:
         console.print(_stats_table("Codecs", idx.codecs))
     if idx.places:
         console.print(_stats_table("Orte", idx.places))
+
+    # Inhalts-Zusammensetzung (Anteile in Sekunden + %).
+    comp = stats_module.content_composition(proj)
+    total_s = comp["total_video_seconds"] or 1  # Division vermeiden
+
+    def _share(bucket: dict) -> str:
+        return f"{bucket['count']}× · {bucket['seconds']:.0f}s ({100 * bucket['seconds'] / total_s:.0f}%)"
+
+    console.print(
+        _stats_table(
+            "Zusammensetzung",
+            {
+                "Video": _share(comp["by_kind"]["video"]),
+                "Foto": f"{comp['by_kind']['photo']['count']}× (Standbilder)",
+                "mit Personen": _share(comp["people"]["mit_personen"]),
+                "ohne Personen (Landschaft o.ae.)": _share(comp["people"]["ohne_personen"]),
+            },
+        )
+    )
+    if comp["motion"]:
+        console.print(
+            _stats_table("Kamera/Motion (Video)", {k: _share(v) for k, v in comp["motion"].items()})
+        )
+    if comp["top_tags"]:
+        console.print(_stats_table("Top-Motive (Tags)", dict(comp["top_tags"])))
+
+    presence = stats_module.person_presence(proj)
+    if presence:
+        console.print(
+            _stats_table(
+                "Personen (benannt)",
+                {name: f"{v['assets']} Assets · {v['seconds']:.0f}s" for name, v in presence.items()},
+            )
+        )
 
     if usage.per_export:
         rows = {name: f"{n} Assets" for name, n in usage.per_export.items()}

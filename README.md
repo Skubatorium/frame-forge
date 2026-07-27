@@ -254,15 +254,24 @@ Sobald Exporte existieren, zeigt die Karte pro Export eine eigene Spur
 (brief → build → preview → approve → render) mit eigener „du bist hier"-Markierung.
 `/ff-wizard norwegen-2026` übernimmt von hier die Führung durch den nächsten Schritt.
 
-### Optional — Gesichtserkennung
+### Optional — Personen erkennen & benennen („mehr Oskar")
+
+Opt-in (nicht Teil von `index`, weil biometrische Daten). Nur mit Einverständnis der
+abgebildeten Personen nutzen. Ergebnis (`index/people*.json`) ist gitignored.
 
 ```bash
-frameforge faces norwegen-2026
+frameforge faces norwegen-2026            # erkennt Gesichter, bildet Cluster + Ausschnitte
+frameforge people norwegen-2026           # zeigt die Cluster (person_1, person_2 …)
+frameforge name-person norwegen-2026 person_1 Oskar   # Cluster benennen
+frameforge query norwegen-2026 --person Oskar         # Assets mit Oskar
 ```
 
-Opt-in (nicht Teil von `index`, weil biometrische Daten). Gruppiert Gesichter über Fotos zu
-Personen; Ergebnis (`index/people*.json`) ist gitignored. Nur mit Einverständnis der
-abgebildeten Personen nutzen.
+`faces` bildet aus den Gesichtern **Cluster** und legt pro Cluster einen Gesichts-Ausschnitt
+in den Cache. Über `/ff-wizard` zeigt Claude dir die Ausschnitte und fragt „wer ist das?" —
+deine Antwort wird als Name **projektweit** gemerkt. Danach steuerst du Exporte über Namen:
+im Brief „mehr Oskar" / „keine Personen", und `frameforge query --person <name>` löst den
+Namen zu den passenden Assets auf. `frameforge stats` zeigt zusätzlich, **wie viele Sekunden**
+jede benannte Person im Fundus hat.
 
 ---
 

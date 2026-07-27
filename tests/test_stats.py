@@ -148,3 +148,37 @@ def test_build_report_contains_key_sections(proj):
     assert "Inter" in md
     assert "Fjord von oben" in md  # Beschreibung des genutzten Clips
     assert "v1" in md
+
+
+# -- Inhalts-Komposition & Personen-Praesenz ----------------------------------
+
+
+def test_content_composition_splits_people_and_motion(proj):
+    # Motion-Feld ergaenzen
+    assets = json.loads(proj.assets_json_path.read_text())
+    assets[0]["motion"] = {"type": "drone", "speed": 0.4}
+    assets[1]["motion"] = {"type": "handheld", "speed": 0.2}
+    proj.assets_json_path.write_text(json.dumps(assets))
+
+    from frameforge.stats import content_composition
+
+    comp = content_composition(proj)
+    assert comp["by_kind"]["video"]["count"] == 2
+    assert comp["by_kind"]["photo"]["count"] == 1
+    # v2 hat people=True (8s), v1 nicht
+    assert comp["people"]["mit_personen"]["seconds"] == pytest.approx(8.0)
+    assert comp["people"]["ohne_personen"]["count"] == 2  # v1 + Foto
+    assert set(comp["motion"]) == {"drone", "handheld"}
+    assert ("fjord", 1) in comp["top_tags"]
+
+
+def test_person_presence_counts_named_only(proj):
+    proj.index_dir.mkdir(parents=True, exist_ok=True)
+    (proj.index_dir / "people_clusters.json").write_text(json.dumps({"person_1": ["v1", "v2"]}))
+    from frameforge.stats import person_presence
+
+    assert person_presence(proj) == {}  # noch kein Name
+    (proj.index_dir / "people_names.json").write_text(json.dumps({"person_1": "Oskar"}))
+    presence = person_presence(proj)
+    assert presence["Oskar"]["assets"] == 2
+    assert presence["Oskar"]["seconds"] == pytest.approx(20.0)  # v1 12s + v2 8s

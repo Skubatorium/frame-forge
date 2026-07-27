@@ -99,6 +99,68 @@ def index_stats(project: Project, *, scan_disk: bool = True) -> IndexStats:
     )
 
 
+def _video_seconds(asset: dict) -> float:
+    return float(asset.get("tech", {}).get("dur", 0.0)) if asset.get("kind") == "video" else 0.0
+
+
+def content_composition(project: Project) -> dict:
+    """Zusammensetzung des Fundus: Anteile nach Art, Personen, Kamera-/Motion-Typ, Motiven.
+
+    Werte je Kategorie als `{"count": n, "seconds": s}` (Sekunden = Video-Dauer; Fotos zaehlen
+    bei `count`, tragen 0 Sekunden). Prozente rechnet der Aufrufer (CLI/Report) aus den
+    Gesamtwerten — hier bleiben die Rohzahlen, damit nichts doppelt gerundet wird.
+    """
+    assets = load_assets(project)
+    total_seconds = sum(_video_seconds(a) for a in assets)
+
+    def bucket(items: list[dict]) -> dict:
+        return {"count": len(items), "seconds": round(sum(_video_seconds(a) for a in items), 1)}
+
+    videos = [a for a in assets if a.get("kind") == "video"]
+    photos = [a for a in assets if a.get("kind") == "photo"]
+    with_people = [a for a in assets if a.get("content", {}).get("people") is True]
+    without_people = [a for a in assets if a.get("content", {}).get("people") is not True]
+
+    motion: dict[str, dict] = {}
+    for a in videos:
+        mtype = a.get("motion", {}).get("type", "unbekannt")
+        motion.setdefault(mtype, {"count": 0, "seconds": 0.0})
+        motion[mtype]["count"] += 1
+        motion[mtype]["seconds"] = round(motion[mtype]["seconds"] + _video_seconds(a), 1)
+
+    tags = Counter(t for a in assets for t in a.get("content", {}).get("tags", []))
+
+    return {
+        "total_assets": len(assets),
+        "total_video_seconds": round(total_seconds, 1),
+        "by_kind": {"video": bucket(videos), "photo": bucket(photos)},
+        "people": {"mit_personen": bucket(with_people), "ohne_personen": bucket(without_people)},
+        "motion": dict(sorted(motion.items(), key=lambda kv: -kv[1]["seconds"])),
+        "top_tags": tags.most_common(10),
+    }
+
+
+def person_presence(project: Project) -> dict[str, dict]:
+    """Pro benannter Person: in wie vielen Assets sie vorkommt und wie viele Video-Sekunden.
+
+    Leeres Dict, wenn `frameforge faces` nie lief oder keine Namen vergeben sind.
+    """
+    from frameforge import people as people_module
+
+    names = people_module.load_people_names(project)
+    clusters = people_module.load_clusters(project)
+    if not names:
+        return {}
+    assets_by_id = {a["id"]: a for a in load_assets(project)}
+
+    presence: dict[str, dict] = {}
+    for key, name in names.items():
+        ids = clusters.get(key, [])
+        seconds = sum(_video_seconds(assets_by_id[i]) for i in ids if i in assets_by_id)
+        presence[name] = {"assets": len(ids), "seconds": round(seconds, 1)}
+    return presence
+
+
 def used_asset_ids(timeline: Timeline) -> set[str]:
     """Alle Asset-IDs, die eine Timeline tatsaechlich verwendet (Video + Asset-Audio)."""
     ids = {c.asset for c in timeline.tracks.video}
@@ -245,6 +307,33 @@ def build_report(project: Project, export: Export, timeline: Timeline) -> str:
             f"Schärfe {q.get('sharpness', 0):.2f}, Stabilität {q.get('stability', 0):.2f}, "
             f"Belichtung {q.get('exposure', 0):.2f}"
         )
+    lines.append("")
+
+    # Zusammensetzung des gesamten Fundus (nicht nur dieses Exports) + benannte Personen.
+    comp = content_composition(project)
+    total_s = comp["total_video_seconds"] or 1
+    lines.append("## Fundus-Zusammensetzung")
+
+    def _share(bucket: dict) -> str:
+        return f"{bucket['count']}× · {bucket['seconds']:.0f} s ({100 * bucket['seconds'] / total_s:.0f} %)"
+
+    lines.append(
+        f"- **Mit Personen:** {_share(comp['people']['mit_personen'])} · "
+        f"**Ohne (Landschaft o.ä.):** {_share(comp['people']['ohne_personen'])}"
+    )
+    if comp["motion"]:
+        motion = " · ".join(f"{k}: {_share(v)}" for k, v in comp["motion"].items())
+        lines.append(f"- **Kamera/Motion:** {motion}")
+    if comp["top_tags"]:
+        tags = ", ".join(f"{t} ({n})" for t, n in comp["top_tags"][:8])
+        lines.append(f"- **Top-Motive:** {tags}")
+
+    presence = person_presence(project)
+    if presence:
+        people_line = " · ".join(
+            f"{name}: {v['assets']} Assets" for name, v in presence.items()
+        )
+        lines.append(f"- **Benannte Personen:** {people_line}")
     lines.append("")
 
     return "\n".join(lines)

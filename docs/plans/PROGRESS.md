@@ -324,6 +324,30 @@ Datenblatt pro Export (neben dem MP4). Beides rein aus vorhandenen Daten abgelei
 gitignorierten `final/`. 14 neue Tests (`tests/test_stats.py`: 7, `tests/test_cli.py`: 3 für
 stats/report, Rest Regression). 215 Tests grün, `ruff` sauber.
 
+## Personen-Index (Naming) + Inhalts-Komposition (2026-07-27, auf Nutzerwunsch)
+
+Nutzer wollte (a) benennbare Personen („mehr Oskar") und (b) Anteile im Fundus (Landschaft vs.
+Personen, Drohne vs. Handheld, Motive) mit Prozenten.
+
+**Personen benennen** (`people.py` erweitert): `cluster_people_detailed` behält pro Cluster die
+genauen Mitglieder `(asset_id, face_index)`, damit bei Gruppenfotos das richtige Gesicht
+gecroppt wird. `write_representative_crops` legt pro Cluster einen Gesichts-Ausschnitt in den
+Cache (fürs Ansehen/Benennen). Namensverwaltung projektweit in `index/people_names.json`
+(`set_person_name`, `load_people_names`, `assets_for_person` — case-insensitiv, Umbenennen über
+den alten Namen). CLI: `frameforge people` (Cluster-Tabelle), `frameforge name-person`,
+`frameforge faces` schreibt jetzt zusätzlich Crops + zeigt die Tabelle, `frameforge query
+--person <name>` filtert. Der Wizard führt das Benennen konversationell (Claude sieht die
+Crops, fragt „wer ist das?", ruft `name-person`).
+
+**Inhalts-Komposition** (`stats.py`): `content_composition` liefert Anteile nach Art
+(Video/Foto), Personen (mit/ohne, in Sekunden), Kamera/Motion (`motion.type`) und Top-Motiven
+(Tags); `person_presence` zählt pro benannter Person Assets + Video-Sekunden. `frameforge stats`
+zeigt beides mit %-Anteilen; das Export-Datenblatt bekommt eine „Fundus-Zusammensetzung"-Sektion.
+
+Drohne-vs-Handy hängt an sauberem Tagging durch den `media-indexer` (der `analyze.py`-
+Heuristik-`motion.type` unterscheidet nur static/handheld) — die Statistik nutzt, was der Index
+liefert. 21 neue Tests. 229 Tests grün, `ruff` sauber, `doctor` grün.
+
 ### M2.1 — Notizen (2026-07-27)
 
 `audio.py`: `analyze_track` nutzt `librosa.beat.beat_track` (BPM + Beat-Grid) und

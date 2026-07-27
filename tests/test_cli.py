@@ -308,3 +308,43 @@ def test_report_writes_markdown(env):
     report = export.root / "report.md"
     assert report.exists()
     assert "Testclip" in report.read_text()
+
+
+# -- Personen-Index (Naming) --------------------------------------------------
+
+
+def _write_clusters(env, clusters):
+    env.index_dir.mkdir(parents=True, exist_ok=True)
+    import json as _json
+    (env.index_dir / "people_clusters.json").write_text(_json.dumps(clusters))
+
+
+def test_people_lists_clusters(env):
+    _write_clusters(env, {"person_1": ["a1", "a2"], "person_2": ["a3"]})
+    result = runner.invoke(app, ["people", "proto"])
+    assert result.exit_code == 0, result.output
+    assert "person_1" in result.output
+    assert "ohne Namen" in result.output
+
+
+def test_name_person_sets_name_and_query_filters(env):
+    _write_clusters(env, {"person_1": ["clipA"]})
+    write_asset(env, {"id": "clipA", "kind": "video", "path": "clip.mp4",
+                      "hash": hash_file(env.config.media_root / "clip.mp4")})
+    write_asset(env, {"id": "clipB", "kind": "video", "path": "photo.jpg",
+                      "hash": hash_file(env.config.media_root / "photo.jpg")})
+
+    named = runner.invoke(app, ["name-person", "proto", "person_1", "Oskar"])
+    assert named.exit_code == 0, named.output
+    assert "Oskar" in named.output
+
+    q = runner.invoke(app, ["query", "proto", "--person", "Oskar"])
+    assert q.exit_code == 0, q.output
+    assert "clipA" in q.output
+    assert "clipB" not in q.output
+
+
+def test_name_person_unknown_cluster_fails(env):
+    _write_clusters(env, {"person_1": ["a1"]})
+    result = runner.invoke(app, ["name-person", "proto", "person_9", "X"])
+    assert result.exit_code == 1
