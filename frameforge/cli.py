@@ -13,6 +13,7 @@ import shutil
 import subprocess
 import sys
 from dataclasses import dataclass
+from datetime import UTC, datetime
 from pathlib import Path
 
 import typer
@@ -123,6 +124,21 @@ def _check_cache_writable() -> _Check:
     return _Check("Cache-Verzeichnis", True, str(CACHE_ROOT))
 
 
+_MIN_FREE_GB = 5.0
+
+
+def _check_disk_space() -> _Check:
+    # Informativ: wenig Platz laesst doctor NICHT durchfallen (kein Umgebungsfehler), zeigt aber
+    # eine Warnung — Ingest/Render von grossem Material braucht Platz.
+    try:
+        CACHE_ROOT.mkdir(parents=True, exist_ok=True)
+        free_gb = shutil.disk_usage(CACHE_ROOT).free / (1024**3)
+    except OSError as exc:
+        return _Check("Plattenplatz (Cache)", True, f"nicht ermittelbar: {exc}")
+    warn = "" if free_gb >= _MIN_FREE_GB else f"  [yellow]wenig (< {_MIN_FREE_GB:.0f} GB)[/yellow]"
+    return _Check("Plattenplatz (Cache)", True, f"{free_gb:.1f} GB frei{warn}")
+
+
 @app.command()
 def doctor() -> None:
     """Prueft die Umgebung: ffmpeg, ffprobe, exiftool, libcairo, Python-Version, Cache."""
@@ -133,6 +149,7 @@ def doctor() -> None:
         _check_executable("exiftool", "-ver"),
         _check_cairo(),
         _check_cache_writable(),
+        _check_disk_space(),
     ]
 
     table = Table(title="frameforge doctor")
@@ -214,14 +231,45 @@ def status(project: str) -> None:
 # ff-build). Sie brechen daher nach dem Gate mit Hinweis ab.
 
 
+def _human_size(num_bytes: int) -> str:
+    size = float(num_bytes)
+    for unit in ("B", "KB", "MB", "GB", "TB"):
+        if size < 1024 or unit == "TB":
+            return f"{size:.1f} {unit}"
+        size /= 1024
+    return f"{size:.1f} TB"
+
+
 @app.command()
-def ingest(project: str) -> None:
-    """Scan + Proxy-Erzeugung fuer das Rohmaterial. Setzt Projekt-Phase auf INGESTED."""
+def ingest(
+    project: str,
+    dry_run: bool = typer.Option(False, "--dry-run", help="Nur zeigen, was gefunden wuerde — nichts transkodieren"),
+) -> None:
+    """Scan + Proxy-Erzeugung fuer das Rohmaterial. Setzt Projekt-Phase auf INGESTED.
+
+    `--dry-run` scannt nur und zeigt Anzahl/Groesse/Typen — nuetzlich vor dem Transkodieren
+    von 100 GB, ohne etwas zu schreiben.
+    """
     proj = _resolve_or_fail(project)
     try:
         found = ingest_module.scan_media(proj.config.media_root)
     except FileNotFoundError as exc:
         raise _fail(str(exc)) from exc
+
+    if dry_run:
+        by_ext: dict[str, list[int]] = {}
+        for p in found:
+            by_ext.setdefault(p.suffix.lower(), []).append(p.stat().st_size)
+        total = sum(s for sizes in by_ext.values() for s in sizes)
+        table = Table(title=f"Dry-Run: {len(found)} Mediendateien, {_human_size(total)}")
+        table.add_column("Endung")
+        table.add_column("Anzahl", justify="right")
+        table.add_column("Groesse", justify="right")
+        for ext, sizes in sorted(by_ext.items(), key=lambda kv: -sum(kv[1])):
+            table.add_row(ext, str(len(sizes)), _human_size(sum(sizes)))
+        console.print(table)
+        console.print("[dim]Nichts geschrieben. Ohne --dry-run werden Proxies erzeugt.[/dim]")
+        return
 
     proxies_dir = proj.cache_dir / "proxies"
     result = ingest_module.build_proxies(found, proxies_dir, media_root=proj.config.media_root)
@@ -232,8 +280,25 @@ def ingest(project: str) -> None:
         f"[green]{len(found)} Assets gefunden, {len(result.proxies)} Proxies bereit.[/green] "
         f"Proxy-Verzeichnis: {proxies_dir}"
     )
+    # Fehlschlaege persistent festhalten (Audit D4), nicht nur auf der Konsole.
+    report_path = proj.cache_dir / "ingest-report.json"
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text(
+        json.dumps(
+            {
+                "when": datetime.now(UTC).isoformat(),
+                "found": len(found),
+                "proxies": len(result.proxies),
+                "failures": [{"asset": str(f.asset), "reason": f.reason} for f in result.failures],
+            },
+            indent=2,
+        )
+    )
     if result.failures:
-        console.print(f"[yellow]{len(result.failures)} Asset(s) uebersprungen (Proxy fehlgeschlagen):[/yellow]")
+        console.print(
+            f"[yellow]{len(result.failures)} Asset(s) uebersprungen (Proxy fehlgeschlagen), "
+            f"Details in {report_path}:[/yellow]"
+        )
         for failure in result.failures:
             console.print(f"  {failure.asset.name}: {failure.reason}")
 
@@ -870,6 +935,54 @@ def apply_theme_cmd(project: str, theme: str) -> None:
     except themes_module.ThemeNotFoundError as exc:
         raise _fail(str(exc)) from exc
     console.print(f"[green]Theme '{theme}' uebernommen:[/green] {out}  (jetzt anpassen)")
+
+
+def _dir_size(path: Path) -> int:
+    if not path.exists():
+        return 0
+    return sum(p.stat().st_size for p in path.rglob("*") if p.is_file())
+
+
+@app.command()
+def clean(project: str) -> None:
+    """Loescht den Cache eines Projekts (Proxies, Keyframes, Gesichts-Crops, Karten-Frames).
+
+    Alles regenerierbar (ingest/index bauen es neu). Rohmaterial und Projektdateien bleiben
+    unberuehrt.
+    """
+    proj = _resolve_or_fail(project)
+    cache = proj.cache_dir
+    size = _dir_size(cache)
+    if not cache.exists() or size == 0:
+        console.print("Cache ist bereits leer.")
+        return
+    if not typer.confirm(f"{_human_size(size)} Cache unter {cache} loeschen?"):
+        raise typer.Exit(code=1)
+    shutil.rmtree(cache, ignore_errors=True)
+    console.print(f"[green]{_human_size(size)} freigegeben[/green] ({cache})")
+
+
+@app.command(name="clone-export")
+def clone_export(project: str, source: str, target: str) -> None:
+    """Legt einen neuen Export an, indem der Brief eines bestehenden als Startpunkt kopiert wird.
+
+    Spart das Neu-Tippen bei Varianten (z.B. teaser -> hauptfilm). Der Ziel-Export beginnt bei
+    Phase BRIEFED; Beat-Sheet/Timeline werden NICHT kopiert (die sollen neu entstehen).
+    """
+    proj = _resolve_or_fail(project)
+    src, dst = proj.export(source), proj.export(target)
+    if not src.brief_path.exists():
+        raise _fail(f"Quell-Export '{source}' hat kein brief.yaml — nichts zu kopieren.")
+    if dst.brief_path.exists():
+        raise _fail(f"Ziel-Export '{target}' hat bereits ein brief.yaml — abgebrochen.")
+    dst.ensure_dirs()
+    dst.brief_path.write_text(src.brief_path.read_text())
+    with ProjectState.transaction(proj.state_path) as state:
+        state.advance_export(target, Phase.BRIEFED)
+    console.print(
+        f"[green]Export '{target}' aus '{source}' angelegt[/green] (brief.yaml kopiert). "
+        "Brief anpassen, dann /ff-build."
+    )
 
 
 @app.command(name="presets")

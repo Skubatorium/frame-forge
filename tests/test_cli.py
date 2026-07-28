@@ -423,3 +423,54 @@ def test_apply_theme_writes_tokens(env):
     assert env.design_tokens_path.exists()
     import yaml as _yaml
     assert _yaml.safe_load(env.design_tokens_path.read_text())["accent_color"] == "#f2b04c"
+
+
+# -- D1-D5: Betriebs-Kommandos ------------------------------------------------
+
+
+def test_ingest_dry_run_writes_nothing(env):
+    result = runner.invoke(app, ["ingest", "proto", "--dry-run"])
+    assert result.exit_code == 0, result.output
+    assert "Dry-Run" in result.output
+    assert env.load_state().project_phase == Phase.INIT  # Phase nicht veraendert
+    assert not (env.cache_dir / "proxies").exists()
+
+
+def test_ingest_writes_failure_report(env):
+    # eine kaputte Videodatei ins media_root legen
+    (env.config.media_root / "corrupt.mp4").write_bytes(b"not a video")
+    runner.invoke(app, ["ingest", "proto"])
+    report = env.cache_dir / "ingest-report.json"
+    assert report.exists()
+    import json as _json
+    data = _json.loads(report.read_text())
+    assert any(f["asset"].endswith("corrupt.mp4") for f in data["failures"])
+
+
+def test_clean_removes_cache(env):
+    runner.invoke(app, ["ingest", "proto"])
+    assert env.cache_dir.exists()
+    result = runner.invoke(app, ["clean", "proto"], input="y\n")
+    assert result.exit_code == 0, result.output
+    assert not env.cache_dir.exists()
+
+
+def test_clone_export_copies_brief(env):
+    src = env.export("teaser")
+    src.ensure_dirs()
+    src.brief_path.write_text("preset: punch-teaser\n")
+    state = env.load_state()
+    state.advance_export("teaser", Phase.BRIEFED)
+    state.save()
+
+    result = runner.invoke(app, ["clone-export", "proto", "teaser", "hauptfilm"])
+
+    assert result.exit_code == 0, result.output
+    assert env.export("hauptfilm").brief_path.read_text() == "preset: punch-teaser\n"
+    assert env.load_state().export_phase("hauptfilm") == Phase.BRIEFED
+
+
+def test_clone_export_missing_source_fails(env):
+    result = runner.invoke(app, ["clone-export", "proto", "gibtsnicht", "neu"])
+    assert result.exit_code == 1
+    assert "kein brief" in result.output.lower()
