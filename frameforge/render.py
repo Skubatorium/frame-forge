@@ -102,6 +102,11 @@ def _join_video_segments(clips, labels: list[str], filters: list[str]) -> str:
 
     `transition_in` eines Clips gefordert. Ohne Crossfade bleibt es beim einzelnen concat
     (identisch zum bisherigen Verhalten), damit sich an bestehenden Timelines nichts ändert.
+
+    Timing-Invariante: `xfade` verkürzt die Gesamtlänge um die Crossfade-Dauer. Audio/Overlays
+    laufen aber über absolute `tl_in`. Damit Bild und Ton zusammenbleiben, muss die Timeline
+    Crossfade-Clips mit überlappendem `tl_in` (Überlappung = Crossfade-Dauer) schreiben — genau
+    das prüft `qc._check_video_coverage` vor dem Render.
     """
     has_crossfade = any(
         c.transition_in and c.transition_in.type in _CROSSFADE_TYPES for c in clips[1:]
@@ -220,6 +225,21 @@ def build_filtergraph(
 
     cur_video = _join_video_segments(clips, video_labels, filters)
 
+    # -- Color-Grade auf das Footage, VOR den Overlays -------------------------------
+    # Reihenfolge zählt: Grade/LUT gehören auf die Bilder, nicht auf Titel/Grafik — sonst
+    # bekommt weißer Text einen Farbstich. Erst der Grundton aus dem Preset (dezent) …
+    grade = grade_filter(color_grade)
+    if grade is not None:
+        next_video = f"{cur_video}_grade"
+        filters.append(f"[{cur_video}]{grade}[{next_video}]")
+        cur_video = next_video
+
+    # … dann optional eine echte Projekt-LUT obendrauf.
+    if lut_path is not None:
+        graded = f"{cur_video}_lut"
+        filters.append(f"[{cur_video}]lut3d=file='{lut_path}'[{graded}]")
+        cur_video = graded
+
     # -- Overlay: PNGs mit Alpha, Zeitfenster ueber `enable` -------------------------
     for j, overlay in enumerate(timeline.tracks.overlay):
         idx = add_input(
@@ -245,19 +265,6 @@ def build_filtergraph(
             f"enable='between(t,{map_clip.tl_in},{map_clip.tl_in + map_clip.dur})'[{next_video}]"
         )
         cur_video = next_video
-
-    # Automatischer Grundton aus dem Preset (dezent) …
-    grade = grade_filter(color_grade)
-    if grade is not None:
-        next_video = f"{cur_video}_grade"
-        filters.append(f"[{cur_video}]{grade}[{next_video}]")
-        cur_video = next_video
-
-    # … dann optional eine echte Projekt-LUT obendrauf.
-    if lut_path is not None:
-        graded = f"{cur_video}_lut"
-        filters.append(f"[{cur_video}]lut3d=file='{lut_path}'[{graded}]")
-        cur_video = graded
 
     graph.video_label = cur_video
 

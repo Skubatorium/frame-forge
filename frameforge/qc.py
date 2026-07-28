@@ -14,11 +14,14 @@ from __future__ import annotations
 import hashlib
 from pathlib import Path
 
+from frameforge.render import _CROSSFADE_TYPES
 from frameforge.timeline import Timeline, TimelineValidationError
 
 MIN_OVERLAY_READABLE_S = 1.2
 MAX_ASSET_REPEATS = 2
 DURATION_TOLERANCE_S = 2.0
+# Toleranz beim Abgleich Crossfade-Dauer <-> tl_in-Überlappung (Rundung/fps-Raster).
+_XFADE_OVERLAP_TOLERANCE_S = 0.05
 
 
 def timeline_fingerprint(path: Path) -> str:
@@ -31,29 +34,55 @@ def timeline_fingerprint(path: Path) -> str:
 
 
 def _check_video_coverage(timeline: Timeline) -> list[str]:
-    """Lücken/Überlappungen in der Video-Spur.
+    """Lücken/Überlappungen in der Video-Spur — abgestimmt auf das Render-Timing.
 
-    Der M1-Renderer (`render.build_filtergraph`) schneidet Video-Clips hart hintereinander,
-    unabhängig von `tl_in` — eine Lücke fällt dort nicht als schwarzer Frame auf, sondern als
-    fehlender Inhalt (die Timeline behauptet eine Position, die im Render nie auftaucht).
-    Eine Überlappung bedeutet, zwei Clips beanspruchen denselben Zeitraum. Beides ist ein
-    Timeline-Fehler, den QC vor dem Render fangen soll.
+    Der Renderer (`render.build_filtergraph`) sequenziert Video-Clips in Reihenfolge und nutzt
+    deren Dauern; Audio (`adelay=tl_in`), Overlays und Karte werden dagegen an ihrer **absoluten
+    `tl_in`** platziert. Damit beide Modelle übereinstimmen, muss die Video-Spur lückenlos sein:
+
+    - **Harter Schnitt:** Clip startet genau am Ende des vorigen (`tl_in == prev_end`).
+    - **Crossfade** (`transition_in` vom Typ fade/dissolve/…): der Clip *überlappt* den vorigen
+      um die Crossfade-Dauer (`tl_in == prev_end - dur`), weil `xfade` beide Clips um diese Zeit
+      ineinander blendet und die Gesamtlänge entsprechend verkürzt. Fehlt diese Überlappung im
+      `tl_in`, laufen Bild und Ton/Overlays um die Crossfade-Dauer auseinander.
+
+    Lücke, fehlende/zu große Crossfade-Überlappung und Überlappung ohne Crossfade sind je ein
+    Fehler, den QC vor dem Render fängt.
     """
     issues = []
     clips = sorted(timeline.tracks.video, key=lambda c: c.tl_in)
-    cursor = 0.0
+    prev_end = 0.0
     for clip in clips:
-        if clip.tl_in > cursor + 1e-6:
+        xfade = (
+            clip.transition_in.dur
+            if clip.transition_in and clip.transition_in.type in _CROSSFADE_TYPES
+            else 0.0
+        )
+        overlap = prev_end - clip.tl_in  # > 0: Clip beginnt vor dem Ende des vorigen
+        if clip.tl_in > prev_end + 1e-6:
             issues.append(
-                f"Lücke in der Video-Spur zwischen {cursor:.2f}s und {clip.tl_in:.2f}s "
+                f"Lücke in der Video-Spur zwischen {prev_end:.2f}s und {clip.tl_in:.2f}s "
                 f"(erscheint im Render als fehlender Inhalt, nicht als schwarzer Frame)"
             )
-        elif clip.tl_in < cursor - 1e-6:
+        elif xfade > 0:
+            if overlap < xfade - _XFADE_OVERLAP_TOLERANCE_S:
+                issues.append(
+                    f"Clip '{clip.id}' hat einen Crossfade ({xfade:.2f}s), sein tl_in überlappt "
+                    f"den vorigen aber nur um {max(overlap, 0.0):.2f}s — Bild läuft um die Differenz "
+                    f"gegen Ton/Overlays (tl_in muss um die Crossfade-Dauer überlappen)"
+                )
+            elif overlap > xfade + _XFADE_OVERLAP_TOLERANCE_S:
+                issues.append(
+                    f"Clip '{clip.id}' überlappt den vorigen um {overlap:.2f}s, mehr als die "
+                    f"Crossfade-Dauer ({xfade:.2f}s)"
+                )
+        elif overlap > 1e-6:
             issues.append(
                 f"Clip '{clip.id}' überlappt mit dem vorherigen Clip "
-                f"(beginnt bei {clip.tl_in:.2f}s, vorheriger endet bei {cursor:.2f}s)"
+                f"(beginnt bei {clip.tl_in:.2f}s, vorheriger endet bei {prev_end:.2f}s) — "
+                f"ohne Crossfade ist das ein Timeline-Fehler"
             )
-        cursor = max(cursor, clip.tl_in + clip.duration)
+        prev_end = max(prev_end, clip.tl_in + clip.duration)
     return issues
 
 

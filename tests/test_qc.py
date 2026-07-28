@@ -72,6 +72,67 @@ def test_validate_accepts_contiguous_clips():
     assert validate(tl) == []
 
 
+# -- Crossfade-Timing: tl_in muss um die Crossfade-Dauer überlappen ----------
+
+
+def test_validate_accepts_crossfade_with_matching_overlap():
+    # c1 endet bei 3.0, c2 hat 1.0s Crossfade und startet bei 2.0 (Überlappung = 1.0).
+    tl = _timeline(
+        duration=5.0,
+        video=[
+            {"id": "c1", "asset": "a1", "src_in": 0, "src_out": 3, "tl_in": 0},
+            {
+                "id": "c2",
+                "asset": "a2",
+                "src_in": 0,
+                "src_out": 3,
+                "tl_in": 2,
+                "transition_in": {"type": "dissolve", "dur": 1.0},
+            },
+        ],
+    )
+    assert validate(tl) == []
+
+
+def test_validate_flags_crossfade_without_overlap_desync():
+    # Crossfade, aber tl_in hart am Ende (keine Überlappung) -> Bild/Ton-Desync.
+    tl = _timeline(
+        duration=6.0,
+        video=[
+            {"id": "c1", "asset": "a1", "src_in": 0, "src_out": 3, "tl_in": 0},
+            {
+                "id": "c2",
+                "asset": "a2",
+                "src_in": 0,
+                "src_out": 3,
+                "tl_in": 3,
+                "transition_in": {"type": "fade", "dur": 1.0},
+            },
+        ],
+    )
+    issues = validate(tl)
+    assert any("Crossfade" in i and "c2" in i for i in issues)
+
+
+def test_validate_flags_crossfade_overlap_larger_than_duration():
+    tl = _timeline(
+        duration=5.0,
+        video=[
+            {"id": "c1", "asset": "a1", "src_in": 0, "src_out": 3, "tl_in": 0},
+            {
+                "id": "c2",
+                "asset": "a2",
+                "src_in": 0,
+                "src_out": 3,
+                "tl_in": 0.5,
+                "transition_in": {"type": "fade", "dur": 1.0},
+            },
+        ],
+    )
+    issues = validate(tl)
+    assert any("mehr als" in i and "c2" in i for i in issues)
+
+
 # -- Audio-Clipping-Risiko -------------------------------------------------
 
 
