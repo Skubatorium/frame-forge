@@ -12,6 +12,7 @@ from __future__ import annotations
 from collections import Counter
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
+from pathlib import Path
 
 import yaml
 
@@ -167,6 +168,85 @@ def person_presence(project: Project) -> dict[str, dict]:
         seconds = sum(_video_seconds(assets_by_id[i]) for i in ids if i in assets_by_id)
         presence[name] = {"assets": len(ids), "seconds": round(seconds, 1)}
     return presence
+
+
+def _day_of(asset: dict) -> str | None:
+    """Aufnahmedatum (YYYY-MM-DD) eines Assets aus `captured_at`, oder None."""
+    ts = asset.get("captured_at")
+    if not ts or not isinstance(ts, str):
+        return None
+    return ts[:10] if len(ts) >= 10 else None
+
+
+def day_summaries(project: Project) -> dict[str, dict]:
+    """Gruppiert Assets nach Aufnahmetag; pro Tag Kennzahlen für eine Tageszusammenfassung.
+
+    Rückgabe: `{ "2026-07-14": {assets, videos, photos, video_seconds, places, top_tags,
+    highlights, sources}, ... }` chronologisch. Assets ohne `captured_at` landen unter
+    `"ohne-datum"`.
+    """
+    by_day: dict[str, list[dict]] = {}
+    for a in load_assets(project):
+        by_day.setdefault(_day_of(a) or "ohne-datum", []).append(a)
+
+    out: dict[str, dict] = {}
+    for day in sorted(by_day):
+        assets = by_day[day]
+        videos = [a for a in assets if a.get("kind") == "video"]
+        tags = Counter(t for a in assets for t in a.get("content", {}).get("tags", []))
+        places = sorted({a["gps"]["place"] for a in assets if a.get("gps") and a["gps"].get("place")})
+        highlights = sorted(
+            (a for a in assets if isinstance(a.get("rating"), int) and a["rating"] >= 4),
+            key=lambda a: -a["rating"],
+        )
+        sources = Counter(a.get("source", "unknown") for a in assets)
+        out[day] = {
+            "assets": len(assets),
+            "videos": len(videos),
+            "photos": len(assets) - len(videos),
+            "video_seconds": round(sum(_video_seconds(a) for a in assets), 1),
+            "places": places,
+            "top_tags": tags.most_common(8),
+            "highlights": [
+                {"id": a["id"], "rating": a["rating"], "summary": a.get("content", {}).get("summary", "")}
+                for a in highlights[:5]
+            ],
+            "sources": dict(sources.most_common()),
+        }
+    return out
+
+
+def render_day_markdown(day: str, summary: dict) -> str:
+    """Ein Tag als Markdown (`index/days/<day>.md`)."""
+    lines = [f"# {day}", ""]
+    lines.append(
+        f"- **Assets:** {summary['assets']} ({summary['videos']} Video, {summary['photos']} Foto), "
+        f"~{summary['video_seconds']:.0f} s Video"
+    )
+    if summary["places"]:
+        lines.append(f"- **Orte:** {', '.join(summary['places'])}")
+    if summary["sources"]:
+        lines.append(f"- **Quellen:** {', '.join(f'{k} ({v})' for k, v in summary['sources'].items())}")
+    if summary["top_tags"]:
+        lines.append(f"- **Motive:** {', '.join(f'{t} ({n})' for t, n in summary['top_tags'])}")
+    if summary["highlights"]:
+        lines.append("")
+        lines.append("## Highlights")
+        for h in summary["highlights"]:
+            lines.append(f"- `{h['id']}` ({h['rating']}★) — {h['summary']}")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def write_day_summaries(project: Project) -> list[Path]:
+    """Schreibt pro Tag ein `.md` nach `index/days/` und gibt die Pfade zurück."""
+    project.days_dir.mkdir(parents=True, exist_ok=True)
+    written = []
+    for day, summary in day_summaries(project).items():
+        path = project.days_dir / f"{day}.md"
+        path.write_text(render_day_markdown(day, summary))
+        written.append(path)
+    return written
 
 
 def used_asset_ids(timeline: Timeline) -> set[str]:

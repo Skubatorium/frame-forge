@@ -790,6 +790,28 @@ def stats(project: str) -> None:
 
 
 @app.command()
+def days(project: str) -> None:
+    """Schreibt Tageszusammenfassungen nach `index/days/<datum>.md` (Orte, Motive, Highlights).
+
+    Überblick über den Trip Tag für Tag — hilft der Dramaturgie (v.a. beim Chronikel-Stil).
+    """
+    proj = _resolve_or_fail(project)
+    summaries = stats_module.day_summaries(proj)
+    if not summaries:
+        console.print("Noch keine Assets mit Aufnahmedatum — zuerst 'frameforge index'.")
+        return
+    written = stats_module.write_day_summaries(proj)
+    table = Table(title="Tageszusammenfassungen")
+    table.add_column("Tag")
+    table.add_column("Assets", justify="right")
+    table.add_column("Orte")
+    for day, s in summaries.items():
+        table.add_row(day, str(s["assets"]), ", ".join(s["places"]) or "—")
+    console.print(table)
+    console.print(f"[green]{len(written)} Datei(en) geschrieben nach[/green] {proj.days_dir}")
+
+
+@app.command()
 def report(project: str, export: str) -> None:
     """Schreibt ein Markdown-Datenblatt zum Export nach `exports/<export>/report.md`.
 

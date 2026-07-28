@@ -197,3 +197,50 @@ def test_content_composition_by_source(proj):
     assert comp["by_source"]["drone"]["seconds"] == pytest.approx(12.0)
     assert comp["by_source"]["phone"]["count"] == 1
     assert comp["by_source"]["unknown"]["count"] == 1
+
+
+# -- Tageszusammenfassungen ---------------------------------------------------
+
+
+def test_day_summaries_groups_by_date(proj):
+    assets = json.loads(proj.assets_json_path.read_text())
+    assets[0]["captured_at"] = "2026-07-14T09:00:00+00:00"
+    assets[1]["captured_at"] = "2026-07-14T18:00:00+00:00"
+    assets[2]["captured_at"] = "2026-07-15T10:00:00+00:00"
+    proj.assets_json_path.write_text(json.dumps(assets))
+
+    from frameforge.stats import day_summaries
+
+    days = day_summaries(proj)
+    assert set(days) == {"2026-07-14", "2026-07-15"}
+    assert days["2026-07-14"]["assets"] == 2
+    assert days["2026-07-15"]["assets"] == 1
+
+
+def test_day_summaries_highlights_and_places(proj):
+    from frameforge.stats import day_summaries, render_day_markdown
+
+    assets = json.loads(proj.assets_json_path.read_text())
+    for a in assets:
+        a["captured_at"] = "2026-07-14T09:00:00+00:00"
+    proj.assets_json_path.write_text(json.dumps(assets))
+
+    day = day_summaries(proj)["2026-07-14"]
+    assert "Geiranger" in day["places"]
+    assert any(h["rating"] == 5 for h in day["highlights"])
+    md = render_day_markdown("2026-07-14", day)
+    assert "# 2026-07-14" in md
+    assert "Highlights" in md
+
+
+def test_write_day_summaries_creates_files(proj):
+    from frameforge.stats import write_day_summaries
+
+    assets = json.loads(proj.assets_json_path.read_text())
+    for a in assets:
+        a["captured_at"] = "2026-07-14T09:00:00+00:00"
+    proj.assets_json_path.write_text(json.dumps(assets))
+
+    written = write_day_summaries(proj)
+    assert len(written) == 1
+    assert (proj.days_dir / "2026-07-14.md").exists()
