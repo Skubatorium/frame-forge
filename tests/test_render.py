@@ -427,6 +427,15 @@ def test_grade_filter_new_moods_produce_eq():
         assert out and out.startswith("eq=")
 
 
+def test_grade_filter_warm_moods_add_red_not_blue():
+    """Warme Moods muessen tatsaechlich waermen: rs positiv (mehr Rot), nicht kuehlen."""
+    from frameforge.render import grade_filter
+
+    for mood in ("warm_nostalgic", "teal_orange", "cool_highlights_warm_lights"):
+        out = grade_filter({"mood": mood})
+        assert "colorbalance=rs=0." in out, f"{mood} kuehlt statt zu waermen: {out}"
+
+
 def test_render_final_with_color_grade_still_renders(proj):
     export = proj.export("teaser")
     timeline = Timeline(

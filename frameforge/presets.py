@@ -32,7 +32,6 @@ PRESET_PARAM_KEYS = (
     "photo_treatment",
     "original_audio_policy",
 )
-_META_KEYS = ("slug", "name", "description", "best_for", "example", "arc")
 
 
 class PresetNotFoundError(ValueError):

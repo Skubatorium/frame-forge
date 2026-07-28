@@ -425,6 +425,16 @@ def test_themes_command_lists_all(env):
     assert "midnight-neon" in result.output
 
 
+def test_brief_show_resolves_preset_and_arc(env):
+    exp = env.export("teaser")
+    exp.ensure_dirs()
+    exp.brief_path.write_text("preset: nordic-cinematic\ntarget_duration_s: 90\n")
+    result = runner.invoke(app, ["brief-show", "proto", "teaser"])
+    assert result.exit_code == 0, result.output
+    assert "arc:" in result.output  # Preset-Bogen wird durchgereicht
+    assert "pacing:" in result.output
+
+
 def test_preset_new_scaffolds_custom(env, tmp_path, monkeypatch):
     import frameforge.presets as pm
 

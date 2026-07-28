@@ -463,6 +463,27 @@ def brief(project: str, export: str) -> None:
     raise typer.Exit(code=1)
 
 
+@app.command(name="brief-show")
+def brief_show(project: str, export: str) -> None:
+    """Gibt den *aufgeloesten* Brief als YAML aus (Preset-Parameter untergelegt, inkl. `arc`).
+
+    Fuer den Orchestrator/story-architect: zeigt die vollstaendige Sicht (pacing,
+    transition_vocabulary, music_energy_curve, text_density, map_usage, arc ...), die der
+    Brief selbst nur ueber `preset:` referenziert.
+    """
+    proj = _resolve_or_fail(project)
+    exp = proj.export(export)
+    if not exp.brief_path.exists():
+        raise _fail(f"Export '{export}' hat kein brief.yaml.")
+    try:
+        merged = brief_module.Brief.load(exp.brief_path).merged()
+    except brief_module.BriefError as exc:
+        raise _fail(str(exc)) from exc
+    import yaml as _yaml
+
+    console.print(_yaml.safe_dump(merged, allow_unicode=True, sort_keys=False).rstrip())
+
+
 @app.command()
 def build(project: str, export: str) -> None:
     """Prueft nur das Gate (Export-Phase >= BRIEFED). Beat-Sheet und `timeline.json` bauen

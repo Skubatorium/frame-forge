@@ -56,10 +56,11 @@ _MOOD_MAP: dict[str, dict] = {
     "consistent_across_theme": {"saturation": 1.05},
     "raw": {"saturation": 0.9, "contrast_boost": -0.05},
     "vivid": {"saturation": 1.28, "contrast_boost": 0.03},
-    "teal_orange": {"saturation": 1.20, "temperature": 0.03, "contrast_boost": 0.05},
+    # Konvention (siehe cool_highlights_warm_lights): negatives temperature = wärmer.
+    "teal_orange": {"saturation": 1.20, "temperature": -0.03, "contrast_boost": 0.05},
     "clean_modern": {"saturation": 1.08},
     "soft_pastel": {"saturation": 0.9, "contrast_boost": -0.03},
-    "warm_nostalgic": {"saturation": 0.95, "temperature": 0.08, "contrast_boost": -0.02},
+    "warm_nostalgic": {"saturation": 0.95, "temperature": -0.08, "contrast_boost": -0.02},
 }
 
 
@@ -152,7 +153,7 @@ def grade_filter(color_grade: dict | None) -> str | None:
     chain = f"eq=contrast={contrast:.3f}:saturation={saturation:.3f}"
     temp = params.get("temperature")
     if temp:
-        # warm = mehr Rot/weniger Blau in den Schatten (negatives temp => kühler in Highlights)
+        # negatives temp => mehr Rot/weniger Blau = wärmer; positives => kühler.
         chain += f",colorbalance=rs={-temp:.3f}:bs={temp:.3f}"
     return chain
 

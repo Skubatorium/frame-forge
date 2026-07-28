@@ -13,11 +13,12 @@ liegen. Du schneidest nicht selbst; das macht der `timeline-builder` aus deinem 
 
 1. Lies `brief.yaml` (Stil-Preset + Overrides, Muss-Shots, verbotene Shots, Ziellänge)
    und den Index (`frameforge query` mit Filtern — nie die ganze `assets.json` roh lesen).
-2. Der aufgelöste Brief (`frameforge preview`/`brief` legt die Preset-Parameter darunter)
-   trägt bereits `pacing`, `transition_vocabulary`, `music_energy_curve`, `text_density`,
-   `map_usage` **und `arc`** — den dramaturgischen Bogen des Presets. Nutze `arc` als
-   Grundgerüst und `music_energy_curve` als Energie-Verlauf. Verfeinere frei; `frameforge
-   presets` zeigt zu jedem Preset Beschreibung, Beispiel und Bogen.
+2. Der Orchestrator gibt dir den **aufgelösten Brief** mit (Output von `frameforge brief-show`
+   — Preset-Parameter untergelegt): er trägt `pacing`, `transition_vocabulary`,
+   `music_energy_curve`, `text_density`, `map_usage` **und `arc`** — den dramaturgischen Bogen
+   des Presets. Bekommst du ihn nicht mitgeliefert, lies `brief.yaml` und — falls dort
+   `preset: <slug>` steht — zusätzlich `presets/<slug>.yaml` für `arc`/`music_energy_curve`.
+   Nutze `arc` als Grundgerüst und `music_energy_curve` als Energie-Verlauf.
 3. Baue ein Beat-Sheet: Kapitel/Abschnitte mit ungefährer Dauer, Leitmotiv oder Ort,
    emotionaler Bogen (Aufbau, Höhepunkt, Ausklang), vorgesehene Musik-Sync-Punkte
    (Beat-Drops, Übergänge), Platzierung von Karten-Segmenten und O-Ton-Fenstern.
