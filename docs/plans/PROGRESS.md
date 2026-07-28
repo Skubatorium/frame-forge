@@ -305,6 +305,34 @@ State-Machine aufgesetzt:
 
 208 Tests grün, `ruff` sauber, `doctor` grün.
 
+## Ausbaustufen A–D (2026-07-28, "alle in sinnvoller Reihenfolge")
+
+Auf Nutzerwunsch die komplette vorgeschlagene Erweiterungsliste umgesetzt:
+
+- **A1 Stil-Presets als Daten:** `presets/*.yaml` (6 Presets) + `frameforge/presets.py`
+  (list/load/`apply_preset`) + `frameforge presets`. Der Brief wählt per `preset:`-Slug, die
+  Parameter (pacing/color_grade/transitions/music_energy/ken_burns …) werden untergelegt.
+- **A3 Brief-Schema:** `frameforge/brief.py` (Pydantic, validiert Preset-Slug + Dauer,
+  `merged()` löst Preset auf); preview/render laden den Brief darüber (klare Fehler).
+- **A2 Design-Themes:** `themes/*.yaml` (Nordic Cold, Warm Sunset, Mono Editorial, Vibrant
+  Roadtrip) + `frameforge themes` / `apply-theme`.
+- **B3 Render-Qualität:** `render --resolution/--crf/--preset`; `build_filtergraph` nimmt eine
+  Ziel-Auflösung.
+- **B2 Color-Grade aus Preset:** `render.grade_filter` (mood+contrast → eq/colorbalance),
+  automatisch in Preview und Final, LUT kommt obendrauf.
+- **B1 Übergänge + Ken-Burns:** `xfade` bei `transition_in` fade/dissolve, `zoompan` bei
+  `kenburns`-Effekt auf Fotos; ohne Transition/Effekt exakt wie bisher (concat).
+- **C1 locations.csv:** `gpx.parse_locations` + POI-Marker in `map.render_route_frames`.
+- **C2 Tageszusammenfassungen:** `stats.day_summaries`/`write_day_summaries` + `frameforge days`
+  → `index/days/<datum>.md`.
+- **D1–D5:** `ingest --dry-run`, `frameforge clean`, doctor-Plattenplatz-Check,
+  persistenter `cache/ingest-report.json`, `frameforge clone-export`.
+
+Nebenbei gefixt: `ingest._path_key` löst beide Seiten auf, sonst fanden Ingest und Render den
+Proxy bei symlink-behaftetem `media_root` (macOS `/var`, Mounts) nicht.
+
+292 Tests grün, `ruff` sauber, `doctor` grün, proto weiterhin end-to-end ok.
+
 ## Statistik & Report (2026-07-27, auf Nutzerwunsch)
 
 Nutzer wollte einen Überblick über den indizierten Fundus und ein „was-wurde-hier-gemacht"-

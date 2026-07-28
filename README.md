@@ -490,6 +490,35 @@ Jeder Schritt prüft seine Vorbedingung doppelt: in der CLI (Gürtel) und im
 
 ---
 
+## 8a. Kommando-Referenz (Auswahl)
+
+**Stil & Look:**
+- `frameforge presets` — die 6 Stil-Presets auflisten (im `brief.yaml` per `preset: <slug>`).
+- `frameforge themes` / `frameforge apply-theme <projekt> <slug>` — Design-Token-Themes anzeigen
+  bzw. als Startpunkt nach `design/tokens.yaml` schreiben.
+- `frameforge design-status <projekt>` — tokens.yaml + Grafik-Inventar (was fehlt noch).
+
+**Auswahl aus dem Fundus:**
+- `frameforge query <projekt> [--source drone] [--person Oskar] [--tag …] [--place …] [--min-rating N] [--kind video]`
+- `frameforge people <projekt>` / `frameforge name-person <projekt> <cluster> <name>` — Personen benennen.
+
+**Überblick:**
+- `frameforge stats <projekt>` — Fundus-Statistik (Umfang, Qualität, Zusammensetzung, Nutzung).
+- `frameforge days <projekt>` — Tageszusammenfassungen nach `index/days/`.
+- `frameforge report <projekt> <export>` — Export-Datenblatt (auch automatisch beim Render).
+
+**Render-Optionen (final):**
+- `frameforge render <projekt> <export> [--resolution 1920x1080] [--crf 18] [--preset medium] [--lut datei.cube]`
+  — Übergänge (Crossfade), Ken-Burns und der Color-Grade aus dem Preset werden automatisch
+  gerendert; `--lut` legt eine eigene Farbkorrektur obendrauf.
+
+**Betrieb:**
+- `frameforge ingest <projekt> --dry-run` — vorab zeigen, was gefunden würde (Anzahl/Größe).
+- `frameforge clean <projekt>` — Cache (Proxies/Keyframes) löschen, alles regenerierbar.
+- `frameforge clone-export <projekt> <src> <dst>` — neuen Export aus einem bestehenden Brief.
+
+---
+
 ## 9. Entwicklung
 
 ```bash
