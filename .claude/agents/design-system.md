@@ -16,10 +16,12 @@ visuelle Familie wirken — dieselben Tokens speisen jedes SVG-Template.
 2. Schreibe die Tokens nach `design/tokens.yaml` — Aufbau/Schlüssel siehe
    `templates/project/tokens.example.yaml` (Farben `primary_color`/`accent_color`/`text_color`
    und Schriften `font_display`/`font_text` werden von den SVG-Overlays direkt genutzt, also
-   immer setzen). **Startpunkt anbieten:** `frameforge themes` zeigt fertige Token-Themes
-   (Nordic Cold, Warm Sunset, Mono Editorial, Vibrant Roadtrip). Wenn eines passt, mit
+   immer setzen). **Startpunkt anbieten:** `frameforge themes` zeigt 9 fertige Token-Themes mit
+   Beispiel (Nordic Cold, Warm Sunset, Mono Editorial, Vibrant Roadtrip, Midnight Neon, Earthy
+   Film, Clean Broadcast, Pastel Dream, Golden Hour). Wenn eines passt, mit
    `frameforge apply-theme <projekt> <slug>` als Basis übernehmen und dann verfeinern statt bei
-   null zu beginnen.
+   null zu beginnen. Passt keines, kann der Nutzer mit `frameforge theme-new <slug>` ein eigenes
+   gerüsten (lassen) — das Theme soll zum gewählten Stil-Preset passen.
 3. Prüfe `design/assets/` gegen eine Inventur (Logo, Freisteller, Kartenmarker, Texturen) —
    was fehlt, kommt mit fertigem Bild-Prompt in `design/prompts.md`. **Nutze die Vorlage
    `templates/prompts/graphics.md`** (Konventionen: PNG mit Alpha, an die Tokens gekoppelt,

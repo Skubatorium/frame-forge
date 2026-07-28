@@ -4,6 +4,11 @@ description: >-
   Schnell und laut. Harte Cuts auf den Beat, Whip-Pans, grosse Typo, Eskalation zum Drop.
   Fuer 60–90-Sekunden-Trailer, die Lust auf den ganzen Film machen.
 best_for: 60–90 s Trailer / Teaser
+example: >-
+  Zehn Schnipsel in 8 Sekunden, jeder auf einen Beat, dann ein harter Cut in Schwarz vor dem
+  Drop — Highlights ohne Zusammenhang, nur Energie.
+arc: >-
+  Kalter Einstieg -> schnelle Steigerung -> Drop mit den staerksten Bildern -> abruptes Ende.
 
 pacing: { min_s: 0.4, max_s: 1.5, rhythm: beat_driven }
 transition_vocabulary: [hard_cut, whip_pan]

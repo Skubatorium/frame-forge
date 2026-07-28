@@ -493,9 +493,12 @@ Jeder Schritt prüft seine Vorbedingung doppelt: in der CLI (Gürtel) und im
 ## 8a. Kommando-Referenz (Auswahl)
 
 **Stil & Look:**
-- `frameforge presets` — die 6 Stil-Presets auflisten (im `brief.yaml` per `preset: <slug>`).
-- `frameforge themes` / `frameforge apply-theme <projekt> <slug>` — Design-Token-Themes anzeigen
+- `frameforge presets` — 12 Stil-Presets (Slug, Beispiel, Bogen); im `brief.yaml` per `preset: <slug>`.
+- `frameforge preset-new <slug>` — eigenes Preset gerüstet (`~/.frameforge/presets/`), dann bearbeiten.
+  Alternativ Parameter direkt ins `brief.yaml` schreiben (ohne `preset:`).
+- `frameforge themes` / `frameforge apply-theme <projekt> <slug>` — 9 Design-Token-Themes anzeigen
   bzw. als Startpunkt nach `design/tokens.yaml` schreiben.
+- `frameforge theme-new <slug>` — eigenes Design-Theme gerüstet, dann bearbeiten.
 - `frameforge design-status <projekt>` — tokens.yaml + Grafik-Inventar (was fehlt noch).
 
 **Auswahl aus dem Fundus:**

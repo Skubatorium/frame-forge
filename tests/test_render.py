@@ -418,6 +418,15 @@ def test_grade_filter_unknown_mood_returns_none():
     assert grade_filter(None) is None
 
 
+def test_grade_filter_new_moods_produce_eq():
+    from frameforge.render import grade_filter
+
+    # Von den neuen Presets genutzte Moods muessen eine Gradierung liefern.
+    for mood in ("teal_orange", "clean_modern", "soft_pastel", "warm_nostalgic"):
+        out = grade_filter({"mood": mood, "contrast": "medium"})
+        assert out and out.startswith("eq=")
+
+
 def test_render_final_with_color_grade_still_renders(proj):
     export = proj.export("teaser")
     timeline = Timeline(

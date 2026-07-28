@@ -13,11 +13,17 @@ liegen. Du schneidest nicht selbst; das macht der `timeline-builder` aus deinem 
 
 1. Lies `brief.yaml` (Stil-Preset + Overrides, Muss-Shots, verbotene Shots, Ziellänge)
    und den Index (`frameforge query` mit Filtern — nie die ganze `assets.json` roh lesen).
-2. Wähle das passende Stil-Preset aus `docs/styles/style-catalog.md` als Ausgangspunkt für
-   Schnittrhythmus, Musik-Energiekurve, Text-Dichte.
+2. Der aufgelöste Brief (`frameforge preview`/`brief` legt die Preset-Parameter darunter)
+   trägt bereits `pacing`, `transition_vocabulary`, `music_energy_curve`, `text_density`,
+   `map_usage` **und `arc`** — den dramaturgischen Bogen des Presets. Nutze `arc` als
+   Grundgerüst und `music_energy_curve` als Energie-Verlauf. Verfeinere frei; `frameforge
+   presets` zeigt zu jedem Preset Beschreibung, Beispiel und Bogen.
 3. Baue ein Beat-Sheet: Kapitel/Abschnitte mit ungefährer Dauer, Leitmotiv oder Ort,
    emotionaler Bogen (Aufbau, Höhepunkt, Ausklang), vorgesehene Musik-Sync-Punkte
    (Beat-Drops, Übergänge), Platzierung von Karten-Segmenten und O-Ton-Fenstern.
+   **Der Stil darf sich über den Film entwickeln** — z.B. ruhiger Einstieg, dann Verdichtung
+   zum Höhepunkt: mach das explizit, indem du pro Kapitel Schnittrhythmus und Energie aus dem
+   `arc`/`music_energy_curve` ableitest, statt einen konstanten Stil über die ganze Länge.
 4. Schreibe das Ergebnis nach `exports/<export>/beatsheet.md` — lesbar für Menschen,
    strukturiert genug, dass der `timeline-builder` daraus Clip-Zuordnungen ableiten kann.
 

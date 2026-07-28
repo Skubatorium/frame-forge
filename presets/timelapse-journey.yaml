@@ -4,6 +4,11 @@ description: >-
   Bewegungslastig, die Karte als Leitmotiv. Zeitraffer-Bloecke, Speed-Ramps, minimaler Text —
   der Roadtrip als Fahrt durch Zeit und Landschaft.
 best_for: Roadtrip-Fokus, Bewegung
+example: >-
+  Zeitraffer der ziehenden Wolken, dann die Route waechst auf der Karte, ein Speed-Ramp in die
+  naechste Fahrt — staendige Bewegung.
+arc: >-
+  Bewegung als roter Faden; die Karte fuellt sich ueber den Film, Tempo bleibt hoch.
 
 pacing: { min_s: 1, max_s: 8, rhythm: variable }
 transition_vocabulary: [cut, speed_ramp]

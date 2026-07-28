@@ -1,0 +1,21 @@
+slug: epic-trailer
+name: Epic Trailer
+description: >-
+  Kinoreifer Trailer. Grosse Musik, langsame Slow-Motion-Hoehepunkte im Wechsel mit harten
+  Beat-Cuts, breites Cinemascope-Gefuehl, dramatische Typo. Eskalation auf einen Drop.
+best_for: 90–120 s Kino-Trailer, grosse Geste
+example: >-
+  Weite Landschaft in Slow-Motion, tiefer Braaam-Ton, dann drei harte Cuts auf den Beat, Titel
+  schlaegt ein, Drop mit den spektakulaersten Bildern.
+arc: >-
+  Ruhiger, grosser Aufbau -> Spannung zieht an -> Drop mit Hoehepunkt-Montage -> ein letztes
+  monumentales Bild + Titelkarte.
+
+pacing: { min_s: 0.6, max_s: 3.0, rhythm: escalating }
+transition_vocabulary: [hard_cut, fade, speed_ramp]
+color_grade: { mood: teal_orange, contrast: high }
+text_density: bold_large
+music_energy_curve: escalate_to_drop
+map_usage: none_or_flash
+photo_treatment: { ken_burns: moderate }
+original_audio_policy: accent

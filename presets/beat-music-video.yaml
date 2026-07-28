@@ -1,0 +1,21 @@
+slug: beat-music-video
+name: Beat Music Video
+description: >-
+  Musikgetrieben wie ein Musikvideo. Schnitt strikt auf den Beat, rhythmische Match-Cuts,
+  kraeftige Farben, minimaler Text. Die Musik fuehrt, das Bild folgt.
+best_for: Reise als Musikvideo, ein starker Track
+example: >-
+  Jeder Schnitt exakt auf den Beat, ein Sonnenaufgang matcht per Form-Cut in einen Scheinwerfer,
+  Farben satt — 3 Minuten, die wie ein Song laufen.
+arc: >-
+  Folgt der Songstruktur: Intro ruhig -> Strophe baut auf -> Refrain als Peak-Montage ->
+  Bridge-Wechsel -> letzter Refrain + Outro.
+
+pacing: { min_s: 0.4, max_s: 1.2, rhythm: beat_driven }
+transition_vocabulary: [hard_cut, match_cut]
+color_grade: { mood: vivid, contrast: medium_high }
+text_density: minimal
+music_energy_curve: strict_beat_sync
+map_usage: leitmotif
+photo_treatment: { ken_burns: moderate }
+original_audio_policy: none

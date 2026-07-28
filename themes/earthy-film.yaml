@@ -1,0 +1,15 @@
+slug: earthy-film
+name: Earthy Film
+description: >-
+  Gedaempfte, entsaettigte Erdtoene mit Film-Anmutung — Olive, Sand, mattes Ocker. Nostalgisch,
+  ruhig, analog.
+example: Retro-/Erinnerungsfilm, gedaempfte Naturbilder (Preset Retro/Super-8, Diary).
+
+primary_color: "#2e2b23"
+secondary_color: "#5c5340"
+accent_color: "#c7a463"
+text_color: "#f2ecdd"
+font_display: "Georgia"
+font_text: "Georgia"
+motion: { fade_in_s: 0.6, fade_out_s: 0.7, overlay_hold_min_s: 2.4 }
+type_scale: { title: 88, subtitle: 32, caption: 26 }

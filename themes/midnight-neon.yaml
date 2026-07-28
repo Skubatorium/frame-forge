@@ -1,0 +1,15 @@
+slug: midnight-neon
+name: Midnight Neon
+description: >-
+  Dunkler Grund mit elektrischen Neon-Akzenten (Cyan/Magenta). Naechtlich, energiegeladen,
+  clubbig. Hoher Kontrast, leuchtende Typo.
+example: Action- oder Musikvideo-Schnitt, Nachtfahrten (Preset Action, Beat Music Video).
+
+primary_color: "#0a0a14"
+secondary_color: "#1b1b33"
+accent_color: "#00e5ff"
+text_color: "#f5f5ff"
+font_display: "Helvetica Neue"
+font_text: "Helvetica Neue"
+motion: { fade_in_s: 0.2, fade_out_s: 0.3, overlay_hold_min_s: 1.2 }
+type_scale: { title: 108, subtitle: 40, caption: 30 }

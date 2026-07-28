@@ -1,0 +1,21 @@
+slug: vlog-dynamic
+name: Vlog Dynamic
+description: >-
+  Moderner YouTube-Vlog. O-Ton-Sprecher traegt, Jump-Cuts halten Tempo, Pop-Captions betonen
+  Aussagen, sauberer heller Look, Musikbett mit kleinen Lifts. Nahbar und flott.
+best_for: Erzaehlter Vlog, YouTube-Fassung
+example: >-
+  Ich spreche in die Kamera, Jump-Cut schneidet die Pausen weg, ein Wort ploppt als Caption
+  gross ins Bild, B-Roll der Landschaft schiebt sich drueber, Musik hebt kurz an.
+arc: >-
+  Hook in den ersten Sekunden -> lockere Kapitel entlang der Erzaehlung -> kleiner emotionaler
+  Peak -> Abbinder mit Ausblick.
+
+pacing: { min_s: 1.5, max_s: 4, rhythm: steady }
+transition_vocabulary: [cut, whip_pan]
+color_grade: { mood: clean_modern, contrast: medium }
+text_density: pop_captions
+music_energy_curve: bed_with_lifts
+map_usage: between_legs
+photo_treatment: { ken_burns: minimal }
+original_audio_policy: dominant

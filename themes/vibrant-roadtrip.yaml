@@ -1,14 +1,14 @@
 slug: vibrant-roadtrip
 name: Vibrant Roadtrip
 description: >-
-  Kraeftig und energisch — sattes Petrol, knalliges Koralle-Akzent, klares Weiss.
-  Passt zu Punch Teaser und Timelapse Journey (viel Bewegung, Beat).
+  Satte, poppige Farben — sonniges Gelb, kraeftiges Tuerkis, frisches Pink. Laut, jung, dynamisch.
+example: Vlog oder schneller Teaser, gute Laune (Preset Vlog Dynamic, Punch Teaser).
 
-primary_color: "#0e3a45"
-secondary_color: "#14606f"
-accent_color: "#ff5a5f"
+primary_color: "#0f9b8e"
+secondary_color: "#f4b400"
+accent_color: "#ff2e88"
 text_color: "#ffffff"
-font_display: "Futura"
+font_display: "Helvetica Neue"
 font_text: "Helvetica Neue"
-motion: { fade_in_s: 0.25, fade_out_s: 0.3, overlay_hold_min_s: 1.3 }
-type_scale: { title: 104, subtitle: 40, caption: 30 }
+motion: { fade_in_s: 0.3, fade_out_s: 0.4, overlay_hold_min_s: 1.6 }
+type_scale: { title: 100, subtitle: 38, caption: 30 }

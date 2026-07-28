@@ -1,0 +1,15 @@
+slug: golden-hour
+name: Golden Hour
+description: >-
+  Leuchtendes, warmes Goldlicht — honiggelb, warmes Amber, weiches Braun. Grosszuegig,
+  cineastisch-warm, hoffnungsvoll.
+example: Epischer Trailer oder gefuehlvoller Reisefilm im Abendlicht (Preset Epic Trailer, Nordic).
+
+primary_color: "#2a1e12"
+secondary_color: "#8a5a24"
+accent_color: "#f5b544"
+text_color: "#fff4e0"
+font_display: "Georgia"
+font_text: "Helvetica Neue"
+motion: { fade_in_s: 0.5, fade_out_s: 0.6, overlay_hold_min_s: 2.2 }
+type_scale: { title: 98, subtitle: 36, caption: 28 }

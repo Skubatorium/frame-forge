@@ -4,6 +4,11 @@ description: >-
   Strikt chronologisch erzaehlt. Tages-Kapitelkarten, Karte zwischen den Etappen, ruhiger
   Rhythmus. Der "was haben wir gemacht"-Film fuer Familie und Freunde.
 best_for: Familienfilm, Tag-fuer-Tag
+example: >-
+  "Tag 3 — Geiranger" als Kapitelkarte, dann die Szenen des Tages in Reihenfolge, am Ende die
+  Karte mit der gefahrenen Etappe.
+arc: >-
+  Tag fuer Tag linear, jeder Tag ein kleiner Bogen; die Reise als Ganzes waechst chronologisch.
 
 pacing: { min_s: 3, max_s: 6, rhythm: steady }
 transition_vocabulary: [cut, fade]

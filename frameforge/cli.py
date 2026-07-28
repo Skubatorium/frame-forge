@@ -912,14 +912,21 @@ def themes_cmd() -> None:
     Mit `frameforge apply-theme <projekt> <slug>` als Ausgangspunkt nach design/tokens.yaml
     schreiben und dann anpassen.
     """
+    themes = themes_module.list_themes()
     table = Table(title="Design-Themes")
     table.add_column("Slug", style="bold")
     table.add_column("Name")
-    for t in themes_module.list_themes():
-        table.add_row(t["slug"], t["name"])
+    for t in themes:
+        slug = t["slug"] + (" [dim](eigen)[/dim]" if t.get("custom") else "")
+        table.add_row(slug, t["name"])
     console.print(table)
-    for t in themes_module.list_themes():
+    for t in themes:
         console.print(f"\n[bold]{t['slug']}[/bold] — {t['description']}")
+        if t.get("example"):
+            console.print(f"  [dim]Beispiel:[/dim] {t['example']}")
+    console.print(
+        "\n[dim]Eigenes Theme: 'frameforge theme-new <slug>', dann apply-theme.[/dim]"
+    )
 
 
 @app.command(name="apply-theme")
@@ -992,15 +999,59 @@ def presets_cmd() -> None:
     Ein Preset gibt den Grundton vor (Pacing, Uebergaenge, Color-Grade, Musik-Energie ...).
     Im brief.yaml `preset: <slug>` setzen; einzelne Parameter kann man dort ueberschreiben.
     """
+    presets = presets_module.list_presets()
     table = Table(title="Stil-Presets")
     table.add_column("Slug", style="bold")
     table.add_column("Name")
     table.add_column("Passt zu")
-    for p in presets_module.list_presets():
-        table.add_row(p["slug"], p["name"], p["best_for"])
+    for p in presets:
+        slug = p["slug"] + (" [dim](eigen)[/dim]" if p.get("custom") else "")
+        table.add_row(slug, p["name"], p["best_for"])
     console.print(table)
-    for p in presets_module.list_presets():
+    for p in presets:
         console.print(f"\n[bold]{p['slug']}[/bold] — {p['description']}")
+        if p.get("example"):
+            console.print(f"  [dim]Beispiel:[/dim] {p['example']}")
+        if p.get("arc"):
+            console.print(f"  [dim]Bogen:[/dim] {p['arc']}")
+    console.print(
+        "\n[dim]Eigenes Preset: 'frameforge preset-new <slug>' oder Parameter direkt im "
+        "brief.yaml (ohne preset:).[/dim]"
+    )
+
+
+@app.command(name="preset-new")
+def preset_new(slug: str) -> None:
+    """Geruestet ein eigenes Preset unter ~/.frameforge/presets/<slug>.yaml (dann bearbeiten)."""
+    try:
+        validate_name(slug, kind="Preset-Slug")
+    except UnsafeNameError as exc:
+        raise _fail(str(exc)) from exc
+    try:
+        path = presets_module.scaffold_preset(slug)
+    except FileExistsError as exc:
+        raise _fail(str(exc)) from exc
+    console.print(
+        f"[green]Preset-Vorlage angelegt:[/green] {path}\n"
+        "Bearbeiten, dann im brief.yaml als 'preset: " + slug + "' waehlen."
+    )
+
+
+@app.command(name="theme-new")
+def theme_new(slug: str) -> None:
+    """Geruestet ein eigenes Design-Theme unter ~/.frameforge/themes/<slug>.yaml (dann bearbeiten)."""
+    try:
+        validate_name(slug, kind="Theme-Slug")
+    except UnsafeNameError as exc:
+        raise _fail(str(exc)) from exc
+    try:
+        path = themes_module.scaffold_theme(slug)
+    except FileExistsError as exc:
+        raise _fail(str(exc)) from exc
+    console.print(
+        f"[green]Theme-Vorlage angelegt:[/green] {path}\n"
+        "Bearbeiten, dann mit 'frameforge apply-theme <projekt> " + slug + "' uebernehmen."
+    )
 
 
 if __name__ == "__main__":

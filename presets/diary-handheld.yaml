@@ -4,6 +4,11 @@ description: >-
   Roh und persoenlich. O-Ton dominant, Musik nur als Bett, handschriftliche Typo, ungeschoenter
   Look. Der intime, tagebuchartige Schnitt.
 best_for: persoenlicher, intimer Schnitt
+example: >-
+  Wackelige Handkamera, das Lachen im O-Ton bleibt drin, eine handschriftliche Notiz "Tag 5"
+  ueber dem Bild, Musik ganz leise darunter.
+arc: >-
+  Lose aneinandergereihte Momente, kein grosser Bogen — Naehe statt Dramaturgie.
 
 pacing: { min_s: 1.5, max_s: 4, rhythm: loose }
 transition_vocabulary: [cut, whip_pan]

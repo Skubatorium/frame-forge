@@ -2,7 +2,8 @@ slug: nordic-cold
 name: Nordic Cold
 description: >-
   Kuehle, klare Palette — tiefes Blaugruen, warmer Bernstein-Akzent, viel Weissraum.
-  Passt zu Fjorden, Nebel, weiten Landschaften (Preset Nordic Cinematic).
+  Passt zu Fjorden, Nebel, weiten Landschaften.
+example: Fjord-Reisefilm, ruhig und klar (Preset Nordic Cinematic, Calm/Meditative).
 
 primary_color: "#12222f"
 secondary_color: "#2c4a5a"

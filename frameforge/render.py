@@ -56,6 +56,10 @@ _MOOD_MAP: dict[str, dict] = {
     "consistent_across_theme": {"saturation": 1.05},
     "raw": {"saturation": 0.9, "contrast_boost": -0.05},
     "vivid": {"saturation": 1.28, "contrast_boost": 0.03},
+    "teal_orange": {"saturation": 1.20, "temperature": 0.03, "contrast_boost": 0.05},
+    "clean_modern": {"saturation": 1.08},
+    "soft_pastel": {"saturation": 0.9, "contrast_boost": -0.03},
+    "warm_nostalgic": {"saturation": 0.95, "temperature": 0.08, "contrast_boost": -0.02},
 }
 
 

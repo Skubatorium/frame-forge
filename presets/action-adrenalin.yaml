@@ -1,0 +1,21 @@
+slug: action-adrenalin
+name: Action / Adrenalin
+description: >-
+  Actiongeladen und aggressiv. Sehr kurze Schnitte, Whip-Pans, Speed-Ramps in die Bewegung,
+  harte Beat-Cuts, kraeftige Farben. Fuer Sport, Drohnen-Action, Fahrten, Adrenalin-Momente.
+best_for: Sport / Drohne / Adrenalin-Highlights
+example: >-
+  Mountainbike knallt ueber Kante, Speed-Ramp zieht die Landung lang, harter Cut auf einen
+  Whip-Pan in den naechsten Trick — jeder Schnitt sitzt auf dem Beat, nichts atmet.
+arc: >-
+  Direkter Kaltstart mitten in Bewegung -> Schlag auf Schlag steigern -> ein grosser Peak
+  (staerkster Trick/Moment) -> kurzer harter Cut-out, kein Ausklang.
+
+pacing: { min_s: 0.3, max_s: 1.2, rhythm: beat_driven }
+transition_vocabulary: [hard_cut, whip_pan, speed_ramp]
+color_grade: { mood: teal_orange, contrast: high }
+text_density: bold_large
+music_energy_curve: relentless
+map_usage: none_or_flash
+photo_treatment: { ken_burns: aggressive }
+original_audio_policy: accent

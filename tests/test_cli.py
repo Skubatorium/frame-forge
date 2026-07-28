@@ -411,10 +411,36 @@ def test_presets_command_lists_all(env):
     assert "punch-teaser" in result.output
 
 
+def test_presets_command_shows_new_and_examples(env):
+    result = runner.invoke(app, ["presets"])
+    assert result.exit_code == 0
+    assert "action-adrenalin" in result.output
+    assert "Beispiel:" in result.output
+
+
 def test_themes_command_lists_all(env):
     result = runner.invoke(app, ["themes"])
     assert result.exit_code == 0
     assert "nordic-cold" in result.output
+    assert "midnight-neon" in result.output
+
+
+def test_preset_new_scaffolds_custom(env, tmp_path, monkeypatch):
+    import frameforge.presets as pm
+
+    monkeypatch.setattr(pm, "USER_PRESETS_DIR", tmp_path / "presets")
+    result = runner.invoke(app, ["preset-new", "mein-stil"])
+    assert result.exit_code == 0, result.output
+    assert (tmp_path / "presets" / "mein-stil.yaml").exists()
+
+
+def test_theme_new_scaffolds_custom(env, tmp_path, monkeypatch):
+    import frameforge.themes as tm
+
+    monkeypatch.setattr(tm, "USER_THEMES_DIR", tmp_path / "themes")
+    result = runner.invoke(app, ["theme-new", "mein-look"])
+    assert result.exit_code == 0, result.output
+    assert (tmp_path / "themes" / "mein-look.yaml").exists()
 
 
 def test_apply_theme_writes_tokens(env):
@@ -422,7 +448,10 @@ def test_apply_theme_writes_tokens(env):
     assert result.exit_code == 0, result.output
     assert env.design_tokens_path.exists()
     import yaml as _yaml
-    assert _yaml.safe_load(env.design_tokens_path.read_text())["accent_color"] == "#f2b04c"
+
+    from frameforge.themes import load_theme
+    written = _yaml.safe_load(env.design_tokens_path.read_text())["accent_color"]
+    assert written == load_theme("warm-sunset")["accent_color"]
 
 
 # -- D1-D5: Betriebs-Kommandos ------------------------------------------------

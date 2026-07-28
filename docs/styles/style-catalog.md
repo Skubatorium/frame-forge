@@ -1,98 +1,50 @@
 # Stil-Katalog
 
-Presets für `/ff-brief`. Jedes Preset ist ein YAML-Fragment mit Pacing-, Schnitt-, Farb- und
-Typo-Parametern, das der Nutzer im Brief überschreiben kann — **Preset ≠ Zwangsjacke**.
-`brief.yaml` = Preset + Overrides + Muss-Shots + verbotene Shots.
+Presets sind **Daten**, nicht Doku: sie liegen als YAML unter `presets/` (mitgeliefert) und
+`~/.frameforge/presets/` (eigene). Single Source of Truth ist der Befehl
 
-Jedes Preset legt fest: `pacing`, `transition_vocabulary`, `color_grade`, `text_density`,
-`music_energy_curve`, `map_usage`, `photo_treatment` (Ken-Burns-Intensität),
-`original_audio_policy`.
+```
+frameforge presets     # Slug, Name, Passt-zu, Beschreibung, Beispiel, Bogen
+```
 
-## Übersicht
+Jedes Preset ist ein YAML-Fragment, das der Brief überschreiben kann — **Preset ≠ Zwangsjacke**.
+`brief.yaml` = `preset: <slug>` + Overrides + Muss-Shots + verbotene Shots. Jedes Preset legt
+fest: `pacing`, `transition_vocabulary`, `color_grade`, `text_density`, `music_energy_curve`,
+`map_usage`, `photo_treatment` (Ken-Burns-Intensität), `original_audio_policy` — plus
+`example` (So-sieht-das-aus) und `arc` (dramaturgischer Bogen, den der story-architect nutzt).
 
-| Preset | Schnittrhythmus | Charakter | Passt zu |
+## Mitgelieferte Presets
+
+| Preset | Rhythmus | Charakter | Passt zu |
 |---|---|---|---|
-| Nordic Cinematic | 4–8 s, langsam | Weite Establisher, Slow-Push, kalte Highlights/warme Lichter, viel Ambiente, sparsamer Text | 15-Minuten-Reisefilm |
-| Punch Teaser | 0,4–1,5 s, beat-getrieben | Harte Cuts auf den Beat, Whip-Pans, große Typo, Escalation zum Drop | 60–90 s Trailer |
-| Chronikel | 3–6 s | Strikt chronologisch, Tages-Kapitelkarten, Karte zwischen den Etappen, ruhig erzählt | "Was haben wir gemacht"-Familienfilm |
-| Thematisch/Assoziativ | 2–5 s | Nicht chronologisch, gruppiert nach Motiv (Wasser, Straßen, Essen, Abende), Match-Cuts | Zweitfassung mit anderem Blick |
-| Diary / Handheld | 1,5–4 s | Roher Look, O-Ton dominant, Musik nur Bett, handschriftliche Typo | Persönlicher, intimer Schnitt |
-| Timelapse Journey | variabel | Bewegungslastig, Karte als Leitmotiv, Zeitraffer-Blöcke, minimaler Text | Roadtrip-Fokus |
+| Nordic Cinematic | 4–8 s, langsam | Weite Establisher, Slow-Push, kalte Highlights/warme Lichter | 15-Minuten-Reisefilm |
+| Punch Teaser | 0,4–1,5 s, beat | Harte Cuts, Whip-Pans, große Typo, Escalation zum Drop | 60–90 s Trailer |
+| Chronikel | 3–6 s | Strikt chronologisch, Tages-Kapitelkarten, Karte zwischen Etappen | Familienfilm, Tag für Tag |
+| Thematisch/Assoziativ | 2–5 s | Nach Motiv gruppiert (Wasser, Straßen …), Match-Cuts | Zweitfassung, anderer Blick |
+| Diary / Handheld | 1,5–4 s | Roher Look, O-Ton dominant, handschriftliche Typo | Persönlicher, intimer Schnitt |
+| Timelapse Journey | variabel | Bewegungslastig, Karte als Leitmotiv, Zeitraffer | Roadtrip-Fokus |
+| **Action / Adrenalin** | 0,3–1,2 s, beat | Sehr kurze Cuts, Whip-Pans, Speed-Ramps, kräftige Farben, aggressiv | Sport / Drohne / Adrenalin |
+| **Epic Trailer** | 0,6–3 s, eskalierend | Kinoreif, große Musik, Slow-Mo-Höhepunkte + harte Beat-Cuts | 90–120 s Kino-Trailer |
+| **Vlog Dynamic** | 1,5–4 s | O-Ton-Sprecher, Jump-Cuts, Pop-Captions, sauberer Look | Erzählter YouTube-Vlog |
+| **Calm / Meditative** | 6–14 s, sehr langsam | Lange Einstellungen, weiche Überblendungen, Pastell, Ambient | Slow-TV, Achtsamkeit |
+| **Retro / Super-8** | 2–5 s | Warmer Film-Look, weiche Blenden, handschriftliche Typo | Nostalgischer Erinnerungsfilm |
+| **Beat Music Video** | 0,4–1,2 s, beat | Schnitt strikt auf den Beat, Match-Cuts, satte Farben | Reise als Musikvideo |
 
-## Nordic Cinematic
+## Eigenes Preset
 
-```yaml
-pacing: { min_s: 4, max_s: 8, rhythm: slow }
-transition_vocabulary: [fade, slow_dissolve]
-color_grade: { mood: cool_highlights_warm_lights, contrast: medium }
-text_density: sparse
-music_energy_curve: gradual_build
-map_usage: between_chapters
-photo_treatment: { ken_burns: subtle }
-original_audio_policy: ambience_only
-```
+Zwei Wege, beide gleichwertig:
 
-## Punch Teaser
+1. **Gerüst + bearbeiten** — `frameforge preset-new <slug>` legt eine kommentierte Vorlage unter
+   `~/.frameforge/presets/<slug>.yaml` an. Ausfüllen, dann im Brief `preset: <slug>`.
+2. **Frei im Brief** — Parameter (pacing, color_grade …) direkt in `brief.yaml` schreiben,
+   ganz ohne `preset:`. Oder ein Preset wählen und einzelne Werte überschreiben.
 
-```yaml
-pacing: { min_s: 0.4, max_s: 1.5, rhythm: beat_driven }
-transition_vocabulary: [hard_cut, whip_pan]
-color_grade: { mood: punchy, contrast: high }
-text_density: bold_large
-music_energy_curve: escalate_to_drop
-map_usage: none_or_flash
-photo_treatment: { ken_burns: aggressive }
-original_audio_policy: none
-```
+Eigene Presets erscheinen in `frameforge presets` mit dem Marker `(eigen)` und überschreiben
+gleichnamige mitgelieferte.
 
-## Chronikel
+## Design-Themes (Look/Palette)
 
-```yaml
-pacing: { min_s: 3, max_s: 6, rhythm: steady }
-transition_vocabulary: [cut, fade]
-color_grade: { mood: natural, contrast: medium }
-text_density: chapter_cards
-music_energy_curve: flat_calm
-map_usage: between_legs
-photo_treatment: { ken_burns: moderate }
-original_audio_policy: selective_keep
-```
-
-## Thematisch/Assoziativ
-
-```yaml
-pacing: { min_s: 2, max_s: 5, rhythm: associative }
-transition_vocabulary: [match_cut, dissolve]
-color_grade: { mood: consistent_across_theme, contrast: medium }
-text_density: minimal
-music_energy_curve: per_theme_block
-map_usage: none
-photo_treatment: { ken_burns: moderate }
-original_audio_policy: selective_keep
-```
-
-## Diary / Handheld
-
-```yaml
-pacing: { min_s: 1.5, max_s: 4, rhythm: loose }
-transition_vocabulary: [cut, whip_pan]
-color_grade: { mood: raw, contrast: low }
-text_density: handwritten_sparse
-music_energy_curve: bed_only
-map_usage: none
-photo_treatment: { ken_burns: minimal }
-original_audio_policy: dominant
-```
-
-## Timelapse Journey
-
-```yaml
-pacing: { min_s: 1, max_s: 8, rhythm: variable }
-transition_vocabulary: [cut, speed_ramp]
-color_grade: { mood: vivid, contrast: medium_high }
-text_density: minimal
-music_energy_curve: sustained_motion
-map_usage: leitmotif
-photo_treatment: { ken_burns: moderate }
-original_audio_policy: ambience_only
-```
+Analog für Farbe/Typo/Motion: `frameforge themes` listet 9 Startsets (Nordic Cold, Warm Sunset,
+Mono Editorial, Vibrant Roadtrip, Midnight Neon, Earthy Film, Clean Broadcast, Pastel Dream,
+Golden Hour). `frameforge apply-theme <projekt> <slug>` schreibt eines als Startpunkt nach
+`design/tokens.yaml`. Eigenes Theme: `frameforge theme-new <slug>`.

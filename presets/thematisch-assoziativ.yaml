@@ -4,6 +4,11 @@ description: >-
   Nicht chronologisch, sondern nach Motiv gruppiert (Wasser, Strassen, Essen, Abende),
   verbunden durch Match-Cuts. Eine Zweitfassung mit anderem Blick auf dasselbe Material.
 best_for: Zweitfassung, motivische Montage
+example: >-
+  Ein Block nur Wasser (Fjord, Wasserfall, Regen), per Match-Cut verbunden, dann ein Block nur
+  Strassen — Assoziation statt Zeitachse.
+arc: >-
+  Themen-Bloecke statt Zeitlinie; innerhalb jedes Blocks eine kleine Steigerung, dazwischen Cuts.
 
 pacing: { min_s: 2, max_s: 5, rhythm: associative }
 transition_vocabulary: [match_cut, dissolve]

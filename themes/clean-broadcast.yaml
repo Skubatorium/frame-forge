@@ -1,0 +1,15 @@
+slug: clean-broadcast
+name: Clean Broadcast
+description: >-
+  Neutrale, helle TV-Palette — sauberes Weiss, dezentes Blaugrau, klarer Blau-Akzent.
+  Sachlich, lesbar, professionell.
+example: Erzaehlter Vlog, Doku-Fassung, klare Lower-Thirds (Preset Vlog Dynamic, Chronikel).
+
+primary_color: "#f4f6f8"
+secondary_color: "#c9d2da"
+accent_color: "#1a73e8"
+text_color: "#10161d"
+font_display: "Helvetica Neue"
+font_text: "Helvetica Neue"
+motion: { fade_in_s: 0.35, fade_out_s: 0.45, overlay_hold_min_s: 2.0 }
+type_scale: { title: 92, subtitle: 34, caption: 26 }

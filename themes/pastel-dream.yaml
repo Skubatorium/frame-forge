@@ -1,0 +1,15 @@
+slug: pastel-dream
+name: Pastel Dream
+description: >-
+  Weiche Pastelltoene — Puderrosa, Himmelblau, Mint. Zart, traeumerisch, beruhigend.
+  Niedriger Kontrast, luftige Typo.
+example: Meditativer Slow-Schnitt, sanfte Morgenstimmung (Preset Calm/Meditative).
+
+primary_color: "#fbeef2"
+secondary_color: "#d7e6f0"
+accent_color: "#8ec5c0"
+text_color: "#3a3540"
+font_display: "Georgia"
+font_text: "Helvetica Neue"
+motion: { fade_in_s: 0.7, fade_out_s: 0.8, overlay_hold_min_s: 2.6 }
+type_scale: { title: 84, subtitle: 32, caption: 26 }

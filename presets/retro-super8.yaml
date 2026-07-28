@@ -1,0 +1,20 @@
+slug: retro-super8
+name: Retro / Super-8
+description: >-
+  Nostalgischer Film-Look. Warme, leicht entsaettigte Farben, weiche Ueberblendungen,
+  handschriftliche sparsame Typo, gemaechlicher Rhythmus. Wie eine wiedergefundene Filmrolle.
+best_for: Erinnerungsfilm, nostalgische Fassung
+example: >-
+  Warmes, leicht flimmerndes Bild vom Lagerfeuer, weiche Ueberblendung ins naechste Bild, eine
+  handschriftliche "Sommer 26" liegt in der Ecke — Zeitlupe der Erinnerung.
+arc: >-
+  Weicher Einstieg -> lose, warme Momentkette -> ein herzlicher Hoehepunkt -> sanftes Ausblenden.
+
+pacing: { min_s: 2, max_s: 5, rhythm: loose }
+transition_vocabulary: [fade, dissolve]
+color_grade: { mood: warm_nostalgic, contrast: low }
+text_density: handwritten_sparse
+music_energy_curve: bed_only
+map_usage: between_chapters
+photo_treatment: { ken_burns: moderate }
+original_audio_policy: ambience_only

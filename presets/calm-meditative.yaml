@@ -1,0 +1,21 @@
+slug: calm-meditative
+name: Calm / Meditative
+description: >-
+  Sehr langsam und meditativ. Lange Einstellungen fast ohne Schnitt, sanfte Ueberblendungen,
+  weiche Pastellfarben, Ambient-Klang, kaum Text. Zum Durchatmen und Versinken.
+best_for: Slow-TV, Achtsamkeit, Loop im Hintergrund
+example: >-
+  Nebel zieht 12 Sekunden lang ueber stilles Wasser, nur Wind und ferne Voegel, ganz langsame
+  Ueberblendung in die naechste Ruhe — kein Text, kein Druck.
+arc: >-
+  Kein klassischer Bogen; sanftes An- und Abschwellen der Stimmung, gleichmaessig ruhig von
+  Anfang bis Ende.
+
+pacing: { min_s: 6, max_s: 14, rhythm: very_slow }
+transition_vocabulary: [slow_dissolve, fade]
+color_grade: { mood: soft_pastel, contrast: low }
+text_density: none
+music_energy_curve: flat_calm
+map_usage: none
+photo_treatment: { ken_burns: subtle }
+original_audio_policy: ambience_only
