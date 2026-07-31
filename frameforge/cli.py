@@ -27,6 +27,7 @@ from frameforge import ingest as ingest_module
 from frameforge import nle as nle_module
 from frameforge import people as people_module
 from frameforge import pipeline as pipeline_module
+from frameforge import preindex as preindex_module
 from frameforge import presets as presets_module
 from frameforge import render as render_module
 from frameforge import stats as stats_module
@@ -305,11 +306,12 @@ def ingest(
 
 @app.command(name="index")
 def index_cmd(project: str) -> None:
-    """CV-Analyse (Schaerfe/Belichtung/Scenes) + Keyframe-Extraktion fuer noch nicht
+    """Zeigt den Index-Stand und hebt die Phase auf INDEXED, sobald alles indiziert ist.
 
-    indizierte Assets. Erfordert Projekt-Phase >= INGESTED. Schreibt noch keine
-    `assets.json`-Eintraege — Beschreibung/Tags/Rating brauchen den `media-indexer`-Agenten
-    (Claude Vision auf den hier erzeugten Keyframes), siehe `/ff-index`.
+    Erfordert Projekt-Phase >= INGESTED. Die eigentliche Keyframe-/CV-Vorbereitung macht
+    `frameforge prepare-index`; Beschreibung/Tags/Rating schreibt der `media-indexer`-Agent
+    (Claude Vision auf den Keyframes), siehe `/ff-index`. Dieses Kommando meldet nur, welche
+    Assets noch offen sind, und setzt die Phase, wenn `assets.json` alle abdeckt.
     """
     proj = _resolve_or_fail(project)
     state = proj.load_state()
@@ -339,14 +341,50 @@ def index_cmd(project: str) -> None:
         console.print("[green]Alle Assets indiziert — Projekt-Phase: INDEXED.[/green]")
         return
 
-    keyframes_dir = proj.cache_dir / "keyframes"
-    for path in pending:
-        console.print(f"  {path.name}: Hash noch nicht in assets.json")
+    prepared = len(preindex_module.load_prep(proj))
     console.print(
-        f"[yellow]Naechster Schritt:[/yellow] Keyframes nach {keyframes_dir} extrahieren und "
-        "an den media-indexer-Agenten delegieren (siehe /ff-index). Danach 'frameforge index' "
-        "erneut ausfuehren, um die Phase auf INDEXED zu heben."
+        f"[yellow]Naechster Schritt:[/yellow] 'frameforge prepare-index {project}' "
+        "(Keyframes + CV-Analyse), dann an den media-indexer-Agenten delegieren (siehe "
+        f"/ff-index). Bereits vorbereitet (Prep vorhanden): {prepared}. Danach 'frameforge "
+        "index' erneut, um die Phase auf INDEXED zu heben."
     )
+
+
+@app.command(name="prepare-index")
+def prepare_index_cmd(
+    project: str,
+    filter_substr: str = typer.Option(
+        None, "--filter", help="Nur Assets, deren Pfad diesen Teilstring enthaelt (z.B. ein Tag/Ordner)"
+    ),
+    limit: int = typer.Option(None, "--limit", help="Hoechstens so viele Assets neu vorbereiten"),
+) -> None:
+    """Keyframes + CV-Analyse fuer noch nicht indizierte Assets (Vorstufe zum media-indexer).
+
+    Probe laeuft auf dem Original (EXIF/Quelle/GPS), CV-Analyse und Keyframe-Extraktion auf dem
+    Proxy (schnell). Ergebnis: `prep/<hash>.json` + Keyframe-JPEGs im Cache. Idempotent —
+    vorhandene Prep-Dateien und bereits indizierte Assets werden uebersprungen. `--filter` fuer
+    etappenweises Indizieren (ein Reisetag), `--limit` zum Deckeln.
+    """
+    proj = _resolve_or_fail(project)
+    try:
+        gate_index(proj.load_state())
+    except GateError as exc:
+        raise _fail(str(exc)) from exc
+    result = preindex_module.prepare_index(proj, filter_substr=filter_substr, limit=limit)
+    console.print(
+        f"[green]{len(result.prepared)} Asset(s) vorbereitet[/green] "
+        f"(uebersprungen: {result.skipped_existing} bereits vorbereitet, "
+        f"{result.skipped_indexed} bereits indiziert)."
+    )
+    if result.failures:
+        console.print(f"[yellow]{len(result.failures)} Fehlschlag/-schlaege:[/yellow]")
+        for f in result.failures:
+            console.print(f"  {f.asset.name}: {f.reason}")
+    if result.prepared:
+        console.print(
+            "Naechster Schritt: an den media-indexer delegieren (er liest die Prep-Dateien + "
+            "Keyframes, schreibt Beschreibung/Tags/Rating), dann 'frameforge index'."
+        )
 
 
 @app.command()

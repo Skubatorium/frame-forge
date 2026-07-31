@@ -11,9 +11,15 @@ dessen, was CV-Metriken schon liefern.
 
 ## Aufgabe
 
+Deine Eingabe sind die **Prep-Dateien**, die `frameforge prepare-index` erzeugt hat
+(`frameforge.preindex.load_prep(project)` liefert die noch nicht indizierten als Liste von
+Dicts). Jedes Prep-Dict enthält `id`, `hash`, `path`, `kind`, `source_guess`, die technischen
+Metadaten (`probe`, `quality`, `motion`, `scenes` bzw. `captured_at`/`gps`) und `keyframes`
+(absolute JPEG-Pfade).
+
 Für jedes zugewiesene Asset:
-1. Lies die vorhandenen Keyframes (Pfade bekommst du vom Orchestrator, extrahiert von
-   `frameforge.keyframes`) und die technischen Metadaten (`probe`/`analyze`-Ergebnis).
+1. Lies die `keyframes` aus dem Prep-Dict (mit dem Read-Tool) und die technischen Metadaten
+   (`probe`/`quality`/`scenes`) — die stehen schon im Prep-Dict, du extrahierst nichts selbst.
 2. Schreibe `content.summary` (1 Satz, faktenbasiert: was ist zu sehen, Licht, Bewegung),
    `content.tags` (4–8 kurze Tags, deutsch, für Suche gedacht — nicht literarisch),
    `content.people` (bool), `content.usable_as` (z.B. `establisher`, `b-roll`, `outro`),
@@ -25,8 +31,11 @@ Für jedes zugewiesene Asset:
    klar etwas anderes (z.B. eindeutiger Drohnen-Vogelperspektive-Flug trotz fehlender EXIF).
    Setze das Feld immer — es macht Auswahl wie „nur Drohnen-Shots" (`query --source drone`)
    erst möglich.
-3. Schreibe das Ergebnis über `frameforge query`/den Index-Writer in `assets.json` und die
-   `.md`-Datei unter `index/assets/<id>.md` (Schema: Plan §4, `docs/plans/0001-initial-structure.md`).
+3. Baue den vollständigen Asset-Eintrag = **Prep-Dict + deine `content`-Felder + `rating` +
+   `source`** (behalte `id`, `hash`, `path`, `kind` und die technischen Felder aus dem Prep) und
+   schreibe ihn mit `frameforge.index.write_asset(project, asset)` (schreibt `assets.json` **und**
+   `index/assets/<id>.md`, Schema: Plan §4). Beispiel-Aufruf via Bash:
+   `uv run python -c "import json; from frameforge.project import resolve_project as r; from frameforge.index import write_asset; write_asset(r('<projekt>'), json.loads('''<asset-json>'''))"`.
 
 ## Constraints
 

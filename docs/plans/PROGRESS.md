@@ -881,3 +881,50 @@ sagt deshalb fälschlich, es gäbe noch keinen Anwendungscode. Rein kosmetisch �
 nachträglich reparieren, der nächste Commit stellt es gerade.
 
 **Regel daraus:** immer nur eine Session gleichzeitig in diesem Repo arbeiten lassen.
+
+---
+
+## M5 — Norwegen-Realbetrieb: offener Punkt aus dem ersten echten Lauf (2026-07-31)
+
+Beim ersten echten `frameforge ingest norwegen-2026` (Nutzer-Rückfrage: was passiert, wenn
+während/nach der Pipeline noch neues Rohmaterial in `media_root` dazukommt, z.B. Videos/Fotos
+gegen Ende des Urlaubs) beim Nachlesen des Codes eine Lücke zwischen Plan und Implementierung
+gefunden — **kein Bug im engeren Sinn, nichts ist kaputt, aber noch nicht gebaut**:
+
+Plan Abschnitt 2 (Zeile 165) sagt: *"Kommt neues Rohmaterial dazu, fällt das Projekt auf
+INGESTED zurück — aber der Analyse-Cache bleibt, es werden nur die neuen Hashes verarbeitet."*
+`state.py` hat dafür bereits `invalidate_project()`/`invalidate_export()` sowie einen
+`content_hash`-Parameter auf `advance_project()`/`advance_export()` — **beides wird aktuell
+von keinem Aufrufer benutzt.** `ensure_project_at_least()` (Audit-Fix P5) springt bewusst nur
+vorwärts, das war zum Schutz gegen versehentliches Zurückfallen bei erneutem `ingest`/`index`
+gedacht (Audit-Finding), verhindert aber als Nebeneffekt auch die im Plan vorgesehene
+Rückwärts-Invalidierung bei echtem neuem Material.
+
+**Eingrenzung, was davon betroffen wäre** (nicht pauschal "alles neu machen"):
+
+- `DESIGNED` (Tokens/Farben/Fonts) und `BRIEFED` (Kreativ-Brief) hängen inhaltlich nicht vom
+  Asset-Inventar ab — neues Material macht sie nicht ungültig.
+- `STORYBOARDED` ist der erste Schritt, der `query_assets()` gegen `assets.json` nutzt
+  (`story-architect`) — hier könnte neues Material tatsächlich ein besseres Beatsheet
+  ermöglichen, das der Export sonst nie sieht. `TIMELINE` und alles danach ist nur indirekt
+  betroffen (nur falls das Beatsheet neu gebaut wird).
+- Der sinnvolle Ansatzpunkt ist also der **Export-Status ab STORYBOARDED**, nicht die globale
+  Projekt-Phase.
+
+**Vorgeschlagener Mechanismus** (noch nicht umgesetzt, Nutzer-Entscheidung: erstmal nur
+dokumentieren, `M5` läuft ja gerade real):
+
+1. Billiger, zustandsloser Check (`scan_media()` gegen Hashes in `assets.json`), der
+   unabhängig von der aktuellen Phase überall (z.B. in `frameforge status`) mitlaufen kann —
+   kein Vision-Call, keine Kosten.
+2. Beim Erreichen von `STORYBOARDED` einen Hash über den aktuellen `assets.json`-Stand im
+   bereits vorhandenen `content_hash`-Feld ablegen; bei späteren Schritten vergleichen.
+3. Bei Abweichung **warnen und fragen, nicht still neu bauen** — kein Hintergrund-Worker,
+   explizite Rückfrage an den Nutzer (passt zum bestehenden Wizard-Prinzip: "Stand zeigen,
+   nächsten Schritt erklären, fragen").
+
+**Bis dahin manuell:** nach neuem Material in `media_root` erneut `/ff-ingest` + `/ff-index`
+anstoßen — beides ist idempotent/inkrementell (übersprungene Proxies, nur ungehashte Assets
+gehen an den `media-indexer`-Agenten), aber es passiert nicht von selbst, und ein bereits über
+`INDEXED` hinaus fortgeschrittenes Projekt merkt eine neue unindizierte Datei nicht
+automatisch.
