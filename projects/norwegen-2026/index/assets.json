@@ -14465,7 +14465,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "exclude": true,
+    "exclude_reason": "Drohne in Ast, ruckartige Fehlbewegung"
   },
   {
     "hash": "sha256:61365ce04c6ba727ea183672bd9e9b9b9caac208501d19e52925237d7ecfb941",
