@@ -35,20 +35,27 @@ _SOURCE_MARKERS: tuple[tuple[str, str], ...] = (
 )
 
 
-def guess_source(*hints: str | None) -> str:
+def guess_source(*hints: str | None, name_hint: str | None = None) -> str:
     """Raet die Aufnahme-Quelle aus EXIF-Kamera-Angaben (Make/Model/Handler).
 
     Best-effort-Vorschlag fuer den media-indexer — der Agent darf ihn ueberschreiben, wenn die
-    Keyframes etwas anderes zeigen. Ohne Treffer: `"camera"` bei vorhandener Angabe, sonst
+    Keyframes etwas anderes zeigen. Ohne Treffer: `"camera"` bei vorhandener Kamera-Angabe, sonst
     `"unknown"`.
+
+    `name_hint` (Dateiname) wird nur fuer eindeutige Marker herangezogen (z.B. `DJI_…` → drone),
+    da re-encodete Proxys die EXIF verlieren. Er beeinflusst aber NICHT die camera/unknown-
+    Entscheidung — ein blosser Dateiname ohne Kamera-Angabe bleibt `"unknown"`.
     """
     blob = " ".join(h for h in hints if h).lower()
-    if not blob.strip():
-        return "unknown"
     for marker, source in _SOURCE_MARKERS:
         if marker in blob:
             return source
-    return "camera"
+    if name_hint:
+        name = name_hint.lower()
+        for marker, source in _SOURCE_MARKERS:
+            if marker in name:
+                return source
+    return "camera" if blob.strip() else "unknown"
 
 
 def _run_json(cmd: list[str]) -> dict:
@@ -104,7 +111,7 @@ def probe_video(path: Path) -> dict:
         "dur": duration,
         "bitrate": bitrate,
         "codec": video_stream.get("codec_name", "unknown"),
-        "source_guess": guess_source(*hints),
+        "source_guess": guess_source(*hints, name_hint=path.name),
     }
 
 
@@ -141,7 +148,7 @@ def probe_photo_exif(path: Path) -> dict:
         "gps": gps,
         "make": make,
         "model": model,
-        "source_guess": guess_source(make, model),
+        "source_guess": guess_source(make, model, name_hint=path.name),
     }
 
 

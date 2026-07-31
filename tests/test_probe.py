@@ -64,3 +64,14 @@ def test_guess_source_combines_hints():
     from frameforge.probe import guess_source
 
     assert guess_source(None, "", "DJI Mavic 3") == "drone"
+
+
+def test_guess_source_name_hint_detects_marker_but_not_camera():
+    from frameforge.probe import guess_source
+
+    # Dateiname mit DJI-Marker -> drone, auch ohne EXIF.
+    assert guess_source(None, name_hint="DJI_20260720140435_0009_D.MP4") == "drone"
+    # Dateiname ohne Marker hebt NICHT von unknown auf camera an.
+    assert guess_source(None, name_hint="clip.mp4") == "unknown"
+    # Vorhandene Kamera-Angabe bleibt camera, Dateiname irrelevant.
+    assert guess_source("SONY ILCE-7M4", name_hint="clip.mp4") == "camera"

@@ -1311,6 +1311,898 @@
     }
   },
   {
+    "hash": "sha256:8402bb448a8c08911f50630bf0ae0ca66c8b87c853f144fd33ae05d24cd5abe9",
+    "path": "2026-07-20_Norwegen_Skien_Rudern-See/Vorauswahl/DJI_20260720151858_0002_D-00.04.08.973-00.04.18.278-seg6.MP4",
+    "kind": "video",
+    "source_guess": "camera",
+    "duration": 9.542867,
+    "probe": {
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 9.542867,
+      "bitrate": 78522641,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.873,
+      "stability": 0.025,
+      "exposure": 0.767,
+      "score": 0.555
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.975
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 9.54
+      }
+    ],
+    "id": "20260720-camera-8402bb",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720151858_0002_D-00.04.08.973-00.04.18.278-seg6_c8005c94_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720151858_0002_D-00.04.08.973-00.04.18.278-seg6_c8005c94_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720151858_0002_D-00.04.08.973-00.04.18.278-seg6_c8005c94_kf02.jpg"
+    ],
+    "source": "drone",
+    "rating": 4,
+    "content": {
+      "summary": "Drohnenaufnahme einer Frau, die auf einem Holzsteg an einem spiegelglatten Waldsee steht.",
+      "tags": [
+        "see",
+        "wald",
+        "steg",
+        "ufer",
+        "drohne",
+        "luftaufnahme",
+        "spiegelung",
+        "frau"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:8792e5d8ce6e9fed61fcad288958a34239d435199571ec6f5a31ad9c3b940b51",
+    "path": "2026-07-20_Norwegen_Skien_Rudern-See/Vorauswahl/DJI_20260720154140_0012_D-00.04.13.128-00.04.46.526-seg09.MP4",
+    "kind": "video",
+    "source_guess": "camera",
+    "duration": 33.78375,
+    "probe": {
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 33.78375,
+      "bitrate": 81033031,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.762,
+      "score": 0.587
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 33.78
+      }
+    ],
+    "id": "20260720-camera-8792e5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.04.13.128-00.04.46.526-seg09_b47bd3e1_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.04.13.128-00.04.46.526-seg09_b47bd3e1_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.04.13.128-00.04.46.526-seg09_b47bd3e1_kf02.jpg"
+    ],
+    "source": "drone",
+    "rating": 5,
+    "content": {
+      "summary": "Drohnenaufnahme einer Familie im grünen Ruderboot auf ruhigem Waldsee, Vater rudert, zwei Kinder mit Schwimmwesten.",
+      "tags": [
+        "see",
+        "wald",
+        "boot",
+        "familie",
+        "rudern",
+        "drohne",
+        "luftaufnahme",
+        "kinder"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:8c68d5282e8e8777d16825c7554cf662ca25fa9e3569ecac3a63baf2c90d1501",
+    "path": "2026-07-20_Norwegen_Skien_Rudern-See/Vorauswahl/DJI_20260720154140_0012_D-00.01.36.858-00.01.41.883-seg04.MP4",
+    "kind": "video",
+    "source_guess": "camera",
+    "duration": 5.288617,
+    "probe": {
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 5.288617,
+      "bitrate": 90046962,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.834,
+      "score": 0.611
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 5.29
+      }
+    ],
+    "id": "20260720-camera-8c68d5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.01.36.858-00.01.41.883-seg04_cbd63989_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.01.36.858-00.01.41.883-seg04_cbd63989_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.01.36.858-00.01.41.883-seg04_cbd63989_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.01.36.858-00.01.41.883-seg04_cbd63989_kf03.jpg"
+    ],
+    "source": "drone",
+    "rating": 4,
+    "content": {
+      "summary": "Drohnenaufnahme einer Felsformation am Seeufer mit Wald und spiegelndem Wasser, keine Personen.",
+      "tags": [
+        "see",
+        "wald",
+        "ufer",
+        "fels",
+        "drohne",
+        "luftaufnahme",
+        "natur",
+        "spiegelung"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:8d3d4ebbe417e5d1647288bce66a0f6397c1e0407ed4094c4e0ac2f57e22bb4b",
+    "path": "2026-07-20_Norwegen_Skien_Rudern-See/Vorauswahl/DJI_20260720161344_0014_D-00.05.12.972-00.05.25.000-seg2.MP4",
+    "kind": "video",
+    "source_guess": "camera",
+    "duration": 12.195517,
+    "probe": {
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 12.195517,
+      "bitrate": 81646400,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.193,
+      "exposure": 0.9,
+      "score": 0.697
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.807
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 12.2
+      }
+    ],
+    "id": "20260720-camera-8d3d4e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720161344_0014_D-00.05.12.972-00.05.25.000-seg2_f8141442_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720161344_0014_D-00.05.12.972-00.05.25.000-seg2_f8141442_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720161344_0014_D-00.05.12.972-00.05.25.000-seg2_f8141442_kf02.jpg"
+    ],
+    "source": "drone",
+    "rating": 3,
+    "content": {
+      "summary": "Drohnenaufnahme aus schräger Vogelperspektive: Gruppe winkt zur Kamera auf einem umgestürzten Baum im dichten Wald.",
+      "tags": [
+        "wald",
+        "drohne",
+        "luftaufnahme",
+        "gruppe",
+        "winken",
+        "baum",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:913fd857405bd44f8a3e39841bc443d48742966ee9719f41e0926c999f1413ed",
+    "path": "2026-07-20_Norwegen_Skien_Rudern-See/Vorauswahl/DJI_20260720154140_0012_D-00.01.19.860-00.01.29.860-seg03.MP4",
+    "kind": "video",
+    "source_guess": "camera",
+    "duration": 10.293617,
+    "probe": {
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 10.293617,
+      "bitrate": 83572602,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.955,
+      "stability": 0.0,
+      "exposure": 0.831,
+      "score": 0.595
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 10.29
+      }
+    ],
+    "id": "20260720-camera-913fd8",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.01.19.860-00.01.29.860-seg03_61ca4143_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.01.19.860-00.01.29.860-seg03_61ca4143_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.01.19.860-00.01.29.860-seg03_61ca4143_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.01.19.860-00.01.29.860-seg03_61ca4143_kf03.jpg"
+    ],
+    "source": "drone",
+    "rating": 4,
+    "content": {
+      "summary": "Drohnenaufnahme über einem Waldsee mit Felswand, leichter Wellengang, blauer Himmel mit Wolken.",
+      "tags": [
+        "see",
+        "wald",
+        "fels",
+        "drohne",
+        "luftaufnahme",
+        "himmel",
+        "wolken",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:9e14c161a02f1ba7447d22f89222a00f03fcdf3f8e7cb17a601bb8d7d6bac978",
+    "path": "2026-07-20_Norwegen_Skien_Rudern-See/Vorauswahl/DJI_20260720151858_0002_D-00.02.47.808-00.03.05.813-seg4.MP4",
+    "kind": "video",
+    "source_guess": "camera",
+    "duration": 18.151467,
+    "probe": {
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 18.151467,
+      "bitrate": 81083403,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.859,
+      "stability": 0.146,
+      "exposure": 0.831,
+      "score": 0.612
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.854
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 18.15
+      }
+    ],
+    "id": "20260720-camera-9e14c1",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720151858_0002_D-00.02.47.808-00.03.05.813-seg4_cd409ed6_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720151858_0002_D-00.02.47.808-00.03.05.813-seg4_cd409ed6_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720151858_0002_D-00.02.47.808-00.03.05.813-seg4_cd409ed6_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720151858_0002_D-00.02.47.808-00.03.05.813-seg4_cd409ed6_kf03.jpg"
+    ],
+    "source": "drone",
+    "rating": 5,
+    "content": {
+      "summary": "Drohnen-Totale einer kleinen Hütte am Waldseeufer mit Steg, Personen kaum erkennbar, spiegelglattes Wasser.",
+      "tags": [
+        "huette",
+        "see",
+        "wald",
+        "steg",
+        "drohne",
+        "luftaufnahme",
+        "ufer",
+        "spiegelung"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    },
+    "gps": {
+      "place": "Skien"
+    }
+  },
+  {
+    "hash": "sha256:a069da55496a6b480f3f207e3c4b83c968643c66365bfcce81639e8944d21828",
+    "path": "2026-07-20_Norwegen_Skien_Rudern-See/Vorauswahl/DJI_20260720151858_0002_D-00.00.29.606-00.00.41.202-seg1.MP4",
+    "kind": "video",
+    "source_guess": "camera",
+    "duration": 11.678333,
+    "probe": {
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 11.678333,
+      "bitrate": 76803769,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.643,
+      "stability": 0.068,
+      "exposure": 0.836,
+      "score": 0.516
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.932
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 11.68
+      }
+    ],
+    "id": "20260720-camera-a069da",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720151858_0002_D-00.00.29.606-00.00.41.202-seg1_ecdab369_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720151858_0002_D-00.00.29.606-00.00.41.202-seg1_ecdab369_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720151858_0002_D-00.00.29.606-00.00.41.202-seg1_ecdab369_kf02.jpg"
+    ],
+    "source": "drone",
+    "rating": 4,
+    "content": {
+      "summary": "Drohnenaufnahme über spiegelglattem Waldsee mit kleiner bewaldeter Landzunge, Felshügel im Hintergrund.",
+      "tags": [
+        "see",
+        "wald",
+        "drohne",
+        "luftaufnahme",
+        "spiegelung",
+        "landzunge",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c4c360176725474694827a249c5d8ca51f7acea7077b1cb5961ea6325364afe3",
+    "path": "2026-07-20_Norwegen_Skien_Hütte-1/Vorauswahl/DJI_20260720140705_0010_D_huette-landscape-1.MP4",
+    "kind": "video",
+    "source_guess": "camera",
+    "duration": 21.404717,
+    "probe": {
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 21.404717,
+      "bitrate": 80622013,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.876,
+      "score": 0.625
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 21.4
+      }
+    ],
+    "id": "20260720-camera-c4c360",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720140705_0010_D_huette-landscape-1_baa503c9_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720140705_0010_D_huette-landscape-1_baa503c9_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720140705_0010_D_huette-landscape-1_baa503c9_kf02.jpg"
+    ],
+    "source": "drone",
+    "rating": 5,
+    "content": {
+      "summary": "Weite Drohnen-Totale über waldreiche Seenlandschaft mit Sonnenglitzern auf dem Wasser, Hütte kaum sichtbar am Ufer.",
+      "tags": [
+        "see",
+        "wald",
+        "huette",
+        "drohne",
+        "luftaufnahme",
+        "landschaft",
+        "weitwinkel",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    },
+    "gps": {
+      "place": "Skien"
+    }
+  },
+  {
+    "hash": "sha256:c5f6007b6ecb3fa756dfbad4c12180359c89ae8f790daefcfad95c1902d3528b",
+    "path": "2026-07-20_Norwegen_Skien_Rudern-See/Vorauswahl/DJI_20260720154140_0012_D-00.01.11.497-00.01.19.772-seg02.MP4",
+    "kind": "video",
+    "source_guess": "camera",
+    "duration": 8.7087,
+    "probe": {
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 8.7087,
+      "bitrate": 78863803,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.938,
+      "stability": 0.239,
+      "exposure": 0.764,
+      "score": 0.647
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.761
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 8.71
+      }
+    ],
+    "id": "20260720-camera-c5f600",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.01.11.497-00.01.19.772-seg02_9c8c4532_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.01.11.497-00.01.19.772-seg02_9c8c4532_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.01.11.497-00.01.19.772-seg02_9c8c4532_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.01.11.497-00.01.19.772-seg02_9c8c4532_kf03.jpg"
+    ],
+    "source": "drone",
+    "rating": 5,
+    "content": {
+      "summary": "Drohnenaufnahme aus großer Höhe zeigt Ruderboot mit Familie auf spiegelglattem See, umgeben von Wald und Felsufern bei Tageslicht.",
+      "tags": [
+        "see",
+        "drohne",
+        "luftaufnahme",
+        "boot",
+        "familie",
+        "wald",
+        "spiegelung",
+        "ufer"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Skien"
+    }
+  },
+  {
+    "hash": "sha256:dff9ce6a9fa497581a48f9c7040db8182ce711d8105b850048ba26312c07cf81",
+    "path": "2026-07-20_Norwegen_Skien_Rudern-See/Vorauswahl/DJI_20260720154140_0012_D-00.02.51.948-00.03.27.617-seg07.MP4",
+    "kind": "video",
+    "source_guess": "camera",
+    "duration": 35.952583,
+    "probe": {
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 35.952583,
+      "bitrate": 82545162,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.82,
+      "stability": 0.0,
+      "exposure": 0.806,
+      "score": 0.542
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 35.95
+      }
+    ],
+    "id": "20260720-camera-dff9ce",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.02.51.948-00.03.27.617-seg07_291830fc_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.02.51.948-00.03.27.617-seg07_291830fc_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.02.51.948-00.03.27.617-seg07_291830fc_kf02.jpg"
+    ],
+    "source": "drone",
+    "rating": 4,
+    "content": {
+      "summary": "Drohnenflug über See mit Waldufern, blauem Himmel und Wolken, im Hintergrund Hütte am Ufer erkennbar.",
+      "tags": [
+        "see",
+        "drohne",
+        "luftaufnahme",
+        "wald",
+        "huette",
+        "himmel",
+        "ufer"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Skien"
+    }
+  },
+  {
+    "hash": "sha256:e79d29d9c0976007dff75412e972351e6496f5f8f4dedf2dd5312ed28e17161f",
+    "path": "2026-07-20_Norwegen_Skien_Rudern-See/Vorauswahl/DJI_20260720154140_0012_D-00.02.07.299-00.02.21.587-seg05.MP4",
+    "kind": "video",
+    "source_guess": "camera",
+    "duration": 14.46445,
+    "probe": {
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 14.46445,
+      "bitrate": 71818335,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.595,
+      "stability": 0.575,
+      "exposure": 0.785,
+      "score": 0.652
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.425
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 14.46
+      }
+    ],
+    "id": "20260720-camera-e79d29",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.02.07.299-00.02.21.587-seg05_6f99cb1e_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.02.07.299-00.02.21.587-seg05_6f99cb1e_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.02.07.299-00.02.21.587-seg05_6f99cb1e_kf02.jpg"
+    ],
+    "source": "drone",
+    "rating": 5,
+    "content": {
+      "summary": "Drohnenaufnahme aus der Höhe zeigt kleines Ruderboot mit Personen auf See zwischen bewaldeten Felshängen, blauer Himmel mit Wolken.",
+      "tags": [
+        "see",
+        "drohne",
+        "luftaufnahme",
+        "boot",
+        "familie",
+        "wald",
+        "felsen",
+        "himmel"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Skien"
+    }
+  },
+  {
+    "hash": "sha256:e7d994fae7ec3d716c274338a34f822cf172c46f50322c038a8128f5289a0720",
+    "path": "2026-07-20_Norwegen_Skien_Rudern-See/Vorauswahl/DJI_20260720153625_0006_D-00.02.59.659-00.03.12.722-seg8.MP4",
+    "kind": "video",
+    "source_guess": "camera",
+    "duration": 13.546867,
+    "probe": {
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 13.546867,
+      "bitrate": 88832543,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.27,
+      "exposure": 0.814,
+      "score": 0.695
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.73
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 13.55
+      }
+    ],
+    "id": "20260720-camera-e7d994",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720153625_0006_D-00.02.59.659-00.03.12.722-seg8_3c7e6605_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720153625_0006_D-00.02.59.659-00.03.12.722-seg8_3c7e6605_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720153625_0006_D-00.02.59.659-00.03.12.722-seg8_3c7e6605_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720153625_0006_D-00.02.59.659-00.03.12.722-seg8_3c7e6605_kf03.jpg"
+    ],
+    "source": "drone",
+    "rating": 5,
+    "content": {
+      "summary": "Drohnenaufnahme aus geringer Höhe folgt Ruderboot mit Familie inklusive Hund auf ruhigem See zwischen Waldhängen bei Nachmittagslicht.",
+      "tags": [
+        "see",
+        "drohne",
+        "luftaufnahme",
+        "boot",
+        "familie",
+        "hund",
+        "wald",
+        "tracking-shot"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Skien"
+    }
+  },
+  {
+    "hash": "sha256:ef166412047e5f149990f2299053b4e8aefea8cb4b53f015b26626f11da0ac5e",
+    "path": "2026-07-20_Norwegen_Skien_Rudern-See/Vorauswahl/DJI_20260720154140_0012_D-00.00.07.258-00.00.27.453-seg01.MP4",
+    "kind": "video",
+    "source_guess": "camera",
+    "duration": 20.453767,
+    "probe": {
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 20.453767,
+      "bitrate": 78220582,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.94,
+      "stability": 0.0,
+      "exposure": 0.822,
+      "score": 0.587
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 20.45
+      }
+    ],
+    "id": "20260720-camera-ef1664",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.00.07.258-00.00.27.453-seg01_44fd91b8_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.00.07.258-00.00.27.453-seg01_44fd91b8_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.00.07.258-00.00.27.453-seg01_44fd91b8_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720154140_0012_D-00.00.07.258-00.00.27.453-seg01_44fd91b8_kf03.jpg"
+    ],
+    "source": "drone",
+    "rating": 4,
+    "content": {
+      "summary": "Drohnenaufnahme aus niedriger Höhe zeigt Ruderboot mit Personen auf See vor bewaldetem Felsufer, Startphase des Kameraflugs.",
+      "tags": [
+        "see",
+        "drohne",
+        "luftaufnahme",
+        "boot",
+        "familie",
+        "wald",
+        "felsufer"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Skien"
+    }
+  },
+  {
+    "hash": "sha256:f1c43e359f1df07b59212fb71114587f09786b55a3017281b4818a304a94428f",
+    "path": "2026-07-20_Norwegen_Skien_Rudern-See/Vorauswahl/DJI_20260720151858_0002_D-00.00.59.212-00.01.17.540-seg2.MP4",
+    "kind": "video",
+    "source_guess": "camera",
+    "duration": 18.485133,
+    "probe": {
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 18.485133,
+      "bitrate": 82095487,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.894,
+      "stability": 0.019,
+      "exposure": 0.814,
+      "score": 0.576
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.981
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 18.49
+      }
+    ],
+    "id": "20260720-camera-f1c43e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720151858_0002_D-00.00.59.212-00.01.17.540-seg2_58a2f3aa_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720151858_0002_D-00.00.59.212-00.01.17.540-seg2_58a2f3aa_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720151858_0002_D-00.00.59.212-00.01.17.540-seg2_58a2f3aa_kf02.jpg"
+    ],
+    "source": "drone",
+    "rating": 4,
+    "content": {
+      "summary": "Drohnenaufnahme aus der Höhe zeigt kleine Sauna-Hütte mit Steg an ruhigem Waldsee, Person am Steg erkennbar.",
+      "tags": [
+        "see",
+        "drohne",
+        "luftaufnahme",
+        "huette",
+        "steg",
+        "wald",
+        "sauna"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    },
+    "gps": {
+      "place": "Skien"
+    }
+  },
+  {
+    "hash": "sha256:f3250853a9b7f306a6ecf5d0422383a52557dcf56c44b1674efa4c6cf53db231",
+    "path": "2026-07-20_Norwegen_Skien_Rudern-See/Vorauswahl/DJI_20260720161344_0014_D-00.05.26.983-00.05.35.165-seg4.MP4",
+    "kind": "video",
+    "source_guess": "camera",
+    "duration": 8.341667,
+    "probe": {
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 8.341667,
+      "bitrate": 84254078,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.807,
+      "stability": 0.274,
+      "exposure": 0.809,
+      "score": 0.63
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.726
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 8.34
+      }
+    ],
+    "id": "20260720-camera-f32508",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720161344_0014_D-00.05.26.983-00.05.35.165-seg4_dc45baa3_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720161344_0014_D-00.05.26.983-00.05.35.165-seg4_dc45baa3_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720161344_0014_D-00.05.26.983-00.05.35.165-seg4_dc45baa3_kf02.jpg"
+    ],
+    "source": "drone",
+    "rating": 3,
+    "content": {
+      "summary": "Drohnenaufnahme aus niedriger Höhe zeigt vier Kinder, die auf einem umgestürzten Baumstamm im Wald posieren, gedämpftes Abendlicht.",
+      "tags": [
+        "wald",
+        "drohne",
+        "luftaufnahme",
+        "kinder",
+        "familie",
+        "baumstamm",
+        "abendlicht"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    },
+    "gps": {
+      "place": "Skien"
+    }
+  },
+  {
     "hash": "sha256:14b9bcfdda17bd5d1794c8ff04d3bebdf7297674755b9cb6e1304f5ab9ce92ff",
     "path": "2026-07-20_Norwegen_Skien_Rudern-See/Images/DJI_20260720154121_0010_D.JPG",
     "kind": "photo",
@@ -1554,6 +2446,206 @@
       "people": true,
       "usable_as": [
         "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c754045158d63c7daffecc68df19951e7b74564623ab754a767de7f147681179",
+    "path": "2026-07-20_Norwegen_Skien_Hütte-1/Images/DJI_20260720135829_0006_D.JPG",
+    "kind": "photo",
+    "source_guess": "drone",
+    "captured_at": "2026-07-20T13:58:29+00:00",
+    "gps": {
+      "lat": 59.38126388888889,
+      "lon": 9.413002777777779,
+      "place": "Skien"
+    },
+    "probe": {
+      "captured_at": "2026-07-20T13:58:29+00:00",
+      "gps": {
+        "lat": 59.38126388888889,
+        "lon": 9.413002777777779
+      },
+      "make": "DJI",
+      "model": "FC9589",
+      "source_guess": "drone"
+    },
+    "quality": {
+      "sharpness": 0.122,
+      "exposure": 0.832,
+      "score": 0.477
+    },
+    "id": "20260720-drone-c75404",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720135829_0006_D_d04c4361_kf00.jpg"
+    ],
+    "source": "drone",
+    "rating": 5,
+    "content": {
+      "summary": "Drohnen-Vogelperspektive auf dunkle Holzhütte mit Terrasse zwischen Felsen und Wald, Personen und Boot vor dem Haus.",
+      "tags": [
+        "huette",
+        "drohne",
+        "luftaufnahme",
+        "wald",
+        "felsen",
+        "terrasse",
+        "familie"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c7b3c40ae532fe59e2c5a6c96cc0e8557105ec7275193b54cd143e386dce131a",
+    "path": "2026-07-20_Norwegen_Skien_Rudern-See/Images/DJI_20260720152547_0004_D.JPG",
+    "kind": "photo",
+    "source_guess": "drone",
+    "captured_at": "2026-07-20T15:25:47+00:00",
+    "gps": {
+      "lat": 59.388422222222225,
+      "lon": 9.406030555555557,
+      "place": "Skien"
+    },
+    "probe": {
+      "captured_at": "2026-07-20T15:25:47+00:00",
+      "gps": {
+        "lat": 59.388422222222225,
+        "lon": 9.406030555555557
+      },
+      "make": "DJI",
+      "model": "FC9589",
+      "source_guess": "drone"
+    },
+    "quality": {
+      "sharpness": 0.8,
+      "exposure": 0.862,
+      "score": 0.831
+    },
+    "id": "20260720-drone-c7b3c4",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720152547_0004_D_2b88c8f4_kf00.jpg"
+    ],
+    "source": "drone",
+    "rating": 4,
+    "content": {
+      "summary": "Drohnenaufnahme aus mittlerer Höhe zeigt Person auf Holzsteg am See, im Hintergrund Familie an einer Feuerstelle vor dem Wald, Abendlicht.",
+      "tags": [
+        "see",
+        "drohne",
+        "luftaufnahme",
+        "steg",
+        "familie",
+        "wald",
+        "abendlicht",
+        "spiegelung"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:cb3e3313c2839873609c299147a48d0298b6ab8ad3b0c281cbefa96e453fc537",
+    "path": "2026-07-20_Norwegen_Skien_Rudern-See/Images/DJI_20260720152640_0005_D.JPG",
+    "kind": "photo",
+    "source_guess": "drone",
+    "captured_at": "2026-07-20T15:26:40+00:00",
+    "gps": {
+      "lat": 59.38832222222222,
+      "lon": 9.406302777777778,
+      "place": "Skien"
+    },
+    "probe": {
+      "captured_at": "2026-07-20T15:26:40+00:00",
+      "gps": {
+        "lat": 59.38832222222222,
+        "lon": 9.406302777777778
+      },
+      "make": "DJI",
+      "model": "FC9589",
+      "source_guess": "drone"
+    },
+    "quality": {
+      "sharpness": 0.356,
+      "exposure": 0.819,
+      "score": 0.588
+    },
+    "id": "20260720-drone-cb3e33",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720152640_0005_D_670612ff_kf00.jpg"
+    ],
+    "source": "drone",
+    "rating": 3,
+    "content": {
+      "summary": "Drohnenaufnahme aus geringer Höhe über spiegelglattem See mit Wald- und Wolkenspiegelung, keine Personen sichtbar.",
+      "tags": [
+        "see",
+        "drohne",
+        "luftaufnahme",
+        "wald",
+        "spiegelung",
+        "natur",
+        "stimmung"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f2f7583120a1c3cc0ef129c038a3b14fa9549df040f1392beecbfc52e4598bc9",
+    "path": "2026-07-20_Norwegen_Skien_Hütte-1/Images/DJI_20260720135910_0007_D.JPG",
+    "kind": "photo",
+    "source_guess": "drone",
+    "captured_at": "2026-07-20T13:59:10+00:00",
+    "gps": {
+      "lat": 59.38123888888889,
+      "lon": 9.413036111111111,
+      "place": "Skien"
+    },
+    "probe": {
+      "captured_at": "2026-07-20T13:59:10+00:00",
+      "gps": {
+        "lat": 59.38123888888889,
+        "lon": 9.413036111111111
+      },
+      "make": "DJI",
+      "model": "FC9589",
+      "source_guess": "drone"
+    },
+    "quality": {
+      "sharpness": 0.104,
+      "exposure": 0.834,
+      "score": 0.469
+    },
+    "id": "20260720-drone-f2f758",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720135910_0007_D_10b183e4_kf00.jpg"
+    ],
+    "source": "drone",
+    "rating": 4,
+    "content": {
+      "summary": "Drohnen-Vogelperspektive senkrecht von oben auf dunkle Holzhütte mit Terrasse und Pool zwischen Felsen und Wald, Personen auf der Terrasse.",
+      "tags": [
+        "huette",
+        "drohne",
+        "luftaufnahme",
+        "pool",
+        "terrasse",
+        "felsen",
+        "wald",
+        "familie"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
       ]
     }
   }
