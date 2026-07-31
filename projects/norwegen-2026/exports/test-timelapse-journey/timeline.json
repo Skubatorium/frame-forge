@@ -1,0 +1,1177 @@
+{
+  "version": 1,
+  "export": "test-timelapse-journey",
+  "fps": 30.0,
+  "resolution": [
+    3840,
+    2160
+  ],
+  "duration": 180.0,
+  "tracks": {
+    "video": [
+      {
+        "id": "c000",
+        "asset": "20260720-camera-83217b",
+        "src_in": 1.464,
+        "src_out": 4.259,
+        "tl_in": 0.0,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c001",
+        "asset": "20260720-camera-0ec48c",
+        "src_in": 3.171,
+        "src_out": 5.571,
+        "tl_in": 2.795,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c002",
+        "asset": "20260720-camera-427a02",
+        "src_in": 11.254,
+        "src_out": 13.654,
+        "tl_in": 5.195,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c003",
+        "asset": "20260720-camera-e7d994",
+        "src_in": 5.573,
+        "src_out": 7.973,
+        "tl_in": 7.595,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c004",
+        "asset": "20260720-camera-01f68b",
+        "src_in": 28.313,
+        "src_out": 30.713,
+        "tl_in": 9.995,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c005",
+        "asset": "20260720-camera-542e68",
+        "src_in": 13.957,
+        "src_out": 16.357,
+        "tl_in": 12.395,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c006",
+        "asset": "20260720-camera-c4c360",
+        "src_in": 9.598,
+        "src_out": 11.806,
+        "tl_in": 14.795,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c007",
+        "asset": "20260720-camera-e79d29",
+        "src_in": 6.048,
+        "src_out": 8.416,
+        "tl_in": 17.003,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c008",
+        "asset": "20260722-drone-71e612",
+        "src_in": 4.561,
+        "src_out": 6.95,
+        "tl_in": 19.371,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c009",
+        "asset": "20260722-drone-868028",
+        "src_in": 13.064,
+        "src_out": 15.464,
+        "tl_in": 21.76,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c010",
+        "asset": "20260720-camera-c5f600",
+        "src_in": 3.154,
+        "src_out": 5.554,
+        "tl_in": 24.16,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c011",
+        "asset": "20260722-drone-c724ee",
+        "src_in": 8.71,
+        "src_out": 11.11,
+        "tl_in": 26.56,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c012",
+        "asset": "20260720-camera-9e14c1",
+        "src_in": 8.556,
+        "src_out": 9.596,
+        "tl_in": 28.96,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c013",
+        "asset": "20260723-drone-34c28f",
+        "src_in": 8.915,
+        "src_out": 10.755,
+        "tl_in": 30.0,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c014",
+        "asset": "20260726-drone-de30ac",
+        "src_in": 11.815,
+        "src_out": 13.244,
+        "tl_in": 31.84,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c015",
+        "asset": "20260724-drone-6d3195",
+        "src_in": 9.165,
+        "src_out": 10.605,
+        "tl_in": 33.269,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c016",
+        "asset": "20260726-drone-7206fd",
+        "src_in": 9.159,
+        "src_out": 10.61,
+        "tl_in": 34.709,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c017",
+        "asset": "20260726-drone-e9f050",
+        "src_in": 10.814,
+        "src_out": 12.243,
+        "tl_in": 36.16,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c018",
+        "asset": "20260723-drone-e0a56b",
+        "src_in": 0.15,
+        "src_out": 0.784,
+        "tl_in": 37.589,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c019",
+        "asset": "20260726-drone-7def3a",
+        "src_in": 8.588,
+        "src_out": 10.365,
+        "tl_in": 38.223,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c020",
+        "asset": "20260724-drone-86e33d",
+        "src_in": 4.335,
+        "src_out": 5.775,
+        "tl_in": 40.0,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c021",
+        "asset": "20260723-drone-61ee11",
+        "src_in": 10.358,
+        "src_out": 11.798,
+        "tl_in": 41.44,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c022",
+        "asset": "20260723-drone-db7c1e",
+        "src_in": 7.068,
+        "src_out": 8.497,
+        "tl_in": 42.88,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c023",
+        "asset": "20260726-drone-8c4f79",
+        "src_in": 8.481,
+        "src_out": 9.921,
+        "tl_in": 44.309,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c024",
+        "asset": "20260723-drone-e26ee6",
+        "src_in": 7.51,
+        "src_out": 8.94,
+        "tl_in": 45.749,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c025",
+        "asset": "20260723-drone-be1dae",
+        "src_in": 9.349,
+        "src_out": 10.17,
+        "tl_in": 47.179,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c026",
+        "asset": "20260724-drone-902691",
+        "src_in": 14.084,
+        "src_out": 15.161,
+        "tl_in": 48.0,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c027",
+        "asset": "20260724-drone-de0379",
+        "src_in": 14.49,
+        "src_out": 15.44,
+        "tl_in": 49.077,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c028",
+        "asset": "20260724-drone-7523dd",
+        "src_in": 6.541,
+        "src_out": 7.49,
+        "tl_in": 50.027,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c029",
+        "asset": "20260724-drone-be1034",
+        "src_in": 3.416,
+        "src_out": 4.376,
+        "tl_in": 50.976,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c030",
+        "asset": "20260724-drone-8bff97",
+        "src_in": 12.897,
+        "src_out": 13.846,
+        "tl_in": 51.936,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c031",
+        "asset": "20260724-drone-242fdd",
+        "src_in": 8.542,
+        "src_out": 9.492,
+        "tl_in": 52.885,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c032",
+        "asset": "20260724-drone-dc9402",
+        "src_in": 34.225,
+        "src_out": 35.195,
+        "tl_in": 53.835,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c033",
+        "asset": "20260724-drone-eb153a",
+        "src_in": 21.878,
+        "src_out": 22.817,
+        "tl_in": 54.805,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c034",
+        "asset": "20260724-drone-a97e25",
+        "src_in": 16.951,
+        "src_out": 17.9,
+        "tl_in": 55.744,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c035",
+        "asset": "20260724-drone-3f1f99",
+        "src_in": 12.563,
+        "src_out": 13.513,
+        "tl_in": 56.693,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c036",
+        "asset": "20260724-drone-2f2cf4",
+        "src_in": 11.173,
+        "src_out": 12.133,
+        "tl_in": 57.643,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c037",
+        "asset": "20260724-drone-d3cf3c",
+        "src_in": 6.124,
+        "src_out": 7.073,
+        "tl_in": 58.603,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c038",
+        "asset": "20260724-drone-c1c0e4",
+        "src_in": 68.097,
+        "src_out": 69.057,
+        "tl_in": 59.552,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c039",
+        "asset": "20260724-drone-4847f2",
+        "src_in": 4.706,
+        "src_out": 5.655,
+        "tl_in": 60.512,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c040",
+        "asset": "20260724-drone-3c4be8",
+        "src_in": 4.78,
+        "src_out": 5.73,
+        "tl_in": 61.461,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c041",
+        "asset": "20260724-drone-b72141",
+        "src_in": 93.645,
+        "src_out": 94.594,
+        "tl_in": 62.411,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c042",
+        "asset": "20260724-drone-d2ba6f",
+        "src_in": 18.198,
+        "src_out": 18.838,
+        "tl_in": 63.36,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c043",
+        "asset": "20260724-drone-094825",
+        "src_in": 6.639,
+        "src_out": 7.908,
+        "tl_in": 64.0,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c044",
+        "asset": "20260724-drone-0c5020",
+        "src_in": 4.847,
+        "src_out": 5.797,
+        "tl_in": 65.269,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c045",
+        "asset": "20260724-drone-100519",
+        "src_in": 2.996,
+        "src_out": 3.945,
+        "tl_in": 66.219,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c046",
+        "asset": "20260724-drone-37d1f5",
+        "src_in": 95.908,
+        "src_out": 96.868,
+        "tl_in": 67.168,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c047",
+        "asset": "20260724-drone-f955ce",
+        "src_in": 9.611,
+        "src_out": 10.56,
+        "tl_in": 68.128,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c048",
+        "asset": "20260726-drone-c8e39c",
+        "src_in": 10.029,
+        "src_out": 11.459,
+        "tl_in": 69.077,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c049",
+        "asset": "20260728-drone-eab4d9",
+        "src_in": 3.39,
+        "src_out": 4.819,
+        "tl_in": 70.507,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c050",
+        "asset": "20260728-drone-b550d2",
+        "src_in": 4.074,
+        "src_out": 5.503,
+        "tl_in": 71.936,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c051",
+        "asset": "20260728-drone-e42c63",
+        "src_in": 18.93,
+        "src_out": 20.36,
+        "tl_in": 73.365,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c052",
+        "asset": "20260728-drone-c4f817",
+        "src_in": 32.018,
+        "src_out": 33.447,
+        "tl_in": 74.795,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c053",
+        "asset": "20260726-drone-4048cc",
+        "src_in": 1.479,
+        "src_out": 2.908,
+        "tl_in": 76.224,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c054",
+        "asset": "20260728-drone-5d3cd7",
+        "src_in": 20.965,
+        "src_out": 22.395,
+        "tl_in": 77.653,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c055",
+        "asset": "20260726-drone-4a48a2",
+        "src_in": 3.882,
+        "src_out": 5.311,
+        "tl_in": 79.083,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c056",
+        "asset": "20260728-drone-0131d3",
+        "src_in": 4.441,
+        "src_out": 5.87,
+        "tl_in": 80.512,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c057",
+        "asset": "20260726-drone-289830",
+        "src_in": 31.606,
+        "src_out": 33.025,
+        "tl_in": 81.941,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c058",
+        "asset": "20260726-drone-44f27e",
+        "src_in": 17.423,
+        "src_out": 18.863,
+        "tl_in": 83.36,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c059",
+        "asset": "20260728-drone-9f54f7",
+        "src_in": 5.205,
+        "src_out": 6.624,
+        "tl_in": 84.8,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c060",
+        "asset": "20260727-drone-3cd337",
+        "src_in": 150.57,
+        "src_out": 151.999,
+        "tl_in": 86.219,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c061",
+        "asset": "20260728-drone-79c521",
+        "src_in": 12.282,
+        "src_out": 13.711,
+        "tl_in": 87.648,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c062",
+        "asset": "20260726-drone-993daf",
+        "src_in": 2.663,
+        "src_out": 4.093,
+        "tl_in": 89.077,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c063",
+        "asset": "20260728-drone-1cc835",
+        "src_in": 1.825,
+        "src_out": 3.03,
+        "tl_in": 90.507,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c064",
+        "asset": "20260726-drone-8d6634",
+        "src_in": 26.526,
+        "src_out": 27.945,
+        "tl_in": 91.712,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c065",
+        "asset": "20260728-drone-c91b2a",
+        "src_in": 9.521,
+        "src_out": 10.95,
+        "tl_in": 93.131,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c066",
+        "asset": "20260726-drone-cdb78d",
+        "src_in": 21.675,
+        "src_out": 23.104,
+        "tl_in": 94.56,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c067",
+        "asset": "20260726-drone-36ebd8",
+        "src_in": 2.225,
+        "src_out": 3.665,
+        "tl_in": 95.989,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c068",
+        "asset": "20260726-drone-a1945f",
+        "src_in": 11.172,
+        "src_out": 12.602,
+        "tl_in": 97.429,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c069",
+        "asset": "20260726-drone-1d384f",
+        "src_in": 40.26,
+        "src_out": 41.689,
+        "tl_in": 98.859,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c070",
+        "asset": "20260726-drone-3ec0ca",
+        "src_in": 7.955,
+        "src_out": 9.395,
+        "tl_in": 100.288,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c071",
+        "asset": "20260726-drone-cee8da",
+        "src_in": 14.759,
+        "src_out": 16.188,
+        "tl_in": 101.728,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c072",
+        "asset": "20260726-drone-503c37",
+        "src_in": 1.505,
+        "src_out": 2.999,
+        "tl_in": 103.157,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c073",
+        "asset": "20260728-drone-b307d9",
+        "src_in": 12.904,
+        "src_out": 14.44,
+        "tl_in": 104.651,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c074",
+        "asset": "20260726-drone-eed7aa",
+        "src_in": 17.749,
+        "src_out": 19.221,
+        "tl_in": 106.187,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c075",
+        "asset": "20260726-drone-fd430e",
+        "src_in": 4.204,
+        "src_out": 5.622,
+        "tl_in": 107.659,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c076",
+        "asset": "20260726-drone-a15499",
+        "src_in": 14.662,
+        "src_out": 16.102,
+        "tl_in": 109.077,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c077",
+        "asset": "20260728-drone-17c8a4",
+        "src_in": 2.029,
+        "src_out": 3.459,
+        "tl_in": 110.517,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c078",
+        "asset": "20260728-drone-eb4ff3",
+        "src_in": 10.154,
+        "src_out": 11.284,
+        "tl_in": 111.947,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c079",
+        "asset": "20260729-drone-282819",
+        "src_in": 14.999,
+        "src_out": 16.717,
+        "tl_in": 113.077,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c080",
+        "asset": "20260728-drone-51fecd",
+        "src_in": 45.448,
+        "src_out": 46.877,
+        "tl_in": 114.795,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c081",
+        "asset": "20260728-drone-2be63d",
+        "src_in": 28.898,
+        "src_out": 30.327,
+        "tl_in": 116.224,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c082",
+        "asset": "20260728-drone-c3df87",
+        "src_in": 26.596,
+        "src_out": 28.026,
+        "tl_in": 117.653,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c083",
+        "asset": "20260728-drone-ecc6c3",
+        "src_in": 34.02,
+        "src_out": 35.449,
+        "tl_in": 119.083,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c084",
+        "asset": "20260729-drone-15edc2",
+        "src_in": 1.429,
+        "src_out": 2.858,
+        "tl_in": 120.512,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c085",
+        "asset": "20260729-drone-174d79",
+        "src_in": 29.612,
+        "src_out": 31.031,
+        "tl_in": 121.941,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c086",
+        "asset": "20260729-drone-63eb6b",
+        "src_in": 9.779,
+        "src_out": 11.208,
+        "tl_in": 123.36,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c087",
+        "asset": "20260729-drone-a1557e",
+        "src_in": 19.217,
+        "src_out": 20.657,
+        "tl_in": 124.789,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c088",
+        "asset": "20260729-drone-bff3b9",
+        "src_in": 7.727,
+        "src_out": 9.157,
+        "tl_in": 126.229,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c089",
+        "asset": "20260729-drone-91ee91",
+        "src_in": 12.704,
+        "src_out": 14.122,
+        "tl_in": 127.659,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c090",
+        "asset": "20260729-drone-5b8148",
+        "src_in": 6.517,
+        "src_out": 7.947,
+        "tl_in": 129.077,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c091",
+        "asset": "20260728-drone-688974",
+        "src_in": 12.065,
+        "src_out": 13.494,
+        "tl_in": 130.507,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c092",
+        "asset": "20260729-drone-f7e055",
+        "src_in": 8.305,
+        "src_out": 9.446,
+        "tl_in": 131.936,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c093",
+        "asset": "20260729-drone-e226dd",
+        "src_in": 23.405,
+        "src_out": 24.643,
+        "tl_in": 133.077,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c094",
+        "asset": "20260730-drone-b19ae7",
+        "src_in": 21.417,
+        "src_out": 22.377,
+        "tl_in": 134.315,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c095",
+        "asset": "20260729-drone-61b12e",
+        "src_in": 16.885,
+        "src_out": 17.834,
+        "tl_in": 135.275,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c096",
+        "asset": "20260730-drone-6690ab",
+        "src_in": 1.561,
+        "src_out": 2.51,
+        "tl_in": 136.224,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c097",
+        "asset": "20260729-drone-92f6d7",
+        "src_in": 40.978,
+        "src_out": 41.938,
+        "tl_in": 137.173,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c098",
+        "asset": "20260731-drone-8044d3",
+        "src_in": 1.427,
+        "src_out": 2.377,
+        "tl_in": 138.133,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c099",
+        "asset": "20260729-drone-0a2128",
+        "src_in": 12.013,
+        "src_out": 12.962,
+        "tl_in": 139.083,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c100",
+        "asset": "20260730-drone-488af7",
+        "src_in": 3.246,
+        "src_out": 4.195,
+        "tl_in": 140.032,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c101",
+        "asset": "20260729-drone-79c916",
+        "src_in": 29.183,
+        "src_out": 30.143,
+        "tl_in": 140.981,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c102",
+        "asset": "20260729-drone-82a846",
+        "src_in": 12.088,
+        "src_out": 13.038,
+        "tl_in": 141.941,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c103",
+        "asset": "20260730-drone-b7bed7",
+        "src_in": 59.327,
+        "src_out": 60.276,
+        "tl_in": 142.891,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c104",
+        "asset": "20260729-drone-399b5f",
+        "src_in": 20.9,
+        "src_out": 21.86,
+        "tl_in": 143.84,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c105",
+        "asset": "20260731-drone-a04b74",
+        "src_in": 4.48,
+        "src_out": 5.429,
+        "tl_in": 144.8,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c106",
+        "asset": "20260729-drone-c01e11",
+        "src_in": 9.435,
+        "src_out": 10.385,
+        "tl_in": 145.749,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c107",
+        "asset": "20260729-drone-e68648",
+        "src_in": 18.152,
+        "src_out": 19.101,
+        "tl_in": 146.699,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c108",
+        "asset": "20260729-drone-799b7a",
+        "src_in": 9.43,
+        "src_out": 10.39,
+        "tl_in": 147.648,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c109",
+        "asset": "20260730-drone-e02ec6",
+        "src_in": 8.826,
+        "src_out": 9.775,
+        "tl_in": 148.608,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c110",
+        "asset": "20260729-drone-d64baa",
+        "src_in": 41.258,
+        "src_out": 42.208,
+        "tl_in": 149.557,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c111",
+        "asset": "20260730-drone-b3b3a0",
+        "src_in": 10.206,
+        "src_out": 11.166,
+        "tl_in": 150.507,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c112",
+        "asset": "20260729-drone-9daefa",
+        "src_in": 24.542,
+        "src_out": 25.491,
+        "tl_in": 151.467,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c113",
+        "asset": "20260729-drone-55d2e3",
+        "src_in": 29.23,
+        "src_out": 30.179,
+        "tl_in": 152.416,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c114",
+        "asset": "20260731-drone-123000",
+        "src_in": 141.879,
+        "src_out": 142.839,
+        "tl_in": 153.365,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c115",
+        "asset": "20260729-drone-b764c0",
+        "src_in": 12.012,
+        "src_out": 12.962,
+        "tl_in": 154.325,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c116",
+        "asset": "20260730-drone-60547e",
+        "src_in": 11.663,
+        "src_out": 12.612,
+        "tl_in": 155.275,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c117",
+        "asset": "20260731-drone-61365c",
+        "src_in": 12.363,
+        "src_out": 13.312,
+        "tl_in": 156.224,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c118",
+        "asset": "20260731-drone-56e1eb",
+        "src_in": 7.775,
+        "src_out": 8.725,
+        "tl_in": 157.173,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c119",
+        "asset": "20260728-drone-3feda7",
+        "src_in": 74.793,
+        "src_out": 77.293,
+        "tl_in": 158.123,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c120",
+        "asset": "20260729-drone-1fb491",
+        "src_in": 27.587,
+        "src_out": 30.087,
+        "tl_in": 160.623,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c121",
+        "asset": "20260728-drone-9e4fe2",
+        "src_in": 27.12,
+        "src_out": 29.62,
+        "tl_in": 163.123,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c122",
+        "asset": "20260728-drone-00a3ae",
+        "src_in": 18.745,
+        "src_out": 21.245,
+        "tl_in": 165.623,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c123",
+        "asset": "20260728-drone-2abc70",
+        "src_in": 8.001,
+        "src_out": 10.501,
+        "tl_in": 168.123,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c124",
+        "asset": "20260728-drone-3f5998",
+        "src_in": 30.932,
+        "src_out": 33.432,
+        "tl_in": 170.623,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c125",
+        "asset": "20260728-drone-4cae48",
+        "src_in": 24.084,
+        "src_out": 26.584,
+        "tl_in": 173.123,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c126",
+        "asset": "20260729-drone-ef19b3",
+        "src_in": 5.365,
+        "src_out": 7.865,
+        "tl_in": 175.623,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "c127",
+        "asset": "20260724-drone-c794de",
+        "src_in": 8.963,
+        "src_out": 10.84,
+        "tl_in": 178.123,
+        "speed": 1.0,
+        "effects": []
+      }
+    ],
+    "overlay": [],
+    "map": [],
+    "audio": [
+      {
+        "id": "music",
+        "src": "music/Nordlichter im Sturm - Suno.mp3",
+        "tl_in": 0.0,
+        "dur": 180.0,
+        "gain_db": -1.0
+      }
+    ]
+  }
+}
