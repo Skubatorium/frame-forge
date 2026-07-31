@@ -1,0 +1,14 @@
+primary_color: '#12222f'
+secondary_color: '#2c4a5a'
+accent_color: '#e0a458'
+text_color: '#ffffff'
+font_display: Helvetica Neue
+font_text: Helvetica Neue
+motion:
+  fade_in_s: 0.5
+  fade_out_s: 0.6
+  overlay_hold_min_s: 2.0
+type_scale:
+  title: 96
+  subtitle: 36
+  caption: 28
