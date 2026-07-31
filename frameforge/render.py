@@ -241,17 +241,40 @@ def build_filtergraph(
         cur_video = graded
 
     # -- Overlay: PNGs mit Alpha, Zeitfenster ueber `enable` -------------------------
+    # Optional sanftes Ein-/Ausblenden ueber `anim.fade_in_s`/`anim.fade_out_s` (Alpha-Fade).
     for j, overlay in enumerate(timeline.tracks.overlay):
-        idx = add_input(
-            ["-loop", "1", "-framerate", str(timeline.fps), "-i", str(export_root / overlay.png)]
-        )
+        anim = overlay.anim or {}
+        fi = float(anim.get("fade_in_s", 0) or 0)
+        fo = float(anim.get("fade_out_s", 0) or 0)
         ov_label = f"ov{j}"
         next_video = f"vov{j}"
-        filters.append(f"[{idx}:v]format=rgba[{ov_label}]")
-        filters.append(
-            f"[{cur_video}][{ov_label}]overlay=x=0:y=0:shortest=1:"
-            f"enable='between(t,{overlay.tl_in},{overlay.tl_in + overlay.dur})'[{next_video}]"
-        )
+        if fi > 0 or fo > 0:
+            # Endliches, gefadetes Clip an tl_in verschieben (fade relativ zum eigenen Start).
+            idx = add_input(
+                ["-loop", "1", "-t", f"{overlay.dur:.3f}", "-framerate", str(timeline.fps),
+                 "-i", str(export_root / overlay.png)]
+            )
+            chain = "format=rgba"
+            if fi > 0:
+                chain += f",fade=t=in:st=0:d={min(fi, overlay.dur):.3f}:alpha=1"
+            if fo > 0:
+                st = max(0.0, overlay.dur - fo)
+                chain += f",fade=t=out:st={st:.3f}:d={min(fo, overlay.dur):.3f}:alpha=1"
+            chain += f",setpts=PTS+{overlay.tl_in}/TB"
+            filters.append(f"[{idx}:v]{chain}[{ov_label}]")
+            filters.append(
+                f"[{cur_video}][{ov_label}]overlay=x=0:y=0:"
+                f"enable='between(t,{overlay.tl_in},{overlay.tl_in + overlay.dur})'[{next_video}]"
+            )
+        else:
+            idx = add_input(
+                ["-loop", "1", "-framerate", str(timeline.fps), "-i", str(export_root / overlay.png)]
+            )
+            filters.append(f"[{idx}:v]format=rgba[{ov_label}]")
+            filters.append(
+                f"[{cur_video}][{ov_label}]overlay=x=0:y=0:shortest=1:"
+                f"enable='between(t,{overlay.tl_in},{overlay.tl_in + overlay.dur})'[{next_video}]"
+            )
         cur_video = next_video
 
     # -- Karten-Clips: eigene kleine Videos (mit Alpha), unten rechts eingeblendet ---
