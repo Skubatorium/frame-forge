@@ -1598,8 +1598,8 @@
         }
       },
       {
-        "id": "ov-label-Flåm",
-        "png": "overlays/label-Flåm.png",
+        "id": "ov-label-Aurland",
+        "png": "overlays/label-Aurland.png",
         "tl_in": 61.888,
         "dur": 5.5,
         "anim": {
