@@ -1,0 +1,31 @@
+# Test-Export: Mischung aus Timelapse-Journey (Basis) und Punch-Teaser.
+# 3-Minuten-Überblicks-Trailer, chronologisch, Karte als Leitmotiv, verteilte Action-Höhepunkte.
+preset: timelapse-journey
+target_duration_s: 180
+language: de
+
+# --- Overrides Richtung Punch-Teaser (aufgepunkt gegenüber dem Basis-Preset) ---
+pacing: { min_s: 0.6, max_s: 3.5, rhythm: beat_driven }
+transition_vocabulary: [hard_cut, speed_ramp, whip_pan]
+color_grade: { mood: vivid, contrast: high }
+text_density: minimal
+music_energy_curve: escalate_to_drop
+map_usage: leitmotif
+
+# --- Inhaltliche Vorgaben (vom story-architect zu berücksichtigen) ---
+chronological: true
+content_mix:
+  landscape: 0.70
+  family: 0.30
+selection:
+  prefer_source: drone        # überwiegend Drohnen-Shots
+  min_rating: 4               # nur die besten Szenen
+notes: >-
+  Flotter Überblick über die ganze Reise (Skien -> Geilo -> Aurland/Flåm -> Geiranger ->
+  Lom -> Uvdal), streng chronologisch. Karte füllt sich als wiederkehrendes Leitmotiv zwischen
+  den Etappen. Verteilte Action-/Highlight-Momente (Speed-Ramps, harte Beat-Cuts) statt
+  gleichförmigem Tempo. Mischung ~70% Landschaft / 30% Familie. Überwiegend Drohnenmaterial,
+  beste Szenen (Rating >= 4). Kein durchgehender O-Ton, Musik treibt.
+
+must_shots: []
+forbidden_shots: []
