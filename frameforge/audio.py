@@ -22,6 +22,8 @@ def analyze_track(path: Path) -> dict:
     """
     y, sr = librosa.load(str(path), sr=None, mono=True)
     tempo, beat_frames = librosa.beat.beat_track(y=y, sr=sr)
+    # Neuere librosa-Versionen liefern `tempo` als (1,)-Array statt Skalar -> robust auspacken.
+    tempo = float(np.atleast_1d(tempo)[0])
     beat_times = librosa.frames_to_time(beat_frames, sr=sr)
 
     rms = librosa.feature.rms(y=y)[0]
@@ -36,7 +38,7 @@ def analyze_track(path: Path) -> dict:
         t += _ENERGY_SAMPLE_INTERVAL_S
 
     return {
-        "bpm": round(float(tempo), 2),
+        "bpm": round(tempo, 2),
         "duration": round(duration, 2),
         "beat_grid": [round(float(b), 3) for b in beat_times],
         "energy_curve": energy_curve,
