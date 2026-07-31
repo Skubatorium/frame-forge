@@ -367,12 +367,14 @@ def index_todo(
     if not preps:
         console.print("Nichts offen — alle vorbereiteten Assets sind indiziert.")
         return
+    # Plain-Ausgabe (typer.echo, nicht Rich): sonst bricht ein schmales Terminal die
+    # Keyframe-Pfade um und der Agent parst sie falsch.
     for p in preps:
         kfs = p.get("keyframes", [])
         mid = next((k for k in kfs if "_kf01" in k), kfs[0] if kfs else "")
         digest = p["hash"].split(":")[-1]
-        console.print(f"{digest}\t{p['kind']}\t{p.get('source_guess', 'unknown')}\t{mid}")
-    console.print(f"[dim]{len(preps)} offen. Pro Asset: Keyframe ansehen, dann 'index-asset'.[/dim]")
+        typer.echo(f"{digest}\t{p['kind']}\t{p.get('source_guess', 'unknown')}\t{mid}")
+    typer.echo(f"# {len(preps)} offen. Pro Asset: Keyframe ansehen, dann 'index-asset'.")
 
 
 @app.command(name="index-asset")
