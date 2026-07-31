@@ -373,8 +373,9 @@ def index_todo(
         kfs = p.get("keyframes", [])
         mid = next((k for k in kfs if "_kf01" in k), kfs[0] if kfs else "")
         digest = p["hash"].split(":")[-1]
-        typer.echo(f"{digest}\t{p['kind']}\t{p.get('source_guess', 'unknown')}\t{mid}")
-    typer.echo(f"# {len(preps)} offen. Pro Asset: Keyframe ansehen, dann 'index-asset'.")
+        folder = p.get("path", "").split("/")[0]  # Tages-/Ort-Ordner als Kontext-Hinweis
+        typer.echo(f"{digest}\t{p['kind']}\t{p.get('source_guess', 'unknown')}\t{folder}\t{mid}")
+    typer.echo(f"# {len(preps)} offen. Spalten: hash|kind|quelle|ordner|keyframe. Dann 'index-asset'.")
 
 
 @app.command(name="index-asset")
