@@ -52,10 +52,11 @@ def _check_video_coverage(timeline: Timeline) -> list[str]:
     issues = []
     clips = sorted(timeline.tracks.video, key=lambda c: c.tl_in)
     prev_end = 0.0
-    for clip in clips:
+    for i, clip in enumerate(clips):
+        # transition_in am ERSTEN Clip meint "Fade aus Schwarz", nicht Crossfade vom Vorgänger.
         xfade = (
             clip.transition_in.dur
-            if clip.transition_in and clip.transition_in.type in _CROSSFADE_TYPES
+            if i > 0 and clip.transition_in and clip.transition_in.type in _CROSSFADE_TYPES
             else 0.0
         )
         overlap = prev_end - clip.tl_in  # > 0: Clip beginnt vor dem Ende des vorigen

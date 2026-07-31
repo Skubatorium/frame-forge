@@ -266,6 +266,24 @@ def build_filtergraph(
         )
         cur_video = next_video
 
+    # -- Schwarzblende ganz außen: fade-in aus Schwarz / fade-out nach Schwarz --------
+    # Gesteuert über transition_in/out (Typ "fade") am ersten/letzten Video-Clip. Liegt bewusst
+    # als letzter Schritt über allem (auch Overlays/Karte), damit wirklich alles ein-/ausblendet.
+    if clips:
+        first_t = clips[0].transition_in
+        if first_t and first_t.type == "fade":
+            d = min(first_t.dur, timeline.duration)
+            out = f"{cur_video}_fin"
+            filters.append(f"[{cur_video}]fade=t=in:st=0:d={d:.3f}[{out}]")
+            cur_video = out
+        last_t = clips[-1].transition_out
+        if last_t and last_t.type == "fade":
+            d = min(last_t.dur, timeline.duration)
+            st = max(0.0, timeline.duration - d)
+            out = f"{cur_video}_fout"
+            filters.append(f"[{cur_video}]fade=t=out:st={st:.3f}:d={d:.3f}[{out}]")
+            cur_video = out
+
     graph.video_label = cur_video
 
     # -- Audio: pro Clip trimmen/verzoegern/Pegel, Musik-Ducking, dann amix ----------

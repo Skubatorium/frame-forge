@@ -792,6 +792,35 @@ def name_person(project: str, cluster: str, name: str) -> None:
 
 
 @app.command()
+def exclude(
+    project: str,
+    asset_id: str,
+    reason: str = typer.Option("", "--reason", help="Warum (Notiz, optional)"),
+    undo: bool = typer.Option(False, "--undo", help="Sperre wieder aufheben"),
+) -> None:
+    """Sperrt ein Asset dauerhaft fuer ALLE Exporte (z.B. Fehlaufnahme) — oder hebt die Sperre auf.
+
+    Setzt `exclude` im `assets.json`-Eintrag; `frameforge query` (und damit die Clip-Auswahl
+    aller Filme) ueberspringt gesperrte Assets. `--undo` entfernt die Sperre.
+    """
+    proj = _resolve_or_fail(project)
+    assets = {a["id"]: a for a in index_module.load_assets(proj)}
+    asset = assets.get(asset_id)
+    if asset is None:
+        raise _fail(f"Asset '{asset_id}' nicht in assets.json.")
+    if undo:
+        asset.pop("exclude", None)
+        asset.pop("exclude_reason", None)
+    else:
+        asset["exclude"] = True
+        if reason:
+            asset["exclude_reason"] = reason
+    index_module.write_asset(proj, asset)
+    state = "entsperrt" if undo else "gesperrt"
+    console.print(f"[green]Asset '{asset_id}' {state}.[/green]" + (f" ({reason})" if reason and not undo else ""))
+
+
+@app.command()
 def faces(project: str) -> None:
     """Gesichtserkennung fuer Foto-Assets — expliziter Opt-in, kein Teil von `frameforge index`.
 

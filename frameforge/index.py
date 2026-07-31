@@ -33,6 +33,8 @@ def query_assets(
     """
 
     def matches(asset: dict) -> bool:
+        if asset.get("exclude"):
+            return False  # dauerhaft gesperrt (z.B. Fehlaufnahme) — nie in einem Film
         if tag is not None and tag not in asset.get("content", {}).get("tags", []):
             return False
         if place is not None and place != asset.get("gps", {}).get("place"):
