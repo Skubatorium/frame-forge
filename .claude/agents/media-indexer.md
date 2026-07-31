@@ -11,15 +11,15 @@ dessen, was CV-Metriken schon liefern.
 
 ## Aufgabe
 
-Deine Eingabe sind die **Prep-Dateien**, die `frameforge prepare-index` erzeugt hat
-(`frameforge.preindex.load_prep(project)` liefert die noch nicht indizierten als Liste von
-Dicts). Jedes Prep-Dict enthält `id`, `hash`, `path`, `kind`, `source_guess`, die technischen
-Metadaten (`probe`, `quality`, `motion`, `scenes` bzw. `captured_at`/`gps`) und `keyframes`
-(absolute JPEG-Pfade).
+Deine Eingabe ist die kompakte Worklist aus `frameforge index-todo <projekt> [--limit N]` —
+eine Zeile je offenem Asset: `hash <TAB> kind <TAB> source_guess <TAB> keyframe-pfad`. Die
+technischen Metadaten stecken schon in den Prep-Dateien; du fügst nur Inhalt hinzu.
 
-Für jedes zugewiesene Asset:
-1. Lies die `keyframes` aus dem Prep-Dict (mit dem Read-Tool) und die technischen Metadaten
-   (`probe`/`quality`/`scenes`) — die stehen schon im Prep-Dict, du extrahierst nichts selbst.
+**Arbeite in kleinen Batches (z.B. 8–10 Assets) und INKREMENTELL — nach jedem Asset sofort
+schreiben, nie sammeln.** So bleibt nichts hängen.
+
+Für jedes Asset der Worklist:
+1. Sieh dir **nur das eine** Keyframe aus der Zeile mit dem Read-Tool an (nicht mehrere).
 2. Schreibe `content.summary` (1 Satz, faktenbasiert: was ist zu sehen, Licht, Bewegung),
    `content.tags` (4–8 kurze Tags, deutsch, für Suche gedacht — nicht literarisch),
    `content.people` (bool), `content.usable_as` (z.B. `establisher`, `b-roll`, `outro`),
@@ -31,11 +31,11 @@ Für jedes zugewiesene Asset:
    klar etwas anderes (z.B. eindeutiger Drohnen-Vogelperspektive-Flug trotz fehlender EXIF).
    Setze das Feld immer — es macht Auswahl wie „nur Drohnen-Shots" (`query --source drone`)
    erst möglich.
-3. Baue den vollständigen Asset-Eintrag = **Prep-Dict + deine `content`-Felder + `rating` +
-   `source`** (behalte `id`, `hash`, `path`, `kind` und die technischen Felder aus dem Prep) und
-   schreibe ihn mit `frameforge.index.write_asset(project, asset)` (schreibt `assets.json` **und**
-   `index/assets/<id>.md`, Schema: Plan §4). Beispiel-Aufruf via Bash:
-   `uv run python -c "import json; from frameforge.project import resolve_project as r; from frameforge.index import write_asset; write_asset(r('<projekt>'), json.loads('''<asset-json>'''))"`.
+3. Schreibe SOFORT mit **einem** Befehl (lädt die Prep-Datei, mergt deine Felder, schreibt
+   `assets.json` + `index/assets/<id>.md`):
+   `frameforge index-asset <projekt> <hash> --summary "…" --tags "a,b,c" --usable "establisher,b-roll" --rating 4 --source drone [--people] [--place "Ort"]`
+   `<hash>` ist der Hex-Wert aus der ersten Spalte der Worklist. Kein Python-`-c`, keine großen
+   JSON-Blöcke.
 
 ## Constraints
 

@@ -9,8 +9,8 @@ import pytest
 
 from frameforge import ingest as ingest_module
 from frameforge import project as project_module
-from frameforge.index import write_asset
-from frameforge.preindex import load_prep, prepare_index
+from frameforge.index import load_assets, write_asset
+from frameforge.preindex import index_prepared_asset, load_prep, prepare_index
 from frameforge.project import ProjectConfig, resolve_project
 
 FIXTURES = Path(__file__).parent / "fixtures"
@@ -71,6 +71,40 @@ def test_prepare_index_filter_and_limit(proj):
 
     none = prepare_index(proj, filter_substr="gibtsnicht")
     assert none.prepared == []
+
+
+def test_index_prepared_asset_merges_and_writes(proj):
+    prepare_index(proj)
+    prep = load_prep(proj)[0]
+    digest = prep["hash"]
+
+    asset = index_prepared_asset(
+        proj,
+        digest,
+        summary="Drohne über dem See",
+        tags=["see", "drohne", "luftaufnahme"],
+        usable_as=["establisher"],
+        rating=4,
+        source="drone",
+        people=False,
+    )
+    assert asset["content"]["summary"] == "Drohne über dem See"
+    assert asset["rating"] == 4 and asset["source"] == "drone"
+    assert asset["hash"] == digest and asset["id"] == prep["id"]  # technische Felder erhalten
+
+    stored = {a["id"]: a for a in load_assets(proj)}
+    assert prep["id"] in stored
+    # In assets.json geschrieben -> nicht mehr offen.
+    assert all(p["hash"] != digest for p in load_prep(proj))
+
+
+def test_index_prepared_asset_rejects_bad_source_and_rating(proj):
+    prepare_index(proj)
+    digest = load_prep(proj)[0]["hash"]
+    with pytest.raises(ValueError):
+        index_prepared_asset(proj, digest, summary="x", tags=["a"], usable_as=[], rating=4, source="quatsch")
+    with pytest.raises(ValueError):
+        index_prepared_asset(proj, digest, summary="x", tags=["a"], usable_as=[], rating=9, source="drone")
 
 
 def test_load_prep_excludes_indexed_assets(proj):

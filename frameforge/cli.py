@@ -350,6 +350,63 @@ def index_cmd(project: str) -> None:
     )
 
 
+@app.command(name="index-todo")
+def index_todo(
+    project: str,
+    limit: int = typer.Option(None, "--limit", help="Nur die ersten N offenen Assets zeigen"),
+) -> None:
+    """Kompakte Worklist der noch nicht indizierten (vorbereiteten) Assets fuer den media-indexer.
+
+    Eine Zeile je Asset: `hash | kind | source_guess | ein-Keyframe-Pfad`. Bewusst schlank —
+    der Agent liest das Keyframe und ruft dann `frameforge index-asset`, ohne grosse JSON-Dumps.
+    """
+    proj = _resolve_or_fail(project)
+    preps = preindex_module.load_prep(proj)
+    if limit is not None:
+        preps = preps[:limit]
+    if not preps:
+        console.print("Nichts offen — alle vorbereiteten Assets sind indiziert.")
+        return
+    for p in preps:
+        kfs = p.get("keyframes", [])
+        mid = next((k for k in kfs if "_kf01" in k), kfs[0] if kfs else "")
+        digest = p["hash"].split(":")[-1]
+        console.print(f"{digest}\t{p['kind']}\t{p.get('source_guess', 'unknown')}\t{mid}")
+    console.print(f"[dim]{len(preps)} offen. Pro Asset: Keyframe ansehen, dann 'index-asset'.[/dim]")
+
+
+@app.command(name="index-asset")
+def index_asset_cmd(
+    project: str,
+    asset_hash: str = typer.Argument(..., help="Hash des Assets (Hex, aus 'index-todo')"),
+    summary: str = typer.Option(..., "--summary", help="1 Satz, faktenbasiert"),
+    tags: str = typer.Option(..., "--tags", help="Komma-getrennt, 4-8 kurze deutsche Tags"),
+    usable_as: str = typer.Option("", "--usable", help="Komma-getrennt: establisher,b-roll,outro …"),
+    rating: int = typer.Option(..., "--rating", help="1-5 Nutzbarkeit fuer den Schnitt"),
+    source: str = typer.Option(..., "--source", help="drone/phone/camera/action_cam/unknown"),
+    people: bool = typer.Option(False, "--people/--no-people", help="Personen im Bild?"),
+    place: str = typer.Option(None, "--place", help="Ortsname (optional)"),
+) -> None:
+    """Schreibt einen indizierten Asset-Eintrag (Prep + Inhaltsfelder) — ein Befehl je Asset."""
+    proj = _resolve_or_fail(project)
+    digest = asset_hash if asset_hash.startswith("sha256:") else f"sha256:{asset_hash}"
+    try:
+        asset = preindex_module.index_prepared_asset(
+            proj,
+            digest,
+            summary=summary,
+            tags=[t.strip() for t in tags.split(",") if t.strip()],
+            usable_as=[u.strip() for u in usable_as.split(",") if u.strip()],
+            rating=rating,
+            source=source,
+            people=people,
+            place=place,
+        )
+    except (FileNotFoundError, ValueError) as exc:
+        raise _fail(str(exc)) from exc
+    console.print(f"[green]indiziert:[/green] {asset['id']}  (rating {rating}, {source})")
+
+
 @app.command(name="prepare-index")
 def prepare_index_cmd(
     project: str,

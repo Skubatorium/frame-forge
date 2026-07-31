@@ -165,6 +165,57 @@ def prepare_index(
     return result
 
 
+def load_prep_by_hash(project: Project, digest: str) -> dict:
+    """Ein einzelnes Prep-Dict laden (per Hash)."""
+    prep_path = project.cache_dir / "prep" / f"{digest}.json"
+    if not prep_path.exists():
+        raise FileNotFoundError(f"Keine Prep-Datei für Hash {digest} — erst 'prepare-index'.")
+    return json.loads(prep_path.read_text())
+
+
+def index_prepared_asset(
+    project: Project,
+    digest: str,
+    *,
+    summary: str,
+    tags: list[str],
+    usable_as: list[str],
+    rating: int,
+    source: str,
+    people: bool = False,
+    place: str | None = None,
+) -> dict:
+    """Mergt die vom `media-indexer` vergebenen Inhaltsfelder in ein Prep-Dict und schreibt es.
+
+    Deterministischer Schreibpfad: lädt `prep/<hash>.json` (technische Felder), ergänzt
+    `content`, `rating`, `source` und ruft `index.write_asset`. So braucht der Agent pro Asset
+    nur einen Befehl statt JSON-Bastelei. Gibt den geschriebenen Eintrag zurück.
+    """
+    if source not in probe_module.SOURCE_TYPES:
+        raise ValueError(f"source '{source}' nicht in {probe_module.SOURCE_TYPES}")
+    if not 1 <= rating <= 5:
+        raise ValueError("rating muss 1..5 sein")
+
+    asset = load_prep_by_hash(project, digest)
+    asset["source"] = source
+    asset["rating"] = rating
+    asset["content"] = {
+        "summary": summary,
+        "tags": tags,
+        "people": people,
+        "usable_as": usable_as,
+    }
+    if place:
+        gps = asset.get("gps") or {}
+        gps["place"] = place
+        asset["gps"] = gps
+
+    from frameforge.index import write_asset
+
+    write_asset(project, asset)
+    return asset
+
+
 def load_prep(project: Project) -> list[dict]:
     """Vorbereitete, **noch nicht indizierte** Assets — für den `media-indexer`.
 
