@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import json
+
 import pytest
 from pydantic import ValidationError
 
@@ -84,3 +86,57 @@ def test_load_save_roundtrip(tmp_path):
 
     reloaded = Timeline.load(path)
     assert reloaded == tl
+
+
+# -- Audit-Fix F4: Zusatzfelder ueberleben das Zurueckschreiben ---------------------
+
+
+def test_unknown_fields_survive_a_roundtrip(tmp_path):
+    """`color-match` u.a. schreiben timeline.json zurueck — nichts darf dabei verloren gehen."""
+    raw = {
+        "version": 1,
+        "export": "e",
+        "fps": 25,
+        "resolution": [320, 240],
+        "duration": 2.0,
+        "notes": "Kapitelaufteilung siehe beatsheet.md",
+        "tracks": {
+            "video": [
+                {
+                    "id": "c1",
+                    "asset": "a1",
+                    "src_in": 0,
+                    "src_out": 1,
+                    "tl_in": 0,
+                    "kommentar": "bester Take, nicht ersetzen",
+                }
+            ],
+            "audio": [
+                {"id": "m1", "src": "music/t.wav", "tl_in": 0, "quelle": "selbst erzeugt"}
+            ],
+        },
+    }
+    path = tmp_path / "timeline.json"
+    path.write_text(json.dumps(raw))
+
+    timeline = Timeline.load(path)
+    timeline.save(path)
+    back = json.loads(path.read_text())
+
+    assert back["notes"] == "Kapitelaufteilung siehe beatsheet.md"
+    assert back["tracks"]["video"][0]["kommentar"] == "bester Take, nicht ersetzen"
+    assert back["tracks"]["audio"][0]["quelle"] == "selbst erzeugt"
+
+
+def test_roundtrip_keeps_known_fields_unchanged(tmp_path):
+    path = tmp_path / "timeline.json"
+    original = Timeline(
+        export="e",
+        fps=25,
+        resolution=(320, 240),
+        duration=2.0,
+        tracks={"video": [{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0}]},
+    )
+    original.save(path)
+    reloaded = Timeline.load(path)
+    assert reloaded.model_dump() == original.model_dump()

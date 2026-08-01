@@ -77,7 +77,7 @@ Rückwärtskompatibilität, Zusammenspiel, Testtiefe, Timing. Befunde und Fixes 
 | F1 | kritisch | Ken-Burns vervielfachte die Renderdauer (`zoompan d=frames` → `frames²`) | ✅ `1d13e2a` |
 | F2 | hoch | `assign-places` erfindet Orte über den GPX-Track ohne Zeittoleranz | ✅ `0f21d5e` |
 | F3 | hoch | Dauer-Invariante nirgends geprüft, `black_transition_extra_s` ohne Aufrufer | ✅ `fa87597` |
-| F4 | mittel | `color-match` verliert unbekannte Felder in `timeline.json` | ⬜ offen |
+| F4 | mittel | `color-match` verliert unbekannte Felder in `timeline.json` | ✅ `<p4>` |
 | F5 | mittel | Alte Token-Sets rendern nicht mehr (neue Pflicht-Tokens in `lower-third.svg`) | ⬜ offen |
 | F6 | mittel | `render_hud_frames` stürzt bei leerem Track ab (`IndexError`) | ⬜ offen |
 | F7 | niedrig | `total_ascent_m` ohne Aufrufer — Plan B1 „kumulierte Höhenmeter" fehlt im HUD | ⬜ offen |
@@ -113,6 +113,24 @@ Der Fehler stammt aus Ausbaustufe B1, nicht aus Plan 0003 — keine der beiden e
 nutzt `effects`, deshalb ist nie ein falsches Video entstanden. Kombinationsfall danach geprüft
 (Schwarzblende + Crossfade + Ken-Burns + Audio-Fades in einer Timeline): `timeline.duration`
 4,60 s, gerendert 4,60 s.
+
+### F4 — Zurückschreiben verlor Felder in `timeline.json` (2026-08-01)
+
+`frameforge color-match` ist das erste Kommando, das eine `timeline.json` **zurückschreibt**.
+Weder `Timeline` noch die Clip-Modelle erlaubten Zusatzfelder (Pydantic-Default: unbekannte
+Schlüssel werden still verworfen), also gingen sie beim Schreiben verloren:
+
+```
+top-level "notes" erhalten: False | clip-feld "kommentar" erhalten: False
+```
+
+Stiller Datenverlust in der Single Source of Truth — betrifft auch `Timeline.save`. Fix:
+`extra="allow"` auf `Timeline`, `Tracks` und allen vier Clip-Modellen. Gegenüber vorher gibt es
+keinen Nachteil: ein Tippfehler im Feldnamen wurde auch bisher nicht gemeldet, nur verworfen —
+jetzt bleibt er wenigstens in der Datei stehen und fällt beim Lesen auf.
+
+Am echten Material gegengeprüft: `test-timelapse-journey` (172 Clips) laden + speichern →
+**kein Schlüssel verloren**. 2 neue Tests in `tests/test_timeline.py`.
 
 ### F3 — Dauer-Invariante und toter Code (2026-08-01)
 

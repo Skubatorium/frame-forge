@@ -52,6 +52,10 @@ class ColorMatch(BaseModel):
 
 
 class VideoClip(BaseModel):
+    # extra="allow": handgepflegte Zusatzfelder (Notizen, Herkunftsvermerke) ueberleben
+    # jedes Zurueckschreiben der Datei. Siehe Kommentar an `Timeline`.
+    model_config = ConfigDict(extra="allow")
+
     id: str
     asset: str
     src_in: float = Field(ge=0)
@@ -75,6 +79,10 @@ class VideoClip(BaseModel):
 
 
 class OverlayClip(BaseModel):
+    # extra="allow": handgepflegte Zusatzfelder (Notizen, Herkunftsvermerke) ueberleben
+    # jedes Zurueckschreiben der Datei. Siehe Kommentar an `Timeline`.
+    model_config = ConfigDict(extra="allow")
+
     id: str
     png: str
     tl_in: float = Field(ge=0)
@@ -83,6 +91,10 @@ class OverlayClip(BaseModel):
 
 
 class MapClip(BaseModel):
+    # extra="allow": handgepflegte Zusatzfelder (Notizen, Herkunftsvermerke) ueberleben
+    # jedes Zurueckschreiben der Datei. Siehe Kommentar an `Timeline`.
+    model_config = ConfigDict(extra="allow")
+
     id: str
     clip: str
     tl_in: float = Field(ge=0)
@@ -91,6 +103,10 @@ class MapClip(BaseModel):
 
 
 class AudioClip(BaseModel):
+    # extra="allow": handgepflegte Zusatzfelder (Notizen, Herkunftsvermerke) ueberleben
+    # jedes Zurueckschreiben der Datei. Siehe Kommentar an `Timeline`.
+    model_config = ConfigDict(extra="allow")
+
     id: str
     src: str | None = None
     asset: str | None = None
@@ -111,6 +127,10 @@ class AudioClip(BaseModel):
 
 
 class Tracks(BaseModel):
+    # extra="allow": handgepflegte Zusatzfelder (Notizen, Herkunftsvermerke) ueberleben
+    # jedes Zurueckschreiben der Datei. Siehe Kommentar an `Timeline`.
+    model_config = ConfigDict(extra="allow")
+
     video: list[VideoClip] = Field(default_factory=list)
     overlay: list[OverlayClip] = Field(default_factory=list)
     map: list[MapClip] = Field(default_factory=list)
@@ -121,6 +141,13 @@ class Tracks(BaseModel):
 
 
 class Timeline(BaseModel):
+    # `extra="allow"`: `timeline.json` ist Single Source of Truth und wird von Agenten und von
+    # Hand gepflegt. Ohne das verlieren wir alle Felder, die das Schema (noch) nicht kennt — z.B.
+    # Notizen des timeline-builders — sobald ein Kommando die Datei zurueckschreibt
+    # (`frameforge color-match`, `Timeline.save`). Stiller Datenverlust in der wichtigsten
+    # Datei des Projekts; Audit-Befund F4.
+    model_config = ConfigDict(extra="allow")
+
     version: int = 1
     export: str
     fps: float = Field(gt=0)
