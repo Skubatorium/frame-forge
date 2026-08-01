@@ -54,12 +54,12 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | A5 | `places-todo` / `set-place` — Lückenliste für unklare Clips | ✅ fertig | `243dc8a` |
 | A6 | `/ff-route` + Agent `route-planner` (Plausibilität) | ✅ fertig | `4138e99` |
 | B1 | Distanz + Höhenprofil (`haversine_km`, `cumulative_km`, `elevation_profile`) | ✅ fertig | `4138e99` |
-| B2 | Mitwandernder Viewport (Web-Mercator, `viewport="follow"`, `dwell_s`) | ✅ fertig | `<p>` |
-| B3 | Etappen-HUD (`templates/svg/map-hud.svg`, stufenweise gerendert) | ✅ fertig | `<p>` |
-| B4 | `map-animator`-Agent erweitern | ✅ fertig | `<p>` |
+| B2 | Mitwandernder Viewport (Web-Mercator, `viewport="follow"`, `dwell_s`) | ✅ fertig | `a314f07` |
+| B3 | Etappen-HUD (`templates/svg/map-hud.svg`, stufenweise gerendert) | ✅ fertig | `a314f07` |
+| B4 | `map-animator`-Agent erweitern | ✅ fertig | `a314f07` |
 | B5 | Routengeometrie beschaffen (GPX / KML-Parser / Routing-Fallback) | ✅ fertig | `4138e99` |
 | C | Schwarzblende zwischen zwei Clips (`transition_in: black`) | ⬜ offen | — |
-| D1 | SVG-Templates aufwerten + relative Größen (`type_scale`) | ✅ fertig | `<p>` |
+| D1 | SVG-Templates aufwerten + relative Größen (`type_scale`) | ✅ fertig | `a314f07` |
 | D2 | Generierte Grafiken (Prompt-Bausteine, Hintergrund in Titel/Kapitel) | ⬜ offen | — |
 | F | Musik: `fade_in_s`/`fade_out_s`, `audio.segment_plan` | ⬜ offen | — |
 | G | Invalidierung bei neuem Material (`pipeline.pending_assets`, Fingerprint) | ⬜ offen | — |
