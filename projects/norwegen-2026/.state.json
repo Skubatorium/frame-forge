@@ -4,8 +4,10 @@
   "content_hashes": {},
   "exports": {
     "test-timelapse-journey": {
-      "phase": 8,
-      "content_hashes": {}
+      "phase": 10,
+      "content_hashes": {
+        "timeline": "6120b07f5167117844dfddeb905967c5c5235ba7ada2878e3cc846024f583a05"
+      }
     }
   }
 }
