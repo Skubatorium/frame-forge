@@ -60,7 +60,7 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | B5 | Routengeometrie beschaffen (GPX / KML-Parser / Routing-Fallback) | ✅ fertig | `4138e99` |
 | C | Schwarzblende zwischen zwei Clips (`transition_in: black`) | ✅ fertig | `15c6510` |
 | D1 | SVG-Templates aufwerten + relative Größen (`type_scale`) | ✅ fertig | `a314f07` |
-| D2 | Generierte Grafiken (Prompt-Bausteine, Hintergrund in Titel/Kapitel) | ✅ fertig | `<p>` |
+| D2 | Generierte Grafiken (Prompt-Bausteine, Hintergrund in Titel/Kapitel) | ✅ fertig | `d07168d` |
 | F | Musik: `fade_in_s`/`fade_out_s`, `audio.segment_plan` | ✅ fertig | `450d3ac` |
 | G | Invalidierung bei neuem Material (`pipeline.pending_assets`, Fingerprint) | ✅ fertig | `7b746bc` |
 | H1 | Farbstatistik messen (`analyze.color_stats` aus vorhandenen Keyframes) | ✅ fertig | `7f86f65` |
