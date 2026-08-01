@@ -653,3 +653,82 @@ def test_audio_fade_renders_end_to_end(proj):
     timeline.tracks.video[0].asset = "clip1"
     out_path = render_proxy(proj, export, timeline)
     assert probe_video(out_path)["dur"] == pytest.approx(2.0, abs=0.3)
+
+
+# -- H2: Farbangleichung zwischen Clips (Plan 0003) ---------------------------------
+
+_DARK_COOL = {"luma": 60.0, "temperature": -0.10, "std": {"r": 20.0, "g": 20.0, "b": 20.0}}
+_BRIGHT_WARM = {"luma": 140.0, "temperature": 0.10, "std": {"r": 40.0, "g": 40.0, "b": 40.0}}
+_MIDDLE = {"luma": 100.0, "temperature": 0.0, "std": {"r": 30.0, "g": 30.0, "b": 30.0}}
+
+
+def test_reference_is_the_median_of_the_used_clips():
+    from frameforge.render import reference_stats
+
+    reference = reference_stats([_DARK_COOL, _MIDDLE, _BRIGHT_WARM])
+    assert reference["luma"] == 100.0
+    assert reference["temperature"] == 0.0
+    assert reference_stats([{}, {}]) == {}
+
+
+def test_color_match_moves_towards_the_reference():
+    from frameforge.render import color_match_for
+
+    dark = color_match_for(_DARK_COOL, _MIDDLE)
+    bright = color_match_for(_BRIGHT_WARM, _MIDDLE)
+    assert dark.brightness > 0  # dunkler Clip wird aufgehellt
+    assert bright.brightness < 0
+    assert dark.temperature > 0  # kuehler Clip wird waermer gezogen
+    assert bright.temperature < 0
+
+
+def test_color_match_is_capped():
+    """Eine Nachtaufnahme darf nicht auf Tageslicht gezogen werden."""
+    from frameforge.render import COLOR_MATCH_LIMITS, color_match_for
+
+    night = {"luma": 5.0, "temperature": -0.9, "std": {"r": 2.0, "g": 2.0, "b": 2.0}}
+    day = {"luma": 200.0, "temperature": 0.4, "std": {"r": 60.0, "g": 60.0, "b": 60.0}}
+    soft = color_match_for(night, day, strength="soft")
+    max_brightness, max_saturation, max_temperature = COLOR_MATCH_LIMITS["soft"]
+    assert abs(soft.brightness) <= max_brightness
+    assert abs(soft.temperature) <= max_temperature
+    assert abs(soft.saturation - 1.0) <= max_saturation
+
+    strong = color_match_for(night, day, strength="strong")
+    assert abs(strong.brightness) > abs(soft.brightness)  # staerker, aber weiterhin gedeckelt
+
+
+def test_color_match_off_and_unknown_strength():
+    from frameforge.render import color_match_for
+
+    assert color_match_for(_DARK_COOL, _MIDDLE, strength="off") is None
+    assert color_match_for({}, _MIDDLE) is None  # ohne Statistik keine Korrektur
+    with pytest.raises(ValueError, match="strength"):
+        color_match_for(_DARK_COOL, _MIDDLE, strength="krass")
+
+
+def test_match_filter_is_applied_before_the_style_grade():
+    from frameforge.timeline import ColorMatch
+
+    timeline = _timeline(
+        video=[{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0}]
+    )
+    timeline.tracks.video[0].color_match = ColorMatch(
+        brightness=0.05, saturation=1.1, temperature=0.05
+    )
+    graph = build_filtergraph(
+        timeline,
+        resolve_asset=lambda aid: Path(f"/media/{aid}.mp4"),
+        export_root=Path("/export"),
+        project_root=Path("/project"),
+        color_grade={"mood": "cool", "contrast": "high"},
+    )
+    per_clip = graph.filter_complex.index("brightness=0.0500")
+    style = graph.filter_complex.index("_grade")
+    assert per_clip < style  # erst angleichen, dann der Look
+
+
+def test_without_color_match_the_filtergraph_is_unchanged():
+    """Regression Plan 0003 §0/§H: ohne Angleichung kein zusaetzlicher Filter."""
+    graph = _graph(_audio_timeline())
+    assert "brightness=" not in graph.filter_complex

@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-from frameforge.analyze import AnalyzeError, analyze_clip, analyze_photo, detect_scenes
+from frameforge.analyze import AnalyzeError, analyze_clip, analyze_photo, color_stats, detect_scenes
 from frameforge.probe import probe_video
 
 FIXTURES = Path(__file__).parent / "fixtures"
@@ -48,3 +48,44 @@ def test_detect_scenes_returns_at_least_one_scene():
     start, end = scenes[0]
     assert start == 0.0
     assert end > start
+
+
+# -- H1: Farbstatistik aus vorhandenen Keyframes (Plan 0003) ------------------------
+
+
+def _solid_jpeg(path, color):
+    import cv2 as _cv2
+    import numpy as _np
+
+    image = _np.zeros((32, 32, 3), dtype=_np.uint8)
+    image[:, :] = color  # BGR
+    _cv2.imwrite(str(path), image)
+    return path
+
+
+def test_color_stats_reads_mean_and_temperature(tmp_path):
+    warm = _solid_jpeg(tmp_path / "warm.jpg", (20, 60, 200))  # BGR -> viel Rot
+    stats = color_stats([warm])
+    assert stats["mean"]["r"] > stats["mean"]["b"]
+    assert stats["temperature"] > 0  # warm
+    assert stats["frames"] == 1
+    assert 0 <= stats["luma"] <= 255
+
+
+def test_color_stats_cool_image_has_negative_temperature(tmp_path):
+    cool = _solid_jpeg(tmp_path / "cool.jpg", (200, 60, 20))
+    assert color_stats([cool])["temperature"] < 0
+
+
+def test_color_stats_averages_over_frames(tmp_path):
+    frames = [
+        _solid_jpeg(tmp_path / "a.jpg", (0, 0, 0)),
+        _solid_jpeg(tmp_path / "b.jpg", (200, 200, 200)),
+    ]
+    stats = color_stats(frames)
+    assert stats["frames"] == 2
+    assert 80 < stats["luma"] < 120
+
+
+def test_color_stats_without_readable_frames_is_empty(tmp_path):
+    assert color_stats([tmp_path / "gibts-nicht.jpg"]) == {}

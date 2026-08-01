@@ -513,3 +513,121 @@ def test_clone_export_missing_source_fails(env):
     result = runner.invoke(app, ["clone-export", "proto", "gibtsnicht", "neu"])
     assert result.exit_code == 1
     assert "kein brief" in result.output.lower()
+
+
+# -- H2/G: color-match und build (Plan 0003) ---------------------------------------
+
+
+def _timeline_json(export_dir, assets=("a1", "a2")):
+    import json
+
+    export_dir.mkdir(parents=True, exist_ok=True)
+    (export_dir / "timeline.json").write_text(
+        json.dumps(
+            {
+                "version": 1,
+                "export": export_dir.name,
+                "fps": 25,
+                "resolution": [320, 240],
+                "duration": 2.0,
+                "tracks": {
+                    "video": [
+                        {
+                            "id": f"c{i}",
+                            "asset": asset,
+                            "src_in": 0,
+                            "src_out": 1.0,
+                            "tl_in": float(i),
+                        }
+                        for i, asset in enumerate(assets)
+                    ]
+                },
+            }
+        )
+    )
+    return export_dir / "timeline.json"
+
+
+def test_color_match_writes_values_into_the_timeline(env):
+    import json
+
+    for asset_id, luma, temp in (("a1", 60.0, -0.1), ("a2", 140.0, 0.1)):
+        write_asset(
+            env,
+            {
+                "id": asset_id,
+                "hash": f"sha256:{asset_id}",
+                "path": "clip.mp4",
+                "kind": "video",
+                "color_stats": {
+                    "luma": luma,
+                    "temperature": temp,
+                    "std": {"r": 30.0, "g": 30.0, "b": 30.0},
+                    "mean": {"r": 1.0, "g": 1.0, "b": 1.0},
+                },
+            },
+        )
+    timeline_path = _timeline_json(env.exports_dir / "teaser")
+
+    result = runner.invoke(app, ["color-match", "proto", "teaser"])
+    assert result.exit_code == 0, result.output
+
+    written = json.loads(timeline_path.read_text())
+    matches = [c.get("color_match") for c in written["tracks"]["video"]]
+    assert all(m is not None for m in matches)
+    assert matches[0]["brightness"] > 0 > matches[1]["brightness"]
+
+
+def test_color_match_off_removes_the_values(env):
+    import json
+
+    write_asset(
+        env,
+        {
+            "id": "a1",
+            "hash": "sha256:a1",
+            "path": "clip.mp4",
+            "kind": "video",
+            "color_stats": {
+                "luma": 60.0,
+                "temperature": 0.0,
+                "std": {"r": 30.0, "g": 30.0, "b": 30.0},
+                "mean": {"r": 1.0, "g": 1.0, "b": 1.0},
+            },
+        },
+    )
+    timeline_path = _timeline_json(env.exports_dir / "teaser", assets=("a1",))
+    runner.invoke(app, ["color-match", "proto", "teaser", "--strength", "off"])
+    written = json.loads(timeline_path.read_text())
+    assert "color_match" not in written["tracks"]["video"][0]
+
+
+def test_color_match_without_stats_fails_with_a_hint(env):
+    write_asset(env, {"id": "a1", "hash": "sha256:a1", "path": "clip.mp4", "kind": "video"})
+    _timeline_json(env.exports_dir / "teaser", assets=("a1",))
+    result = runner.invoke(app, ["color-match", "proto", "teaser"])
+    assert result.exit_code == 1
+    assert "backfill-metadata" in result.output
+
+
+def test_build_advances_to_storyboarded_and_timeline(env):
+    from frameforge.state import ProjectState
+
+    export_dir = env.exports_dir / "teaser"
+    export_dir.mkdir(parents=True)
+    (export_dir / "brief.yaml").write_text("target_duration_s: 10\n")
+    with ProjectState.transaction(env.state_path) as tx:
+        tx.advance_export("teaser", Phase.BRIEFED)
+
+    # Ohne Beat-Sheet: unveraendertes Verhalten (Hinweis + Exit 1).
+    assert runner.invoke(app, ["build", "proto", "teaser"]).exit_code == 1
+
+    (export_dir / "beatsheet.md").write_text("# Beats\n")
+    assert runner.invoke(app, ["build", "proto", "teaser"]).exit_code == 0
+    state = env.load_state()
+    assert state.export_phase("teaser") == Phase.STORYBOARDED
+    assert state.get_export_hash("teaser", "assets") is not None
+
+    _timeline_json(export_dir, assets=("a1",))
+    assert runner.invoke(app, ["build", "proto", "teaser"]).exit_code == 0
+    assert env.load_state().export_phase("teaser") == Phase.TIMELINE

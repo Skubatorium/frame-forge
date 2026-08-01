@@ -10,6 +10,7 @@ vollständige, aufgelöste Sicht bekommen.
 from __future__ import annotations
 
 from pathlib import Path
+from typing import Literal
 
 import yaml
 from pydantic import BaseModel, ConfigDict, Field, field_validator
@@ -31,6 +32,9 @@ class Brief(BaseModel):
     language: str = "de"
     must_shots: list[str] = Field(default_factory=list)
     forbidden_shots: list[str] = Field(default_factory=list)
+    # Farbangleichung zwischen den Clips (Plan 0003 §H2). `soft` ist Default; `off` liefert
+    # einen Render, der bitgleich zum Verhalten vor Plan 0003 ist.
+    color_match: Literal["off", "soft", "strong"] = "soft"
 
     @field_validator("preset")
     @classmethod

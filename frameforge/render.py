@@ -176,6 +176,92 @@ def _join_video_segments(clips, labels: list[str], filters: list[str]) -> str:
     return cur
 
 
+# Deckel je Staerke: (max. Helligkeitsverschiebung, max. Saettigungsabweichung,
+# max. Farbtemperatur-Korrektur). Eine Nachtaufnahme darf nicht auf Tageslicht gezogen werden.
+COLOR_MATCH_LIMITS = {
+    "off": (0.0, 0.0, 0.0),
+    "soft": (0.08, 0.15, 0.08),
+    "strong": (0.16, 0.30, 0.16),
+}
+DEFAULT_COLOR_MATCH = "soft"
+
+
+def match_filter(color_match) -> str | None:
+    """FFmpeg-Filterkette fuer die Angleichung eines Clips, oder `None` ohne Angleichung."""
+    if color_match is None:
+        return None
+    brightness = color_match.brightness
+    saturation = color_match.saturation
+    temperature = color_match.temperature
+    if brightness == 0.0 and saturation == 1.0 and temperature == 0.0:
+        return None
+    chain = f"eq=brightness={brightness:.4f}:saturation={saturation:.4f}"
+    if temperature:
+        # positiv = waermer (mehr Rot, weniger Blau), analog zu `grade_filter`
+        chain += f",colorbalance=rs={temperature:.4f}:bs={-temperature:.4f}"
+    return chain
+
+
+def color_match_for(stats: dict, reference: dict, *, strength: str = DEFAULT_COLOR_MATCH):
+    """Angleichungs-Werte eines Clips gegen eine Referenz — gedeckelt, `None` bei `off`.
+
+    `stats`/`reference` sind `analyze.color_stats`-Ergebnisse. Die Korrektur ist bewusst mild
+    und begrenzt (`COLOR_MATCH_LIMITS`): Ziel ist, Sprünge zwischen Drohne, Handy und Kamera zu
+    dämpfen — nicht, jeden Clip gleich aussehen zu lassen.
+    """
+    from frameforge.timeline import ColorMatch
+
+    limits = COLOR_MATCH_LIMITS.get(strength)
+    if limits is None:
+        raise ValueError(f"strength muss {sorted(COLOR_MATCH_LIMITS)} sein, nicht {strength!r}")
+    if strength == "off" or not stats or not reference:
+        return None
+
+    max_brightness, max_saturation, max_temperature = limits
+
+    def clamp(value: float, limit: float) -> float:
+        return max(-limit, min(limit, value))
+
+    brightness = clamp((reference["luma"] - stats["luma"]) / 255.0, max_brightness)
+    temperature = clamp(reference["temperature"] - stats["temperature"], max_temperature)
+
+    spread = sum(stats["std"].values()) / 3 or 1e-6
+    ref_spread = sum(reference["std"].values()) / 3
+    saturation = 1.0 + clamp(ref_spread / spread - 1.0, max_saturation)
+
+    match = ColorMatch(
+        brightness=round(brightness, 4),
+        saturation=round(saturation, 4),
+        temperature=round(temperature, 4),
+    )
+    return None if match_filter(match) is None else match
+
+
+def reference_stats(stats_list: list[dict]) -> dict:
+    """Median-Referenz über die im Export **verwendeten** Clips (nicht über den ganzen Fundus).
+
+    Ein Export ist die relevante Einheit — Clips, die gar nicht vorkommen, dürfen den Zielton
+    nicht verschieben. Median statt Mittelwert, damit ein einzelner Nacht- oder
+    Gegenlicht-Clip die Referenz nicht wegzieht.
+    """
+    usable = [s for s in stats_list if s]
+    if not usable:
+        return {}
+
+    def median(values: list[float]) -> float:
+        ordered = sorted(values)
+        mid = len(ordered) // 2
+        return ordered[mid] if len(ordered) % 2 else (ordered[mid - 1] + ordered[mid]) / 2
+
+    return {
+        "luma": median([s["luma"] for s in usable]),
+        "temperature": median([s["temperature"] for s in usable]),
+        "std": {
+            channel: median([s["std"][channel] for s in usable]) for channel in ("r", "g", "b")
+        },
+    }
+
+
 def grade_filter(color_grade: dict | None) -> str | None:
     """Baut einen `eq`(+`colorbalance`)-Filterstring aus `color_grade` (`{mood, contrast}`).
 
@@ -255,6 +341,12 @@ def build_filtergraph(
             chain.append(f"trim=start={clip.src_in}:end={clip.src_out}")
             chain.append(f"setpts=(PTS-STARTPTS)/{clip.speed}")
             chain.append(_scale_pad(*target_res))
+        # Farbangleichung **pro Clip** und VOR dem Stil-Grade (Plan 0003 §H2): erst die
+        # Kameras auf einen Nenner bringen, dann den Look darüber. Andersherum wäre "kühl"
+        # eine Aussage über die zufällige Kameramischung statt über den Film.
+        match = match_filter(clip.color_match)
+        if match:
+            chain.append(match)
         # Konstante fps sichern, damit concat/xfade sauber zusammenpassen.
         chain.append(f"fps={fps:g}")
         filters.append(f"[{idx}:v]{','.join(chain)}[{label}]")

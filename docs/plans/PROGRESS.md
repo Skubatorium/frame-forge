@@ -63,8 +63,8 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | D2 | Generierte Grafiken (Prompt-Bausteine, Hintergrund in Titel/Kapitel) | ⬜ offen | — |
 | F | Musik: `fade_in_s`/`fade_out_s`, `audio.segment_plan` | ✅ fertig | `450d3ac` |
 | G | Invalidierung bei neuem Material (`pipeline.pending_assets`, Fingerprint) | ✅ fertig | `7b746bc` |
-| H1 | Farbstatistik messen (`analyze.color_stats` aus vorhandenen Keyframes) | ⬜ offen | — |
-| H2 | Farbangleichung (`render.match_filter`, `color_match: off/soft/strong`) | ⬜ offen | — |
+| H1 | Farbstatistik messen (`analyze.color_stats` aus vorhandenen Keyframes) | ✅ fertig | `<p>` |
+| H2 | Farbangleichung (`render.match_filter`, `color_match: off/soft/strong`) | ✅ fertig | `<p>` |
 | I | Abschluss-Audit (I1–I5) | ⬜ offen | — |
 
 ### E — Notizen (2026-08-01)
@@ -138,6 +138,34 @@ bleibt davon unberührt.
 **Abnahme A0 zunächst nur zur Hälfte erfüllt** (Bitgleichheit ja, Aufnahmezeit 0/236) — die
 zweite Hälfte kam mit A1, siehe dort: der zweite Backfill-Lauf liefert 236/236 (100 %).
 7 Tests in `tests/test_backfill.py`, 333 Tests gesamt grün, `ruff` sauber.
+
+### H1/H2 — Notizen (2026-08-01)
+
+**H1 messen (kostenlos).** `analyze.color_stats(frames)` liest die **bereits vorhandenen**
+Keyframe-JPEGs: Mittelwert/Streuung je Kanal, Luma und ein Farbtemperatur-Indikator
+`(mean_r - mean_b) / 255`. Kein neues Decoding, kein Vision-Call. Der Backfill (A0) trägt das
+Feld nach, ohne bestehende Werte zu überschreiben.
+
+**H2 angleichen.** `render.reference_stats` bildet den **Median** über die im Export
+verwendeten Clips (nicht über den Fundus — ein Export ist die relevante Einheit; Median statt
+Mittelwert, damit ein einzelner Nachtclip die Referenz nicht wegzieht).
+`render.color_match_for` erzeugt daraus je Clip milde, **gedeckelte** Werte
+(`COLOR_MATCH_LIMITS`: soft ±0.08 Helligkeit / ±0.15 Sättigung / ±0.08 Temperatur, strong das
+Doppelte, off gar nichts). `render.match_filter` setzt sie als `eq`+`colorbalance` **vor** dem
+Stil-Grade in die Clip-Kette — ein Test prüft genau diese Reihenfolge, denn andersherum wäre
+„kühl" eine Aussage über die Kameramischung statt über den Film.
+
+**Die Werte stehen pro Clip in `timeline.json`** (`VideoClip.color_match`), nicht als versteckte
+Renderer-Magie: `frameforge color-match <projekt> <export> [--strength off|soft|strong]`
+schreibt sie, der Brief steuert den Default (`color_match: soft`). Damit sind sie
+nachvollziehbar, von Hand überschreibbar, reproduzierbar und gehen in den NLE-Export mit.
+
+**Realer Lauf gegen `norwegen-2026`:** Backfill ergänzt `color_stats` für alle 255 Assets
+(kein Vision-Call). Referenz-Luma 107.8, Referenz-Temperatur 0.0; die berechneten Korrekturen
+liegen zwischen −0.08 und +0.08 (Deckel), Median 0.0 — die Masse des Materials wird also kaum
+angefasst, nur die Ausreißer. Der visuelle Vergleich am Testschnitt gehört zu I5.
+
+14 neue Tests, 452 gesamt grün.
 
 ### G — Notizen (2026-08-01)
 

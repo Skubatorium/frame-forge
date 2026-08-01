@@ -20,6 +20,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
+from frameforge import analyze as analyze_module
 from frameforge import index as index_module
 from frameforge import ingest as ingest_module
 from frameforge import probe as probe_module
@@ -37,6 +38,7 @@ _TECH_FIELDS = frozenset(
         "gps.lon",
         "gps.elevation_m",
         "gps.source",
+        "color_stats",
     }
 )
 
@@ -137,6 +139,15 @@ def _set(asset: dict, dotted: str, value: Any) -> None:
 def _probe_fields(asset: dict, path, originals: dict[str, Path] | None = None) -> dict[str, Any]:
     """Technische Soll-Werte eines Assets aus der Datei — leere Werte werden weggelassen."""
     fields: dict[str, Any] = {}
+
+    # Farbstatistik aus den bereits vorhandenen Keyframes (Plan 0003 §H1) — kein neues
+    # Decoding, kein Vision-Call. Fehlen die Keyframes (Cache geleert), bleibt das Feld leer.
+    keyframes = [Path(k) for k in asset.get("keyframes", [])]
+    if keyframes and not asset.get("color_stats"):
+        stats = analyze_module.color_stats(keyframes)
+        if stats:
+            fields["color_stats"] = stats
+
     if asset.get("kind") == "video":
         probe = probe_module.probe_video(path)
         fields["probe"] = probe

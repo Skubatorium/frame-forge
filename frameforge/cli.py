@@ -554,6 +554,64 @@ def route_build(
         )
 
 
+@app.command(name="color-match")
+def color_match_cmd(
+    project: str,
+    export: str,
+    strength: str = typer.Option(
+        None, "--strength", help="off | soft | strong (Default: aus dem Brief, sonst soft)"
+    ),
+) -> None:
+    """Gleicht die Clips eines Exports farblich aneinander an (Plan 0003 §H2).
+
+    Schreibt je Clip `color_match` in die `timeline.json` — nachvollziehbar, überschreibbar,
+    reproduzierbar und im NLE-Export mit dabei. Grundlage ist `asset["color_stats"]` aus dem
+    Backfill (Keyframes, kein neues Decoding). Referenz ist der Median über die **in diesem
+    Export verwendeten** Clips.
+    """
+    proj = _resolve_or_fail(project)
+    exp = proj.export(export)
+    if not exp.timeline_path.exists():
+        raise _fail(f"Keine timeline.json fuer '{export}' — erst /ff-build.")
+
+    if strength is None:
+        try:
+            brief = brief_module.Brief.load(exp.brief_path).merged() if exp.brief_path.exists() else {}
+        except brief_module.BriefError as exc:
+            raise _fail(str(exc)) from exc
+        strength = brief.get("color_match", render_module.DEFAULT_COLOR_MATCH)
+
+    timeline = Timeline.load(exp.timeline_path)
+    stats_by_asset = {
+        a["id"]: a.get("color_stats") or {} for a in index_module.load_assets(proj)
+    }
+    used = [stats_by_asset.get(c.asset, {}) for c in timeline.tracks.video]
+    reference = render_module.reference_stats(used)
+    if not reference:
+        raise _fail(
+            "Keine color_stats an den verwendeten Assets — erst 'frameforge backfill-metadata' "
+            f"{project} (braucht die Keyframes im Cache)."
+        )
+
+    try:
+        matched = 0
+        for clip in timeline.tracks.video:
+            clip.color_match = render_module.color_match_for(
+                stats_by_asset.get(clip.asset, {}), reference, strength=strength
+            )
+            matched += clip.color_match is not None
+    except ValueError as exc:
+        raise _fail(str(exc)) from exc
+
+    exp.timeline_path.write_text(timeline.model_dump_json(indent=2, exclude_none=True) + "\n")
+    console.print(
+        f"[green]{matched} von {len(timeline.tracks.video)} Clip(s) angeglichen "
+        f"(strength={strength}).[/green] Werte stehen in {exp.timeline_path}."
+    )
+    if strength == "off":
+        console.print("[dim]strength=off — alle color_match-Werte entfernt.[/dim]")
+
+
 @app.command(name="places-todo")
 def places_todo_cmd(
     project: str,

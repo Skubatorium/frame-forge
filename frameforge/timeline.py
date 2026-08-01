@@ -39,6 +39,18 @@ class Effect(BaseModel):
     type: str
 
 
+class ColorMatch(BaseModel):
+    """Milde Angleichung eines Clips an die gemeinsame Referenz (Plan 0003 §H2).
+
+    Steht **pro Clip in der Timeline**, nicht als versteckte Renderer-Logik: nachvollziehbar,
+    von Hand überschreibbar, reproduzierbar und im NLE-Export mit dabei.
+    """
+
+    brightness: float = Field(default=0.0, ge=-1.0, le=1.0)  # eq-Parameter
+    saturation: float = Field(default=1.0, ge=0.0, le=3.0)
+    temperature: float = Field(default=0.0, ge=-1.0, le=1.0)  # >0 waermer, <0 kuehler
+
+
 class VideoClip(BaseModel):
     id: str
     asset: str
@@ -49,6 +61,7 @@ class VideoClip(BaseModel):
     transition_in: Transition | None = None
     transition_out: Transition | None = None
     effects: list[Effect] = Field(default_factory=list)
+    color_match: ColorMatch | None = None  # None = keine Angleichung (Default, wie bisher)
 
     @model_validator(mode="after")
     def _check_in_out(self) -> VideoClip:

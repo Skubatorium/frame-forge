@@ -59,7 +59,22 @@
       ]
     },
     "captured_at": "2026-07-20T15:38:35.556000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 96.5,
+        "g": 104.65,
+        "b": 113.6
+      },
+      "std": {
+        "r": 56.14,
+        "g": 58.74,
+        "b": 71.47
+      },
+      "luma": 103.23,
+      "temperature": -0.067,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:01f68b78bcb575fc1ea0603e9295013740882a25ccdf66f802c38a6ef271f6e6",
@@ -133,7 +148,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T14:09:53+00:00",
-    "captured_at_source": "container+name"
+    "captured_at_source": "container+name",
+    "color_stats": {
+      "mean": {
+        "r": 114.46,
+        "g": 116.74,
+        "b": 107.46
+      },
+      "std": {
+        "r": 58.93,
+        "g": 58.18,
+        "b": 65.48
+      },
+      "luma": 115.0,
+      "temperature": 0.0275,
+      "frames": 6
+    }
   },
   {
     "hash": "sha256:0565b5aa3cd94766afa53bf20e7a5285f809a93d9ae3fbb4a13f92e703aa680b",
@@ -198,7 +228,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T15:44:08.312000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 90.37,
+        "g": 104.98,
+        "b": 119.22
+      },
+      "std": {
+        "r": 57.5,
+        "g": 62.67,
+        "b": 77.65
+      },
+      "luma": 102.23,
+      "temperature": -0.1131,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:0b3c5bf7a83366b577df05e8e5abb0cedc0b49ca0bbe55aa03073617690373f1",
@@ -263,7 +308,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T15:46:50.986000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 91.48,
+        "g": 105.15,
+        "b": 119.74
+      },
+      "std": {
+        "r": 62.36,
+        "g": 67.08,
+        "b": 78.15
+      },
+      "luma": 102.72,
+      "temperature": -0.1108,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:0c2493163dabbbc6847ab73440ea1160cadb2e3cb14812389ff48333dcba5b74",
@@ -328,7 +388,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T15:36:25+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 92.89,
+        "g": 109.01,
+        "b": 124.15
+      },
+      "std": {
+        "r": 57.13,
+        "g": 60.21,
+        "b": 75.33
+      },
+      "luma": 105.92,
+      "temperature": -0.1226,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:0ec48c5817ce7189823412a40b74480386757963b5fc2e4b186e41bad2d13f66",
@@ -393,7 +468,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T15:38:20.362000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 94.16,
+        "g": 105.29,
+        "b": 116.9
+      },
+      "std": {
+        "r": 62.55,
+        "g": 64.92,
+        "b": 75.4
+      },
+      "luma": 103.29,
+      "temperature": -0.0892,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:1058a9eab5666a8c4aae3de47265197961b17a7ebdede9e4b35393937d5d2727",
@@ -458,7 +548,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T15:37:33.136000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 97.48,
+        "g": 106.23,
+        "b": 117.39
+      },
+      "std": {
+        "r": 53.93,
+        "g": 56.67,
+        "b": 72.71
+      },
+      "luma": 104.89,
+      "temperature": -0.0781,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:1d4c8cadd31853903156c9ed4840f893dc0588beea009564ef95774e95928ef6",
@@ -524,7 +629,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T15:39:57.700000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 95.04,
+        "g": 109.19,
+        "b": 127.05
+      },
+      "std": {
+        "r": 55.07,
+        "g": 60.74,
+        "b": 73.91
+      },
+      "luma": 106.99,
+      "temperature": -0.1255,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:341c9ab53aca4e5275b792c97618bea1e24f085606915c8cd647ad18f0ccf45e",
@@ -590,7 +710,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T15:20:23.999000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 84.9,
+        "g": 101.09,
+        "b": 115.35
+      },
+      "std": {
+        "r": 56.73,
+        "g": 63.09,
+        "b": 78.72
+      },
+      "luma": 97.88,
+      "temperature": -0.1194,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:3865901041d2a73f6a04f4c375964a8712fead6ffee624640c8ad03976faa9f9",
@@ -657,7 +792,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T15:46:35.049000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 106.17,
+        "g": 120.93,
+        "b": 125.28
+      },
+      "std": {
+        "r": 54.67,
+        "g": 55.88,
+        "b": 72.4
+      },
+      "luma": 117.01,
+      "temperature": -0.0749,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:3de2ef147d3f4a976a95dfa316a2bf5c1d30b939fcac12605467e274159a2f5b",
@@ -724,7 +874,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T16:17:25.291000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 108.41,
+        "g": 113.52,
+        "b": 119.14
+      },
+      "std": {
+        "r": 66.93,
+        "g": 60.47,
+        "b": 48.01
+      },
+      "luma": 112.63,
+      "temperature": -0.0421,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:427a02786695dceb74c050b08479b454766402efeb6558cc1479fda96adc64a6",
@@ -789,7 +954,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T14:07:05+00:00",
-    "captured_at_source": "container+name"
+    "captured_at_source": "container+name",
+    "color_stats": {
+      "mean": {
+        "r": 100.46,
+        "g": 112.66,
+        "b": 115.03
+      },
+      "std": {
+        "r": 53.38,
+        "g": 58.39,
+        "b": 69.09
+      },
+      "luma": 109.28,
+      "temperature": -0.0571,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:475a1ac8d1da197cfdc4eb4e908c32ec81977cdbca5cf83ea9ff418ce6be90bd",
@@ -856,7 +1036,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T15:23:26.429000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 98.63,
+        "g": 113.28,
+        "b": 134.29
+      },
+      "std": {
+        "r": 53.51,
+        "g": 58.63,
+        "b": 72.79
+      },
+      "luma": 111.29,
+      "temperature": -0.1398,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:542e68aeed42dd3b098df8432df06d6da14b22d536373ebf0cc4a52dc6451437",
@@ -925,7 +1120,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T15:45:16.495000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 97.62,
+        "g": 111.54,
+        "b": 124.68
+      },
+      "std": {
+        "r": 59.81,
+        "g": 65.27,
+        "b": 77.48
+      },
+      "luma": 108.88,
+      "temperature": -0.1061,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:5a2e8cdd2399975b26e0ef549530b53e0b180fe3a0e4c28d2816a842279e3a9e",
@@ -992,7 +1202,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T15:24:48.198000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 87.55,
+        "g": 104.2,
+        "b": 125.48
+      },
+      "std": {
+        "r": 55.58,
+        "g": 60.54,
+        "b": 75.19
+      },
+      "luma": 101.65,
+      "temperature": -0.1488,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:622c389013d824046dd81810a20f63f5cc98c39f3094b211bbb92ee36c2ccb5e",
@@ -1055,7 +1280,22 @@
       ]
     },
     "captured_at": "2026-07-20T15:22:44.416000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 91.2,
+        "g": 109.21,
+        "b": 129.23
+      },
+      "std": {
+        "r": 52.52,
+        "g": 59.06,
+        "b": 75.52
+      },
+      "luma": 106.1,
+      "temperature": -0.1491,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:669f0668c870220a5ae57eec493e40cf728c4385a2b072d9a34b89ebeb476489",
@@ -1115,7 +1355,22 @@
       ]
     },
     "captured_at": "2026-07-20T14:04:35+00:00",
-    "captured_at_source": "container+name"
+    "captured_at_source": "container+name",
+    "color_stats": {
+      "mean": {
+        "r": 105.63,
+        "g": 110.72,
+        "b": 105.28
+      },
+      "std": {
+        "r": 55.98,
+        "g": 53.43,
+        "b": 48.24
+      },
+      "luma": 108.58,
+      "temperature": 0.0013,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:75c0316db4ca7148051c1acee20d89904bdc2fdd48df97ad2b979a48fd060a33",
@@ -1179,7 +1434,22 @@
       ]
     },
     "captured_at": "2026-07-20T15:37:09.127000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 91.77,
+        "g": 110.33,
+        "b": 131.55
+      },
+      "std": {
+        "r": 63.92,
+        "g": 69.39,
+        "b": 79.13
+      },
+      "luma": 107.2,
+      "temperature": -0.156,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:81713b9fa50a5d050c3aac57f82d986afe5c45c028844d1be6b6157513cd1612",
@@ -1241,7 +1511,22 @@
       ]
     },
     "captured_at": "2026-07-20T16:13:45.144000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 111.18,
+        "g": 123.1,
+        "b": 142.8
+      },
+      "std": {
+        "r": 57.75,
+        "g": 57.33,
+        "b": 62.06
+      },
+      "luma": 121.78,
+      "temperature": -0.124,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:83217b71dbc7a36045a921ffd08527af846382a9ebb2e4e0534e4bb60155f561",
@@ -1304,7 +1589,22 @@
       "place": "Huette am See, Skien"
     },
     "captured_at": "2026-07-20T14:04:35+00:00",
-    "captured_at_source": "container+name"
+    "captured_at_source": "container+name",
+    "color_stats": {
+      "mean": {
+        "r": 99.76,
+        "g": 110.53,
+        "b": 101.81
+      },
+      "std": {
+        "r": 44.75,
+        "g": 55.05,
+        "b": 71.82
+      },
+      "luma": 106.32,
+      "temperature": -0.008,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:83677c4770071e2f65f5b08ad3db607d9844d0e24fbd73a5eed9d252a77c0e27",
@@ -1366,7 +1666,22 @@
       ]
     },
     "captured_at": "2026-07-20T15:38:46.997000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 91.66,
+        "g": 97.83,
+        "b": 103.47
+      },
+      "std": {
+        "r": 52.8,
+        "g": 56.19,
+        "b": 67.28
+      },
+      "luma": 96.63,
+      "temperature": -0.0463,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:837da0cc6248b8aeced45cda2c13d2cbf8690a9fed079a69d79fc5d759ece432",
@@ -1432,7 +1747,22 @@
       "place": "Huette am See, Skien"
     },
     "captured_at": "2026-07-20T15:24:15.490000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 86.1,
+        "g": 107.97,
+        "b": 126.7
+      },
+      "std": {
+        "r": 48.37,
+        "g": 54.49,
+        "b": 73.84
+      },
+      "luma": 103.57,
+      "temperature": -0.1592,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:8402bb448a8c08911f50630bf0ae0ca66c8b87c853f144fd33ae05d24cd5abe9",
@@ -1496,7 +1826,22 @@
       ]
     },
     "captured_at": "2026-07-20T15:23:06.973000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 85.53,
+        "g": 101.85,
+        "b": 112.49
+      },
+      "std": {
+        "r": 49.92,
+        "g": 53.77,
+        "b": 71.97
+      },
+      "luma": 98.18,
+      "temperature": -0.1057,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:8792e5d8ce6e9fed61fcad288958a34239d435199571ec6f5a31ad9c3b940b51",
@@ -1560,7 +1905,22 @@
       ]
     },
     "captured_at": "2026-07-20T15:45:53.128000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 89.94,
+        "g": 99.48,
+        "b": 107.43
+      },
+      "std": {
+        "r": 56.83,
+        "g": 60.12,
+        "b": 71.88
+      },
+      "luma": 97.54,
+      "temperature": -0.0686,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:8c68d5282e8e8777d16825c7554cf662ca25fa9e3569ecac3a63baf2c90d1501",
@@ -1625,7 +1985,22 @@
       ]
     },
     "captured_at": "2026-07-20T15:43:16.858000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 103.28,
+        "g": 110.82,
+        "b": 95.49
+      },
+      "std": {
+        "r": 53.6,
+        "g": 53.61,
+        "b": 62.5
+      },
+      "luma": 106.82,
+      "temperature": 0.0306,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:8d3d4ebbe417e5d1647288bce66a0f6397c1e0407ed4094c4e0ac2f57e22bb4b",
@@ -1687,7 +2062,22 @@
       ]
     },
     "captured_at": "2026-07-20T16:18:56.972000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 111.59,
+        "g": 119.93,
+        "b": 100.14
+      },
+      "std": {
+        "r": 36.66,
+        "g": 35.78,
+        "b": 40.01
+      },
+      "luma": 115.18,
+      "temperature": 0.0449,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:913fd857405bd44f8a3e39841bc443d48742966ee9719f41e0926c999f1413ed",
@@ -1752,7 +2142,22 @@
       ]
     },
     "captured_at": "2026-07-20T15:42:59.860000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 96.79,
+        "g": 109.76,
+        "b": 118.46
+      },
+      "std": {
+        "r": 57.55,
+        "g": 61.31,
+        "b": 70.71
+      },
+      "luma": 106.88,
+      "temperature": -0.085,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:9e14c161a02f1ba7447d22f89222a00f03fcdf3f8e7cb17a601bb8d7d6bac978",
@@ -1819,7 +2224,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T15:21:45.808000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 94.94,
+        "g": 110.46,
+        "b": 109.13
+      },
+      "std": {
+        "r": 40.4,
+        "g": 42.18,
+        "b": 56.46
+      },
+      "luma": 105.67,
+      "temperature": -0.0557,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:a069da55496a6b480f3f207e3c4b83c968643c66365bfcce81639e8944d21828",
@@ -1882,7 +2302,22 @@
       ]
     },
     "captured_at": "2026-07-20T15:19:27.606000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 95.04,
+        "g": 110.4,
+        "b": 121.33
+      },
+      "std": {
+        "r": 51.57,
+        "g": 55.5,
+        "b": 69.27
+      },
+      "luma": 107.06,
+      "temperature": -0.1031,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:c4c360176725474694827a249c5d8ca51f7acea7077b1cb5961ea6325364afe3",
@@ -1946,7 +2381,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T14:07:05+00:00",
-    "captured_at_source": "container+name"
+    "captured_at_source": "container+name",
+    "color_stats": {
+      "mean": {
+        "r": 108.85,
+        "g": 113.29,
+        "b": 114.51
+      },
+      "std": {
+        "r": 49.11,
+        "g": 46.46,
+        "b": 49.58
+      },
+      "luma": 112.11,
+      "temperature": -0.0222,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:c5f6007b6ecb3fa756dfbad4c12180359c89ae8f790daefcfad95c1902d3528b",
@@ -2014,7 +2464,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T15:42:51.497000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 90.54,
+        "g": 105.8,
+        "b": 93.08
+      },
+      "std": {
+        "r": 49.23,
+        "g": 44.83,
+        "b": 52.64
+      },
+      "luma": 99.79,
+      "temperature": -0.0099,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:dff9ce6a9fa497581a48f9c7040db8182ce711d8105b850048ba26312c07cf81",
@@ -2080,7 +2545,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T15:44:31.948000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 94.22,
+        "g": 105.67,
+        "b": 112.74
+      },
+      "std": {
+        "r": 59.86,
+        "g": 63.9,
+        "b": 79.13
+      },
+      "luma": 103.05,
+      "temperature": -0.0726,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:e79d29d9c0976007dff75412e972351e6496f5f8f4dedf2dd5312ed28e17161f",
@@ -2147,7 +2627,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T15:43:47.299000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 86.56,
+        "g": 103.75,
+        "b": 120.11
+      },
+      "std": {
+        "r": 56.68,
+        "g": 62.88,
+        "b": 78.62
+      },
+      "luma": 100.48,
+      "temperature": -0.1316,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:e7d994fae7ec3d716c274338a34f822cf172c46f50322c038a8128f5289a0720",
@@ -2214,7 +2709,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T15:39:24.659000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 93.25,
+        "g": 106.67,
+        "b": 119.92
+      },
+      "std": {
+        "r": 51.62,
+        "g": 55.68,
+        "b": 72.28
+      },
+      "luma": 104.16,
+      "temperature": -0.1046,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:ef166412047e5f149990f2299053b4e8aefea8cb4b53f015b26626f11da0ac5e",
@@ -2281,7 +2791,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T15:41:47.258000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 94.16,
+        "g": 105.65,
+        "b": 109.9
+      },
+      "std": {
+        "r": 55.64,
+        "g": 57.31,
+        "b": 71.95
+      },
+      "luma": 102.7,
+      "temperature": -0.0617,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:f1c43e359f1df07b59212fb71114587f09786b55a3017281b4818a304a94428f",
@@ -2346,7 +2871,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T15:19:57.212000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 93.91,
+        "g": 107.51,
+        "b": 113.83
+      },
+      "std": {
+        "r": 53.75,
+        "g": 60.45,
+        "b": 75.6
+      },
+      "luma": 104.17,
+      "temperature": -0.0781,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:f3250853a9b7f306a6ecf5d0422383a52557dcf56c44b1674efa4c6cf53db231",
@@ -2412,7 +2952,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-20T16:19:10.983000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 100.55,
+        "g": 107.81,
+        "b": 89.85
+      },
+      "std": {
+        "r": 38.45,
+        "g": 36.99,
+        "b": 42.74
+      },
+      "luma": 103.59,
+      "temperature": 0.042,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:14b9bcfdda17bd5d1794c8ff04d3bebdf7297674755b9cb6e1304f5ab9ce92ff",
@@ -2464,7 +3019,22 @@
         "b-roll"
       ]
     },
-    "captured_at_source": "exif"
+    "captured_at_source": "exif",
+    "color_stats": {
+      "mean": {
+        "r": 110.42,
+        "g": 123.93,
+        "b": 129.34
+      },
+      "std": {
+        "r": 60.0,
+        "g": 55.59,
+        "b": 62.28
+      },
+      "luma": 120.51,
+      "temperature": -0.0742,
+      "frames": 1
+    }
   },
   {
     "hash": "sha256:169f3ff6bb689b28cbb76d33d1e7e7e3d5199754d512ae41e2036d2ce3e47a62",
@@ -2515,7 +3085,22 @@
         "b-roll"
       ]
     },
-    "captured_at_source": "exif"
+    "captured_at_source": "exif",
+    "color_stats": {
+      "mean": {
+        "r": 111.67,
+        "g": 126.5,
+        "b": 139.18
+      },
+      "std": {
+        "r": 66.86,
+        "g": 68.98,
+        "b": 82.68
+      },
+      "luma": 123.51,
+      "temperature": -0.1079,
+      "frames": 1
+    }
   },
   {
     "hash": "sha256:34607f10d287924106bc0ebc6d321e46af569f2279856cc9addda48a4cb88884",
@@ -2566,7 +3151,22 @@
         "b-roll"
       ]
     },
-    "captured_at_source": "exif"
+    "captured_at_source": "exif",
+    "color_stats": {
+      "mean": {
+        "r": 109.6,
+        "g": 119.76,
+        "b": 123.22
+      },
+      "std": {
+        "r": 56.94,
+        "g": 56.31,
+        "b": 66.63
+      },
+      "luma": 117.12,
+      "temperature": -0.0534,
+      "frames": 1
+    }
   },
   {
     "hash": "sha256:4c55e2169c3bf3dbe08697103212de3929af08bef8562f8140611c18d15a302b",
@@ -2618,7 +3218,22 @@
         "cutaway"
       ]
     },
-    "captured_at_source": "exif"
+    "captured_at_source": "exif",
+    "color_stats": {
+      "mean": {
+        "r": 104.0,
+        "g": 110.95,
+        "b": 92.34
+      },
+      "std": {
+        "r": 54.77,
+        "g": 50.59,
+        "b": 58.68
+      },
+      "luma": 106.75,
+      "temperature": 0.0457,
+      "frames": 1
+    }
   },
   {
     "hash": "sha256:7a2de79448796af450a85e4535c8b9044dbb7f0735758bb2f1f19943b3c14ad6",
@@ -2669,7 +3284,22 @@
         "b-roll"
       ]
     },
-    "captured_at_source": "exif"
+    "captured_at_source": "exif",
+    "color_stats": {
+      "mean": {
+        "r": 108.35,
+        "g": 132.82,
+        "b": 148.25
+      },
+      "std": {
+        "r": 52.69,
+        "g": 57.24,
+        "b": 74.77
+      },
+      "luma": 127.26,
+      "temperature": -0.1565,
+      "frames": 1
+    }
   },
   {
     "hash": "sha256:c754045158d63c7daffecc68df19951e7b74564623ab754a767de7f147681179",
@@ -2720,7 +3350,22 @@
         "establisher"
       ]
     },
-    "captured_at_source": "exif"
+    "captured_at_source": "exif",
+    "color_stats": {
+      "mean": {
+        "r": 107.41,
+        "g": 108.16,
+        "b": 94.89
+      },
+      "std": {
+        "r": 57.19,
+        "g": 55.31,
+        "b": 61.08
+      },
+      "luma": 106.42,
+      "temperature": 0.0491,
+      "frames": 1
+    }
   },
   {
     "hash": "sha256:c7b3c40ae532fe59e2c5a6c96cc0e8557105ec7275193b54cd143e386dce131a",
@@ -2773,7 +3418,22 @@
         "b-roll"
       ]
     },
-    "captured_at_source": "exif"
+    "captured_at_source": "exif",
+    "color_stats": {
+      "mean": {
+        "r": 100.25,
+        "g": 113.95,
+        "b": 118.16
+      },
+      "std": {
+        "r": 54.25,
+        "g": 53.99,
+        "b": 63.79
+      },
+      "luma": 110.33,
+      "temperature": -0.0702,
+      "frames": 1
+    }
   },
   {
     "hash": "sha256:cb3e3313c2839873609c299147a48d0298b6ab8ad3b0c281cbefa96e453fc537",
@@ -2825,7 +3485,22 @@
         "cutaway"
       ]
     },
-    "captured_at_source": "exif"
+    "captured_at_source": "exif",
+    "color_stats": {
+      "mean": {
+        "r": 91.73,
+        "g": 108.55,
+        "b": 120.55
+      },
+      "std": {
+        "r": 50.6,
+        "g": 50.31,
+        "b": 56.56
+      },
+      "luma": 104.89,
+      "temperature": -0.113,
+      "frames": 1
+    }
   },
   {
     "hash": "sha256:f2f7583120a1c3cc0ef129c038a3b14fa9549df040f1392beecbfc52e4598bc9",
@@ -2877,7 +3552,22 @@
         "establisher"
       ]
     },
-    "captured_at_source": "exif"
+    "captured_at_source": "exif",
+    "color_stats": {
+      "mean": {
+        "r": 107.25,
+        "g": 107.5,
+        "b": 101.63
+      },
+      "std": {
+        "r": 51.97,
+        "g": 51.3,
+        "b": 57.93
+      },
+      "luma": 106.76,
+      "temperature": 0.022,
+      "frames": 1
+    }
   },
   {
     "hash": "sha256:01db2ecf88c75fb4a3dfcc7872d341b2e39d812f27b94d60ec831a81af04a3e7",
@@ -2943,7 +3633,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-21T22:26:37.688000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 66.36,
+        "g": 73.92,
+        "b": 88.36
+      },
+      "std": {
+        "r": 54.19,
+        "g": 64.45,
+        "b": 80.86
+      },
+      "luma": 73.3,
+      "temperature": -0.0863,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:065d5c97b254c8b3c108ab162e12c80410767012fba39c7626988ef9e38fb4f4",
@@ -3009,7 +3714,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-21T22:24:08.446000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 64.11,
+        "g": 61.95,
+        "b": 64.99
+      },
+      "std": {
+        "r": 62.95,
+        "g": 55.56,
+        "b": 53.76
+      },
+      "luma": 62.94,
+      "temperature": -0.0035,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:cef9715d89d1ed345d66331e8183dbaac49e6b2ce7c1dcdf4c50ff114259be55",
@@ -3075,7 +3795,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-21T22:24:37.910000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 52.01,
+        "g": 55.5,
+        "b": 62.65
+      },
+      "std": {
+        "r": 51.65,
+        "g": 52.89,
+        "b": 61.43
+      },
+      "luma": 55.27,
+      "temperature": -0.0418,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:d90477ea58d39eb922ca2275f5604e77e09bcf3137d6a60ec2a85ab24ebad3e7",
@@ -3142,7 +3877,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-21T22:25:52.643000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 72.33,
+        "g": 62.59,
+        "b": 65.18
+      },
+      "std": {
+        "r": 81.25,
+        "g": 66.38,
+        "b": 63.08
+      },
+      "luma": 65.8,
+      "temperature": 0.028,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:e217eb64f104043fe8bbf67b6bae7a5aba8abf45f8901cdaef9babe15fb6cdb0",
@@ -3207,7 +3957,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-21T22:24:54.626000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 57.56,
+        "g": 62.49,
+        "b": 72.24
+      },
+      "std": {
+        "r": 42.67,
+        "g": 49.34,
+        "b": 62.31
+      },
+      "luma": 62.13,
+      "temperature": -0.0576,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:2c3851caf6d6bfa21781eda1963ec53121df4a553e3936c45879a42dce3aa9bb",
@@ -3273,7 +4038,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-22T15:54:08.343000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 80.26,
+        "g": 88.4,
+        "b": 90.44
+      },
+      "std": {
+        "r": 59.03,
+        "g": 63.08,
+        "b": 75.8
+      },
+      "luma": 86.2,
+      "temperature": -0.0399,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:340b8b1a91d07d932d0ab4f3b2869eb851e9533090a4642fe342482efdd4615f",
@@ -3339,7 +4119,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-22T15:59:34.268000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 139.9,
+        "g": 138.14,
+        "b": 139.77
+      },
+      "std": {
+        "r": 43.01,
+        "g": 43.51,
+        "b": 48.15
+      },
+      "luma": 138.85,
+      "temperature": 0.0005,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:6b2922dc7cbe445646c50e86a42c7bd12a5b45f2907471b9cd5fe48c4d3e3bb5",
@@ -3404,7 +4199,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-22T15:47:34.532000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 99.17,
+        "g": 109.58,
+        "b": 119.33
+      },
+      "std": {
+        "r": 59.81,
+        "g": 60.91,
+        "b": 72.07
+      },
+      "luma": 107.58,
+      "temperature": -0.079,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:71e612fa4817f4c15ec987dd16a90f8b46a33cb4681952687825f9be187c962d",
@@ -3470,7 +4280,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-22T21:54:17.623000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 106.23,
+        "g": 107.56,
+        "b": 123.7
+      },
+      "std": {
+        "r": 71.14,
+        "g": 68.73,
+        "b": 78.58
+      },
+      "luma": 109.0,
+      "temperature": -0.0685,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:8680286e6b05d99cb4a5227e9c6a6a7805e43e4ece9b7dd727245f05875a8a67",
@@ -3536,7 +4361,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-22T15:48:51.570000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 99.64,
+        "g": 103.69,
+        "b": 103.28
+      },
+      "std": {
+        "r": 51.86,
+        "g": 51.95,
+        "b": 63.14
+      },
+      "luma": 102.43,
+      "temperature": -0.0143,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:87011c298fbef0ee724d89c2ff52a0419c51143332b53d65be4c09125ac5a8d7",
@@ -3602,7 +4442,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-22T21:50:24.704000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 107.36,
+        "g": 108.53,
+        "b": 114.61
+      },
+      "std": {
+        "r": 69.72,
+        "g": 66.46,
+        "b": 77.58
+      },
+      "luma": 108.87,
+      "temperature": -0.0285,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:9027b3c2f37a023afc8b0565307ccc3075e43753d9a8589702a1f7db337d0449",
@@ -3667,7 +4522,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-22T15:50:14.234000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 104.6,
+        "g": 109.17,
+        "b": 109.23
+      },
+      "std": {
+        "r": 49.95,
+        "g": 52.61,
+        "b": 64.33
+      },
+      "luma": 107.81,
+      "temperature": -0.0181,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:9634e0abbe976b360f6e855fc5ddec34bf8608869e90a98b03af89807fa05bf5",
@@ -3731,7 +4601,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-22T15:51:47.851000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 88.99,
+        "g": 98.24,
+        "b": 101.06
+      },
+      "std": {
+        "r": 60.61,
+        "g": 62.92,
+        "b": 76.1
+      },
+      "luma": 95.8,
+      "temperature": -0.0473,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:a31495a3b92d45bf7f7be62e5ec61f53ae0391c5cbe367b36ec0ac4d41e468ca",
@@ -3797,7 +4682,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-22T21:51:09.702000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 105.05,
+        "g": 103.4,
+        "b": 113.62
+      },
+      "std": {
+        "r": 67.66,
+        "g": 66.22,
+        "b": 79.63
+      },
+      "luma": 105.06,
+      "temperature": -0.0336,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:b6d5de1524d2a9e9cd2da4e4f988fad9be14044403e87247ba2c226700545f67",
@@ -3862,7 +4762,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-22T15:58:23.307000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 116.81,
+        "g": 122.02,
+        "b": 105.42
+      },
+      "std": {
+        "r": 53.84,
+        "g": 53.66,
+        "b": 64.92
+      },
+      "luma": 118.57,
+      "temperature": 0.0447,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:c724eec9d672436122d45fa9fdb1203aa0a96335d4d338f78c0b7cdf9d3b6cad",
@@ -3928,7 +4843,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-22T15:48:27.208000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 99.31,
+        "g": 107.27,
+        "b": 110.74
+      },
+      "std": {
+        "r": 61.42,
+        "g": 63.43,
+        "b": 76.1
+      },
+      "luma": 105.28,
+      "temperature": -0.0448,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:e088e949e017cb8a35e6d66badf570a896f86c392d1b89071e9992a4616fecb7",
@@ -3992,7 +4922,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-22T15:54:34.352000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 83.97,
+        "g": 90.46,
+        "b": 89.42
+      },
+      "std": {
+        "r": 55.3,
+        "g": 57.89,
+        "b": 68.1
+      },
+      "luma": 88.4,
+      "temperature": -0.0214,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:e0e4c2fb29c29c76751237a969712edd3b5404c9d79687893ae0979cf98d9eb0",
@@ -4057,7 +5002,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-22T21:52:05.031000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 103.4,
+        "g": 105.24,
+        "b": 114.28
+      },
+      "std": {
+        "r": 71.1,
+        "g": 68.46,
+        "b": 81.29
+      },
+      "luma": 105.72,
+      "temperature": -0.0427,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:ee602a35d0d81397224a3e6b8cc31e122cb95f0454b4ae4eb4a5161603c5c5b4",
@@ -4122,7 +5082,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-22T15:51:15.654000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 85.68,
+        "g": 93.56,
+        "b": 90.49
+      },
+      "std": {
+        "r": 56.5,
+        "g": 58.0,
+        "b": 69.77
+      },
+      "luma": 90.85,
+      "temperature": -0.0188,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:fdb1436e917994c0e0e684998e6a2d077ef7f3d8ec8b7ac9882dae376422cf2c",
@@ -4188,7 +5163,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-22T15:55:34.647000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 89.53,
+        "g": 94.73,
+        "b": 90.59
+      },
+      "std": {
+        "r": 49.9,
+        "g": 51.02,
+        "b": 60.64
+      },
+      "luma": 92.71,
+      "temperature": -0.0042,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:07b1efc01bd4811ef26439c8f74cbb9efffe7459e6210d3bf86051b65846e0f4",
@@ -4254,7 +5244,22 @@
       "place": "Geilo"
     },
     "captured_at": "2026-07-23T17:45:03.570000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 105.17,
+        "g": 110.51,
+        "b": 104.93
+      },
+      "std": {
+        "r": 60.88,
+        "g": 61.87,
+        "b": 76.86
+      },
+      "luma": 108.28,
+      "temperature": 0.001,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:34c28fb0e61e5026e6721313eef8936d0e79c8267fa0a7dd99ef8f0e08e6e0b2",
@@ -4321,7 +5326,22 @@
       "place": "Geilo"
     },
     "captured_at": "2026-07-23T17:43:50.967000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 125.43,
+        "g": 131.38,
+        "b": 130.72
+      },
+      "std": {
+        "r": 60.08,
+        "g": 59.34,
+        "b": 70.65
+      },
+      "luma": 129.52,
+      "temperature": -0.0207,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:3db9c1b8feee158b9c3fd26ee99a61294dcb249cb6fd9f9f72bbe309b9db0ef0",
@@ -4387,7 +5407,22 @@
       "place": "Skien-Geilo"
     },
     "captured_at": "2026-07-23T14:07:15.115000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 109.47,
+        "g": 121.11,
+        "b": 124.95
+      },
+      "std": {
+        "r": 47.07,
+        "g": 48.42,
+        "b": 57.93
+      },
+      "luma": 118.07,
+      "temperature": -0.0607,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:40d97d88c4f4f51aad16f3163d017956956908ba145cbdab5996d2b97f27731b",
@@ -4452,7 +5487,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-23T17:45:50.208000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 102.37,
+        "g": 111.37,
+        "b": 79.23
+      },
+      "std": {
+        "r": 45.23,
+        "g": 39.7,
+        "b": 47.31
+      },
+      "luma": 105.02,
+      "temperature": 0.0908,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:44f9eb7b558172a9615b7bfe3c474ba45d07d4d20ac80640ae37df95684110b2",
@@ -4517,7 +5567,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-23T14:10:34.193000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 108.55,
+        "g": 119.7,
+        "b": 113.46
+      },
+      "std": {
+        "r": 58.69,
+        "g": 57.95,
+        "b": 69.12
+      },
+      "luma": 115.66,
+      "temperature": -0.0192,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:61a62cabb6ad02a20ab60a751e94e0b20b8cae127194db503b5895db60250061",
@@ -4582,7 +5647,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-23T14:08:48.129000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 93.63,
+        "g": 103.81,
+        "b": 97.46
+      },
+      "std": {
+        "r": 60.8,
+        "g": 56.43,
+        "b": 58.11
+      },
+      "luma": 100.04,
+      "temperature": -0.015,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:61ee11c5cfe3f49727655b4e48682e00743574b2e8aca55c150aead44a818ccf",
@@ -4646,7 +5726,22 @@
       "place": "Geilo"
     },
     "captured_at": "2026-07-23T14:58:00.936000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 122.99,
+        "g": 123.01,
+        "b": 115.81
+      },
+      "std": {
+        "r": 59.07,
+        "g": 57.73,
+        "b": 63.96
+      },
+      "luma": 122.18,
+      "temperature": 0.0281,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:92fb1e3f602f94fb6a48285e08fb126c80417ea8858b81355a1f9488de580c26",
@@ -4711,7 +5806,22 @@
       "place": "Skien"
     },
     "captured_at": "2026-07-23T14:07:31.274000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 109.62,
+        "g": 120.41,
+        "b": 128.67
+      },
+      "std": {
+        "r": 45.54,
+        "g": 46.54,
+        "b": 54.01
+      },
+      "luma": 118.12,
+      "temperature": -0.0747,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:94e7095b5c3313a75b0bfd46bc54162c0ed14433e0235d2f91f87b64a649f2d7",
@@ -4777,7 +5887,22 @@
       "place": "Geilo"
     },
     "captured_at": "2026-07-23T17:46:54.225000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 136.58,
+        "g": 150.57,
+        "b": 151.38
+      },
+      "std": {
+        "r": 72.78,
+        "g": 67.31,
+        "b": 78.46
+      },
+      "luma": 146.48,
+      "temperature": -0.058,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:9bc4b98753355d3f785c2ac47f8cb2715d68ce425787a387d45341f0c1184203",
@@ -4842,7 +5967,22 @@
       "place": "Geilo"
     },
     "captured_at": "2026-07-23T17:46:20.799000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 98.03,
+        "g": 102.59,
+        "b": 89.09
+      },
+      "std": {
+        "r": 54.52,
+        "g": 52.18,
+        "b": 65.19
+      },
+      "luma": 99.69,
+      "temperature": 0.0351,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:a36884cf679ff3515b9048043c253413fd926629428fe8e023e77a232ae8bb20",
@@ -4908,7 +6048,22 @@
       "place": "Geilo"
     },
     "captured_at": "2026-07-23T14:59:24.376000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 104.67,
+        "g": 107.3,
+        "b": 98.7
+      },
+      "std": {
+        "r": 58.65,
+        "g": 58.01,
+        "b": 65.04
+      },
+      "luma": 105.54,
+      "temperature": 0.0234,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:be1daedfba591b968fdafcf265760bc6b80276b48092c14305c5e7c63d265d87",
@@ -4973,7 +6128,22 @@
       "place": "Geilo"
     },
     "captured_at": "2026-07-23T14:57:35.203000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 107.83,
+        "g": 110.62,
+        "b": 97.61
+      },
+      "std": {
+        "r": 55.15,
+        "g": 52.34,
+        "b": 59.73
+      },
+      "luma": 108.3,
+      "temperature": 0.0401,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:c0be402066cf377466831b36a875231ba46599704fd556ef9b965c3896822e29",
@@ -5038,7 +6208,22 @@
       "place": "Geilo"
     },
     "captured_at": "2026-07-23T14:09:52.055000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 99.1,
+        "g": 108.05,
+        "b": 106.36
+      },
+      "std": {
+        "r": 62.85,
+        "g": 60.49,
+        "b": 64.98
+      },
+      "luma": 105.18,
+      "temperature": -0.0285,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:db7c1ed5e9f9f10259154e6acb8a18080b09db848b826b8c506502bba765c9e9",
@@ -5104,7 +6289,22 @@
       "place": "Geilo"
     },
     "captured_at": "2026-07-23T15:01:02.367000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 114.65,
+        "g": 115.89,
+        "b": 105.86
+      },
+      "std": {
+        "r": 61.46,
+        "g": 59.78,
+        "b": 67.42
+      },
+      "luma": 114.38,
+      "temperature": 0.0345,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:df2054c05fd35b2a1686106682652f56a89b674ecf37c0c6fdf613afe2d10444",
@@ -5170,7 +6370,22 @@
       "place": "Geilo"
     },
     "captured_at": "2026-07-23T14:58:24.974000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 99.9,
+        "g": 101.61,
+        "b": 89.86
+      },
+      "std": {
+        "r": 56.42,
+        "g": 54.0,
+        "b": 60.01
+      },
+      "luma": 99.76,
+      "temperature": 0.0394,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:e0a56b645302b77d7d0c8c7b2219984cbc57f23a1aad755b65874d1544741255",
@@ -5235,7 +6450,22 @@
       "place": "Geilo"
     },
     "captured_at": "2026-07-23T14:09:51.122000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 101.16,
+        "g": 112.06,
+        "b": 109.84
+      },
+      "std": {
+        "r": 62.45,
+        "g": 59.38,
+        "b": 63.88
+      },
+      "luma": 108.55,
+      "temperature": -0.034,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:e26ee66b812cf40763d36c1afd04604eb62b1acb1218a58b3a6b9939afce7476",
@@ -5300,7 +6530,22 @@
       "place": "Geilo"
     },
     "captured_at": "2026-07-23T15:00:41.839000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 111.26,
+        "g": 111.67,
+        "b": 103.46
+      },
+      "std": {
+        "r": 59.84,
+        "g": 58.19,
+        "b": 64.7
+      },
+      "luma": 110.61,
+      "temperature": 0.0306,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:f9365cfec46943342f5ecae35de8e8bd66f8984155a5334d16dc93125793aa70",
@@ -5367,7 +6612,22 @@
       "place": "Geilo"
     },
     "captured_at": "2026-07-23T17:47:23.143000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 119.9,
+        "g": 122.81,
+        "b": 94.37
+      },
+      "std": {
+        "r": 39.01,
+        "g": 35.64,
+        "b": 39.11
+      },
+      "luma": 118.7,
+      "temperature": 0.1001,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:085879219e1a91b2e88e8fdad964b5702d78c5c76666cb8918009438fc308e93",
@@ -5419,7 +6679,22 @@
         "establisher"
       ]
     },
-    "captured_at_source": "exif"
+    "captured_at_source": "exif",
+    "color_stats": {
+      "mean": {
+        "r": 72.93,
+        "g": 76.71,
+        "b": 81.39
+      },
+      "std": {
+        "r": 50.11,
+        "g": 43.2,
+        "b": 42.23
+      },
+      "luma": 76.11,
+      "temperature": -0.0331,
+      "frames": 1
+    }
   },
   {
     "hash": "sha256:094825edfe41f71e3578b0217848281dd36c27d011d270891eda0e8d0a31af1f",
@@ -5486,7 +6761,22 @@
       "place": "Flåm"
     },
     "captured_at": "2026-07-24T12:53:46.794000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 102.16,
+        "g": 114.13,
+        "b": 116.37
+      },
+      "std": {
+        "r": 44.28,
+        "g": 41.18,
+        "b": 48.85
+      },
+      "luma": 110.81,
+      "temperature": -0.0557,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:0be02d88de348024068f03d56f3c85938c3c7aa1dd5d56d73c11a921efa14c81",
@@ -5552,7 +6842,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T12:11:05.775000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 105.61,
+        "g": 110.35,
+        "b": 96.26
+      },
+      "std": {
+        "r": 45.47,
+        "g": 47.4,
+        "b": 64.19
+      },
+      "luma": 107.32,
+      "temperature": 0.0367,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:0c5020c8b78b08abfbdc368dd3ab19c5ba9b3d2bdde5c36c3f12581f8d344fe2",
@@ -5618,7 +6923,22 @@
       "place": "Flåm"
     },
     "captured_at": "2026-07-24T19:56:06.976000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 119.93,
+        "g": 124.72,
+        "b": 116.32
+      },
+      "std": {
+        "r": 56.28,
+        "g": 52.47,
+        "b": 59.13
+      },
+      "luma": 122.33,
+      "temperature": 0.0141,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:100519e3c2f94d9296455dc0eaa0ad081365d379e01e48c87555aca3b9bd379e",
@@ -5683,7 +7003,22 @@
       "place": "Flåm"
     },
     "captured_at": "2026-07-24T14:03:58.054000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 112.19,
+        "g": 122.28,
+        "b": 120.77
+      },
+      "std": {
+        "r": 43.45,
+        "g": 41.86,
+        "b": 48.74
+      },
+      "luma": 119.09,
+      "temperature": -0.0336,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:1aa8a78c455d7102283e04232810fbe152116a8c1ff642b6459dca892f350b57",
@@ -5749,7 +7084,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T12:11:42.949000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 108.28,
+        "g": 112.73,
+        "b": 91.34
+      },
+      "std": {
+        "r": 54.4,
+        "g": 54.77,
+        "b": 70.72
+      },
+      "luma": 108.96,
+      "temperature": 0.0664,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:1d5f95654eeda10ac1f9111fbed1e9d58408d3e7a6fdd835975fa94054300505",
@@ -5815,7 +7165,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T19:55:20.222000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 94.71,
+        "g": 100.82,
+        "b": 74.59
+      },
+      "std": {
+        "r": 60.97,
+        "g": 58.38,
+        "b": 60.07
+      },
+      "luma": 96.0,
+      "temperature": 0.0789,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:242fdd67b882307158365dfcd5e77d2376fdfde28450d7d2b37f780d9f75140c",
@@ -5880,7 +7245,22 @@
       "place": "Aurland/Flåm"
     },
     "captured_at": "2026-07-24T22:03:15.495000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 82.29,
+        "g": 87.65,
+        "b": 91.35
+      },
+      "std": {
+        "r": 33.15,
+        "g": 26.23,
+        "b": 25.9
+      },
+      "luma": 86.47,
+      "temperature": -0.0355,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:2f2cf49562493bd1544b21b69f5b660ab5b70e27157475fdb7f80ce64e2c8ef5",
@@ -5946,7 +7326,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T14:03:30.813000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 93.59,
+        "g": 105.33,
+        "b": 77.12
+      },
+      "std": {
+        "r": 41.58,
+        "g": 41.21,
+        "b": 43.83
+      },
+      "luma": 98.6,
+      "temperature": 0.0646,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:37d1f5b7c89b5139eba6f1d946ca974dc88ebe1637bb55d58bcd454d902ec82f",
@@ -6011,7 +7406,22 @@
       "place": "Flåm"
     },
     "captured_at": "2026-07-24T22:05:07.604000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 77.65,
+        "g": 81.55,
+        "b": 86.74
+      },
+      "std": {
+        "r": 43.63,
+        "g": 38.88,
+        "b": 39.08
+      },
+      "luma": 80.98,
+      "temperature": -0.0356,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:3c4be80bd8c8de610dc1ce5488ac7987865564563343bf4e83d3c7b005b35df6",
@@ -6076,7 +7486,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T22:10:30.537000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 74.42,
+        "g": 77.61,
+        "b": 83.6
+      },
+      "std": {
+        "r": 49.66,
+        "g": 45.78,
+        "b": 46.02
+      },
+      "luma": 77.34,
+      "temperature": -0.036,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:3f1f99fdb10edbfafa1dd1abcf4672586da169daf46965d99bc2db86dd9bb0f8",
@@ -6141,7 +7566,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T22:10:02.104000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 79.73,
+        "g": 79.05,
+        "b": 83.71
+      },
+      "std": {
+        "r": 50.84,
+        "g": 43.27,
+        "b": 40.21
+      },
+      "luma": 79.78,
+      "temperature": -0.0156,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:4847f2cc13f5736e43acb994ee35ce2c055822703b4544f840ae821516d749b9",
@@ -6207,7 +7647,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T22:02:55.478000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 70.18,
+        "g": 74.27,
+        "b": 77.82
+      },
+      "std": {
+        "r": 43.64,
+        "g": 39.5,
+        "b": 39.55
+      },
+      "luma": 73.46,
+      "temperature": -0.03,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:6577ef08d0525d870c790ed49d88b14dd886ee2984d3802dac5b992a94e706f1",
@@ -6258,7 +7713,22 @@
         "outro"
       ]
     },
-    "captured_at_source": "exif"
+    "captured_at_source": "exif",
+    "color_stats": {
+      "mean": {
+        "r": 70.79,
+        "g": 73.04,
+        "b": 76.46
+      },
+      "std": {
+        "r": 53.95,
+        "g": 45.5,
+        "b": 43.77
+      },
+      "luma": 72.76,
+      "temperature": -0.0223,
+      "frames": 1
+    }
   },
   {
     "hash": "sha256:6d3195b79fc6b685e7d8dbad9f5775004cf3395d9ed7a048842fe719ed4c8fce",
@@ -6323,7 +7793,22 @@
       "place": "Geilo-Aurland-Flåm"
     },
     "captured_at": "2026-07-24T12:10:26.354000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 114.14,
+        "g": 119.19,
+        "b": 107.68
+      },
+      "std": {
+        "r": 57.93,
+        "g": 59.06,
+        "b": 69.96
+      },
+      "luma": 116.37,
+      "temperature": 0.0254,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:7523dd6047d893808a6a64257c18561d228a739a945f3e4d092af18a341bb76e",
@@ -6388,7 +7873,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T20:01:00.621000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 112.57,
+        "g": 116.61,
+        "b": 113.21
+      },
+      "std": {
+        "r": 68.28,
+        "g": 64.18,
+        "b": 69.3
+      },
+      "luma": 115.01,
+      "temperature": -0.0025,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:86e33df482cfb4d9e728149f8a616c009e8ed60d8ab7b03f6210bb8b49efcd7f",
@@ -6454,7 +7954,22 @@
       "place": "Geilo-Aurland-Flåm"
     },
     "captured_at": "2026-07-24T12:09:35.371000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 130.62,
+        "g": 139.23,
+        "b": 140.09
+      },
+      "std": {
+        "r": 72.09,
+        "g": 74.73,
+        "b": 85.77
+      },
+      "luma": 136.75,
+      "temperature": -0.0371,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:8bff97001a1d78a0b139214e4f794c960dadf8526317a162ab6659506113884d",
@@ -6519,7 +8034,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T19:54:35.626000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 102.74,
+        "g": 110.66,
+        "b": 112.65
+      },
+      "std": {
+        "r": 58.66,
+        "g": 55.37,
+        "b": 61.55
+      },
+      "luma": 108.52,
+      "temperature": -0.0389,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:8c66b25ba9bf7cf04c255713a5485ba1afa8d5599bfa06e606a6c6d6689358af",
@@ -6585,7 +8115,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T20:02:10.788000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 97.23,
+        "g": 111.29,
+        "b": 78.99
+      },
+      "std": {
+        "r": 54.24,
+        "g": 49.07,
+        "b": 59.94
+      },
+      "luma": 103.4,
+      "temperature": 0.0715,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:9026914fc4cf8670ba9ff2b1757db96c739615802e7f80252c5202fc6b48ff12",
@@ -6650,7 +8195,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T19:58:26.240000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 103.41,
+        "g": 113.3,
+        "b": 103.18
+      },
+      "std": {
+        "r": 50.82,
+        "g": 48.18,
+        "b": 54.39
+      },
+      "luma": 109.19,
+      "temperature": 0.0009,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:95447978495192c7a77fe420d50b064b44213ca49b7399f9327fbc45cfeac26b",
@@ -6715,7 +8275,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T14:05:53.391000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 96.9,
+        "g": 108.68,
+        "b": 81.81
+      },
+      "std": {
+        "r": 48.61,
+        "g": 46.65,
+        "b": 54.12
+      },
+      "luma": 102.1,
+      "temperature": 0.0592,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:9bf31d59ffcb0ec0c1c1157867566c8ac6bf7f0efed37f9f8bccc2684d600341",
@@ -6767,7 +8342,22 @@
         "b-roll"
       ]
     },
-    "captured_at_source": "exif"
+    "captured_at_source": "exif",
+    "color_stats": {
+      "mean": {
+        "r": 68.55,
+        "g": 73.86,
+        "b": 80.31
+      },
+      "std": {
+        "r": 43.2,
+        "g": 37.96,
+        "b": 38.32
+      },
+      "luma": 73.01,
+      "temperature": -0.0461,
+      "frames": 1
+    }
   },
   {
     "hash": "sha256:a97e2562b0dd1a49024b193aff9b974ed648946d50ad214ddc1180988b3c0569",
@@ -6833,7 +8423,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T14:04:15.682000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 94.88,
+        "g": 103.84,
+        "b": 109.91
+      },
+      "std": {
+        "r": 49.55,
+        "g": 45.87,
+        "b": 49.56
+      },
+      "luma": 101.86,
+      "temperature": -0.0589,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:af80add0267502479b8a36d3e9b1bbee8349e9e08b2627cac113fb130bc4e8d8",
@@ -6899,7 +8504,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T19:57:49.917000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 88.56,
+        "g": 98.34,
+        "b": 67.81
+      },
+      "std": {
+        "r": 53.52,
+        "g": 53.05,
+        "b": 46.53
+      },
+      "luma": 91.93,
+      "temperature": 0.0814,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:b7214188726e26f740b4851c602dca8f8189c029efb1da95bd9fb98e5082cc8d",
@@ -6962,7 +8582,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T18:13:18+00:00",
-    "captured_at_source": "container+name"
+    "captured_at_source": "container+name",
+    "color_stats": {
+      "mean": {
+        "r": 106.94,
+        "g": 116.5,
+        "b": 113.89
+      },
+      "std": {
+        "r": 55.02,
+        "g": 50.7,
+        "b": 53.56
+      },
+      "luma": 113.34,
+      "temperature": -0.0273,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:be1034f694b3d0fd0f403192eecd6179bcb211f6803894a04ff59b929878d0b8",
@@ -7028,7 +8663,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T14:03:00.307000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 101.48,
+        "g": 112.47,
+        "b": 117.75
+      },
+      "std": {
+        "r": 71.06,
+        "g": 68.3,
+        "b": 73.26
+      },
+      "luma": 109.79,
+      "temperature": -0.0638,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:c1c0e406cb84c74017ce9dab693cc71ae00c963787021a01436b889c40e3d3b2",
@@ -7094,7 +8744,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T22:16:28.245000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 61.97,
+        "g": 67.78,
+        "b": 77.46
+      },
+      "std": {
+        "r": 46.47,
+        "g": 43.12,
+        "b": 46.26
+      },
+      "luma": 67.15,
+      "temperature": -0.0607,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:c794debda339c506b5427a71e5ab8570ac7dac7a3ad8b0dfe7dc048c82acda76",
@@ -7160,7 +8825,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T19:56:49.709000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 87.08,
+        "g": 101.02,
+        "b": 71.03
+      },
+      "std": {
+        "r": 51.02,
+        "g": 48.72,
+        "b": 47.7
+      },
+      "luma": 93.43,
+      "temperature": 0.0629,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:c90be9e04b02426b70491d56fe974f47efccc6d02989f3d54fb4e0dba4a41d7b",
@@ -7225,7 +8905,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T20:02:30.332000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 99.19,
+        "g": 111.38,
+        "b": 91.93
+      },
+      "std": {
+        "r": 52.75,
+        "g": 46.76,
+        "b": 54.14
+      },
+      "luma": 105.52,
+      "temperature": 0.0285,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:cc7177a9d29ab7c35a8e963e89510734115f12b27ba0c34b713b01d9398775d8",
@@ -7277,7 +8972,22 @@
         "outro"
       ]
     },
-    "captured_at_source": "exif"
+    "captured_at_source": "exif",
+    "color_stats": {
+      "mean": {
+        "r": 72.03,
+        "g": 73.82,
+        "b": 78.09
+      },
+      "std": {
+        "r": 53.35,
+        "g": 44.54,
+        "b": 41.92
+      },
+      "luma": 73.77,
+      "temperature": -0.0238,
+      "frames": 1
+    }
   },
   {
     "hash": "sha256:d194b3867306343f13fa33116dd65c7e944321421e870373a903deb207be4a16",
@@ -7344,7 +9054,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T22:13:48.954000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 69.37,
+        "g": 73.5,
+        "b": 82.47
+      },
+      "std": {
+        "r": 37.76,
+        "g": 33.93,
+        "b": 33.47
+      },
+      "luma": 73.29,
+      "temperature": -0.0514,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:d2ba6f14c41bdd728680ff1bdd553d79ac1cf14e09b0f9bfc749bab741cf3a82",
@@ -7410,7 +9135,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T22:03:45.720000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 73.53,
+        "g": 77.0,
+        "b": 80.55
+      },
+      "std": {
+        "r": 53.5,
+        "g": 49.59,
+        "b": 51.18
+      },
+      "luma": 76.37,
+      "temperature": -0.0275,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:d3cf3c1e15663da5d8a05a935bb17b5955936539fe61a1e3333dabc71e1f45b3",
@@ -7475,7 +9215,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T19:59:52.747000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 107.5,
+        "g": 112.56,
+        "b": 117.21
+      },
+      "std": {
+        "r": 62.97,
+        "g": 58.24,
+        "b": 58.78
+      },
+      "luma": 111.58,
+      "temperature": -0.0381,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:dc94026d83a27472dc0fb48ea12ef54a9e6b8dda5bfcd3f185eb9b4e2153cc33",
@@ -7541,7 +9296,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T22:12:11.346000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 73.18,
+        "g": 72.74,
+        "b": 75.92
+      },
+      "std": {
+        "r": 48.91,
+        "g": 39.77,
+        "b": 36.3
+      },
+      "luma": 73.23,
+      "temperature": -0.0107,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:de0379b47966caa24d8b371edbbdbd2b38d005d0fb59ef1297beb51455f94278",
@@ -7607,7 +9377,22 @@
       "place": "Aurland"
     },
     "captured_at": "2026-07-24T12:55:31.734000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 103.79,
+        "g": 114.24,
+        "b": 116.64
+      },
+      "std": {
+        "r": 43.48,
+        "g": 41.47,
+        "b": 47.08
+      },
+      "luma": 111.39,
+      "temperature": -0.0504,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:eb153aa6f8a8a11146cd1e6244b125c507cac06e85f9865da1d8fb4de305ca84",
@@ -7674,7 +9459,22 @@
       "place": "Aurland-Flåm"
     },
     "captured_at": "2026-07-24T22:15:38.172000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 67.61,
+        "g": 70.69,
+        "b": 79.23
+      },
+      "std": {
+        "r": 49.86,
+        "g": 44.58,
+        "b": 45.74
+      },
+      "luma": 70.74,
+      "temperature": -0.0456,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:eb50fac4b10a257a99df82b2b28320cdf9b847e1064ea61570a381ab48a7a6ac",
@@ -7740,7 +9540,22 @@
       "place": "Aurland-Flåm"
     },
     "captured_at": "2026-07-24T20:01:20.967000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 90.58,
+        "g": 95.28,
+        "b": 90.14
+      },
+      "std": {
+        "r": 58.91,
+        "g": 54.48,
+        "b": 58.87
+      },
+      "luma": 93.29,
+      "temperature": 0.0017,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:f955ce969ba638b964e8a9ad6093c3c514125f4e665f83ad5bf0a5b02972df4d",
@@ -7806,7 +9621,22 @@
       "place": "Flåm"
     },
     "captured_at": "2026-07-24T22:10:52.419000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 78.15,
+        "g": 80.28,
+        "b": 86.08
+      },
+      "std": {
+        "r": 49.33,
+        "g": 45.4,
+        "b": 44.53
+      },
+      "luma": 80.3,
+      "temperature": -0.0311,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:fe92bfbbeab254551e9bc6558f79b66c6d859e7bb6301e20977650d97d83bdcb",
@@ -7857,7 +9687,22 @@
         "establisher"
       ]
     },
-    "captured_at_source": "exif"
+    "captured_at_source": "exif",
+    "color_stats": {
+      "mean": {
+        "r": 101.04,
+        "g": 110.9,
+        "b": 114.93
+      },
+      "std": {
+        "r": 67.72,
+        "g": 66.91,
+        "b": 74.34
+      },
+      "luma": 108.41,
+      "temperature": -0.0545,
+      "frames": 1
+    }
   },
   {
     "hash": "sha256:1d384fde74dc35b51ac0a4473f0a373cde6f9a0359e6728c17fed4022a1cd6b1",
@@ -7923,7 +9768,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-26T16:46:18.240000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 101.2,
+        "g": 113.93,
+        "b": 85.05
+      },
+      "std": {
+        "r": 46.29,
+        "g": 44.34,
+        "b": 41.5
+      },
+      "luma": 106.83,
+      "temperature": 0.0633,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:28983075bf26ea7732c9d857590a9d4f97c950e89102f226891fd9e67dee007c",
@@ -7989,7 +9849,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-26T16:43:23.547000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 111.93,
+        "g": 122.91,
+        "b": 102.28
+      },
+      "std": {
+        "r": 49.51,
+        "g": 48.8,
+        "b": 54.41
+      },
+      "luma": 117.28,
+      "temperature": 0.0379,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:2d284b5c7f25b156031cfd3be3e829064b92c425c8a0e26c22dcf75515ae7f15",
@@ -8055,7 +9930,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-26T16:49:36.617000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 91.69,
+        "g": 109.47,
+        "b": 64.14
+      },
+      "std": {
+        "r": 52.53,
+        "g": 53.11,
+        "b": 45.36
+      },
+      "luma": 98.99,
+      "temperature": 0.108,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:2ff1e50d992bf43807b0fba9cf31c3a24efb308eaba7049299a93a779db3e1db",
@@ -8121,7 +10011,22 @@
       "place": "Geilo-Geiranger"
     },
     "captured_at": "2026-07-26T13:32:38.248000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 107.88,
+        "g": 118.04,
+        "b": 106.51
+      },
+      "std": {
+        "r": 56.28,
+        "g": 56.65,
+        "b": 70.46
+      },
+      "luma": 113.69,
+      "temperature": 0.0054,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:36ebd8be8e4bcca4a6bfd8e75b19c01bc101be9c51ba37c7691550eb1de53562",
@@ -8186,7 +10091,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-26T16:48:47.575000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 104.79,
+        "g": 114.68,
+        "b": 92.88
+      },
+      "std": {
+        "r": 44.14,
+        "g": 43.8,
+        "b": 48.65
+      },
+      "luma": 109.24,
+      "temperature": 0.0467,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:3cef40d1b10926c328e7eedd0d7d61a4f5e8d862be6d3498c50c15d611b9005f",
@@ -8251,7 +10171,22 @@
       "place": "Geilo-Geiranger"
     },
     "captured_at": "2026-07-26T14:11:46.885000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 103.95,
+        "g": 124.99,
+        "b": 118.64
+      },
+      "std": {
+        "r": 56.58,
+        "g": 51.1,
+        "b": 55.93
+      },
+      "luma": 117.98,
+      "temperature": -0.0576,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:3ec0caa29da6f8f4e6715a3307307c9dc30c1037a42132e126b148eecd36127f",
@@ -8316,7 +10251,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-26T16:48:24.721000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 94.37,
+        "g": 109.67,
+        "b": 70.16
+      },
+      "std": {
+        "r": 52.52,
+        "g": 53.31,
+        "b": 47.32
+      },
+      "luma": 100.59,
+      "temperature": 0.095,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:4048ccefa29463d5216671e282b55ad0717da9234b7b24fe3929444bc83b588a",
@@ -8382,7 +10332,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-26T16:52:32.453000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 134.07,
+        "g": 137.52,
+        "b": 109.32
+      },
+      "std": {
+        "r": 68.14,
+        "g": 68.73,
+        "b": 65.29
+      },
+      "luma": 133.27,
+      "temperature": 0.0971,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:44f27efb50fb1aabdca57034d45fa3814994490b0685a4972a8b1b5cf61f3109",
@@ -8448,7 +10413,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-26T15:11:51.788000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 83.42,
+        "g": 95.72,
+        "b": 64.13
+      },
+      "std": {
+        "r": 44.53,
+        "g": 44.36,
+        "b": 48.47
+      },
+      "luma": 88.44,
+      "temperature": 0.0757,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:4a48a273a3514c4ac25f7d2bda8ae4f83babfcf53531db954a46f2739b3eef26",
@@ -8515,7 +10495,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-26T15:15:01.104000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 101.75,
+        "g": 114.2,
+        "b": 88.99
+      },
+      "std": {
+        "r": 39.2,
+        "g": 35.99,
+        "b": 43.39
+      },
+      "luma": 107.6,
+      "temperature": 0.05,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:503c37a7e3027cc3e9d2f659d5facd5af9e7ed5c21cdd8a280672aab59720978",
@@ -8579,7 +10574,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-26T14:06:47.819000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 86.36,
+        "g": 106.38,
+        "b": 85.02
+      },
+      "std": {
+        "r": 40.82,
+        "g": 32.89,
+        "b": 35.38
+      },
+      "luma": 97.96,
+      "temperature": 0.0053,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:557edbf1e3311b24321fff6319a5dd9a012b44f675979891a30b819624c78d20",
@@ -8630,7 +10640,22 @@
         "establisher"
       ]
     },
-    "captured_at_source": "exif"
+    "captured_at_source": "exif",
+    "color_stats": {
+      "mean": {
+        "r": 100.6,
+        "g": 110.15,
+        "b": 95.95
+      },
+      "std": {
+        "r": 49.96,
+        "g": 48.61,
+        "b": 62.16
+      },
+      "luma": 105.67,
+      "temperature": 0.0183,
+      "frames": 1
+    }
   },
   {
     "hash": "sha256:55bfefbf72ca6debdf20d65b5958ec578933ace97a3c05073aba250fcbf1b8d7",
@@ -8696,7 +10721,22 @@
       "place": "Geilo"
     },
     "captured_at": "2026-07-26T15:16:31.305000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 94.01,
+        "g": 103.24,
+        "b": 77.28
+      },
+      "std": {
+        "r": 55.79,
+        "g": 56.11,
+        "b": 63.3
+      },
+      "luma": 97.52,
+      "temperature": 0.0656,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:688ddab8675acc1fc2b020df66c31e274bcca65bbee7c096f608017b6113fb98",
@@ -8760,7 +10800,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-26T14:14:25.344000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 88.83,
+        "g": 107.78,
+        "b": 79.09
+      },
+      "std": {
+        "r": 39.78,
+        "g": 38.12,
+        "b": 33.06
+      },
+      "luma": 98.84,
+      "temperature": 0.0382,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:7206fd97016950e43a88f18096d2d35be03a6bcba5c68427fa542f4f19f308bf",
@@ -8825,7 +10880,22 @@
       "place": "Geilo-Geiranger"
     },
     "captured_at": "2026-07-26T13:31:45.821000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 111.01,
+        "g": 121.56,
+        "b": 113.08
+      },
+      "std": {
+        "r": 58.64,
+        "g": 61.28,
+        "b": 71.71
+      },
+      "luma": 117.44,
+      "temperature": -0.0081,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:73d4f8cd2e6f6e609fcfd3c51aad4778142417f1982264e9a860d75fe5be9511",
@@ -8889,7 +10959,22 @@
       "place": "Geilo-Geiranger"
     },
     "captured_at": "2026-07-26T13:30:28.815000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 122.85,
+        "g": 131.83,
+        "b": 132.22
+      },
+      "std": {
+        "r": 56.73,
+        "g": 57.98,
+        "b": 66.15
+      },
+      "luma": 129.19,
+      "temperature": -0.0367,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:749346ba4375b9169d17063fa73edbd8bf08be179f8677a2593162aa6aa8972d",
@@ -8953,7 +11038,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-26T14:13:14.924000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 95.59,
+        "g": 114.7,
+        "b": 80.48
+      },
+      "std": {
+        "r": 38.79,
+        "g": 41.74,
+        "b": 45.95
+      },
+      "luma": 105.09,
+      "temperature": 0.0592,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:7def3a8eb0ed4154cfcab0fd3593df5743052bcd1482826a4178db9f8f451e8e",
@@ -9019,7 +11119,22 @@
       "place": "Geilo-Geiranger"
     },
     "captured_at": "2026-07-26T14:06:59.409000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 82.2,
+        "g": 114.83,
+        "b": 94.07
+      },
+      "std": {
+        "r": 42.49,
+        "g": 34.87,
+        "b": 41.36
+      },
+      "luma": 102.71,
+      "temperature": -0.0466,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:85b1a87c1c5fd0bafa9ed241a7ad99f500847301568109d0872da17770d1f536",
@@ -9070,7 +11185,22 @@
         "b-roll"
       ]
     },
-    "captured_at_source": "exif"
+    "captured_at_source": "exif",
+    "color_stats": {
+      "mean": {
+        "r": 132.6,
+        "g": 132.92,
+        "b": 102.45
+      },
+      "std": {
+        "r": 55.58,
+        "g": 55.02,
+        "b": 56.1
+      },
+      "luma": 129.35,
+      "temperature": 0.1182,
+      "frames": 1
+    }
   },
   {
     "hash": "sha256:8a347b0898907b4cd07ebd26e5f96f82f4b004ca00f56e5357d232efb85ce8f4",
@@ -9122,7 +11252,22 @@
         "establisher"
       ]
     },
-    "captured_at_source": "exif"
+    "captured_at_source": "exif",
+    "color_stats": {
+      "mean": {
+        "r": 105.18,
+        "g": 107.9,
+        "b": 95.96
+      },
+      "std": {
+        "r": 52.16,
+        "g": 55.28,
+        "b": 63.49
+      },
+      "luma": 105.73,
+      "temperature": 0.0362,
+      "frames": 1
+    }
   },
   {
     "hash": "sha256:8c4f79d37dc0031b3bb7e08a4ce4a14a5e5c0d80ee76773bbb19f88ef6743602",
@@ -9187,7 +11332,22 @@
       "place": "Geilo"
     },
     "captured_at": "2026-07-26T14:15:34.618000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 109.5,
+        "g": 111.11,
+        "b": 112.98
+      },
+      "std": {
+        "r": 36.46,
+        "g": 36.17,
+        "b": 37.49
+      },
+      "luma": 110.84,
+      "temperature": -0.0136,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:8d6634abdf49b4cb0b5f6ea4100d9890d1f42201563ba22d59b5131174d0d7bb",
@@ -9255,7 +11415,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-26T15:12:56.719000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 88.92,
+        "g": 100.92,
+        "b": 75.16
+      },
+      "std": {
+        "r": 41.6,
+        "g": 39.0,
+        "b": 46.61
+      },
+      "luma": 94.39,
+      "temperature": 0.054,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:993dafe5cbb339fddb13eae38ad9cc48dd4e057c1f7d16bf5467fe0a4996c9ba",
@@ -9320,7 +11495,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-26T13:30:06.272000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 104.69,
+        "g": 113.75,
+        "b": 105.34
+      },
+      "std": {
+        "r": 58.36,
+        "g": 61.09,
+        "b": 69.97
+      },
+      "luma": 110.08,
+      "temperature": -0.0025,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:a15499da676c16082867d3592c34fe46194d8ad0a2df08ae45a1a130080d5b45",
@@ -9386,7 +11576,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-26T16:54:46.173000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 82.62,
+        "g": 95.93,
+        "b": 59.67
+      },
+      "std": {
+        "r": 41.34,
+        "g": 40.21,
+        "b": 33.8
+      },
+      "luma": 87.82,
+      "temperature": 0.09,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:a1945f5649f8ee63cce91703f59809e7d1996dfe8e8e6559735a9331b2b2b672",
@@ -9453,7 +11658,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-26T14:06:18.914000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 87.05,
+        "g": 119.27,
+        "b": 106.15
+      },
+      "std": {
+        "r": 34.03,
+        "g": 29.97,
+        "b": 34.51
+      },
+      "luma": 108.14,
+      "temperature": -0.0749,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:c8e39c12f332fc8825a213277ef07a1363a55bc41e29470073897718227c34fd",
@@ -9518,7 +11738,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-26T16:51:15.235000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 100.23,
+        "g": 109.27,
+        "b": 93.31
+      },
+      "std": {
+        "r": 44.93,
+        "g": 42.89,
+        "b": 50.59
+      },
+      "luma": 104.75,
+      "temperature": 0.0271,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:c9db9491cca164d42fba7e44201f87719948842cb703759a3c59b1a675cb591b",
@@ -9569,7 +11804,22 @@
         "b-roll"
       ]
     },
-    "captured_at_source": "exif"
+    "captured_at_source": "exif",
+    "color_stats": {
+      "mean": {
+        "r": 74.17,
+        "g": 102.13,
+        "b": 83.15
+      },
+      "std": {
+        "r": 41.46,
+        "g": 33.2,
+        "b": 40.86
+      },
+      "luma": 91.6,
+      "temperature": -0.0352,
+      "frames": 1
+    }
   },
   {
     "hash": "sha256:cdb78d50d02e9d9f27712ecde7badf8d6bb2cc3d5977f854a1300ea3b26a07a2",
@@ -9635,7 +11885,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-26T16:45:14.681000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 118.12,
+        "g": 129.11,
+        "b": 119.44
+      },
+      "std": {
+        "r": 52.96,
+        "g": 49.98,
+        "b": 54.79
+      },
+      "luma": 124.72,
+      "temperature": -0.0052,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:cee8da40c9f22a6796c71413c52483ebe9c34c26e388b4f68b20f9cc98dfa7b3",
@@ -9700,7 +11965,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-26T15:14:07.126000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 109.12,
+        "g": 117.84,
+        "b": 95.82
+      },
+      "std": {
+        "r": 50.0,
+        "g": 47.45,
+        "b": 61.27
+      },
+      "luma": 112.73,
+      "temperature": 0.0522,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:dd243f25587f13f26e5d1937ead5908a8ed7770abe7e8118a52739b811ff5407",
@@ -9751,7 +12031,22 @@
         "establisher"
       ]
     },
-    "captured_at_source": "exif"
+    "captured_at_source": "exif",
+    "color_stats": {
+      "mean": {
+        "r": 95.79,
+        "g": 105.44,
+        "b": 94.69
+      },
+      "std": {
+        "r": 48.53,
+        "g": 46.79,
+        "b": 59.55
+      },
+      "luma": 101.33,
+      "temperature": 0.0043,
+      "frames": 1
+    }
   },
   {
     "hash": "sha256:de30ac6806ecdc2b1f203cd58ce81b0e5bb8b6f27df3712ebb2c487438acd0e1",
@@ -9817,7 +12112,22 @@
       "place": "Geilo"
     },
     "captured_at": "2026-07-26T15:15:18.048000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 82.48,
+        "g": 98.93,
+        "b": 60.95
+      },
+      "std": {
+        "r": 38.87,
+        "g": 36.5,
+        "b": 38.07
+      },
+      "luma": 89.68,
+      "temperature": 0.0844,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:e9f050348cfddd646ad7f3220f0ad3f887360e22c1c5f8ddb24e0e577c27cc93",
@@ -9883,7 +12193,22 @@
       "place": "Geilo-Geiranger"
     },
     "captured_at": "2026-07-26T13:32:08.202000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 104.1,
+        "g": 118.93,
+        "b": 116.45
+      },
+      "std": {
+        "r": 52.96,
+        "g": 52.56,
+        "b": 59.72
+      },
+      "luma": 114.21,
+      "temperature": -0.0484,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:ed79037d10c6573dc07d3f8b37c5260a37e5db23828d5878ead1a608dee19531",
@@ -9948,7 +12273,22 @@
       "place": "Geilo-Geiranger"
     },
     "captured_at": "2026-07-26T14:15:11.373000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 134.14,
+        "g": 141.39,
+        "b": 120.11
+      },
+      "std": {
+        "r": 34.52,
+        "g": 39.44,
+        "b": 39.14
+      },
+      "luma": 136.8,
+      "temperature": 0.055,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:eed7aa5c9a13f63911975d1fc514e368fc8b1ed28f4c2635e6c790c472ece54c",
@@ -10015,7 +12355,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-26T16:55:59.874000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 90.96,
+        "g": 102.82,
+        "b": 69.63
+      },
+      "std": {
+        "r": 41.82,
+        "g": 40.43,
+        "b": 39.49
+      },
+      "luma": 95.49,
+      "temperature": 0.0837,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:fd430efdd6a2ec60fbbebc2c06cd9d0a0b7b3381786a0279b1be4bc9e56e36c4",
@@ -10082,7 +12437,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-26T13:31:00.980000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 110.57,
+        "g": 120.38,
+        "b": 115.64
+      },
+      "std": {
+        "r": 54.23,
+        "g": 56.81,
+        "b": 67.21
+      },
+      "luma": 116.9,
+      "temperature": -0.0199,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:3cd337b674d8a2eef471529758112b4655437220a9689d78187584379ebaf704",
@@ -10147,7 +12517,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-27T10:43:00.073000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 118.46,
+        "g": 126.43,
+        "b": 120.52
+      },
+      "std": {
+        "r": 53.13,
+        "g": 49.36,
+        "b": 53.78
+      },
+      "luma": 123.37,
+      "temperature": -0.0081,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:50a9664c4032cfb4e1c1fa502cf517e1fe270fb860971c34a6a1632f91c6b15c",
@@ -10212,7 +12597,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-27T10:48:03.344000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 118.54,
+        "g": 127.73,
+        "b": 109.41
+      },
+      "std": {
+        "r": 40.86,
+        "g": 40.16,
+        "b": 43.27
+      },
+      "luma": 122.9,
+      "temperature": 0.0358,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:00a3ae06e4073b33c6ce2d9e0bd75c5147e830e73f2a8b4bb260fa371b2d8bdd",
@@ -10279,7 +12679,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-28T22:05:08.415000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 87.34,
+        "g": 102.72,
+        "b": 107.07
+      },
+      "std": {
+        "r": 48.02,
+        "g": 48.65,
+        "b": 54.07
+      },
+      "luma": 98.62,
+      "temperature": -0.0774,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:0131d3ee4a23852fa396b8ffd3bc4ff32e5c8ba72c0d43b339506466ffe9c766",
@@ -10345,7 +12760,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-28T12:46:24.739000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 115.37,
+        "g": 119.89,
+        "b": 126.33
+      },
+      "std": {
+        "r": 60.97,
+        "g": 60.83,
+        "b": 64.87
+      },
+      "luma": 119.27,
+      "temperature": -0.043,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:17c8a487752061bab07eb768c7a7338161865cb026447e5243c58a964237ad5c",
@@ -10411,7 +12841,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-28T12:54:33.771000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 123.4,
+        "g": 127.61,
+        "b": 113.48
+      },
+      "std": {
+        "r": 50.27,
+        "g": 50.48,
+        "b": 61.89
+      },
+      "luma": 124.74,
+      "temperature": 0.0389,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:1cc83525b60b72b61467543465afe6405451b7896fb3159581e2a1dfddde0e68",
@@ -10478,7 +12923,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-28T12:48:27.107000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 102.27,
+        "g": 103.55,
+        "b": 82.92
+      },
+      "std": {
+        "r": 39.03,
+        "g": 38.17,
+        "b": 43.37
+      },
+      "luma": 100.82,
+      "temperature": 0.0759,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:299fb151000d31ac24f28d551ac05466c59a79e7f3a4c83cc8164a8fc3c8754b",
@@ -10542,7 +13002,22 @@
       "place": "Geiranger-Lom/Trollstigen"
     },
     "captured_at": "2026-07-28T12:50:02.921000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 135.15,
+        "g": 140.81,
+        "b": 143.6
+      },
+      "std": {
+        "r": 47.47,
+        "g": 45.67,
+        "b": 49.61
+      },
+      "luma": 139.44,
+      "temperature": -0.0331,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:2abc70ca319e9cd279bfbe3860145977e37ef055a9e898a782c578e1ed466986",
@@ -10609,7 +13084,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-28T21:59:11.108000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 78.92,
+        "g": 98.98,
+        "b": 103.91
+      },
+      "std": {
+        "r": 46.24,
+        "g": 46.53,
+        "b": 59.37
+      },
+      "luma": 93.55,
+      "temperature": -0.098,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:2be63d9cfea405c1e87f51725a8e4006b235a6512049c7ce29b5ac88c53030e5",
@@ -10675,7 +13165,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-28T22:01:24.209000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 83.63,
+        "g": 99.69,
+        "b": 106.85
+      },
+      "std": {
+        "r": 49.5,
+        "g": 52.39,
+        "b": 61.29
+      },
+      "luma": 95.7,
+      "temperature": -0.0911,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:3f599846c949e3a85b87a36b3e24e802c2430866580e4e0e4b912422f647d4f6",
@@ -10740,7 +13245,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-28T21:59:57.547000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 88.72,
+        "g": 102.45,
+        "b": 106.61
+      },
+      "std": {
+        "r": 51.87,
+        "g": 50.91,
+        "b": 56.02
+      },
+      "luma": 98.82,
+      "temperature": -0.0702,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:3feda71aae4ebb9678c5b2d9292f429722d02850f2ae6ed5d0d9562e1748a148",
@@ -10807,7 +13327,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-28T15:01:50.055000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 105.71,
+        "g": 111.03,
+        "b": 95.65
+      },
+      "std": {
+        "r": 52.85,
+        "g": 53.55,
+        "b": 59.51
+      },
+      "luma": 107.69,
+      "temperature": 0.0395,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:4cae48302ab6426659c3b36d93f3b927cd4608227a0feb234dc4ed113debd15f",
@@ -10873,7 +13408,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-28T21:57:14.964000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 101.88,
+        "g": 120.56,
+        "b": 126.85
+      },
+      "std": {
+        "r": 45.4,
+        "g": 50.46,
+        "b": 59.69
+      },
+      "luma": 115.69,
+      "temperature": -0.0979,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:51fecd09d02ccd4a6ff71b1414a20bef7a44b519b8cc836d172d3ae7b1dc5a46",
@@ -10938,7 +13488,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-28T21:51:42.145000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 90.15,
+        "g": 105.57,
+        "b": 96.76
+      },
+      "std": {
+        "r": 46.63,
+        "g": 44.41,
+        "b": 49.43
+      },
+      "luma": 99.96,
+      "temperature": -0.0259,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:5d3cd701ae6844611a989122c8b825d8137d48aaaea8f2b522e8d92732687706",
@@ -11005,7 +13570,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-28T15:00:27.151000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 99.66,
+        "g": 106.78,
+        "b": 88.55
+      },
+      "std": {
+        "r": 44.79,
+        "g": 42.56,
+        "b": 50.84
+      },
+      "luma": 102.57,
+      "temperature": 0.0436,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:6889741d551d523bbc9c086bbc256ec8b081556d07df4d745ded2753e3834ba5",
@@ -11071,7 +13651,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-28T21:50:37.792000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 104.16,
+        "g": 114.91,
+        "b": 115.22
+      },
+      "std": {
+        "r": 53.81,
+        "g": 53.5,
+        "b": 58.68
+      },
+      "luma": 111.73,
+      "temperature": -0.0434,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:79c52168f4c56d9c5c1abd3741b4a0dda523931053db71728bc153e857328047",
@@ -11137,7 +13732,22 @@
       "place": "Geiranger-Lom"
     },
     "captured_at": "2026-07-28T12:49:09.618000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 111.84,
+        "g": 121.24,
+        "b": 120.18
+      },
+      "std": {
+        "r": 64.16,
+        "g": 60.73,
+        "b": 68.79
+      },
+      "luma": 118.31,
+      "temperature": -0.0327,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:9e4fe2140850217971e2c0aa6893ee762b5d7e0e04633b73e3cf9de0ef162b7e",
@@ -11201,7 +13811,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-28T21:54:13.895000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 99.23,
+        "g": 127.53,
+        "b": 143.2
+      },
+      "std": {
+        "r": 41.53,
+        "g": 53.24,
+        "b": 64.38
+      },
+      "luma": 120.86,
+      "temperature": -0.1724,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:9f54f738ed83712d98ab8b1b279a039bb4e0482f6e60215b5d47514429b8287d",
@@ -11267,7 +13892,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-28T12:46:06.496000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 110.64,
+        "g": 112.05,
+        "b": 107.32
+      },
+      "std": {
+        "r": 55.93,
+        "g": 57.94,
+        "b": 68.1
+      },
+      "luma": 111.09,
+      "temperature": 0.013,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:a30311756da3b6ccef7d7df95458e97652a6c69d2bd0146ce2e389e0ab7968fc",
@@ -11331,7 +13971,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-28T15:04:44.868000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 112.52,
+        "g": 117.75,
+        "b": 112.96
+      },
+      "std": {
+        "r": 53.28,
+        "g": 51.36,
+        "b": 58.82
+      },
+      "luma": 115.64,
+      "temperature": -0.0017,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:b307d94bf30813fc3be8a61bd45cc8d1444425556a8627e72c652fc0ce934381",
@@ -11396,7 +14051,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-28T12:47:06.881000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 133.22,
+        "g": 134.55,
+        "b": 122.72
+      },
+      "std": {
+        "r": 46.34,
+        "g": 48.24,
+        "b": 48.19
+      },
+      "luma": 132.8,
+      "temperature": 0.0412,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:b550d2a0923f12d63b2bb00b941c6d58346095d616c29e05e6b5fe26cd6dc766",
@@ -11462,7 +14132,22 @@
       "place": "Geiranger-Lom"
     },
     "captured_at": "2026-07-28T14:59:51.349000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 101.92,
+        "g": 108.61,
+        "b": 95.33
+      },
+      "std": {
+        "r": 46.79,
+        "g": 46.86,
+        "b": 55.9
+      },
+      "luma": 105.09,
+      "temperature": 0.0258,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:ba56f47d26514bae4e61d4461a5ae882d7682a395378cb9194b553399a8bb683",
@@ -11526,7 +14211,22 @@
       "place": "Geiranger-Lom"
     },
     "captured_at": "2026-07-28T12:54:13.095000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 154.76,
+        "g": 161.64,
+        "b": 167.79
+      },
+      "std": {
+        "r": 55.74,
+        "g": 59.41,
+        "b": 65.76
+      },
+      "luma": 160.29,
+      "temperature": -0.0511,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:c3df87b3a3b1a55b93874d19a7447ffe0bd7d6d1cbc4702d0e50d67de33a5ffc",
@@ -11592,7 +14292,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-28T21:56:06.936000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 98.5,
+        "g": 122.0,
+        "b": 129.76
+      },
+      "std": {
+        "r": 42.73,
+        "g": 49.84,
+        "b": 60.54
+      },
+      "luma": 115.86,
+      "temperature": -0.1226,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:c4f81737096202877048670146d82a9eb235136b9ad49128578ecc0e3c6bc940",
@@ -11658,7 +14373,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-28T14:55:13.906000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 115.52,
+        "g": 125.09,
+        "b": 107.63
+      },
+      "std": {
+        "r": 51.54,
+        "g": 48.57,
+        "b": 58.62
+      },
+      "luma": 120.24,
+      "temperature": 0.031,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:c91b2aec1e376770f6521f108e65c9e748d437655ee66a720f7c43997dca2b26",
@@ -11725,7 +14455,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-28T12:49:41.598000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 119.48,
+        "g": 126.96,
+        "b": 130.23
+      },
+      "std": {
+        "r": 62.95,
+        "g": 59.81,
+        "b": 63.26
+      },
+      "luma": 125.1,
+      "temperature": -0.0422,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:e13194a501d3449ec2966e34a6244306b565b8973b5f8bde76e16b89bce1f383",
@@ -11789,7 +14534,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-28T14:57:23.502000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 109.11,
+        "g": 108.13,
+        "b": 97.05
+      },
+      "std": {
+        "r": 52.4,
+        "g": 50.87,
+        "b": 53.25
+      },
+      "luma": 107.16,
+      "temperature": 0.0473,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:e3e21d6c4832eca9637a5d41c80b7ee79711f78131e95f1d89d826ca7e38e919",
@@ -11854,7 +14614,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-28T14:56:39.249000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 109.72,
+        "g": 113.96,
+        "b": 100.26
+      },
+      "std": {
+        "r": 53.21,
+        "g": 53.02,
+        "b": 60.46
+      },
+      "luma": 111.13,
+      "temperature": 0.0371,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:e42c63a37a3b0f90a77b330ff0d9e1c4836d55303aeeb44fd60d11febc4d8f73",
@@ -11919,7 +14694,22 @@
       "place": "Geiranger"
     },
     "captured_at": "2026-07-28T12:52:03.144000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 114.38,
+        "g": 117.06,
+        "b": 105.01
+      },
+      "std": {
+        "r": 49.84,
+        "g": 50.99,
+        "b": 52.01
+      },
+      "luma": 114.89,
+      "temperature": 0.0368,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:eab4d942005b5faf70c94fc6fb8bdc9a81280990779b84c4763a12a2ea332944",
@@ -11986,7 +14776,22 @@
       "place": "Geiranger-Lom"
     },
     "captured_at": "2026-07-28T12:48:53.467000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 100.3,
+        "g": 111.16,
+        "b": 103.98
+      },
+      "std": {
+        "r": 55.62,
+        "g": 52.68,
+        "b": 64.06
+      },
+      "luma": 107.1,
+      "temperature": -0.0144,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:eb4ff35c3acbc91d5c82e1f3866c0deaaec5ecd603dc8b1fb6a11e7a834c211d",
@@ -12050,7 +14855,22 @@
       "place": "Geiranger-Lom"
     },
     "captured_at": "2026-07-28T12:52:56.029000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 119.02,
+        "g": 122.0,
+        "b": 105.77
+      },
+      "std": {
+        "r": 52.89,
+        "g": 54.19,
+        "b": 64.87
+      },
+      "luma": 119.26,
+      "temperature": 0.052,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:ecc6c365bbe714dae2d93d9946453d5525f57a15b5881be8dfc3aba4b24de78b",
@@ -12116,7 +14936,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-28T22:03:47.481000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 90.63,
+        "g": 110.91,
+        "b": 116.14
+      },
+      "std": {
+        "r": 46.16,
+        "g": 47.02,
+        "b": 53.18
+      },
+      "luma": 105.44,
+      "temperature": -0.1,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:fe50bf049afc39dc7e13c71e8567841fcc5e57d039888ef796280097d6cbffb1",
@@ -12182,7 +15017,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-28T14:58:19.909000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 122.9,
+        "g": 121.9,
+        "b": 113.63
+      },
+      "std": {
+        "r": 51.46,
+        "g": 51.42,
+        "b": 55.65
+      },
+      "luma": 121.26,
+      "temperature": 0.0364,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:0a2128e8708f71e6037f2ff9e460e441c3894462d2b4b600604e52d58beaa19b",
@@ -12250,7 +15100,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-29T19:50:49.188000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 128.88,
+        "g": 128.49,
+        "b": 117.84
+      },
+      "std": {
+        "r": 52.77,
+        "g": 54.46,
+        "b": 70.46
+      },
+      "luma": 127.39,
+      "temperature": 0.0433,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:127306a0634445e10463b5c3a48e6171e010f0a4a591f5d71d76ccbd0c55a852",
@@ -12314,7 +15179,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-29T15:49:35+00:00",
-    "captured_at_source": "container+name"
+    "captured_at_source": "container+name",
+    "color_stats": {
+      "mean": {
+        "r": 110.79,
+        "g": 111.69,
+        "b": 102.79
+      },
+      "std": {
+        "r": 51.44,
+        "g": 51.15,
+        "b": 59.49
+      },
+      "luma": 110.41,
+      "temperature": 0.0314,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:15edc2a20a973df83d19198320adeac362eae89b6de83aa221bf304d4cc58dcc",
@@ -12380,7 +15260,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-29T12:22:27.544000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 124.91,
+        "g": 139.12,
+        "b": 149.97
+      },
+      "std": {
+        "r": 43.41,
+        "g": 47.72,
+        "b": 67.76
+      },
+      "luma": 136.11,
+      "temperature": -0.0983,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:174d79a09f447c2c13fe10903be89666cd64ebc52247cd42a4196d76eb02f5b8",
@@ -12446,7 +15341,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-29T12:29:14.711000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 135.74,
+        "g": 143.7,
+        "b": 149.3
+      },
+      "std": {
+        "r": 45.33,
+        "g": 51.46,
+        "b": 64.99
+      },
+      "luma": 141.96,
+      "temperature": -0.0532,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:1fb49173252b41add0ce01eaacde5639f199e5cbb366c952c27b7a2b95a243ff",
@@ -12511,7 +15421,22 @@
       "place": "Lom-Uvdal"
     },
     "captured_at": "2026-07-29T15:46:49.494000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 108.86,
+        "g": 109.75,
+        "b": 99.21
+      },
+      "std": {
+        "r": 52.07,
+        "g": 52.25,
+        "b": 56.8
+      },
+      "luma": 108.28,
+      "temperature": 0.0378,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:282819cb7706b9eabffd7398e2b6079834eb70adce9c423de40540ed65864928",
@@ -12576,7 +15501,22 @@
       "place": "Lom-Uvdal"
     },
     "captured_at": "2026-07-29T12:37:27.625000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 126.91,
+        "g": 126.46,
+        "b": 121.84
+      },
+      "std": {
+        "r": 44.87,
+        "g": 46.39,
+        "b": 51.31
+      },
+      "luma": 126.07,
+      "temperature": 0.0199,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:399b5f2059c679bf6daa53b9a76ea4118a1488e8c7656b46521ca009ca923b7e",
@@ -12642,7 +15582,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-29T19:59:22.759000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 111.05,
+        "g": 112.04,
+        "b": 80.75
+      },
+      "std": {
+        "r": 57.92,
+        "g": 53.26,
+        "b": 49.33
+      },
+      "luma": 108.18,
+      "temperature": 0.1189,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:55d2e3acf6adea525b76687f13577e91b0e4677dd7438f333a9cc9de7f9c9783",
@@ -12708,7 +15663,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-29T15:44:57.926000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 104.94,
+        "g": 104.78,
+        "b": 93.37
+      },
+      "std": {
+        "r": 57.02,
+        "g": 56.76,
+        "b": 69.84
+      },
+      "luma": 103.53,
+      "temperature": 0.0454,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:5b8148c0d2e3def2a6850ff0516de1da735cf2cb4a7cd2849a9336e9f785cea0",
@@ -12774,7 +15744,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-29T12:34:48.589000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 118.71,
+        "g": 120.19,
+        "b": 97.07
+      },
+      "std": {
+        "r": 55.14,
+        "g": 58.58,
+        "b": 69.62
+      },
+      "luma": 117.11,
+      "temperature": 0.0848,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:61b12e726e37a2ccbd5b55f84eab7128e9755bfe9d0381377e0211d5207bba3f",
@@ -12840,7 +15825,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-29T19:57:06.382000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 99.69,
+        "g": 103.4,
+        "b": 98.8
+      },
+      "std": {
+        "r": 63.52,
+        "g": 63.02,
+        "b": 68.36
+      },
+      "luma": 101.77,
+      "temperature": 0.0035,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:63eb6b5e464dfacf861327cd3f409ae195d8cb2b0340987270bb51a3339546a6",
@@ -12906,7 +15906,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-29T12:35:25.952000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 125.84,
+        "g": 127.09,
+        "b": 126.18
+      },
+      "std": {
+        "r": 49.84,
+        "g": 54.35,
+        "b": 63.05
+      },
+      "luma": 126.61,
+      "temperature": -0.0014,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:6cbda01a037b285648c6a2e82589c85c2bf17c9b5f9484ce1ac58bcfe65bc601",
@@ -12970,7 +15985,22 @@
       "place": "Lom-Uvdal"
     },
     "captured_at": "2026-07-29T15:48:08.542000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 92.8,
+        "g": 93.71,
+        "b": 86.28
+      },
+      "std": {
+        "r": 48.08,
+        "g": 48.33,
+        "b": 55.0
+      },
+      "luma": 92.59,
+      "temperature": 0.0256,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:7930c0cabe982abc48e7127a0b2273d28e7751411840a9b12a73a9c1c1ddefef",
@@ -13035,7 +16065,22 @@
       "place": "Lom-Uvdal"
     },
     "captured_at": "2026-07-29T12:22:59.498000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 119.47,
+        "g": 122.15,
+        "b": 121.56
+      },
+      "std": {
+        "r": 61.22,
+        "g": 67.44,
+        "b": 79.35
+      },
+      "luma": 121.28,
+      "temperature": -0.0082,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:799b7aa581eab689b0f4bc0780de6f843de356feb227b0598b22c4814754fad1",
@@ -13100,7 +16145,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-29T19:47:45.262000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 103.36,
+        "g": 108.62,
+        "b": 107.48
+      },
+      "std": {
+        "r": 73.54,
+        "g": 74.96,
+        "b": 80.85
+      },
+      "luma": 106.92,
+      "temperature": -0.0162,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:79c9169a143a5768b21fa0dbf6fa451308b9ff0fbdfd20cf644c73f5b7cfae55",
@@ -13165,7 +16225,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-29T19:53:50.437000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 108.73,
+        "g": 110.97,
+        "b": 101.24
+      },
+      "std": {
+        "r": 56.24,
+        "g": 56.63,
+        "b": 62.21
+      },
+      "luma": 109.19,
+      "temperature": 0.0294,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:82a8464ae4c958723dfb792b84d43f714f11a1abb870a0b14f647905b563eef8",
@@ -13230,7 +16305,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-29T19:48:32.246000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 125.66,
+        "g": 129.5,
+        "b": 125.2
+      },
+      "std": {
+        "r": 60.62,
+        "g": 62.09,
+        "b": 73.28
+      },
+      "luma": 127.86,
+      "temperature": 0.0018,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:8b3b4bcae384d3bbc8db7c17b2be535b5e9fa17d349a462d2c2c7291ff7ebb3b",
@@ -13295,7 +16385,22 @@
       "place": "Lom-Uvdal"
     },
     "captured_at": "2026-07-29T12:36:58.465000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 139.86,
+        "g": 133.57,
+        "b": 125.04
+      },
+      "std": {
+        "r": 42.8,
+        "g": 45.27,
+        "b": 49.42
+      },
+      "luma": 134.47,
+      "temperature": 0.0581,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:91ee916d13afd3690747003ada88133df0ca99a30cff1d244a2d50ee1542428a",
@@ -13359,7 +16464,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-29T12:24:49.584000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 132.43,
+        "g": 133.53,
+        "b": 129.27
+      },
+      "std": {
+        "r": 42.92,
+        "g": 46.55,
+        "b": 56.33
+      },
+      "luma": 132.71,
+      "temperature": 0.0124,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:92f6d74a7c76e0d12f26a694488b45890e3e94a3ef3b196bc901cc1ca8227e59",
@@ -13425,7 +16545,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-29T19:52:14.504000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 111.63,
+        "g": 112.9,
+        "b": 109.98
+      },
+      "std": {
+        "r": 59.19,
+        "g": 58.48,
+        "b": 63.08
+      },
+      "luma": 112.19,
+      "temperature": 0.0065,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:9cb328a7ccaa2be1603e1bcd4228fd1b3340edb96fe07bd97cc98d67c1ea52e3",
@@ -13489,7 +16624,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-29T12:39:01.337000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 136.51,
+        "g": 133.75,
+        "b": 122.58
+      },
+      "std": {
+        "r": 41.5,
+        "g": 43.81,
+        "b": 50.62
+      },
+      "luma": 133.3,
+      "temperature": 0.0546,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:9daefa2308c30991a0e99e9296572bff119c5e2a3af2dbde73c27073f5cd254f",
@@ -13555,7 +16705,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-29T19:49:28.723000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 102.28,
+        "g": 107.53,
+        "b": 108.17
+      },
+      "std": {
+        "r": 72.81,
+        "g": 74.66,
+        "b": 79.52
+      },
+      "luma": 106.03,
+      "temperature": -0.0231,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:9ff75b940788292d01c2b3d97c4dfc16064134d8fe280c9ff94933511225736d",
@@ -13619,7 +16784,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-29T12:31:51.339000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 124.27,
+        "g": 129.16,
+        "b": 130.23
+      },
+      "std": {
+        "r": 58.5,
+        "g": 63.35,
+        "b": 74.27
+      },
+      "luma": 127.82,
+      "temperature": -0.0234,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:a1557eb06b1fe7381a1b5f8dc1efbcc963282f7021d99aae30e2132d61562e30",
@@ -13686,7 +16866,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-29T15:43:52.457000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 98.1,
+        "g": 100.85,
+        "b": 94.98
+      },
+      "std": {
+        "r": 50.16,
+        "g": 50.33,
+        "b": 61.69
+      },
+      "luma": 99.36,
+      "temperature": 0.0122,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:a81fe634f0bbe10851eae58be15476501ab154defced0f2e8788a63f983f3482",
@@ -13750,7 +16945,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-29T19:54:52.372000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 119.68,
+        "g": 118.48,
+        "b": 102.15
+      },
+      "std": {
+        "r": 47.93,
+        "g": 42.98,
+        "b": 35.3
+      },
+      "luma": 116.98,
+      "temperature": 0.0688,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:b764c06640e3c8849070fc6df8f6a59e61f858f01c65962bf16e0b7e1d8d5248",
@@ -13817,7 +17027,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-29T19:58:34.621000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 106.25,
+        "g": 107.68,
+        "b": 95.33
+      },
+      "std": {
+        "r": 59.89,
+        "g": 59.68,
+        "b": 64.99
+      },
+      "luma": 105.84,
+      "temperature": 0.0428,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:bff3b98aabb81a93d6e977516876610c49bb0a0ebb83797454650a483e75a8be",
@@ -13883,7 +17108,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-29T15:42:52.116000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 123.69,
+        "g": 121.72,
+        "b": 112.53
+      },
+      "std": {
+        "r": 53.36,
+        "g": 53.02,
+        "b": 56.53
+      },
+      "luma": 121.26,
+      "temperature": 0.0438,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:c01e111bd8ca9d23509c75bfeda7185849d6688a8f37021824aa24da2fc5bc45",
@@ -13949,7 +17189,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-29T19:58:06.537000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 117.46,
+        "g": 118.92,
+        "b": 101.18
+      },
+      "std": {
+        "r": 55.15,
+        "g": 55.36,
+        "b": 67.17
+      },
+      "luma": 116.46,
+      "temperature": 0.0639,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:d35631a819891b313ff520f35afbb0e8e2bf2ba75a3bbb1d17dc6fc2108e8b3c",
@@ -14016,7 +17271,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-29T12:22:35.877000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 135.0,
+        "g": 139.12,
+        "b": 140.63
+      },
+      "std": {
+        "r": 59.13,
+        "g": 64.91,
+        "b": 76.53
+      },
+      "luma": 138.06,
+      "temperature": -0.0221,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:d64baa5c228389542a65f9a149c423caca0b38a7a27f6c687d0ed9a598281773",
@@ -14082,7 +17352,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-29T20:00:07.218000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 108.24,
+        "g": 111.09,
+        "b": 94.81
+      },
+      "std": {
+        "r": 57.13,
+        "g": 56.51,
+        "b": 60.31
+      },
+      "luma": 108.38,
+      "temperature": 0.0527,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:d743b0c0b35dea2c77a8009ddf5308c121ec72607df0ffbbd5e647fc823ff503",
@@ -14148,7 +17433,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-29T12:35:50.932000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 125.04,
+        "g": 126.93,
+        "b": 126.18
+      },
+      "std": {
+        "r": 49.91,
+        "g": 54.97,
+        "b": 64.44
+      },
+      "luma": 126.28,
+      "temperature": -0.0045,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:e226dd6eb21da9b4dfdf77def1398032fd57a5cca094d86361887ecf6588d23b",
@@ -14213,7 +17513,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-29T20:02:05.977000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 114.05,
+        "g": 115.66,
+        "b": 89.61
+      },
+      "std": {
+        "r": 57.14,
+        "g": 57.58,
+        "b": 67.1
+      },
+      "luma": 112.21,
+      "temperature": 0.0959,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:e50000b861f10b603fda987e3993f21447f98b6febbf3d46fced18ee995c967d",
@@ -14279,7 +17594,22 @@
       "place": "Lom-Uvdal"
     },
     "captured_at": "2026-07-29T12:23:38.779000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 124.46,
+        "g": 125.83,
+        "b": 124.5
+      },
+      "std": {
+        "r": 51.73,
+        "g": 59.0,
+        "b": 70.55
+      },
+      "luma": 125.27,
+      "temperature": -0.0001,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:e6864844bdf920660ffe4edd12d72fbc8f47838420fd28ccb8ee31a22745663b",
@@ -14346,7 +17676,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-29T19:51:36.294000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 117.1,
+        "g": 113.86,
+        "b": 86.4
+      },
+      "std": {
+        "r": 54.97,
+        "g": 52.5,
+        "b": 52.9
+      },
+      "luma": 111.7,
+      "temperature": 0.1204,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:ef19b322313bdc6b1abbb376c51a973cde88d56330e329dee0f98ee22be9b56c",
@@ -14413,7 +17758,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-29T12:25:32.592000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 141.35,
+        "g": 141.8,
+        "b": 133.02
+      },
+      "std": {
+        "r": 40.17,
+        "g": 37.72,
+        "b": 45.7
+      },
+      "luma": 140.66,
+      "temperature": 0.0326,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:f7e055945ec1b151aae88ea100ecc3a73a93ed7142fec363834b7c544f3b8044",
@@ -14479,7 +17839,22 @@
       "place": "Lom"
     },
     "captured_at": "2026-07-29T15:43:14.186000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 85.89,
+        "g": 90.74,
+        "b": 76.9
+      },
+      "std": {
+        "r": 52.01,
+        "g": 50.15,
+        "b": 56.92
+      },
+      "luma": 87.71,
+      "temperature": 0.0353,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:0cf76b09a105cb8cd2b9d934929207768b5cf55f1233fad68460684d440cfdfa",
@@ -14544,7 +17919,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-30T14:29:00.758000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 127.33,
+        "g": 127.06,
+        "b": 105.85
+      },
+      "std": {
+        "r": 28.59,
+        "g": 26.14,
+        "b": 28.48
+      },
+      "luma": 124.72,
+      "temperature": 0.0842,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:488af71ec1d2b9693948e71d1a892a34eb26b1cbfb0d53db13f104b4cce16953",
@@ -14609,7 +17999,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-30T14:27:29.083000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 121.5,
+        "g": 124.72,
+        "b": 88.04
+      },
+      "std": {
+        "r": 31.04,
+        "g": 24.66,
+        "b": 28.37
+      },
+      "luma": 119.57,
+      "temperature": 0.1312,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:4abe2d6f286f7b2bdf47a4be007b0086ac41742e37638127165f9b96e339e496",
@@ -14673,7 +18078,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-30T11:49:46.023000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 110.8,
+        "g": 115.75,
+        "b": 105.67
+      },
+      "std": {
+        "r": 52.57,
+        "g": 49.42,
+        "b": 57.06
+      },
+      "luma": 113.12,
+      "temperature": 0.0201,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:5b69e6cc3cb0b877471e3e84b5a0cc27de37d5bfbdf3e98ed96d545b270adb19",
@@ -14737,7 +18157,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-30T11:52:52.997000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 101.29,
+        "g": 102.34,
+        "b": 97.8
+      },
+      "std": {
+        "r": 53.44,
+        "g": 52.1,
+        "b": 57.92
+      },
+      "luma": 101.51,
+      "temperature": 0.0137,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:60547e483cde892bec721de0d7e6f7cf2719fd8dfd6a1596b5558720d6ef4ad0",
@@ -14803,7 +18238,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-30T11:57:47.902000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 106.56,
+        "g": 110.26,
+        "b": 107.22
+      },
+      "std": {
+        "r": 59.64,
+        "g": 56.98,
+        "b": 65.07
+      },
+      "luma": 108.81,
+      "temperature": -0.0026,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:6690ab0d639fc2e783743bfb8244e0a2e266a13326fd65ff39c3b3bef86efae2",
@@ -14867,7 +18317,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-30T14:26:45.468000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 123.53,
+        "g": 129.37,
+        "b": 90.86
+      },
+      "std": {
+        "r": 32.85,
+        "g": 23.49,
+        "b": 30.93
+      },
+      "luma": 123.23,
+      "temperature": 0.1281,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:6e8ef1c523e08cd9546e906008e3d88749d943935cfaabb44250d0a88c6d6536",
@@ -14931,7 +18396,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-30T11:52:11.041000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 108.22,
+        "g": 112.05,
+        "b": 100.74
+      },
+      "std": {
+        "r": 61.52,
+        "g": 58.7,
+        "b": 61.38
+      },
+      "luma": 109.61,
+      "temperature": 0.0294,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:8d3d79ae084429cb8ea9233cf3c561b0a5cf480115b9733201021eb8e9e9146c",
@@ -14996,7 +18476,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-30T14:23:48.701000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 114.66,
+        "g": 120.27,
+        "b": 95.29
+      },
+      "std": {
+        "r": 68.32,
+        "g": 66.4,
+        "b": 74.21
+      },
+      "luma": 115.75,
+      "temperature": 0.076,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:929ca1792c7afb6bb6c3e52c1a441ff7c5f2c558cb7dae751235773724fd9aeb",
@@ -15060,7 +18555,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-30T14:27:51.247000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 129.94,
+        "g": 131.34,
+        "b": 106.21
+      },
+      "std": {
+        "r": 35.7,
+        "g": 30.81,
+        "b": 33.52
+      },
+      "luma": 128.06,
+      "temperature": 0.0931,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:b19ae7c104548d6cd714b424ae830dabb8cfca9b908f832a7a1fb3a148321f90",
@@ -15123,7 +18633,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-30T11:34:19+00:00",
-    "captured_at_source": "container+name"
+    "captured_at_source": "container+name",
+    "color_stats": {
+      "mean": {
+        "r": 100.27,
+        "g": 104.59,
+        "b": 100.67
+      },
+      "std": {
+        "r": 54.92,
+        "g": 52.72,
+        "b": 60.92
+      },
+      "luma": 102.85,
+      "temperature": -0.0016,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:b3b3a092415dee163e1ce3d2939fced7d56af88a7c700469f81e0e9cdbb3a6d8",
@@ -15187,7 +18712,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-30T11:49:03.279000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 105.35,
+        "g": 106.36,
+        "b": 103.2
+      },
+      "std": {
+        "r": 53.1,
+        "g": 51.99,
+        "b": 56.63
+      },
+      "luma": 105.7,
+      "temperature": 0.0084,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:b7bed73552626fc2cad856da0b8319e96767a4331f17198320e56257efba164f",
@@ -15253,7 +18793,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-30T11:54:23.178000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 145.64,
+        "g": 145.08,
+        "b": 144.21
+      },
+      "std": {
+        "r": 32.9,
+        "g": 34.26,
+        "b": 34.87
+      },
+      "luma": 145.15,
+      "temperature": 0.0056,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:c609c1a2ba5a62bbaf4cb7005eabf2bd1ac878976c180cb7286293641d1ad95e",
@@ -15319,7 +18874,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-30T14:24:31.239000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 127.11,
+        "g": 130.93,
+        "b": 94.44
+      },
+      "std": {
+        "r": 68.59,
+        "g": 63.36,
+        "b": 62.73
+      },
+      "luma": 125.63,
+      "temperature": 0.1281,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:cb0db706e5167bf8e57c5c3dca6ec96dc9d307a100d72a36ebf7d5fb12d977e1",
@@ -15384,7 +18954,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-30T14:25:37.970000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 120.68,
+        "g": 127.28,
+        "b": 89.55
+      },
+      "std": {
+        "r": 46.79,
+        "g": 38.34,
+        "b": 40.13
+      },
+      "luma": 121.0,
+      "temperature": 0.1221,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:e02ec61448c3fac58d731cca0e56d359a96597f7052fa52ea2b024d7a1eca1fc",
@@ -15446,7 +19031,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-30T11:42:15+00:00",
-    "captured_at_source": "container+name"
+    "captured_at_source": "container+name",
+    "color_stats": {
+      "mean": {
+        "r": 109.0,
+        "g": 113.2,
+        "b": 103.98
+      },
+      "std": {
+        "r": 51.16,
+        "g": 48.54,
+        "b": 55.54
+      },
+      "luma": 110.9,
+      "temperature": 0.0197,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:123000737017360677d689aa7c841ef908ab07233a91d5fece333b19f0f7ccab",
@@ -15509,7 +19109,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-31T13:42:06+00:00",
-    "captured_at_source": "container+name"
+    "captured_at_source": "container+name",
+    "color_stats": {
+      "mean": {
+        "r": 105.25,
+        "g": 110.33,
+        "b": 102.88
+      },
+      "std": {
+        "r": 46.03,
+        "g": 44.62,
+        "b": 52.47
+      },
+      "luma": 107.96,
+      "temperature": 0.0093,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:1c05a6210e289ada60a4c29733865530ade3dd584ad9b3e321e630df8327b325",
@@ -15574,7 +19189,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-31T13:25:42.584000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 101.84,
+        "g": 111.26,
+        "b": 75.94
+      },
+      "std": {
+        "r": 67.31,
+        "g": 65.35,
+        "b": 59.11
+      },
+      "luma": 104.41,
+      "temperature": 0.1015,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:20563e0a30ac0836c21f1f31e05960b2454b572099f4112fb5fe3874899af463",
@@ -15638,7 +19268,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-31T13:23:22.872000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 117.12,
+        "g": 131.04,
+        "b": 88.16
+      },
+      "std": {
+        "r": 44.73,
+        "g": 42.72,
+        "b": 38.04
+      },
+      "luma": 121.99,
+      "temperature": 0.1136,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:2a400361eda3dcaea0d2bd1c19b5bf407b5eadee518dbc7daf2e560e1426e6c3",
@@ -15702,7 +19347,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-31T13:24:07.259000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 116.16,
+        "g": 120.66,
+        "b": 99.17
+      },
+      "std": {
+        "r": 53.13,
+        "g": 50.29,
+        "b": 46.37
+      },
+      "luma": 116.87,
+      "temperature": 0.0666,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:4e77d9390d88a8afe10e8b3f4c00b4e937f0eac60f6de7aae91cb36e26133f94",
@@ -15764,7 +19424,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-31T13:36:55+00:00",
-    "captured_at_source": "container+name"
+    "captured_at_source": "container+name",
+    "color_stats": {
+      "mean": {
+        "r": 132.97,
+        "g": 139.72,
+        "b": 115.3
+      },
+      "std": {
+        "r": 51.5,
+        "g": 45.18,
+        "b": 45.94
+      },
+      "luma": 134.92,
+      "temperature": 0.0693,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:56e1ebbc79a6f714ce3724d92d198a35d97de8db89898baa817a1cb5f6c86fd7",
@@ -15845,7 +19520,22 @@
     "exclude": true,
     "exclude_reason": "Drohne in Ast, ruckartige Fehlbewegung",
     "captured_at": "2026-07-31T13:24:52.710000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 112.58,
+        "g": 111.51,
+        "b": 90.38
+      },
+      "std": {
+        "r": 40.97,
+        "g": 40.7,
+        "b": 39.14
+      },
+      "luma": 109.42,
+      "temperature": 0.0871,
+      "frames": 6
+    }
   },
   {
     "hash": "sha256:61365ce04c6ba727ea183672bd9e9b9b9caac208501d19e52925237d7ecfb941",
@@ -15909,7 +19599,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-31T13:33:33+00:00",
-    "captured_at_source": "container+name"
+    "captured_at_source": "container+name",
+    "color_stats": {
+      "mean": {
+        "r": 98.82,
+        "g": 108.47,
+        "b": 96.47
+      },
+      "std": {
+        "r": 59.43,
+        "g": 62.2,
+        "b": 81.09
+      },
+      "luma": 104.22,
+      "temperature": 0.0092,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:6d01c7c36a8df469e088cae9f716b6e6176a8a4823682657475884fa703f64e2",
@@ -15973,7 +19678,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-31T13:22:16.525000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 93.3,
+        "g": 98.12,
+        "b": 76.9
+      },
+      "std": {
+        "r": 52.78,
+        "g": 50.36,
+        "b": 48.75
+      },
+      "luma": 94.26,
+      "temperature": 0.0643,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:7eeccd9473e186877b08153c660605c890d2456e52849bb5e83aae4f7e22dc2f",
@@ -16038,7 +19758,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-31T13:27:14.828000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 102.05,
+        "g": 106.28,
+        "b": 89.95
+      },
+      "std": {
+        "r": 54.35,
+        "g": 49.56,
+        "b": 48.17
+      },
+      "luma": 103.15,
+      "temperature": 0.0475,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:8044d311a85e66b4b949d51056d7a82e2f27780bd3528a298eb82de5f5462536",
@@ -16103,7 +19838,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-31T13:29:45.354000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 101.69,
+        "g": 96.66,
+        "b": 85.84
+      },
+      "std": {
+        "r": 55.14,
+        "g": 52.08,
+        "b": 48.7
+      },
+      "luma": 96.93,
+      "temperature": 0.0622,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:8ece0ae3e42f9245f746ea0b4fc4594fac7f9bdd10e307a5f39cb475998600cf",
@@ -16168,7 +19918,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-31T13:19:55.460000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 87.8,
+        "g": 98.82,
+        "b": 69.18
+      },
+      "std": {
+        "r": 52.44,
+        "g": 52.46,
+        "b": 43.17
+      },
+      "luma": 92.15,
+      "temperature": 0.073,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:8fc221f5c5bed752302bf56dfe2517712e546b87162c6ff2978ffb69de6bdd16",
@@ -16234,7 +19999,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-31T13:21:43.512000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 91.48,
+        "g": 104.61,
+        "b": 59.89
+      },
+      "std": {
+        "r": 54.06,
+        "g": 58.27,
+        "b": 42.16
+      },
+      "luma": 95.58,
+      "temperature": 0.1239,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:939382fcf117fadf9635e16bf727eb0e450d9a0691c12a992ad1f29e58060d1f",
@@ -16298,7 +20078,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-31T13:31:09.997000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 116.1,
+        "g": 119.73,
+        "b": 101.62
+      },
+      "std": {
+        "r": 44.45,
+        "g": 38.71,
+        "b": 40.25
+      },
+      "luma": 116.58,
+      "temperature": 0.0568,
+      "frames": 3
+    }
   },
   {
     "hash": "sha256:a04b74c2c930248acc490ff5b4ce6113a1733a3ddd7310c49242dbce2a6c315d",
@@ -16364,7 +20159,22 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-31T13:18:51.746000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 99.39,
+        "g": 108.62,
+        "b": 87.57
+      },
+      "std": {
+        "r": 48.19,
+        "g": 48.18,
+        "b": 43.81
+      },
+      "luma": 103.46,
+      "temperature": 0.0464,
+      "frames": 4
+    }
   },
   {
     "hash": "sha256:bb5097bc228748fc919fa577ba68876797044d888ff1a6a0ab1e651df7a7b7dc",
@@ -16428,6 +20238,21 @@
       "place": "Uvdal"
     },
     "captured_at": "2026-07-31T13:20:23.828000+00:00",
-    "captured_at_source": "container+name+trim"
+    "captured_at_source": "container+name+trim",
+    "color_stats": {
+      "mean": {
+        "r": 113.04,
+        "g": 114.65,
+        "b": 102.62
+      },
+      "std": {
+        "r": 49.67,
+        "g": 45.04,
+        "b": 48.56
+      },
+      "luma": 112.8,
+      "temperature": 0.0409,
+      "frames": 3
+    }
   }
 ]
