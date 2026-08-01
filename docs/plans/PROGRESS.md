@@ -65,7 +65,7 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | G | Invalidierung bei neuem Material (`pipeline.pending_assets`, Fingerprint) | ✅ fertig | `7b746bc` |
 | H1 | Farbstatistik messen (`analyze.color_stats` aus vorhandenen Keyframes) | ✅ fertig | `7f86f65` |
 | H2 | Farbangleichung (`render.match_filter`, `color_match: off/soft/strong`) | ✅ fertig | `7f86f65` |
-| I | Abschluss-Audit (I1–I4 fertig, I5 braucht Nutzer) | 🔄 | `<p>` |
+| I | Abschluss-Audit (I1–I4 fertig, I5 braucht Nutzer) | 🔄 | `1917325` |
 
 ### E — Notizen (2026-08-01)
 
