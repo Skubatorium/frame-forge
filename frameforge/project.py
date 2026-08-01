@@ -206,6 +206,11 @@ class Project:
         return self.route_dir / "roadtrip.gpx"
 
     @property
+    def stages_csv_path(self) -> Path:
+        """Etappenliste der Reise (Plan 0003 §A3) — `day,date,from,to,via,km,overnight,note`."""
+        return self.route_dir / "stages.csv"
+
+    @property
     def locations_csv_path(self) -> Path:
         return self.route_dir / "locations.csv"
 

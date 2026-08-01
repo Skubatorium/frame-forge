@@ -206,6 +206,21 @@ INIT → INGESTED → INDEXED → DESIGNED → BRIEFED → STORYBOARDED
 
 Die `.md`-Datei je Asset enthält dasselbe menschenlesbar plus Freitext-Notizen, die du selbst ergänzen kannst — deine Ergänzungen überleben Re-Indexierung (Merge statt Überschreiben).
 
+**Nachtrag aus Plan 0003 (2026-08-01) — alle Felder optional, fehlende Werte ändern nichts:**
+
+| Feld | Typ | Herkunft |
+|---|---|---|
+| `captured_at_source` | str | A1 — welche Quelle die Aufnahmezeit lieferte: `container+name+trim`, `container`, `name`, `path-date`, `mtime`, `exif` |
+| `gps.elevation_m` | float | A0 — Höhe aus EXIF `GPSAltitude` bzw. dem Original |
+| `gps.source` | str | A2 — `"original"`, wenn die Koordinaten aus der ungeschnittenen Datei stammen |
+| `day` | int | A4 — Reisetag laut `route/stages.csv` |
+| `stage` | str | A4 — Etappe als `"Geiranger → Lom"` |
+| `place_source` | str | A4/A5 — `gps`, `gpx`, `poi`, `leg`, `manual`; `manual` wird nie automatisch überschrieben |
+| `color_stats` | dict | H1 — Mittelwert/Streuung je Kanal aus den vorhandenen Keyframes |
+
+`captured_at` ist projektweit **lokale Wanduhrzeit, mit `+00:00` etikettiert** (siehe
+`frameforge/probe.py`) — Fotos (EXIF) und Videos liegen damit auf derselben Zeitbasis.
+
 ### `timeline.json` — Single Source of Truth für Render **und** NLE-Export
 
 ```json

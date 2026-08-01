@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import csv
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 
 import gpxpy
@@ -43,6 +43,83 @@ def parse_locations(path: Path) -> list[dict]:
                 }
             )
     return out
+
+
+class StagesError(ValueError):
+    """`stages.csv` fehlt eine Pflichtspalte oder enthält eine ungültige Zeile."""
+
+
+def parse_stages(path: Path) -> list[dict]:
+    """Liest `route/stages.csv` — die Etappenliste der Reise (Plan 0003 §A3).
+
+    Pflichtspalten: `day`, `date`, `from`, `to`. Optional: `via`, `km`, `overnight`, `note`.
+    Rückgabe je Zeile: `{"day": int, "date": date, "from", "to", "via", "km": float|None,
+    "overnight", "note"}`, sortiert nach Tag. Leere Liste, wenn die Datei fehlt.
+
+    `km` bleibt `None`, wenn die Spalte leer ist — „unbekannt" ist eine gültige Angabe und wird
+    **nicht** geschätzt (Plan 0003: eine erfundene Zahl ist schlimmer als eine fehlende).
+    """
+    if not path.exists():
+        return []
+    required = {"day", "date", "from", "to"}
+    out: list[dict] = []
+    with path.open(newline="") as fh:
+        reader = csv.DictReader(fh)
+        missing = required - set(reader.fieldnames or [])
+        if missing:
+            raise StagesError(
+                f"{path}: Spalten fehlen: {sorted(missing)} (erwartet mindestens: day,date,from,to)"
+            )
+        for i, row in enumerate(reader, start=2):  # Zeile 1 = Header
+            if not (row.get("day") or "").strip():
+                continue  # Leerzeile am Dateiende
+            try:
+                day = int(str(row["day"]).strip())
+            except ValueError as exc:
+                raise StagesError(f"{path} Zeile {i}: 'day' ist keine Zahl ({row['day']!r})") from exc
+            try:
+                stage_date = date.fromisoformat(str(row["date"]).strip())
+            except ValueError as exc:
+                raise StagesError(
+                    f"{path} Zeile {i}: 'date' ist kein ISO-Datum YYYY-MM-DD ({row['date']!r})"
+                ) from exc
+            km_raw = (row.get("km") or "").strip()
+            try:
+                km = float(km_raw.replace(",", ".")) if km_raw else None
+            except ValueError as exc:
+                raise StagesError(f"{path} Zeile {i}: 'km' ist keine Zahl ({km_raw!r})") from exc
+            out.append(
+                {
+                    "day": day,
+                    "date": stage_date,
+                    "from": (row.get("from") or "").strip(),
+                    "to": (row.get("to") or "").strip(),
+                    "via": (row.get("via") or "").strip(),
+                    "km": km,
+                    "overnight": (row.get("overnight") or "").strip(),
+                    "note": (row.get("note") or "").strip(),
+                }
+            )
+    out.sort(key=lambda s: s["day"])
+    return out
+
+
+def stage_for(timestamp: datetime, stages: list[dict]) -> dict | None:
+    """Etappe eines Zeitpunkts über das Datum, oder `None` außerhalb der Reise.
+
+    Bewusst datumsbasiert und ohne Toleranz: eine Aufnahme um 23:50 gehört zum Tag, an dem sie
+    entstanden ist — welcher Etappe sie erzählerisch zugeschlagen wird, entscheidet der Schnitt,
+    nicht diese Funktion.
+    """
+    day = timestamp.date()
+    return next((stage for stage in stages if stage["date"] == day), None)
+
+
+def stage_label(stage: dict) -> str:
+    """`"Geiranger → Lom"` bzw. `"Lom"` bei einem Standtag — für Overlays und Reports."""
+    if stage["from"] and stage["to"] and stage["from"] != stage["to"]:
+        return f"{stage['from']} → {stage['to']}"
+    return stage["to"] or stage["from"]
 
 
 def parse_gpx(path: Path) -> list[dict]:
