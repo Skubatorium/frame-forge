@@ -62,7 +62,7 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | D1 | SVG-Templates aufwerten + relative Größen (`type_scale`) | ✅ fertig | `a314f07` |
 | D2 | Generierte Grafiken (Prompt-Bausteine, Hintergrund in Titel/Kapitel) | ⬜ offen | — |
 | F | Musik: `fade_in_s`/`fade_out_s`, `audio.segment_plan` | ✅ fertig | `450d3ac` |
-| G | Invalidierung bei neuem Material (`pipeline.pending_assets`, Fingerprint) | ✅ fertig | `<p>` |
+| G | Invalidierung bei neuem Material (`pipeline.pending_assets`, Fingerprint) | ✅ fertig | `7b746bc` |
 | H1 | Farbstatistik messen (`analyze.color_stats` aus vorhandenen Keyframes) | ⬜ offen | — |
 | H2 | Farbangleichung (`render.match_filter`, `color_match: off/soft/strong`) | ⬜ offen | — |
 | I | Abschluss-Audit (I1–I5) | ⬜ offen | — |
