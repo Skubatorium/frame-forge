@@ -45,7 +45,7 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 
 | # | Arbeitspaket | Status | Commit |
 |---|------|--------|--------|
-| E | `relink` — Pfade nach Umsortieren reparieren | ✅ fertig | `<pending>` |
+| E | `relink` — Pfade nach Umsortieren reparieren | ✅ fertig | `4eb7b94` |
 | A0 | Backfill statt Neu-Indizieren (`backfill-metadata`) | ⬜ offen | — |
 | A1 | Aufnahmezeit für Videos (Container/Dateiname/Trim-Offset) | ⬜ offen | — |
 | A2 | GPS aus den ungeschnittenen Originalen (`originals_root`) | ⬜ offen | — |
