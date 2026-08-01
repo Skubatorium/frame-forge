@@ -18,8 +18,17 @@ class TimelineValidationError(ValueError):
 
 
 class Transition(BaseModel):
+    """Übergang am Clip-Anfang. `type` steuert die Umsetzung im Renderer.
+
+    `fade`/`dissolve`/`slow_dissolve`/`crossfade` blenden die beiden Clips ineinander (`xfade`)
+    und **verkürzen** die Gesamtlänge um `dur`. `black` blendet nach Schwarz, hält optional
+    `hold` Sekunden und blendet wieder auf — das **verlängert** die Timeline um `dur + hold`
+    (Plan 0003 §C). Alles andere ist ein harter Schnitt.
+    """
+
     type: str
     dur: float = Field(gt=0)
+    hold: float = Field(default=0.0, ge=0)  # nur bei `black`: Standzeit auf Schwarz
 
 
 class Effect(BaseModel):

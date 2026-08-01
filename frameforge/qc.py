@@ -14,6 +14,7 @@ from __future__ import annotations
 import hashlib
 from pathlib import Path
 
+from frameforge import render as render_module
 from frameforge.render import _CROSSFADE_TYPES
 from frameforge.timeline import Timeline, TimelineValidationError
 
@@ -53,6 +54,24 @@ def _check_video_coverage(timeline: Timeline) -> list[str]:
     clips = sorted(timeline.tracks.video, key=lambda c: c.tl_in)
     prev_end = 0.0
     for i, clip in enumerate(clips):
+        # Schwarzblende (Plan 0003 §C): der Renderer haengt `dur`-Ausblendung + `hold`
+        # Standzeit an, der Folgeclip beginnt also SPAETER. Die Luecke ist hier also korrekt
+        # und muss exakt der Standzeit entsprechen — sonst laufen Audio/Overlays weg.
+        if (
+            i > 0
+            and clip.transition_in
+            and clip.transition_in.type == render_module.BLACK_TRANSITION
+        ):
+            expected = prev_end + clip.transition_in.hold
+            if abs(clip.tl_in - expected) > _XFADE_OVERLAP_TOLERANCE_S:
+                issues.append(
+                    f"Clip '{clip.id}' hat eine Schwarzblende mit {clip.transition_in.hold:.2f}s "
+                    f"Standzeit, muesste also bei {expected:.2f}s beginnen, beginnt aber bei "
+                    f"{clip.tl_in:.2f}s — Bild laeuft gegen Ton/Overlays"
+                )
+            prev_end = max(prev_end, clip.tl_in + clip.duration)
+            continue
+
         # transition_in am ERSTEN Clip meint "Fade aus Schwarz", nicht Crossfade vom Vorgänger.
         xfade = (
             clip.transition_in.dur

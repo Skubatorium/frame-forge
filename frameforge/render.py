@@ -97,6 +97,22 @@ def _kenburns_expr(clip, dur: float, fps: float, res: tuple[int, int]) -> str | 
     )
 
 
+BLACK_TRANSITION = "black"
+
+
+def black_transition_extra_s(clips) -> float:
+    """Zusatzdauer, die Schwarzblenden der Timeline hinzufuegen (`dur + hold` je Blende).
+
+    Anders als `xfade` (verkuerzt) **verlaengert** eine Schwarzblende den Film. `qc.validate`
+    und `timeline.duration` muessen das kennen, sonst laufen Audio und Overlays weg.
+    """
+    return sum(
+        c.transition_in.dur + c.transition_in.hold
+        for c in clips[1:]
+        if c.transition_in and c.transition_in.type == BLACK_TRANSITION
+    )
+
+
 def _join_video_segments(clips, labels: list[str], filters: list[str]) -> str:
     """Verbindet die Video-Segmente: harte Schnitte (concat), Crossfades (xfade) wo im
 
@@ -108,9 +124,8 @@ def _join_video_segments(clips, labels: list[str], filters: list[str]) -> str:
     Crossfade-Clips mit überlappendem `tl_in` (Überlappung = Crossfade-Dauer) schreiben — genau
     das prüft `qc._check_video_coverage` vor dem Render.
     """
-    has_crossfade = any(
-        c.transition_in and c.transition_in.type in _CROSSFADE_TYPES for c in clips[1:]
-    )
+    special = {*_CROSSFADE_TYPES, BLACK_TRANSITION}
+    has_crossfade = any(c.transition_in and c.transition_in.type in special for c in clips[1:])
     if not has_crossfade:
         cur = "vbase"
         joined = "".join(f"[{lbl}]" for lbl in labels)
@@ -131,6 +146,28 @@ def _join_video_segments(clips, labels: list[str], filters: list[str]) -> str:
                 f"[{cur}][{labels[i]}]xfade=transition=fade:duration={d:.3f}:offset={offset:.3f}[{out}]"
             )
             cur_dur = cur_dur + clip.duration - d
+        elif t and t.type == BLACK_TRANSITION:
+            # Ausblenden des bisherigen Materials, optionale Standzeit auf Schwarz, Aufblenden
+            # des naechsten. Umgesetzt mit `fade` statt `xfade`, weil hier nichts ineinander
+            # blendet — und mit `tpad`, um die Standzeit als echte schwarze Frames anzuhaengen.
+            d = min(t.dur, cur_dur, clip.duration)
+            fade_out_start = max(0.0, cur_dur - d)
+            faded_out, faded_in = f"vbo{i}", f"vbi{i}"
+            pad = (
+                f",tpad=stop_duration={t.hold:.3f}:stop_mode=add:color=black"
+                if t.hold > 0
+                else ""
+            )
+            filters.append(
+                f"[{cur}]fade=t=out:st={fade_out_start:.3f}:d={d:.3f}:color=black"
+                f"{pad}[{faded_out}]"
+            )
+            filters.append(f"[{labels[i]}]fade=t=in:st=0:d={d:.3f}:color=black[{faded_in}]")
+            out = f"vb{i}"
+            filters.append(f"[{faded_out}][{faded_in}]concat=n=2:v=1:a=0[{out}]")
+            # Die Blende verlaengert: beide Clips bleiben vollstaendig, die Standzeit kommt
+            # obendrauf. Genau das muss in den `tl_in`-Werten der Folgeclips stehen.
+            cur_dur = cur_dur + clip.duration + t.hold
         else:
             out = f"vc{i}"
             filters.append(f"[{cur}][{labels[i]}]concat=n=2:v=1:a=0[{out}]")

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import shutil
+import subprocess
 from pathlib import Path
 
 import pytest
@@ -503,3 +504,102 @@ def test_render_crossfade_and_kenburns_end_to_end(proj):
         ]})
     out = render_proxy(proj, export, timeline)
     assert probe_video(out)["w"] == 320
+
+
+# -- C: Schwarzblende zwischen zwei Clips (Plan 0003) ------------------------------
+
+
+def _black_timeline(hold: float = 0.0, dur: float = 0.5):
+    from frameforge.timeline import Timeline
+
+    return Timeline(
+        export="teaser",
+        fps=25,
+        resolution=(320, 240),
+        duration=2.0 + hold,
+        tracks={
+            "video": [
+                {"id": "c1", "asset": "clip1", "src_in": 0, "src_out": 1.0, "tl_in": 0},
+                {
+                    "id": "c2",
+                    "asset": "clip1",
+                    "src_in": 0,
+                    "src_out": 1.0,
+                    "tl_in": 1.0 + hold,
+                    "transition_in": {"type": "black", "dur": dur, "hold": hold},
+                },
+            ]
+        },
+    )
+
+
+def test_black_transition_builds_fade_out_and_in():
+    graph = build_filtergraph(
+        _black_timeline(),
+        resolve_asset=lambda aid: Path(f"/media/{aid}.mp4"),
+        export_root=Path("/export"),
+        project_root=Path("/project"),
+    )
+    assert "fade=t=out" in graph.filter_complex
+    assert "color=black" in graph.filter_complex
+    assert "fade=t=in" in graph.filter_complex
+    assert "xfade" not in graph.filter_complex  # Schwarzblende ist kein Crossfade
+
+
+def test_black_transition_hold_adds_tpad():
+    graph = build_filtergraph(
+        _black_timeline(hold=1.0),
+        resolve_asset=lambda aid: Path(f"/media/{aid}.mp4"),
+        export_root=Path("/export"),
+        project_root=Path("/project"),
+    )
+    assert "tpad" in graph.filter_complex
+    assert "stop_duration=1.000" in graph.filter_complex
+
+
+def test_black_transition_extra_duration():
+    from frameforge.render import black_transition_extra_s
+
+    clips = _black_timeline(hold=1.5, dur=0.5).tracks.video
+    assert black_transition_extra_s(clips) == pytest.approx(2.0)  # dur + hold
+
+
+def test_black_transition_renders_a_visible_black_frame(proj):
+    """Abnahme C: in der Mitte des Renders ist tatsaechlich Schwarz zu sehen."""
+    import numpy as np
+    from PIL import Image
+
+    export = proj.export("teaser")
+    export.ensure_dirs()
+    out_path = render_proxy(proj, export, _black_timeline(hold=1.0, dur=0.3))
+
+    result = probe_video(out_path)
+    # 2x 1s Material + 1s Standzeit auf Schwarz
+    assert result["dur"] == pytest.approx(3.0, abs=0.3)
+
+    frame = export.preview_dir / "mitte.png"
+    subprocess.run(
+        ["ffmpeg", "-y", "-ss", "1.5", "-i", str(out_path), "-frames:v", "1",
+         "-loglevel", "error", str(frame)],
+        check=True,
+        timeout=60,
+    )
+    assert np.array(Image.open(frame).convert("L")).max() < 16  # praktisch schwarz
+
+
+def test_existing_concat_timeline_is_unchanged_by_the_black_support():
+    """Regression Plan 0003 §0: ohne `black` bleibt der Filtergraph exakt wie vorher."""
+    timeline = _timeline(
+        video=[
+            {"id": "c1", "asset": "a1", "src_in": 0, "src_out": 1, "tl_in": 0},
+            {"id": "c2", "asset": "a2", "src_in": 0, "src_out": 1, "tl_in": 1},
+        ]
+    )
+    graph = build_filtergraph(
+        timeline,
+        resolve_asset=lambda aid: Path(f"/media/{aid}.mp4"),
+        export_root=Path("/export"),
+        project_root=Path("/project"),
+    )
+    assert "concat=n=2:v=1:a=0" in graph.filter_complex
+    assert "fade=" not in graph.filter_complex

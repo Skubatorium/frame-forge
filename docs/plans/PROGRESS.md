@@ -58,7 +58,7 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | B3 | Etappen-HUD (`templates/svg/map-hud.svg`, stufenweise gerendert) | ✅ fertig | `a314f07` |
 | B4 | `map-animator`-Agent erweitern | ✅ fertig | `a314f07` |
 | B5 | Routengeometrie beschaffen (GPX / KML-Parser / Routing-Fallback) | ✅ fertig | `4138e99` |
-| C | Schwarzblende zwischen zwei Clips (`transition_in: black`) | ⬜ offen | — |
+| C | Schwarzblende zwischen zwei Clips (`transition_in: black`) | ✅ fertig | `<p>` |
 | D1 | SVG-Templates aufwerten + relative Größen (`type_scale`) | ✅ fertig | `a314f07` |
 | D2 | Generierte Grafiken (Prompt-Bausteine, Hintergrund in Titel/Kapitel) | ⬜ offen | — |
 | F | Musik: `fade_in_s`/`fade_out_s`, `audio.segment_plan` | ⬜ offen | — |
@@ -138,6 +138,30 @@ bleibt davon unberührt.
 **Abnahme A0 zunächst nur zur Hälfte erfüllt** (Bitgleichheit ja, Aufnahmezeit 0/236) — die
 zweite Hälfte kam mit A1, siehe dort: der zweite Backfill-Lauf liefert 236/236 (100 %).
 7 Tests in `tests/test_backfill.py`, 333 Tests gesamt grün, `ruff` sauber.
+
+### C — Notizen (2026-08-01)
+
+Neuer Übergangstyp `black` mit optionaler Standzeit (`Transition.hold`, Default 0 → alle
+bestehenden Timelines unverändert). `_join_video_segments` behandelt ihn als dritte Variante
+neben `concat` und `xfade`: `fade=t=out:color=black` auf dem vorigen Clip, optional
+`tpad=stop_duration=<hold>:stop_mode=add:color=black` als echte schwarze Frames,
+`fade=t=in:color=black` auf dem nächsten, dann `concat`. Bewusst **kein** `xfade` — hier blendet
+nichts ineinander.
+
+**Timing-Invariante umgekehrt:** `xfade` *verkürzt* die Timeline, `black` *verlängert* sie um
+`dur + hold`. `render.black_transition_extra_s` rechnet das aus, und `qc._check_video_coverage`
+prüft die passende Regel: der Folgeclip muss um exakt die Standzeit später beginnen. Ohne diese
+Regel wäre die Lücke als Fehler gemeldet worden — und mit falschem `tl_in` liefen Audio und
+Overlays weg.
+
+**Abnahme C nachgewiesen:** echter Render (`render_proxy`) einer Timeline mit
+`transition_in: {type: black, dur: 0.3, hold: 1.0}` in der Mitte → Gesamtdauer 3.0 s wie
+erwartet (2× 1 s Material + 1 s Schwarz), und ein bei 1.5 s extrahierter Frame ist mit
+Maximalhelligkeit < 16 praktisch schwarz. Regressionstest: eine Timeline ohne `black` erzeugt
+weiterhin exakt `concat` ohne jeden `fade`-Filter. Beim ersten Lauf einen echten Syntaxfehler
+gefunden (`tpad:` statt `tpad=`), den nur der Render — nicht die String-Tests — zeigt.
+
+8 neue Tests, 426 gesamt grün.
 
 ### B2 + B3 + B4 + D1 — Notizen (2026-08-01)
 

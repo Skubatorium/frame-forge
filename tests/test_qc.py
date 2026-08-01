@@ -256,3 +256,46 @@ def test_validate_passes_when_all_assets_known():
 def test_validate_without_known_asset_ids_skips_existence_check():
     tl = _timeline(video=[{"id": "c1", "asset": "irgendwas", "src_in": 0, "src_out": 5, "tl_in": 0}])
     assert validate(tl) == []
+
+
+# -- C: Schwarzblende (Plan 0003) ---------------------------------------------------
+
+
+def _black_tl(tl_in_second: float, hold: float = 1.0):
+    return Timeline(
+        export="e",
+        fps=25,
+        resolution=(320, 240),
+        duration=2.0 + hold,
+        tracks={
+            "video": [
+                {"id": "c1", "asset": "a1", "src_in": 0, "src_out": 1.0, "tl_in": 0},
+                {
+                    "id": "c2",
+                    "asset": "a2",
+                    "src_in": 0,
+                    "src_out": 1.0,
+                    "tl_in": tl_in_second,
+                    "transition_in": {"type": "black", "dur": 0.4, "hold": hold},
+                },
+            ]
+        },
+    )
+
+
+def test_black_transition_timing_is_accepted_when_hold_is_respected():
+    # Schwarzblende verlaengert: Folgeclip beginnt um die Standzeit spaeter.
+    assert validate(_black_tl(2.0, hold=1.0)) == []
+
+
+def test_black_transition_without_the_hold_gap_is_flagged():
+    issues = validate(_black_tl(1.0, hold=1.0))
+    assert any("Schwarzblende" in i for i in issues)
+
+
+def test_black_transition_with_too_large_gap_is_flagged():
+    # `duration` passend gesetzt, damit die Schema-Semantik nicht vorher abbricht.
+    timeline = _black_tl(3.0, hold=1.0)
+    timeline.duration = 4.0
+    issues = validate(timeline)
+    assert any("Schwarzblende" in i for i in issues)
