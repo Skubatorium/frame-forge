@@ -74,7 +74,7 @@ Rückwärtskompatibilität, Zusammenspiel, Testtiefe, Timing. Befunde und Fixes 
 
 | # | Schwere | Befund | Status |
 |---|---|---|---|
-| F1 | kritisch | Ken-Burns vervielfachte die Renderdauer (`zoompan d=frames` → `frames²`) | ✅ `<p1>` |
+| F1 | kritisch | Ken-Burns vervielfachte die Renderdauer (`zoompan d=frames` → `frames²`) | ✅ `1d13e2a` |
 | F2 | hoch | `assign-places` erfindet Orte über den GPX-Track ohne Zeittoleranz | ⬜ offen |
 | F3 | hoch | Dauer-Invariante nirgends geprüft, `black_transition_extra_s` ohne Aufrufer | ⬜ offen |
 | F4 | mittel | `color-match` verliert unbekannte Felder in `timeline.json` | ⬜ offen |
