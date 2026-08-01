@@ -1,8 +1,24 @@
 <svg width="{{width}}" height="{{height}}" xmlns="http://www.w3.org/2000/svg">
-  <rect x="{{margin}}" y="{{bar_y}}" width="{{bar_width}}" height="{{bar_height}}"
-        fill="{{primary_color}}" opacity="{{bar_opacity}}"/>
+  <defs>
+    <linearGradient id="ff-lt-bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="{{primary_color}}" stop-opacity="{{bar_opacity}}"/>
+      <stop offset="100%" stop-color="{{primary_color}}" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="ff-lt-shadow" x="-10%" y="-40%" width="140%" height="220%">
+      <feDropShadow dx="0" dy="{{shadow_dy}}" stdDeviation="{{shadow_blur}}"
+                    flood-color="#000000" flood-opacity="{{shadow_opacity}}"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#ff-lt-shadow)">
+    <rect x="{{margin}}" y="{{bar_y}}" width="{{bar_width}}" height="{{bar_height}}"
+          rx="{{corner_radius}}" ry="{{corner_radius}}" fill="url(#ff-lt-bg)"/>
+    <rect x="{{margin}}" y="{{bar_y}}" width="{{accent_width}}" height="{{bar_height}}"
+          rx="{{corner_radius}}" ry="{{corner_radius}}" fill="{{accent_color}}"/>
+  </g>
+
   <text x="{{text_x}}" y="{{title_y}}" font-family="{{font_display}}" font-size="{{title_size}}"
-        fill="{{text_color}}">{{title}}</text>
+        font-weight="600" letter-spacing="{{title_tracking}}" fill="{{text_color}}">{{title}}</text>
   <text x="{{text_x}}" y="{{subtitle_y}}" font-family="{{font_text}}" font-size="{{subtitle_size}}"
-        fill="{{accent_color}}">{{subtitle}}</text>
+        letter-spacing="{{subtitle_tracking}}" fill="{{accent_color}}">{{subtitle}}</text>
 </svg>

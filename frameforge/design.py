@@ -75,6 +75,13 @@ class TemplateError(RuntimeError):
     """Ein SVG-Template referenziert einen Platzhalter, der nicht in `tokens` vorkommt."""
 
 
+# Tokens, die ein Template nutzen darf, ohne dass der Aufrufer sie kennen muss — ohne Wert
+# fallen sie ersatzlos weg. `background_layer` (Plan 0003 §D2) ist der einzige Fall: eine
+# optionale Hintergrundgrafik in Titelkarte/Kapitelmarke soll bestehende Token-Sets nicht
+# ungueltig machen.
+_OPTIONAL_TOKENS = {"background_layer": ""}
+
+
 def build_svg_from_tokens(template_path: Path, tokens: dict) -> str:
     """Fuellt ein SVG-Template (lower-third, title-card, ...) mit Design-Tokens.
 
@@ -84,13 +91,110 @@ def build_svg_from_tokens(template_path: Path, tokens: dict) -> str:
     ihn still im gerenderten SVG stehen zu lassen.
     """
     svg = template_path.read_text()
-    for key, value in tokens.items():
+    for key, value in {**_OPTIONAL_TOKENS, **tokens}.items():
         svg = svg.replace(f"{{{{{key}}}}}", str(value))
 
     remaining = re.findall(r"{{\s*[\w.]+\s*}}", svg)
     if remaining:
         raise TemplateError(f"{template_path.name}: fehlende Tokens {sorted(set(remaining))}")
     return svg
+
+
+# Bezugshoehe fuer absolute Groessenangaben in `type_scale`. Ein Token von 96 px meint
+# "96 px bei 1080p" und wird auf andere Zielhoehen umgerechnet — sonst waere dieselbe
+# Bauchbinde im 4K-Final halb so gross wie im 1080p-Preview (Plan 0003 §D1).
+REFERENCE_HEIGHT = 1080
+
+_DEFAULT_TYPE_SCALE = {"title": 0.058, "subtitle": 0.030, "caption": 0.022}
+
+
+def scale_size(value: float, height: int) -> float:
+    """Groessenangabe in Pixel fuer `height`.
+
+    Werte `<= 1` sind **Faktoren der Zielhoehe** (`0.058` → 5,8 % der Bildhoehe), groessere
+    Werte gelten als Pixel bei `REFERENCE_HEIGHT` und werden mitskaliert. Beide Schreibweisen
+    ergeben in 1080p und 2160p dieselbe optische Groesse.
+    """
+    return value * height if value <= 1 else value * height / REFERENCE_HEIGHT
+
+
+def background_layer(image_path: Path | str | None, width: int, height: int) -> str:
+    """SVG-Schnipsel fuer eine formatfuellende Hintergrundgrafik — leerer String ohne Grafik.
+
+    Damit koennen Titelkarte und Kapitelmarke eine gestaltete Flaeche aufnehmen (Plan 0003 §D2),
+    ohne dass das Template zwei Varianten braucht.
+    """
+    if not image_path:
+        return ""
+    return (
+        f'<image href="{image_path}" x="0" y="0" width="{width}" height="{height}" '
+        'preserveAspectRatio="xMidYMid slice"/>'
+    )
+
+
+def overlay_tokens(tokens: dict, *, width: int, height: int, **extra) -> dict:
+    """Vollstaendiges Token-Set fuer die SVG-Templates — Geometrie relativ zur Zielhoehe.
+
+    Nimmt das Designsystem eines Projekts (`design/tokens.yaml`: Farben, Schriften,
+    `type_scale`) und leitet daraus alle Layout-Tokens ab, die die Templates brauchen.
+    Reihenfolge: abgeleitete Defaults < Tokens aus `tokens.yaml` < `extra` (Inhalt des
+    konkreten Overlays). Das Projekt kann also jeden Wert ueberschreiben, muss aber keinen.
+    """
+    type_scale = {**_DEFAULT_TYPE_SCALE, **(tokens.get("type_scale") or {})}
+    title = scale_size(type_scale["title"], height)
+    subtitle = scale_size(type_scale["subtitle"], height)
+    caption = scale_size(type_scale["caption"], height)
+    margin = round(height * 0.055)
+    bar_height = round(title + subtitle + height * 0.045)
+
+    derived = {
+        "width": width,
+        "height": height,
+        "title_size": round(title, 1),
+        "subtitle_size": round(subtitle, 1),
+        "caption_size": round(caption, 1),
+        "number_size": round(subtitle, 1),
+        "line_size": round(subtitle, 1),  # credits.svg
+        "title_tracking": round(title * 0.01, 2),
+        "subtitle_tracking": round(subtitle * 0.06, 2),
+        "margin": margin,
+        "corner_radius": round(height * 0.008),
+        "shadow_dy": round(height * 0.004, 1),
+        "shadow_blur": round(height * 0.006, 1),
+        "shadow_opacity": 0.45,
+        "bar_opacity": 0.82,
+        "panel_opacity": 0.72,
+        "bar_y": round(height * 0.74),
+        "bar_height": bar_height,
+        "bar_width": round(width * 0.52),
+        "accent_width": max(3, round(height * 0.006)),
+        "text_x": margin + round(height * 0.028),
+        "title_y": round(height * 0.74) + round(title * 1.15),
+        "subtitle_y": round(height * 0.74) + round(title * 1.15 + subtitle * 1.35),
+        # stage-card
+        "panel_y": round(height * 0.58),
+        "panel_height": round(height * 0.42),
+        "accent_y": round(height * 0.66),
+        "accent_bar_width": round(width * 0.06),
+        "accent_height": max(3, round(height * 0.006)),
+        "day_y": round(height * 0.72),
+        "date_y": round(height * 0.86),
+        # map-hud
+        "panel_width": round(width * 0.34),
+        "stage_y": round(height * 0.78),
+        "stats_y": round(height * 0.84),
+        "profile_stroke": max(2, round(height * 0.003)),
+        "profile_marker_r": max(3, round(height * 0.005)),
+        # stat-badge
+        "badge_width": round(width - 2 * margin),
+        "badge_height": round(height - 2 * margin),
+        "value_x": round(width / 2),
+        "value_y": round(height * 0.55),
+        "label_y": round(height * 0.78),
+        "background_layer": "",
+    }
+    ignored = {"type_scale", "motion"}  # kein Layout-Token, gehoert nicht ins SVG
+    return derived | {k: v for k, v in tokens.items() if k not in ignored} | extra
 
 
 def render_svg_to_png(svg: str, out_path: Path) -> None:

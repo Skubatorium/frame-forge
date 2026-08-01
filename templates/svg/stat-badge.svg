@@ -1,0 +1,20 @@
+<svg width="{{width}}" height="{{height}}" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="ff-badge-shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="{{shadow_dy}}" stdDeviation="{{shadow_blur}}"
+                    flood-color="#000000" flood-opacity="{{shadow_opacity}}"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#ff-badge-shadow)">
+    <rect x="{{margin}}" y="{{margin}}" width="{{badge_width}}" height="{{badge_height}}"
+          rx="{{corner_radius}}" ry="{{corner_radius}}"
+          fill="{{primary_color}}" opacity="{{panel_opacity}}"/>
+  </g>
+
+  <text x="{{value_x}}" y="{{value_y}}" font-family="{{font_display}}" font-size="{{title_size}}"
+        font-weight="600" fill="{{text_color}}" text-anchor="middle">{{value}}</text>
+  <text x="{{value_x}}" y="{{label_y}}" font-family="{{font_text}}" font-size="{{caption_size}}"
+        letter-spacing="{{subtitle_tracking}}" fill="{{accent_color}}"
+        text-anchor="middle">{{label}}</text>
+</svg>

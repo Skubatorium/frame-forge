@@ -11,7 +11,14 @@ from pathlib import Path
 import pytest
 
 from frameforge import design
-from frameforge.design import TemplateError, build_svg_from_tokens, render_svg_to_png
+from frameforge.design import (
+    TemplateError,
+    background_layer,
+    build_svg_from_tokens,
+    overlay_tokens,
+    render_svg_to_png,
+    scale_size,
+)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 TITLE_CARD = REPO_ROOT / "templates" / "svg" / "title-card.svg"
@@ -86,19 +93,15 @@ def test_render_svg_to_png_writes_nonempty_file(tmp_path):
 
 
 def test_all_svg_templates_render_with_consistent_tokens(tmp_path):
-    """Alle 4 Templates aus Plan §1 muessen mit einem gemeinsamen Token-Set renderbar sein."""
+    """Alle Templates muessen mit EINEM gemeinsamen Token-Set renderbar sein.
+
+    Die Layout-Werte kommen seit Plan 0003 §D1 aus `overlay_tokens` (relativ zur Zielhoehe)
+    statt aus handgeschriebenen Pixelzahlen — ein Projekt liefert nur noch Farben, Schriften
+    und Inhalt.
+    """
     tokens = {
-        **TOKENS,
-        "primary_color": "#1c2b3a",
-        "margin": 40,
-        "bar_y": 900,
-        "bar_width": 800,
-        "bar_height": 140,
-        "bar_opacity": 0.8,
-        "text_x": 60,
-        "title_y": 950,
-        "subtitle_y": 1000,
-        "number_size": 48,
+        **overlay_tokens({**TOKENS, "primary_color": "#1c2b3a"}, width=1920, height=1080),
+        **_TEMPLATE_CONTENT,
         "chapter_number": "Tag 3",
         "chapter_title": "Geirangerfjord",
         "heading": "Danke",
@@ -172,3 +175,83 @@ def test_requested_graphics_is_case_insensitive_and_deduped(tmp_path, monkeypatc
     req = requested_graphics(proj.design_prompts_path)
     assert req.count("logo.png") == 1
     assert "marker-icon.png" in req
+
+
+# -- D1: relative Groessen, Hintergrundgrafik, alle Templates (Plan 0003) -----------
+
+_TEMPLATE_CONTENT = {
+    "title": "Trollstigen",
+    "subtitle": "Tag 9",
+    "chapter_number": "03",
+    "chapter_title": "Über den Pass",
+    "day_label": "TAG 9",
+    "stage_label": "Geiranger — Lom",
+    "date_label": "2026-07-28",
+    "km_label": "128 km",
+    "elevation_label": "852 m",
+    "profile_points": "0,10 40,30 80,5",
+    "marker_x": 40,
+    "marker_y": 30,
+    "value": "190 km",
+    "label": "ETAPPE",
+    "heading": "Danke an",
+    "line1": "Oskar",
+    "line2": "Anna",
+    "line3": "",
+}
+
+
+def _example_tokens():
+    import yaml
+
+    return yaml.safe_load(Path("templates/project/tokens.example.yaml").read_text())
+
+
+@pytest.mark.parametrize("template", sorted(Path("templates/svg").glob("*.svg")), ids=lambda p: p.name)
+@pytest.mark.parametrize("size", [(1920, 1080), (3840, 2160)], ids=["1080p", "2160p"])
+def test_every_template_renders_from_one_token_set(template, size, tmp_path):
+    """Abnahme D: alle Templates, ein gemeinsames Token-Set, beide Aufloesungen."""
+    tokens = overlay_tokens(_example_tokens(), width=size[0], height=size[1], **_TEMPLATE_CONTENT)
+    svg = build_svg_from_tokens(template, tokens)
+    out = tmp_path / f"{template.stem}.png"
+    render_svg_to_png(svg, out)
+    assert out.read_bytes()[:8] == b"\x89PNG\r\n\x1a\n"
+
+
+def test_sizes_scale_with_target_height():
+    small = overlay_tokens(_example_tokens(), width=1920, height=1080)
+    large = overlay_tokens(_example_tokens(), width=3840, height=2160)
+    assert large["title_size"] == pytest.approx(small["title_size"] * 2, rel=0.02)
+    assert large["margin"] == pytest.approx(small["margin"] * 2, rel=0.02)
+
+
+def test_scale_size_accepts_factors_and_reference_pixels():
+    assert scale_size(0.05, 1080) == pytest.approx(54.0)  # Faktor der Hoehe
+    assert scale_size(96, 1080) == pytest.approx(96.0)  # Pixel bei Referenzhoehe
+    assert scale_size(96, 2160) == pytest.approx(192.0)  # ... mitskaliert
+
+
+def test_project_tokens_override_derived_defaults():
+    tokens = overlay_tokens({"margin": 7, "text_color": "#123456"}, width=100, height=100)
+    assert tokens["margin"] == 7
+    assert tokens["text_color"] == "#123456"
+    assert "type_scale" not in tokens  # kein Layout-Token, gehoert nicht ins SVG
+
+
+def test_background_layer_is_optional():
+    assert background_layer(None, 100, 50) == ""
+    layer = background_layer("design/assets/bg.png", 1920, 1080)
+    assert 'href="design/assets/bg.png"' in layer
+    assert 'width="1920"' in layer
+
+
+def test_title_card_can_carry_a_background_graphic(tmp_path):
+    tokens = overlay_tokens(
+        _example_tokens(),
+        width=640,
+        height=360,
+        **_TEMPLATE_CONTENT,
+        background_layer=background_layer("bg.png", 640, 360),
+    )
+    svg = build_svg_from_tokens(Path("templates/svg/title-card.svg"), tokens)
+    assert "<image" in svg

@@ -61,6 +61,128 @@ def _project(track: list[dict], width: int, height: int, margin: int) -> list[tu
     return [project(p["lat"], p["lon"]) for p in track]
 
 
+def latlon_to_pixel(lat: float, lon: float, zoom: int) -> tuple[float, float]:
+    """Web-Mercator-Weltpixel bei `zoom` (Subpixel-genau, gleiche Basis wie XYZ-Kacheln).
+
+    `latlon_to_tile` ist genau das hier, abgerundet auf ganze Kacheln. Route und Basiskarte
+    im selben Koordinatensystem zu haben ist die Voraussetzung dafuer, dass eine Kachelkarte
+    unter der Route pixelgenau stimmt (Plan 0003 §B2).
+    """
+    n = TILE_SIZE_PX * 2**zoom
+    x = (lon + 180.0) / 360.0 * n
+    y = (1.0 - math.asinh(math.tan(math.radians(lat))) / math.pi) / 2.0 * n
+    return x, y
+
+
+def pixel_to_latlon(x: float, y: float, zoom: int) -> tuple[float, float]:
+    """Umkehrung von `latlon_to_pixel` — Weltpixel zurueck nach `(lat, lon)`."""
+    n = TILE_SIZE_PX * 2**zoom
+    lon = x / n * 360.0 - 180.0
+    lat = math.degrees(math.atan(math.sinh(math.pi * (1.0 - 2.0 * y / n))))
+    return lat, lon
+
+
+def smooth_centers(
+    points: list[tuple[float, float]], window: int
+) -> list[tuple[float, float]]:
+    """Gleitender Mittelwert ueber Mittelpunkte — sonst zittert der Follow-Ausschnitt.
+
+    `window <= 1` gibt die Eingabe unveraendert zurueck.
+    """
+    if window <= 1 or not points:
+        return list(points)
+    half = window // 2
+    out: list[tuple[float, float]] = []
+    for i in range(len(points)):
+        chunk = points[max(0, i - half) : i + half + 1]
+        out.append(
+            (sum(p[0] for p in chunk) / len(chunk), sum(p[1] for p in chunk) / len(chunk))
+        )
+    return out
+
+
+def basemap_viewport(
+    center_latlon: tuple[float, float],
+    zoom: int,
+    size: tuple[int, int],
+    cache_dir: Path,
+    *,
+    tile_server_url: str = DEFAULT_TILE_SERVER,
+    fetcher: TileFetcher | None = None,
+) -> Image.Image:
+    """Basiskarten-**Ausschnitt** beliebiger Pixelgroesse um einen Mittelpunkt.
+
+    `render_basemap` liefert nur ganze Kachelraster (Vielfache von 256 px) — fuer den
+    Follow-Modus braucht es einen frei positionierbaren Ausschnitt. Gelesen wird aus demselben
+    Kachel-Cache; es werden nur die tatsaechlich sichtbaren Kacheln geholt.
+    """
+    width, height = size
+    cx, cy = latlon_to_pixel(*center_latlon, zoom)
+    left, top = cx - width / 2, cy - height / 2
+
+    tile_x0, tile_y0 = int(left // TILE_SIZE_PX), int(top // TILE_SIZE_PX)
+    tile_x1 = int((left + width) // TILE_SIZE_PX)
+    tile_y1 = int((top + height) // TILE_SIZE_PX)
+
+    canvas = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+    max_index = 2**zoom
+    for tile_y in range(tile_y0, tile_y1 + 1):
+        if not 0 <= tile_y < max_index:
+            continue  # ausserhalb der Weltkarte (Pol) — bleibt transparent
+        for tile_x in range(tile_x0, tile_x1 + 1):
+            wrapped_x = tile_x % max_index  # Datumsgrenze: Kacheln laufen rundherum weiter
+            tile_path = fetch_tile(
+                zoom, wrapped_x, tile_y, cache_dir,
+                tile_server_url=tile_server_url, fetcher=fetcher,
+            )
+            tile = Image.open(tile_path).convert("RGBA")
+            canvas.alpha_composite(
+                tile,
+                (round(tile_x * TILE_SIZE_PX - left), round(tile_y * TILE_SIZE_PX - top)),
+            )
+    return canvas
+
+
+def _dwell_schedule(
+    track: list[dict], pois: list[dict], *, frame_count: int, fps: float, dwell_s: float
+) -> list[int]:
+    """Reveal-Index je Frame — mit Pause, sobald die Route einen POI erreicht.
+
+    Ohne Haltezeit rauscht der Marker an einem Ort vorbei, bevor sein Name lesbar ist. Die
+    Pause verlaengert den Clip **nicht**: die Gesamtdauer bleibt `dur`, die Bewegung dazwischen
+    wird entsprechend zuegiger. So bleibt die Timeline-Zeitrechnung unangetastet.
+    """
+    if dwell_s <= 0 or not pois:
+        return [max(2, round(len(track) * (i + 1) / frame_count)) for i in range(frame_count)]
+
+    stop_indices = sorted(
+        {
+            min(
+                range(len(track)),
+                key=lambda i: (track[i]["lat"] - poi["lat"]) ** 2
+                + (track[i]["lon"] - poi["lon"]) ** 2,
+            )
+            for poi in pois
+        }
+    )
+    dwell_frames = max(1, round(dwell_s * fps))
+    moving_frames = max(1, frame_count - dwell_frames * len(stop_indices))
+
+    schedule: list[int] = []
+    index = 0.0
+    step = len(track) / moving_frames
+    remaining = set(stop_indices)
+    while len(schedule) < frame_count:
+        current = max(2, min(len(track), round(index)))
+        schedule.append(current)
+        hit = next((s for s in sorted(remaining) if s <= current), None)
+        if hit is not None:
+            remaining.discard(hit)
+            schedule.extend([current] * min(dwell_frames, frame_count - len(schedule)))
+        index += step
+    return schedule[:frame_count]
+
+
 def render_route_frames(
     track: list[dict],
     out_dir: Path,
@@ -74,6 +196,13 @@ def render_route_frames(
     route_color: tuple[int, int, int, int] = ROUTE_COLOR,
     route_width_px: int = ROUTE_WIDTH_PX,
     pois: list[dict] | None = None,
+    viewport: str = "fit",
+    zoom: int | None = None,
+    ease_s: float = 1.0,
+    dwell_s: float = 0.0,
+    tile_cache_dir: Path | None = None,
+    tile_server_url: str = DEFAULT_TILE_SERVER,
+    fetcher: TileFetcher | None = None,
 ) -> list[Path]:
     """PNG-Sequenz mit Alpha: Route-Reveal (Linie waechst ueber die Dauer) + Positions-Marker.
 
@@ -87,28 +216,78 @@ def render_route_frames(
     transparent — Grösse muss zu `(width, height)` passen.
     `pois`: feste Orte (aus `frameforge.gpx.parse_locations` / `locations.csv`) — auf jedem
     Frame als kleiner Punkt + Name eingezeichnet, im selben Koordinatensystem wie die Route.
+
+    `viewport`:
+    - `"fit"` (Default, **unveraendertes Verhalten**): fester Ausschnitt ueber die Bounding-Box
+      des gesamten Tracks, nur der Marker bewegt sich.
+    - `"follow"`: der Ausschnitt zentriert sich auf die aktuelle Position (Web-Mercator bei
+      `zoom`), geglaettet ueber ein gleitendes Fenster von `ease_s` Sekunden, damit die Karte
+      nicht zittert. Mit `tile_cache_dir` wird je Frame der passende Kartenausschnitt aus dem
+      Kachel-Cache geholt (`basemap_viewport`); `basemap` ist in diesem Modus wirkungslos, weil
+      ein festes Bild einen wandernden Ausschnitt nicht abbilden kann.
+
+    `dwell_s`: Haltezeit, sobald die Route einen POI erreicht — ohne sie ist der Ortsname nicht
+    lesbar. Die Gesamtdauer bleibt `dur`.
     """
     if len(track) < 2:
         raise ValueError("track braucht mindestens 2 Punkte fuer eine Route")
-    if basemap is not None and basemap.size != (width, height):
+    if viewport not in {"fit", "follow"}:
+        raise ValueError(f"viewport muss 'fit' oder 'follow' sein, nicht {viewport!r}")
+    if viewport == "follow" and zoom is None:
+        raise ValueError("viewport='follow' braucht ein zoom-Level (Web-Mercator)")
+    if viewport == "fit" and basemap is not None and basemap.size != (width, height):
         raise ValueError(f"basemap-Groesse {basemap.size} passt nicht zu ({width}, {height})")
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    project = _make_projector(track, width, height, MARGIN_PX)
-    points_px = [project(p["lat"], p["lon"]) for p in track]
-    poi_px = [(project(p["lat"], p["lon"]), p.get("name", "")) for p in (pois or [])]
     frame_count = max(1, round(fps * dur))
     icon = Image.open(marker_icon).convert("RGBA") if marker_icon else None
+    pois = pois or []
+    reveal_counts = _dwell_schedule(track, pois, frame_count=frame_count, fps=fps, dwell_s=dwell_s)
+
+    if viewport == "fit":
+        project = _make_projector(track, width, height, MARGIN_PX)
+        points_px = [project(p["lat"], p["lon"]) for p in track]
+        poi_px = [(project(p["lat"], p["lon"]), p.get("name", "")) for p in pois]
+        centers = None
+    else:
+        world_px = [latlon_to_pixel(p["lat"], p["lon"], zoom) for p in track]
+        poi_world = [(latlon_to_pixel(p["lat"], p["lon"], zoom), p.get("name", "")) for p in pois]
+        raw_centers = [world_px[min(c, len(world_px)) - 1] for c in reveal_counts]
+        centers = smooth_centers(raw_centers, max(1, round(ease_s * fps)))
 
     outputs: list[Path] = []
     for i in range(frame_count):
-        progress = (i + 1) / frame_count
-        reveal_count = max(2, round(len(points_px) * progress))
-        visible = points_px[:reveal_count]
+        reveal_count = min(reveal_counts[i], len(track))
 
-        image = basemap.copy() if basemap is not None else Image.new("RGBA", (width, height), (0, 0, 0, 0))
+        if viewport == "fit":
+            visible = points_px[:reveal_count]
+            frame_pois = poi_px
+            image = (
+                basemap.copy()
+                if basemap is not None
+                else Image.new("RGBA", (width, height), (0, 0, 0, 0))
+            )
+        else:
+            center_x, center_y = centers[i]
+            left, top = center_x - width / 2, center_y - height / 2
+            visible = [(x - left, y - top) for x, y in world_px[:reveal_count]]
+            frame_pois = [((x - left, y - top), name) for (x, y), name in poi_world]
+            if tile_cache_dir is not None:
+                image = basemap_viewport(
+                    pixel_to_latlon(center_x, center_y, zoom),
+                    zoom,
+                    (width, height),
+                    tile_cache_dir,
+                    tile_server_url=tile_server_url,
+                    fetcher=fetcher,
+                )
+            else:
+                image = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+
         draw = ImageDraw.Draw(image)
-        for (px, py), name in poi_px:
+        for (px, py), name in frame_pois:
+            if not (-MARGIN_PX <= px <= width + MARGIN_PX and -MARGIN_PX <= py <= height + MARGIN_PX):
+                continue  # ausserhalb des Ausschnitts (nur im Follow-Modus moeglich)
             draw.ellipse((px - 4, py - 4, px + 4, py + 4), fill=MARKER_COLOR)
             if name:
                 draw.text((px + 6, py - 6), name, fill=MARKER_COLOR)
@@ -202,6 +381,104 @@ def render_basemap(
             canvas.paste(tile, (col * TILE_SIZE_PX, row * TILE_SIZE_PX))
 
     return canvas
+
+
+HUD_ARROW = "—"  # `→` fehlt in den verfuegbaren Fonts (cairosvg rendert ein leeres Kaestchen)
+
+
+def _profile_polyline(
+    heights: list[float | None], box: tuple[int, int, int, int], upto: int
+) -> tuple[str, tuple[float, float]]:
+    """`(SVG-Polyline, Markerposition)` des Hoehenprofils innerhalb `box` = `(x, y, w, h)`."""
+    x0, y0, w, h = box
+    known = [(i, v) for i, v in enumerate(heights) if v is not None]
+    if len(known) < 2:
+        return "", (x0, y0 + h)
+    lo = min(v for _, v in known)
+    span = max(max(v for _, v in known) - lo, 1e-6)
+    last = max(known[0][0], min(upto, known[-1][0]))
+
+    def point(index: int, value: float) -> tuple[float, float]:
+        x = x0 + w * index / max(len(heights) - 1, 1)
+        y = y0 + h - h * (value - lo) / span
+        return round(x, 1), round(y, 1)
+
+    points = [point(i, v) for i, v in known]
+    marker = min(points, key=lambda p: abs(p[0] - point(last, lo)[0]))
+    return " ".join(f"{x},{y}" for x, y in points), marker
+
+
+def render_hud_frames(
+    out_dir: Path,
+    *,
+    template_path: Path,
+    tokens: dict,
+    fps: float,
+    dur: float,
+    width: int,
+    height: int,
+    track: list[dict],
+    stage: dict | None = None,
+    heights: list[float | None] | None = None,
+    step_s: float = 1.0,
+    dwell_s: float = 0.0,
+    pois: list[dict] | None = None,
+    arrow: str = HUD_ARROW,
+) -> list[Path]:
+    """Etappen-HUD als eigene Overlay-Sequenz (Plan 0003 §B3): Tag, Etappe, km, Hoehe, Profil.
+
+    **Nicht pro Frame gerendert** — ein SVG→PNG je `step_s` Sekunden (Default 1 s) reicht
+    voellig, die Zahlen aendern sich langsam. Die Frames dazwischen wiederholen dasselbe Bild
+    (Hardlink-frei: dieselbe Datei wird mehrfach geschrieben, damit `frame_%04d.png` lueckenlos
+    ist und `encode_alpha_video` unveraendert funktioniert).
+
+    Die Reveal-Position folgt derselben Zeitrechnung wie `render_route_frames` (inklusive
+    `dwell_s`), damit Karte und HUD synchron laufen.
+    """
+    from frameforge.design import build_svg_from_tokens, overlay_tokens, render_svg_to_png
+    from frameforge.gpx import cumulative_km, stage_label
+
+    out_dir.mkdir(parents=True, exist_ok=True)
+    frame_count = max(1, round(fps * dur))
+    reveal_counts = _dwell_schedule(
+        track, pois or [], frame_count=frame_count, fps=fps, dwell_s=dwell_s
+    )
+    km_at = cumulative_km(track)
+    step_frames = max(1, round(step_s * fps))
+    profile_box = (
+        round(width * 0.06),
+        round(height * 0.10),
+        round(width * 0.24),
+        round(height * 0.12),
+    )
+
+    outputs: list[Path] = []
+    cache: dict[int, str] = {}
+    for i in range(frame_count):
+        bucket = i // step_frames
+        if bucket not in cache:
+            index = min(reveal_counts[i], len(track)) - 1
+            polyline, (marker_x, marker_y) = _profile_polyline(
+                heights or [], profile_box, index
+            )
+            elevation = (heights[index] if heights and index < len(heights) else None)
+            content = {
+                "day_label": f"TAG {stage['day']}" if stage else "",
+                "stage_label": stage_label(stage, arrow=arrow) if stage else "",
+                "date_label": stage["date"].isoformat() if stage else "",
+                "km_label": f"{km_at[index]:.0f} km",
+                "elevation_label": f"{elevation:.0f} m" if elevation is not None else "",
+                "profile_points": polyline,
+                "marker_x": marker_x,
+                "marker_y": marker_y,
+            }
+            cache[bucket] = build_svg_from_tokens(
+                template_path, overlay_tokens(tokens, width=width, height=height, **content)
+            )
+        target = out_dir / f"frame_{i:04d}.png"
+        render_svg_to_png(cache[bucket], target)
+        outputs.append(target)
+    return outputs
 
 
 def encode_alpha_video(

@@ -1,0 +1,19 @@
+<svg width="{{width}}" height="{{height}}" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ff-sc-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="{{primary_color}}" stop-opacity="{{panel_opacity}}"/>
+      <stop offset="100%" stop-color="{{primary_color}}" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="{{panel_y}}" width="{{width}}" height="{{panel_height}}" fill="url(#ff-sc-bg)"/>
+  <rect x="{{text_x}}" y="{{accent_y}}" width="{{accent_bar_width}}" height="{{accent_height}}"
+        rx="{{corner_radius}}" ry="{{corner_radius}}" fill="{{accent_color}}"/>
+
+  <text x="{{text_x}}" y="{{day_y}}" font-family="{{font_text}}" font-size="{{caption_size}}"
+        letter-spacing="{{subtitle_tracking}}" fill="{{accent_color}}">{{day_label}}</text>
+  <text x="{{text_x}}" y="{{title_y}}" font-family="{{font_display}}" font-size="{{title_size}}"
+        font-weight="600" fill="{{text_color}}">{{stage_label}}</text>
+  <text x="{{text_x}}" y="{{date_y}}" font-family="{{font_text}}" font-size="{{subtitle_size}}"
+        fill="{{text_color}}" opacity="0.85">{{date_label}}</text>
+</svg>

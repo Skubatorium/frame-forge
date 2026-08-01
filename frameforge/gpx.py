@@ -150,10 +150,19 @@ def stage_for(timestamp: datetime, stages: list[dict]) -> dict | None:
     return next((stage for stage in stages if stage["date"] == day), None)
 
 
-def stage_label(stage: dict) -> str:
-    """`"Geiranger → Lom"` bzw. `"Lom"` bei einem Standtag — für Overlays und Reports."""
+STAGE_ARROW = "→"
+
+
+def stage_label(stage: dict, *, arrow: str = STAGE_ARROW) -> str:
+    """`"Geiranger → Lom"` bzw. `"Lom"` bei einem Standtag — für Overlays und Reports.
+
+    `arrow` ist konfigurierbar, weil nicht jede Schrift `→` (U+2192) enthält: `cairosvg`
+    rendert das Zeichen mit den hier verfügbaren Fonts als leeres Kästchen (empirisch geprüft;
+    `—` und `·` gehen). Für SVG-Overlays deshalb einen vorhandenen Glyph übergeben — in
+    `assets.json`/Reports bleibt der echte Pfeil.
+    """
     if stage["from"] and stage["to"] and stage["from"] != stage["to"]:
-        return f"{stage['from']} → {stage['to']}"
+        return f"{stage['from']} {arrow} {stage['to']}"
     return stage["to"] or stage["from"]
 
 

@@ -1,0 +1,27 @@
+<svg width="{{width}}" height="{{height}}" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="ff-hud-shadow" x="-10%" y="-30%" width="130%" height="180%">
+      <feDropShadow dx="0" dy="{{shadow_dy}}" stdDeviation="{{shadow_blur}}"
+                    flood-color="#000000" flood-opacity="{{shadow_opacity}}"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#ff-hud-shadow)">
+    <rect x="{{margin}}" y="{{panel_y}}" width="{{panel_width}}" height="{{panel_height}}"
+          rx="{{corner_radius}}" ry="{{corner_radius}}"
+          fill="{{primary_color}}" opacity="{{panel_opacity}}"/>
+  </g>
+
+  <text x="{{text_x}}" y="{{day_y}}" font-family="{{font_text}}" font-size="{{caption_size}}"
+        letter-spacing="{{subtitle_tracking}}" fill="{{accent_color}}">{{day_label}}</text>
+  <text x="{{text_x}}" y="{{stage_y}}" font-family="{{font_display}}" font-size="{{subtitle_size}}"
+        font-weight="600" fill="{{text_color}}">{{stage_label}}</text>
+  <text x="{{text_x}}" y="{{stats_y}}" font-family="{{font_text}}" font-size="{{caption_size}}"
+        fill="{{text_color}}">{{km_label}}   {{elevation_label}}</text>
+
+  <!-- Höhenprofil der Etappe; `profile_points` ist eine fertige SVG-Polyline
+       ("x,y x,y …"), `marker_x`/`marker_y` die aktuelle Position darauf. -->
+  <polyline points="{{profile_points}}" fill="none" stroke="{{accent_color}}"
+            stroke-width="{{profile_stroke}}" stroke-linejoin="round"/>
+  <circle cx="{{marker_x}}" cy="{{marker_y}}" r="{{profile_marker_r}}" fill="{{text_color}}"/>
+</svg>

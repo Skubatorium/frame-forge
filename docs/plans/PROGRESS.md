@@ -54,12 +54,12 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | A5 | `places-todo` / `set-place` — Lückenliste für unklare Clips | ✅ fertig | `243dc8a` |
 | A6 | `/ff-route` + Agent `route-planner` (Plausibilität) | ✅ fertig | `4138e99` |
 | B1 | Distanz + Höhenprofil (`haversine_km`, `cumulative_km`, `elevation_profile`) | ✅ fertig | `4138e99` |
-| B2 | Mitwandernder Viewport (Web-Mercator, `viewport="follow"`, `dwell_s`) | ⬜ offen | — |
-| B3 | Etappen-HUD (`templates/svg/map-hud.svg`, stufenweise gerendert) | ⬜ offen | — |
-| B4 | `map-animator`-Agent erweitern | ⬜ offen | — |
+| B2 | Mitwandernder Viewport (Web-Mercator, `viewport="follow"`, `dwell_s`) | ✅ fertig | `<p>` |
+| B3 | Etappen-HUD (`templates/svg/map-hud.svg`, stufenweise gerendert) | ✅ fertig | `<p>` |
+| B4 | `map-animator`-Agent erweitern | ✅ fertig | `<p>` |
 | B5 | Routengeometrie beschaffen (GPX / KML-Parser / Routing-Fallback) | ✅ fertig | `4138e99` |
 | C | Schwarzblende zwischen zwei Clips (`transition_in: black`) | ⬜ offen | — |
-| D1 | SVG-Templates aufwerten + relative Größen (`type_scale`) | ⬜ offen | — |
+| D1 | SVG-Templates aufwerten + relative Größen (`type_scale`) | ✅ fertig | `<p>` |
 | D2 | Generierte Grafiken (Prompt-Bausteine, Hintergrund in Titel/Kapitel) | ⬜ offen | — |
 | F | Musik: `fade_in_s`/`fade_out_s`, `audio.segment_plan` | ⬜ offen | — |
 | G | Invalidierung bei neuem Material (`pipeline.pending_assets`, Fingerprint) | ⬜ offen | — |
@@ -138,6 +138,51 @@ bleibt davon unberührt.
 **Abnahme A0 zunächst nur zur Hälfte erfüllt** (Bitgleichheit ja, Aufnahmezeit 0/236) — die
 zweite Hälfte kam mit A1, siehe dort: der zweite Backfill-Lauf liefert 236/236 (100 %).
 7 Tests in `tests/test_backfill.py`, 333 Tests gesamt grün, `ruff` sauber.
+
+### B2 + B3 + B4 + D1 — Notizen (2026-08-01)
+
+**B2 Follow-Viewport.** `map.latlon_to_pixel`/`pixel_to_latlon` (Web-Mercator, subpixelgenau —
+`latlon_to_tile` ist genau das abgerundet; ein Test hält diese Beziehung fest, weil davon
+abhängt, ob Kachelkarte und Route deckungsgleich sind). `render_route_frames` bekommt
+`viewport="follow"`, `zoom`, `ease_s`, `dwell_s`, `tile_cache_dir`; `smooth_centers` glättet die
+Kamerafahrt über ein gleitendes Fenster. `basemap_viewport` schneidet beliebige Pixelgrößen aus
+dem Kachel-Cache (die „nur ganze 256er-Raster"-Beschränkung von `render_basemap` gilt nur noch
+für den Fit-Modus) und behandelt Datumsgrenze und Pol.
+
+**Haltezeit ohne Zeitdehnung:** `_dwell_schedule` pausiert den Reveal an jedem POI, verkürzt
+dafür die Bewegung dazwischen — `dur` bleibt exakt. Sonst wäre jede Timeline-Position hinter
+dem Karten-Clip verrutscht.
+
+**Regression:** `viewport="fit"` ist Default; ein Test rendert dieselbe Szene einmal ohne und
+einmal mit den neuen Parametern und vergleicht die PNGs **byteweise**.
+
+**B3 HUD.** `templates/svg/map-hud.svg` + `map.render_hud_frames`: ein SVG→PNG je `step_s`
+(Default 1 s) statt pro Frame — die Zahlen ändern sich langsam, pro Frame wäre es hunderte
+Cairo-Renderings für dasselbe Bild. Das HUD ist eine **eigene** Overlay-Sequenz
+(`tracks.overlay`) über der Karte (`tracks.map`), beide Mechanismen gab es im Renderer schon.
+Höhenprofil als Polyline mit Positionsmarker (`_profile_polyline`), km aus `cumulative_km`.
+
+**Fund beim Rendern (echtes Bild angesehen, nicht nur Tests):** `cairosvg` rendert `→` (U+2192)
+mit den hier verfügbaren Schriften als leeres Kästchen — `—` und `·` gehen. Deshalb
+`gpx.stage_label(stage, arrow=…)` konfigurierbar und `map.HUD_ARROW = "—"` als Default für
+Bildtexte; in `assets.json` und Reports bleibt der echte Pfeil. Im `map-animator` dokumentiert.
+
+**D1 Templates.** `lower-third.svg` neu: Akzentbalken, abgerundete Ecken, Farbverlauf statt
+Vollton, weicher Schlagschatten, Typo-Hierarchie mit Tracking. Neu: `stage-card.svg`,
+`map-hud.svg`, `stat-badge.svg`. `design.overlay_tokens(tokens, width=…, height=…)` leitet
+**alle** Layout-Tokens relativ zur Zielhöhe ab — das Projekt liefert nur noch Farben, Schriften
+und Inhalt. `type_scale` ist damit erstmals echt verdrahtet (`scale_size`: Werte ≤ 1 sind
+Faktoren der Bildhöhe, größere gelten als Pixel bei 1080p und werden mitskaliert), sodass
+1080p-Preview und 4K-Final optisch identisch wirken. `background_layer()` erlaubt eine optionale
+Hintergrundgrafik in Titelkarte/Kapitelmarke (D2-Vorarbeit); `_OPTIONAL_TOKENS` sorgt dafür,
+dass bestehende Token-Sets ohne dieses Feld weiterhin gültig bleiben.
+
+**Abnahme D (Teil 1):** parametrisierter Test rendert **alle 7 Templates × 2 Auflösungen**
+(1080p/2160p) aus einem gemeinsamen Token-Set fehlerfrei zu PNG; zusätzlich geprüft, dass
+Größen mit der Zielhöhe skalieren. Die visuelle Abnahme durch den Nutzer steht noch aus
+(Beispielframe der neuen Bauchbinde wurde gerendert und geprüft).
+
+32 neue Tests, 418 gesamt grün.
 
 ### A6 + B1 + B5 — Notizen (2026-08-01)
 

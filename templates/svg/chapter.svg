@@ -1,4 +1,6 @@
 <svg width="{{width}}" height="{{height}}" xmlns="http://www.w3.org/2000/svg">
+  <!-- Optionale Hintergrundgrafik; leer, wenn das Projekt keine liefert. -->
+  {{background_layer}}
   <text x="50%" y="42%" font-family="{{font_text}}" font-size="{{number_size}}"
         fill="{{accent_color}}" text-anchor="middle">{{chapter_number}}</text>
   <text x="50%" y="54%" font-family="{{font_display}}" font-size="{{title_size}}"
