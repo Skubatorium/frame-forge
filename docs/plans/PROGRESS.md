@@ -76,7 +76,7 @@ Rückwärtskompatibilität, Zusammenspiel, Testtiefe, Timing. Befunde und Fixes 
 |---|---|---|---|
 | F1 | kritisch | Ken-Burns vervielfachte die Renderdauer (`zoompan d=frames` → `frames²`) | ✅ `1d13e2a` |
 | F2 | hoch | `assign-places` erfindet Orte über den GPX-Track ohne Zeittoleranz | ✅ `0f21d5e` |
-| F3 | hoch | Dauer-Invariante nirgends geprüft, `black_transition_extra_s` ohne Aufrufer | ⬜ offen |
+| F3 | hoch | Dauer-Invariante nirgends geprüft, `black_transition_extra_s` ohne Aufrufer | ✅ `<p3>` |
 | F4 | mittel | `color-match` verliert unbekannte Felder in `timeline.json` | ⬜ offen |
 | F5 | mittel | Alte Token-Sets rendern nicht mehr (neue Pflicht-Tokens in `lower-third.svg`) | ⬜ offen |
 | F6 | mittel | `render_hud_frames` stürzt bei leerem Track ab (`IndexError`) | ⬜ offen |
@@ -113,6 +113,26 @@ Der Fehler stammt aus Ausbaustufe B1, nicht aus Plan 0003 — keine der beiden e
 nutzt `effects`, deshalb ist nie ein falsches Video entstanden. Kombinationsfall danach geprüft
 (Schwarzblende + Crossfade + Ken-Burns + Audio-Fades in einer Timeline): `timeline.duration`
 4,60 s, gerendert 4,60 s.
+
+### F3 — Dauer-Invariante und toter Code (2026-08-01)
+
+`render.black_transition_extra_s` wurde für Paket C geschrieben und hatte **keinen Aufrufer** in
+`frameforge/` — nur Tests. Damit war die Abnahme aus Plan §C („Gesamtdauer stimmt mit
+`timeline.duration` überein") nur an einem Beispiel im Test belegt, nicht als Regel.
+
+Neue QC-Regel `_check_video_length_consistency`: die **sequenzielle** Renderlänge der Video-Spur
+(Summe der Clipdauern − Crossfades + Schwarzblenden-Standzeiten) muss dort enden, wo der letzte
+Clip laut `tl_in` endet. Die Einzelprüfungen decken jeden Übergang für sich ab; diese Regel ist
+die Gesamtsumme und fängt auch aufaddierte Abweichungen mehrerer Übergangstypen.
+
+**Erster Entwurf war zu streng und wurde verworfen:** er verglich gegen `timeline.duration` und
+hätte 9 bestehende Tests sowie den legitimen Fall „Musik läuft nach dem letzten Bild weiter"
+gebrochen. Empirisch geprüft: Timeline mit 1 s Bild und 4 s Musik rendert 4,0 s — der Ausklang
+ist gewollt, nicht kaputt. Zu *kurz* deklarierte Dauern fängt weiterhin
+`Timeline.validate_semantics`.
+
+4 neue Tests (gemischte Übergänge korrekt/verschoben, Musik-Ausklang, leere Video-Spur). Beide
+echten Timelines (`proto/teaser`, `test-timelapse-journey`) bestehen die Regel unverändert.
 
 ### F2 — GPX-Position ohne Zeittoleranz (2026-08-01)
 

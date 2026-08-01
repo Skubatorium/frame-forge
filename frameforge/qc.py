@@ -23,6 +23,10 @@ MAX_ASSET_REPEATS = 2
 DURATION_TOLERANCE_S = 2.0
 # Toleranz beim Abgleich Crossfade-Dauer <-> tl_in-Überlappung (Rundung/fps-Raster).
 _XFADE_OVERLAP_TOLERANCE_S = 0.05
+# Toleranz zwischen sequenzieller Renderlaenge und den tl_in-Positionen der Video-Spur.
+# Grosszuegiger als die Crossfade-Toleranz, weil sich Rundungen ueber viele Clips summieren
+# duerfen; ab einer halben Sekunde ist die Verschiebung im Bild sichtbar.
+DURATION_MISMATCH_TOLERANCE_S = 0.5
 
 
 def timeline_fingerprint(path: Path) -> str:
@@ -104,6 +108,49 @@ def _check_video_coverage(timeline: Timeline) -> list[str]:
             )
         prev_end = max(prev_end, clip.tl_in + clip.duration)
     return issues
+
+
+def _check_video_length_consistency(timeline: Timeline) -> list[str]:
+    """Sequenzielle Renderlänge der Video-Spur muss zu den `tl_in`-Positionen passen.
+
+    Der Renderer schneidet die Video-Clips **sequenziell** aneinander: Summe der Clipdauern,
+    minus Crossfades (`xfade` verkürzt), plus Schwarzblenden-Standzeiten (`tpad` verlängert).
+    Audio (`adelay`), Overlays und Karten-Clips liegen dagegen an ihren **absoluten**
+    `tl_in`-Positionen. Beide Modelle stimmen nur überein, wenn die sequenzielle Länge genau
+    dort endet, wo der letzte Clip laut `tl_in` endet.
+
+    Die Einzelprüfungen in `_check_video_coverage` decken jeden Übergang für sich ab; diese
+    Regel ist die Gesamtsumme — sie fängt auch eine Kombination aus mehreren Übergangstypen,
+    bei der sich Einzelabweichungen unterhalb der Toleranz aufaddieren (Plan 0003 §C:
+    „Gesamtdauer stimmt mit `timeline.duration` überein").
+
+    **Nicht** geprüft wird, ob `timeline.duration` größer ist als das letzte Bild: ein
+    Musik-Ausklang oder eine Abspann-Fläche nach dem letzten Clip ist zulässig (der Render ist
+    dann so lang wie die Audio-Spur, empirisch geprüft). Zu *kurz* deklarierte Dauern fängt
+    bereits `Timeline.validate_semantics`.
+    """
+    clips = sorted(timeline.tracks.video, key=lambda c: c.tl_in)
+    if not clips:
+        return []
+
+    crossfades = sum(
+        min(c.transition_in.dur, c.duration)
+        for c in clips[1:]
+        if c.transition_in and c.transition_in.type in _CROSSFADE_TYPES
+    )
+    holds = render_module.black_transition_extra_s(clips)
+    sequential = sum(c.duration for c in clips) - crossfades + holds
+    positioned = max(c.tl_in + c.duration for c in clips)
+
+    if abs(sequential - positioned) > DURATION_MISMATCH_TOLERANCE_S:
+        message = (
+            f"Video-Spur: der Renderer erzeugt {sequential:.2f}s (Clips "
+            f"{sum(c.duration for c in clips):.2f}s − Crossfades {crossfades:.2f}s + "
+            f"Schwarzblenden {holds:.2f}s), laut tl_in endet das Bild aber bei "
+            f"{positioned:.2f}s — Audio und Overlays laufen um die Differenz gegen das Bild"
+        )
+        return [message]
+    return []
 
 
 def _check_audio_clipping_risk(timeline: Timeline) -> list[str]:
@@ -192,6 +239,7 @@ def validate(
 
     issues = [
         *_check_video_coverage(timeline),
+        *_check_video_length_consistency(timeline),
         *_check_audio_clipping_risk(timeline),
         *_check_overlay_readability(timeline),
         *_check_clip_repetition(timeline),

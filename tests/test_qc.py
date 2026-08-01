@@ -5,7 +5,7 @@ Audio-Clipping-Risiko, Overlay-Lesbarkeit, Clip-Wiederholung, Brief-Abgleich.
 
 from __future__ import annotations
 
-from frameforge.qc import validate
+from frameforge.qc import _check_video_length_consistency, validate
 from frameforge.timeline import Timeline
 
 
@@ -299,3 +299,69 @@ def test_black_transition_with_too_large_gap_is_flagged():
     timeline.duration = 4.0
     issues = validate(timeline)
     assert any("Schwarzblende" in i for i in issues)
+
+
+# -- Audit-Fix F3: sequenzielle Renderlaenge gegen die tl_in-Positionen -------------
+
+
+def _mixed_timeline(*, tl_in_third: float, duration: float):
+    """3 Clips: harter Schnitt, dann Crossfade, dann Schwarzblende mit Standzeit."""
+    return Timeline(
+        export="e",
+        fps=25,
+        resolution=(320, 240),
+        duration=duration,
+        tracks={
+            "video": [
+                {"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2.0, "tl_in": 0.0},
+                {
+                    "id": "c2",
+                    "asset": "a2",
+                    "src_in": 0,
+                    "src_out": 2.0,
+                    "tl_in": 1.5,
+                    "transition_in": {"type": "fade", "dur": 0.5},
+                },
+                {
+                    "id": "c3",
+                    "asset": "a3",
+                    "src_in": 0,
+                    "src_out": 2.0,
+                    "tl_in": tl_in_third,
+                    "transition_in": {"type": "black", "dur": 0.3, "hold": 1.0},
+                },
+            ]
+        },
+    )
+
+
+def test_mixed_transitions_with_correct_positions_pass():
+    # 2.0 + 2.0 - 0.5 Crossfade = 3.5s Bild, + 1.0s Standzeit -> dritter Clip ab 4.5s
+    assert validate(_mixed_timeline(tl_in_third=4.5, duration=6.5)) == []
+
+
+def test_video_length_mismatch_is_reported():
+    """Die Standzeit fehlt in den tl_in-Werten — Bild und Ton laufen 1 s auseinander."""
+    timeline = _mixed_timeline(tl_in_third=3.5, duration=6.5)
+    issues = validate(timeline)
+    assert any("Video-Spur" in i and "gegen das Bild" in i for i in issues)
+
+
+def test_music_tail_after_the_last_clip_is_allowed():
+    """Musik-Ausklang nach dem letzten Bild ist zulaessig — der Render folgt der Audio-Spur."""
+    timeline = Timeline(
+        export="e",
+        fps=25,
+        resolution=(320, 240),
+        duration=8.0,
+        tracks={
+            "video": [{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2.0, "tl_in": 0}],
+            "audio": [{"id": "m1", "src": "music/t.wav", "tl_in": 0, "dur": 8.0}],
+        },
+    )
+    assert validate(timeline) == []
+
+
+def test_length_check_ignores_empty_video_track():
+    timeline = Timeline(export="e", fps=25, resolution=(320, 240), duration=5.0, tracks={})
+    assert _check_video_length_consistency(timeline) == []
