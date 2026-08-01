@@ -519,6 +519,10 @@ Jeder Schritt prüft seine Vorbedingung doppelt: in der CLI (Gürtel) und im
 - `frameforge ingest <projekt> --dry-run` — vorab zeigen, was gefunden würde (Anzahl/Größe).
 - `frameforge clean <projekt>` — Cache (Proxies/Keyframes) löschen, alles regenerierbar.
 - `frameforge clone-export <projekt> <src> <dst>` — neuen Export aus einem bestehenden Brief.
+- `frameforge relink <projekt> [--dry-run]` — nach dem Umsortieren von `media_root` die
+  `path`-Einträge in `assets.json` per Datei-Hash reparieren (und die Proxies im Cache
+  mitziehen). Meldet verwaiste Einträge und neue, noch nicht indizierte Dateien. Keine erneute
+  Analyse, kein Vision-Call.
 
 ---
 

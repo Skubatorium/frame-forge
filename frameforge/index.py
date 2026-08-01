@@ -99,6 +99,20 @@ def _render_markdown(asset: dict, notes: str) -> str:
     return "\n".join(lines) + notes
 
 
+def save_assets(project: Project, assets: list[dict]) -> None:
+    """Schreibt die komplette Asset-Liste nach `assets.json` (sortiert nach ID, stabile Diffs)."""
+    project.assets_json_path.parent.mkdir(parents=True, exist_ok=True)
+    ordered = sorted(assets, key=lambda a: a["id"])
+    project.assets_json_path.write_text(json.dumps(ordered, indent=2, ensure_ascii=False) + "\n")
+
+
+def write_asset_md(project: Project, asset: dict) -> None:
+    """Erzeugt die `.md`-Datei eines Assets neu — Freitext nach `_NOTES_MARKER` bleibt erhalten."""
+    project.assets_dir.mkdir(parents=True, exist_ok=True)
+    md_path = project.assets_dir / f"{asset['id']}.md"
+    md_path.write_text(_render_markdown(asset, _existing_notes(md_path)))
+
+
 def write_asset(project: Project, asset: dict) -> None:
     """Schreibt/merged einen Asset-Eintrag in `assets.json` und die zugehoerige `.md`-Datei.
 
@@ -107,15 +121,7 @@ def write_asset(project: Project, asset: dict) -> None:
     (eigene Notizen) bleibt ueber Re-Indexierung hinweg erhalten — Merge statt Ueberschreiben.
     """
     asset_id = asset["id"]
-    assets = load_assets(project)
-    assets = [a for a in assets if a.get("id") != asset_id]
+    assets = [a for a in load_assets(project) if a.get("id") != asset_id]
     assets.append(asset)
-    assets.sort(key=lambda a: a["id"])
-
-    project.assets_json_path.parent.mkdir(parents=True, exist_ok=True)
-    project.assets_json_path.write_text(json.dumps(assets, indent=2, ensure_ascii=False) + "\n")
-
-    project.assets_dir.mkdir(parents=True, exist_ok=True)
-    md_path = project.assets_dir / f"{asset_id}.md"
-    notes = _existing_notes(md_path)
-    md_path.write_text(_render_markdown(asset, notes))
+    save_assets(project, assets)
+    write_asset_md(project, asset)

@@ -33,6 +33,85 @@ Legende: ⬜ offen · 🔄 in Arbeit · ✅ fertig
 
 ---
 
+## Plan 0003 — Ausbau „Roadtrip-Vlog" (Arbeitspakete A–I)
+
+Plan-Referenz: `docs/plans/0003-vlog-ausbau.md` (**ersetzt 0002**, das nicht umgesetzt wird).
+Harte Bedingung bei **jedem** Paket: Abschnitt 0 des Plans — `projects/norwegen-2026` (255
+indizierte Assets) muss ohne Neu-Indizierung weiterlaufen, neue Felder sind optional, neue
+Defaults ergeben das heutige Verhalten, `projects/proto/` und die Timeline von
+`test-timelapse-journey` bleiben lauffähig.
+
+Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G, H unabhängig; I zuletzt.
+
+| # | Arbeitspaket | Status | Commit |
+|---|------|--------|--------|
+| E | `relink` — Pfade nach Umsortieren reparieren | ✅ fertig | `<pending>` |
+| A0 | Backfill statt Neu-Indizieren (`backfill-metadata`) | ⬜ offen | — |
+| A1 | Aufnahmezeit für Videos (Container/Dateiname/Trim-Offset) | ⬜ offen | — |
+| A2 | GPS aus den ungeschnittenen Originalen (`originals_root`) | ⬜ offen | — |
+| A3 | Etappen als Projektdaten (`route/stages.csv`, `templates/prompts/route.md`) | ⬜ offen | — |
+| A4 | `assign-places` — Tag/Etappe/Ort zuordnen (prüfbar, `--dry-run`) | ⬜ offen | — |
+| A5 | `places-todo` / `set-place` — Lückenliste für unklare Clips | ⬜ offen | — |
+| A6 | `/ff-route` + Agent `route-planner` (Plausibilität) | ⬜ offen | — |
+| B1 | Distanz + Höhenprofil (`haversine_km`, `cumulative_km`, `elevation_profile`) | ⬜ offen | — |
+| B2 | Mitwandernder Viewport (Web-Mercator, `viewport="follow"`, `dwell_s`) | ⬜ offen | — |
+| B3 | Etappen-HUD (`templates/svg/map-hud.svg`, stufenweise gerendert) | ⬜ offen | — |
+| B4 | `map-animator`-Agent erweitern | ⬜ offen | — |
+| B5 | Routengeometrie beschaffen (GPX / KML-Parser / Routing-Fallback) | ⬜ offen | — |
+| C | Schwarzblende zwischen zwei Clips (`transition_in: black`) | ⬜ offen | — |
+| D1 | SVG-Templates aufwerten + relative Größen (`type_scale`) | ⬜ offen | — |
+| D2 | Generierte Grafiken (Prompt-Bausteine, Hintergrund in Titel/Kapitel) | ⬜ offen | — |
+| F | Musik: `fade_in_s`/`fade_out_s`, `audio.segment_plan` | ⬜ offen | — |
+| G | Invalidierung bei neuem Material (`pipeline.pending_assets`, Fingerprint) | ⬜ offen | — |
+| H1 | Farbstatistik messen (`analyze.color_stats` aus vorhandenen Keyframes) | ⬜ offen | — |
+| H2 | Farbangleichung (`render.match_filter`, `color_match: off/soft/strong`) | ⬜ offen | — |
+| I | Abschluss-Audit (I1–I5) | ⬜ offen | — |
+
+### E — Notizen (2026-08-01)
+
+Neues Modul `frameforge/relink.py` + Kommando `frameforge relink <projekt> [--dry-run]`.
+`plan_relink` rechnet nur (kein Schreiben), `apply_relink` schreibt — so treffen `--dry-run`
+und der echte Lauf garantiert dieselbe Entscheidung.
+
+Entscheidungslogik pro Asset, in dieser Reihenfolge:
+
+1. **Eingetragener Pfad existiert → unverändert**, bewusst *ohne* Hash-Vergleich. Beim ersten
+   Lauf gegen `projects/proto/` meldete die hash-first-Variante alle 5 Assets als Waisen *und*
+   dieselben 5 Dateien als „neu": `hash_file` nimmt `mtime` mit auf (Plan 0001 §3), ein
+   git-Checkout ändert sie. Relink repariert **Pfade, nicht Hashes** — ein existierender Pfad
+   ist nie ein Waise.
+2. Pfad weg → Suche per Hash. Genau ein Treffer → `path` korrigieren. Mehrere Treffer
+   (echte Duplikate) → als `ambiguous` melden, **nichts raten**. Kein Treffer → Waise (Eintrag
+   bleibt stehen, relink löscht nie).
+3. Dateien, deren Hash in keinem Asset vorkommt → als „neu, noch nicht indiziert" melden.
+
+`media_root` nicht erreichbar (Platte nicht gemountet) wirft `FileNotFoundError`, statt jedes
+Asset als Waise zu melden.
+
+**Abweichung vom Plan (auf Nutzer-Entscheidung, Frage vorab gestellt): Proxies wandern mit.**
+`ingest.proxy_path` hängt den Hash des *relativen Pfads* an den Proxy-Namen (Audit-Fix K1) —
+nach einem Verschieben wäre der vorhandene Proxy verwaist und würde beim nächsten `ingest` neu
+transkodiert. Bei ~100 GB ist das der teuerste Schritt der Pipeline, deshalb benennt
+`apply_relink` den Proxy im Cache mit um (`_move_proxy`, meldet `moved_proxies`). Fehlt der
+Proxy oder existiert das Ziel schon, passiert nichts — kein Fehler.
+
+Nebenbei `index.py` refaktoriert (kein Verhaltenswechsel): `save_assets` (ganze Liste, sortiert)
+und `write_asset_md` (Notizen-Merge) als öffentliche Bausteine herausgezogen, `write_asset` nutzt
+beide. Relink schreibt `assets.json` damit genau einmal statt einmal pro geändertem Asset.
+
+**Abnahme E erfüllt:** 13 Tests in `tests/test_relink.py`, darunter der End-to-End-Nachweis
+(`test_final_render_finds_original_after_relink`): verschobenes Original → `render_final` bricht
+mit „Original-Asset nicht gefunden" ab → nach `relink` läuft derselbe Render durch. Weiter
+abgedeckt: nur `path` ändert sich (Diff-Vergleich aller übrigen Felder), Freitext-Notizen in der
+`.md` bleiben, Waisen/Neu/Mehrdeutig, Proxy-Umzug, mtime-Änderung ist kein Waise.
+
+**Rückwärtskompatibilität (Plan 0003 §0) nachgewiesen:** `relink norwegen-2026 --dry-run` meldet
+255 Assets unverändert, 0 Änderungen, 0 Waisen; `relink proto --dry-run` 5 unverändert.
+`projects/proto/` läuft weiterhin bis zum Preview durch (`ingest` → `preview` real ausgeführt).
+326 Tests grün, `ruff` sauber, `doctor` grün.
+
+---
+
 ## M1 — Mini-Prototyp end-to-end
 
 Ziel laut Plan Abschnitt 8: `projects/proto/` mit 3–5 Clips, 2 Fotos, kurzer GPX-Spur,

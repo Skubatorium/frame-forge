@@ -29,6 +29,7 @@ from frameforge import people as people_module
 from frameforge import pipeline as pipeline_module
 from frameforge import preindex as preindex_module
 from frameforge import presets as presets_module
+from frameforge import relink as relink_module
 from frameforge import render as render_module
 from frameforge import stats as stats_module
 from frameforge import themes as themes_module
@@ -302,6 +303,71 @@ def ingest(
         )
         for failure in result.failures:
             console.print(f"  {failure.asset.name}: {failure.reason}")
+
+
+@app.command()
+def relink(
+    project: str,
+    dry_run: bool = typer.Option(False, "--dry-run", help="Nur zeigen, was korrigiert wuerde"),
+) -> None:
+    """Repariert `path`-Eintraege in `assets.json` nach dem Umsortieren von `media_root`.
+
+    Matcht per Datei-Hash (nicht per Pfad), aktualisiert nur das Feld `path` und meldet
+    verwaiste Eintraege (Datei nicht mehr auffindbar) sowie neue, noch nicht indizierte
+    Dateien. Keine erneute Analyse, kein Vision-Call, `content`/`rating`/Notizen bleiben
+    unangetastet.
+    """
+    proj = _resolve_or_fail(project)
+    try:
+        result = relink_module.plan_relink(proj)
+    except FileNotFoundError as exc:
+        raise _fail(str(exc)) from exc
+
+    if result.changed:
+        table = Table(title=f"{len(result.changed)} Pfad(e) zu korrigieren")
+        table.add_column("Asset")
+        table.add_column("alt")
+        table.add_column("neu")
+        for change in result.changed:
+            table.add_row(change.asset_id, change.old_path, change.new_path)
+        console.print(table)
+
+    if result.ambiguous:
+        console.print(
+            f"[yellow]{len(result.ambiguous)} Asset(s) mehrdeutig (gleicher Hash an mehreren "
+            "Stellen) — nicht automatisch geaendert:[/yellow]"
+        )
+        for amb in result.ambiguous:
+            console.print(f"  {amb.asset_id}: {', '.join(amb.candidates)}")
+
+    if result.orphans:
+        console.print(f"[yellow]{len(result.orphans)} verwaiste(r) Eintrag/Eintraege:[/yellow]")
+        for orphan in result.orphans:
+            console.print(f"  {orphan.asset_id}: {orphan.path}")
+
+    if result.new_files:
+        console.print(
+            f"[yellow]{len(result.new_files)} neue, noch nicht indizierte Datei(en)[/yellow] "
+            f"— 'frameforge ingest {project}' + '/ff-index':"
+        )
+        for rel in result.new_files[:20]:
+            console.print(f"  {rel}")
+        if len(result.new_files) > 20:
+            console.print(f"  … und {len(result.new_files) - 20} weitere")
+
+    console.print(f"[dim]{result.unchanged} Asset(s) unveraendert.[/dim]")
+
+    if dry_run:
+        console.print("[dim]Dry-Run: nichts geschrieben.[/dim]")
+        return
+    written = relink_module.apply_relink(proj, result)
+    if written:
+        console.print(
+            f"[green]{written} Pfad(e) in assets.json korrigiert, "
+            f"{result.moved_proxies} Proxy(s) im Cache mitgezogen.[/green]"
+        )
+    else:
+        console.print("[green]Nichts zu korrigieren.[/green]")
 
 
 @app.command(name="index")
