@@ -62,7 +62,7 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | D1 | SVG-Templates aufwerten + relative Größen (`type_scale`) | ✅ fertig | `a314f07` |
 | D2 | Generierte Grafiken (Prompt-Bausteine, Hintergrund in Titel/Kapitel) | ⬜ offen | — |
 | F | Musik: `fade_in_s`/`fade_out_s`, `audio.segment_plan` | ✅ fertig | `450d3ac` |
-| G | Invalidierung bei neuem Material (`pipeline.pending_assets`, Fingerprint) | ⬜ offen | — |
+| G | Invalidierung bei neuem Material (`pipeline.pending_assets`, Fingerprint) | ✅ fertig | `<p>` |
 | H1 | Farbstatistik messen (`analyze.color_stats` aus vorhandenen Keyframes) | ⬜ offen | — |
 | H2 | Farbangleichung (`render.match_filter`, `color_match: off/soft/strong`) | ⬜ offen | — |
 | I | Abschluss-Audit (I1–I5) | ⬜ offen | — |
@@ -138,6 +138,29 @@ bleibt davon unberührt.
 **Abnahme A0 zunächst nur zur Hälfte erfüllt** (Bitgleichheit ja, Aufnahmezeit 0/236) — die
 zweite Hälfte kam mit A1, siehe dort: der zweite Backfill-Lauf liefert 236/236 (100 %).
 7 Tests in `tests/test_backfill.py`, 333 Tests gesamt grün, `ruff` sauber.
+
+### G — Notizen (2026-08-01)
+
+Schließt die seit 2026-07-31 dokumentierte Lücke (Plan 0001 §2: neues Material soll auffallen).
+
+- `pipeline.pending_assets(project)` — `scan_media` gegen die Hashes in `assets.json`, kein
+  Vision-Call, keine Zustandsänderung; läuft deshalb in `frameforge status` **in jeder Phase**
+  mit. Ein nicht gemounteter Datenträger liefert bewusst eine leere Liste statt „alles neu".
+- `pipeline.asset_inventory_fingerprint` hasht **IDs + Hashes**, nicht die Bytes von
+  `assets.json`. Sonst hätte jeder Backfill (A0) und jede Ortszuordnung (A4) eine Warnung
+  ausgelöst, obwohl sich am Inventar nichts geändert hat — die Warnung wäre binnen eines Tages
+  Rauschen gewesen.
+- `pipeline.asset_drift` vergleicht den beim Storyboarding abgelegten Fingerprint mit dem
+  aktuellen und liefert eine **Meldung**, keine Aktion: `status`, `preview` und `render` zeigen
+  sie an, gebaut wird nichts von selbst (Plan: „warnen und fragen, nicht still neu bauen").
+
+**Dafür musste `frameforge build` erstmals eine Phase setzen.** Bisher war es ein reiner
+Gate-Wrapper, der immer mit Exit 1 endete — kein Kommando erreichte je `STORYBOARDED` oder
+`TIMELINE`, also gab es auch keinen Zeitpunkt, an dem sich der Inventarstand festhalten ließ.
+Jetzt: Beat-Sheet vorhanden → `STORYBOARDED` + Fingerprint, zusätzlich `timeline.json`
+vorhanden → `TIMELINE`. Ohne Beat-Sheet bleibt es beim bisherigen Hinweis samt Exit 1.
+
+7 neue Tests, 438 gesamt grün.
 
 ### F — Notizen (2026-08-01)
 

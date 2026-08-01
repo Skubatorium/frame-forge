@@ -225,9 +225,23 @@ def status(project: str) -> None:
     """Visuelle Pipeline-Uebersicht: was erledigt (✓), was jetzt dran (→), was offen ( )."""
     proj = _resolve_or_fail(project)
     state = proj.load_state()
+    pending = pipeline_module.pending_assets(proj)
     pipeline = pipeline_module.build_pipeline(project, state, exports=proj.list_exports())
     for line in pipeline_module.format_pipeline(pipeline):
         console.print(_colorize_pipeline_line(line) if line.strip() else line)
+
+    # Neues Rohmaterial faellt sonst niemandem auf, sobald das Projekt ueber INDEXED hinaus ist
+    # (Plan 0003 §G). Reiner Hash-Vergleich, keine Kosten, deshalb in jeder Phase.
+    if pending:
+        console.print(
+            f"\n[yellow]{len(pending)} neue Datei(en) in media_root, noch nicht indiziert[/yellow] "
+            f"— /ff-ingest + /ff-index: {', '.join(p.name for p in pending[:5])}"
+            + (" …" if len(pending) > 5 else "")
+        )
+    for export_name in proj.list_exports():
+        drift = pipeline_module.asset_drift(proj, state, export_name)
+        if drift:
+            console.print(f"[yellow]{export_name}:[/yellow] {drift}")
 
 
 # -- Pipeline-Kommandos ---------------------------------------------------
@@ -869,11 +883,31 @@ def build(project: str, export: str) -> None:
         gate_build(state, export)
     except GateError as exc:
         raise _fail(str(exc)) from exc
-    console.print(
-        f"[yellow]Gate offen fuer '{export}'.[/yellow] Timeline baut der /ff-build-Ablauf "
-        "(story-architect + timeline-builder), nicht dieses Kommando."
-    )
-    raise typer.Exit(code=1)
+    exp = proj.export(export)
+    # Phase mitziehen, sobald die Agenten geliefert haben. Vorher hob kein Kommando den Export
+    # ueber BRIEFED hinaus; damit gab es auch keinen Zeitpunkt, an dem sich der Stand des
+    # Asset-Inventars festhalten liess (Plan 0003 §G).
+    if not exp.beatsheet_path.exists():
+        console.print(
+            f"[yellow]Gate offen fuer '{export}'.[/yellow] Beat-Sheet und Timeline bauen die "
+            "Agenten des /ff-build-Ablaufs (story-architect + timeline-builder), nicht dieses "
+            "Kommando."
+        )
+        raise typer.Exit(code=1)
+
+    fingerprint = pipeline_module.asset_inventory_fingerprint(proj)
+    with ProjectState.transaction(proj.state_path) as tx:
+        tx.advance_export(export, Phase.STORYBOARDED)
+        tx.set_export_hash(export, pipeline_module.ASSET_INVENTORY_KEY, fingerprint)
+        if exp.timeline_path.exists():
+            tx.advance_export(export, Phase.TIMELINE)
+    if exp.timeline_path.exists():
+        console.print(f"[green]Beat-Sheet und Timeline vorhanden — '{export}' ist TIMELINE.[/green]")
+    else:
+        console.print(
+            f"[green]Beat-Sheet vorhanden — '{export}' ist STORYBOARDED.[/green] Jetzt fehlt "
+            "noch die timeline.json (timeline-builder), dann 'frameforge build' erneut."
+        )
 
 
 @app.command()
@@ -886,6 +920,10 @@ def preview(project: str, export: str) -> None:
         gate_preview(state, export, timeline_exists=exp.timeline_path.exists())
     except (GateError, StateError) as exc:
         raise _fail(str(exc)) from exc
+
+    drift = pipeline_module.asset_drift(proj, state, export)
+    if drift:
+        console.print(f"[yellow]Hinweis:[/yellow] {drift}")
 
     timeline = Timeline.load(exp.timeline_path)
     try:
@@ -938,6 +976,10 @@ def render(
         gate_render_final(state, export)
     except GateError as exc:
         raise _fail(str(exc)) from exc
+
+    drift = pipeline_module.asset_drift(proj, state, export)
+    if drift:
+        console.print(f"[yellow]Hinweis:[/yellow] {drift}")
 
     # Freigabe an den Timeline-Stand binden: wurde timeline.json seit dem approve geaendert,
     # ist die Freigabe veraltet und der Final-Render wird blockiert (Audit P3).

@@ -17,6 +17,62 @@ CURRENT = "[→]"
 PENDING = "[ ]"
 
 
+ASSET_INVENTORY_KEY = "assets"  # Schluessel des Fingerprints in `ExportState.content_hashes`
+
+
+def pending_assets(project) -> list:
+    """Dateien unter `media_root`, die noch keinen Eintrag in `assets.json` haben.
+
+    Zustandslos und billig: `scan_media` + Hash-Vergleich, **kein** Vision-Call, keine
+    CV-Analyse, keine Zustandsaenderung. Deshalb darf das in jeder Phase mitlaufen (Plan 0003
+    §G). Leere Liste, wenn `media_root` nicht erreichbar ist — ein nicht gemounteter Datentraeger
+    ist kein "neues Material".
+    """
+    from frameforge import index as index_module
+    from frameforge import ingest as ingest_module
+
+    try:
+        found = ingest_module.scan_media(project.config.media_root)
+    except FileNotFoundError:
+        return []
+    known = {a.get("hash") for a in index_module.load_assets(project)}
+    return [p for p in found if ingest_module.hash_file(p) not in known]
+
+
+def asset_inventory_fingerprint(project) -> str:
+    """Fingerprint ueber den `assets.json`-Stand (IDs + Hashes, sortiert).
+
+    Bewusst nicht die Bytes der Datei: ein Backfill technischer Felder oder eine Ortszuordnung
+    aendert `assets.json`, aber **nicht das Inventar** — und darf deshalb keine Warnung
+    ausloesen. Nur ein hinzugekommenes, entferntes oder ausgetauschtes Asset zaehlt.
+    """
+    import hashlib
+
+    from frameforge import index as index_module
+
+    entries = sorted(
+        f"{a.get('id')}:{a.get('hash')}" for a in index_module.load_assets(project)
+    )
+    return hashlib.sha256("\n".join(entries).encode()).hexdigest()
+
+
+def asset_drift(project, state: ProjectState, export: str) -> str | None:
+    """Meldung, wenn sich das Asset-Inventar seit `STORYBOARDED` geaendert hat, sonst `None`.
+
+    **Warnen und fragen, nicht still neu bauen** (Plan 0003 §G) — der Aufrufer entscheidet.
+    """
+    stored = state.get_export_hash(export, ASSET_INVENTORY_KEY)
+    if stored is None:
+        return None
+    if stored == asset_inventory_fingerprint(project):
+        return None
+    return (
+        f"Das Asset-Inventar hat sich geaendert, seit '{export}' storyboarded wurde. "
+        "Das Beat-Sheet kennt das neue Material nicht — pruefen, ob der Export neu gebaut "
+        "werden soll (/ff-build), oder bewusst so lassen."
+    )
+
+
 @dataclass(frozen=True)
 class Step:
     key: str  # "ingest", "brief", ...

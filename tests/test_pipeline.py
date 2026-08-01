@@ -4,7 +4,14 @@ from __future__ import annotations
 
 import pytest
 
-from frameforge.pipeline import build_pipeline, format_pipeline
+from frameforge.pipeline import (
+    ASSET_INVENTORY_KEY,
+    asset_drift,
+    asset_inventory_fingerprint,
+    build_pipeline,
+    format_pipeline,
+    pending_assets,
+)
 from frameforge.state import Phase, ProjectState
 
 
@@ -95,3 +102,87 @@ def test_format_pipeline_renders_markers(state):
     assert "[→] index" in text
     assert "[ ] design" in text
     assert "Naechster Schritt:" in text
+
+
+# -- G: Invalidierung bei neuem Material (Plan 0003) --------------------------------
+
+
+@pytest.fixture
+def proj_with_assets(tmp_path, monkeypatch):
+    import shutil
+
+    from frameforge import project as project_module
+    from frameforge.index import write_asset
+    from frameforge.ingest import hash_file
+    from frameforge.project import ProjectConfig, resolve_project
+
+    projects_dir = tmp_path / "projects"
+    projects_dir.mkdir()
+    monkeypatch.setattr(project_module, "PROJECTS_DIR", projects_dir)
+    monkeypatch.setattr(project_module, "CACHE_ROOT", tmp_path / "cache")
+
+    media = tmp_path / "media"
+    media.mkdir()
+    shutil.copy2("tests/fixtures/clip.mp4", media / "clip.mp4")
+
+    root = projects_dir / "p"
+    root.mkdir()
+    ProjectConfig(name="p", media_root=media).save(root / "project.yaml")
+    project = resolve_project("p")
+    write_asset(
+        project,
+        {
+            "id": "a1",
+            "hash": hash_file(media / "clip.mp4"),
+            "path": "clip.mp4",
+            "kind": "video",
+            "content": {"summary": "x", "tags": []},
+        },
+    )
+    return project
+
+
+def test_pending_assets_finds_only_unindexed_files(proj_with_assets):
+    import shutil
+
+    assert pending_assets(proj_with_assets) == []
+    shutil.copy("tests/fixtures/clip.mp4", proj_with_assets.config.media_root / "neu.mp4")
+    assert [p.name for p in pending_assets(proj_with_assets)] == ["neu.mp4"]
+
+
+def test_pending_assets_with_unreachable_media_root_is_empty(proj_with_assets):
+    import shutil
+
+    shutil.rmtree(proj_with_assets.config.media_root)
+    assert pending_assets(proj_with_assets) == []  # nicht gemountet != neues Material
+
+
+def test_fingerprint_ignores_technical_changes_but_not_new_assets(proj_with_assets):
+    from frameforge.index import load_assets, save_assets, write_asset
+
+    before = asset_inventory_fingerprint(proj_with_assets)
+
+    assets = load_assets(proj_with_assets)
+    assets[0]["captured_at"] = "2026-07-28T14:00:00+00:00"  # Backfill-artige Aenderung
+    save_assets(proj_with_assets, assets)
+    assert asset_inventory_fingerprint(proj_with_assets) == before
+
+    write_asset(proj_with_assets, {"id": "a2", "hash": "sha256:neu", "kind": "video"})
+    assert asset_inventory_fingerprint(proj_with_assets) != before
+
+
+def test_asset_drift_warns_only_after_storyboarded(proj_with_assets):
+    from frameforge.index import write_asset
+    from frameforge.state import ProjectState
+
+    state = ProjectState.load(proj_with_assets.state_path)
+    assert asset_drift(proj_with_assets, state, "teaser") is None  # nie storyboarded
+
+    state.set_export_hash(
+        "teaser", ASSET_INVENTORY_KEY, asset_inventory_fingerprint(proj_with_assets)
+    )
+    assert asset_drift(proj_with_assets, state, "teaser") is None
+
+    write_asset(proj_with_assets, {"id": "a2", "hash": "sha256:neu", "kind": "video"})
+    message = asset_drift(proj_with_assets, state, "teaser")
+    assert message and "geaendert" in message
