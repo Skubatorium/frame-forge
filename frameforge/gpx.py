@@ -4,10 +4,13 @@ from __future__ import annotations
 
 import csv
 from datetime import date, datetime
+from itertools import pairwise
 from math import asin, cos, radians, sin, sqrt
 from pathlib import Path
+from xml.etree import ElementTree
 
 import gpxpy
+import gpxpy.gpx
 
 
 class LocationsError(ValueError):
@@ -154,24 +157,124 @@ def stage_label(stage: dict) -> str:
     return stage["to"] or stage["from"]
 
 
-def parse_gpx(path: Path) -> list[dict]:
-    """Track-Punkte einer GPX-Datei als `[{"time": ..., "lat": ..., "lon": ...}, ...]`,
+def parse_gpx(path: Path, *, require_time: bool = True) -> list[dict]:
+    """Track-Punkte einer GPX-Datei als `[{"time", "lat", "lon", "ele"}, ...]`.
 
-    chronologisch sortiert, ueber alle Tracks/Segmente hinweg. Punkte ohne Zeitstempel
-    werden uebersprungen — sie sind fuer die Asset-Zuordnung per Zeit nutzlos.
+    Mit `require_time=True` (Default, unveraendertes Verhalten) werden Punkte ohne Zeitstempel
+    uebersprungen und der Rest chronologisch sortiert — fuer die Asset-Zuordnung per Zeit sind
+    zeitlose Punkte nutzlos. Mit `require_time=False` bleibt die Dokumentreihenfolge und alle
+    Punkte erhalten: eine aus KML oder Routing erzeugte Strecke (Plan 0003 §B5) ist reine
+    Geometrie und traegt naturgemaess keine Zeiten.
     """
     with path.open() as fh:
         gpx = gpxpy.parse(fh)
 
     points = [
-        {"time": point.time, "lat": point.latitude, "lon": point.longitude}
+        {
+            "time": point.time,
+            "lat": point.latitude,
+            "lon": point.longitude,
+            "ele": point.elevation,
+        }
         for track in gpx.tracks
         for segment in track.segments
         for point in segment.points
-        if point.time is not None
+        if point.time is not None or not require_time
     ]
-    points.sort(key=lambda p: p["time"])
+    if require_time:
+        points.sort(key=lambda p: p["time"])
     return points
+
+
+class KmlError(ValueError):
+    """`.kml` liess sich nicht parsen oder enthaelt keine Route."""
+
+
+_KML_NS = "{http://www.opengis.net/kml/2.2}"
+
+
+def parse_kml(path: Path) -> list[dict]:
+    """Punkte einer KML-Datei (Google-Maps-Export) als `[{"lat", "lon", "ele"}, ...]`.
+
+    `gpxpy` liest nur GPX; ein Google-Maps-Export ist aber KML. Gelesen werden alle
+    `<LineString><coordinates>`-Blöcke in Dokumentreihenfolge (Format `lon,lat[,ele]`).
+    KML kennt keine Zeitstempel je Punkt — die Route ist Geometrie, keine Aufzeichnung.
+    """
+    try:
+        root = ElementTree.parse(path).getroot()
+    except ElementTree.ParseError as exc:
+        raise KmlError(f"{path}: kein gueltiges KML ({exc})") from exc
+
+    points: list[dict] = []
+    for coords in root.iter(f"{_KML_NS}coordinates"):
+        for chunk in (coords.text or "").split():
+            parts = chunk.split(",")
+            if len(parts) < 2:
+                continue
+            try:
+                lon, lat = float(parts[0]), float(parts[1])
+                ele = float(parts[2]) if len(parts) > 2 else None
+            except ValueError:
+                continue
+            points.append({"lat": lat, "lon": lon, "ele": ele})
+    if not points:
+        raise KmlError(f"{path}: keine Koordinaten gefunden (LineString/coordinates fehlt)")
+    return points
+
+
+def write_gpx(points: list[dict], path: Path, *, name: str = "route") -> Path:
+    """Schreibt Punkte (`lat`/`lon`, optional `ele`/`time`) als GPX-Track. Gibt den Pfad zurueck.
+
+    Damit sehen alle drei Beschaffungswege aus Plan 0003 §B5 (echter Track, KML-Export,
+    berechnetes Routing) fuer den Rest der Pipeline identisch aus.
+    """
+    gpx = gpxpy.gpx.GPX()
+    track = gpxpy.gpx.GPXTrack(name=name)
+    segment = gpxpy.gpx.GPXTrackSegment()
+    for point in points:
+        segment.points.append(
+            gpxpy.gpx.GPXTrackPoint(
+                latitude=point["lat"],
+                longitude=point["lon"],
+                elevation=point.get("ele"),
+                time=point.get("time"),
+            )
+        )
+    track.segments.append(segment)
+    gpx.tracks.append(track)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(gpx.to_xml(), encoding="utf-8")
+    return path
+
+
+def cumulative_km(track: list[dict]) -> list[float]:
+    """Kumulierte Strecke je Trackpunkt (erster Punkt = 0.0) — Kilometerzähler fürs HUD."""
+    out = [0.0]
+    for prev, cur in pairwise(track):
+        out.append(out[-1] + haversine_km((prev["lat"], prev["lon"]), (cur["lat"], cur["lon"])))
+    return out[: len(track)]
+
+
+def elevation_profile(track: list[dict], *, lookup=None) -> list[float | None]:
+    """Höhe je Trackpunkt. `None`, wo weder GPX-`ele` noch `lookup` etwas liefert.
+
+    `lookup` ist injizierbar (`Callable[[list[tuple[float, float]]], list[float | None]]`),
+    damit Tests offline laufen und ein Höhendienst nur dort abgefragt wird, wo wirklich Werte
+    fehlen. Der Aufrufer (`route.elevations_for`) cacht das Ergebnis projektweit.
+    """
+    heights: list[float | None] = [p.get("ele") for p in track]
+    missing = [i for i, h in enumerate(heights) if h is None]
+    if missing and lookup is not None:
+        filled = lookup([(track[i]["lat"], track[i]["lon"]) for i in missing])
+        for i, value in zip(missing, filled, strict=False):
+            heights[i] = value
+    return heights
+
+
+def total_ascent_m(heights: list[float | None]) -> float:
+    """Summe aller Anstiege (Höhenmeter aufwärts). Lücken (`None`) werden übersprungen."""
+    known = [h for h in heights if h is not None]
+    return sum(max(0.0, b - a) for a, b in pairwise(known))
 
 
 def nearest_location(timestamp: datetime, track: list[dict]) -> dict | None:

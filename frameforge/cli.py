@@ -34,6 +34,7 @@ from frameforge import preindex as preindex_module
 from frameforge import presets as presets_module
 from frameforge import relink as relink_module
 from frameforge import render as render_module
+from frameforge import route as route_module
 from frameforge import stats as stats_module
 from frameforge import themes as themes_module
 from frameforge.project import (
@@ -506,6 +507,37 @@ def assign_places(
         return
     written = places_module.apply_assignment(proj, result)
     console.print(f"[green]{written} Asset(s) aktualisiert (day/stage/place).[/green]")
+
+
+@app.command(name="route-build")
+def route_build(
+    project: str,
+    from_kml: Path = typer.Option(  # noqa: B008
+        None, "--from-kml", help="KML-Export (Google Maps) statt Routing-Dienst verwenden"
+    ),
+) -> None:
+    """Erzeugt `route/roadtrip.gpx` — aus einem KML-Export oder per Routing über die Etappen.
+
+    Rangfolge laut Plan 0003 §B5: echter GPX-Track (dann ist nichts zu tun) → KML-Export
+    (`--from-kml`) → Routing aus `stages.csv` + `locations.csv`.
+    """
+    proj = _resolve_or_fail(project)
+    try:
+        if from_kml is not None:
+            path = route_module.import_kml(proj, from_kml)
+            unknown: list[str] = []
+        else:
+            path, unknown = route_module.build_route_gpx(proj)
+    except (route_module.RoutingError, gpx_module.KmlError, gpx_module.StagesError) as exc:
+        raise _fail(str(exc)) from exc
+
+    points = gpx_module.parse_gpx(path, require_time=False)
+    console.print(f"[green]{path} geschrieben — {len(points)} Punkte.[/green]")
+    if unknown:
+        console.print(
+            f"[yellow]Ohne Koordinaten und daher nicht in der Route:[/yellow] "
+            f"{', '.join(unknown)} — in route/locations.csv ergaenzen."
+        )
 
 
 @app.command(name="places-todo")

@@ -52,12 +52,12 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | A3 | Etappen als Projektdaten (`route/stages.csv`, `templates/prompts/route.md`) | ✅ fertig | `c91232e` |
 | A4 | `assign-places` — Tag/Etappe/Ort zuordnen (prüfbar, `--dry-run`) | ✅ fertig (Code), Realdaten fehlen | `243dc8a` |
 | A5 | `places-todo` / `set-place` — Lückenliste für unklare Clips | ✅ fertig | `243dc8a` |
-| A6 | `/ff-route` + Agent `route-planner` (Plausibilität) | ⬜ offen | — |
-| B1 | Distanz + Höhenprofil (`haversine_km`, `cumulative_km`, `elevation_profile`) | ⬜ offen | — |
+| A6 | `/ff-route` + Agent `route-planner` (Plausibilität) | ✅ fertig | `<pending>` |
+| B1 | Distanz + Höhenprofil (`haversine_km`, `cumulative_km`, `elevation_profile`) | ✅ fertig | `<pending>` |
 | B2 | Mitwandernder Viewport (Web-Mercator, `viewport="follow"`, `dwell_s`) | ⬜ offen | — |
 | B3 | Etappen-HUD (`templates/svg/map-hud.svg`, stufenweise gerendert) | ⬜ offen | — |
 | B4 | `map-animator`-Agent erweitern | ⬜ offen | — |
-| B5 | Routengeometrie beschaffen (GPX / KML-Parser / Routing-Fallback) | ⬜ offen | — |
+| B5 | Routengeometrie beschaffen (GPX / KML-Parser / Routing-Fallback) | ✅ fertig | `<pending>` |
 | C | Schwarzblende zwischen zwei Clips (`transition_in: black`) | ⬜ offen | — |
 | D1 | SVG-Templates aufwerten + relative Größen (`type_scale`) | ⬜ offen | — |
 | D2 | Generierte Grafiken (Prompt-Bausteine, Hintergrund in Titel/Kapitel) | ⬜ offen | — |
@@ -138,6 +138,36 @@ bleibt davon unberührt.
 **Abnahme A0 zunächst nur zur Hälfte erfüllt** (Bitgleichheit ja, Aufnahmezeit 0/236) — die
 zweite Hälfte kam mit A1, siehe dort: der zweite Backfill-Lauf liefert 236/236 (100 %).
 7 Tests in `tests/test_backfill.py`, 333 Tests gesamt grün, `ruff` sauber.
+
+### A6 + B1 + B5 — Notizen (2026-08-01)
+
+Zusammen umgesetzt, weil `/ff-route` und der `route-planner`-Agent ohne die
+Beschaffungswege für die Routengeometrie ins Leere verwiesen hätten.
+
+**A6:** `.claude/commands/ff-route.md` (Stand zeigen → Eingabe holen → an Agent delegieren →
+`assign-places --dry-run` prüfen → real ausführen → Lücken über `places-todo`/`set-place`) und
+`.claude/agents/route-planner.md` mit der vollständigen Prüfliste: lückenlose Tage, monotone
+Daten, Anschluss `to`→`from`, Übernachtung, **km gegen Luftlinie** (`haversine_km`), Tage ohne
+Material und Material an Tagen ohne Etappe. Harte Regel im Agenten: **nie raten** — Unsicheres
+wird als Rückfrage gemeldet, das Feld bleibt leer.
+
+**B1:** `gpx.cumulative_km` (Kilometerzähler), `gpx.elevation_profile` (GPX-`ele`, Lücken über
+einen **injizierbaren** Höhendienst) und `gpx.total_ascent_m`. `route.elevations_for` cacht
+projektweit in `route/elevation.json` — genau eine Abfrage je Koordinate, nie erneut, dieselbe
+Disziplin wie beim Analyse-Cache. Getestet wird ausschließlich mit injizierten Fakes: kein Test
+geht ins Netz.
+
+**B5:** `gpx.parse_kml` (Google-Maps-Export; `gpxpy` liest nur GPX), `gpx.write_gpx` und
+`route.build_route_gpx` (Routing über die Etappenpunkte, Dienst injizierbar, Default OSRM).
+Alle drei Wege enden in derselben `route/roadtrip.gpx` — der Rest der Pipeline sieht keinen
+Unterschied. Orte ohne Koordinate werden **gemeldet, nicht geraten**. Neues Kommando
+`frameforge route-build <projekt> [--from-kml datei.kml]`.
+
+**Rückwärtskompatibilität:** `parse_gpx` hat einen neuen Parameter `require_time` mit Default
+`True` — exakt das bisherige Verhalten (zeitlose Punkte fliegen raus, Rest chronologisch).
+Nur die Geometrie-Pfade rufen mit `require_time=False`; ein Regressionstest hält das fest.
+
+21 neue Tests (`tests/test_route.py`), 386 Tests gesamt grün.
 
 ### A4/A5 — Notizen (2026-08-01)
 
