@@ -60,7 +60,7 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | B5 | Routengeometrie beschaffen (GPX / KML-Parser / Routing-Fallback) | ✅ fertig | `4138e99` |
 | C | Schwarzblende zwischen zwei Clips (`transition_in: black`) | ✅ fertig | `15c6510` |
 | D1 | SVG-Templates aufwerten + relative Größen (`type_scale`) | ✅ fertig | `a314f07` |
-| D2 | Generierte Grafiken (Prompt-Bausteine, Hintergrund in Titel/Kapitel) | ⬜ offen | — |
+| D2 | Generierte Grafiken (Prompt-Bausteine, Hintergrund in Titel/Kapitel) | ✅ fertig | `<p>` |
 | F | Musik: `fade_in_s`/`fade_out_s`, `audio.segment_plan` | ✅ fertig | `450d3ac` |
 | G | Invalidierung bei neuem Material (`pipeline.pending_assets`, Fingerprint) | ✅ fertig | `7b746bc` |
 | H1 | Farbstatistik messen (`analyze.color_stats` aus vorhandenen Keyframes) | ✅ fertig | `7f86f65` |
@@ -138,6 +138,24 @@ bleibt davon unberührt.
 **Abnahme A0 zunächst nur zur Hälfte erfüllt** (Bitgleichheit ja, Aufnahmezeit 0/236) — die
 zweite Hälfte kam mit A1, siehe dort: der zweite Backfill-Lauf liefert 236/236 (100 %).
 7 Tests in `tests/test_backfill.py`, 333 Tests gesamt grün, `ruff` sauber.
+
+### D2 — Notizen (2026-08-01)
+
+Kein neuer Code nötig — die Infrastruktur (`design/prompts.md`, `design.asset_inventory`,
+`frameforge design-status`) stand bereits. Ergänzt wurde:
+
+- **Prompt-Bausteine** in `templates/prompts/graphics.md` für die neuen Typen:
+  Titelkarten-Hintergrund, Kapitelmarke, Landes-/Regionsmotiv, Karten-Rahmen,
+  Fahrzeug-/Positions-Icon — jeweils mit der Regel, die Textzone ruhig zu halten, und dem
+  Hinweis, Bitmaps in Zielauflösung zu liefern (Text skaliert relativ, Bitmaps nicht).
+- **Hintergrundgrafik** in `title-card.svg`/`chapter.svg` über `design.background_layer`
+  (in D1 gebaut) — optional, bestehende Token-Sets bleiben gültig.
+- Der `design-system`-Agent **schlägt jetzt aktiv vor**, welche Grafiken einen Export aufwerten
+  würden (max. 3–4, immer als optional gekennzeichnet), und nutzt `overlay_tokens` statt
+  handgeschriebener Pixelwerte.
+
+Das Erzeugen der Bilder bleibt bewusst außerhalb des Codes (Leitprinzip: keine
+projektspezifische Gestaltung in `frameforge/`).
 
 ### H1/H2 — Notizen (2026-08-01)
 

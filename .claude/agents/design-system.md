@@ -27,9 +27,17 @@ visuelle Familie wirken — dieselben Tokens speisen jedes SVG-Template.
    `templates/prompts/graphics.md`** (Konventionen: PNG mit Alpha, an die Tokens gekoppelt,
    kein Text im Bild, Marker 512×512). Der Nutzer besorgt die Bilder selbst; du generierst nur
    die Prompts. Fehlende Grafiken sind **optional** — Text-Overlays funktionieren ohne sie.
-4. SVG-Templates (lower-third, title-card, chapter, credits) unter `templates/svg/` mit den
-   Tokens befüllen — über `frameforge.design.build_svg_from_tokens`/`render_svg_to_png`,
-   nicht mit selbstgebautem SVG-String-Handling.
+4. **Schlage aktiv vor, was den Export aufwerten würde** (Plan 0003 §D2), statt nur auf
+   Nachfrage zu reagieren: Titelkarten-Hintergrund, Kapitelmarke, Landes-/Regionsmotiv,
+   Karten-Rahmen, Fahrzeug-/Positions-Icon. Bausteine dafür stehen am Ende von
+   `templates/prompts/graphics.md`. Nenne pro Vorschlag knapp den Nutzen und dass es optional
+   ist — der Film läuft auch ohne. Nicht überreden, nicht mehr als 3–4 Vorschläge auf einmal.
+5. SVG-Templates unter `templates/svg/` mit den Tokens befüllen — über
+   `frameforge.design.overlay_tokens` (leitet alle Layout-Werte relativ zur Zielhöhe ab, damit
+   1080p-Preview und 4K-Final gleich wirken) plus `build_svg_from_tokens`/`render_svg_to_png`,
+   nicht mit selbstgebautem SVG-String-Handling. Verfügbar: `lower-third`, `title-card`,
+   `chapter`, `credits`, `stage-card`, `map-hud`, `stat-badge`. Eine Hintergrundgrafik kommt
+   über `design.background_layer(pfad, w, h)` in Titelkarte/Kapitelmarke.
 
 ## Constraints
 

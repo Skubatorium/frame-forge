@@ -39,3 +39,27 @@ Auflösung: <z. B. 512×512 quadratisch für Marker>.
   Grund; von der Seite oder in Bewegungsrichtung, falls entlang einer Route animiert.
 - **Textur / Hintergrund:** dezent, gekachelt/nahtlos wenn wiederholt; niedriger Kontrast,
   damit Text darüber lesbar bleibt.
+
+## Bausteine für die neuen Overlay-Typen (Plan 0003 §D2)
+
+Diese Grafiken sind **optional** — alle Templates rendern auch ohne sie (dann Farbfläche statt
+Bild). Sie werten Titel, Kapitelmarken und Karte auf, wo reine Typo zu nüchtern wirkt.
+
+- **Titelkarten-Hintergrund** (`title-bg.png`): formatfüllend, ruhige Fläche mit Tiefe —
+  Verlauf, Struktur oder abstrahierte Landschaftsform in der Projektfarbwelt. **Mitte und
+  unteres Drittel bewusst ruhig halten**, dort steht der Titel. Kein Text, kein hoher Kontrast
+  in der Textzone. Wird über `background_layer` in `title-card.svg` eingesetzt.
+- **Kapitelmarke** (`chapter-bg.png`): dasselbe Prinzip, kleiner eingesetzt und dezenter —
+  sie taucht mehrfach im Film auf und darf nicht jedes Mal die Aufmerksamkeit stehlen.
+- **Landes-/Regions-Motiv** (`motif-<region>.png`): stilisiertes Wappen-, Flaggen- oder
+  Landschaftsmotiv als Akzent, einfarbig oder zweifarbig, freigestellt. Keine realen Hoheits-
+  zeichen nachbauen, wenn eine Abstraktion reicht.
+- **Karten-Rahmen** (`map-frame.png`): Rahmen/Vignette für die eingeblendete Karte, innen
+  transparent, außen weich auslaufend — trennt die Karte vom Videobild, ohne sie zu erdrücken.
+  Exakt in der Pixelgröße des Karten-Clips.
+- **Fahrzeug-/Positions-Icon** (`marker-vehicle.png`): 512×512, transparent, Blickrichtung
+  nach rechts (Fahrtrichtung), einfache Silhouette. Wird per
+  `map.render_route_frames(marker_icon=…)` auf die aktuelle Position gestempelt.
+
+**Größenregel:** Hintergründe in der Zielauflösung des Films liefern (also 3840×2160, wenn 4K
+gerendert wird) — Overlay-Templates skalieren Text relativ zur Bildhöhe, Bitmaps nicht.
