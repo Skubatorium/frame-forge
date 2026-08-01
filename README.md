@@ -505,6 +505,24 @@ Jeder Schritt prüft seine Vorbedingung doppelt: in der CLI (Gürtel) und im
 - `frameforge query <projekt> [--source drone] [--person Oskar] [--tag …] [--place …] [--min-rating N] [--kind video]`
 - `frameforge people <projekt>` / `frameforge name-person <projekt> <cluster> <name>` — Personen benennen.
 
+**Chronologie, Route und Orte** (Plan 0003 — ohne Neu-Indizierung, ohne Vision-Kosten):
+- `frameforge backfill-metadata <projekt> [--dry-run]` — trägt fehlende **technische** Felder
+  nach (Aufnahmezeit, GPS, Höhe, Farbstatistik). `content`, `rating`, `source` und Notizen
+  bleiben unangetastet.
+- `/ff-route <projekt>` — Etappen (`route/stages.csv`) und Kartenpunkte (`route/locations.csv`)
+  erfassen und auf Plausibilität prüfen lassen. Vorlage für eine andere KI:
+  `templates/prompts/route.md`.
+- `frameforge route-build <projekt> [--from-kml datei.kml]` — `route/roadtrip.gpx` aus einem
+  Google-Maps-Export oder per Routing über die Etappenpunkte.
+- `frameforge assign-places <projekt> [--dry-run] [--force] [--tolerance-km 5]` — Tag, Etappe
+  und Ort je Asset aus Zeit + GPS + Etappenliste. Meldet Konflikte statt still zu überschreiben.
+- `frameforge places-todo <projekt> [--day N]` / `frameforge set-place <projekt> <asset-id>
+  --place "…" [--kind stop|leg]` — unklare Clips durchgehen und Orte von Hand setzen.
+- `frameforge set-source <projekt> <asset-id> <drone|phone|camera|action_cam>` — falsch
+  erkannte Aufnahmequelle korrigieren.
+- `frameforge color-match <projekt> <export> [--strength off|soft|strong]` — Clips
+  unterschiedlicher Kameras farblich angleichen; die Werte landen pro Clip in `timeline.json`.
+
 **Überblick:**
 - `frameforge stats <projekt>` — Fundus-Statistik (Umfang, Qualität, Zusammensetzung, Nutzung).
 - `frameforge days <projekt>` — Tageszusammenfassungen nach `index/days/`.
