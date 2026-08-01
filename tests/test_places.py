@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import shutil
+from datetime import UTC, datetime
 
 import pytest
 
@@ -201,3 +202,66 @@ def test_assignment_leaves_content_and_rating_alone(proj):
     assert after["content"] == before["content"]
     assert after["rating"] == before["rating"]
     assert after["hash"] == before["hash"]
+
+
+# -- Audit-Fix F2: GPX-Position nur bei zeitlicher Naehe ---------------------------
+
+
+def _with_gpx(project, when="2026-07-28T14:00:00Z"):
+    project.gpx_path.write_text(
+        f"""<?xml version="1.0"?>
+<gpx version="1.1" creator="test"><trk><trkseg>
+<trkpt lat="62.4581" lon="7.6706"><time>{when}</time></trkpt>
+</trkseg></trk></gpx>
+""",
+        encoding="utf-8",
+    )
+
+
+def test_gpx_position_is_ignored_when_the_track_is_far_away_in_time(proj):
+    """Ein Asset ausserhalb der Reise darf keinen Ort vom naechsten Trackpunkt erben."""
+    _with_gpx(proj)
+    _asset(proj, "weit-weg", "2026-01-01T09:00:00+00:00")
+
+    result = plan_assignment(proj)
+    apply_assignment(proj, result)
+
+    asset = load_assets(proj)[0]
+    assert asset["gps"]["place"] == "unknown"
+    assert asset["place_source"] == "unknown"
+    assert "weit-weg" in result.unresolved
+
+
+def test_gpx_position_still_used_within_the_tolerance(proj):
+    _with_gpx(proj)
+    _asset(proj, "nah-dran", "2026-07-28T14:20:00+00:00")  # 20 Minuten Abstand
+
+    apply_assignment(proj, plan_assignment(proj))
+
+    asset = load_assets(proj)[0]
+    assert asset["gps"]["place"] == "Trollstigen"
+    assert asset["place_source"] == "gpx"
+
+
+def test_gpx_tolerance_is_configurable(proj):
+    _with_gpx(proj)
+    _asset(proj, "zwei-stunden", "2026-07-28T16:00:00+00:00")
+
+    assert plan_assignment(proj).by_place_source.get("gpx") is None  # Default 30 min: zu weit
+    result = plan_assignment(proj, gpx_tolerance_s=3 * 3600)
+    assert result.by_place_source.get("gpx") == 1
+
+
+def test_gpx_point_without_time_is_not_used_as_position(proj):
+    """`parse_gpx` filtert zeitlose Punkte zwar heraus — der Schutz darf nicht davon abhaengen."""
+    from frameforge.places import _place_for
+
+    place, source = _place_for(
+        {"id": "x"},
+        timestamp=datetime(2026, 7, 28, 14, 0, tzinfo=UTC),
+        stage=None,
+        locations=[{"name": "Trollstigen", "lat": 62.4581, "lon": 7.6706, "type": "poi"}],
+        track=[{"lat": 62.4581, "lon": 7.6706, "time": None}],
+        tolerance_km=5.0,
+    )
+    assert (place, source) == ("unknown", "unknown")

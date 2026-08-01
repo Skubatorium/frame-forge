@@ -289,10 +289,15 @@ def total_ascent_m(heights: list[float | None]) -> float:
 def nearest_location(timestamp: datetime, track: list[dict]) -> dict | None:
     """Naechster Track-Punkt zu einem Zeitstempel — ordnet Assets Orten zu.
 
-    `None`, wenn `track` leer ist. Keine Distanz-/Zeit-Obergrenze — ein Asset weit vor/nach
-    der Tour bekommt trotzdem den zeitlich naechsten Punkt zugeordnet; das ist Aufgabe des
-    Aufrufers zu bewerten (z.B. ueber einen Toleranzwert in der Ingest-Pipeline).
+    `None`, wenn `track` leer ist **oder kein Punkt eine Zeit traegt** — seit `parse_gpx`
+    auch zeitlose Geometrie liefert (`require_time=False`, Plan 0003 §B5) kann genau das
+    vorkommen, und ein `TypeError` waere die schlechtere Antwort.
+
+    Keine Zeit-Obergrenze: ein Asset weit vor/nach der Tour bekommt trotzdem den zeitlich
+    naechsten Punkt. Das zu bewerten ist Aufgabe des Aufrufers — `places._place_for` tut das
+    ueber `DEFAULT_GPX_TOLERANCE_S`.
     """
-    if not track:
+    timed = [p for p in track if p.get("time") is not None]
+    if not timed:
         return None
-    return min(track, key=lambda p: abs((p["time"] - timestamp).total_seconds()))
+    return min(timed, key=lambda p: abs((p["time"] - timestamp).total_seconds()))

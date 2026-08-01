@@ -162,3 +162,9 @@ def test_stage_label(tmp_path):
     stages = parse_stages(_stages_file(tmp_path))
     assert stage_label(stages[2]) == "Geiranger → Lom"
     assert stage_label(stages[3]) == "Lom"  # Standtag: from == to
+
+
+def test_nearest_location_ignores_points_without_time(tmp_path):
+    """Seit `require_time=False` kann eine reine Geometrie-Spur zeitlose Punkte enthalten."""
+    track = [{"lat": 1.0, "lon": 1.0, "time": None}]
+    assert nearest_location(datetime(2026, 7, 28, tzinfo=UTC), track) is None

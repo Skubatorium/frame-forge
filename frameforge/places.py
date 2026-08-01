@@ -27,6 +27,13 @@ from frameforge.project import Project
 
 DEFAULT_POI_TOLERANCE_KM = 5.0
 
+# Wie weit ein Trackpunkt zeitlich vom Asset entfernt sein darf, um noch als dessen Position zu
+# gelten. `gpx.nearest_location` kennt bewusst keine Grenze („Aufgabe des Aufrufers") — ohne sie
+# bekommt ein Asset vom Januar den nächsten Punkt einer Julireise zugeordnet und damit einen
+# konkreten, falschen Ortsnamen mit `place_source: gpx`. 30 Minuten deckt Standzeiten und
+# Aufnahmepausen ab, ohne über eine Fahretappe hinwegzugehen.
+DEFAULT_GPX_TOLERANCE_S = 1800.0
+
 # Woher der Ort stammt. `manual` ist der einzige Wert, den die Automatik respektiert.
 PLACE_SOURCES = ("gps", "gpx", "leg", "stage", "manual", "unknown")
 
@@ -84,6 +91,21 @@ def _position(asset: dict) -> tuple[float, float] | None:
     return (lat, lon) if lat is not None and lon is not None else None
 
 
+def _time_gap_s(timestamp: datetime, point: dict) -> float:
+    """Zeitabstand zwischen Asset und Trackpunkt in Sekunden.
+
+    Der Punkt kann eine naive oder eine tz-bewusste Zeit tragen (GPX ist meist UTC-bewusst,
+    `captured_at` ist lokale Wanduhrzeit mit `+00:00`-Etikett). Bei gemischter Bewusstheit wird
+    beides als dieselbe Zeitbasis gelesen, statt mit einem `TypeError` abzubrechen.
+    """
+    point_time = point.get("time")
+    if point_time is None:
+        return float("inf")
+    if (point_time.tzinfo is None) != (timestamp.tzinfo is None):
+        point_time = point_time.replace(tzinfo=timestamp.tzinfo)
+    return abs((point_time - timestamp).total_seconds())
+
+
 def _place_for(
     asset: dict,
     *,
@@ -92,13 +114,16 @@ def _place_for(
     locations: list[dict],
     track: list[dict],
     tolerance_km: float,
+    gpx_tolerance_s: float = DEFAULT_GPX_TOLERANCE_S,
 ) -> tuple[str, str]:
     """`(ort, quelle)` laut der Kaskade im Modul-Docstring."""
     position = _position(asset)
     source = "gps"
     if position is None and track and timestamp is not None:
         point = gpx_module.nearest_location(timestamp, track)
-        if point is not None:
+        # Nur übernehmen, wenn der Trackpunkt zeitlich nah genug liegt — sonst ist die
+        # "Position" bloß der Anfang oder das Ende der Tour und der Ort wäre geraten.
+        if point is not None and _time_gap_s(timestamp, point) <= gpx_tolerance_s:
             position, source = (point["lat"], point["lon"]), "gpx"
 
     if position is not None:
@@ -120,6 +145,7 @@ def plan_assignment(
     project: Project,
     *,
     tolerance_km: float = DEFAULT_POI_TOLERANCE_KM,
+    gpx_tolerance_s: float = DEFAULT_GPX_TOLERANCE_S,
     force: bool = False,
 ) -> AssignResult:
     """Berechnet `day`, `stage` und `gps.place` je Asset. Schreibt nichts.
@@ -156,6 +182,7 @@ def plan_assignment(
                 locations=locations,
                 track=track,
                 tolerance_km=tolerance_km,
+                gpx_tolerance_s=gpx_tolerance_s,
             )
             if new_place != old_place and old_place:
                 result.conflicts.append(

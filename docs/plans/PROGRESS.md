@@ -75,7 +75,7 @@ Rückwärtskompatibilität, Zusammenspiel, Testtiefe, Timing. Befunde und Fixes 
 | # | Schwere | Befund | Status |
 |---|---|---|---|
 | F1 | kritisch | Ken-Burns vervielfachte die Renderdauer (`zoompan d=frames` → `frames²`) | ✅ `1d13e2a` |
-| F2 | hoch | `assign-places` erfindet Orte über den GPX-Track ohne Zeittoleranz | ⬜ offen |
+| F2 | hoch | `assign-places` erfindet Orte über den GPX-Track ohne Zeittoleranz | ✅ `<p2>` |
 | F3 | hoch | Dauer-Invariante nirgends geprüft, `black_transition_extra_s` ohne Aufrufer | ⬜ offen |
 | F4 | mittel | `color-match` verliert unbekannte Felder in `timeline.json` | ⬜ offen |
 | F5 | mittel | Alte Token-Sets rendern nicht mehr (neue Pflicht-Tokens in `lower-third.svg`) | ⬜ offen |
@@ -113,6 +113,32 @@ Der Fehler stammt aus Ausbaustufe B1, nicht aus Plan 0003 — keine der beiden e
 nutzt `effects`, deshalb ist nie ein falsches Video entstanden. Kombinationsfall danach geprüft
 (Schwarzblende + Crossfade + Ken-Burns + Audio-Fades in einer Timeline): `timeline.duration`
 4,60 s, gerendert 4,60 s.
+
+### F2 — GPX-Position ohne Zeittoleranz (2026-08-01)
+
+`_place_for` nahm den zeitlich nächsten Trackpunkt als Position — ohne jede Grenze.
+`gpx.nearest_location` dokumentiert ausdrücklich, dass die Toleranz Sache des Aufrufers ist;
+gesetzt hat sie niemand:
+
+```
+Asset vom 01.01., Track nur vom 28.07.  →  ('Trollstigen', 'gpx')
+```
+
+Der Ort sah belastbar aus (`place_source: gpx`), tauchte **nicht** in `places-todo` auf und war
+trotzdem geraten — genau das, was Plan 0003 („nie raten") und Paket A5 verhindern sollen. Bei
+255 Assets ohne eigenes GPS wäre das der Normalfall gewesen, nicht die Ausnahme.
+
+Fix: `DEFAULT_GPX_TOLERANCE_S = 1800` (30 Minuten, deckt Standzeiten und Aufnahmepausen ab,
+ohne über eine Fahretappe hinwegzugehen), konfigurierbar über
+`assign-places --gpx-tolerance-min`. Außerhalb der Toleranz bleibt es bei `unknown` und das
+Asset landet in der Lückenliste.
+
+Nebenbei gefunden: `gpx.nearest_location` warf `TypeError`, sobald ein Trackpunkt keine Zeit
+trug. Vor Plan 0003 unmöglich (`parse_gpx` filterte zeitlose Punkte immer heraus), seit
+`require_time=False` (B5) erreichbar. Jetzt werden zeitlose Punkte übersprungen; `None` ist die
+richtige Antwort, kein Absturz.
+
+4 neue Tests in `tests/test_places.py`, 1 in `tests/test_gpx.py`.
 
 ### E — Notizen (2026-08-01)
 

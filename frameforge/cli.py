@@ -459,6 +459,11 @@ def assign_places(
     tolerance_km: float = typer.Option(
         places_module.DEFAULT_POI_TOLERANCE_KM, "--tolerance-km", help="Radius fuer POI-Treffer"
     ),
+    gpx_tolerance_min: float = typer.Option(
+        places_module.DEFAULT_GPX_TOLERANCE_S / 60,
+        "--gpx-tolerance-min",
+        help="Wie weit ein GPX-Trackpunkt zeitlich entfernt sein darf, um als Position zu gelten",
+    ),
 ) -> None:
     """Ordnet jedem Asset Tag, Etappe und Ort zu — aus `stages.csv`/`locations.csv`/GPX.
 
@@ -468,7 +473,12 @@ def assign_places(
     """
     proj = _resolve_or_fail(project)
     try:
-        result = places_module.plan_assignment(proj, tolerance_km=tolerance_km, force=force)
+        result = places_module.plan_assignment(
+            proj,
+            tolerance_km=tolerance_km,
+            gpx_tolerance_s=gpx_tolerance_min * 60,
+            force=force,
+        )
     except (gpx_module.StagesError, gpx_module.LocationsError) as exc:
         raise _fail(str(exc)) from exc
 
