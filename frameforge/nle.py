@@ -96,6 +96,24 @@ def build_otio_timeline(
                     target_url=source.as_uri(), available_range=clip_range
                 ),
                 source_range=clip_range,
+                # Farbangleichung (Plan 0003 §H2) und Uebergangstyp wandern als Metadaten mit
+                # in den NLE-Export — im Schnittprogramm ist dann nachvollziehbar, welche
+                # Korrektur ein Clip bekommen hat, statt sie nur im Renderer zu verstecken.
+                metadata={
+                    "frameforge": {
+                        k: v
+                        for k, v in {
+                            "asset": clip.asset,
+                            "color_match": clip.color_match.model_dump()
+                            if clip.color_match
+                            else None,
+                            "transition_in": clip.transition_in.model_dump()
+                            if clip.transition_in
+                            else None,
+                        }.items()
+                        if v is not None
+                    }
+                },
             )
         )
         cursor = clip.tl_in + clip.duration

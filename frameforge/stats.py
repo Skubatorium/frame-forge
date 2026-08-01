@@ -200,7 +200,12 @@ def day_summaries(project: Project) -> dict[str, dict]:
             key=lambda a: -a["rating"],
         )
         sources = Counter(a.get("source", "unknown") for a in assets)
+        # Reisetag/Etappe aus `assign-places` (Plan 0003 §A4) — falls zugeordnet.
+        stages = sorted({a["stage"] for a in assets if a.get("stage")})
+        trip_days = sorted({a["day"] for a in assets if isinstance(a.get("day"), int)})
         out[day] = {
+            "trip_day": trip_days[0] if len(trip_days) == 1 else None,
+            "stages": stages,
             "assets": len(assets),
             "videos": len(videos),
             "photos": len(assets) - len(videos),
@@ -223,6 +228,10 @@ def render_day_markdown(day: str, summary: dict) -> str:
         f"- **Assets:** {summary['assets']} ({summary['videos']} Video, {summary['photos']} Foto), "
         f"~{summary['video_seconds']:.0f} s Video"
     )
+    if summary.get("trip_day") is not None:
+        lines.append(f"- **Reisetag:** {summary['trip_day']}")
+    if summary.get("stages"):
+        lines.append(f"- **Etappe:** {', '.join(summary['stages'])}")
     if summary["places"]:
         lines.append(f"- **Orte:** {', '.join(summary['places'])}")
     if summary["sources"]:
@@ -388,6 +397,19 @@ def build_report(project: Project, export: Export, timeline: Timeline) -> str:
         f"- **Spuren:** {len(timeline.tracks.video)} Video-Clips, {n_overlays} Overlays, "
         f"{n_maps} Karten-Clips, {len(timeline.tracks.audio)} Audio-Spuren"
     )
+    matched = [c for c in timeline.tracks.video if c.color_match]
+    if matched:
+        max_brightness = max(abs(c.color_match.brightness) for c in matched)
+        max_temperature = max(abs(c.color_match.temperature) for c in matched)
+        lines.append(
+            f"- **Farbangleichung:** {len(matched)} von {len(timeline.tracks.video)} Clips "
+            f"(max. Helligkeit ±{max_brightness:.3f}, max. Farbtemperatur ±{max_temperature:.3f})"
+        )
+    black_fades = [
+        c for c in timeline.tracks.video if c.transition_in and c.transition_in.type == "black"
+    ]
+    if black_fades:
+        lines.append(f"- **Schwarzblenden:** {len(black_fades)}")
     if stats.avg_quality:
         q = stats.avg_quality
         lines.append(

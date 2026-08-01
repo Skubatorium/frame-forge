@@ -4,8 +4,10 @@
   "content_hashes": {},
   "exports": {
     "teaser": {
-      "phase": 8,
-      "content_hashes": {}
+      "phase": 10,
+      "content_hashes": {
+        "timeline": "f7ec8d0d76cfd3d9f0ff9a78a6db92a2ebf5fa034d08cb30f22385d47f487df1"
+      }
     }
   }
 }

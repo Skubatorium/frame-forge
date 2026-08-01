@@ -631,3 +631,18 @@ def test_build_advances_to_storyboarded_and_timeline(env):
     _timeline_json(export_dir, assets=("a1",))
     assert runner.invoke(app, ["build", "proto", "teaser"]).exit_code == 0
     assert env.load_state().export_phase("teaser") == Phase.TIMELINE
+
+
+def test_set_source_corrects_a_mislabelled_asset(env):
+    write_asset(env, {"id": "a1", "hash": "sha256:a1", "path": "clip.mp4", "kind": "video",
+                      "source": "camera", "content": {"summary": "x", "tags": []}})
+    result = runner.invoke(app, ["set-source", "proto", "a1", "drone"])
+    assert result.exit_code == 0
+    from frameforge.index import load_assets
+
+    assert load_assets(env)[0]["source"] == "drone"
+
+
+def test_set_source_rejects_unknown_vocabulary(env):
+    write_asset(env, {"id": "a1", "hash": "sha256:a1", "path": "clip.mp4", "kind": "video"})
+    assert runner.invoke(app, ["set-source", "proto", "a1", "quadrocopter"]).exit_code == 1

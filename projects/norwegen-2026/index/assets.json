@@ -687,7 +687,7 @@
       "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720151858_0002_D-00.01.25.999-00.01.44.610-seg3_38ef97df_kf01.jpg",
       "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720151858_0002_D-00.01.25.999-00.01.44.610-seg3_38ef97df_kf02.jpg"
     ],
-    "source": "camera",
+    "source": "drone",
     "rating": 3,
     "content": {
       "summary": "Statische Aufnahme vom Ufer durch Kiefernzweige auf einen Badesteg und spiegelglatten See, Felswand am gegenueberliegenden Ufer, Abendlicht.",
@@ -1260,7 +1260,7 @@
       "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720151858_0002_D-00.03.46.416-00.04.00.514-seg5_10b67ccb_kf01.jpg",
       "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720151858_0002_D-00.03.46.416-00.04.00.514-seg5_10b67ccb_kf02.jpg"
     ],
-    "source": "camera",
+    "source": "drone",
     "rating": 4,
     "content": {
       "summary": "Person steht auf einem Holzsteg an einem spiegelglatten Waldsee, Abendlicht mit Wolkenspiegelung im Wasser",
@@ -1724,7 +1724,7 @@
       "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720151858_0002_D-00.05.17.490-00.05.36.100-seg8_a906d211_kf01.jpg",
       "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260720151858_0002_D-00.05.17.490-00.05.36.100-seg8_a906d211_kf02.jpg"
     ],
-    "source": "camera",
+    "source": "drone",
     "rating": 4,
     "content": {
       "summary": "Ruhiger Waldsee mit Hütte am gegenüberliegenden Ufer, Personen auf einem Steg, klares Spiegelbild im Wasser",
@@ -11233,7 +11233,7 @@
     "keyframes": [
       "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/DJI_20260726165037_0024_D_510820fd_kf00.jpg"
     ],
-    "source": "phone",
+    "source": "drone",
     "rating": 3,
     "content": {
       "summary": "Foto von Terrasse einer Hütte mit Blick auf Fjord und bewaldete Berghänge bei bewölktem Himmel",

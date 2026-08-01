@@ -32,6 +32,7 @@ from frameforge import pipeline as pipeline_module
 from frameforge import places as places_module
 from frameforge import preindex as preindex_module
 from frameforge import presets as presets_module
+from frameforge import probe as probe_module
 from frameforge import relink as relink_module
 from frameforge import render as render_module
 from frameforge import route as route_module
@@ -552,6 +553,27 @@ def route_build(
             f"[yellow]Ohne Koordinaten und daher nicht in der Route:[/yellow] "
             f"{', '.join(unknown)} — in route/locations.csv ergaenzen."
         )
+
+
+@app.command(name="set-source")
+def set_source_cmd(project: str, asset: str, source: str) -> None:
+    """Korrigiert die Aufnahme-Quelle eines Assets (`drone`/`phone`/`camera`/`action_cam`).
+
+    Der `media-indexer` setzt `source` beim Indizieren aus Keyframes + EXIF-Vorschlag; liegt er
+    daneben, ist das hier die Korrektur — ohne Neu-Indizierung und ohne Vision-Call.
+    """
+    proj = _resolve_or_fail(project)
+    if source not in probe_module.SOURCE_TYPES:
+        raise _fail(f"source '{source}' nicht in {probe_module.SOURCE_TYPES}")
+    assets = index_module.load_assets(proj)
+    target = next((a for a in assets if a.get("id") == asset or a.get("hash") == asset), None)
+    if target is None:
+        raise _fail(f"Kein Asset mit ID oder Hash '{asset}'")
+    old = target.get("source")
+    target["source"] = source
+    index_module.save_assets(proj, assets)
+    index_module.write_asset_md(proj, target)
+    console.print(f"[green]{target['id']}: source {old} → {source}[/green]")
 
 
 @app.command(name="color-match")

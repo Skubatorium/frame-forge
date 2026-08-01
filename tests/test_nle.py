@@ -149,3 +149,38 @@ def test_export_fcpxml_empty_timeline_produces_valid_empty_sequence(tmp_path):
     export_fcpxml(tl, out_path, resolve_asset=_resolve, project_root=Path("/project"))
 
     assert "<spine/>" in out_path.read_text()
+
+
+def test_color_match_and_transition_travel_into_the_nle_export(tmp_path):
+    """I1: neue Timeline-Felder muessen im NLE-Export sichtbar sein, nicht nur im Renderer."""
+    from frameforge.timeline import ColorMatch
+
+    timeline = Timeline(
+        export="e",
+        fps=25,
+        resolution=(320, 240),
+        duration=2.0,
+        tracks={
+            "video": [
+                {"id": "c1", "asset": "a1", "src_in": 0, "src_out": 1.0, "tl_in": 0},
+                {
+                    "id": "c2",
+                    "asset": "a2",
+                    "src_in": 0,
+                    "src_out": 1.0,
+                    "tl_in": 1.0,
+                    "transition_in": {"type": "black", "dur": 0.4},
+                },
+            ]
+        },
+    )
+    timeline.tracks.video[0].color_match = ColorMatch(brightness=0.05, saturation=1.1)
+
+    otio_timeline = build_otio_timeline(
+        timeline, resolve_asset=lambda aid: tmp_path / f"{aid}.mp4", project_root=tmp_path
+    )
+    clips = list(otio_timeline.tracks[0])
+    meta = clips[0].metadata["frameforge"]
+    assert meta["asset"] == "a1"
+    assert meta["color_match"]["brightness"] == 0.05
+    assert clips[-1].metadata["frameforge"]["transition_in"]["type"] == "black"

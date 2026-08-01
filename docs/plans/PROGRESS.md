@@ -65,7 +65,7 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | G | Invalidierung bei neuem Material (`pipeline.pending_assets`, Fingerprint) | ✅ fertig | `7b746bc` |
 | H1 | Farbstatistik messen (`analyze.color_stats` aus vorhandenen Keyframes) | ✅ fertig | `7f86f65` |
 | H2 | Farbangleichung (`render.match_filter`, `color_match: off/soft/strong`) | ✅ fertig | `7f86f65` |
-| I | Abschluss-Audit (I1–I5) | ⬜ offen | — |
+| I | Abschluss-Audit (I1–I4 fertig, I5 braucht Nutzer) | 🔄 | `<p>` |
 
 ### E — Notizen (2026-08-01)
 
@@ -138,6 +138,46 @@ bleibt davon unberührt.
 **Abnahme A0 zunächst nur zur Hälfte erfüllt** (Bitgleichheit ja, Aufnahmezeit 0/236) — die
 zweite Hälfte kam mit A1, siehe dort: der zweite Backfill-Lauf liefert 236/236 (100 %).
 7 Tests in `tests/test_backfill.py`, 333 Tests gesamt grün, `ruff` sauber.
+
+### I — Abschluss-Audit (2026-08-01)
+
+**I1 Konsistenz.** Alle neuen Felder sind durchgezogen: dokumentiert in Plan 0001 §4
+(`captured_at_source`, `gps.elevation_m`, `gps.source`, `day`, `stage`, `place_source`,
+`color_stats`), berücksichtigt in `qc.validate` (Schwarzblenden-Timing), abgebildet im
+NLE-Export (`color_match` und `transition_in` wandern als Clip-Metadaten mit — vorher nur im
+Renderer sichtbar), sichtbar in `stats`/`report`: Tageszusammenfassungen zeigen Reisetag und
+Etappe, das Export-Datenblatt zeigt Farbangleichung (Anzahl + maximale Auslenkung) und
+Schwarzblenden.
+
+**I2 Datenprüfung am Fundus — geklärt und korrigiert.** Zwei getrennte Ursachen:
+1. `probe.source_guess` stand bei 37 Videos auf `camera`, obwohl der Dateiname mit `DJI_`
+   beginnt. Kein Fehler in `guess_source`: die Einträge stammen aus der Zeit **vor** dem
+   `name_hint`. Der Backfill (A0) hat sie korrigiert — jetzt 255/255 `drone`.
+2. `asset["source"]` (vom `media-indexer` gesetzt, nicht geraten) war bei **4** Assets falsch:
+   3 Videos als `camera` und ein DJI-Foto (EXIF `Make: DJI FC9589`) als `phone`. Neues
+   Kommando `frameforge set-source <projekt> <asset-id> <quelle>` korrigiert so etwas ohne
+   Neu-Indizierung; die vier sind korrigiert. **Die 18 Fotos mit `source: drone` sind kein
+   Fehler** — es sind echte Drohnenfotos (EXIF `DJI FC9589`), die ursprüngliche Vermutung im
+   Plan („auch bei Fotos?") war unbegründet.
+
+**I3 Rückwärtskompatibilität nachgewiesen.**
+- `projects/proto/` komplett end-to-end über die echte CLI: `ingest → preview → approve →
+  render → nle` — alles grün, inklusive Final-Render und Datenblatt.
+- Für `test-timelapse-journey` (2,6 GB 4K-Final) wurde **nicht** neu gerendert, sondern das
+  verglichen, was die Ausgabebytes bestimmt: der komplette **Filtergraph** (Inputliste +
+  `filter_complex`, 55 KB) aus dem Stand **vor** Plan 0003 (Commit `79cb540`, über ein
+  git-Worktree) gegen den heutigen — **byteweise identisch**. Gleiche Inputs plus gleicher
+  Filtergraph plus gleiche Encoder-Settings ergeben dieselbe Datei; ein 46-Minuten-Re-Render
+  hätte dieselbe Aussage teurer geliefert. Die bestehende `timeline.json` lädt unverändert ins
+  erweiterte Schema (alle neuen Felder haben Defaults).
+
+**I4 Regression:** 455 Tests grün, `ruff` sauber, `doctor` grün.
+
+**I5 offen — braucht den Nutzer.** Der 60-Sekunden-Beispiel-Preview mit Karte, HUD,
+Höhenprofil, Schwarzblende, neuer Bauchbinde und Farbangleichung setzt `route/stages.csv` und
+`route/locations.csv` voraus (Etappen dürfen nicht geraten werden, Plan 0003 §A3/§A6) —
+und die visuelle Abnahme ist ohnehin Sache des Nutzers. Nächster Schritt: `/ff-route
+norwegen-2026`.
 
 ### D2 — Notizen (2026-08-01)
 
