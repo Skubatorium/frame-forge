@@ -61,7 +61,7 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | C | Schwarzblende zwischen zwei Clips (`transition_in: black`) | ✅ fertig | `15c6510` |
 | D1 | SVG-Templates aufwerten + relative Größen (`type_scale`) | ✅ fertig | `a314f07` |
 | D2 | Generierte Grafiken (Prompt-Bausteine, Hintergrund in Titel/Kapitel) | ⬜ offen | — |
-| F | Musik: `fade_in_s`/`fade_out_s`, `audio.segment_plan` | ⬜ offen | — |
+| F | Musik: `fade_in_s`/`fade_out_s`, `audio.segment_plan` | ✅ fertig | `<p>` |
 | G | Invalidierung bei neuem Material (`pipeline.pending_assets`, Fingerprint) | ⬜ offen | — |
 | H1 | Farbstatistik messen (`analyze.color_stats` aus vorhandenen Keyframes) | ⬜ offen | — |
 | H2 | Farbangleichung (`render.match_filter`, `color_match: off/soft/strong`) | ⬜ offen | — |
@@ -138,6 +138,22 @@ bleibt davon unberührt.
 **Abnahme A0 zunächst nur zur Hälfte erfüllt** (Bitgleichheit ja, Aufnahmezeit 0/236) — die
 zweite Hälfte kam mit A1, siehe dort: der zweite Backfill-Lauf liefert 236/236 (100 %).
 7 Tests in `tests/test_backfill.py`, 333 Tests gesamt grün, `ruff` sauber.
+
+### F — Notizen (2026-08-01)
+
+`AudioClip.fade_in_s`/`fade_out_s` (Default 0 → bestehende Timelines unverändert);
+`render.build_filtergraph` setzt `afade` **vor** `adelay`, weil `afade` in Clip-Zeit rechnet und
+nicht in Timeline-Zeit — hinter `adelay` läge die Blende um `tl_in` verschoben.
+
+`audio.segment_plan(tracks, sections, gap_s=…, crossfade_s=…)` verteilt n Titel 1:1 auf n
+Kapitel und liefert fertige `AudioClip`-Dicts. Der Ausklang wird über `nearest_beat` auf den
+nächstgelegenen Beat **des jeweiligen Titels** gezogen (eine Blende mitten im Takt hört man
+sofort), `gap_s` erzeugt echte Stille. Ein Titel, der kürzer ist als sein Kapitel, wird
+**nicht** geloopt oder gestreckt — das ist eine Regie-Entscheidung des `audio-designer`, keine
+Rechenoperation. Ebenso bewusst keine Stilanalyse („passen die Titel zusammen").
+
+10 neue Tests, darunter ein echter Render mit Ein-/Ausblendung und ein Regressionstest, dass
+ohne Blenden kein einziger `afade` im Filtergraph steht.
 
 ### C — Notizen (2026-08-01)
 

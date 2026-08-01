@@ -86,6 +86,9 @@ class AudioClip(BaseModel):
     dur: float | None = None
     gain_db: float | None = None
     duck_music_db: float | None = None
+    # Ein-/Ausblendung dieses Clips (Plan 0003 §F). Default 0 = harter Einsatz wie bisher.
+    fade_in_s: float = Field(default=0.0, ge=0)
+    fade_out_s: float = Field(default=0.0, ge=0)
 
     @model_validator(mode="after")
     def _check_source(self) -> AudioClip:

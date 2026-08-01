@@ -9,7 +9,13 @@ from pathlib import Path
 import pytest
 
 from frameforge import project as project_module
-from frameforge.audio import analyze_and_cache, analyze_track, duck_curve
+from frameforge.audio import (
+    analyze_and_cache,
+    analyze_track,
+    duck_curve,
+    nearest_beat,
+    segment_plan,
+)
 from frameforge.project import ProjectConfig, resolve_project
 
 FIXTURES = Path(__file__).parent / "fixtures"
@@ -100,3 +106,44 @@ def test_duck_curve_multiple_windows_are_sorted_by_start():
 def test_duck_curve_clamps_lead_in_at_zero():
     points = duck_curve({}, [(0.1, 1.0)], duck_db=-10, fade_s=0.5)
     assert points[0]["t"] == 0.0
+
+
+# -- F: Musik-Segmente, Blenden, Stille (Plan 0003) ---------------------------------
+
+TRACKS = [
+    {"src": "music/a.wav", "duration": 40.0, "beat_grid": [0.0, 10.0, 20.0, 29.0, 40.0]},
+    {"src": "music/b.wav", "duration": 60.0, "beat_grid": [0.0, 15.0, 30.0, 45.0]},
+]
+
+
+def test_nearest_beat_snaps_to_the_grid():
+    assert nearest_beat(28.0, [0.0, 10.0, 29.0]) == 29.0
+    assert nearest_beat(5.0, []) == 5.0  # ohne Grid unveraendert
+
+
+def test_segment_plan_fits_tracks_to_sections():
+    plan = segment_plan(TRACKS, [(0.0, 30.0), (30.0, 75.0)])
+    assert [p["id"] for p in plan] == ["music-01", "music-02"]
+    assert plan[0]["tl_in"] == 0.0
+    assert plan[1]["tl_in"] == 30.0
+    assert plan[0]["dur"] == 29.0  # auf den Beat bei 29.0 gezogen statt 30.0
+    assert plan[0]["fade_in_s"] == 0.0  # erster Titel startet ohne Blende
+    assert plan[0]["fade_out_s"] > 0
+    assert plan[1]["fade_in_s"] > 0
+
+
+def test_segment_plan_gap_creates_real_silence():
+    plan = segment_plan(TRACKS, [(0.0, 30.0), (30.0, 75.0)], gap_s=3.0)
+    first_end = plan[0]["tl_in"] + plan[0]["dur"]
+    assert plan[1]["tl_in"] >= first_end + 2.0  # hoerbare Stille dazwischen
+
+
+def test_segment_plan_never_exceeds_the_track_length():
+    short = [{"src": "music/s.wav", "duration": 5.0, "beat_grid": [0.0, 2.5, 5.0]}]
+    plan = segment_plan(short, [(0.0, 60.0)])
+    assert plan[0]["dur"] <= 5.0  # kein Loop, keine Streckung
+
+
+def test_segment_plan_requires_one_track_per_section():
+    with pytest.raises(ValueError, match="1:1"):
+        segment_plan(TRACKS, [(0.0, 10.0)])

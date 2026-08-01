@@ -362,8 +362,16 @@ def build_filtergraph(
         gain = 10 ** ((audio.gain_db or 0.0) / 20)
         delay_ms = round(audio.tl_in * 1000)
         label = f"a{k}"
+        # Blenden liegen VOR `adelay` — `afade` rechnet in Clip-Zeit, nicht in Timeline-Zeit.
+        # Ohne fade_in_s/fade_out_s (Default 0) entsteht exakt die bisherige Kette.
+        fades = ""
+        if audio.fade_in_s > 0:
+            fades += f",afade=t=in:st=0:d={audio.fade_in_s:.3f}"
+        if audio.fade_out_s > 0:
+            fade_start = max(0.0, dur - audio.fade_out_s)
+            fades += f",afade=t=out:st={fade_start:.3f}:d={audio.fade_out_s:.3f}"
         filters.append(
-            f"[{idx}:a]atrim=start=0:end={dur},asetpts=PTS-STARTPTS,"
+            f"[{idx}:a]atrim=start=0:end={dur},asetpts=PTS-STARTPTS{fades},"
             f"adelay={delay_ms}|{delay_ms},volume={gain}[{label}]"
         )
         audio_labels.append(label)

@@ -603,3 +603,53 @@ def test_existing_concat_timeline_is_unchanged_by_the_black_support():
     )
     assert "concat=n=2:v=1:a=0" in graph.filter_complex
     assert "fade=" not in graph.filter_complex
+
+
+# -- F: Ein-/Ausblenden von Audio-Clips (Plan 0003) --------------------------------
+
+
+def _audio_timeline(**audio_extra):
+    from frameforge.timeline import Timeline
+
+    return Timeline(
+        export="teaser",
+        fps=25,
+        resolution=(320, 240),
+        duration=2.0,
+        tracks={
+            "video": [{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0}],
+            "audio": [{"id": "m1", "src": "music/theme.wav", "tl_in": 0, "dur": 2.0, **audio_extra}],
+        },
+    )
+
+
+def _graph(timeline):
+    return build_filtergraph(
+        timeline,
+        resolve_asset=lambda aid: Path(f"/media/{aid}.mp4"),
+        export_root=Path("/export"),
+        project_root=Path("/project"),
+    )
+
+
+def test_audio_fades_are_rendered():
+    graph = _graph(_audio_timeline(fade_in_s=1.0, fade_out_s=0.5))
+    assert "afade=t=in:st=0:d=1.000" in graph.filter_complex
+    assert "afade=t=out:st=1.500:d=0.500" in graph.filter_complex
+
+
+def test_audio_without_fades_is_unchanged():
+    """Regression Plan 0003 §0: ohne Blenden exakt die bisherige Filterkette."""
+    assert "afade" not in _graph(_audio_timeline()).filter_complex
+
+
+def test_audio_fade_renders_end_to_end(proj):
+    export = proj.export("teaser")
+    export.ensure_dirs()
+    proj.music_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copy(FIXTURES / "tone.wav", proj.music_dir / "theme.wav")
+
+    timeline = _audio_timeline(fade_in_s=0.5, fade_out_s=0.5)
+    timeline.tracks.video[0].asset = "clip1"
+    out_path = render_proxy(proj, export, timeline)
+    assert probe_video(out_path)["dur"] == pytest.approx(2.0, abs=0.3)
