@@ -48,7 +48,7 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | E | `relink` — Pfade nach Umsortieren reparieren | ✅ fertig | `4eb7b94` |
 | A0 | Backfill statt Neu-Indizieren (`backfill-metadata`) | ✅ fertig | `e6859f0` + `b9a5ca2` |
 | A1 | Aufnahmezeit für Videos (Container/Dateiname/Trim-Offset) | ✅ fertig | `b9a5ca2` |
-| A2 | GPS aus den ungeschnittenen Originalen (`originals_root`) | 🔄 Code fertig, Stichprobe am Material offen | `<pending>` |
+| A2 | GPS aus den ungeschnittenen Originalen (`originals_root`) | 🔄 Code fertig, Stichprobe am Material offen | `4ea2fe3` |
 | A3 | Etappen als Projektdaten (`route/stages.csv`, `templates/prompts/route.md`) | ⬜ offen | — |
 | A4 | `assign-places` — Tag/Etappe/Ort zuordnen (prüfbar, `--dry-run`) | ⬜ offen | — |
 | A5 | `places-todo` / `set-place` — Lückenliste für unklare Clips | ⬜ offen | — |
