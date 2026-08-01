@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 from datetime import date, datetime
+from math import asin, cos, radians, sin, sqrt
 from pathlib import Path
 
 import gpxpy
@@ -43,6 +44,37 @@ def parse_locations(path: Path) -> list[dict]:
                 }
             )
     return out
+
+
+EARTH_RADIUS_KM = 6371.0088
+
+
+def haversine_km(a: tuple[float, float], b: tuple[float, float]) -> float:
+    """Großkreis-Distanz zwischen zwei `(lat, lon)`-Punkten in Kilometern.
+
+    Reicht für Kilometerzähler und POI-Nähe vollkommen aus; eine ellipsoidische Formel
+    (Vincenty) wäre hier Genauigkeit, die niemand sieht.
+    """
+    lat1, lon1 = radians(a[0]), radians(a[1])
+    lat2, lon2 = radians(b[0]), radians(b[1])
+    dlat, dlon = lat2 - lat1, lon2 - lon1
+    h = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
+    return 2 * EARTH_RADIUS_KM * asin(sqrt(h))
+
+
+def nearest_poi(
+    position: tuple[float, float], locations: list[dict], *, max_km: float
+) -> tuple[dict, float] | None:
+    """Nächstgelegener Ort aus `locations.csv` innerhalb `max_km`, sonst `None`.
+
+    Ohne Toleranzgrenze bekäme ein Clip mitten auf einer Passstraße den Namen der 80 km
+    entfernten Übernachtung — genau der Fehler, den A4 abstellen soll.
+    """
+    candidates = [(loc, haversine_km(position, (loc["lat"], loc["lon"]))) for loc in locations]
+    if not candidates:
+        return None
+    best, distance = min(candidates, key=lambda pair: pair[1])
+    return (best, distance) if distance <= max_km else None
 
 
 class StagesError(ValueError):

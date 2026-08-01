@@ -23,11 +23,13 @@ from rich.table import Table
 from frameforge import backfill as backfill_module
 from frameforge import brief as brief_module
 from frameforge import design, qc
+from frameforge import gpx as gpx_module
 from frameforge import index as index_module
 from frameforge import ingest as ingest_module
 from frameforge import nle as nle_module
 from frameforge import people as people_module
 from frameforge import pipeline as pipeline_module
+from frameforge import places as places_module
 from frameforge import preindex as preindex_module
 from frameforge import presets as presets_module
 from frameforge import relink as relink_module
@@ -431,6 +433,118 @@ def backfill_metadata(
         console.print(
             f"Aufnahmezeit bei Videos: {with_time}/{total} ({with_time / total:.0%})"
         )
+
+
+@app.command(name="assign-places")
+def assign_places(
+    project: str,
+    dry_run: bool = typer.Option(False, "--dry-run", help="Nur den Report zeigen, nichts schreiben"),
+    force: bool = typer.Option(False, "--force", help="Auch manuell gesetzte Orte ueberschreiben"),
+    tolerance_km: float = typer.Option(
+        places_module.DEFAULT_POI_TOLERANCE_KM, "--tolerance-km", help="Radius fuer POI-Treffer"
+    ),
+) -> None:
+    """Ordnet jedem Asset Tag, Etappe und Ort zu — aus `stages.csv`/`locations.csv`/GPX.
+
+    Reihenfolge der Ort-Logik: echte GPS-Position → naechstgelegener POI in Reichweite →
+    bei Fahretappen 'unterwegs: A → B' → 'unknown'. Manuell gesetzte Orte bleiben ohne
+    `--force` unangetastet. Kein Vision-Call.
+    """
+    proj = _resolve_or_fail(project)
+    try:
+        result = places_module.plan_assignment(proj, tolerance_km=tolerance_km, force=force)
+    except (gpx_module.StagesError, gpx_module.LocationsError) as exc:
+        raise _fail(str(exc)) from exc
+
+    if not proj.stages_csv_path.exists():
+        console.print(
+            f"[yellow]Keine {proj.stages_csv_path} — ohne Etappenliste gibt es weder Tag noch "
+            "Etappe. Siehe /ff-route bzw. templates/prompts/route.md.[/yellow]"
+        )
+
+    if result.by_day:
+        table = Table(title="Assets je Reisetag")
+        table.add_column("Tag", justify="right")
+        table.add_column("Assets", justify="right")
+        for day, count in sorted(result.by_day.items()):
+            table.add_row(str(day), str(count))
+        console.print(table)
+
+    if result.by_place_source:
+        console.print(
+            "Ortsquelle: "
+            + ", ".join(f"{k}={v}" for k, v in sorted(result.by_place_source.items()))
+        )
+
+    for label, ids in (
+        ("ohne Aufnahmezeit", result.without_time),
+        ("Tag fehlt in stages.csv", result.without_stage),
+        ("Ort unklar (siehe places-todo)", result.unresolved),
+        ("manuell gesetzt, nicht angefasst", result.protected),
+    ):
+        if ids:
+            console.print(f"[yellow]{len(ids)} {label}[/yellow]: {', '.join(ids[:8])}"
+                          + (" …" if len(ids) > 8 else ""))
+
+    if result.conflicts:
+        table = Table(title=f"{len(result.conflicts)} Konflikt(e): bisheriger vs. berechneter Ort")
+        table.add_column("Asset")
+        table.add_column("bisher")
+        table.add_column("berechnet")
+        table.add_column("Quelle")
+        for conflict in result.conflicts[:30]:
+            table.add_row(conflict.asset_id, conflict.old_place, conflict.new_place, conflict.source)
+        console.print(table)
+        if len(result.conflicts) > 30:
+            console.print(f"[dim]… und {len(result.conflicts) - 30} weitere[/dim]")
+
+    console.print(
+        f"[dim]{result.scanned} Asset(s) geprueft, {len(result.touched_assets)} zu aendern.[/dim]"
+    )
+    if dry_run:
+        console.print("[dim]Dry-Run: nichts geschrieben.[/dim]")
+        return
+    written = places_module.apply_assignment(proj, result)
+    console.print(f"[green]{written} Asset(s) aktualisiert (day/stage/place).[/green]")
+
+
+@app.command(name="places-todo")
+def places_todo_cmd(
+    project: str,
+    day: int = typer.Option(None, "--day", help="Nur einen Reisetag zeigen"),
+    limit: int = typer.Option(None, "--limit", help="Nur die ersten N Assets zeigen"),
+) -> None:
+    """Worklist der Assets, deren Ort unklar ist — Gegenstueck zu `index-todo`."""
+    proj = _resolve_or_fail(project)
+    todo = places_module.places_todo(proj, day=day)
+    if limit:
+        todo = todo[:limit]
+    if not todo:
+        console.print("[green]Kein Asset mit unklarem Ort.[/green]")
+        return
+    console.print(json.dumps(todo, indent=2, ensure_ascii=False))
+    console.print(
+        f"[dim]{len(todo)} Asset(s). Ort setzen: frameforge set-place {project} <asset-id> "
+        '--place "…" [--kind stop|leg][/dim]'
+    )
+
+
+@app.command(name="set-place")
+def set_place_cmd(
+    project: str,
+    asset: str,
+    place: str = typer.Option(..., "--place", help="Ortsname, z.B. 'Trollstigen'"),
+    kind: str = typer.Option("stop", "--kind", help="stop = benannter Ort, leg = 'unterwegs: …'"),
+) -> None:
+    """Setzt den Ort eines Assets von Hand (Asset-ID oder Hash). Markiert ihn als `manual`."""
+    proj = _resolve_or_fail(project)
+    try:
+        updated = places_module.set_place(proj, asset, place, kind=kind)
+    except (KeyError, ValueError) as exc:
+        raise _fail(str(exc)) from exc
+    console.print(
+        f"[green]{updated['id']}: Ort = {updated['gps']['place']} (manual)[/green]"
+    )
 
 
 @app.command(name="index")

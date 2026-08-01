@@ -50,8 +50,8 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | A1 | Aufnahmezeit für Videos (Container/Dateiname/Trim-Offset) | ✅ fertig | `b9a5ca2` |
 | A2 | GPS aus den ungeschnittenen Originalen (`originals_root`) | 🔄 Code fertig, Stichprobe am Material offen | `4ea2fe3` |
 | A3 | Etappen als Projektdaten (`route/stages.csv`, `templates/prompts/route.md`) | ✅ fertig | `c91232e` |
-| A4 | `assign-places` — Tag/Etappe/Ort zuordnen (prüfbar, `--dry-run`) | ⬜ offen | — |
-| A5 | `places-todo` / `set-place` — Lückenliste für unklare Clips | ⬜ offen | — |
+| A4 | `assign-places` — Tag/Etappe/Ort zuordnen (prüfbar, `--dry-run`) | ✅ fertig (Code), Realdaten fehlen | `<pending>` |
+| A5 | `places-todo` / `set-place` — Lückenliste für unklare Clips | ✅ fertig | `<pending>` |
 | A6 | `/ff-route` + Agent `route-planner` (Plausibilität) | ⬜ offen | — |
 | B1 | Distanz + Höhenprofil (`haversine_km`, `cumulative_km`, `elevation_profile`) | ⬜ offen | — |
 | B2 | Mitwandernder Viewport (Web-Mercator, `viewport="follow"`, `dwell_s`) | ⬜ offen | — |
@@ -138,6 +138,32 @@ bleibt davon unberührt.
 **Abnahme A0 zunächst nur zur Hälfte erfüllt** (Bitgleichheit ja, Aufnahmezeit 0/236) — die
 zweite Hälfte kam mit A1, siehe dort: der zweite Backfill-Lauf liefert 236/236 (100 %).
 7 Tests in `tests/test_backfill.py`, 333 Tests gesamt grün, `ruff` sauber.
+
+### A4/A5 — Notizen (2026-08-01)
+
+Gemeinsam umgesetzt, ein Commit: beide Pakete arbeiten auf demselben neuen Modul
+`frameforge/places.py` und derselben Testdatei — sie getrennt zu committen hätte einen
+Zwischenstand hinterlassen, dessen Abnahme ohne den jeweils anderen Teil nicht prüfbar wäre.
+
+**Ort-Kaskade** (`_place_for`): echte GPS-Position des Assets → POI aus `locations.csv` innerhalb
+`--tolerance-km` (Default 5 km, `gpx.haversine_km`/`gpx.nearest_poi`) → Position aus
+`roadtrip.gpx` zum Aufnahmezeitpunkt → dieselbe POI-Prüfung → Fahretappe: `unterwegs: A → B` →
+Standtag: der Ort des Standtags → `unknown`. Jede Zuordnung schreibt `place_source`
+(`gps`/`gpx`/`leg`/`stage`/`manual`/`unknown`), damit im Nachhinein sichtbar ist, worauf ein Ort
+beruht. **Ohne Toleranzgrenze** bekäme ein Clip mitten auf der Passstraße den Namen der 80 km
+entfernten Übernachtung — genau der Fehler aus dem Realbetrieb.
+
+`assign-places` meldet **Konflikte** (bisheriger, aus dem Ordnernamen geratener Ort ≠ berechneter)
+statt sie still zu überschreiben; `--dry-run` zeigt denselben Report ohne zu schreiben.
+Manuell gesetzte Orte (`place_source: "manual"`) bleiben ohne `--force` unangetastet.
+`places-todo` listet alles, was `unknown` oder nur `leg` ist (Gegenstück zu `index-todo`),
+`set-place <asset-id|hash> --place … [--kind stop|leg]` schreibt einen Ort von Hand.
+
+**Status:** 11 Tests decken jeden Zweig ab, inklusive des Abnahme-Falls aus dem Plan (Clip am
+Trollstigen → Tag 9, Etappe *Geiranger → Lom*, Ort *Trollstigen*, Konflikt gemeldet). Der
+**reale** Nachweis am Fundus fehlt noch: `projects/norwegen-2026/route/stages.csv` existiert
+nicht, und die Etappenliste darf nicht geraten werden (Plan: „nie raten"). Sie entsteht über
+A6 (`/ff-route`) mit dem Nutzer.
 
 ### A3 — Notizen (2026-08-01)
 
