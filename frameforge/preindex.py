@@ -94,6 +94,10 @@ def _prepare_one(path: Path, *, project: Project, proxies_dir: Path, keyframes_d
         prep.update(
             {
                 "source_guess": probe.get("source_guess", "unknown"),
+                # Aufnahmezeit auch fuer Videos (Plan 0003 §A1) — der Foto-Zweig unten tut das
+                # schon immer; ohne sie faellt jede Tages-/Etappenzuordnung auf "unknown" zurueck.
+                "captured_at": probe.get("captured_at"),
+                "captured_at_source": probe.get("captured_at_source"),
                 "duration": duration,
                 "probe": probe,
                 "quality": analysis.get("quality"),

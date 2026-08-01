@@ -1,7 +1,7 @@
 # 20260726-drone-cee8da
 
 **Pfad:** 2026-07-26_Norwegen_Geilo-Geiranger_Roadshots/Vorauwahl/DJI_20260726151126_0022_D-00.02.41.126-00.03.11.604-seg2.MP4
-**Aufgenommen:** -
+**Aufgenommen:** 2026-07-26T15:14:07.126000+00:00
 **Ort:** Geiranger
 **Typ:** video
 **Rating:** 4/5

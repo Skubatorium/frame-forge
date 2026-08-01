@@ -1,7 +1,7 @@
 # 20260729-drone-9daefa
 
 **Pfad:** 2026-07-29_Uvdal_Unterkunft/Vorauwahl/DJI_20260729194733_0037_D-00.01.55.723-00.02.45.643-seg03.MP4
-**Aufgenommen:** -
+**Aufgenommen:** 2026-07-29T19:49:28.723000+00:00
 **Ort:** Uvdal
 **Typ:** video
 **Rating:** 4/5

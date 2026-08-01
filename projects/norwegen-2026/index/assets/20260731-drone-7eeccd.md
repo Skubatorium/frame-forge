@@ -1,7 +1,7 @@
 # 20260731-drone-7eeccd
 
 **Pfad:** 2026-07-31_Uvdal_DiscGolf-Kanu/Vorauswahl/DJI_20260731131827_0001_D-00.08.47.828-00.09.01.043-seg10.MP4
-**Aufgenommen:** -
+**Aufgenommen:** 2026-07-31T13:27:14.828000+00:00
 **Ort:** Uvdal
 **Typ:** video
 **Rating:** 3/5

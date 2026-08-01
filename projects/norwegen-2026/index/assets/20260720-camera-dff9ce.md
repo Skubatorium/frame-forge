@@ -1,7 +1,7 @@
 # 20260720-camera-dff9ce
 
 **Pfad:** 2026-07-20_Norwegen_Skien_Rudern-See/Vorauswahl/DJI_20260720154140_0012_D-00.02.51.948-00.03.27.617-seg07.MP4
-**Aufgenommen:** -
+**Aufgenommen:** 2026-07-20T15:44:31.948000+00:00
 **Ort:** Skien
 **Typ:** video
 **Rating:** 4/5

@@ -46,8 +46,8 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | # | Arbeitspaket | Status | Commit |
 |---|------|--------|--------|
 | E | `relink` — Pfade nach Umsortieren reparieren | ✅ fertig | `4eb7b94` |
-| A0 | Backfill statt Neu-Indizieren (`backfill-metadata`) | 🔄 Mechanik fertig, Abnahme offen (braucht A1) | `e6859f0` |
-| A1 | Aufnahmezeit für Videos (Container/Dateiname/Trim-Offset) | ⬜ offen | — |
+| A0 | Backfill statt Neu-Indizieren (`backfill-metadata`) | ✅ fertig | `e6859f0` + `<pending>` |
+| A1 | Aufnahmezeit für Videos (Container/Dateiname/Trim-Offset) | ✅ fertig | `<pending>` |
 | A2 | GPS aus den ungeschnittenen Originalen (`originals_root`) | ⬜ offen | — |
 | A3 | Etappen als Projektdaten (`route/stages.csv`, `templates/prompts/route.md`) | ⬜ offen | — |
 | A4 | `assign-places` — Tag/Etappe/Ort zuordnen (prüfbar, `--dry-run`) | ⬜ offen | — |
@@ -135,12 +135,37 @@ das Alter der Einträge — sie wurden indiziert, bevor `guess_source` den `name
 auswertete. Der Backfill korrigiert genau das. `asset["source"]` (vom media-indexer gesetzt)
 bleibt davon unberührt.
 
-**Abnahme A0 nur zur Hälfte erfüllt → Status 🔄.** Die Bitgleichheit von `content`/`rating` ist
-nachgewiesen; „≥ 90 % der 236 Videos haben eine Aufnahmezeit" ist es **nicht** (aktuell 0/236).
-Das ist keine Lücke im Backfill: `probe_video` liest heute gar keine Aufnahmezeit — genau das
-baut A1 (Container-Tag → Dateiname + Trim-Offset → Pfad-Datum → mtime). A0 geht auf ✅, sobald
-nach A1 ein erneuter Backfill-Lauf die Quote nachweist. 7 Tests in `tests/test_backfill.py`,
-333 Tests gesamt grün, `ruff` sauber.
+**Abnahme A0 zunächst nur zur Hälfte erfüllt** (Bitgleichheit ja, Aufnahmezeit 0/236) — die
+zweite Hälfte kam mit A1, siehe dort: der zweite Backfill-Lauf liefert 236/236 (100 %).
+7 Tests in `tests/test_backfill.py`, 333 Tests gesamt grün, `ruff` sauber.
+
+### A1 — Notizen (2026-08-01)
+
+`probe.py`: `captured_at_from_name` (`DJI_20260720153625…`, `IMG_/VID_/PXL_20260720_153625…`),
+`trim_offset_from_name` (`-00.02.10.556-00.02.18.774-seg5` → `(130.556, 138.774)`) und
+`captured_at_for_video` mit der Prioritätskette aus dem Plan: Container-Tag → Dateinamen-Zeit →
+Datum aus dem Pfad → `mtime`, plus In-Punkt aus dem Trim-Suffix. `probe_video` liefert
+`captured_at` + `captured_at_source` (und `trim_in_s`/`trim_out_s`, wo vorhanden);
+`preindex._prepare_one` schreibt beides jetzt auch im Video-Zweig.
+
+**Zeitbasis — am echten Material geprüft, nicht angenommen.** Die Container-Zeit ist echte UTC
+(`2026-07-20T13:36:26Z`), die Dateinamen-Zeit die lokale Kamerauhr (`…153625` = 15:36:25). Beide
+beschreiben denselben Moment, der Start des Originalclips. Die bestehenden 19 Foto-Einträge
+tragen EXIF-Lokalzeit, die `probe_photo_exif` mit `+00:00` etikettiert. Hätte A1 für Videos
+stumpf die Container-UTC geschrieben, lägen Videos und Fotos desselben Moments zwei Stunden
+auseinander — die Tages- und Etappenzuordnung (A4) hätte an Tagesgrenzen still falsch sortiert.
+Deshalb: **Container liefert den Zeitpunkt, der Dateiname den Zonen-Offset**, Ergebnis ist die
+lokale Wanduhrzeit (Quelle `container+name`). Das hält die Plan-Priorität ein *und* erhält eine
+einheitliche Zeitbasis. Fehlt die Dateinamen-Zeit, bleibt es bei der Container-Zeit (Quelle
+`container`) — möglicherweise um den Zonen-Offset verschoben, aber nichts geraten, und
+`captured_at_source` macht es sichtbar.
+
+**Abnahme A0 + A1 erfüllt (realer Lauf gegen `norwegen-2026`):** zweiter
+`backfill-metadata`-Lauf → **236/236 Videos (100 %) mit Aufnahmezeit**, Plan verlangt ≥ 90 %.
+Quellen: `container+name+trim` 224, `container+name` 12, `exif` 19 (Fotos). Zeitraum
+2026-07-20 bis 2026-07-31, 11 Drehtage — plausibel. `content`, `rating`, `source` und
+`gps.place` erneut bei allen 255 Assets bitgleich (Skript-Vergleich). 14 neue Tests in
+`tests/test_probe.py`, 347 Tests gesamt grün, `ruff` sauber.
 
 ---
 

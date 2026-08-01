@@ -1,7 +1,7 @@
 # 20260726-drone-eed7aa
 
 **Pfad:** 2026-07-26_Norwegen_Geiranger_Unterkunft/Vorauwahl/DJI_20260726165324_0029_D-00.02.35.874-00.03.12.625-seg2.MP4
-**Aufgenommen:** -
+**Aufgenommen:** 2026-07-26T16:55:59.874000+00:00
 **Ort:** Geiranger
 **Typ:** video
 **Rating:** 4/5

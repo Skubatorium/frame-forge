@@ -6,6 +6,10 @@
     "source_guess": "camera",
     "duration": 8.65865,
     "probe": {
+      "captured_at": "2026-07-20T15:38:35.556000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 130.556,
+      "trim_out_s": 138.774,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -53,7 +57,9 @@
       "usable_as": [
         "b-roll"
       ]
-    }
+    },
+    "captured_at": "2026-07-20T15:38:35.556000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:01f68b78bcb575fc1ea0603e9295013740882a25ccdf66f802c38a6ef271f6e6",
@@ -62,6 +68,8 @@
     "source_guess": "camera",
     "duration": 59.025633,
     "probe": {
+      "captured_at": "2026-07-20T14:09:53+00:00",
+      "captured_at_source": "container+name",
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -123,7 +131,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T14:09:53+00:00",
+    "captured_at_source": "container+name"
   },
   {
     "hash": "sha256:0565b5aa3cd94766afa53bf20e7a5285f809a93d9ae3fbb4a13f92e703aa680b",
@@ -132,6 +142,10 @@
     "source_guess": "camera",
     "duration": 15.732383,
     "probe": {
+      "captured_at": "2026-07-20T15:44:08.312000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 148.312,
+      "trim_out_s": 163.866,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -182,7 +196,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T15:44:08.312000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:0b3c5bf7a83366b577df05e8e5abb0cedc0b49ca0bbe55aa03073617690373f1",
@@ -191,6 +207,10 @@
     "source_guess": "camera",
     "duration": 13.780433,
     "probe": {
+      "captured_at": "2026-07-20T15:46:50.986000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 310.986,
+      "trim_out_s": 324.577,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -241,7 +261,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T15:46:50.986000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:0c2493163dabbbc6847ab73440ea1160cadb2e3cb14812389ff48333dcba5b74",
@@ -250,6 +272,10 @@
     "source_guess": "camera",
     "duration": 27.8278,
     "probe": {
+      "captured_at": "2026-07-20T15:36:25+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 0.0,
+      "trim_out_s": 27.823,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -300,7 +326,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T15:36:25+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:0ec48c5817ce7189823412a40b74480386757963b5fc2e4b186e41bad2d13f66",
@@ -309,6 +337,10 @@
     "source_guess": "camera",
     "duration": 8.742067,
     "probe": {
+      "captured_at": "2026-07-20T15:38:20.362000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 115.362,
+      "trim_out_s": 123.844,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -359,7 +391,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T15:38:20.362000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:1058a9eab5666a8c4aae3de47265197961b17a7ebdede9e4b35393937d5d2727",
@@ -368,6 +402,10 @@
     "source_guess": "camera",
     "duration": 30.146783,
     "probe": {
+      "captured_at": "2026-07-20T15:37:33.136000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 68.136,
+      "trim_out_s": 98.211,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -418,7 +456,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T15:37:33.136000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:1d4c8cadd31853903156c9ed4840f893dc0588beea009564ef95774e95928ef6",
@@ -427,6 +467,10 @@
     "source_guess": "camera",
     "duration": 21.738383,
     "probe": {
+      "captured_at": "2026-07-20T15:39:57.700000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 212.7,
+      "trim_out_s": 233.947,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -478,7 +522,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T15:39:57.700000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:341c9ab53aca4e5275b792c97618bea1e24f085606915c8cd647ad18f0ccf45e",
@@ -487,6 +533,10 @@
     "source_guess": "camera",
     "duration": 19.035683,
     "probe": {
+      "captured_at": "2026-07-20T15:20:23.999000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 85.999,
+      "trim_out_s": 104.61,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -538,7 +588,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T15:20:23.999000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:3865901041d2a73f6a04f4c375964a8712fead6ffee624640c8ad03976faa9f9",
@@ -547,6 +599,10 @@
     "source_guess": "camera",
     "duration": 11.56155,
     "probe": {
+      "captured_at": "2026-07-20T15:46:35.049000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 295.049,
+      "trim_out_s": 306.353,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -599,7 +655,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T15:46:35.049000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:3de2ef147d3f4a976a95dfa316a2bf5c1d30b939fcac12605467e274159a2f5b",
@@ -608,6 +666,10 @@
     "source_guess": "camera",
     "duration": 59.993267,
     "probe": {
+      "captured_at": "2026-07-20T16:17:25.291000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 221.291,
+      "trim_out_s": 281.2,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -660,7 +722,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T16:17:25.291000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:427a02786695dceb74c050b08479b454766402efeb6558cc1479fda96adc64a6",
@@ -669,6 +733,8 @@
     "source_guess": "camera",
     "duration": 24.908217,
     "probe": {
+      "captured_at": "2026-07-20T14:07:05+00:00",
+      "captured_at_source": "container+name",
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -721,7 +787,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T14:07:05+00:00",
+    "captured_at_source": "container+name"
   },
   {
     "hash": "sha256:475a1ac8d1da197cfdc4eb4e908c32ec81977cdbca5cf83ea9ff418ce6be90bd",
@@ -730,6 +798,10 @@
     "source_guess": "camera",
     "duration": 5.238567,
     "probe": {
+      "captured_at": "2026-07-20T15:23:26.429000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 268.429,
+      "trim_out_s": 273.504,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -782,7 +854,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T15:23:26.429000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:542e68aeed42dd3b098df8432df06d6da14b22d536373ebf0cc4a52dc6451437",
@@ -791,6 +865,10 @@
     "source_guess": "camera",
     "duration": 30.313617,
     "probe": {
+      "captured_at": "2026-07-20T15:45:16.495000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 216.495,
+      "trim_out_s": 246.528,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -845,7 +923,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T15:45:16.495000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:5a2e8cdd2399975b26e0ef549530b53e0b180fe3a0e4c28d2816a842279e3a9e",
@@ -854,6 +934,10 @@
     "source_guess": "camera",
     "duration": 10.36035,
     "probe": {
+      "captured_at": "2026-07-20T15:24:48.198000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 350.198,
+      "trim_out_s": 360.198,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -906,7 +990,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T15:24:48.198000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:622c389013d824046dd81810a20f63f5cc98c39f3094b211bbb92ee36c2ccb5e",
@@ -915,6 +1001,10 @@
     "source_guess": "camera",
     "duration": 14.297617,
     "probe": {
+      "captured_at": "2026-07-20T15:22:44.416000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 226.416,
+      "trim_out_s": 240.514,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -963,7 +1053,9 @@
         "b-roll",
         "establisher"
       ]
-    }
+    },
+    "captured_at": "2026-07-20T15:22:44.416000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:669f0668c870220a5ae57eec493e40cf728c4385a2b072d9a34b89ebeb476489",
@@ -972,6 +1064,8 @@
     "source_guess": "camera",
     "duration": 12.946267,
     "probe": {
+      "captured_at": "2026-07-20T14:04:35+00:00",
+      "captured_at_source": "container+name",
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -1019,7 +1113,9 @@
         "establisher",
         "b-roll"
       ]
-    }
+    },
+    "captured_at": "2026-07-20T14:04:35+00:00",
+    "captured_at_source": "container+name"
   },
   {
     "hash": "sha256:75c0316db4ca7148051c1acee20d89904bdc2fdd48df97ad2b979a48fd060a33",
@@ -1028,6 +1124,10 @@
     "source_guess": "camera",
     "duration": 7.190517,
     "probe": {
+      "captured_at": "2026-07-20T15:37:09.127000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 44.127,
+      "trim_out_s": 51.234,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -1077,7 +1177,9 @@
         "b-roll",
         "establisher"
       ]
-    }
+    },
+    "captured_at": "2026-07-20T15:37:09.127000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:81713b9fa50a5d050c3aac57f82d986afe5c45c028844d1be6b6157513cd1612",
@@ -1086,6 +1188,10 @@
     "source_guess": "camera",
     "duration": 214.647767,
     "probe": {
+      "captured_at": "2026-07-20T16:13:45.144000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 1.144,
+      "trim_out_s": 215.648,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -1133,7 +1239,9 @@
       "usable_as": [
         "b-roll"
       ]
-    }
+    },
+    "captured_at": "2026-07-20T16:13:45.144000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:83217b71dbc7a36045a921ffd08527af846382a9ebb2e4e0534e4bb60155f561",
@@ -1142,6 +1250,8 @@
     "source_guess": "camera",
     "duration": 5.722383,
     "probe": {
+      "captured_at": "2026-07-20T14:04:35+00:00",
+      "captured_at_source": "container+name",
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -1192,7 +1302,9 @@
     },
     "gps": {
       "place": "Huette am See, Skien"
-    }
+    },
+    "captured_at": "2026-07-20T14:04:35+00:00",
+    "captured_at_source": "container+name"
   },
   {
     "hash": "sha256:83677c4770071e2f65f5b08ad3db607d9844d0e24fbd73a5eed9d252a77c0e27",
@@ -1201,6 +1313,10 @@
     "source_guess": "camera",
     "duration": 12.9129,
     "probe": {
+      "captured_at": "2026-07-20T15:38:46.997000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 141.997,
+      "trim_out_s": 154.551,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -1248,7 +1364,9 @@
       "usable_as": [
         "b-roll"
       ]
-    }
+    },
+    "captured_at": "2026-07-20T15:38:46.997000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:837da0cc6248b8aeced45cda2c13d2cbf8690a9fed079a69d79fc5d759ece432",
@@ -1257,6 +1375,10 @@
     "source_guess": "camera",
     "duration": 18.785433,
     "probe": {
+      "captured_at": "2026-07-20T15:24:15.490000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 317.49,
+      "trim_out_s": 336.1,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -1308,7 +1430,9 @@
     },
     "gps": {
       "place": "Huette am See, Skien"
-    }
+    },
+    "captured_at": "2026-07-20T15:24:15.490000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:8402bb448a8c08911f50630bf0ae0ca66c8b87c853f144fd33ae05d24cd5abe9",
@@ -1317,6 +1441,10 @@
     "source_guess": "camera",
     "duration": 9.542867,
     "probe": {
+      "captured_at": "2026-07-20T15:23:06.973000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 248.973,
+      "trim_out_s": 258.278,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -1366,7 +1494,9 @@
         "establisher",
         "b-roll"
       ]
-    }
+    },
+    "captured_at": "2026-07-20T15:23:06.973000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:8792e5d8ce6e9fed61fcad288958a34239d435199571ec6f5a31ad9c3b940b51",
@@ -1375,6 +1505,10 @@
     "source_guess": "camera",
     "duration": 33.78375,
     "probe": {
+      "captured_at": "2026-07-20T15:45:53.128000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 253.128,
+      "trim_out_s": 286.526,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -1424,7 +1558,9 @@
         "b-roll",
         "establisher"
       ]
-    }
+    },
+    "captured_at": "2026-07-20T15:45:53.128000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:8c68d5282e8e8777d16825c7554cf662ca25fa9e3569ecac3a63baf2c90d1501",
@@ -1433,6 +1569,10 @@
     "source_guess": "camera",
     "duration": 5.288617,
     "probe": {
+      "captured_at": "2026-07-20T15:43:16.858000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 96.858,
+      "trim_out_s": 101.883,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -1483,7 +1623,9 @@
         "establisher",
         "b-roll"
       ]
-    }
+    },
+    "captured_at": "2026-07-20T15:43:16.858000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:8d3d4ebbe417e5d1647288bce66a0f6397c1e0407ed4094c4e0ac2f57e22bb4b",
@@ -1492,6 +1634,10 @@
     "source_guess": "camera",
     "duration": 12.195517,
     "probe": {
+      "captured_at": "2026-07-20T16:18:56.972000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 312.972,
+      "trim_out_s": 325.0,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -1539,7 +1685,9 @@
       "usable_as": [
         "b-roll"
       ]
-    }
+    },
+    "captured_at": "2026-07-20T16:18:56.972000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:913fd857405bd44f8a3e39841bc443d48742966ee9719f41e0926c999f1413ed",
@@ -1548,6 +1696,10 @@
     "source_guess": "camera",
     "duration": 10.293617,
     "probe": {
+      "captured_at": "2026-07-20T15:42:59.860000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 79.86,
+      "trim_out_s": 89.86,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -1598,7 +1750,9 @@
         "establisher",
         "b-roll"
       ]
-    }
+    },
+    "captured_at": "2026-07-20T15:42:59.860000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:9e14c161a02f1ba7447d22f89222a00f03fcdf3f8e7cb17a601bb8d7d6bac978",
@@ -1607,6 +1761,10 @@
     "source_guess": "camera",
     "duration": 18.151467,
     "probe": {
+      "captured_at": "2026-07-20T15:21:45.808000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 167.808,
+      "trim_out_s": 185.813,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -1659,7 +1817,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T15:21:45.808000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:a069da55496a6b480f3f207e3c4b83c968643c66365bfcce81639e8944d21828",
@@ -1668,6 +1828,10 @@
     "source_guess": "camera",
     "duration": 11.678333,
     "probe": {
+      "captured_at": "2026-07-20T15:19:27.606000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 29.606,
+      "trim_out_s": 41.202,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -1716,7 +1880,9 @@
         "establisher",
         "b-roll"
       ]
-    }
+    },
+    "captured_at": "2026-07-20T15:19:27.606000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:c4c360176725474694827a249c5d8ca51f7acea7077b1cb5961ea6325364afe3",
@@ -1725,6 +1891,8 @@
     "source_guess": "camera",
     "duration": 21.404717,
     "probe": {
+      "captured_at": "2026-07-20T14:07:05+00:00",
+      "captured_at_source": "container+name",
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -1776,7 +1944,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T14:07:05+00:00",
+    "captured_at_source": "container+name"
   },
   {
     "hash": "sha256:c5f6007b6ecb3fa756dfbad4c12180359c89ae8f790daefcfad95c1902d3528b",
@@ -1785,6 +1955,10 @@
     "source_guess": "camera",
     "duration": 8.7087,
     "probe": {
+      "captured_at": "2026-07-20T15:42:51.497000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 71.497,
+      "trim_out_s": 79.772,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -1838,7 +2012,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T15:42:51.497000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:dff9ce6a9fa497581a48f9c7040db8182ce711d8105b850048ba26312c07cf81",
@@ -1847,6 +2023,10 @@
     "source_guess": "camera",
     "duration": 35.952583,
     "probe": {
+      "captured_at": "2026-07-20T15:44:31.948000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 171.948,
+      "trim_out_s": 207.617,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -1898,7 +2078,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T15:44:31.948000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:e79d29d9c0976007dff75412e972351e6496f5f8f4dedf2dd5312ed28e17161f",
@@ -1907,6 +2089,10 @@
     "source_guess": "camera",
     "duration": 14.46445,
     "probe": {
+      "captured_at": "2026-07-20T15:43:47.299000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 127.299,
+      "trim_out_s": 141.587,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -1959,7 +2145,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T15:43:47.299000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:e7d994fae7ec3d716c274338a34f822cf172c46f50322c038a8128f5289a0720",
@@ -1968,6 +2156,10 @@
     "source_guess": "camera",
     "duration": 13.546867,
     "probe": {
+      "captured_at": "2026-07-20T15:39:24.659000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 179.659,
+      "trim_out_s": 192.722,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -2020,7 +2212,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T15:39:24.659000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:ef166412047e5f149990f2299053b4e8aefea8cb4b53f015b26626f11da0ac5e",
@@ -2029,6 +2223,10 @@
     "source_guess": "camera",
     "duration": 20.453767,
     "probe": {
+      "captured_at": "2026-07-20T15:41:47.258000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 7.258,
+      "trim_out_s": 27.453,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -2081,7 +2279,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T15:41:47.258000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:f1c43e359f1df07b59212fb71114587f09786b55a3017281b4818a304a94428f",
@@ -2090,6 +2290,10 @@
     "source_guess": "camera",
     "duration": 18.485133,
     "probe": {
+      "captured_at": "2026-07-20T15:19:57.212000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 59.212,
+      "trim_out_s": 77.54,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -2140,7 +2344,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T15:19:57.212000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:f3250853a9b7f306a6ecf5d0422383a52557dcf56c44b1674efa4c6cf53db231",
@@ -2149,6 +2355,10 @@
     "source_guess": "camera",
     "duration": 8.341667,
     "probe": {
+      "captured_at": "2026-07-20T16:19:10.983000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 326.983,
+      "trim_out_s": 335.165,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -2200,7 +2410,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-20T16:19:10.983000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:14b9bcfdda17bd5d1794c8ff04d3bebdf7297674755b9cb6e1304f5ab9ce92ff",
@@ -2674,6 +2886,10 @@
     "source_guess": "drone",
     "duration": 20.003317,
     "probe": {
+      "captured_at": "2026-07-21T22:26:37.688000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 149.688,
+      "trim_out_s": 169.636,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -2725,7 +2941,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-21T22:26:37.688000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:065d5c97b254c8b3c108ab162e12c80410767012fba39c7626988ef9e38fb4f4",
@@ -2734,6 +2952,10 @@
     "source_guess": "drone",
     "duration": 23.37335,
     "probe": {
+      "captured_at": "2026-07-21T22:24:08.446000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 0.446,
+      "trim_out_s": 23.362,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -2785,7 +3007,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-21T22:24:08.446000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:cef9715d89d1ed345d66331e8183dbaac49e6b2ce7c1dcdf4c50ff114259be55",
@@ -2794,6 +3018,10 @@
     "source_guess": "drone",
     "duration": 11.678333,
     "probe": {
+      "captured_at": "2026-07-21T22:24:37.910000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 29.91,
+      "trim_out_s": 41.201,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -2845,7 +3073,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-21T22:24:37.910000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:d90477ea58d39eb922ca2275f5604e77e09bcf3137d6a60ec2a85ab24ebad3e7",
@@ -2854,6 +3084,10 @@
     "source_guess": "drone",
     "duration": 30.814117,
     "probe": {
+      "captured_at": "2026-07-21T22:25:52.643000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 104.643,
+      "trim_out_s": 135.412,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -2906,7 +3140,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-21T22:25:52.643000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:e217eb64f104043fe8bbf67b6bae7a5aba8abf45f8901cdaef9babe15fb6cdb0",
@@ -2915,6 +3151,10 @@
     "source_guess": "drone",
     "duration": 20.27025,
     "probe": {
+      "captured_at": "2026-07-21T22:24:54.626000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 46.626,
+      "trim_out_s": 66.813,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -2965,7 +3205,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-21T22:24:54.626000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:2c3851caf6d6bfa21781eda1963ec53121df4a553e3936c45879a42dce3aa9bb",
@@ -2974,6 +3216,10 @@
     "source_guess": "drone",
     "duration": 16.683333,
     "probe": {
+      "captured_at": "2026-07-22T15:54:08.343000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 445.343,
+      "trim_out_s": 461.616,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -3025,7 +3271,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-22T15:54:08.343000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:340b8b1a91d07d932d0ab4f3b2869eb851e9533090a4642fe342482efdd4615f",
@@ -3034,6 +3282,10 @@
     "source_guess": "drone",
     "duration": 11.16115,
     "probe": {
+      "captured_at": "2026-07-22T15:59:34.268000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 771.268,
+      "trim_out_s": 781.927,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -3085,7 +3337,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-22T15:59:34.268000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:6b2922dc7cbe445646c50e86a42c7bd12a5b45f2907471b9cd5fe48c4d3e3bb5",
@@ -3094,6 +3348,10 @@
     "source_guess": "drone",
     "duration": 12.66265,
     "probe": {
+      "captured_at": "2026-07-22T15:47:34.532000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 51.532,
+      "trim_out_s": 63.705,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -3144,7 +3402,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-22T15:47:34.532000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:71e612fa4817f4c15ec987dd16a90f8b46a33cb4681952687825f9be187c962d",
@@ -3153,6 +3413,10 @@
     "source_guess": "drone",
     "duration": 11.5115,
     "probe": {
+      "captured_at": "2026-07-22T21:54:17.623000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 257.623,
+      "trim_out_s": 268.754,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -3204,7 +3468,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-22T21:54:17.623000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:8680286e6b05d99cb4a5227e9c6a6a7805e43e4ece9b7dd727245f05875a8a67",
@@ -3213,6 +3479,10 @@
     "source_guess": "drone",
     "duration": 28.5285,
     "probe": {
+      "captured_at": "2026-07-22T15:48:51.570000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 128.57,
+      "trim_out_s": 156.649,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -3264,7 +3534,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-22T15:48:51.570000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:87011c298fbef0ee724d89c2ff52a0419c51143332b53d65be4c09125ac5a8d7",
@@ -3273,6 +3545,10 @@
     "source_guess": "drone",
     "duration": 37.203833,
     "probe": {
+      "captured_at": "2026-07-22T21:50:24.704000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 24.704,
+      "trim_out_s": 61.717,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -3324,7 +3600,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-22T21:50:24.704000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:9027b3c2f37a023afc8b0565307ccc3075e43753d9a8589702a1f7db337d0449",
@@ -3333,6 +3611,10 @@
     "source_guess": "drone",
     "duration": 15.882533,
     "probe": {
+      "captured_at": "2026-07-22T15:50:14.234000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 211.234,
+      "trim_out_s": 227.082,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -3383,7 +3665,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-22T15:50:14.234000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:9634e0abbe976b360f6e855fc5ddec34bf8608869e90a98b03af89807fa05bf5",
@@ -3392,6 +3676,10 @@
     "source_guess": "drone",
     "duration": 32.08205,
     "probe": {
+      "captured_at": "2026-07-22T15:51:47.851000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 304.851,
+      "trim_out_s": 336.879,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -3441,7 +3729,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-22T15:51:47.851000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:a31495a3b92d45bf7f7be62e5ec61f53ae0391c5cbe367b36ec0ac4d41e468ca",
@@ -3450,6 +3740,10 @@
     "source_guess": "drone",
     "duration": 26.259567,
     "probe": {
+      "captured_at": "2026-07-22T21:51:09.702000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 69.702,
+      "trim_out_s": 95.828,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -3501,7 +3795,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-22T21:51:09.702000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:b6d5de1524d2a9e9cd2da4e4f988fad9be14044403e87247ba2c226700545f67",
@@ -3510,6 +3806,10 @@
     "source_guess": "drone",
     "duration": 41.524817,
     "probe": {
+      "captured_at": "2026-07-22T15:58:23.307000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 700.307,
+      "trim_out_s": 741.724,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -3560,7 +3860,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-22T15:58:23.307000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:c724eec9d672436122d45fa9fdb1203aa0a96335d4d338f78c0b7cdf9d3b6cad",
@@ -3569,6 +3871,10 @@
     "source_guess": "drone",
     "duration": 19.8198,
     "probe": {
+      "captured_at": "2026-07-22T15:48:27.208000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 104.208,
+      "trim_out_s": 123.915,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -3620,7 +3926,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-22T15:48:27.208000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:e088e949e017cb8a35e6d66badf570a896f86c392d1b89071e9992a4616fecb7",
@@ -3629,6 +3937,10 @@
     "source_guess": "drone",
     "duration": 56.139417,
     "probe": {
+      "captured_at": "2026-07-22T15:54:34.352000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 471.352,
+      "trim_out_s": 527.106,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -3678,7 +3990,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-22T15:54:34.352000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:e0e4c2fb29c29c76751237a969712edd3b5404c9d79687893ae0979cf98d9eb0",
@@ -3687,6 +4001,10 @@
     "source_guess": "drone",
     "duration": 18.7187,
     "probe": {
+      "captured_at": "2026-07-22T21:52:05.031000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 125.031,
+      "trim_out_s": 143.335,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -3737,7 +4055,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-22T21:52:05.031000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:ee602a35d0d81397224a3e6b8cc31e122cb95f0454b4ae4eb4a5161603c5c5b4",
@@ -3746,6 +4066,10 @@
     "source_guess": "drone",
     "duration": 31.7317,
     "probe": {
+      "captured_at": "2026-07-22T15:51:15.654000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 272.654,
+      "trim_out_s": 303.998,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -3796,7 +4120,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-22T15:51:15.654000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:fdb1436e917994c0e0e684998e6a2d077ef7f3d8ec8b7ac9882dae376422cf2c",
@@ -3805,6 +4131,10 @@
     "source_guess": "drone",
     "duration": 52.435717,
     "probe": {
+      "captured_at": "2026-07-22T15:55:34.647000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 531.647,
+      "trim_out_s": 583.965,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -3856,7 +4186,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-22T15:55:34.647000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:07b1efc01bd4811ef26439c8f74cbb9efffe7459e6210d3bf86051b65846e0f4",
@@ -3865,6 +4197,10 @@
     "source_guess": "drone",
     "duration": 22.856167,
     "probe": {
+      "captured_at": "2026-07-23T17:45:03.570000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 83.57,
+      "trim_out_s": 105.924,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -3916,7 +4252,9 @@
     },
     "gps": {
       "place": "Geilo"
-    }
+    },
+    "captured_at": "2026-07-23T17:45:03.570000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:34c28fb0e61e5026e6721313eef8936d0e79c8267fa0a7dd99ef8f0e08e6e0b2",
@@ -3925,6 +4263,10 @@
     "source_guess": "drone",
     "duration": 19.66965,
     "probe": {
+      "captured_at": "2026-07-23T17:43:50.967000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 10.967,
+      "trim_out_s": 30.172,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -3977,7 +4319,9 @@
     },
     "gps": {
       "place": "Geilo"
-    }
+    },
+    "captured_at": "2026-07-23T17:43:50.967000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:3db9c1b8feee158b9c3fd26ee99a61294dcb249cb6fd9f9f72bbe309b9db0ef0",
@@ -3986,6 +4330,10 @@
     "source_guess": "drone",
     "duration": 12.9129,
     "probe": {
+      "captured_at": "2026-07-23T14:07:15.115000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 8.115,
+      "trim_out_s": 20.906,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -4037,7 +4385,9 @@
     },
     "gps": {
       "place": "Skien-Geilo"
-    }
+    },
+    "captured_at": "2026-07-23T14:07:15.115000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:40d97d88c4f4f51aad16f3163d017956956908ba145cbdab5996d2b97f27731b",
@@ -4046,6 +4396,10 @@
     "source_guess": "drone",
     "duration": 16.399717,
     "probe": {
+      "captured_at": "2026-07-23T17:45:50.208000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 130.208,
+      "trim_out_s": 146.516,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -4096,7 +4450,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-23T17:45:50.208000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:44f9eb7b558172a9615b7bfe3c474ba45d07d4d20ac80640ae37df95684110b2",
@@ -4105,6 +4461,10 @@
     "source_guess": "drone",
     "duration": 32.48245,
     "probe": {
+      "captured_at": "2026-07-23T14:10:34.193000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 207.193,
+      "trim_out_s": 239.185,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -4155,7 +4515,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-23T14:10:34.193000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:61a62cabb6ad02a20ab60a751e94e0b20b8cae127194db503b5895db60250061",
@@ -4164,6 +4526,10 @@
     "source_guess": "drone",
     "duration": 32.999633,
     "probe": {
+      "captured_at": "2026-07-23T14:08:48.129000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 101.129,
+      "trim_out_s": 134.1,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -4214,7 +4580,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-23T14:08:48.129000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:61ee11c5cfe3f49727655b4e48682e00743574b2e8aca55c150aead44a818ccf",
@@ -4223,6 +4591,10 @@
     "source_guess": "drone",
     "duration": 22.155467,
     "probe": {
+      "captured_at": "2026-07-23T14:58:00.936000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 71.936,
+      "trim_out_s": 93.721,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -4272,7 +4644,9 @@
     },
     "gps": {
       "place": "Geilo"
-    }
+    },
+    "captured_at": "2026-07-23T14:58:00.936000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:92fb1e3f602f94fb6a48285e08fb126c80417ea8858b81355a1f9488de580c26",
@@ -4281,6 +4655,10 @@
     "source_guess": "drone",
     "duration": 17.784433,
     "probe": {
+      "captured_at": "2026-07-23T14:07:31.274000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 24.274,
+      "trim_out_s": 41.805,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -4331,7 +4709,9 @@
     },
     "gps": {
       "place": "Skien"
-    }
+    },
+    "captured_at": "2026-07-23T14:07:31.274000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:94e7095b5c3313a75b0bfd46bc54162c0ed14433e0235d2f91f87b64a649f2d7",
@@ -4340,6 +4720,10 @@
     "source_guess": "drone",
     "duration": 7.774433,
     "probe": {
+      "captured_at": "2026-07-23T17:46:54.225000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 194.225,
+      "trim_out_s": 201.961,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -4391,7 +4775,9 @@
     },
     "gps": {
       "place": "Geilo"
-    }
+    },
+    "captured_at": "2026-07-23T17:46:54.225000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:9bc4b98753355d3f785c2ac47f8cb2715d68ce425787a387d45341f0c1184203",
@@ -4400,6 +4786,10 @@
     "source_guess": "drone",
     "duration": 20.336983,
     "probe": {
+      "captured_at": "2026-07-23T17:46:20.799000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 160.799,
+      "trim_out_s": 180.989,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -4450,7 +4840,9 @@
     },
     "gps": {
       "place": "Geilo"
-    }
+    },
+    "captured_at": "2026-07-23T17:46:20.799000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:a36884cf679ff3515b9048043c253413fd926629428fe8e023e77a232ae8bb20",
@@ -4459,6 +4851,10 @@
     "source_guess": "drone",
     "duration": 55.722333,
     "probe": {
+      "captured_at": "2026-07-23T14:59:24.376000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 155.376,
+      "trim_out_s": 210.873,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -4510,7 +4906,9 @@
     },
     "gps": {
       "place": "Geilo"
-    }
+    },
+    "captured_at": "2026-07-23T14:59:24.376000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:be1daedfba591b968fdafcf265760bc6b80276b48092c14305c5e7c63d265d87",
@@ -4519,6 +4917,10 @@
     "source_guess": "drone",
     "duration": 19.5195,
     "probe": {
+      "captured_at": "2026-07-23T14:57:35.203000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 46.203,
+      "trim_out_s": 65.56,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -4569,7 +4971,9 @@
     },
     "gps": {
       "place": "Geilo"
-    }
+    },
+    "captured_at": "2026-07-23T14:57:35.203000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:c0be402066cf377466831b36a875231ba46599704fd556ef9b965c3896822e29",
@@ -4578,6 +4982,10 @@
     "source_guess": "drone",
     "duration": 25.842483,
     "probe": {
+      "captured_at": "2026-07-23T14:09:52.055000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 165.055,
+      "trim_out_s": 190.504,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -4628,7 +5036,9 @@
     },
     "gps": {
       "place": "Geilo"
-    }
+    },
+    "captured_at": "2026-07-23T14:09:52.055000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:db7c1ed5e9f9f10259154e6acb8a18080b09db848b826b8c506502bba765c9e9",
@@ -4637,6 +5047,10 @@
     "source_guess": "drone",
     "duration": 15.56555,
     "probe": {
+      "captured_at": "2026-07-23T15:01:02.367000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 253.367,
+      "trim_out_s": 268.818,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -4688,7 +5102,9 @@
     },
     "gps": {
       "place": "Geilo"
-    }
+    },
+    "captured_at": "2026-07-23T15:01:02.367000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:df2054c05fd35b2a1686106682652f56a89b674ecf37c0c6fdf613afe2d10444",
@@ -4697,6 +5113,10 @@
     "source_guess": "drone",
     "duration": 40.707333,
     "probe": {
+      "captured_at": "2026-07-23T14:58:24.974000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 95.974,
+      "trim_out_s": 136.301,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -4748,7 +5168,9 @@
     },
     "gps": {
       "place": "Geilo"
-    }
+    },
+    "captured_at": "2026-07-23T14:58:24.974000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:e0a56b645302b77d7d0c8c7b2219984cbc57f23a1aad755b65874d1544741255",
@@ -4757,6 +5179,10 @@
     "source_guess": "drone",
     "duration": 0.934267,
     "probe": {
+      "captured_at": "2026-07-23T14:09:51.122000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 164.122,
+      "trim_out_s": 164.589,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -4807,7 +5233,9 @@
     },
     "gps": {
       "place": "Geilo"
-    }
+    },
+    "captured_at": "2026-07-23T14:09:51.122000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:e26ee66b812cf40763d36c1afd04604eb62b1acb1218a58b3a6b9939afce7476",
@@ -4816,6 +5244,10 @@
     "source_guess": "drone",
     "duration": 16.449767,
     "probe": {
+      "captured_at": "2026-07-23T15:00:41.839000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 232.839,
+      "trim_out_s": 249.172,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -4866,7 +5298,9 @@
     },
     "gps": {
       "place": "Geilo"
-    }
+    },
+    "captured_at": "2026-07-23T15:00:41.839000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:f9365cfec46943342f5ecae35de8e8bd66f8984155a5334d16dc93125793aa70",
@@ -4875,6 +5309,10 @@
     "source_guess": "drone",
     "duration": 19.66965,
     "probe": {
+      "captured_at": "2026-07-23T17:47:23.143000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 223.143,
+      "trim_out_s": 242.38,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -4927,7 +5365,9 @@
     },
     "gps": {
       "place": "Geilo"
-    }
+    },
+    "captured_at": "2026-07-23T17:47:23.143000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:085879219e1a91b2e88e8fdad964b5702d78c5c76666cb8918009438fc308e93",
@@ -4988,6 +5428,10 @@
     "source_guess": "drone",
     "duration": 14.547867,
     "probe": {
+      "captured_at": "2026-07-24T12:53:46.794000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 0.794,
+      "trim_out_s": 15.044,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -5040,7 +5484,9 @@
     },
     "gps": {
       "place": "Flåm"
-    }
+    },
+    "captured_at": "2026-07-24T12:53:46.794000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:0be02d88de348024068f03d56f3c85938c3c7aa1dd5d56d73c11a921efa14c81",
@@ -5049,6 +5495,10 @@
     "source_guess": "drone",
     "duration": 30.98095,
     "probe": {
+      "captured_at": "2026-07-24T12:11:05.775000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 117.775,
+      "trim_out_s": 148.591,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -5100,7 +5550,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T12:11:05.775000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:0c5020c8b78b08abfbdc368dd3ab19c5ba9b3d2bdde5c36c3f12581f8d344fe2",
@@ -5109,6 +5561,10 @@
     "source_guess": "drone",
     "duration": 10.643967,
     "probe": {
+      "captured_at": "2026-07-24T19:56:06.976000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 105.976,
+      "trim_out_s": 116.245,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -5160,7 +5616,9 @@
     },
     "gps": {
       "place": "Flåm"
-    }
+    },
+    "captured_at": "2026-07-24T19:56:06.976000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:100519e3c2f94d9296455dc0eaa0ad081365d379e01e48c87555aca3b9bd379e",
@@ -5169,6 +5627,10 @@
     "source_guess": "drone",
     "duration": 6.940267,
     "probe": {
+      "captured_at": "2026-07-24T14:03:58.054000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 69.054,
+      "trim_out_s": 75.507,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -5219,7 +5681,9 @@
     },
     "gps": {
       "place": "Flåm"
-    }
+    },
+    "captured_at": "2026-07-24T14:03:58.054000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:1aa8a78c455d7102283e04232810fbe152116a8c1ff642b6459dca892f350b57",
@@ -5228,6 +5692,10 @@
     "source_guess": "drone",
     "duration": 14.647967,
     "probe": {
+      "captured_at": "2026-07-24T12:11:42.949000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 154.949,
+      "trim_out_s": 169.296,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -5279,7 +5747,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T12:11:42.949000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:1d5f95654eeda10ac1f9111fbed1e9d58408d3e7a6fdd835975fa94054300505",
@@ -5288,6 +5758,10 @@
     "source_guess": "drone",
     "duration": 32.465767,
     "probe": {
+      "captured_at": "2026-07-24T19:55:20.222000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 59.222,
+      "trim_out_s": 91.51,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -5339,7 +5813,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T19:55:20.222000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:242fdd67b882307158365dfcd5e77d2376fdfde28450d7d2b37f780d9f75140c",
@@ -5348,6 +5824,10 @@
     "source_guess": "drone",
     "duration": 18.034683,
     "probe": {
+      "captured_at": "2026-07-24T22:03:15.495000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 65.495,
+      "trim_out_s": 83.084,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -5398,7 +5878,9 @@
     },
     "gps": {
       "place": "Aurland/Flåm"
-    }
+    },
+    "captured_at": "2026-07-24T22:03:15.495000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:2f2cf49562493bd1544b21b69f5b660ab5b70e27157475fdb7f80ce64e2c8ef5",
@@ -5407,6 +5889,10 @@
     "source_guess": "drone",
     "duration": 23.306617,
     "probe": {
+      "captured_at": "2026-07-24T14:03:30.813000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 41.813,
+      "trim_out_s": 64.834,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -5458,7 +5944,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T14:03:30.813000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:37d1f5b7c89b5139eba6f1d946ca974dc88ebe1637bb55d58bcd454d902ec82f",
@@ -5467,6 +5955,10 @@
     "source_guess": "drone",
     "duration": 192.775917,
     "probe": {
+      "captured_at": "2026-07-24T22:05:07.604000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 177.604,
+      "trim_out_s": 369.942,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -5517,7 +6009,9 @@
     },
     "gps": {
       "place": "Flåm"
-    }
+    },
+    "captured_at": "2026-07-24T22:05:07.604000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:3c4be80bd8c8de610dc1ce5488ac7987865564563343bf4e83d3c7b005b35df6",
@@ -5526,6 +6020,10 @@
     "source_guess": "drone",
     "duration": 10.5105,
     "probe": {
+      "captured_at": "2026-07-24T22:10:30.537000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 41.537,
+      "trim_out_s": 51.537,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -5576,7 +6074,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T22:10:30.537000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:3f1f99fdb10edbfafa1dd1abcf4672586da169daf46965d99bc2db86dd9bb0f8",
@@ -5585,6 +6085,10 @@
     "source_guess": "drone",
     "duration": 26.07605,
     "probe": {
+      "captured_at": "2026-07-24T22:10:02.104000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 13.104,
+      "trim_out_s": 39.073,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -5635,7 +6139,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T22:10:02.104000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:4847f2cc13f5736e43acb994ee35ce2c055822703b4544f840ae821516d749b9",
@@ -5644,6 +6150,10 @@
     "source_guess": "drone",
     "duration": 10.36035,
     "probe": {
+      "captured_at": "2026-07-24T22:02:55.478000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 45.478,
+      "trim_out_s": 55.4,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -5695,7 +6205,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T22:02:55.478000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:6577ef08d0525d870c790ed49d88b14dd886ee2984d3802dac5b992a94e706f1",
@@ -5755,6 +6267,10 @@
     "source_guess": "drone",
     "duration": 19.76975,
     "probe": {
+      "captured_at": "2026-07-24T12:10:26.354000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 78.354,
+      "trim_out_s": 97.838,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -5805,7 +6321,9 @@
     },
     "gps": {
       "place": "Geilo-Aurland-Flåm"
-    }
+    },
+    "captured_at": "2026-07-24T12:10:26.354000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:7523dd6047d893808a6a64257c18561d228a739a945f3e4d092af18a341bb76e",
@@ -5814,6 +6332,10 @@
     "source_guess": "drone",
     "duration": 14.030683,
     "probe": {
+      "captured_at": "2026-07-24T20:01:00.621000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 399.621,
+      "trim_out_s": 413.422,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -5864,7 +6386,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T20:01:00.621000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:86e33df482cfb4d9e728149f8a616c009e8ed60d8ab7b03f6210bb8b49efcd7f",
@@ -5873,6 +6397,10 @@
     "source_guess": "drone",
     "duration": 10.1101,
     "probe": {
+      "captured_at": "2026-07-24T12:09:35.371000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 27.371,
+      "trim_out_s": 37.122,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -5924,7 +6452,9 @@
     },
     "gps": {
       "place": "Geilo-Aurland-Flåm"
-    }
+    },
+    "captured_at": "2026-07-24T12:09:35.371000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:8bff97001a1d78a0b139214e4f794c960dadf8526317a162ab6659506113884d",
@@ -5933,6 +6463,10 @@
     "source_guess": "drone",
     "duration": 26.743383,
     "probe": {
+      "captured_at": "2026-07-24T19:54:35.626000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 14.626,
+      "trim_out_s": 41.242,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -5983,7 +6517,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T19:54:35.626000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:8c66b25ba9bf7cf04c255713a5485ba1afa8d5599bfa06e606a6c6d6689358af",
@@ -5992,6 +6528,10 @@
     "source_guess": "drone",
     "duration": 0.8008,
     "probe": {
+      "captured_at": "2026-07-24T20:02:10.788000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 469.788,
+      "trim_out_s": 470.265,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -6043,7 +6583,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T20:02:10.788000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:9026914fc4cf8670ba9ff2b1757db96c739615802e7f80252c5202fc6b48ff12",
@@ -6052,6 +6594,10 @@
     "source_guess": "drone",
     "duration": 29.245883,
     "probe": {
+      "captured_at": "2026-07-24T19:58:26.240000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 245.24,
+      "trim_out_s": 273.978,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -6102,7 +6648,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T19:58:26.240000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:95447978495192c7a77fe420d50b064b44213ca49b7399f9327fbc45cfeac26b",
@@ -6111,6 +6659,10 @@
     "source_guess": "drone",
     "duration": 22.188833,
     "probe": {
+      "captured_at": "2026-07-24T14:05:53.391000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 184.391,
+      "trim_out_s": 206.356,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -6161,7 +6713,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T14:05:53.391000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:9bf31d59ffcb0ec0c1c1157867566c8ac6bf7f0efed37f9f8bccc2684d600341",
@@ -6222,6 +6776,10 @@
     "source_guess": "drone",
     "duration": 34.851483,
     "probe": {
+      "captured_at": "2026-07-24T14:04:15.682000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 86.682,
+      "trim_out_s": 121.427,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -6273,7 +6831,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T14:04:15.682000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:af80add0267502479b8a36d3e9b1bbee8349e9e08b2627cac113fb130bc4e8d8",
@@ -6282,6 +6842,10 @@
     "source_guess": "drone",
     "duration": 9.793117,
     "probe": {
+      "captured_at": "2026-07-24T19:57:49.917000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 208.917,
+      "trim_out_s": 218.49,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -6333,7 +6897,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T19:57:49.917000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:b7214188726e26f740b4851c602dca8f8189c029efb1da95bd9fb98e5082cc8d",
@@ -6342,6 +6908,8 @@
     "source_guess": "drone",
     "duration": 188.23805,
     "probe": {
+      "captured_at": "2026-07-24T18:13:18+00:00",
+      "captured_at_source": "container+name",
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -6392,7 +6960,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T18:13:18+00:00",
+    "captured_at_source": "container+name"
   },
   {
     "hash": "sha256:be1034f694b3d0fd0f403192eecd6179bcb211f6803894a04ff59b929878d0b8",
@@ -6401,6 +6971,10 @@
     "source_guess": "drone",
     "duration": 7.791117,
     "probe": {
+      "captured_at": "2026-07-24T14:03:00.307000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 11.307,
+      "trim_out_s": 18.787,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -6452,7 +7026,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T14:03:00.307000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:c1c0e406cb84c74017ce9dab693cc71ae00c963787021a01436b889c40e3d3b2",
@@ -6461,6 +7037,10 @@
     "source_guess": "drone",
     "duration": 137.153683,
     "probe": {
+      "captured_at": "2026-07-24T22:16:28.245000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 399.245,
+      "trim_out_s": 536.04,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -6512,7 +7092,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T22:16:28.245000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:c794debda339c506b5427a71e5ab8570ac7dac7a3ad8b0dfe7dc048c82acda76",
@@ -6521,6 +7103,10 @@
     "source_guess": "drone",
     "duration": 19.803117,
     "probe": {
+      "captured_at": "2026-07-24T19:56:49.709000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 148.709,
+      "trim_out_s": 168.437,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -6572,7 +7158,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T19:56:49.709000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:c90be9e04b02426b70491d56fe974f47efccc6d02989f3d54fb4e0dba4a41d7b",
@@ -6581,6 +7169,10 @@
     "source_guess": "drone",
     "duration": 12.345667,
     "probe": {
+      "captured_at": "2026-07-24T20:02:30.332000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 489.332,
+      "trim_out_s": 501.334,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -6631,7 +7223,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T20:02:30.332000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:cc7177a9d29ab7c35a8e963e89510734115f12b27ba0c34b713b01d9398775d8",
@@ -6692,6 +7286,10 @@
     "source_guess": "drone",
     "duration": 97.213783,
     "probe": {
+      "captured_at": "2026-07-24T22:13:48.954000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 239.954,
+      "trim_out_s": 336.952,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -6744,7 +7342,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T22:13:48.954000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:d2ba6f14c41bdd728680ff1bdd553d79ac1cf14e09b0f9bfc749bab741cf3a82",
@@ -6753,6 +7353,10 @@
     "source_guess": "drone",
     "duration": 37.037,
     "probe": {
+      "captured_at": "2026-07-24T22:03:45.720000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 95.72,
+      "trim_out_s": 132.629,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -6804,7 +7408,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T22:03:45.720000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:d3cf3c1e15663da5d8a05a935bb17b5955936539fe61a1e3333dabc71e1f45b3",
@@ -6813,6 +7419,10 @@
     "source_guess": "drone",
     "duration": 13.196517,
     "probe": {
+      "captured_at": "2026-07-24T19:59:52.747000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 331.747,
+      "trim_out_s": 344.517,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -6863,7 +7473,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T19:59:52.747000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:dc94026d83a27472dc0fb48ea12ef54a9e6b8dda5bfcd3f185eb9b4e2153cc33",
@@ -6872,6 +7484,10 @@
     "source_guess": "drone",
     "duration": 69.41935,
     "probe": {
+      "captured_at": "2026-07-24T22:12:11.346000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 142.346,
+      "trim_out_s": 211.556,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -6923,7 +7539,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T22:12:11.346000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:de0379b47966caa24d8b371edbbdbd2b38d005d0fb59ef1297beb51455f94278",
@@ -6932,6 +7550,10 @@
     "source_guess": "drone",
     "duration": 29.9299,
     "probe": {
+      "captured_at": "2026-07-24T12:55:31.734000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 105.734,
+      "trim_out_s": 135.534,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -6983,7 +7605,9 @@
     },
     "gps": {
       "place": "Aurland"
-    }
+    },
+    "captured_at": "2026-07-24T12:55:31.734000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:eb153aa6f8a8a11146cd1e6244b125c507cac06e85f9865da1d8fb4de305ca84",
@@ -6992,6 +7616,10 @@
     "source_guess": "drone",
     "duration": 44.69465,
     "probe": {
+      "captured_at": "2026-07-24T22:15:38.172000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 349.172,
+      "trim_out_s": 393.532,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -7044,7 +7672,9 @@
     },
     "gps": {
       "place": "Aurland-Flåm"
-    }
+    },
+    "captured_at": "2026-07-24T22:15:38.172000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:eb50fac4b10a257a99df82b2b28320cdf9b847e1064ea61570a381ab48a7a6ac",
@@ -7053,6 +7683,10 @@
     "source_guess": "drone",
     "duration": 10.06005,
     "probe": {
+      "captured_at": "2026-07-24T20:01:20.967000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 419.967,
+      "trim_out_s": 429.967,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -7104,7 +7738,9 @@
     },
     "gps": {
       "place": "Aurland-Flåm"
-    }
+    },
+    "captured_at": "2026-07-24T20:01:20.967000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:f955ce969ba638b964e8a9ad6093c3c514125f4e665f83ad5bf0a5b02972df4d",
@@ -7113,6 +7749,10 @@
     "source_guess": "drone",
     "duration": 20.17015,
     "probe": {
+      "captured_at": "2026-07-24T22:10:52.419000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 63.419,
+      "trim_out_s": 83.221,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -7164,7 +7804,9 @@
     },
     "gps": {
       "place": "Flåm"
-    }
+    },
+    "captured_at": "2026-07-24T22:10:52.419000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:fe92bfbbeab254551e9bc6558f79b66c6d859e7bb6301e20977650d97d83bdcb",
@@ -7224,6 +7866,10 @@
     "source_guess": "drone",
     "duration": 81.948533,
     "probe": {
+      "captured_at": "2026-07-26T16:46:18.240000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 197.24,
+      "trim_out_s": 279.134,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -7275,7 +7921,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T16:46:18.240000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:28983075bf26ea7732c9d857590a9d4f97c950e89102f226891fd9e67dee007c",
@@ -7284,6 +7932,10 @@
     "source_guess": "drone",
     "duration": 64.631233,
     "probe": {
+      "captured_at": "2026-07-26T16:43:23.547000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 22.547,
+      "trim_out_s": 87.147,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -7335,7 +7987,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T16:43:23.547000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:2d284b5c7f25b156031cfd3be3e829064b92c425c8a0e26c22dcf75515ae7f15",
@@ -7344,6 +7998,10 @@
     "source_guess": "drone",
     "duration": 24.507817,
     "probe": {
+      "captured_at": "2026-07-26T16:49:36.617000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 395.617,
+      "trim_out_s": 419.897,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -7395,7 +8053,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T16:49:36.617000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:2ff1e50d992bf43807b0fba9cf31c3a24efb308eaba7049299a93a779db3e1db",
@@ -7404,6 +8064,10 @@
     "source_guess": "drone",
     "duration": 41.9419,
     "probe": {
+      "captured_at": "2026-07-26T13:32:38.248000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 225.248,
+      "trim_out_s": 267.16,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -7455,7 +8119,9 @@
     },
     "gps": {
       "place": "Geilo-Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T13:32:38.248000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:36ebd8be8e4bcca4a6bfd8e75b19c01bc101be9c51ba37c7691550eb1de53562",
@@ -7464,6 +8130,10 @@
     "source_guess": "drone",
     "duration": 5.889217,
     "probe": {
+      "captured_at": "2026-07-26T16:48:47.575000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 346.575,
+      "trim_out_s": 352.235,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -7514,7 +8184,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T16:48:47.575000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:3cef40d1b10926c328e7eedd0d7d61a4f5e8d862be6d3498c50c15d611b9005f",
@@ -7523,6 +8195,10 @@
     "source_guess": "drone",
     "duration": 86.13605,
     "probe": {
+      "captured_at": "2026-07-26T14:11:46.885000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 34.885,
+      "trim_out_s": 120.658,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -7573,7 +8249,9 @@
     },
     "gps": {
       "place": "Geilo-Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T14:11:46.885000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:3ec0caa29da6f8f4e6715a3307307c9dc30c1037a42132e126b148eecd36127f",
@@ -7582,6 +8260,10 @@
     "source_guess": "drone",
     "duration": 17.350667,
     "probe": {
+      "captured_at": "2026-07-26T16:48:24.721000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 323.721,
+      "trim_out_s": 340.662,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -7632,7 +8314,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T16:48:24.721000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:4048ccefa29463d5216671e282b55ad0717da9234b7b24fe3929444bc83b588a",
@@ -7641,6 +8325,10 @@
     "source_guess": "drone",
     "duration": 4.387717,
     "probe": {
+      "captured_at": "2026-07-26T16:52:32.453000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 77.453,
+      "trim_out_s": 81.455,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -7692,7 +8380,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T16:52:32.453000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:44f27efb50fb1aabdca57034d45fa3814994490b0685a4972a8b1b5cf61f3109",
@@ -7701,6 +8391,10 @@
     "source_guess": "drone",
     "duration": 36.28625,
     "probe": {
+      "captured_at": "2026-07-26T15:11:51.788000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 25.788,
+      "trim_out_s": 61.797,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -7752,7 +8446,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T15:11:51.788000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:4a48a273a3514c4ac25f7d2bda8ae4f83babfcf53531db954a46f2739b3eef26",
@@ -7761,6 +8457,10 @@
     "source_guess": "drone",
     "duration": 9.192517,
     "probe": {
+      "captured_at": "2026-07-26T15:15:01.104000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 215.104,
+      "trim_out_s": 223.904,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -7813,7 +8513,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T15:15:01.104000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:503c37a7e3027cc3e9d2f659d5facd5af9e7ed5c21cdd8a280672aab59720978",
@@ -7822,6 +8524,10 @@
     "source_guess": "drone",
     "duration": 4.5045,
     "probe": {
+      "captured_at": "2026-07-26T14:06:47.819000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 57.819,
+      "trim_out_s": 62.06,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -7871,7 +8577,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T14:06:47.819000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:557edbf1e3311b24321fff6319a5dd9a012b44f675979891a30b819624c78d20",
@@ -7931,6 +8639,10 @@
     "source_guess": "drone",
     "duration": 60.977583,
     "probe": {
+      "captured_at": "2026-07-26T15:16:31.305000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 305.305,
+      "trim_out_s": 365.779,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -7982,7 +8694,9 @@
     },
     "gps": {
       "place": "Geilo"
-    }
+    },
+    "captured_at": "2026-07-26T15:16:31.305000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:688ddab8675acc1fc2b020df66c31e274bcca65bbee7c096f608017b6113fb98",
@@ -7991,6 +8705,10 @@
     "source_guess": "drone",
     "duration": 26.543183,
     "probe": {
+      "captured_at": "2026-07-26T14:14:25.344000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 193.344,
+      "trim_out_s": 219.735,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -8040,7 +8758,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T14:14:25.344000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:7206fd97016950e43a88f18096d2d35be03a6bcba5c68427fa542f4f19f308bf",
@@ -8049,6 +8769,10 @@
     "source_guess": "drone",
     "duration": 19.76975,
     "probe": {
+      "captured_at": "2026-07-26T13:31:45.821000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 172.821,
+      "trim_out_s": 192.44,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -8099,7 +8823,9 @@
     },
     "gps": {
       "place": "Geilo-Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T13:31:45.821000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:73d4f8cd2e6f6e609fcfd3c51aad4778142417f1982264e9a860d75fe5be9511",
@@ -8108,6 +8834,10 @@
     "source_guess": "drone",
     "duration": 14.247567,
     "probe": {
+      "captured_at": "2026-07-26T13:30:28.815000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 95.815,
+      "trim_out_s": 109.833,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -8157,7 +8887,9 @@
     },
     "gps": {
       "place": "Geilo-Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T13:30:28.815000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:749346ba4375b9169d17063fa73edbd8bf08be179f8677a2593162aa6aa8972d",
@@ -8166,6 +8898,10 @@
     "source_guess": "drone",
     "duration": 59.042317,
     "probe": {
+      "captured_at": "2026-07-26T14:13:14.924000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 122.924,
+      "trim_out_s": 181.654,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -8215,7 +8951,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T14:13:14.924000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:7def3a8eb0ed4154cfcab0fd3593df5743052bcd1482826a4178db9f8f451e8e",
@@ -8224,6 +8962,10 @@
     "source_guess": "drone",
     "duration": 18.952267,
     "probe": {
+      "captured_at": "2026-07-26T14:06:59.409000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 69.409,
+      "trim_out_s": 88.012,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -8275,7 +9017,9 @@
     },
     "gps": {
       "place": "Geilo-Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T14:06:59.409000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:85b1a87c1c5fd0bafa9ed241a7ad99f500847301568109d0872da17770d1f536",
@@ -8387,6 +9131,10 @@
     "source_guess": "drone",
     "duration": 18.401717,
     "probe": {
+      "captured_at": "2026-07-26T14:15:34.618000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 262.618,
+      "trim_out_s": 280.652,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -8437,7 +9185,9 @@
     },
     "gps": {
       "place": "Geilo"
-    }
+    },
+    "captured_at": "2026-07-26T14:15:34.618000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:8d6634abdf49b4cb0b5f6ea4100d9890d1f42201563ba22d59b5131174d0d7bb",
@@ -8446,6 +9196,10 @@
     "source_guess": "drone",
     "duration": 54.471083,
     "probe": {
+      "captured_at": "2026-07-26T15:12:56.719000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 90.719,
+      "trim_out_s": 145.05,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -8499,7 +9253,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T15:12:56.719000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:993dafe5cbb339fddb13eae38ad9cc48dd4e057c1f7d16bf5467fe0a4996c9ba",
@@ -8508,6 +9264,10 @@
     "source_guess": "drone",
     "duration": 6.75675,
     "probe": {
+      "captured_at": "2026-07-26T13:30:06.272000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 73.272,
+      "trim_out_s": 79.819,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -8558,7 +9318,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T13:30:06.272000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:a15499da676c16082867d3592c34fe46194d8ad0a2df08ae45a1a130080d5b45",
@@ -8567,6 +9329,10 @@
     "source_guess": "drone",
     "duration": 30.764067,
     "probe": {
+      "captured_at": "2026-07-26T16:54:46.173000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 82.173,
+      "trim_out_s": 112.843,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -8618,7 +9384,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T16:54:46.173000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:a1945f5649f8ee63cce91703f59809e7d1996dfe8e8e6559735a9331b2b2b672",
@@ -8627,6 +9395,10 @@
     "source_guess": "drone",
     "duration": 23.77375,
     "probe": {
+      "captured_at": "2026-07-26T14:06:18.914000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 28.914,
+      "trim_out_s": 52.286,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -8679,7 +9451,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T14:06:18.914000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:c8e39c12f332fc8825a213277ef07a1363a55bc41e29470073897718227c34fd",
@@ -8688,6 +9462,10 @@
     "source_guess": "drone",
     "duration": 21.488133,
     "probe": {
+      "captured_at": "2026-07-26T16:51:15.235000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 0.235,
+      "trim_out_s": 21.482,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -8738,7 +9516,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T16:51:15.235000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:c9db9491cca164d42fba7e44201f87719948842cb703759a3c59b1a675cb591b",
@@ -8798,6 +9578,10 @@
     "source_guess": "drone",
     "duration": 44.778067,
     "probe": {
+      "captured_at": "2026-07-26T16:45:14.681000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 133.681,
+      "trim_out_s": 178.405,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -8849,7 +9633,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T16:45:14.681000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:cee8da40c9f22a6796c71413c52483ebe9c34c26e388b4f68b20f9cc98dfa7b3",
@@ -8858,6 +9644,10 @@
     "source_guess": "drone",
     "duration": 30.947583,
     "probe": {
+      "captured_at": "2026-07-26T15:14:07.126000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 161.126,
+      "trim_out_s": 191.604,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -8908,7 +9698,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T15:14:07.126000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:dd243f25587f13f26e5d1937ead5908a8ed7770abe7e8118a52739b811ff5407",
@@ -8968,6 +9760,10 @@
     "source_guess": "drone",
     "duration": 25.058367,
     "probe": {
+      "captured_at": "2026-07-26T15:15:18.048000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 232.048,
+      "trim_out_s": 256.776,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -9019,7 +9815,9 @@
     },
     "gps": {
       "place": "Geilo"
-    }
+    },
+    "captured_at": "2026-07-26T15:15:18.048000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:e9f050348cfddd646ad7f3220f0ad3f887360e22c1c5f8ddb24e0e577c27cc93",
@@ -9028,6 +9826,10 @@
     "source_guess": "drone",
     "duration": 23.056367,
     "probe": {
+      "captured_at": "2026-07-26T13:32:08.202000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 195.202,
+      "trim_out_s": 218.249,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -9079,7 +9881,9 @@
     },
     "gps": {
       "place": "Geilo-Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T13:32:08.202000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:ed79037d10c6573dc07d3f8b37c5260a37e5db23828d5878ead1a608dee19531",
@@ -9088,6 +9892,10 @@
     "source_guess": "drone",
     "duration": 9.292617,
     "probe": {
+      "captured_at": "2026-07-26T14:15:11.373000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 239.373,
+      "trim_out_s": 248.523,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -9138,7 +9946,9 @@
     },
     "gps": {
       "place": "Geilo-Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T14:15:11.373000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:eed7aa5c9a13f63911975d1fc514e368fc8b1ed28f4c2635e6c790c472ece54c",
@@ -9147,6 +9957,10 @@
     "source_guess": "drone",
     "duration": 36.970267,
     "probe": {
+      "captured_at": "2026-07-26T16:55:59.874000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 155.874,
+      "trim_out_s": 192.625,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -9199,7 +10013,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T16:55:59.874000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:fd430efdd6a2ec60fbbebc2c06cd9d0a0b7b3381786a0279b1be4bc9e56e36c4",
@@ -9208,6 +10024,10 @@
     "source_guess": "drone",
     "duration": 9.826483,
     "probe": {
+      "captured_at": "2026-07-26T13:31:00.980000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 127.98,
+      "trim_out_s": 137.454,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -9260,7 +10080,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-26T13:31:00.980000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:3cd337b674d8a2eef471529758112b4655437220a9689d78187584379ebaf704",
@@ -9269,6 +10091,10 @@
     "source_guess": "drone",
     "duration": 302.568933,
     "probe": {
+      "captured_at": "2026-07-27T10:43:00.073000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 52.073,
+      "trim_out_s": 354.612,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -9319,7 +10145,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-27T10:43:00.073000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:50a9664c4032cfb4e1c1fa502cf517e1fe270fb860971c34a6a1632f91c6b15c",
@@ -9328,6 +10156,10 @@
     "source_guess": "drone",
     "duration": 174.591083,
     "probe": {
+      "captured_at": "2026-07-27T10:48:03.344000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 355.344,
+      "trim_out_s": 529.445,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -9378,7 +10210,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-27T10:48:03.344000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:00a3ae06e4073b33c6ce2d9e0bd75c5147e830e73f2a8b4bb260fa371b2d8bdd",
@@ -9387,6 +10221,10 @@
     "source_guess": "drone",
     "duration": 39.98995,
     "probe": {
+      "captured_at": "2026-07-28T22:05:08.415000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 928.415,
+      "trim_out_s": 967.915,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -9439,7 +10277,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-28T22:05:08.415000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:0131d3ee4a23852fa396b8ffd3bc4ff32e5c8ba72c0d43b339506466ffe9c766",
@@ -9448,6 +10288,10 @@
     "source_guess": "drone",
     "duration": 10.3103,
     "probe": {
+      "captured_at": "2026-07-28T12:46:24.739000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 47.739,
+      "trim_out_s": 57.857,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -9499,7 +10343,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-28T12:46:24.739000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:17c8a487752061bab07eb768c7a7338161865cb026447e5243c58a964237ad5c",
@@ -9508,6 +10354,10 @@
     "source_guess": "drone",
     "duration": 5.488817,
     "probe": {
+      "captured_at": "2026-07-28T12:54:33.771000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 536.771,
+      "trim_out_s": 542.014,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -9559,7 +10409,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-28T12:54:33.771000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:1cc83525b60b72b61467543465afe6405451b7896fb3159581e2a1dfddde0e68",
@@ -9568,6 +10420,10 @@
     "source_guess": "drone",
     "duration": 4.85485,
     "probe": {
+      "captured_at": "2026-07-28T12:48:27.107000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 170.107,
+      "trim_out_s": 174.519,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -9620,7 +10476,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-28T12:48:27.107000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:299fb151000d31ac24f28d551ac05466c59a79e7f3a4c83cc8164a8fc3c8754b",
@@ -9629,6 +10487,10 @@
     "source_guess": "drone",
     "duration": 42.459083,
     "probe": {
+      "captured_at": "2026-07-28T12:50:02.921000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 265.921,
+      "trim_out_s": 308.218,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -9678,7 +10540,9 @@
     },
     "gps": {
       "place": "Geiranger-Lom/Trollstigen"
-    }
+    },
+    "captured_at": "2026-07-28T12:50:02.921000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:2abc70ca319e9cd279bfbe3860145977e37ef055a9e898a782c578e1ed466986",
@@ -9687,6 +10551,10 @@
     "source_guess": "drone",
     "duration": 18.501817,
     "probe": {
+      "captured_at": "2026-07-28T21:59:11.108000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 571.108,
+      "trim_out_s": 589.57,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -9739,7 +10607,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-28T21:59:11.108000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:2be63d9cfea405c1e87f51725a8e4006b235a6512049c7ce29b5ac88c53030e5",
@@ -9748,6 +10618,10 @@
     "source_guess": "drone",
     "duration": 59.225833,
     "probe": {
+      "captured_at": "2026-07-28T22:01:24.209000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 704.209,
+      "trim_out_s": 763.421,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -9799,7 +10673,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-28T22:01:24.209000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:3f599846c949e3a85b87a36b3e24e802c2430866580e4e0e4b912422f647d4f6",
@@ -9808,6 +10684,10 @@
     "source_guess": "drone",
     "duration": 64.3643,
     "probe": {
+      "captured_at": "2026-07-28T21:59:57.547000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 617.547,
+      "trim_out_s": 681.478,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -9858,7 +10738,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-28T21:59:57.547000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:3feda71aae4ebb9678c5b2d9292f429722d02850f2ae6ed5d0d9562e1748a148",
@@ -9867,6 +10749,10 @@
     "source_guess": "drone",
     "duration": 152.085267,
     "probe": {
+      "captured_at": "2026-07-28T15:01:50.055000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 415.055,
+      "trim_out_s": 566.985,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -9919,7 +10805,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-28T15:01:50.055000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:4cae48302ab6426659c3b36d93f3b927cd4608227a0feb234dc4ed113debd15f",
@@ -9928,6 +10816,10 @@
     "source_guess": "drone",
     "duration": 50.667283,
     "probe": {
+      "captured_at": "2026-07-28T21:57:14.964000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 454.964,
+      "trim_out_s": 505.609,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -9979,7 +10871,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-28T21:57:14.964000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:51fecd09d02ccd4a6ff71b1414a20bef7a44b519b8cc836d172d3ae7b1dc5a46",
@@ -9988,6 +10882,10 @@
     "source_guess": "drone",
     "duration": 92.325567,
     "probe": {
+      "captured_at": "2026-07-28T21:51:42.145000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 122.145,
+      "trim_out_s": 214.444,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -10038,7 +10936,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-28T21:51:42.145000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:5d3cd701ae6844611a989122c8b825d8137d48aaaea8f2b522e8d92732687706",
@@ -10047,6 +10947,10 @@
     "source_guess": "drone",
     "duration": 43.359983,
     "probe": {
+      "captured_at": "2026-07-28T15:00:27.151000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 332.151,
+      "trim_out_s": 375.175,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -10099,7 +11003,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-28T15:00:27.151000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:6889741d551d523bbc9c086bbc256ec8b081556d07df4d745ded2753e3834ba5",
@@ -10108,6 +11014,10 @@
     "source_guess": "drone",
     "duration": 25.558867,
     "probe": {
+      "captured_at": "2026-07-28T21:50:37.792000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 57.792,
+      "trim_out_s": 83.112,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -10159,7 +11069,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-28T21:50:37.792000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:79c52168f4c56d9c5c1abd3741b4a0dda523931053db71728bc153e857328047",
@@ -10168,6 +11080,10 @@
     "source_guess": "drone",
     "duration": 25.992633,
     "probe": {
+      "captured_at": "2026-07-28T12:49:09.618000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 212.618,
+      "trim_out_s": 238.189,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -10219,7 +11135,9 @@
     },
     "gps": {
       "place": "Geiranger-Lom"
-    }
+    },
+    "captured_at": "2026-07-28T12:49:09.618000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:9e4fe2140850217971e2c0aa6893ee762b5d7e0e04633b73e3cf9de0ef162b7e",
@@ -10228,6 +11146,10 @@
     "source_guess": "drone",
     "duration": 56.740017,
     "probe": {
+      "captured_at": "2026-07-28T21:54:13.895000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 273.895,
+      "trim_out_s": 330.51,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -10277,7 +11199,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-28T21:54:13.895000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:9f54f738ed83712d98ab8b1b279a039bb4e0482f6e60215b5d47514429b8287d",
@@ -10286,6 +11210,10 @@
     "source_guess": "drone",
     "duration": 11.828483,
     "probe": {
+      "captured_at": "2026-07-28T12:46:06.496000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 29.496,
+      "trim_out_s": 40.85,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -10337,7 +11265,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-28T12:46:06.496000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:a30311756da3b6ccef7d7df95458e97652a6c69d2bd0146ce2e389e0ab7968fc",
@@ -10346,6 +11276,10 @@
     "source_guess": "drone",
     "duration": 48.5485,
     "probe": {
+      "captured_at": "2026-07-28T15:04:44.868000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 589.868,
+      "trim_out_s": 638.127,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -10395,7 +11329,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-28T15:04:44.868000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:b307d94bf30813fc3be8a61bd45cc8d1444425556a8627e72c652fc0ce934381",
@@ -10404,6 +11340,10 @@
     "source_guess": "drone",
     "duration": 27.343983,
     "probe": {
+      "captured_at": "2026-07-28T12:47:06.881000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 89.881,
+      "trim_out_s": 116.93,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -10454,7 +11394,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-28T12:47:06.881000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:b550d2a0923f12d63b2bb00b941c6d58346095d616c29e05e6b5fe26cd6dc766",
@@ -10463,6 +11405,10 @@
     "source_guess": "drone",
     "duration": 9.576233,
     "probe": {
+      "captured_at": "2026-07-28T14:59:51.349000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 296.349,
+      "trim_out_s": 305.862,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -10514,7 +11460,9 @@
     },
     "gps": {
       "place": "Geiranger-Lom"
-    }
+    },
+    "captured_at": "2026-07-28T14:59:51.349000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:ba56f47d26514bae4e61d4461a5ae882d7682a395378cb9194b553399a8bb683",
@@ -10523,6 +11471,10 @@
     "source_guess": "drone",
     "duration": 17.784433,
     "probe": {
+      "captured_at": "2026-07-28T12:54:13.095000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 516.095,
+      "trim_out_s": 533.789,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -10572,7 +11524,9 @@
     },
     "gps": {
       "place": "Geiranger-Lom"
-    }
+    },
+    "captured_at": "2026-07-28T12:54:13.095000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:c3df87b3a3b1a55b93874d19a7447ffe0bd7d6d1cbc4702d0e50d67de33a5ffc",
@@ -10581,6 +11535,10 @@
     "source_guess": "drone",
     "duration": 54.621233,
     "probe": {
+      "captured_at": "2026-07-28T21:56:06.936000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 386.936,
+      "trim_out_s": 441.495,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -10632,7 +11590,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-28T21:56:06.936000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:c4f81737096202877048670146d82a9eb235136b9ad49128578ecc0e3c6bc940",
@@ -10641,6 +11601,10 @@
     "source_guess": "drone",
     "duration": 65.4654,
     "probe": {
+      "captured_at": "2026-07-28T14:55:13.906000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 18.906,
+      "trim_out_s": 83.981,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -10692,7 +11656,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-28T14:55:13.906000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:c91b2aec1e376770f6521f108e65c9e748d437655ee66a720f7c43997dca2b26",
@@ -10701,6 +11667,10 @@
     "source_guess": "drone",
     "duration": 20.47045,
     "probe": {
+      "captured_at": "2026-07-28T12:49:41.598000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 244.598,
+      "trim_out_s": 264.709,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -10753,7 +11723,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-28T12:49:41.598000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:e13194a501d3449ec2966e34a6244306b565b8973b5f8bde76e16b89bce1f383",
@@ -10762,6 +11734,10 @@
     "source_guess": "drone",
     "duration": 35.78575,
     "probe": {
+      "captured_at": "2026-07-28T14:57:23.502000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 148.502,
+      "trim_out_s": 183.921,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -10811,7 +11787,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-28T14:57:23.502000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:e3e21d6c4832eca9637a5d41c80b7ee79711f78131e95f1d89d826ca7e38e919",
@@ -10820,6 +11798,10 @@
     "source_guess": "drone",
     "duration": 37.08705,
     "probe": {
+      "captured_at": "2026-07-28T14:56:39.249000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 104.249,
+      "trim_out_s": 141.176,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -10870,7 +11852,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-28T14:56:39.249000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:e42c63a37a3b0f90a77b330ff0d9e1c4836d55303aeeb44fd60d11febc4d8f73",
@@ -10879,6 +11863,10 @@
     "source_guess": "drone",
     "duration": 39.28925,
     "probe": {
+      "captured_at": "2026-07-28T12:52:03.144000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 386.144,
+      "trim_out_s": 425.17,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -10929,7 +11917,9 @@
     },
     "gps": {
       "place": "Geiranger"
-    }
+    },
+    "captured_at": "2026-07-28T12:52:03.144000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:eab4d942005b5faf70c94fc6fb8bdc9a81280990779b84c4763a12a2ea332944",
@@ -10938,6 +11928,10 @@
     "source_guess": "drone",
     "duration": 8.2082,
     "probe": {
+      "captured_at": "2026-07-28T12:48:53.467000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 196.467,
+      "trim_out_s": 204.397,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -10990,7 +11984,9 @@
     },
     "gps": {
       "place": "Geiranger-Lom"
-    }
+    },
+    "captured_at": "2026-07-28T12:48:53.467000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:eb4ff35c3acbc91d5c82e1f3866c0deaaec5ecd603dc8b1fb6a11e7a834c211d",
@@ -10999,6 +11995,10 @@
     "source_guess": "drone",
     "duration": 21.438083,
     "probe": {
+      "captured_at": "2026-07-28T12:52:56.029000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 439.029,
+      "trim_out_s": 460.371,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -11048,7 +12048,9 @@
     },
     "gps": {
       "place": "Geiranger-Lom"
-    }
+    },
+    "captured_at": "2026-07-28T12:52:56.029000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:ecc6c365bbe714dae2d93d9946453d5525f57a15b5881be8dfc3aba4b24de78b",
@@ -11057,6 +12059,10 @@
     "source_guess": "drone",
     "duration": 69.4694,
     "probe": {
+      "captured_at": "2026-07-28T22:03:47.481000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 847.481,
+      "trim_out_s": 916.814,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -11108,7 +12114,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-28T22:03:47.481000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:fe50bf049afc39dc7e13c71e8567841fcc5e57d039888ef796280097d6cbffb1",
@@ -11117,6 +12125,10 @@
     "source_guess": "drone",
     "duration": 20.387033,
     "probe": {
+      "captured_at": "2026-07-28T14:58:19.909000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 204.909,
+      "trim_out_s": 225.091,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -11168,7 +12180,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-28T14:58:19.909000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:0a2128e8708f71e6037f2ff9e460e441c3894462d2b4b600604e52d58beaa19b",
@@ -11177,6 +12191,10 @@
     "source_guess": "drone",
     "duration": 24.97495,
     "probe": {
+      "captured_at": "2026-07-29T19:50:49.188000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 196.188,
+      "trim_out_s": 220.661,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -11230,7 +12248,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-29T19:50:49.188000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:127306a0634445e10463b5c3a48e6171e010f0a4a591f5d71d76ccbd0c55a852",
@@ -11239,6 +12259,8 @@
     "source_guess": "drone",
     "duration": 70.887483,
     "probe": {
+      "captured_at": "2026-07-29T15:49:35+00:00",
+      "captured_at_source": "container+name",
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -11290,7 +12312,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-29T15:49:35+00:00",
+    "captured_at_source": "container+name"
   },
   {
     "hash": "sha256:15edc2a20a973df83d19198320adeac362eae89b6de83aa221bf304d4cc58dcc",
@@ -11299,6 +12323,10 @@
     "source_guess": "drone",
     "duration": 4.287617,
     "probe": {
+      "captured_at": "2026-07-29T12:22:27.544000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 8.544,
+      "trim_out_s": 12.791,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -11350,7 +12378,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-29T12:22:27.544000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:174d79a09f447c2c13fe10903be89666cd64ebc52247cd42a4196d76eb02f5b8",
@@ -11359,6 +12389,10 @@
     "source_guess": "drone",
     "duration": 60.643917,
     "probe": {
+      "captured_at": "2026-07-29T12:29:14.711000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 415.711,
+      "trim_out_s": 476.054,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -11410,7 +12444,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-29T12:29:14.711000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:1fb49173252b41add0ce01eaacde5639f199e5cbb366c952c27b7a2b95a243ff",
@@ -11419,6 +12455,10 @@
     "source_guess": "drone",
     "duration": 57.674283,
     "probe": {
+      "captured_at": "2026-07-29T15:46:49.494000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 293.494,
+      "trim_out_s": 350.957,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -11469,7 +12509,9 @@
     },
     "gps": {
       "place": "Lom-Uvdal"
-    }
+    },
+    "captured_at": "2026-07-29T15:46:49.494000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:282819cb7706b9eabffd7398e2b6079834eb70adce9c423de40540ed65864928",
@@ -11478,6 +12520,10 @@
     "source_guess": "drone",
     "duration": 31.715017,
     "probe": {
+      "captured_at": "2026-07-29T12:37:27.625000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 908.625,
+      "trim_out_s": 940.112,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -11528,7 +12574,9 @@
     },
     "gps": {
       "place": "Lom-Uvdal"
-    }
+    },
+    "captured_at": "2026-07-29T12:37:27.625000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:399b5f2059c679bf6daa53b9a76ea4118a1488e8c7656b46521ca009ca923b7e",
@@ -11537,6 +12585,10 @@
     "source_guess": "drone",
     "duration": 42.759383,
     "probe": {
+      "captured_at": "2026-07-29T19:59:22.759000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 709.759,
+      "trim_out_s": 752.459,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -11588,7 +12640,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-29T19:59:22.759000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:55d2e3acf6adea525b76687f13577e91b0e4677dd7438f333a9cc9de7f9c9783",
@@ -11597,6 +12651,10 @@
     "source_guess": "drone",
     "duration": 59.40935,
     "probe": {
+      "captured_at": "2026-07-29T15:44:57.926000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 181.926,
+      "trim_out_s": 241.089,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -11648,7 +12706,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-29T15:44:57.926000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:5b8148c0d2e3def2a6850ff0516de1da735cf2cb4a7cd2849a9336e9f785cea0",
@@ -11657,6 +12717,10 @@
     "source_guess": "drone",
     "duration": 14.46445,
     "probe": {
+      "captured_at": "2026-07-29T12:34:48.589000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 749.589,
+      "trim_out_s": 763.704,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -11708,7 +12772,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-29T12:34:48.589000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:61b12e726e37a2ccbd5b55f84eab7128e9755bfe9d0381377e0211d5207bba3f",
@@ -11717,6 +12783,10 @@
     "source_guess": "drone",
     "duration": 34.718017,
     "probe": {
+      "captured_at": "2026-07-29T19:57:06.382000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 573.382,
+      "trim_out_s": 607.785,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -11768,7 +12838,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-29T19:57:06.382000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:63eb6b5e464dfacf861327cd3f409ae195d8cb2b0340987270bb51a3339546a6",
@@ -11777,6 +12849,10 @@
     "source_guess": "drone",
     "duration": 20.987633,
     "probe": {
+      "captured_at": "2026-07-29T12:35:25.952000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 786.952,
+      "trim_out_s": 807.764,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -11828,7 +12904,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-29T12:35:25.952000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:6cbda01a037b285648c6a2e82589c85c2bf17c9b5f9484ce1ac58bcfe65bc601",
@@ -11837,6 +12915,10 @@
     "source_guess": "drone",
     "duration": 24.37435,
     "probe": {
+      "captured_at": "2026-07-29T15:48:08.542000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 372.542,
+      "trim_out_s": 396.737,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -11886,7 +12968,9 @@
     },
     "gps": {
       "place": "Lom-Uvdal"
-    }
+    },
+    "captured_at": "2026-07-29T15:48:08.542000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:7930c0cabe982abc48e7127a0b2273d28e7751411840a9b12a73a9c1c1ddefef",
@@ -11895,6 +12979,10 @@
     "source_guess": "drone",
     "duration": 5.288617,
     "probe": {
+      "captured_at": "2026-07-29T12:22:59.498000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 40.498,
+      "trim_out_s": 45.314,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -11945,7 +13033,9 @@
     },
     "gps": {
       "place": "Lom-Uvdal"
-    }
+    },
+    "captured_at": "2026-07-29T12:22:59.498000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:799b7aa581eab689b0f4bc0780de6f843de356feb227b0598b22c4814754fad1",
@@ -11954,6 +13044,10 @@
     "source_guess": "drone",
     "duration": 19.8198,
     "probe": {
+      "captured_at": "2026-07-29T19:47:45.262000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 12.262,
+      "trim_out_s": 31.831,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -12004,7 +13098,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-29T19:47:45.262000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:79c9169a143a5768b21fa0dbf6fa451308b9ff0fbdfd20cf644c73f5b7cfae55",
@@ -12013,6 +13109,10 @@
     "source_guess": "drone",
     "duration": 59.325933,
     "probe": {
+      "captured_at": "2026-07-29T19:53:50.437000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 377.437,
+      "trim_out_s": 436.695,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -12063,7 +13163,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-29T19:53:50.437000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:82a8464ae4c958723dfb792b84d43f714f11a1abb870a0b14f647905b563eef8",
@@ -12072,6 +13174,10 @@
     "source_guess": "drone",
     "duration": 25.1251,
     "probe": {
+      "captured_at": "2026-07-29T19:48:32.246000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 59.246,
+      "trim_out_s": 84.18,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -12122,7 +13228,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-29T19:48:32.246000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:8b3b4bcae384d3bbc8db7c17b2be535b5e9fa17d349a462d2c2c7291ff7ebb3b",
@@ -12131,6 +13239,10 @@
     "source_guess": "drone",
     "duration": 21.755067,
     "probe": {
+      "captured_at": "2026-07-29T12:36:58.465000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 879.465,
+      "trim_out_s": 901.128,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -12181,7 +13293,9 @@
     },
     "gps": {
       "place": "Lom-Uvdal"
-    }
+    },
+    "captured_at": "2026-07-29T12:36:58.465000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:91ee916d13afd3690747003ada88133df0ca99a30cff1d244a2d50ee1542428a",
@@ -12190,6 +13304,10 @@
     "source_guess": "drone",
     "duration": 26.8268,
     "probe": {
+      "captured_at": "2026-07-29T12:24:49.584000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 150.584,
+      "trim_out_s": 176.976,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -12239,7 +13357,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-29T12:24:49.584000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:92f6d74a7c76e0d12f26a694488b45890e3e94a3ef3b196bc901cc1ca8227e59",
@@ -12248,6 +13368,10 @@
     "source_guess": "drone",
     "duration": 82.916167,
     "probe": {
+      "captured_at": "2026-07-29T19:52:14.504000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 281.504,
+      "trim_out_s": 364.186,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -12299,7 +13423,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-29T19:52:14.504000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:9cb328a7ccaa2be1603e1bcd4228fd1b3340edb96fe07bd97cc98d67c1ea52e3",
@@ -12308,6 +13434,10 @@
     "source_guess": "drone",
     "duration": 44.227517,
     "probe": {
+      "captured_at": "2026-07-29T12:39:01.337000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 1002.337,
+      "trim_out_s": 1046.225,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -12357,7 +13487,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-29T12:39:01.337000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:9daefa2308c30991a0e99e9296572bff119c5e2a3af2dbde73c27073f5cd254f",
@@ -12366,6 +13498,10 @@
     "source_guess": "drone",
     "duration": 50.033317,
     "probe": {
+      "captured_at": "2026-07-29T19:49:28.723000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 115.723,
+      "trim_out_s": 165.643,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -12417,7 +13553,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-29T19:49:28.723000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:9ff75b940788292d01c2b3d97c4dfc16064134d8fe280c9ff94933511225736d",
@@ -12426,6 +13564,10 @@
     "source_guess": "drone",
     "duration": 151.467983,
     "probe": {
+      "captured_at": "2026-07-29T12:31:51.339000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 572.339,
+      "trim_out_s": 723.534,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -12475,7 +13617,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-29T12:31:51.339000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:a1557eb06b1fe7381a1b5f8dc1efbcc963282f7021d99aae30e2132d61562e30",
@@ -12484,6 +13628,10 @@
     "source_guess": "drone",
     "duration": 39.873167,
     "probe": {
+      "captured_at": "2026-07-29T15:43:52.457000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 116.457,
+      "trim_out_s": 155.98,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -12536,7 +13684,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-29T15:43:52.457000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:a81fe634f0bbe10851eae58be15476501ab154defced0f2e8788a63f983f3482",
@@ -12545,6 +13695,10 @@
     "source_guess": "drone",
     "duration": 63.780383,
     "probe": {
+      "captured_at": "2026-07-29T19:54:52.372000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 439.372,
+      "trim_out_s": 502.715,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -12594,7 +13748,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-29T19:54:52.372000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:b764c06640e3c8849070fc6df8f6a59e61f858f01c65962bf16e0b7e1d8d5248",
@@ -12603,6 +13759,10 @@
     "source_guess": "drone",
     "duration": 24.97495,
     "probe": {
+      "captured_at": "2026-07-29T19:58:34.621000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 661.621,
+      "trim_out_s": 686.13,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -12655,7 +13815,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-29T19:58:34.621000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:bff3b98aabb81a93d6e977516876610c49bb0a0ebb83797454650a483e75a8be",
@@ -12664,6 +13826,10 @@
     "source_guess": "drone",
     "duration": 16.883533,
     "probe": {
+      "captured_at": "2026-07-29T15:42:52.116000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 56.116,
+      "trim_out_s": 72.924,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -12715,7 +13881,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-29T15:42:52.116000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:c01e111bd8ca9d23509c75bfeda7185849d6688a8f37021824aa24da2fc5bc45",
@@ -12724,6 +13892,10 @@
     "source_guess": "drone",
     "duration": 19.8198,
     "probe": {
+      "captured_at": "2026-07-29T19:58:06.537000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 633.537,
+      "trim_out_s": 652.952,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -12775,7 +13947,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-29T19:58:06.537000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:d35631a819891b313ff520f35afbb0e8e2bf2ba75a3bbb1d17dc6fc2108e8b3c",
@@ -12784,6 +13958,10 @@
     "source_guess": "drone",
     "duration": 5.171833,
     "probe": {
+      "captured_at": "2026-07-29T12:22:35.877000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 16.877,
+      "trim_out_s": 21.68,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -12836,7 +14014,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-29T12:22:35.877000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:d64baa5c228389542a65f9a149c423caca0b38a7a27f6c687d0ed9a598281773",
@@ -12845,6 +14025,10 @@
     "source_guess": "drone",
     "duration": 83.466717,
     "probe": {
+      "captured_at": "2026-07-29T20:00:07.218000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 754.218,
+      "trim_out_s": 837.214,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -12896,7 +14080,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-29T20:00:07.218000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:d743b0c0b35dea2c77a8009ddf5308c121ec72607df0ffbbd5e647fc823ff503",
@@ -12905,6 +14091,10 @@
     "source_guess": "drone",
     "duration": 45.09505,
     "probe": {
+      "captured_at": "2026-07-29T12:35:50.932000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 811.932,
+      "trim_out_s": 856.891,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -12956,7 +14146,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-29T12:35:50.932000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:e226dd6eb21da9b4dfdf77def1398032fd57a5cca094d86361887ecf6588d23b",
@@ -12965,6 +14157,10 @@
     "source_guess": "drone",
     "duration": 48.048,
     "probe": {
+      "captured_at": "2026-07-29T20:02:05.977000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 872.977,
+      "trim_out_s": 920.92,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -13015,7 +14211,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-29T20:02:05.977000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:e50000b861f10b603fda987e3993f21447f98b6febbf3d46fced18ee995c967d",
@@ -13024,6 +14222,10 @@
     "source_guess": "drone",
     "duration": 22.37235,
     "probe": {
+      "captured_at": "2026-07-29T12:23:38.779000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 79.779,
+      "trim_out_s": 101.943,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -13075,7 +14277,9 @@
     },
     "gps": {
       "place": "Lom-Uvdal"
-    }
+    },
+    "captured_at": "2026-07-29T12:23:38.779000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:e6864844bdf920660ffe4edd12d72fbc8f47838420fd28ccb8ee31a22745663b",
@@ -13084,6 +14288,10 @@
     "source_guess": "drone",
     "duration": 37.253883,
     "probe": {
+      "captured_at": "2026-07-29T19:51:36.294000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 243.294,
+      "trim_out_s": 280.481,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -13136,7 +14344,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-29T19:51:36.294000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:ef19b322313bdc6b1abbb376c51a973cde88d56330e329dee0f98ee22be9b56c",
@@ -13145,6 +14355,10 @@
     "source_guess": "drone",
     "duration": 13.229883,
     "probe": {
+      "captured_at": "2026-07-29T12:25:32.592000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 193.592,
+      "trim_out_s": 206.41,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -13197,7 +14411,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-29T12:25:32.592000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:f7e055945ec1b151aae88ea100ecc3a73a93ed7142fec363834b7c544f3b8044",
@@ -13206,6 +14422,10 @@
     "source_guess": "drone",
     "duration": 17.751067,
     "probe": {
+      "captured_at": "2026-07-29T15:43:14.186000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 78.186,
+      "trim_out_s": 95.828,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -13257,7 +14477,9 @@
     },
     "gps": {
       "place": "Lom"
-    }
+    },
+    "captured_at": "2026-07-29T15:43:14.186000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:0cf76b09a105cb8cd2b9d934929207768b5cf55f1233fad68460684d440cfdfa",
@@ -13266,6 +14488,10 @@
     "source_guess": "drone",
     "duration": 7.35735,
     "probe": {
+      "captured_at": "2026-07-30T14:29:00.758000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 317.758,
+      "trim_out_s": 324.663,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -13316,7 +14542,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-30T14:29:00.758000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:488af71ec1d2b9693948e71d1a892a34eb26b1cbfb0d53db13f104b4cce16953",
@@ -13325,6 +14553,10 @@
     "source_guess": "drone",
     "duration": 7.440767,
     "probe": {
+      "captured_at": "2026-07-30T14:27:29.083000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 226.083,
+      "trim_out_s": 233.151,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -13375,7 +14607,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-30T14:27:29.083000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:4abe2d6f286f7b2bdf47a4be007b0086ac41742e37638127165f9b96e339e496",
@@ -13384,6 +14618,10 @@
     "source_guess": "drone",
     "duration": 64.9649,
     "probe": {
+      "captured_at": "2026-07-30T11:49:46.023000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 93.023,
+      "trim_out_s": 157.556,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -13433,7 +14671,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-30T11:49:46.023000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:5b69e6cc3cb0b877471e3e84b5a0cc27de37d5bfbdf3e98ed96d545b270adb19",
@@ -13442,6 +14682,10 @@
     "source_guess": "drone",
     "duration": 32.866167,
     "probe": {
+      "captured_at": "2026-07-30T11:52:52.997000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 279.997,
+      "trim_out_s": 312.63,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -13491,7 +14735,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-30T11:52:52.997000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:60547e483cde892bec721de0d7e6f7cf2719fd8dfd6a1596b5558720d6ef4ad0",
@@ -13500,6 +14746,10 @@
     "source_guess": "drone",
     "duration": 24.27425,
     "probe": {
+      "captured_at": "2026-07-30T11:57:47.902000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 574.902,
+      "trim_out_s": 598.841,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -13551,7 +14801,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-30T11:57:47.902000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:6690ab0d639fc2e783743bfb8244e0a2e266a13326fd65ff39c3b3bef86efae2",
@@ -13560,6 +14812,10 @@
     "source_guess": "drone",
     "duration": 4.070733,
     "probe": {
+      "captured_at": "2026-07-30T14:26:45.468000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 182.468,
+      "trim_out_s": 186.243,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -13609,7 +14865,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-30T14:26:45.468000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:6e8ef1c523e08cd9546e906008e3d88749d943935cfaabb44250d0a88c6d6536",
@@ -13618,6 +14876,10 @@
     "source_guess": "drone",
     "duration": 15.9159,
     "probe": {
+      "captured_at": "2026-07-30T11:52:11.041000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 238.041,
+      "trim_out_s": 253.649,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -13667,7 +14929,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-30T11:52:11.041000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:8d3d79ae084429cb8ea9233cf3c561b0a5cf480115b9733201021eb8e9e9146c",
@@ -13676,6 +14940,10 @@
     "source_guess": "drone",
     "duration": 5.071733,
     "probe": {
+      "captured_at": "2026-07-30T14:23:48.701000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 5.701,
+      "trim_out_s": 10.566,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -13726,7 +14994,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-30T14:23:48.701000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:929ca1792c7afb6bb6c3e52c1a441ff7c5f2c558cb7dae751235773724fd9aeb",
@@ -13735,6 +15005,10 @@
     "source_guess": "drone",
     "duration": 10.777433,
     "probe": {
+      "captured_at": "2026-07-30T14:27:51.247000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 248.247,
+      "trim_out_s": 258.519,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -13784,7 +15058,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-30T14:27:51.247000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:b19ae7c104548d6cd714b424ae830dabb8cfca9b908f832a7a1fb3a148321f90",
@@ -13793,6 +15069,8 @@
     "source_guess": "drone",
     "duration": 43.79375,
     "probe": {
+      "captured_at": "2026-07-30T11:34:19+00:00",
+      "captured_at_source": "container+name",
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -13843,7 +15121,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-30T11:34:19+00:00",
+    "captured_at_source": "container+name"
   },
   {
     "hash": "sha256:b3b3a092415dee163e1ce3d2939fced7d56af88a7c700469f81e0e9cdbb3a6d8",
@@ -13852,6 +15132,10 @@
     "source_guess": "drone",
     "duration": 21.37135,
     "probe": {
+      "captured_at": "2026-07-30T11:49:03.279000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 50.279,
+      "trim_out_s": 71.419,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -13901,7 +15185,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-30T11:49:03.279000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:b7bed73552626fc2cad856da0b8319e96767a4331f17198320e56257efba164f",
@@ -13910,6 +15196,10 @@
     "source_guess": "drone",
     "duration": 119.602817,
     "probe": {
+      "captured_at": "2026-07-30T11:54:23.178000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 370.178,
+      "trim_out_s": 489.464,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -13961,7 +15251,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-30T11:54:23.178000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:c609c1a2ba5a62bbaf4cb7005eabf2bd1ac878976c180cb7286293641d1ad95e",
@@ -13970,6 +15262,10 @@
     "source_guess": "drone",
     "duration": 6.172833,
     "probe": {
+      "captured_at": "2026-07-30T14:24:31.239000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 48.239,
+      "trim_out_s": 54.214,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -14021,7 +15317,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-30T14:24:31.239000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:cb0db706e5167bf8e57c5c3dca6ec96dc9d307a100d72a36ebf7d5fb12d977e1",
@@ -14030,6 +15328,10 @@
     "source_guess": "drone",
     "duration": 5.35535,
     "probe": {
+      "captured_at": "2026-07-30T14:25:37.970000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 114.97,
+      "trim_out_s": 119.967,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -14080,7 +15382,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-30T14:25:37.970000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:e02ec61448c3fac58d731cca0e56d359a96597f7052fa52ea2b024d7a1eca1fc",
@@ -14089,6 +15393,8 @@
     "source_guess": "drone",
     "duration": 18.601917,
     "probe": {
+      "captured_at": "2026-07-30T11:42:15+00:00",
+      "captured_at_source": "container+name",
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -14138,7 +15444,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-30T11:42:15+00:00",
+    "captured_at_source": "container+name"
   },
   {
     "hash": "sha256:123000737017360677d689aa7c841ef908ab07233a91d5fece333b19f0f7ccab",
@@ -14147,6 +15455,8 @@
     "source_guess": "drone",
     "duration": 284.717767,
     "probe": {
+      "captured_at": "2026-07-31T13:42:06+00:00",
+      "captured_at_source": "container+name",
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -14197,7 +15507,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-31T13:42:06+00:00",
+    "captured_at_source": "container+name"
   },
   {
     "hash": "sha256:1c05a6210e289ada60a4c29733865530ade3dd584ad9b3e321e630df8327b325",
@@ -14206,6 +15518,10 @@
     "source_guess": "drone",
     "duration": 12.379033,
     "probe": {
+      "captured_at": "2026-07-31T13:25:42.584000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 435.584,
+      "trim_out_s": 447.799,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -14256,7 +15572,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-31T13:25:42.584000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:20563e0a30ac0836c21f1f31e05960b2454b572099f4112fb5fe3874899af463",
@@ -14265,6 +15583,10 @@
     "source_guess": "drone",
     "duration": 10.076733,
     "probe": {
+      "captured_at": "2026-07-31T13:23:22.872000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 295.872,
+      "trim_out_s": 305.872,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -14314,7 +15636,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-31T13:23:22.872000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:2a400361eda3dcaea0d2bd1c19b5bf407b5eadee518dbc7daf2e560e1426e6c3",
@@ -14323,6 +15647,10 @@
     "source_guess": "drone",
     "duration": 28.97895,
     "probe": {
+      "captured_at": "2026-07-31T13:24:07.259000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 340.259,
+      "trim_out_s": 368.818,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -14372,7 +15700,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-31T13:24:07.259000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:4e77d9390d88a8afe10e8b3f4c00b4e937f0eac60f6de7aae91cb36e26133f94",
@@ -14381,6 +15711,8 @@
     "source_guess": "drone",
     "duration": 3.8038,
     "probe": {
+      "captured_at": "2026-07-31T13:36:55+00:00",
+      "captured_at_source": "container+name",
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -14430,7 +15762,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-31T13:36:55+00:00",
+    "captured_at_source": "container+name"
   },
   {
     "hash": "sha256:56e1ebbc79a6f714ce3724d92d198a35d97de8db89898baa817a1cb5f6c86fd7",
@@ -14439,6 +15773,10 @@
     "source_guess": "drone",
     "duration": 16.499817,
     "probe": {
+      "captured_at": "2026-07-31T13:24:52.710000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 385.71,
+      "trim_out_s": 401.881,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -14505,7 +15843,9 @@
       "place": "Uvdal"
     },
     "exclude": true,
-    "exclude_reason": "Drohne in Ast, ruckartige Fehlbewegung"
+    "exclude_reason": "Drohne in Ast, ruckartige Fehlbewegung",
+    "captured_at": "2026-07-31T13:24:52.710000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:61365ce04c6ba727ea183672bd9e9b9b9caac208501d19e52925237d7ecfb941",
@@ -14514,6 +15854,8 @@
     "source_guess": "drone",
     "duration": 25.67565,
     "probe": {
+      "captured_at": "2026-07-31T13:33:33+00:00",
+      "captured_at_source": "container+name",
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -14565,7 +15907,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-31T13:33:33+00:00",
+    "captured_at_source": "container+name"
   },
   {
     "hash": "sha256:6d01c7c36a8df469e088cae9f716b6e6176a8a4823682657475884fa703f64e2",
@@ -14574,6 +15918,10 @@
     "source_guess": "drone",
     "duration": 21.287933,
     "probe": {
+      "captured_at": "2026-07-31T13:22:16.525000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 229.525,
+      "trim_out_s": 250.504,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -14623,7 +15971,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-31T13:22:16.525000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:7eeccd9473e186877b08153c660605c890d2456e52849bb5e83aae4f7e22dc2f",
@@ -14632,6 +15982,10 @@
     "source_guess": "drone",
     "duration": 13.530183,
     "probe": {
+      "captured_at": "2026-07-31T13:27:14.828000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 527.828,
+      "trim_out_s": 541.043,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -14682,7 +16036,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-31T13:27:14.828000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:8044d311a85e66b4b949d51056d7a82e2f27780bd3528a298eb82de5f5462536",
@@ -14691,6 +16047,10 @@
     "source_guess": "drone",
     "duration": 3.8038,
     "probe": {
+      "captured_at": "2026-07-31T13:29:45.354000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 678.354,
+      "trim_out_s": 681.97,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -14741,7 +16101,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-31T13:29:45.354000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:8ece0ae3e42f9245f746ea0b4fc4594fac7f9bdd10e307a5f39cb475998600cf",
@@ -14750,6 +16112,10 @@
     "source_guess": "drone",
     "duration": 8.75875,
     "probe": {
+      "captured_at": "2026-07-31T13:19:55.460000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 88.46,
+      "trim_out_s": 96.838,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -14800,7 +16166,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-31T13:19:55.460000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:8fc221f5c5bed752302bf56dfe2517712e546b87162c6ff2978ffb69de6bdd16",
@@ -14809,6 +16177,10 @@
     "source_guess": "drone",
     "duration": 8.274933,
     "probe": {
+      "captured_at": "2026-07-31T13:21:43.512000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 196.512,
+      "trim_out_s": 204.461,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -14860,7 +16232,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-31T13:21:43.512000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:939382fcf117fadf9635e16bf727eb0e450d9a0691c12a992ad1f29e58060d1f",
@@ -14869,6 +16243,10 @@
     "source_guess": "drone",
     "duration": 6.539867,
     "probe": {
+      "captured_at": "2026-07-31T13:31:09.997000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 762.997,
+      "trim_out_s": 769.297,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -14918,7 +16296,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-31T13:31:09.997000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:a04b74c2c930248acc490ff5b4ce6113a1733a3ddd7310c49242dbce2a6c315d",
@@ -14927,6 +16307,10 @@
     "source_guess": "drone",
     "duration": 9.9099,
     "probe": {
+      "captured_at": "2026-07-31T13:18:51.746000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 24.746,
+      "trim_out_s": 34.429,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -14978,7 +16362,9 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-31T13:18:51.746000+00:00",
+    "captured_at_source": "container+name+trim"
   },
   {
     "hash": "sha256:bb5097bc228748fc919fa577ba68876797044d888ff1a6a0ab1e651df7a7b7dc",
@@ -14987,6 +16373,10 @@
     "source_guess": "drone",
     "duration": 23.1231,
     "probe": {
+      "captured_at": "2026-07-31T13:20:23.828000+00:00",
+      "captured_at_source": "container+name+trim",
+      "trim_in_s": 116.828,
+      "trim_out_s": 139.731,
       "w": 3840,
       "h": 2160,
       "fps": 59.94005994005994,
@@ -15036,6 +16426,8 @@
     },
     "gps": {
       "place": "Uvdal"
-    }
+    },
+    "captured_at": "2026-07-31T13:20:23.828000+00:00",
+    "captured_at_source": "container+name+trim"
   }
 ]

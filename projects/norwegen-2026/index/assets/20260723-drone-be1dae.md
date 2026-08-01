@@ -1,7 +1,7 @@
 # 20260723-drone-be1dae
 
 **Pfad:** 2026-07-23_Skien-Geilo_Roadshots_Unterkunft/Vorauswahl/DJI_20260723145649_0002_D-00.00.46.203-00.01.05.560-seg1.MP4
-**Aufgenommen:** -
+**Aufgenommen:** 2026-07-23T14:57:35.203000+00:00
 **Ort:** Geilo
 **Typ:** video
 **Rating:** 4/5
