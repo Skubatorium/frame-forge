@@ -58,7 +58,7 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | B3 | Etappen-HUD (`templates/svg/map-hud.svg`, stufenweise gerendert) | ✅ fertig | `a314f07` |
 | B4 | `map-animator`-Agent erweitern | ✅ fertig | `a314f07` |
 | B5 | Routengeometrie beschaffen (GPX / KML-Parser / Routing-Fallback) | ✅ fertig | `4138e99` |
-| C | Schwarzblende zwischen zwei Clips (`transition_in: black`) | ✅ fertig | `<p>` |
+| C | Schwarzblende zwischen zwei Clips (`transition_in: black`) | ✅ fertig | `15c6510` |
 | D1 | SVG-Templates aufwerten + relative Größen (`type_scale`) | ✅ fertig | `a314f07` |
 | D2 | Generierte Grafiken (Prompt-Bausteine, Hintergrund in Titel/Kapitel) | ⬜ offen | — |
 | F | Musik: `fade_in_s`/`fade_out_s`, `audio.segment_plan` | ⬜ offen | — |
