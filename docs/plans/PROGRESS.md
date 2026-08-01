@@ -52,12 +52,12 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | A3 | Etappen als Projektdaten (`route/stages.csv`, `templates/prompts/route.md`) | ✅ fertig | `c91232e` |
 | A4 | `assign-places` — Tag/Etappe/Ort zuordnen (prüfbar, `--dry-run`) | ✅ fertig (Code), Realdaten fehlen | `243dc8a` |
 | A5 | `places-todo` / `set-place` — Lückenliste für unklare Clips | ✅ fertig | `243dc8a` |
-| A6 | `/ff-route` + Agent `route-planner` (Plausibilität) | ✅ fertig | `<pending>` |
-| B1 | Distanz + Höhenprofil (`haversine_km`, `cumulative_km`, `elevation_profile`) | ✅ fertig | `<pending>` |
+| A6 | `/ff-route` + Agent `route-planner` (Plausibilität) | ✅ fertig | `4138e99` |
+| B1 | Distanz + Höhenprofil (`haversine_km`, `cumulative_km`, `elevation_profile`) | ✅ fertig | `4138e99` |
 | B2 | Mitwandernder Viewport (Web-Mercator, `viewport="follow"`, `dwell_s`) | ⬜ offen | — |
 | B3 | Etappen-HUD (`templates/svg/map-hud.svg`, stufenweise gerendert) | ⬜ offen | — |
 | B4 | `map-animator`-Agent erweitern | ⬜ offen | — |
-| B5 | Routengeometrie beschaffen (GPX / KML-Parser / Routing-Fallback) | ✅ fertig | `<pending>` |
+| B5 | Routengeometrie beschaffen (GPX / KML-Parser / Routing-Fallback) | ✅ fertig | `4138e99` |
 | C | Schwarzblende zwischen zwei Clips (`transition_in: black`) | ⬜ offen | — |
 | D1 | SVG-Templates aufwerten + relative Größen (`type_scale`) | ⬜ offen | — |
 | D2 | Generierte Grafiken (Prompt-Bausteine, Hintergrund in Titel/Kapitel) | ⬜ offen | — |
