@@ -49,7 +49,7 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | A0 | Backfill statt Neu-Indizieren (`backfill-metadata`) | ✅ fertig | `e6859f0` + `b9a5ca2` |
 | A1 | Aufnahmezeit für Videos (Container/Dateiname/Trim-Offset) | ✅ fertig | `b9a5ca2` |
 | A2 | GPS aus den ungeschnittenen Originalen (`originals_root`) | 🔄 Code fertig, Stichprobe am Material offen | `4ea2fe3` |
-| A3 | Etappen als Projektdaten (`route/stages.csv`, `templates/prompts/route.md`) | ⬜ offen | — |
+| A3 | Etappen als Projektdaten (`route/stages.csv`, `templates/prompts/route.md`) | ✅ fertig | `c91232e` |
 | A4 | `assign-places` — Tag/Etappe/Ort zuordnen (prüfbar, `--dry-run`) | ⬜ offen | — |
 | A5 | `places-todo` / `set-place` — Lückenliste für unklare Clips | ⬜ offen | — |
 | A6 | `/ff-route` + Agent `route-planner` (Plausibilität) | ⬜ offen | — |
@@ -138,6 +138,15 @@ bleibt davon unberührt.
 **Abnahme A0 zunächst nur zur Hälfte erfüllt** (Bitgleichheit ja, Aufnahmezeit 0/236) — die
 zweite Hälfte kam mit A1, siehe dort: der zweite Backfill-Lauf liefert 236/236 (100 %).
 7 Tests in `tests/test_backfill.py`, 333 Tests gesamt grün, `ruff` sauber.
+
+### A3 — Notizen (2026-08-01)
+
+`gpx.parse_stages` (Pflichtspalten `day,date,from,to`, optional `via,km,overnight,note`,
+Fehler mit Zeilennummer, `km` leer → `None` statt geschätzt), `gpx.stage_for` (Datum → Etappe)
+und `gpx.stage_label` (`"Geiranger → Lom"`, bei Standtagen nur der Ort).
+`Project.stages_csv_path` neu. Neue Vorlage `templates/prompts/route.md` (Etappen- **und**
+POI-CSV, mit der ausdrücklichen Regel „unsichere Koordinate weglassen statt raten").
+Die neuen Asset-Felder sind in Plan 0001 §4 nachgetragen. 10 neue Tests in `tests/test_gpx.py`.
 
 ### A2 — Notizen (2026-08-01)
 
