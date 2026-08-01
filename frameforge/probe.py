@@ -110,6 +110,38 @@ def trim_offset_from_name(path: Path) -> tuple[float, float] | None:
     return (h1 * 3600 + m1 * 60 + s1 + ms1 / 1000, h2 * 3600 + m2 * 60 + s2 + ms2 / 1000)
 
 
+def original_name_from_trimmed(path: Path) -> str | None:
+    """Dateiname (Stem) des ungeschnittenen Originals, oder `None` ohne Trim-Suffix.
+
+    `DJI_20260720153625_0006_D-00.02.10.556-00.02.18.774-seg5.MP4` → `DJI_20260720153625_0006_D`.
+    Die Bruecke zu den Originalen mit intakten GPS-Daten (Plan 0003 §A2).
+    """
+    match = _TRIM_RE.search(path.name)
+    if not match:
+        return None
+    return path.name[: match.start()]
+
+
+def probe_media_gps(path: Path) -> dict:
+    """GPS eines Videos **oder** Fotos via `exiftool` — `{}`, wenn keine Koordinaten drinstehen.
+
+    Videos werden sonst nur per `ffprobe` angefasst; DJI & Co. schreiben ihre Position aber in
+    EXIF-/QuickTime-Tags, die `ffprobe` nicht ausgibt.
+    """
+    data = _run_json(["exiftool", "-j", str(path)])
+    if not data:
+        return {}
+    entry = data[0]
+    lat, lon = entry.get("GPSLatitude"), entry.get("GPSLongitude")
+    if lat is None or lon is None:
+        return {}
+    gps = {"lat": _to_signed_degrees(lat), "lon": _to_signed_degrees(lon)}
+    elevation = _to_meters(entry.get("GPSAltitude"))
+    if elevation is not None:
+        gps["elevation_m"] = elevation
+    return gps
+
+
 def _parse_container_time(tags: dict) -> datetime | None:
     """`format.tags.creation_time` bzw. `com.apple.quicktime.creationdate` als UTC-Zeitpunkt."""
     raw = tags.get("creation_time") or tags.get("com.apple.quicktime.creationdate")

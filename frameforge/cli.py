@@ -408,6 +408,16 @@ def backfill_metadata(
     console.print(
         f"[dim]{result.scanned} Asset(s) geprueft, {result.unchanged} bereits vollstaendig.[/dim]"
     )
+    if proj.config.originals_root is None:
+        console.print(
+            "[dim]Kein 'originals_root' in project.yaml — GPS aus den ungeschnittenen "
+            "Originalen wird uebersprungen (Plan 0003 §A2).[/dim]"
+        )
+    else:
+        console.print(
+            f"[dim]originals_root: {result.originals_found} Datei(en) gefunden unter "
+            f"{proj.config.originals_root}[/dim]"
+        )
 
     if dry_run:
         console.print("[dim]Dry-Run: nichts geschrieben.[/dim]")

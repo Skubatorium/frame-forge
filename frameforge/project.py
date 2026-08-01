@@ -67,6 +67,10 @@ class ProjectConfig(BaseModel):
 
     name: str
     media_root: Path
+    # Optional: Ordner der **ungeschnittenen Originale** (Plan 0003 §A2). Der Vorschnitt hat die
+    # Metadaten weitgehend verloren; liegt dieses Feld vor, holt `backfill-metadata` GPS und
+    # Aufnahmezeit aus dem Original. Fehlt es, verhaelt sich alles wie bisher.
+    originals_root: Path | None = None
     timezone: str = "UTC"
     language: str = "de"
     extra: dict = Field(default_factory=dict)
@@ -77,7 +81,7 @@ class ProjectConfig(BaseModel):
         return cls.model_validate(raw)
 
     def save(self, path: Path) -> None:
-        payload = self.model_dump(mode="json", exclude={"extra"})
+        payload = self.model_dump(mode="json", exclude={"extra"}, exclude_none=True)
         payload.update(self.extra)
         path.write_text(yaml.safe_dump(payload, allow_unicode=True, sort_keys=False))
 

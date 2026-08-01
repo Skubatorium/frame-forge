@@ -125,3 +125,64 @@ def test_captured_at_coverage_counts_only_requested_kind(proj):
     assert captured_at_coverage(proj, kind="video") == (0, 1)
     apply_backfill(proj, plan_backfill(proj))
     assert captured_at_coverage(proj)[1] == 2
+
+
+# -- A2: GPS aus den ungeschnittenen Originalen ------------------------------------
+
+
+def test_gps_is_taken_from_the_untrimmed_original(proj, tmp_path, monkeypatch):
+    """Der Vorschnitt hat die Koordinaten verloren — das Original traegt sie noch."""
+    media = proj.config.media_root
+    trimmed = media / "DJI_20260720153625_0006_D-00.02.10.556-00.02.18.774-seg5.MP4"
+    shutil.copy2(FIXTURE_CLIP, trimmed)
+    originals = tmp_path / "originals"
+    originals.mkdir()
+    shutil.copy2(FIXTURE_CLIP, originals / "DJI_20260720153625_0006_D.MP4")
+
+    cfg = proj.config.model_copy(update={"originals_root": originals})
+    cfg.save(proj.config_path)
+    project = resolve_project("p")
+    write_asset(
+        project,
+        {**copy.deepcopy(INHALT), "id": "a3", "hash": hash_file(trimmed),
+         "path": trimmed.name, "kind": "video"},
+    )
+
+    # Die Fixture traegt kein echtes GPS -> exiftool-Aufruf auf das Original faken.
+    monkeypatch.setattr(
+        "frameforge.probe.probe_media_gps",
+        lambda path: {"lat": 62.1, "lon": 7.2, "elevation_m": 640.0}
+        if path.name == "DJI_20260720153625_0006_D.MP4"
+        else {},
+    )
+
+    result = plan_backfill(project)
+    assert result.originals_found == 1
+    apply_backfill(project, result)
+
+    asset = {a["id"]: a for a in load_assets(project)}["a3"]
+    assert asset["gps"]["lat"] == 62.1
+    assert asset["gps"]["lon"] == 7.2
+    assert asset["gps"]["elevation_m"] == 640.0
+    assert asset["gps"]["source"] == "original"
+    assert asset["gps"]["place"] == "Geiranger"  # vom media-indexer, bleibt
+
+
+def test_without_originals_root_nothing_changes_about_gps(proj):
+    """Fehlt `originals_root`, verhaelt sich der Backfill exakt wie vorher."""
+    result = plan_backfill(proj)
+    assert result.originals_found == 0
+    assert not [u for u in result.updates if u.field.startswith("gps.")and u.asset_id == "a1"]
+
+
+def test_clip_without_findable_original_stays_without_coordinates(proj, tmp_path, monkeypatch):
+    originals = tmp_path / "originals"
+    originals.mkdir()  # leer — kein Original zu finden
+    cfg = proj.config.model_copy(update={"originals_root": originals})
+    cfg.save(proj.config_path)
+    project = resolve_project("p")
+
+    apply_backfill(project, plan_backfill(project))
+
+    asset = {a["id"]: a for a in load_assets(project)}["a1"]
+    assert "lat" not in asset["gps"]  # kein geratener Wert

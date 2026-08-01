@@ -17,9 +17,11 @@ Angefasst wird ausschliesslich, was aus der Datei selbst ableitbar ist (`_TECH_F
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Any
 
 from frameforge import index as index_module
+from frameforge import ingest as ingest_module
 from frameforge import probe as probe_module
 from frameforge.project import Project, UnsafePathError, resolve_media_path
 
@@ -34,8 +36,40 @@ _TECH_FIELDS = frozenset(
         "gps.lat",
         "gps.lon",
         "gps.elevation_m",
+        "gps.source",
     }
 )
+
+
+def index_originals(originals_root: Path | None) -> dict[str, Path]:
+    """`{Stem des Originals: Pfad}` unter `originals_root` (Plan 0003 §A2).
+
+    Leeres Dict, wenn kein `originals_root` konfiguriert oder der Ordner nicht erreichbar ist
+    (externe Platte nicht angeschlossen) — dann laeuft der Backfill ohne den GPS-Zweig, statt
+    abzubrechen.
+    """
+    if originals_root is None or not originals_root.is_dir():
+        return {}
+    return {p.stem: p for p in ingest_module.scan_media(originals_root)}
+
+
+def _gps_from_original(path, originals: dict[str, Path]) -> dict[str, Any]:
+    """GPS des ungeschnittenen Originals eines vorgeschnittenen Clips, sonst `{}`.
+
+    Der Originalname entsteht durch Abschneiden des `-HH.MM.SS.mmm-…-segN`-Suffix; ohne Suffix
+    ist der Clip selbst das Original und wird direkt gesucht. Findet sich nichts, passiert
+    nichts Stilles — das Asset bleibt ohne Koordinaten und taucht in der Lueckenliste (A5) auf.
+    """
+    if not originals:
+        return {}
+    stem = probe_module.original_name_from_trimmed(path)
+    original = originals.get(Path(stem).stem if stem else path.stem)
+    if original is None or original == path:
+        return {}
+    gps = probe_module.probe_media_gps(original)
+    if not gps:
+        return {}
+    return {f"gps.{k}": v for k, v in gps.items()} | {"gps.source": "original"}
 
 
 @dataclass(frozen=True)
@@ -66,6 +100,7 @@ class BackfillResult:
     unchanged: int = 0
     missing_files: list[str] = field(default_factory=list)  # Asset-IDs ohne auffindbare Datei
     failures: list[BackfillFailure] = field(default_factory=list)
+    originals_found: int = 0  # Dateien unter `originals_root` (0 = Zweig inaktiv, siehe A2)
 
     @property
     def touched_assets(self) -> set[str]:
@@ -99,7 +134,7 @@ def _set(asset: dict, dotted: str, value: Any) -> None:
     node[parts[-1]] = value
 
 
-def _probe_fields(asset: dict, path) -> dict[str, Any]:
+def _probe_fields(asset: dict, path, originals: dict[str, Path] | None = None) -> dict[str, Any]:
     """Technische Soll-Werte eines Assets aus der Datei — leere Werte werden weggelassen."""
     fields: dict[str, Any] = {}
     if asset.get("kind") == "video":
@@ -110,6 +145,12 @@ def _probe_fields(asset: dict, path) -> dict[str, Any]:
         if probe.get("captured_at"):
             fields["captured_at"] = probe["captured_at"]
             fields["captured_at_source"] = probe.get("captured_at_source")
+        gps = asset.get("gps") or {}
+        if gps.get("lat") is None or gps.get("lon") is None:
+            # Der Vorschnitt hat die Koordinaten verloren (0 von 236 Videos im Realbetrieb) —
+            # sie stehen aber noch im Original. Nur nachschlagen, wenn wirklich nichts da ist:
+            # eine vorhandene Koordinate wird nie ueberschrieben.
+            fields.update(_gps_from_original(path, originals or {}))
     else:
         exif = probe_module.probe_photo_exif(path)
         if exif.get("captured_at"):
@@ -131,6 +172,8 @@ def plan_backfill(project: Project) -> BackfillResult:
     """
     result = BackfillResult()
     media_root = project.config.media_root
+    originals = index_originals(project.config.originals_root)
+    result.originals_found = len(originals)
 
     for asset in index_module.load_assets(project):
         result.scanned += 1
@@ -145,7 +188,7 @@ def plan_backfill(project: Project) -> BackfillResult:
             continue
 
         try:
-            fields = _probe_fields(asset, path)
+            fields = _probe_fields(asset, path, originals)
         except Exception as exc:  # noqa: BLE001 — eine defekte Datei darf den Lauf nicht killen
             result.failures.append(BackfillFailure(asset_id, str(exc)))
             continue

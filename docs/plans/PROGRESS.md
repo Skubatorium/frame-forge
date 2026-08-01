@@ -48,7 +48,7 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | E | `relink` — Pfade nach Umsortieren reparieren | ✅ fertig | `4eb7b94` |
 | A0 | Backfill statt Neu-Indizieren (`backfill-metadata`) | ✅ fertig | `e6859f0` + `b9a5ca2` |
 | A1 | Aufnahmezeit für Videos (Container/Dateiname/Trim-Offset) | ✅ fertig | `b9a5ca2` |
-| A2 | GPS aus den ungeschnittenen Originalen (`originals_root`) | ⬜ offen | — |
+| A2 | GPS aus den ungeschnittenen Originalen (`originals_root`) | 🔄 Code fertig, Stichprobe am Material offen | `<pending>` |
 | A3 | Etappen als Projektdaten (`route/stages.csv`, `templates/prompts/route.md`) | ⬜ offen | — |
 | A4 | `assign-places` — Tag/Etappe/Ort zuordnen (prüfbar, `--dry-run`) | ⬜ offen | — |
 | A5 | `places-todo` / `set-place` — Lückenliste für unklare Clips | ⬜ offen | — |
@@ -138,6 +138,24 @@ bleibt davon unberührt.
 **Abnahme A0 zunächst nur zur Hälfte erfüllt** (Bitgleichheit ja, Aufnahmezeit 0/236) — die
 zweite Hälfte kam mit A1, siehe dort: der zweite Backfill-Lauf liefert 236/236 (100 %).
 7 Tests in `tests/test_backfill.py`, 333 Tests gesamt grün, `ruff` sauber.
+
+### A2 — Notizen (2026-08-01)
+
+`ProjectConfig.originals_root` (optional, `None` = alles wie bisher; `save()` schreibt keine
+`null`-Felder mehr). `probe.original_name_from_trimmed` schneidet das
+`-HH.MM.SS.mmm-…-segN`-Suffix ab, `probe.probe_media_gps` liest GPS **auch für Videos** per
+`exiftool` (ffprobe gibt die DJI-/QuickTime-GPS-Tags nicht aus). Im Backfill:
+`index_originals` baut einmal pro Lauf `{Stem: Pfad}` über `originals_root`,
+`_gps_from_original` schlägt nur für Videos **ohne** Koordinaten nach und markiert Treffer mit
+`gps.source: "original"`. Vorhandene Koordinaten werden nie überschrieben; ohne Treffer bleibt
+das Asset ohne Koordinaten (Eingabe für A5, nichts wird geraten). Fehlt `originals_root` oder ist
+der Ordner nicht gemountet, ist der Zweig inaktiv — kein Abbruch.
+
+**Status 🔄:** 3 Tests decken den Mechanismus ab (Treffer, kein `originals_root`, kein
+auffindbares Original). Die Abnahme des Plans verlangt eine **Stichprobe von 10 echten Clips mit
+vorhandenem Original** — dafür muss der Nutzer `originals_root` in `projects/norwegen-2026/
+project.yaml` eintragen (Migrationsschritt 3). Solange das nicht existiert, ist der reale
+Nachweis nicht führbar; der Code läuft ohne Konfiguration unverändert wie bisher.
 
 ### A1 — Notizen (2026-08-01)
 
