@@ -12,7 +12,7 @@
       "dur": 8.65865,
       "bitrate": 90313869,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 1.0,
@@ -68,7 +68,7 @@
       "dur": 59.025633,
       "bitrate": 71094615,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.984,
@@ -138,7 +138,7 @@
       "dur": 15.732383,
       "bitrate": 86772710,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 1.0,
@@ -197,7 +197,7 @@
       "dur": 13.780433,
       "bitrate": 83381925,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 1.0,
@@ -256,7 +256,7 @@
       "dur": 27.8278,
       "bitrate": 78457560,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.725,
@@ -315,7 +315,7 @@
       "dur": 8.742067,
       "bitrate": 84895534,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 1.0,
@@ -374,7 +374,7 @@
       "dur": 30.146783,
       "bitrate": 80226000,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.887,
@@ -433,7 +433,7 @@
       "dur": 21.738383,
       "bitrate": 88640245,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 1.0,
@@ -493,7 +493,7 @@
       "dur": 19.035683,
       "bitrate": 77462088,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.742,
@@ -553,7 +553,7 @@
       "dur": 11.56155,
       "bitrate": 73873500,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.696,
@@ -614,7 +614,7 @@
       "dur": 59.993267,
       "bitrate": 71020147,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.94,
@@ -675,7 +675,7 @@
       "dur": 24.908217,
       "bitrate": 71254815,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.952,
@@ -736,7 +736,7 @@
       "dur": 5.238567,
       "bitrate": 72360828,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.614,
@@ -797,7 +797,7 @@
       "dur": 30.313617,
       "bitrate": 74465831,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 1.0,
@@ -860,7 +860,7 @@
       "dur": 10.36035,
       "bitrate": 70280776,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.382,
@@ -921,7 +921,7 @@
       "dur": 14.297617,
       "bitrate": 72893937,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.718,
@@ -978,7 +978,7 @@
       "dur": 12.946267,
       "bitrate": 84844492,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 1.0,
@@ -1034,7 +1034,7 @@
       "dur": 7.190517,
       "bitrate": 74917698,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.723,
@@ -1092,7 +1092,7 @@
       "dur": 214.647767,
       "bitrate": 85452297,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.924,
@@ -1148,7 +1148,7 @@
       "dur": 5.722383,
       "bitrate": 75140902,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 1.0,
@@ -1207,7 +1207,7 @@
       "dur": 12.9129,
       "bitrate": 83261846,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.817,
@@ -1263,7 +1263,7 @@
       "dur": 18.785433,
       "bitrate": 73077530,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.449,
@@ -1323,7 +1323,7 @@
       "dur": 9.542867,
       "bitrate": 78522641,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.873,
@@ -1381,7 +1381,7 @@
       "dur": 33.78375,
       "bitrate": 81033031,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 1.0,
@@ -1439,7 +1439,7 @@
       "dur": 5.288617,
       "bitrate": 90046962,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 1.0,
@@ -1498,7 +1498,7 @@
       "dur": 12.195517,
       "bitrate": 81646400,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 1.0,
@@ -1554,7 +1554,7 @@
       "dur": 10.293617,
       "bitrate": 83572602,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.955,
@@ -1613,7 +1613,7 @@
       "dur": 18.151467,
       "bitrate": 81083403,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.859,
@@ -1674,7 +1674,7 @@
       "dur": 11.678333,
       "bitrate": 76803769,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.643,
@@ -1731,7 +1731,7 @@
       "dur": 21.404717,
       "bitrate": 80622013,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 1.0,
@@ -1791,7 +1791,7 @@
       "dur": 8.7087,
       "bitrate": 78863803,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.938,
@@ -1853,7 +1853,7 @@
       "dur": 35.952583,
       "bitrate": 82545162,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.82,
@@ -1913,7 +1913,7 @@
       "dur": 14.46445,
       "bitrate": 71818335,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.595,
@@ -1974,7 +1974,7 @@
       "dur": 13.546867,
       "bitrate": 88832543,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 1.0,
@@ -2035,7 +2035,7 @@
       "dur": 20.453767,
       "bitrate": 78220582,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.94,
@@ -2096,7 +2096,7 @@
       "dur": 18.485133,
       "bitrate": 82095487,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.894,
@@ -2155,7 +2155,7 @@
       "dur": 8.341667,
       "bitrate": 84254078,
       "codec": "hevc",
-      "source_guess": "camera"
+      "source_guess": "drone"
     },
     "quality": {
       "sharpness": 0.807,
@@ -2211,7 +2211,8 @@
     "gps": {
       "lat": 59.38903055555556,
       "lon": 9.40543888888889,
-      "place": "Skien"
+      "place": "Skien",
+      "elevation_m": 503.9
     },
     "probe": {
       "captured_at": "2026-07-20T15:41:21+00:00",
@@ -2250,7 +2251,8 @@
       "usable_as": [
         "b-roll"
       ]
-    }
+    },
+    "captured_at_source": "exif"
   },
   {
     "hash": "sha256:169f3ff6bb689b28cbb76d33d1e7e7e3d5199754d512ae41e2036d2ce3e47a62",
@@ -2261,7 +2263,8 @@
     "gps": {
       "lat": 59.38891666666667,
       "lon": 9.405547222222223,
-      "place": "Skien"
+      "place": "Skien",
+      "elevation_m": 503.9
     },
     "probe": {
       "captured_at": "2026-07-20T15:41:12+00:00",
@@ -2299,7 +2302,8 @@
       "usable_as": [
         "b-roll"
       ]
-    }
+    },
+    "captured_at_source": "exif"
   },
   {
     "hash": "sha256:34607f10d287924106bc0ebc6d321e46af569f2279856cc9addda48a4cb88884",
@@ -2310,7 +2314,8 @@
     "gps": {
       "lat": 59.3884,
       "lon": 9.40605,
-      "place": "Skien"
+      "place": "Skien",
+      "elevation_m": 501.9
     },
     "probe": {
       "captured_at": "2026-07-20T15:25:35+00:00",
@@ -2348,7 +2353,8 @@
       "usable_as": [
         "b-roll"
       ]
-    }
+    },
+    "captured_at_source": "exif"
   },
   {
     "hash": "sha256:4c55e2169c3bf3dbe08697103212de3929af08bef8562f8140611c18d15a302b",
@@ -2359,7 +2365,8 @@
     "gps": {
       "lat": 59.38823611111111,
       "lon": 9.406205555555555,
-      "place": "Skien"
+      "place": "Skien",
+      "elevation_m": 502.5
     },
     "probe": {
       "captured_at": "2026-07-20T15:18:51+00:00",
@@ -2398,7 +2405,8 @@
         "b-roll",
         "cutaway"
       ]
-    }
+    },
+    "captured_at_source": "exif"
   },
   {
     "hash": "sha256:7a2de79448796af450a85e4535c8b9044dbb7f0735758bb2f1f19943b3c14ad6",
@@ -2408,7 +2416,8 @@
     "captured_at": "2026-07-20T15:40:58+00:00",
     "gps": {
       "lat": 59.38885,
-      "lon": 9.405472222222222
+      "lon": 9.405472222222222,
+      "elevation_m": 504.5
     },
     "probe": {
       "captured_at": "2026-07-20T15:40:58+00:00",
@@ -2447,7 +2456,8 @@
       "usable_as": [
         "b-roll"
       ]
-    }
+    },
+    "captured_at_source": "exif"
   },
   {
     "hash": "sha256:c754045158d63c7daffecc68df19951e7b74564623ab754a767de7f147681179",
@@ -2458,7 +2468,8 @@
     "gps": {
       "lat": 59.38126388888889,
       "lon": 9.413002777777779,
-      "place": "Skien"
+      "place": "Skien",
+      "elevation_m": 577.4
     },
     "probe": {
       "captured_at": "2026-07-20T13:58:29+00:00",
@@ -2496,7 +2507,8 @@
       "usable_as": [
         "establisher"
       ]
-    }
+    },
+    "captured_at_source": "exif"
   },
   {
     "hash": "sha256:c7b3c40ae532fe59e2c5a6c96cc0e8557105ec7275193b54cd143e386dce131a",
@@ -2507,7 +2519,8 @@
     "gps": {
       "lat": 59.388422222222225,
       "lon": 9.406030555555557,
-      "place": "Skien"
+      "place": "Skien",
+      "elevation_m": 502.2
     },
     "probe": {
       "captured_at": "2026-07-20T15:25:47+00:00",
@@ -2547,7 +2560,8 @@
         "establisher",
         "b-roll"
       ]
-    }
+    },
+    "captured_at_source": "exif"
   },
   {
     "hash": "sha256:cb3e3313c2839873609c299147a48d0298b6ab8ad3b0c281cbefa96e453fc537",
@@ -2558,7 +2572,8 @@
     "gps": {
       "lat": 59.38832222222222,
       "lon": 9.406302777777778,
-      "place": "Skien"
+      "place": "Skien",
+      "elevation_m": 509.9
     },
     "probe": {
       "captured_at": "2026-07-20T15:26:40+00:00",
@@ -2597,7 +2612,8 @@
         "b-roll",
         "cutaway"
       ]
-    }
+    },
+    "captured_at_source": "exif"
   },
   {
     "hash": "sha256:f2f7583120a1c3cc0ef129c038a3b14fa9549df040f1392beecbfc52e4598bc9",
@@ -2608,7 +2624,8 @@
     "gps": {
       "lat": 59.38123888888889,
       "lon": 9.413036111111111,
-      "place": "Skien"
+      "place": "Skien",
+      "elevation_m": 635.4
     },
     "probe": {
       "captured_at": "2026-07-20T13:59:10+00:00",
@@ -2647,7 +2664,8 @@
       "usable_as": [
         "establisher"
       ]
-    }
+    },
+    "captured_at_source": "exif"
   },
   {
     "hash": "sha256:01db2ecf88c75fb4a3dfcc7872d341b2e39d812f27b94d60ec831a81af04a3e7",
@@ -4920,7 +4938,8 @@
     "gps": {
       "lat": 60.91405833333333,
       "lon": 7.176083333333334,
-      "place": "Aurland"
+      "place": "Aurland",
+      "elevation_m": 190.8
     },
     "probe": {
       "captured_at": "2026-07-24T22:08:46+00:00",
@@ -4959,7 +4978,8 @@
         "b-roll",
         "establisher"
       ]
-    }
+    },
+    "captured_at_source": "exif"
   },
   {
     "hash": "sha256:094825edfe41f71e3578b0217848281dd36c27d011d270891eda0e8d0a31af1f",
@@ -5686,7 +5706,8 @@
     "gps": {
       "lat": 60.91418611111111,
       "lon": 7.175894444444444,
-      "place": "Aurland"
+      "place": "Aurland",
+      "elevation_m": 203.0
     },
     "probe": {
       "captured_at": "2026-07-24T22:08:56+00:00",
@@ -5724,7 +5745,8 @@
         "b-roll",
         "outro"
       ]
-    }
+    },
+    "captured_at_source": "exif"
   },
   {
     "hash": "sha256:6d3195b79fc6b685e7d8dbad9f5775004cf3395d9ed7a048842fe719ed4c8fce",
@@ -6150,7 +6172,8 @@
     "gps": {
       "lat": 60.91404166666666,
       "lon": 7.1761,
-      "place": "Aurland"
+      "place": "Aurland",
+      "elevation_m": 190.6
     },
     "probe": {
       "captured_at": "2026-07-24T22:08:36+00:00",
@@ -6189,7 +6212,8 @@
         "establisher",
         "b-roll"
       ]
-    }
+    },
+    "captured_at_source": "exif"
   },
   {
     "hash": "sha256:a97e2562b0dd1a49024b193aff9b974ed648946d50ad214ddc1180988b3c0569",
@@ -6618,7 +6642,8 @@
     "gps": {
       "lat": 60.91436111111111,
       "lon": 7.174980555555556,
-      "place": "Aurland"
+      "place": "Aurland",
+      "elevation_m": 182.4
     },
     "probe": {
       "captured_at": "2026-07-24T22:09:24+00:00",
@@ -6657,7 +6682,8 @@
         "b-roll",
         "outro"
       ]
-    }
+    },
+    "captured_at_source": "exif"
   },
   {
     "hash": "sha256:d194b3867306343f13fa33116dd65c7e944321421e870373a903deb207be4a16",
@@ -7149,7 +7175,8 @@
     "gps": {
       "lat": 60.857508333333335,
       "lon": 7.302044444444444,
-      "place": "Aurland"
+      "place": "Aurland",
+      "elevation_m": 598.0
     },
     "probe": {
       "captured_at": "2026-07-24T12:56:43+00:00",
@@ -7187,7 +7214,8 @@
       "usable_as": [
         "establisher"
       ]
-    }
+    },
+    "captured_at_source": "exif"
   },
   {
     "hash": "sha256:1d384fde74dc35b51ac0a4473f0a373cde6f9a0359e6728c17fed4022a1cd6b1",
@@ -7854,7 +7882,8 @@
     "gps": {
       "lat": 62.094544444444445,
       "lon": 7.2233833333333335,
-      "place": "Geiranger"
+      "place": "Geiranger",
+      "elevation_m": 395.8
     },
     "probe": {
       "captured_at": "2026-07-26T16:50:56+00:00",
@@ -7892,7 +7921,8 @@
       "usable_as": [
         "establisher"
       ]
-    }
+    },
+    "captured_at_source": "exif"
   },
   {
     "hash": "sha256:55bfefbf72ca6debdf20d65b5958ec578933ace97a3c05073aba250fcbf1b8d7",
@@ -8256,7 +8286,8 @@
     "gps": {
       "lat": 62.09461666666667,
       "lon": 7.223177777777778,
-      "place": "Geiranger"
+      "place": "Geiranger",
+      "elevation_m": 392.6
     },
     "probe": {
       "captured_at": "2026-07-26T16:52:55+00:00",
@@ -8294,7 +8325,8 @@
         "outro",
         "b-roll"
       ]
-    }
+    },
+    "captured_at_source": "exif"
   },
   {
     "hash": "sha256:8a347b0898907b4cd07ebd26e5f96f82f4b004ca00f56e5357d232efb85ce8f4",
@@ -8305,7 +8337,8 @@
     "gps": {
       "lat": 62.094500000000004,
       "lon": 7.2234,
-      "place": "Geiranger"
+      "place": "Geiranger",
+      "elevation_m": 392.6
     },
     "probe": {
       "captured_at": "2026-07-26T16:50:37+00:00",
@@ -8344,7 +8377,8 @@
         "b-roll",
         "establisher"
       ]
-    }
+    },
+    "captured_at_source": "exif"
   },
   {
     "hash": "sha256:8c4f79d37dc0031b3bb7e08a4ce4a14a5e5c0d80ee76773bbb19f88ef6743602",
@@ -8715,7 +8749,8 @@
     "gps": {
       "lat": 61.87372222222222,
       "lon": 6.836258333333333,
-      "place": "Geiranger"
+      "place": "Geiranger",
+      "elevation_m": 224.9
     },
     "probe": {
       "captured_at": "2026-07-26T14:07:27+00:00",
@@ -8753,7 +8788,8 @@
       "usable_as": [
         "b-roll"
       ]
-    }
+    },
+    "captured_at_source": "exif"
   },
   {
     "hash": "sha256:cdb78d50d02e9d9f27712ecde7badf8d6bb2cc3d5977f854a1300ea3b26a07a2",
@@ -8883,7 +8919,8 @@
     "gps": {
       "lat": 62.094575,
       "lon": 7.223338888888889,
-      "place": "Geiranger"
+      "place": "Geiranger",
+      "elevation_m": 394.9
     },
     "probe": {
       "captured_at": "2026-07-26T16:51:05+00:00",
@@ -8921,7 +8958,8 @@
       "usable_as": [
         "establisher"
       ]
-    }
+    },
+    "captured_at_source": "exif"
   },
   {
     "hash": "sha256:de30ac6806ecdc2b1f203cd58ce81b0e5bb8b6f27df3712ebb2c487438acd0e1",

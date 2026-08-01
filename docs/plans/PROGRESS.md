@@ -46,7 +46,7 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | # | Arbeitspaket | Status | Commit |
 |---|------|--------|--------|
 | E | `relink` — Pfade nach Umsortieren reparieren | ✅ fertig | `4eb7b94` |
-| A0 | Backfill statt Neu-Indizieren (`backfill-metadata`) | ⬜ offen | — |
+| A0 | Backfill statt Neu-Indizieren (`backfill-metadata`) | 🔄 Mechanik fertig, Abnahme offen | `<pending>` |
 | A1 | Aufnahmezeit für Videos (Container/Dateiname/Trim-Offset) | ⬜ offen | — |
 | A2 | GPS aus den ungeschnittenen Originalen (`originals_root`) | ⬜ offen | — |
 | A3 | Etappen als Projektdaten (`route/stages.csv`, `templates/prompts/route.md`) | ⬜ offen | — |
@@ -109,6 +109,38 @@ abgedeckt: nur `path` ändert sich (Diff-Vergleich aller übrigen Felder), Freit
 255 Assets unverändert, 0 Änderungen, 0 Waisen; `relink proto --dry-run` 5 unverändert.
 `projects/proto/` läuft weiterhin bis zum Preview durch (`ingest` → `preview` real ausgeführt).
 326 Tests grün, `ruff` sauber, `doctor` grün.
+
+### A0 — Notizen (2026-08-01)
+
+Neues Modul `frameforge/backfill.py` + Kommando `frameforge backfill-metadata <projekt>
+[--dry-run]`. Gleiche Bauart wie E: `plan_backfill` probt und rechnet, `apply_backfill` schreibt.
+
+**Positivliste statt Ausschlussliste.** `_TECH_FIELDS` nennt die einzigen beschreibbaren Felder
+(`captured_at`, `captured_at_source`, `duration`, `probe`, `gps.lat/lon/elevation_m`);
+`apply_backfill` wirft, wenn ein Update auf ein anderes Feld zeigt. Damit ist „`content`,
+`rating`, `source`, `gps.place` bleiben unangetastet" nicht nur Absicht, sondern erzwungen.
+`.md`-Freitext bleibt über `index.write_asset_md` erhalten.
+
+`probe_photo_exif` liefert jetzt zusätzlich `gps.elevation_m` (GPSAltitude, inkl.
+`"… m Below Sea Level"`) — gehört zu den in Plan 0003 §A0 genannten technischen Feldern.
+
+**Realer Lauf gegen `norwegen-2026` (255 Assets):** 56 Assets ergänzt, Diff enthält
+ausschließlich technische Felder — `probe` (37), `captured_at_source` (19), `gps` (19).
+`content`, `rating`, `source`, `hash`, `path` und `gps.place` sind bei allen 255 Assets bitgleich
+zu vorher (per Skript verglichen, nicht behauptet). Kein Vision-Call.
+
+**Nebenbefund, deckt Plan-Punkt I2 teilweise auf:** bei 37 Videos stand `probe.source_guess:
+"camera"`, obwohl der Dateiname mit `DJI_…` beginnt. Ursache ist nicht `guess_source`, sondern
+das Alter der Einträge — sie wurden indiziert, bevor `guess_source` den `name_hint` (Dateiname)
+auswertete. Der Backfill korrigiert genau das. `asset["source"]` (vom media-indexer gesetzt)
+bleibt davon unberührt.
+
+**Abnahme A0 nur zur Hälfte erfüllt → Status 🔄.** Die Bitgleichheit von `content`/`rating` ist
+nachgewiesen; „≥ 90 % der 236 Videos haben eine Aufnahmezeit" ist es **nicht** (aktuell 0/236).
+Das ist keine Lücke im Backfill: `probe_video` liest heute gar keine Aufnahmezeit — genau das
+baut A1 (Container-Tag → Dateiname + Trim-Offset → Pfad-Datum → mtime). A0 geht auf ✅, sobald
+nach A1 ein erneuter Backfill-Lauf die Quote nachweist. 7 Tests in `tests/test_backfill.py`,
+333 Tests gesamt grün, `ruff` sauber.
 
 ---
 

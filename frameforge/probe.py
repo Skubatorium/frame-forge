@@ -141,6 +141,9 @@ def probe_photo_exif(path: Path) -> dict:
     lat, lon = entry.get("GPSLatitude"), entry.get("GPSLongitude")
     if lat is not None and lon is not None:
         gps = {"lat": _to_signed_degrees(lat), "lon": _to_signed_degrees(lon)}
+        elevation = _to_meters(entry.get("GPSAltitude"))
+        if elevation is not None:
+            gps["elevation_m"] = elevation
 
     make, model = entry.get("Make"), entry.get("Model")
     return {
@@ -150,6 +153,28 @@ def probe_photo_exif(path: Path) -> dict:
         "model": model,
         "source_guess": guess_source(make, model, name_hint=path.name),
     }
+
+
+def _to_meters(value: float | str | None) -> float | None:
+    """exiftool liefert die Hoehe als float oder als `"1234.5 m"` / `"12 m Below Sea Level"`."""
+    if value is None:
+        return None
+    if isinstance(value, (int, float)):
+        return float(value)
+    text = str(value).strip()
+    number = ""
+    for char in text:
+        if char.isdigit() or (char in "-." and not number.endswith(char)):
+            number += char
+        elif number:
+            break
+    if not number:
+        return None
+    try:
+        meters = float(number)
+    except ValueError:
+        return None
+    return -meters if "below" in text.lower() else meters
 
 
 def _to_signed_degrees(value: float | str) -> float:

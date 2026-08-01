@@ -20,6 +20,7 @@ import typer
 from rich.console import Console
 from rich.table import Table
 
+from frameforge import backfill as backfill_module
 from frameforge import brief as brief_module
 from frameforge import design, qc
 from frameforge import index as index_module
@@ -368,6 +369,58 @@ def relink(
         )
     else:
         console.print("[green]Nichts zu korrigieren.[/green]")
+
+
+@app.command(name="backfill-metadata")
+def backfill_metadata(
+    project: str,
+    dry_run: bool = typer.Option(False, "--dry-run", help="Nur zeigen, was nachgetragen wuerde"),
+) -> None:
+    """Traegt fehlende **technische** Metadaten nach, ohne neu zu indizieren.
+
+    Probt die Originaldateien erneut und ergaenzt `captured_at`, `duration`, `probe.*` und
+    `gps.lat/lon/elevation_m`. `content`, `tags`, `rating`, `source`, `gps.place` und die
+    Freitext-Notizen bleiben unangetastet — kein Vision-Call, keine CV-Analyse.
+    """
+    proj = _resolve_or_fail(project)
+    result = backfill_module.plan_backfill(proj)
+
+    counts = result.count_by_field()
+    if counts:
+        table = Table(title=f"{len(result.touched_assets)} Asset(s) zu ergaenzen")
+        table.add_column("Feld")
+        table.add_column("Assets", justify="right")
+        table.add_column("davon neu", justify="right")
+        for name, count in counts.items():
+            new = sum(1 for u in result.updates if u.field == name and u.is_new)
+            table.add_row(name, str(count), str(new))
+        console.print(table)
+
+    if result.missing_files:
+        console.print(
+            f"[yellow]{len(result.missing_files)} Asset(s) ohne auffindbare Datei[/yellow] "
+            f"— erst 'frameforge relink {project}': {', '.join(result.missing_files[:10])}"
+            + (" …" if len(result.missing_files) > 10 else "")
+        )
+    for failure in result.failures:
+        console.print(f"[yellow]  {failure.asset_id}: {failure.reason}[/yellow]")
+
+    console.print(
+        f"[dim]{result.scanned} Asset(s) geprueft, {result.unchanged} bereits vollstaendig.[/dim]"
+    )
+
+    if dry_run:
+        console.print("[dim]Dry-Run: nichts geschrieben.[/dim]")
+        return
+
+    written = backfill_module.apply_backfill(proj, result)
+    console.print(f"[green]{written} Asset(s) in assets.json ergaenzt.[/green]")
+
+    with_time, total = backfill_module.captured_at_coverage(proj, kind="video")
+    if total:
+        console.print(
+            f"Aufnahmezeit bei Videos: {with_time}/{total} ({with_time / total:.0%})"
+        )
 
 
 @app.command(name="index")
