@@ -50,8 +50,8 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | A1 | Aufnahmezeit für Videos (Container/Dateiname/Trim-Offset) | ✅ fertig | `b9a5ca2` |
 | A2 | GPS aus den ungeschnittenen Originalen (`originals_root`) | 🔄 Code fertig, Stichprobe am Material offen | `4ea2fe3` |
 | A3 | Etappen als Projektdaten (`route/stages.csv`, `templates/prompts/route.md`) | ✅ fertig | `c91232e` |
-| A4 | `assign-places` — Tag/Etappe/Ort zuordnen (prüfbar, `--dry-run`) | ✅ fertig (Code), Realdaten fehlen | `<pending>` |
-| A5 | `places-todo` / `set-place` — Lückenliste für unklare Clips | ✅ fertig | `<pending>` |
+| A4 | `assign-places` — Tag/Etappe/Ort zuordnen (prüfbar, `--dry-run`) | ✅ fertig (Code), Realdaten fehlen | `243dc8a` |
+| A5 | `places-todo` / `set-place` — Lückenliste für unklare Clips | ✅ fertig | `243dc8a` |
 | A6 | `/ff-route` + Agent `route-planner` (Plausibilität) | ⬜ offen | — |
 | B1 | Distanz + Höhenprofil (`haversine_km`, `cumulative_km`, `elevation_profile`) | ⬜ offen | — |
 | B2 | Mitwandernder Viewport (Web-Mercator, `viewport="follow"`, `dwell_s`) | ⬜ offen | — |
