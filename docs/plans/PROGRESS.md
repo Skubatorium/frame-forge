@@ -67,6 +67,53 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | H2 | Farbangleichung (`render.match_filter`, `color_match: off/soft/strong`) | ✅ fertig | `7f86f65` |
 | I | Abschluss-Audit (I1–I4 fertig, I5 braucht Nutzer) | 🔄 | `1917325` |
 
+## Audit Plan 0003 (2026-08-01, Opus)
+
+Unabhängige Prüfung der Commits `b9a5ca2..ca596c5` gegen den Plan — Logik, Grenzfälle,
+Rückwärtskompatibilität, Zusammenspiel, Testtiefe, Timing. Befunde und Fixes einzeln:
+
+| # | Schwere | Befund | Status |
+|---|---|---|---|
+| F1 | kritisch | Ken-Burns vervielfachte die Renderdauer (`zoompan d=frames` → `frames²`) | ✅ `<p1>` |
+| F2 | hoch | `assign-places` erfindet Orte über den GPX-Track ohne Zeittoleranz | ⬜ offen |
+| F3 | hoch | Dauer-Invariante nirgends geprüft, `black_transition_extra_s` ohne Aufrufer | ⬜ offen |
+| F4 | mittel | `color-match` verliert unbekannte Felder in `timeline.json` | ⬜ offen |
+| F5 | mittel | Alte Token-Sets rendern nicht mehr (neue Pflicht-Tokens in `lower-third.svg`) | ⬜ offen |
+| F6 | mittel | `render_hud_frames` stürzt bei leerem Track ab (`IndexError`) | ⬜ offen |
+| F7 | niedrig | `total_ascent_m` ohne Aufrufer — Plan B1 „kumulierte Höhenmeter" fehlt im HUD | ⬜ offen |
+| F8 | niedrig | HUD-/Template-Tests prüfen nur Anzahl/Existenz, keinen Inhalt | ⬜ offen |
+| F9 | niedrig | `segment_plan`: letzter Titel ohne Ausblendung bei `gap_s=0` | ⬜ offen |
+| F10 | niedrig | `frameforge build` setzt `TIMELINE`, ohne `timeline.json` zu parsen | ⬜ offen |
+
+**Geprüft und in Ordnung:** Defaults aller neuen Felder (`hold`, `fade_in_s`/`fade_out_s`,
+`color_match`, `originals_root`, `viewport="fit"`, `require_time=True`) verhalten sich wie vor
+Plan 0003; keine Doppelrechnung (`_dwell_schedule` in Karte und HUD ist bewusst dieselbe
+Zeitbasis); `status` kostet mit `pending_assets` 1,3 s bei 255 Dateien.
+
+### F1 — Ken-Burns vervielfachte die Renderdauer (2026-08-01)
+
+`zoompan` hält **jeden Eingabeframe** `d` Ausgabeframes lang. Der Foto-Zweig erzeugt über
+`trim=duration=…` bereits `dur*fps` Frames; mit `d={frames}` wurde daraus `frames²`:
+
+```
+Foto 1,0 s @ 25 fps mit kenburns:  soll = 2,00 s   ist = 25,96 s
+dieselbe Timeline ohne kenburns:   soll = 2,00 s   ist =  2,00 s
+```
+
+`qc.validate` meldete „OK", und **es gab bereits einen End-to-End-Test**
+(`test_render_crossfade_and_kenburns_end_to_end`) — der prüfte aber nur `probe_video(out)["w"]
+== 320`, also die Breite, nie die Dauer. Genau der Testtyp aus Befund F8: er rannte durch den
+Bug hindurch, ohne ihn zu sehen.
+
+Fix: `d=1` (ein Ausgabeframe je Eingabeframe); der Zoom läuft weiterhin über `on` und damit über
+die volle Clipdauer. Zwei Tests: Filtergraph-Assertion (`:d=1:`, kein `:d=50:`) und ein echter
+Render, der die Dauer prüft; der bestehende E2E-Test hat die fehlende Dauer-Assertion bekommen.
+
+Der Fehler stammt aus Ausbaustufe B1, nicht aus Plan 0003 — keine der beiden echten Timelines
+nutzt `effects`, deshalb ist nie ein falsches Video entstanden. Kombinationsfall danach geprüft
+(Schwarzblende + Crossfade + Ken-Burns + Audio-Fades in einer Timeline): `timeline.duration`
+4,60 s, gerendert 4,60 s.
+
 ### E — Notizen (2026-08-01)
 
 Neues Modul `frameforge/relink.py` + Kommando `frameforge relink <projekt> [--dry-run]`.

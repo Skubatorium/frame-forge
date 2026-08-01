@@ -73,6 +73,12 @@ def _kenburns_expr(clip, dur: float, fps: float, res: tuple[int, int]) -> str | 
 
     Aktiv nur, wenn der Clip einen Effekt vom Typ `kenburns` trägt (Timeline = Single Source of
     Truth). Zoomrichtung/-stärke aus `from`/`to` (falls gesetzt), sonst dezenter Default-Zoom.
+
+    **`d=1` ist Pflicht, nicht Geschmackssache.** `zoompan` hält *jeden Eingabeframe* `d`
+    Ausgabeframes lang. Der Foto-Zweig erzeugt über `trim=duration=…` bereits `dur*fps` Frames;
+    mit `d={frames}` wurde daraus `frames²` — ein 1-s-Foto bei 25 fps ergab 25 s Video statt 1 s
+    (Audit 2026-08-01). `d=1` liefert genau einen Ausgabeframe je Eingabeframe, der Zoom läuft
+    über `on` (fortlaufender Ausgabeframe-Index) trotzdem über die volle Clipdauer.
     """
     kb = next((e for e in clip.effects if e.type == "kenburns"), None)
     if kb is None:
@@ -93,7 +99,7 @@ def _kenburns_expr(clip, dur: float, fps: float, res: tuple[int, int]) -> str | 
     return (
         f"scale={w * 2}:{h * 2},"
         f"zoompan=z='min({z_from:.4f}+on*{step:.6f},{z_to:.4f})'"
-        f":x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={frames}:s={w}x{h}:fps={fps:g}"
+        f":x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s={w}x{h}:fps={fps:g}"
     )
 
 

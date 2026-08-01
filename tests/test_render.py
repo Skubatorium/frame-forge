@@ -503,7 +503,11 @@ def test_render_crossfade_and_kenburns_end_to_end(proj):
              "effects": [{"type": "kenburns", "from": [0, 0, 1.0], "to": [0, 0, 1.12]}]},
         ]})
     out = render_proxy(proj, export, timeline)
-    assert probe_video(out)["w"] == 320
+    result = probe_video(out)
+    assert result["w"] == 320
+    # 1.5s + 2.0s - 0.5s Crossfade = 3.0s. Ohne diese Assertion lief der Ken-Burns-Bug
+    # (zoompan d=frames -> frames^2) hier jahrelang unbemerkt durch (Audit 2026-08-01).
+    assert result["dur"] == pytest.approx(3.0, abs=0.2)
 
 
 # -- C: Schwarzblende zwischen zwei Clips (Plan 0003) ------------------------------
@@ -732,3 +736,68 @@ def test_without_color_match_the_filtergraph_is_unchanged():
     """Regression Plan 0003 §0/§H: ohne Angleichung kein zusaetzlicher Filter."""
     graph = _graph(_audio_timeline())
     assert "brightness=" not in graph.filter_complex
+
+
+# -- Audit-Fix: Ken-Burns darf die Clipdauer nicht vervielfachen -------------------
+
+
+def test_kenburns_holds_each_input_frame_exactly_once():
+    """`zoompan` haelt jeden Eingabeframe `d` Frames — mit d>1 wird aus dur*fps das Quadrat."""
+    timeline = _timeline(
+        video=[
+            {
+                "id": "c1",
+                "asset": "photo1",
+                "src_in": 0,
+                "src_out": 2,
+                "tl_in": 0,
+                "effects": [{"type": "kenburns"}],
+            }
+        ]
+    )
+    graph = build_filtergraph(
+        timeline,
+        resolve_asset=lambda aid: Path(f"/media/{aid}.jpg"),
+        export_root=Path("/export"),
+        project_root=Path("/project"),
+    )
+    assert ":d=1:" in graph.filter_complex
+    assert ":d=50:" not in graph.filter_complex  # 2 s * 25 fps
+
+
+def test_kenburns_photo_renders_the_declared_duration(proj):
+    """Regression: 1-s-Foto mit Ken-Burns ergab 25 s Video (Audit 2026-08-01)."""
+    from frameforge.index import write_asset
+    from frameforge.ingest import hash_file, proxy_path
+
+    export = proj.export("teaser")
+    export.ensure_dirs()
+    shutil.copy(FIXTURES / "photo.jpg", proj.config.media_root / "photo.jpg")
+    write_asset(proj, {"id": "photo1", "kind": "photo", "path": "photo.jpg",
+                       "hash": hash_file(proj.config.media_root / "photo.jpg")})
+    shutil.copy(
+        proj.config.media_root / "photo.jpg",
+        proxy_path(proj.config.media_root / "photo.jpg", proj.cache_dir / "proxies",
+                   media_root=proj.config.media_root),
+    )
+    timeline = Timeline(
+        export="teaser",
+        fps=25,
+        resolution=(160, 120),
+        duration=2.0,
+        tracks={
+            "video": [
+                {
+                    "id": "c1",
+                    "asset": "photo1",
+                    "src_in": 0,
+                    "src_out": 1.0,
+                    "tl_in": 0,
+                    "effects": [{"type": "kenburns"}],
+                },
+                {"id": "c2", "asset": "clip1", "src_in": 0, "src_out": 1.0, "tl_in": 1.0},
+            ]
+        },
+    )
+    out_path = render_proxy(proj, export, timeline)
+    assert probe_video(out_path)["dur"] == pytest.approx(2.0, abs=0.2)
