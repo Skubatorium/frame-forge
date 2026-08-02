@@ -152,7 +152,9 @@ def _dwell_schedule(
     Pause verlaengert den Clip **nicht**: die Gesamtdauer bleibt `dur`, die Bewegung dazwischen
     wird entsprechend zuegiger. So bleibt die Timeline-Zeitrechnung unangetastet.
     """
-    if dwell_s <= 0 or not pois:
+    if dwell_s <= 0 or not pois or not track:
+        # Ohne Track gibt es keine Position, an der gehalten werden koennte — `min(range(0))`
+        # waere hier ein ValueError statt einer sinnvollen Antwort.
         return [max(2, round(len(track) * (i + 1) / frame_count)) for i in range(frame_count)]
 
     stop_indices = sorted(
@@ -443,7 +445,10 @@ def render_hud_frames(
     reveal_counts = _dwell_schedule(
         track, pois or [], frame_count=frame_count, fps=fps, dwell_s=dwell_s
     )
-    km_at = cumulative_km(track)
+    # Ohne Trackpunkte gibt es keine Position, keinen Kilometerstand und kein Profil — das HUD
+    # zeigt dann nur Tag und Etappe. Ein leerer Track ist kein Fehler (eine Etappe ohne
+    # aufgezeichnete Spur), aber ohne diesen Fallback lief `km_at[index]` in einen IndexError.
+    km_at = cumulative_km(track) or [0.0]
     step_frames = max(1, round(step_s * fps))
     profile_box = (
         round(width * 0.06),
@@ -457,16 +462,17 @@ def render_hud_frames(
     for i in range(frame_count):
         bucket = i // step_frames
         if bucket not in cache:
-            index = min(reveal_counts[i], len(track)) - 1
+            index = max(0, min(reveal_counts[i], len(track)) - 1)
             polyline, (marker_x, marker_y) = _profile_polyline(
                 heights or [], profile_box, index
             )
-            elevation = (heights[index] if heights and index < len(heights) else None)
+            elevation = heights[index] if heights and index < len(heights) else None
+            km_label = f"{km_at[min(index, len(km_at) - 1)]:.0f} km" if track else ""
             content = {
                 "day_label": f"TAG {stage['day']}" if stage else "",
                 "stage_label": stage_label(stage, arrow=arrow) if stage else "",
                 "date_label": stage["date"].isoformat() if stage else "",
-                "km_label": f"{km_at[index]:.0f} km",
+                "km_label": km_label,
                 "elevation_label": f"{elevation:.0f} m" if elevation is not None else "",
                 "profile_points": polyline,
                 "marker_x": marker_x,

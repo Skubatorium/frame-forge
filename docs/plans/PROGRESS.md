@@ -79,7 +79,7 @@ Rückwärtskompatibilität, Zusammenspiel, Testtiefe, Timing. Befunde und Fixes 
 | F3 | hoch | Dauer-Invariante nirgends geprüft, `black_transition_extra_s` ohne Aufrufer | ✅ `fa87597` |
 | F4 | mittel | `color-match` verliert unbekannte Felder in `timeline.json` | ✅ `318d208` |
 | F5 | mittel | Alte Token-Sets rendern nicht mehr (neue Pflicht-Tokens in `lower-third.svg`) | ✅ `805075c` |
-| F6 | mittel | `render_hud_frames` stürzt bei leerem Track ab (`IndexError`) | ⬜ offen |
+| F6 | mittel | `render_hud_frames` stürzt bei leerem Track ab (`IndexError`) | ✅ `<p6>` |
 | F7 | niedrig | `total_ascent_m` ohne Aufrufer — Plan B1 „kumulierte Höhenmeter" fehlt im HUD | ⬜ offen |
 | F8 | niedrig | HUD-/Template-Tests prüfen nur Anzahl/Existenz, keinen Inhalt | ⬜ offen |
 | F9 | niedrig | `segment_plan`: letzter Titel ohne Ausblendung bei `gap_s=0` | ⬜ offen |
@@ -113,6 +113,18 @@ Der Fehler stammt aus Ausbaustufe B1, nicht aus Plan 0003 — keine der beiden e
 nutzt `effects`, deshalb ist nie ein falsches Video entstanden. Kombinationsfall danach geprüft
 (Schwarzblende + Crossfade + Ken-Burns + Audio-Fades in einer Timeline): `timeline.duration`
 4,60 s, gerendert 4,60 s.
+
+### F6 — HUD stürzte ohne Trackpunkte ab (2026-08-02)
+
+`render_hud_frames([])` warf `IndexError` (`km_at[index]` auf leerer Liste), `_dwell_schedule`
+zusätzlich `ValueError` (`min(range(0))`), sobald POIs übergeben wurden. Eine Etappe ohne
+aufgezeichnete Spur ist aber kein Fehlerfall — das HUD soll dann Tag und Etappe zeigen und den
+Kilometerstand weglassen.
+
+Fix: leerer Track liefert einen leeren `km_label` und überspringt die Haltezeit-Logik. Drei
+Tests, darunter einer, der **Verhalten statt Existenz** prüft (Befund F8): der Kilometerstand
+muss sich über die Stufen ändern und *innerhalb* einer Stufe identisch bleiben — genau die
+Zusicherung „ein SVG-Rendering je `step_s`", die bisher nur behauptet war.
 
 ### F5 — Bestehende Token-Sätze scheiterten an den neuen Templates (2026-08-02)
 

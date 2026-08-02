@@ -334,3 +334,60 @@ def test_profile_polyline_maps_heights_into_the_box():
 
 def test_profile_polyline_without_data_is_empty():
     assert _profile_polyline([None, None], (0, 0, 10, 10), 0)[0] == ""
+
+
+# -- Audit-Fix F6: HUD ohne Trackpunkte ---------------------------------------------
+
+
+def _tokens():
+    import yaml
+
+    return yaml.safe_load(Path("templates/project/tokens.example.yaml").read_text())
+
+
+def test_hud_without_track_renders_stage_only(tmp_path):
+    """Eine Etappe ohne aufgezeichnete Spur ist kein Fehler — vorher: IndexError."""
+    stage = {"day": 9, "date": date(2026, 7, 28), "from": "Geiranger", "to": "Lom", "via": ""}
+    frames = render_hud_frames(
+        tmp_path / "hud",
+        template_path=Path("templates/svg/map-hud.svg"),
+        tokens=_tokens(),
+        fps=2,
+        dur=1,
+        width=320,
+        height=180,
+        track=[],
+        stage=stage,
+    )
+    assert len(frames) == 2
+    assert all(f.exists() for f in frames)
+
+
+def test_dwell_schedule_without_track_does_not_raise():
+    assert _dwell_schedule([], [{"lat": 1.0, "lon": 1.0}], frame_count=3, fps=2, dwell_s=1.0) == [
+        2,
+        2,
+        2,
+    ]
+
+
+def test_hud_km_label_grows_with_the_route(tmp_path):
+    """Der Kilometerstand muss sich ueber die Stufen tatsaechlich aendern, nicht nur rendern."""
+    track = [{"lat": 62.0 + i * 0.05, "lon": 7.0} for i in range(10)]
+    frames = render_hud_frames(
+        tmp_path / "hud2",
+        template_path=Path("templates/svg/map-hud.svg"),
+        tokens=_tokens(),
+        fps=2,
+        dur=4,
+        width=320,
+        height=180,
+        track=track,
+        heights=[100.0 + i * 30 for i in range(10)],
+        step_s=1.0,
+    )
+    assert len(frames) == 8
+    # Erste und letzte Stufe muessen sich unterscheiden — sonst steht das HUD still.
+    assert frames[0].read_bytes() != frames[-1].read_bytes()
+    # ... und innerhalb einer Stufe identisch bleiben (ein SVG-Rendering je `step_s`).
+    assert frames[0].read_bytes() == frames[1].read_bytes()
