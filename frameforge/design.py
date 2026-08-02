@@ -89,9 +89,22 @@ def build_svg_from_tokens(template_path: Path, tokens: dict) -> str:
     eine zusaetzliche Abhaengigkeit dafuer lohnt sich nicht. Bricht mit `TemplateError` ab,
     wenn nach dem Ersetzen noch ein `{{...}}`-Platzhalter uebrig ist (fehlender Token), statt
     ihn still im gerenderten SVG stehen zu lassen.
+
+    **Layout-Tokens werden ergaenzt, nicht eingefordert.** Die aufgewerteten Templates (Plan
+    0003 §D1) brauchen Werte wie `corner_radius` oder `shadow_blur`, die aeltere Token-Saetze
+    nicht kennen — ohne diese Ergaenzung wuerde ein bestehendes Set mit `TemplateError`
+    scheitern (Audit-Befund F5, Rueckwaertskompatibilitaet laut Plan §0). Enthaelt `tokens`
+    `width`/`height`, werden die fehlenden Layout-Werte daraus abgeleitet (`overlay_tokens`);
+    alles, was der Aufrufer selbst mitbringt, gewinnt.
     """
     svg = template_path.read_text()
-    for key, value in {**_OPTIONAL_TOKENS, **tokens}.items():
+    filled = {**_OPTIONAL_TOKENS, **tokens}
+    if "width" in filled and "height" in filled:
+        filled = {
+            **overlay_tokens({}, width=int(filled["width"]), height=int(filled["height"])),
+            **filled,
+        }
+    for key, value in filled.items():
         svg = svg.replace(f"{{{{{key}}}}}", str(value))
 
     remaining = re.findall(r"{{\s*[\w.]+\s*}}", svg)

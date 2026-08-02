@@ -78,7 +78,7 @@ Rückwärtskompatibilität, Zusammenspiel, Testtiefe, Timing. Befunde und Fixes 
 | F2 | hoch | `assign-places` erfindet Orte über den GPX-Track ohne Zeittoleranz | ✅ `0f21d5e` |
 | F3 | hoch | Dauer-Invariante nirgends geprüft, `black_transition_extra_s` ohne Aufrufer | ✅ `fa87597` |
 | F4 | mittel | `color-match` verliert unbekannte Felder in `timeline.json` | ✅ `318d208` |
-| F5 | mittel | Alte Token-Sets rendern nicht mehr (neue Pflicht-Tokens in `lower-third.svg`) | ⬜ offen |
+| F5 | mittel | Alte Token-Sets rendern nicht mehr (neue Pflicht-Tokens in `lower-third.svg`) | ✅ `<p5>` |
 | F6 | mittel | `render_hud_frames` stürzt bei leerem Track ab (`IndexError`) | ⬜ offen |
 | F7 | niedrig | `total_ascent_m` ohne Aufrufer — Plan B1 „kumulierte Höhenmeter" fehlt im HUD | ⬜ offen |
 | F8 | niedrig | HUD-/Template-Tests prüfen nur Anzahl/Existenz, keinen Inhalt | ⬜ offen |
@@ -113,6 +113,28 @@ Der Fehler stammt aus Ausbaustufe B1, nicht aus Plan 0003 — keine der beiden e
 nutzt `effects`, deshalb ist nie ein falsches Video entstanden. Kombinationsfall danach geprüft
 (Schwarzblende + Crossfade + Ken-Burns + Audio-Fades in einer Timeline): `timeline.duration`
 4,60 s, gerendert 4,60 s.
+
+### F5 — Bestehende Token-Sätze scheiterten an den neuen Templates (2026-08-02)
+
+Die in D1 aufgewertete `lower-third.svg` verlangte `corner_radius`, `shadow_dy`, `shadow_blur`,
+`shadow_opacity`, `accent_width`, `title_tracking` und `subtitle_tracking`. Ein Projekt, dessen
+Token-Satz vor Plan 0003 entstanden ist, bekam damit `TemplateError` — ein klarer Verstoß gegen
+Plan §0 („neue Defaults ergeben das heutige Verhalten").
+
+**Der Bruch war bei der Umsetzung sichtbar und wurde falsch behandelt:** der bestehende Test
+`test_all_svg_templates_render_with_consistent_tokens` ist damals genau daran gescheitert, und
+ich habe **den Test** auf `overlay_tokens` umgestellt, statt den Bruch zu beheben. Das hat den
+Nachweis der Rückwärtskompatibilität an der einzigen Stelle entfernt, an der er stand.
+
+Fix: `build_svg_from_tokens` **ergänzt** fehlende Layout-Tokens, statt sie einzufordern —
+enthält das Token-Set `width`/`height`, werden die restlichen Layout-Werte über `overlay_tokens`
+daraus abgeleitet. Werte des Aufrufers gewinnen immer; fehlende **Inhalts**-Tokens (`title` …)
+bleiben ein Fehler.
+
+Der umgestellte Test steht wieder in seiner ursprünglichen Form (handgeschriebene Pixelwerte).
+Dazu neu: der wortgleiche Token-Satz aus Commit `79cb540` rendert **alle 7 Templates**
+(parametrisiert), plus je ein Test für „Aufrufer-Wert gewinnt" und „fehlender Inhalts-Token
+wirft weiterhin".
 
 ### F4 — Zurückschreiben verlor Felder in `timeline.json` (2026-08-01)
 

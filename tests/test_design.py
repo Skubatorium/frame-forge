@@ -93,14 +93,26 @@ def test_render_svg_to_png_writes_nonempty_file(tmp_path):
 
 
 def test_all_svg_templates_render_with_consistent_tokens(tmp_path):
-    """Alle Templates muessen mit EINEM gemeinsamen Token-Set renderbar sein.
+    """Alle Templates muessen mit EINEM gemeinsamen, **handgeschriebenen** Token-Set rendern.
 
-    Die Layout-Werte kommen seit Plan 0003 §D1 aus `overlay_tokens` (relativ zur Zielhoehe)
-    statt aus handgeschriebenen Pixelzahlen — ein Projekt liefert nur noch Farben, Schriften
-    und Inhalt.
+    Bei der Umsetzung von D1 wurde dieser Test auf `overlay_tokens` umgestellt, weil die
+    aufgewerteten Templates neue Layout-Tokens verlangten — damit war der eigentliche Bruch
+    (bestehende Token-Saetze scheitern) verdeckt statt behoben. Seit Audit-Fix F5 ergaenzt
+    `build_svg_from_tokens` fehlende Layout-Werte selbst; der Test steht deshalb wieder in
+    seiner urspruenglichen Form.
     """
     tokens = {
-        **overlay_tokens({**TOKENS, "primary_color": "#1c2b3a"}, width=1920, height=1080),
+        **TOKENS,
+        "primary_color": "#1c2b3a",
+        "margin": 40,
+        "bar_y": 900,
+        "bar_width": 800,
+        "bar_height": 140,
+        "bar_opacity": 0.8,
+        "text_x": 60,
+        "title_y": 950,
+        "subtitle_y": 1000,
+        "number_size": 48,
         **_TEMPLATE_CONTENT,
         "chapter_number": "Tag 3",
         "chapter_title": "Geirangerfjord",
@@ -255,3 +267,71 @@ def test_title_card_can_carry_a_background_graphic(tmp_path):
     )
     svg = build_svg_from_tokens(Path("templates/svg/title-card.svg"), tokens)
     assert "<image" in svg
+
+
+# -- Audit-Fix F5: Token-Saetze von vor Plan 0003 muessen weiter rendern ------------
+
+# Wortgleich der Token-Satz aus dem Stand vor Plan 0003 (Commit 79cb540). Er kennt weder
+# corner_radius noch shadow_* noch die Tracking-Werte — genau so schreibt ihn ein Projekt,
+# das sein tokens.yaml vor der Aufwertung der Templates angelegt hat.
+_PRE_0003_TOKENS = {
+    "width": 1920,
+    "height": 1080,
+    "font_display": "Helvetica",
+    "font_text": "Helvetica",
+    "title_size": 96,
+    "subtitle_size": 36,
+    "text_color": "#ffffff",
+    "accent_color": "#e0a458",
+    "primary_color": "#1c2b3a",
+    "margin": 40,
+    "bar_y": 900,
+    "bar_width": 800,
+    "bar_height": 140,
+    "bar_opacity": 0.8,
+    "text_x": 60,
+    "title_y": 950,
+    "subtitle_y": 1000,
+    "number_size": 48,
+    "line_size": 32,
+    "title": "Norwegen 2026",
+    "subtitle": "Ein Roadtrip",
+    "chapter_number": "Tag 3",
+    "chapter_title": "Geirangerfjord",
+    "heading": "Danke",
+    "line1": "Familie Muster",
+    "line2": "Musik: Epic North",
+    "line3": "2026",
+}
+
+
+@pytest.mark.parametrize(
+    "template",
+    sorted((REPO_ROOT / "templates" / "svg").glob("*.svg")),
+    ids=lambda p: p.name,
+)
+def test_pre_plan0003_token_sets_still_render(template, tmp_path):
+    """Plan 0003 §0: ein bestehender Token-Satz darf nicht ploetzlich TemplateError werfen."""
+    tokens = {**_PRE_0003_TOKENS, **{k: v for k, v in _TEMPLATE_CONTENT.items()}}
+    svg = build_svg_from_tokens(template, tokens)
+    out = tmp_path / f"{template.stem}.png"
+    render_svg_to_png(svg, out)
+    assert out.read_bytes()[:8] == b"\x89PNG\r\n\x1a\n"
+
+
+def test_caller_values_win_over_derived_layout():
+    """Die Ergaenzung darf eigene Werte des Aufrufers nie ueberschreiben."""
+    svg = build_svg_from_tokens(
+        REPO_ROOT / "templates" / "svg" / "lower-third.svg",
+        {**_PRE_0003_TOKENS, "margin": 40, "bar_width": 800},
+    )
+    assert 'x="40"' in svg
+    assert 'width="800"' in svg
+
+
+def test_missing_content_token_still_raises():
+    """Fehlende **Inhalts**-Tokens bleiben ein Fehler — ergaenzt wird nur Layout."""
+    with pytest.raises(TemplateError, match="title"):
+        build_svg_from_tokens(
+            REPO_ROOT / "templates" / "svg" / "title-card.svg", {"width": 1920, "height": 1080}
+        )
