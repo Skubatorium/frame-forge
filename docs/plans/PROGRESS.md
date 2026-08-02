@@ -81,7 +81,7 @@ Rückwärtskompatibilität, Zusammenspiel, Testtiefe, Timing. Befunde und Fixes 
 | F5 | mittel | Alte Token-Sets rendern nicht mehr (neue Pflicht-Tokens in `lower-third.svg`) | ✅ `805075c` |
 | F6 | mittel | `render_hud_frames` stürzt bei leerem Track ab (`IndexError`) | ✅ `45df317` |
 | F7 | niedrig | `total_ascent_m` ohne Aufrufer — Plan B1 „kumulierte Höhenmeter" fehlt im HUD | ✅ `6cddf04` |
-| F8 | niedrig | HUD-/Template-Tests prüfen nur Anzahl/Existenz, keinen Inhalt | ✅ `<p8>` |
+| F8 | niedrig | HUD-/Template-Tests prüfen nur Anzahl/Existenz, keinen Inhalt | ✅ `c8948f3` |
 | F9 | niedrig | `segment_plan`: letzter Titel ohne Ausblendung bei `gap_s=0` | ⬜ offen |
 | F10 | niedrig | `frameforge build` setzt `TIMELINE`, ohne `timeline.json` zu parsen | ⬜ offen |
 
