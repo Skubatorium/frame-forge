@@ -90,6 +90,8 @@ def segment_plan(
       gelegt — eine Blende mitten im Takt hört man sofort.
     - `gap_s > 0` erzeugt eine echte Stille zwischen zwei Titeln: der vorige endet früher, der
       nächste beginnt später, und keiner der beiden wird gestreckt.
+    - Jeder Titel blendet aus, auch der letzte — ein hart abreißendes Filmende klingt nach
+      Fehler. Wer den harten Schluss will, setzt `fade_out_s` am Clip auf 0.
     - Ein Titel, der kürzer ist als sein Kapitel, wird **nicht** geloopt — das entscheidet der
       `audio-designer`, nicht dieser Code. Die Lücke bleibt sichtbar (kürzerer `dur`).
 
@@ -116,8 +118,11 @@ def segment_plan(
             dur = min(dur, available)
         dur = max(0.0, min(dur, section_dur))
 
+        # Der erste Titel setzt hart ein (der Film beginnt ohnehin bei Null), **jeder** Titel
+        # blendet aber aus — auch der letzte. Ein hart abreissender Schlussakkord klingt nach
+        # Fehler, nicht nach Absicht; wer das will, setzt `fade_out_s` im Clip auf 0.
         fade_in = 0.0 if i == 0 else min(crossfade_s, dur)
-        fade_out = 0.0 if is_last and gap_s == 0 else min(crossfade_s, dur)
+        fade_out = min(crossfade_s, dur)
         plan.append(
             {
                 "id": f"music-{i + 1:02d}",

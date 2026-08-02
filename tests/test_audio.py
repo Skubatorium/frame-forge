@@ -147,3 +147,16 @@ def test_segment_plan_never_exceeds_the_track_length():
 def test_segment_plan_requires_one_track_per_section():
     with pytest.raises(ValueError, match="1:1"):
         segment_plan(TRACKS, [(0.0, 10.0)])
+
+
+def test_every_track_fades_out_including_the_last():
+    """Audit-Befund F9: der letzte Titel endete hart, sobald keine Stille geplant war."""
+    plan = segment_plan(TRACKS, [(0.0, 30.0), (30.0, 75.0)])
+    assert all(p["fade_out_s"] > 0 for p in plan)
+    assert plan[0]["fade_in_s"] == 0.0  # der erste Titel setzt weiterhin hart ein
+
+
+def test_fade_never_exceeds_the_clip_length():
+    kurz = [{"src": "music/k.wav", "duration": 1.0, "beat_grid": [0.0, 1.0]}]
+    plan = segment_plan(kurz, [(0.0, 1.0)], crossfade_s=5.0)
+    assert plan[0]["fade_out_s"] <= plan[0]["dur"]

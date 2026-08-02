@@ -82,7 +82,7 @@ Rückwärtskompatibilität, Zusammenspiel, Testtiefe, Timing. Befunde und Fixes 
 | F6 | mittel | `render_hud_frames` stürzt bei leerem Track ab (`IndexError`) | ✅ `45df317` |
 | F7 | niedrig | `total_ascent_m` ohne Aufrufer — Plan B1 „kumulierte Höhenmeter" fehlt im HUD | ✅ `6cddf04` |
 | F8 | niedrig | HUD-/Template-Tests prüfen nur Anzahl/Existenz, keinen Inhalt | ✅ `c8948f3` |
-| F9 | niedrig | `segment_plan`: letzter Titel ohne Ausblendung bei `gap_s=0` | ⬜ offen |
+| F9 | niedrig | `segment_plan`: letzter Titel ohne Ausblendung bei `gap_s=0` | ✅ `<p9>` |
 | F10 | niedrig | `frameforge build` setzt `TIMELINE`, ohne `timeline.json` zu parsen | ⬜ offen |
 
 **Geprüft und in Ordnung:** Defaults aller neuen Felder (`hold`, `fade_in_s`/`fade_out_s`,
@@ -113,6 +113,16 @@ Der Fehler stammt aus Ausbaustufe B1, nicht aus Plan 0003 — keine der beiden e
 nutzt `effects`, deshalb ist nie ein falsches Video entstanden. Kombinationsfall danach geprüft
 (Schwarzblende + Crossfade + Ken-Burns + Audio-Fades in einer Timeline): `timeline.duration`
 4,60 s, gerendert 4,60 s.
+
+### F9 — Letzter Musiktitel endete hart (2026-08-02)
+
+`segment_plan` setzte `fade_out_s = 0`, wenn der letzte Titel ohne geplante Stille endete — die
+Musik brach am Filmende also unvermittelt ab. Die Asymmetrie war weder begründet noch
+dokumentiert. Jetzt blendet **jeder** Titel aus; nur der Einsatz des ersten bleibt hart, weil
+der Film ohnehin bei Null beginnt. Ein bewusst harter Schluss ist weiterhin möglich —
+`fade_out_s` am Clip auf 0 setzen, wie im Docstring vermerkt.
+
+2 neue Tests (alle Titel blenden aus, Blende überschreitet nie die Clip-Länge).
 
 ### F8 — Abnahme D war nur behauptet (2026-08-02)
 
