@@ -646,3 +646,37 @@ def test_set_source_corrects_a_mislabelled_asset(env):
 def test_set_source_rejects_unknown_vocabulary(env):
     write_asset(env, {"id": "a1", "hash": "sha256:a1", "path": "clip.mp4", "kind": "video"})
     assert runner.invoke(app, ["set-source", "proto", "a1", "quadrocopter"]).exit_code == 1
+
+
+def test_build_refuses_to_advance_on_a_broken_timeline(env):
+    """Audit-Befund F10: kaputte timeline.json fiel erst im Preview auf."""
+    import json
+
+    from frameforge.state import ProjectState
+
+    export_dir = env.exports_dir / "teaser"
+    export_dir.mkdir(parents=True)
+    (export_dir / "brief.yaml").write_text("target_duration_s: 10\n")
+    (export_dir / "beatsheet.md").write_text("# Beats\n")
+    with ProjectState.transaction(env.state_path) as tx:
+        tx.advance_export("teaser", Phase.BRIEFED)
+
+    (export_dir / "timeline.json").write_text("{kein gueltiges json")
+    result = runner.invoke(app, ["build", "proto", "teaser"])
+    assert result.exit_code == 1
+    assert "ungueltig" in result.output
+    # Das Beat-Sheet zaehlt trotzdem: storyboarded ja, TIMELINE nein.
+    assert env.load_state().export_phase("teaser") == Phase.STORYBOARDED
+
+    # Schema-gueltig, aber semantisch kaputt (Clip laenger als die Timeline).
+    _timeline_json(export_dir, assets=("a1",))
+    data = json.loads((export_dir / "timeline.json").read_text())
+    data["duration"] = 0.5
+    (export_dir / "timeline.json").write_text(json.dumps(data))
+    assert runner.invoke(app, ["build", "proto", "teaser"]).exit_code == 1
+    assert env.load_state().export_phase("teaser") == Phase.STORYBOARDED
+
+    # Erst die reparierte Timeline hebt die Phase.
+    _timeline_json(export_dir, assets=("a1",))
+    assert runner.invoke(app, ["build", "proto", "teaser"]).exit_code == 0
+    assert env.load_state().export_phase("teaser") == Phase.TIMELINE

@@ -83,7 +83,7 @@ Rückwärtskompatibilität, Zusammenspiel, Testtiefe, Timing. Befunde und Fixes 
 | F7 | niedrig | `total_ascent_m` ohne Aufrufer — Plan B1 „kumulierte Höhenmeter" fehlt im HUD | ✅ `6cddf04` |
 | F8 | niedrig | HUD-/Template-Tests prüfen nur Anzahl/Existenz, keinen Inhalt | ✅ `c8948f3` |
 | F9 | niedrig | `segment_plan`: letzter Titel ohne Ausblendung bei `gap_s=0` | ✅ `b6c8a36` |
-| F10 | niedrig | `frameforge build` setzt `TIMELINE`, ohne `timeline.json` zu parsen | ⬜ offen |
+| F10 | niedrig | `frameforge build` setzt `TIMELINE`, ohne `timeline.json` zu parsen | ✅ `<p10>` |
 
 **Geprüft und in Ordnung:** Defaults aller neuen Felder (`hold`, `fade_in_s`/`fade_out_s`,
 `color_match`, `originals_root`, `viewport="fit"`, `require_time=True`) verhalten sich wie vor
@@ -113,6 +113,17 @@ Der Fehler stammt aus Ausbaustufe B1, nicht aus Plan 0003 — keine der beiden e
 nutzt `effects`, deshalb ist nie ein falsches Video entstanden. Kombinationsfall danach geprüft
 (Schwarzblende + Crossfade + Ken-Burns + Audio-Fades in einer Timeline): `timeline.duration`
 4,60 s, gerendert 4,60 s.
+
+### F10 — `build` hob die Phase ohne Prüfung der Timeline (2026-08-02)
+
+Der in G ergänzte Phasenaufstieg prüfte nur, ob `timeline.json` **existiert**. Eine kaputte
+Datei (ungültiges JSON, oder ein Clip, der über die Timeline-Dauer hinausragt) führte damit zu
+`TIMELINE` — der Status behauptete „fertig gebaut", der Fehler kam erst beim Preview.
+
+Jetzt lädt `build` die Datei und ruft `validate_semantics()`, bevor die Phase steigt. Fehler
+werden benannt, der Export bleibt `STORYBOARDED` (das Beat-Sheet ist ja da) und das Kommando
+endet mit Exit 1. 1 Test über alle drei Fälle: kaputtes JSON, schema-gültig aber semantisch
+falsch, repariert.
 
 ### F9 — Letzter Musiktitel endete hart (2026-08-02)
 

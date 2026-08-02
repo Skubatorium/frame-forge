@@ -17,6 +17,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 import typer
+from pydantic import ValidationError
 from rich.console import Console
 from rich.table import Table
 
@@ -63,7 +64,7 @@ from frameforge.state import (
     gate_preview,
     gate_render_final,
 )
-from frameforge.timeline import Timeline
+from frameforge.timeline import Timeline, TimelineValidationError
 
 app = typer.Typer(help="FrameForge — orchestrierte, reproduzierbare Videoschnitt-Pipeline")
 console = Console()
@@ -985,14 +986,30 @@ def build(project: str, export: str) -> None:
         )
         raise typer.Exit(code=1)
 
+    # `TIMELINE` nur setzen, wenn die Datei auch **lesbar und schema-gueltig** ist. Sonst meldet
+    # erst der Preview den Fehler, obwohl der Status bereits "fertig gebaut" behauptet.
+    timeline_ok = False
+    if exp.timeline_path.exists():
+        try:
+            Timeline.load(exp.timeline_path).validate_semantics()
+            timeline_ok = True
+        except (ValidationError, TimelineValidationError, ValueError) as exc:
+            console.print(f"[red]timeline.json ist ungueltig:[/red] {exc}")
+
     fingerprint = pipeline_module.asset_inventory_fingerprint(proj)
     with ProjectState.transaction(proj.state_path) as tx:
         tx.advance_export(export, Phase.STORYBOARDED)
         tx.set_export_hash(export, pipeline_module.ASSET_INVENTORY_KEY, fingerprint)
-        if exp.timeline_path.exists():
+        if timeline_ok:
             tx.advance_export(export, Phase.TIMELINE)
-    if exp.timeline_path.exists():
+    if timeline_ok:
         console.print(f"[green]Beat-Sheet und Timeline vorhanden — '{export}' ist TIMELINE.[/green]")
+    elif exp.timeline_path.exists():
+        console.print(
+            f"[yellow]'{export}' bleibt STORYBOARDED[/yellow] — die timeline.json muss erst "
+            "korrigiert werden (timeline-builder), dann 'frameforge build' erneut."
+        )
+        raise typer.Exit(code=1)
     else:
         console.print(
             f"[green]Beat-Sheet vorhanden — '{export}' ist STORYBOARDED.[/green] Jetzt fehlt "
