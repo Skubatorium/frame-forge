@@ -81,7 +81,7 @@ Rückwärtskompatibilität, Zusammenspiel, Testtiefe, Timing. Befunde und Fixes 
 | F5 | mittel | Alte Token-Sets rendern nicht mehr (neue Pflicht-Tokens in `lower-third.svg`) | ✅ `805075c` |
 | F6 | mittel | `render_hud_frames` stürzt bei leerem Track ab (`IndexError`) | ✅ `45df317` |
 | F7 | niedrig | `total_ascent_m` ohne Aufrufer — Plan B1 „kumulierte Höhenmeter" fehlt im HUD | ✅ `6cddf04` |
-| F8 | niedrig | HUD-/Template-Tests prüfen nur Anzahl/Existenz, keinen Inhalt | ⬜ offen |
+| F8 | niedrig | HUD-/Template-Tests prüfen nur Anzahl/Existenz, keinen Inhalt | ✅ `<p8>` |
 | F9 | niedrig | `segment_plan`: letzter Titel ohne Ausblendung bei `gap_s=0` | ⬜ offen |
 | F10 | niedrig | `frameforge build` setzt `TIMELINE`, ohne `timeline.json` zu parsen | ⬜ offen |
 
@@ -113,6 +113,22 @@ Der Fehler stammt aus Ausbaustufe B1, nicht aus Plan 0003 — keine der beiden e
 nutzt `effects`, deshalb ist nie ein falsches Video entstanden. Kombinationsfall danach geprüft
 (Schwarzblende + Crossfade + Ken-Burns + Audio-Fades in einer Timeline): `timeline.duration`
 4,60 s, gerendert 4,60 s.
+
+### F8 — Abnahme D war nur behauptet (2026-08-02)
+
+Der Abnahmesatz aus Plan §D lautet „in 1080p und 2160p **optisch konsistent**". Geprüft wurde
+davon nichts: der Test rendert beide Auflösungen und schaut nur, ob die Datei mit den
+PNG-Magic-Bytes beginnt. Ein Template mit absoluten Pixelwerten hätte das genauso bestanden —
+und genau diese Testsorte hat den Ken-Burns-Fehler (F1) durchgelassen.
+
+Jetzt geprüft wird die **Bounding-Box des sichtbaren Inhalts in relativen Koordinaten**: sie
+muss in 1080p und 2160p auf 2 % übereinstimmen. Dazu zwei weitere Regeln: nichts läuft über den
+Bildrand hinaus (sonst ist Text im Film angeschnitten), und — als Gegenprobe — ein absichtlich
+kaputtes Template mit festen Pixelwerten **fällt durch** die Prüfung. Ohne diese Gegenprobe
+wüsste man nicht, ob der Test überhaupt etwas fangen kann.
+
+Alle 7 Templates bestehen: die Auflösungsunabhängigkeit aus D1 ist damit belegt statt behauptet.
+15 neue Tests (3 Regeln × 7 Templates parametrisiert, plus Gegenprobe).
 
 ### F7 — Kumulierte Höhenmeter fehlten im HUD (2026-08-02)
 

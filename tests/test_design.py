@@ -335,3 +335,82 @@ def test_missing_content_token_still_raises():
         build_svg_from_tokens(
             REPO_ROOT / "templates" / "svg" / "title-card.svg", {"width": 1920, "height": 1080}
         )
+
+
+# -- Audit-Fix F8: Templates inhaltlich pruefen, nicht nur "es kommt ein PNG raus" --
+
+
+def _alpha_bbox(png_path: Path):
+    """Bounding-Box des sichtbaren Inhalts (Alpha > 0) als relative Anteile der Bildgroesse."""
+    import numpy as np
+    from PIL import Image
+
+    alpha = np.array(Image.open(png_path).convert("RGBA"))[..., 3]
+    rows = np.nonzero(alpha.any(axis=1))[0]
+    cols = np.nonzero(alpha.any(axis=0))[0]
+    assert rows.size and cols.size, f"{png_path.name}: nichts gezeichnet"
+    height, width = alpha.shape
+    return (
+        cols[0] / width,
+        rows[0] / height,
+        (cols[-1] + 1) / width,
+        (rows[-1] + 1) / height,
+    )
+
+
+@pytest.mark.parametrize(
+    "template",
+    sorted((REPO_ROOT / "templates" / "svg").glob("*.svg")),
+    ids=lambda p: p.name,
+)
+def test_template_layout_is_resolution_independent(template, tmp_path):
+    """Abnahme D: „in 1080p und 2160p optisch konsistent" — bisher nur behauptet.
+
+    Geprueft wird die Bounding-Box des sichtbaren Inhalts in **relativen** Koordinaten: sie
+    muss in beiden Aufloesungen praktisch deckungsgleich sein. Genau das ist die Zusage hinter
+    `type_scale`/`overlay_tokens`, und genau das faengt ein PNG-Magic-Byte-Check nicht.
+    """
+    boxes = []
+    for width, height in ((1920, 1080), (3840, 2160)):
+        tokens = overlay_tokens(_example_tokens(), width=width, height=height, **_TEMPLATE_CONTENT)
+        out = tmp_path / f"{template.stem}-{height}.png"
+        render_svg_to_png(build_svg_from_tokens(template, tokens), out)
+        boxes.append(_alpha_bbox(out))
+
+    for small, large in zip(boxes[0], boxes[1], strict=True):
+        assert small == pytest.approx(large, abs=0.02)
+
+
+@pytest.mark.parametrize(
+    "template",
+    sorted((REPO_ROOT / "templates" / "svg").glob("*.svg")),
+    ids=lambda p: p.name,
+)
+def test_template_content_stays_inside_the_frame(template, tmp_path):
+    """Nichts darf ueber den Bildrand hinauslaufen — sonst ist Text im Film abgeschnitten."""
+    tokens = overlay_tokens(_example_tokens(), width=1920, height=1080, **_TEMPLATE_CONTENT)
+    out = tmp_path / f"{template.stem}.png"
+    render_svg_to_png(build_svg_from_tokens(template, tokens), out)
+
+    left, top, right, bottom = _alpha_bbox(out)
+    assert left >= 0.0
+    assert top >= 0.0
+    assert right <= 1.0
+    assert bottom <= 1.0
+
+
+def test_layout_check_catches_a_broken_template(tmp_path):
+    """Gegenprobe: ein Template mit absoluten Pixelwerten faellt durch die Konsistenzpruefung."""
+    broken = tmp_path / "broken.svg"
+    broken.write_text(
+        '<svg width="{{width}}" height="{{height}}" xmlns="http://www.w3.org/2000/svg">'
+        '<rect x="100" y="100" width="400" height="200" fill="#fff"/></svg>'
+    )
+    boxes = []
+    for width, height in ((1920, 1080), (3840, 2160)):
+        out = tmp_path / f"broken-{height}.png"
+        render_svg_to_png(
+            build_svg_from_tokens(broken, {"width": width, "height": height}), out
+        )
+        boxes.append(_alpha_bbox(out))
+    assert boxes[0] != pytest.approx(boxes[1], abs=0.02)
