@@ -80,7 +80,7 @@ Rückwärtskompatibilität, Zusammenspiel, Testtiefe, Timing. Befunde und Fixes 
 | F4 | mittel | `color-match` verliert unbekannte Felder in `timeline.json` | ✅ `318d208` |
 | F5 | mittel | Alte Token-Sets rendern nicht mehr (neue Pflicht-Tokens in `lower-third.svg`) | ✅ `805075c` |
 | F6 | mittel | `render_hud_frames` stürzt bei leerem Track ab (`IndexError`) | ✅ `45df317` |
-| F7 | niedrig | `total_ascent_m` ohne Aufrufer — Plan B1 „kumulierte Höhenmeter" fehlt im HUD | ⬜ offen |
+| F7 | niedrig | `total_ascent_m` ohne Aufrufer — Plan B1 „kumulierte Höhenmeter" fehlt im HUD | ✅ `6cddf04` |
 | F8 | niedrig | HUD-/Template-Tests prüfen nur Anzahl/Existenz, keinen Inhalt | ⬜ offen |
 | F9 | niedrig | `segment_plan`: letzter Titel ohne Ausblendung bei `gap_s=0` | ⬜ offen |
 | F10 | niedrig | `frameforge build` setzt `TIMELINE`, ohne `timeline.json` zu parsen | ⬜ offen |
@@ -113,6 +113,22 @@ Der Fehler stammt aus Ausbaustufe B1, nicht aus Plan 0003 — keine der beiden e
 nutzt `effects`, deshalb ist nie ein falsches Video entstanden. Kombinationsfall danach geprüft
 (Schwarzblende + Crossfade + Ken-Burns + Audio-Fades in einer Timeline): `timeline.duration`
 4,60 s, gerendert 4,60 s.
+
+### F7 — Kumulierte Höhenmeter fehlten im HUD (2026-08-02)
+
+Plan 0003 §B1 nennt als HUD-Werte „aktuelle Höhe, kumulierte Höhenmeter aufwärts,
+Etappenprofil". `gpx.total_ascent_m` war dafür geschrieben, hatte aber **keinen Aufrufer** —
+das HUD zeigte nur die aktuelle Höhe. Jetzt rechnet `render_hud_frames` je Stufe die Höhenmeter
+über den **bereits gefahrenen** Teil der Etappe (`heights[:index+1]`), sodass der Wert mitwächst,
+und stellt ihn als `↑ 640 m` dar; ohne Anstieg bleibt die Angabe leer.
+
+`ascent_label` ist ein **optionales** Token (wie `background_layer`) — ein neues Element im
+Template darf bestehende Token-Sätze nicht ungültig machen. Genau diesen Fehler hätte der Fix
+sonst wiederholt: die erste Fassung ließ drei Template-Tests scheitern, die mit fremden
+Token-Sätzen rendern.
+
+2 neue Tests: steigende vs. ebene Strecke ergeben unterschiedliche HUD-Bilder, und ein
+Token-Satz ohne `ascent_label` rendert weiterhin.
 
 ### F6 — HUD stürzte ohne Trackpunkte ab (2026-08-02)
 
