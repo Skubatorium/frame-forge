@@ -83,7 +83,7 @@ Rückwärtskompatibilität, Zusammenspiel, Testtiefe, Timing. Befunde und Fixes 
 | F7 | niedrig | `total_ascent_m` ohne Aufrufer — Plan B1 „kumulierte Höhenmeter" fehlt im HUD | ✅ `6cddf04` |
 | F8 | niedrig | HUD-/Template-Tests prüfen nur Anzahl/Existenz, keinen Inhalt | ✅ `c8948f3` |
 | F9 | niedrig | `segment_plan`: letzter Titel ohne Ausblendung bei `gap_s=0` | ✅ `b6c8a36` |
-| F10 | niedrig | `frameforge build` setzt `TIMELINE`, ohne `timeline.json` zu parsen | ✅ `<p10>` |
+| F10 | niedrig | `frameforge build` setzt `TIMELINE`, ohne `timeline.json` zu parsen | ✅ `4628f6a` |
 
 **Geprüft und in Ordnung:** Defaults aller neuen Felder (`hold`, `fade_in_s`/`fade_out_s`,
 `color_match`, `originals_root`, `viewport="fit"`, `require_time=True`) verhalten sich wie vor
