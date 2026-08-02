@@ -438,7 +438,7 @@ def render_hud_frames(
     `dwell_s`), damit Karte und HUD synchron laufen.
     """
     from frameforge.design import build_svg_from_tokens, overlay_tokens, render_svg_to_png
-    from frameforge.gpx import cumulative_km, stage_label
+    from frameforge.gpx import cumulative_km, stage_label, total_ascent_m
 
     out_dir.mkdir(parents=True, exist_ok=True)
     frame_count = max(1, round(fps * dur))
@@ -468,12 +468,16 @@ def render_hud_frames(
             )
             elevation = heights[index] if heights and index < len(heights) else None
             km_label = f"{km_at[min(index, len(km_at) - 1)]:.0f} km" if track else ""
+            # Kumulierte Hoehenmeter *bis zur aktuellen Position* (Plan 0003 §B1) — der Wert
+            # waechst mit der Fahrt, deshalb je Stufe neu ueber den bereits gefahrenen Teil.
+            ascent = total_ascent_m((heights or [])[: index + 1])
             content = {
                 "day_label": f"TAG {stage['day']}" if stage else "",
                 "stage_label": stage_label(stage, arrow=arrow) if stage else "",
                 "date_label": stage["date"].isoformat() if stage else "",
                 "km_label": km_label,
                 "elevation_label": f"{elevation:.0f} m" if elevation is not None else "",
+                "ascent_label": f"↑ {ascent:.0f} m" if ascent > 0 else "",
                 "profile_points": polyline,
                 "marker_x": marker_x,
                 "marker_y": marker_y,

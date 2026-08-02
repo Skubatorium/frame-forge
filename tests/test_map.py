@@ -391,3 +391,39 @@ def test_hud_km_label_grows_with_the_route(tmp_path):
     assert frames[0].read_bytes() != frames[-1].read_bytes()
     # ... und innerhalb einer Stufe identisch bleiben (ein SVG-Rendering je `step_s`).
     assert frames[0].read_bytes() == frames[1].read_bytes()
+
+
+def test_hud_shows_cumulative_ascent(tmp_path):
+    """Plan B1 nennt die kumulierten Hoehenmeter als HUD-Wert — `total_ascent_m` war ungenutzt."""
+    track = [{"lat": 62.0 + i * 0.05, "lon": 7.0} for i in range(6)]
+    climbing = [100.0, 200.0, 300.0, 400.0, 500.0, 600.0]
+    flat = [100.0] * 6
+
+    steigend = render_hud_frames(
+        tmp_path / "steigend", template_path=Path("templates/svg/map-hud.svg"),
+        tokens=_tokens(), fps=1, dur=3, width=320, height=180, track=track, heights=climbing,
+    )
+    eben = render_hud_frames(
+        tmp_path / "eben", template_path=Path("templates/svg/map-hud.svg"),
+        tokens=_tokens(), fps=1, dur=3, width=320, height=180, track=track, heights=flat,
+    )
+    # Anstieg wird angezeigt, ebene Strecke laesst die Angabe weg -> unterschiedliche Bilder.
+    assert steigend[-1].read_bytes() != eben[-1].read_bytes()
+
+
+def test_ascent_label_is_optional_for_other_callers():
+    """Ein Token-Satz ohne `ascent_label` darf am HUD-Template nicht scheitern (vgl. F5)."""
+    from frameforge.design import build_svg_from_tokens
+
+    svg = build_svg_from_tokens(
+        Path("templates/svg/map-hud.svg"),
+        {
+            "width": 320, "height": 180,
+            "font_display": "Helvetica", "font_text": "Helvetica",
+            "primary_color": "#111", "accent_color": "#e0a458", "text_color": "#fff",
+            "day_label": "TAG 9", "stage_label": "A — B", "km_label": "12 km",
+            "elevation_label": "800 m", "profile_points": "0,0 1,1",
+            "marker_x": 1, "marker_y": 1,
+        },
+    )
+    assert "{{" not in svg

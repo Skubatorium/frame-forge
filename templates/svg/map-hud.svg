@@ -17,7 +17,7 @@
   <text x="{{text_x}}" y="{{stage_y}}" font-family="{{font_display}}" font-size="{{subtitle_size}}"
         font-weight="600" fill="{{text_color}}">{{stage_label}}</text>
   <text x="{{text_x}}" y="{{stats_y}}" font-family="{{font_text}}" font-size="{{caption_size}}"
-        fill="{{text_color}}">{{km_label}}   {{elevation_label}}</text>
+        fill="{{text_color}}">{{km_label}}   {{elevation_label}}   {{ascent_label}}</text>
 
   <!-- Höhenprofil der Etappe; `profile_points` ist eine fertige SVG-Polyline
        ("x,y x,y …"), `marker_x`/`marker_y` die aktuelle Position darauf. -->

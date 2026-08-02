@@ -76,10 +76,12 @@ class TemplateError(RuntimeError):
 
 
 # Tokens, die ein Template nutzen darf, ohne dass der Aufrufer sie kennen muss — ohne Wert
-# fallen sie ersatzlos weg. `background_layer` (Plan 0003 §D2) ist der einzige Fall: eine
-# optionale Hintergrundgrafik in Titelkarte/Kapitelmarke soll bestehende Token-Sets nicht
-# ungueltig machen.
-_OPTIONAL_TOKENS = {"background_layer": ""}
+# fallen sie ersatzlos weg. Damit macht ein neues **optionales** Element in einem Template
+# bestehende Token-Saetze nicht ungueltig (Audit-Befund F5):
+# - `background_layer`: optionale Hintergrundgrafik in Titelkarte/Kapitelmarke (Plan §D2)
+# - `ascent_label`: kumulierte Hoehenmeter im Karten-HUD (Plan §B1) — fehlt bei Etappen ohne
+#   Hoehendaten und bei Aufrufern, die das HUD nicht nutzen
+_OPTIONAL_TOKENS = {"background_layer": "", "ascent_label": ""}
 
 
 def build_svg_from_tokens(template_path: Path, tokens: dict) -> str:
