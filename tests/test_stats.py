@@ -244,3 +244,43 @@ def test_write_day_summaries_creates_files(proj):
     written = write_day_summaries(proj)
     assert len(written) == 1
     assert (proj.days_dir / "2026-07-14.md").exists()
+
+
+# -- Realbetrieb-Fund: `tech` vs. `probe` -------------------------------------------
+
+
+def test_tech_of_reads_both_schema_variants():
+    """Plan 0001 nennt `tech`, preindex schreibt `probe` — beide muessen gelesen werden."""
+    from frameforge.index import tech_of
+
+    laut_plan = {"kind": "video", "tech": {"dur": 12.0, "w": 3840, "codec": "hevc"}}
+    laut_preindex = {"kind": "video", "duration": 8.5, "probe": {"w": 3840, "codec": "hevc"}}
+
+    assert tech_of(laut_plan)["dur"] == 12.0
+    assert tech_of(laut_preindex)["dur"] == 8.5  # aus `duration` ergaenzt
+    assert tech_of(laut_preindex)["w"] == 3840
+    assert tech_of({"kind": "photo"}) == {}
+
+
+def test_stats_counts_video_seconds_from_preindex_assets(proj):
+    """Am echten Fundus meldete `stats` 0 s bei 142 Minuten Material."""
+    from frameforge.index import save_assets, write_asset
+
+    save_assets(proj, [])  # nur die neuen, im preindex-Schema geschriebenen Assets
+    for i, dur in enumerate((10.0, 20.0)):
+        write_asset(
+            proj,
+            {
+                "id": f"v{i}",
+                "kind": "video",
+                "path": f"v{i}.mp4",
+                "duration": dur,
+                "probe": {"w": 3840, "h": 2160, "codec": "hevc"},
+                "content": {"summary": "x", "tags": []},
+            },
+        )
+
+    stats = index_stats(proj)
+    assert stats.total_video_seconds == 30.0
+    assert stats.resolutions == {"3840x2160": 2}
+    assert stats.codecs == {"hevc": 2}

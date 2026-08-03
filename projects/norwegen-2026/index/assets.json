@@ -74,7 +74,13 @@
       "luma": 103.23,
       "temperature": -0.067,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "gps": {
+      "place": "Skien"
+    },
+    "place_source": "stage"
   },
   {
     "hash": "sha256:01f68b78bcb575fc1ea0603e9295013740882a25ccdf66f802c38a6ef271f6e6",
@@ -163,7 +169,10 @@
       "luma": 115.0,
       "temperature": 0.0275,
       "frames": 6
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:0565b5aa3cd94766afa53bf20e7a5285f809a93d9ae3fbb4a13f92e703aa680b",
@@ -243,7 +252,10 @@
       "luma": 102.23,
       "temperature": -0.1131,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:0b3c5bf7a83366b577df05e8e5abb0cedc0b49ca0bbe55aa03073617690373f1",
@@ -323,7 +335,10 @@
       "luma": 102.72,
       "temperature": -0.1108,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:0c2493163dabbbc6847ab73440ea1160cadb2e3cb14812389ff48333dcba5b74",
@@ -403,7 +418,10 @@
       "luma": 105.92,
       "temperature": -0.1226,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:0ec48c5817ce7189823412a40b74480386757963b5fc2e4b186e41bad2d13f66",
@@ -483,7 +501,10 @@
       "luma": 103.29,
       "temperature": -0.0892,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:1058a9eab5666a8c4aae3de47265197961b17a7ebdede9e4b35393937d5d2727",
@@ -563,7 +584,10 @@
       "luma": 104.89,
       "temperature": -0.0781,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:1d4c8cadd31853903156c9ed4840f893dc0588beea009564ef95774e95928ef6",
@@ -644,7 +668,10 @@
       "luma": 106.99,
       "temperature": -0.1255,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:341c9ab53aca4e5275b792c97618bea1e24f085606915c8cd647ad18f0ccf45e",
@@ -725,7 +752,10 @@
       "luma": 97.88,
       "temperature": -0.1194,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:3865901041d2a73f6a04f4c375964a8712fead6ffee624640c8ad03976faa9f9",
@@ -807,7 +837,10 @@
       "luma": 117.01,
       "temperature": -0.0749,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:3de2ef147d3f4a976a95dfa316a2bf5c1d30b939fcac12605467e274159a2f5b",
@@ -889,7 +922,10 @@
       "luma": 112.63,
       "temperature": -0.0421,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:427a02786695dceb74c050b08479b454766402efeb6558cc1479fda96adc64a6",
@@ -969,7 +1005,10 @@
       "luma": 109.28,
       "temperature": -0.0571,
       "frames": 4
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:475a1ac8d1da197cfdc4eb4e908c32ec81977cdbca5cf83ea9ff418ce6be90bd",
@@ -1051,7 +1090,10 @@
       "luma": 111.29,
       "temperature": -0.1398,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:542e68aeed42dd3b098df8432df06d6da14b22d536373ebf0cc4a52dc6451437",
@@ -1135,7 +1177,10 @@
       "luma": 108.88,
       "temperature": -0.1061,
       "frames": 4
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:5a2e8cdd2399975b26e0ef549530b53e0b180fe3a0e4c28d2816a842279e3a9e",
@@ -1217,7 +1262,10 @@
       "luma": 101.65,
       "temperature": -0.1488,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:622c389013d824046dd81810a20f63f5cc98c39f3094b211bbb92ee36c2ccb5e",
@@ -1295,7 +1343,13 @@
       "luma": 106.1,
       "temperature": -0.1491,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "gps": {
+      "place": "Skien"
+    },
+    "place_source": "stage"
   },
   {
     "hash": "sha256:669f0668c870220a5ae57eec493e40cf728c4385a2b072d9a34b89ebeb476489",
@@ -1370,7 +1424,13 @@
       "luma": 108.58,
       "temperature": 0.0013,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "gps": {
+      "place": "Skien"
+    },
+    "place_source": "stage"
   },
   {
     "hash": "sha256:75c0316db4ca7148051c1acee20d89904bdc2fdd48df97ad2b979a48fd060a33",
@@ -1449,7 +1509,13 @@
       "luma": 107.2,
       "temperature": -0.156,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "gps": {
+      "place": "Skien"
+    },
+    "place_source": "stage"
   },
   {
     "hash": "sha256:81713b9fa50a5d050c3aac57f82d986afe5c45c028844d1be6b6157513cd1612",
@@ -1526,7 +1592,13 @@
       "luma": 121.78,
       "temperature": -0.124,
       "frames": 4
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "gps": {
+      "place": "Skien"
+    },
+    "place_source": "stage"
   },
   {
     "hash": "sha256:83217b71dbc7a36045a921ffd08527af846382a9ebb2e4e0534e4bb60155f561",
@@ -1604,7 +1676,10 @@
       "luma": 106.32,
       "temperature": -0.008,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:83677c4770071e2f65f5b08ad3db607d9844d0e24fbd73a5eed9d252a77c0e27",
@@ -1681,7 +1756,13 @@
       "luma": 96.63,
       "temperature": -0.0463,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "gps": {
+      "place": "Skien"
+    },
+    "place_source": "stage"
   },
   {
     "hash": "sha256:837da0cc6248b8aeced45cda2c13d2cbf8690a9fed079a69d79fc5d759ece432",
@@ -1762,7 +1843,10 @@
       "luma": 103.57,
       "temperature": -0.1592,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:8402bb448a8c08911f50630bf0ae0ca66c8b87c853f144fd33ae05d24cd5abe9",
@@ -1841,7 +1925,13 @@
       "luma": 98.18,
       "temperature": -0.1057,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "gps": {
+      "place": "Skien"
+    },
+    "place_source": "stage"
   },
   {
     "hash": "sha256:8792e5d8ce6e9fed61fcad288958a34239d435199571ec6f5a31ad9c3b940b51",
@@ -1920,7 +2010,13 @@
       "luma": 97.54,
       "temperature": -0.0686,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "gps": {
+      "place": "Skien"
+    },
+    "place_source": "stage"
   },
   {
     "hash": "sha256:8c68d5282e8e8777d16825c7554cf662ca25fa9e3569ecac3a63baf2c90d1501",
@@ -2000,7 +2096,13 @@
       "luma": 106.82,
       "temperature": 0.0306,
       "frames": 4
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "gps": {
+      "place": "Skien"
+    },
+    "place_source": "stage"
   },
   {
     "hash": "sha256:8d3d4ebbe417e5d1647288bce66a0f6397c1e0407ed4094c4e0ac2f57e22bb4b",
@@ -2077,7 +2179,13 @@
       "luma": 115.18,
       "temperature": 0.0449,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "gps": {
+      "place": "Skien"
+    },
+    "place_source": "stage"
   },
   {
     "hash": "sha256:913fd857405bd44f8a3e39841bc443d48742966ee9719f41e0926c999f1413ed",
@@ -2157,7 +2265,13 @@
       "luma": 106.88,
       "temperature": -0.085,
       "frames": 4
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "gps": {
+      "place": "Skien"
+    },
+    "place_source": "stage"
   },
   {
     "hash": "sha256:9e14c161a02f1ba7447d22f89222a00f03fcdf3f8e7cb17a601bb8d7d6bac978",
@@ -2239,7 +2353,10 @@
       "luma": 105.67,
       "temperature": -0.0557,
       "frames": 4
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:a069da55496a6b480f3f207e3c4b83c968643c66365bfcce81639e8944d21828",
@@ -2317,7 +2434,13 @@
       "luma": 107.06,
       "temperature": -0.1031,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "gps": {
+      "place": "Skien"
+    },
+    "place_source": "stage"
   },
   {
     "hash": "sha256:c4c360176725474694827a249c5d8ca51f7acea7077b1cb5961ea6325364afe3",
@@ -2396,7 +2519,10 @@
       "luma": 112.11,
       "temperature": -0.0222,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:c5f6007b6ecb3fa756dfbad4c12180359c89ae8f790daefcfad95c1902d3528b",
@@ -2479,7 +2605,10 @@
       "luma": 99.79,
       "temperature": -0.0099,
       "frames": 4
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:dff9ce6a9fa497581a48f9c7040db8182ce711d8105b850048ba26312c07cf81",
@@ -2560,7 +2689,10 @@
       "luma": 103.05,
       "temperature": -0.0726,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:e79d29d9c0976007dff75412e972351e6496f5f8f4dedf2dd5312ed28e17161f",
@@ -2642,7 +2774,10 @@
       "luma": 100.48,
       "temperature": -0.1316,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:e7d994fae7ec3d716c274338a34f822cf172c46f50322c038a8128f5289a0720",
@@ -2724,7 +2859,10 @@
       "luma": 104.16,
       "temperature": -0.1046,
       "frames": 4
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:ef166412047e5f149990f2299053b4e8aefea8cb4b53f015b26626f11da0ac5e",
@@ -2806,7 +2944,10 @@
       "luma": 102.7,
       "temperature": -0.0617,
       "frames": 4
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:f1c43e359f1df07b59212fb71114587f09786b55a3017281b4818a304a94428f",
@@ -2886,7 +3027,10 @@
       "luma": 104.17,
       "temperature": -0.0781,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:f3250853a9b7f306a6ecf5d0422383a52557dcf56c44b1674efa4c6cf53db231",
@@ -2967,7 +3111,10 @@
       "luma": 103.59,
       "temperature": 0.042,
       "frames": 3
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:14b9bcfdda17bd5d1794c8ff04d3bebdf7297674755b9cb6e1304f5ab9ce92ff",
@@ -2978,7 +3125,7 @@
     "gps": {
       "lat": 59.38903055555556,
       "lon": 9.40543888888889,
-      "place": "Skien",
+      "place": "Hütte am See",
       "elevation_m": 503.9
     },
     "probe": {
@@ -3034,7 +3181,10 @@
       "luma": 120.51,
       "temperature": -0.0742,
       "frames": 1
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "gps"
   },
   {
     "hash": "sha256:169f3ff6bb689b28cbb76d33d1e7e7e3d5199754d512ae41e2036d2ce3e47a62",
@@ -3045,7 +3195,7 @@
     "gps": {
       "lat": 59.38891666666667,
       "lon": 9.405547222222223,
-      "place": "Skien",
+      "place": "Hütte am See",
       "elevation_m": 503.9
     },
     "probe": {
@@ -3100,7 +3250,10 @@
       "luma": 123.51,
       "temperature": -0.1079,
       "frames": 1
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "gps"
   },
   {
     "hash": "sha256:34607f10d287924106bc0ebc6d321e46af569f2279856cc9addda48a4cb88884",
@@ -3111,7 +3264,7 @@
     "gps": {
       "lat": 59.3884,
       "lon": 9.40605,
-      "place": "Skien",
+      "place": "Hütte am See",
       "elevation_m": 501.9
     },
     "probe": {
@@ -3166,7 +3319,10 @@
       "luma": 117.12,
       "temperature": -0.0534,
       "frames": 1
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "gps"
   },
   {
     "hash": "sha256:4c55e2169c3bf3dbe08697103212de3929af08bef8562f8140611c18d15a302b",
@@ -3177,7 +3333,7 @@
     "gps": {
       "lat": 59.38823611111111,
       "lon": 9.406205555555555,
-      "place": "Skien",
+      "place": "Hütte am See",
       "elevation_m": 502.5
     },
     "probe": {
@@ -3233,7 +3389,10 @@
       "luma": 106.75,
       "temperature": 0.0457,
       "frames": 1
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "gps"
   },
   {
     "hash": "sha256:7a2de79448796af450a85e4535c8b9044dbb7f0735758bb2f1f19943b3c14ad6",
@@ -3244,7 +3403,8 @@
     "gps": {
       "lat": 59.38885,
       "lon": 9.405472222222222,
-      "elevation_m": 504.5
+      "elevation_m": 504.5,
+      "place": "Hütte am See"
     },
     "probe": {
       "captured_at": "2026-07-20T15:40:58+00:00",
@@ -3299,7 +3459,10 @@
       "luma": 127.26,
       "temperature": -0.1565,
       "frames": 1
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "gps"
   },
   {
     "hash": "sha256:c754045158d63c7daffecc68df19951e7b74564623ab754a767de7f147681179",
@@ -3310,7 +3473,7 @@
     "gps": {
       "lat": 59.38126388888889,
       "lon": 9.413002777777779,
-      "place": "Skien",
+      "place": "Hütte am See",
       "elevation_m": 577.4
     },
     "probe": {
@@ -3365,7 +3528,10 @@
       "luma": 106.42,
       "temperature": 0.0491,
       "frames": 1
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "gps"
   },
   {
     "hash": "sha256:c7b3c40ae532fe59e2c5a6c96cc0e8557105ec7275193b54cd143e386dce131a",
@@ -3376,7 +3542,7 @@
     "gps": {
       "lat": 59.388422222222225,
       "lon": 9.406030555555557,
-      "place": "Skien",
+      "place": "Hütte am See",
       "elevation_m": 502.2
     },
     "probe": {
@@ -3433,7 +3599,10 @@
       "luma": 110.33,
       "temperature": -0.0702,
       "frames": 1
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "gps"
   },
   {
     "hash": "sha256:cb3e3313c2839873609c299147a48d0298b6ab8ad3b0c281cbefa96e453fc537",
@@ -3444,7 +3613,7 @@
     "gps": {
       "lat": 59.38832222222222,
       "lon": 9.406302777777778,
-      "place": "Skien",
+      "place": "Hütte am See",
       "elevation_m": 509.9
     },
     "probe": {
@@ -3500,7 +3669,10 @@
       "luma": 104.89,
       "temperature": -0.113,
       "frames": 1
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "gps"
   },
   {
     "hash": "sha256:f2f7583120a1c3cc0ef129c038a3b14fa9549df040f1392beecbfc52e4598bc9",
@@ -3511,7 +3683,7 @@
     "gps": {
       "lat": 59.38123888888889,
       "lon": 9.413036111111111,
-      "place": "Skien",
+      "place": "Hütte am See",
       "elevation_m": 635.4
     },
     "probe": {
@@ -3567,7 +3739,10 @@
       "luma": 106.76,
       "temperature": 0.022,
       "frames": 1
-    }
+    },
+    "day": 3,
+    "stage": "Skien",
+    "place_source": "gps"
   },
   {
     "hash": "sha256:01db2ecf88c75fb4a3dfcc7872d341b2e39d812f27b94d60ec831a81af04a3e7",
@@ -3648,7 +3823,10 @@
       "luma": 73.3,
       "temperature": -0.0863,
       "frames": 3
-    }
+    },
+    "day": 4,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:065d5c97b254c8b3c108ab162e12c80410767012fba39c7626988ef9e38fb4f4",
@@ -3729,7 +3907,10 @@
       "luma": 62.94,
       "temperature": -0.0035,
       "frames": 3
-    }
+    },
+    "day": 4,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:cef9715d89d1ed345d66331e8183dbaac49e6b2ce7c1dcdf4c50ff114259be55",
@@ -3810,7 +3991,10 @@
       "luma": 55.27,
       "temperature": -0.0418,
       "frames": 3
-    }
+    },
+    "day": 4,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:d90477ea58d39eb922ca2275f5604e77e09bcf3137d6a60ec2a85ab24ebad3e7",
@@ -3892,7 +4076,10 @@
       "luma": 65.8,
       "temperature": 0.028,
       "frames": 4
-    }
+    },
+    "day": 4,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:e217eb64f104043fe8bbf67b6bae7a5aba8abf45f8901cdaef9babe15fb6cdb0",
@@ -3972,7 +4159,10 @@
       "luma": 62.13,
       "temperature": -0.0576,
       "frames": 4
-    }
+    },
+    "day": 4,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:2c3851caf6d6bfa21781eda1963ec53121df4a553e3936c45879a42dce3aa9bb",
@@ -4053,7 +4243,10 @@
       "luma": 86.2,
       "temperature": -0.0399,
       "frames": 3
-    }
+    },
+    "day": 5,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:340b8b1a91d07d932d0ab4f3b2869eb851e9533090a4642fe342482efdd4615f",
@@ -4134,7 +4327,10 @@
       "luma": 138.85,
       "temperature": 0.0005,
       "frames": 3
-    }
+    },
+    "day": 5,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:6b2922dc7cbe445646c50e86a42c7bd12a5b45f2907471b9cd5fe48c4d3e3bb5",
@@ -4214,7 +4410,10 @@
       "luma": 107.58,
       "temperature": -0.079,
       "frames": 3
-    }
+    },
+    "day": 5,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:71e612fa4817f4c15ec987dd16a90f8b46a33cb4681952687825f9be187c962d",
@@ -4295,7 +4494,10 @@
       "luma": 109.0,
       "temperature": -0.0685,
       "frames": 4
-    }
+    },
+    "day": 5,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:8680286e6b05d99cb4a5227e9c6a6a7805e43e4ece9b7dd727245f05875a8a67",
@@ -4376,7 +4578,10 @@
       "luma": 102.43,
       "temperature": -0.0143,
       "frames": 4
-    }
+    },
+    "day": 5,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:87011c298fbef0ee724d89c2ff52a0419c51143332b53d65be4c09125ac5a8d7",
@@ -4457,7 +4662,10 @@
       "luma": 108.87,
       "temperature": -0.0285,
       "frames": 3
-    }
+    },
+    "day": 5,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:9027b3c2f37a023afc8b0565307ccc3075e43753d9a8589702a1f7db337d0449",
@@ -4537,7 +4745,10 @@
       "luma": 107.81,
       "temperature": -0.0181,
       "frames": 3
-    }
+    },
+    "day": 5,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:9634e0abbe976b360f6e855fc5ddec34bf8608869e90a98b03af89807fa05bf5",
@@ -4616,7 +4827,10 @@
       "luma": 95.8,
       "temperature": -0.0473,
       "frames": 3
-    }
+    },
+    "day": 5,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:a31495a3b92d45bf7f7be62e5ec61f53ae0391c5cbe367b36ec0ac4d41e468ca",
@@ -4697,7 +4911,10 @@
       "luma": 105.06,
       "temperature": -0.0336,
       "frames": 3
-    }
+    },
+    "day": 5,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:b6d5de1524d2a9e9cd2da4e4f988fad9be14044403e87247ba2c226700545f67",
@@ -4777,7 +4994,10 @@
       "luma": 118.57,
       "temperature": 0.0447,
       "frames": 3
-    }
+    },
+    "day": 5,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:c724eec9d672436122d45fa9fdb1203aa0a96335d4d338f78c0b7cdf9d3b6cad",
@@ -4858,7 +5078,10 @@
       "luma": 105.28,
       "temperature": -0.0448,
       "frames": 3
-    }
+    },
+    "day": 5,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:e088e949e017cb8a35e6d66badf570a896f86c392d1b89071e9992a4616fecb7",
@@ -4937,7 +5160,10 @@
       "luma": 88.4,
       "temperature": -0.0214,
       "frames": 3
-    }
+    },
+    "day": 5,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:e0e4c2fb29c29c76751237a969712edd3b5404c9d79687893ae0979cf98d9eb0",
@@ -5017,7 +5243,10 @@
       "luma": 105.72,
       "temperature": -0.0427,
       "frames": 3
-    }
+    },
+    "day": 5,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:ee602a35d0d81397224a3e6b8cc31e122cb95f0454b4ae4eb4a5161603c5c5b4",
@@ -5097,7 +5326,10 @@
       "luma": 90.85,
       "temperature": -0.0188,
       "frames": 3
-    }
+    },
+    "day": 5,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:fdb1436e917994c0e0e684998e6a2d077ef7f3d8ec8b7ac9882dae376422cf2c",
@@ -5178,7 +5410,10 @@
       "luma": 92.71,
       "temperature": -0.0042,
       "frames": 3
-    }
+    },
+    "day": 5,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:07b1efc01bd4811ef26439c8f74cbb9efffe7459e6210d3bf86051b65846e0f4",
@@ -5259,7 +5494,10 @@
       "luma": 108.28,
       "temperature": 0.001,
       "frames": 3
-    }
+    },
+    "day": 6,
+    "stage": "Skien → Geilo",
+    "place_source": "index"
   },
   {
     "hash": "sha256:34c28fb0e61e5026e6721313eef8936d0e79c8267fa0a7dd99ef8f0e08e6e0b2",
@@ -5341,7 +5579,10 @@
       "luma": 129.52,
       "temperature": -0.0207,
       "frames": 4
-    }
+    },
+    "day": 6,
+    "stage": "Skien → Geilo",
+    "place_source": "index"
   },
   {
     "hash": "sha256:3db9c1b8feee158b9c3fd26ee99a61294dcb249cb6fd9f9f72bbe309b9db0ef0",
@@ -5422,7 +5663,10 @@
       "luma": 118.07,
       "temperature": -0.0607,
       "frames": 3
-    }
+    },
+    "day": 6,
+    "stage": "Skien → Geilo",
+    "place_source": "index"
   },
   {
     "hash": "sha256:40d97d88c4f4f51aad16f3163d017956956908ba145cbdab5996d2b97f27731b",
@@ -5502,7 +5746,10 @@
       "luma": 105.02,
       "temperature": 0.0908,
       "frames": 3
-    }
+    },
+    "day": 6,
+    "stage": "Skien → Geilo",
+    "place_source": "index"
   },
   {
     "hash": "sha256:44f9eb7b558172a9615b7bfe3c474ba45d07d4d20ac80640ae37df95684110b2",
@@ -5582,7 +5829,10 @@
       "luma": 115.66,
       "temperature": -0.0192,
       "frames": 3
-    }
+    },
+    "day": 6,
+    "stage": "Skien → Geilo",
+    "place_source": "index"
   },
   {
     "hash": "sha256:61a62cabb6ad02a20ab60a751e94e0b20b8cae127194db503b5895db60250061",
@@ -5662,7 +5912,10 @@
       "luma": 100.04,
       "temperature": -0.015,
       "frames": 3
-    }
+    },
+    "day": 6,
+    "stage": "Skien → Geilo",
+    "place_source": "index"
   },
   {
     "hash": "sha256:61ee11c5cfe3f49727655b4e48682e00743574b2e8aca55c150aead44a818ccf",
@@ -5741,7 +5994,10 @@
       "luma": 122.18,
       "temperature": 0.0281,
       "frames": 3
-    }
+    },
+    "day": 6,
+    "stage": "Skien → Geilo",
+    "place_source": "index"
   },
   {
     "hash": "sha256:92fb1e3f602f94fb6a48285e08fb126c80417ea8858b81355a1f9488de580c26",
@@ -5821,7 +6077,10 @@
       "luma": 118.12,
       "temperature": -0.0747,
       "frames": 3
-    }
+    },
+    "day": 6,
+    "stage": "Skien → Geilo",
+    "place_source": "index"
   },
   {
     "hash": "sha256:94e7095b5c3313a75b0bfd46bc54162c0ed14433e0235d2f91f87b64a649f2d7",
@@ -5902,7 +6161,10 @@
       "luma": 146.48,
       "temperature": -0.058,
       "frames": 4
-    }
+    },
+    "day": 6,
+    "stage": "Skien → Geilo",
+    "place_source": "index"
   },
   {
     "hash": "sha256:9bc4b98753355d3f785c2ac47f8cb2715d68ce425787a387d45341f0c1184203",
@@ -5982,7 +6244,10 @@
       "luma": 99.69,
       "temperature": 0.0351,
       "frames": 3
-    }
+    },
+    "day": 6,
+    "stage": "Skien → Geilo",
+    "place_source": "index"
   },
   {
     "hash": "sha256:a36884cf679ff3515b9048043c253413fd926629428fe8e023e77a232ae8bb20",
@@ -6063,7 +6328,10 @@
       "luma": 105.54,
       "temperature": 0.0234,
       "frames": 3
-    }
+    },
+    "day": 6,
+    "stage": "Skien → Geilo",
+    "place_source": "index"
   },
   {
     "hash": "sha256:be1daedfba591b968fdafcf265760bc6b80276b48092c14305c5e7c63d265d87",
@@ -6143,7 +6411,10 @@
       "luma": 108.3,
       "temperature": 0.0401,
       "frames": 3
-    }
+    },
+    "day": 6,
+    "stage": "Skien → Geilo",
+    "place_source": "index"
   },
   {
     "hash": "sha256:c0be402066cf377466831b36a875231ba46599704fd556ef9b965c3896822e29",
@@ -6223,7 +6494,10 @@
       "luma": 105.18,
       "temperature": -0.0285,
       "frames": 3
-    }
+    },
+    "day": 6,
+    "stage": "Skien → Geilo",
+    "place_source": "index"
   },
   {
     "hash": "sha256:db7c1ed5e9f9f10259154e6acb8a18080b09db848b826b8c506502bba765c9e9",
@@ -6304,7 +6578,10 @@
       "luma": 114.38,
       "temperature": 0.0345,
       "frames": 4
-    }
+    },
+    "day": 6,
+    "stage": "Skien → Geilo",
+    "place_source": "index"
   },
   {
     "hash": "sha256:df2054c05fd35b2a1686106682652f56a89b674ecf37c0c6fdf613afe2d10444",
@@ -6385,7 +6662,10 @@
       "luma": 99.76,
       "temperature": 0.0394,
       "frames": 4
-    }
+    },
+    "day": 6,
+    "stage": "Skien → Geilo",
+    "place_source": "index"
   },
   {
     "hash": "sha256:e0a56b645302b77d7d0c8c7b2219984cbc57f23a1aad755b65874d1544741255",
@@ -6465,7 +6745,10 @@
       "luma": 108.55,
       "temperature": -0.034,
       "frames": 3
-    }
+    },
+    "day": 6,
+    "stage": "Skien → Geilo",
+    "place_source": "index"
   },
   {
     "hash": "sha256:e26ee66b812cf40763d36c1afd04604eb62b1acb1218a58b3a6b9939afce7476",
@@ -6545,7 +6828,10 @@
       "luma": 110.61,
       "temperature": 0.0306,
       "frames": 3
-    }
+    },
+    "day": 6,
+    "stage": "Skien → Geilo",
+    "place_source": "index"
   },
   {
     "hash": "sha256:f9365cfec46943342f5ecae35de8e8bd66f8984155a5334d16dc93125793aa70",
@@ -6627,7 +6913,10 @@
       "luma": 118.7,
       "temperature": 0.1001,
       "frames": 4
-    }
+    },
+    "day": 6,
+    "stage": "Skien → Geilo",
+    "place_source": "index"
   },
   {
     "hash": "sha256:085879219e1a91b2e88e8fdad964b5702d78c5c76666cb8918009438fc308e93",
@@ -6638,7 +6927,7 @@
     "gps": {
       "lat": 60.91405833333333,
       "lon": 7.176083333333334,
-      "place": "Aurland",
+      "place": "Winjum Cabin Aurland",
       "elevation_m": 190.8
     },
     "probe": {
@@ -6694,7 +6983,10 @@
       "luma": 76.11,
       "temperature": -0.0331,
       "frames": 1
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "gps"
   },
   {
     "hash": "sha256:094825edfe41f71e3578b0217848281dd36c27d011d270891eda0e8d0a31af1f",
@@ -6776,7 +7068,10 @@
       "luma": 110.81,
       "temperature": -0.0557,
       "frames": 4
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:0be02d88de348024068f03d56f3c85938c3c7aa1dd5d56d73c11a921efa14c81",
@@ -6857,7 +7152,10 @@
       "luma": 107.32,
       "temperature": 0.0367,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:0c5020c8b78b08abfbdc368dd3ab19c5ba9b3d2bdde5c36c3f12581f8d344fe2",
@@ -6938,7 +7236,10 @@
       "luma": 122.33,
       "temperature": 0.0141,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:100519e3c2f94d9296455dc0eaa0ad081365d379e01e48c87555aca3b9bd379e",
@@ -7018,7 +7319,10 @@
       "luma": 119.09,
       "temperature": -0.0336,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:1aa8a78c455d7102283e04232810fbe152116a8c1ff642b6459dca892f350b57",
@@ -7099,7 +7403,10 @@
       "luma": 108.96,
       "temperature": 0.0664,
       "frames": 4
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:1d5f95654eeda10ac1f9111fbed1e9d58408d3e7a6fdd835975fa94054300505",
@@ -7180,7 +7487,10 @@
       "luma": 96.0,
       "temperature": 0.0789,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:242fdd67b882307158365dfcd5e77d2376fdfde28450d7d2b37f780d9f75140c",
@@ -7260,7 +7570,10 @@
       "luma": 86.47,
       "temperature": -0.0355,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:2f2cf49562493bd1544b21b69f5b660ab5b70e27157475fdb7f80ce64e2c8ef5",
@@ -7341,7 +7654,10 @@
       "luma": 98.6,
       "temperature": 0.0646,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:37d1f5b7c89b5139eba6f1d946ca974dc88ebe1637bb55d58bcd454d902ec82f",
@@ -7421,7 +7737,10 @@
       "luma": 80.98,
       "temperature": -0.0356,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:3c4be80bd8c8de610dc1ce5488ac7987865564563343bf4e83d3c7b005b35df6",
@@ -7501,7 +7820,10 @@
       "luma": 77.34,
       "temperature": -0.036,
       "frames": 4
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:3f1f99fdb10edbfafa1dd1abcf4672586da169daf46965d99bc2db86dd9bb0f8",
@@ -7581,7 +7903,10 @@
       "luma": 79.78,
       "temperature": -0.0156,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:4847f2cc13f5736e43acb994ee35ce2c055822703b4544f840ae821516d749b9",
@@ -7662,7 +7987,10 @@
       "luma": 73.46,
       "temperature": -0.03,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:6577ef08d0525d870c790ed49d88b14dd886ee2984d3802dac5b992a94e706f1",
@@ -7673,7 +8001,7 @@
     "gps": {
       "lat": 60.91418611111111,
       "lon": 7.175894444444444,
-      "place": "Aurland",
+      "place": "Winjum Cabin Aurland",
       "elevation_m": 203.0
     },
     "probe": {
@@ -7728,7 +8056,10 @@
       "luma": 72.76,
       "temperature": -0.0223,
       "frames": 1
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "gps"
   },
   {
     "hash": "sha256:6d3195b79fc6b685e7d8dbad9f5775004cf3395d9ed7a048842fe719ed4c8fce",
@@ -7808,7 +8139,10 @@
       "luma": 116.37,
       "temperature": 0.0254,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:7523dd6047d893808a6a64257c18561d228a739a945f3e4d092af18a341bb76e",
@@ -7888,7 +8222,10 @@
       "luma": 115.01,
       "temperature": -0.0025,
       "frames": 4
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:86e33df482cfb4d9e728149f8a616c009e8ed60d8ab7b03f6210bb8b49efcd7f",
@@ -7969,7 +8306,10 @@
       "luma": 136.75,
       "temperature": -0.0371,
       "frames": 4
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:8bff97001a1d78a0b139214e4f794c960dadf8526317a162ab6659506113884d",
@@ -8049,7 +8389,10 @@
       "luma": 108.52,
       "temperature": -0.0389,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:8c66b25ba9bf7cf04c255713a5485ba1afa8d5599bfa06e606a6c6d6689358af",
@@ -8130,7 +8473,10 @@
       "luma": 103.4,
       "temperature": 0.0715,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:9026914fc4cf8670ba9ff2b1757db96c739615802e7f80252c5202fc6b48ff12",
@@ -8210,7 +8556,10 @@
       "luma": 109.19,
       "temperature": 0.0009,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:95447978495192c7a77fe420d50b064b44213ca49b7399f9327fbc45cfeac26b",
@@ -8290,7 +8639,10 @@
       "luma": 102.1,
       "temperature": 0.0592,
       "frames": 4
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:9bf31d59ffcb0ec0c1c1157867566c8ac6bf7f0efed37f9f8bccc2684d600341",
@@ -8301,7 +8653,7 @@
     "gps": {
       "lat": 60.91404166666666,
       "lon": 7.1761,
-      "place": "Aurland",
+      "place": "Winjum Cabin Aurland",
       "elevation_m": 190.6
     },
     "probe": {
@@ -8357,7 +8709,10 @@
       "luma": 73.01,
       "temperature": -0.0461,
       "frames": 1
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "gps"
   },
   {
     "hash": "sha256:a97e2562b0dd1a49024b193aff9b974ed648946d50ad214ddc1180988b3c0569",
@@ -8438,7 +8793,10 @@
       "luma": 101.86,
       "temperature": -0.0589,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:af80add0267502479b8a36d3e9b1bbee8349e9e08b2627cac113fb130bc4e8d8",
@@ -8519,7 +8877,10 @@
       "luma": 91.93,
       "temperature": 0.0814,
       "frames": 4
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:b7214188726e26f740b4851c602dca8f8189c029efb1da95bd9fb98e5082cc8d",
@@ -8597,7 +8958,10 @@
       "luma": 113.34,
       "temperature": -0.0273,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:be1034f694b3d0fd0f403192eecd6179bcb211f6803894a04ff59b929878d0b8",
@@ -8678,7 +9042,10 @@
       "luma": 109.79,
       "temperature": -0.0638,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:c1c0e406cb84c74017ce9dab693cc71ae00c963787021a01436b889c40e3d3b2",
@@ -8759,7 +9126,10 @@
       "luma": 67.15,
       "temperature": -0.0607,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:c794debda339c506b5427a71e5ab8570ac7dac7a3ad8b0dfe7dc048c82acda76",
@@ -8840,7 +9210,10 @@
       "luma": 93.43,
       "temperature": 0.0629,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:c90be9e04b02426b70491d56fe974f47efccc6d02989f3d54fb4e0dba4a41d7b",
@@ -8920,7 +9293,10 @@
       "luma": 105.52,
       "temperature": 0.0285,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:cc7177a9d29ab7c35a8e963e89510734115f12b27ba0c34b713b01d9398775d8",
@@ -8931,7 +9307,7 @@
     "gps": {
       "lat": 60.91436111111111,
       "lon": 7.174980555555556,
-      "place": "Aurland",
+      "place": "Winjum Cabin Aurland",
       "elevation_m": 182.4
     },
     "probe": {
@@ -8987,7 +9363,10 @@
       "luma": 73.77,
       "temperature": -0.0238,
       "frames": 1
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "gps"
   },
   {
     "hash": "sha256:d194b3867306343f13fa33116dd65c7e944321421e870373a903deb207be4a16",
@@ -9069,7 +9448,10 @@
       "luma": 73.29,
       "temperature": -0.0514,
       "frames": 4
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:d2ba6f14c41bdd728680ff1bdd553d79ac1cf14e09b0f9bfc749bab741cf3a82",
@@ -9150,7 +9532,10 @@
       "luma": 76.37,
       "temperature": -0.0275,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:d3cf3c1e15663da5d8a05a935bb17b5955936539fe61a1e3333dabc71e1f45b3",
@@ -9230,7 +9615,10 @@
       "luma": 111.58,
       "temperature": -0.0381,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:dc94026d83a27472dc0fb48ea12ef54a9e6b8dda5bfcd3f185eb9b4e2153cc33",
@@ -9311,7 +9699,10 @@
       "luma": 73.23,
       "temperature": -0.0107,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:de0379b47966caa24d8b371edbbdbd2b38d005d0fb59ef1297beb51455f94278",
@@ -9392,7 +9783,10 @@
       "luma": 111.39,
       "temperature": -0.0504,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:eb153aa6f8a8a11146cd1e6244b125c507cac06e85f9865da1d8fb4de305ca84",
@@ -9474,7 +9868,10 @@
       "luma": 70.74,
       "temperature": -0.0456,
       "frames": 4
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:eb50fac4b10a257a99df82b2b28320cdf9b847e1064ea61570a381ab48a7a6ac",
@@ -9555,7 +9952,10 @@
       "luma": 93.29,
       "temperature": 0.0017,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:f955ce969ba638b964e8a9ad6093c3c514125f4e665f83ad5bf0a5b02972df4d",
@@ -9636,7 +10036,10 @@
       "luma": 80.3,
       "temperature": -0.0311,
       "frames": 3
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "index"
   },
   {
     "hash": "sha256:fe92bfbbeab254551e9bc6558f79b66c6d859e7bb6301e20977650d97d83bdcb",
@@ -9647,7 +10050,7 @@
     "gps": {
       "lat": 60.857508333333335,
       "lon": 7.302044444444444,
-      "place": "Aurland",
+      "place": "Aurlandsfjellet",
       "elevation_m": 598.0
     },
     "probe": {
@@ -9702,7 +10105,10 @@
       "luma": 108.41,
       "temperature": -0.0545,
       "frames": 1
-    }
+    },
+    "day": 7,
+    "stage": "Geilo → Aurland",
+    "place_source": "gps"
   },
   {
     "hash": "sha256:1d384fde74dc35b51ac0a4473f0a373cde6f9a0359e6728c17fed4022a1cd6b1",
@@ -9783,7 +10189,10 @@
       "luma": 106.83,
       "temperature": 0.0633,
       "frames": 4
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:28983075bf26ea7732c9d857590a9d4f97c950e89102f226891fd9e67dee007c",
@@ -9864,7 +10273,10 @@
       "luma": 117.28,
       "temperature": 0.0379,
       "frames": 4
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:2d284b5c7f25b156031cfd3be3e829064b92c425c8a0e26c22dcf75515ae7f15",
@@ -9945,7 +10357,10 @@
       "luma": 98.99,
       "temperature": 0.108,
       "frames": 4
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:2ff1e50d992bf43807b0fba9cf31c3a24efb308eaba7049299a93a779db3e1db",
@@ -10026,7 +10441,10 @@
       "luma": 113.69,
       "temperature": 0.0054,
       "frames": 3
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:36ebd8be8e4bcca4a6bfd8e75b19c01bc101be9c51ba37c7691550eb1de53562",
@@ -10106,7 +10524,10 @@
       "luma": 109.24,
       "temperature": 0.0467,
       "frames": 3
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:3cef40d1b10926c328e7eedd0d7d61a4f5e8d862be6d3498c50c15d611b9005f",
@@ -10186,7 +10607,10 @@
       "luma": 117.98,
       "temperature": -0.0576,
       "frames": 3
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:3ec0caa29da6f8f4e6715a3307307c9dc30c1037a42132e126b148eecd36127f",
@@ -10266,7 +10690,10 @@
       "luma": 100.59,
       "temperature": 0.095,
       "frames": 3
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:4048ccefa29463d5216671e282b55ad0717da9234b7b24fe3929444bc83b588a",
@@ -10347,7 +10774,10 @@
       "luma": 133.27,
       "temperature": 0.0971,
       "frames": 3
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:44f27efb50fb1aabdca57034d45fa3814994490b0685a4972a8b1b5cf61f3109",
@@ -10428,7 +10858,10 @@
       "luma": 88.44,
       "temperature": 0.0757,
       "frames": 3
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:4a48a273a3514c4ac25f7d2bda8ae4f83babfcf53531db954a46f2739b3eef26",
@@ -10510,7 +10943,10 @@
       "luma": 107.6,
       "temperature": 0.05,
       "frames": 4
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:503c37a7e3027cc3e9d2f659d5facd5af9e7ed5c21cdd8a280672aab59720978",
@@ -10589,7 +11025,10 @@
       "luma": 97.96,
       "temperature": 0.0053,
       "frames": 3
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:557edbf1e3311b24321fff6319a5dd9a012b44f675979891a30b819624c78d20",
@@ -10655,7 +11094,10 @@
       "luma": 105.67,
       "temperature": 0.0183,
       "frames": 1
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "gps"
   },
   {
     "hash": "sha256:55bfefbf72ca6debdf20d65b5958ec578933ace97a3c05073aba250fcbf1b8d7",
@@ -10736,7 +11178,10 @@
       "luma": 97.52,
       "temperature": 0.0656,
       "frames": 3
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:688ddab8675acc1fc2b020df66c31e274bcca65bbee7c096f608017b6113fb98",
@@ -10815,7 +11260,10 @@
       "luma": 98.84,
       "temperature": 0.0382,
       "frames": 3
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:7206fd97016950e43a88f18096d2d35be03a6bcba5c68427fa542f4f19f308bf",
@@ -10895,7 +11343,10 @@
       "luma": 117.44,
       "temperature": -0.0081,
       "frames": 3
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:73d4f8cd2e6f6e609fcfd3c51aad4778142417f1982264e9a860d75fe5be9511",
@@ -10974,7 +11425,10 @@
       "luma": 129.19,
       "temperature": -0.0367,
       "frames": 3
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:749346ba4375b9169d17063fa73edbd8bf08be179f8677a2593162aa6aa8972d",
@@ -11053,7 +11507,10 @@
       "luma": 105.09,
       "temperature": 0.0592,
       "frames": 3
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:7def3a8eb0ed4154cfcab0fd3593df5743052bcd1482826a4178db9f8f451e8e",
@@ -11134,7 +11591,10 @@
       "luma": 102.71,
       "temperature": -0.0466,
       "frames": 4
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:85b1a87c1c5fd0bafa9ed241a7ad99f500847301568109d0872da17770d1f536",
@@ -11200,7 +11660,10 @@
       "luma": 129.35,
       "temperature": 0.1182,
       "frames": 1
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "gps"
   },
   {
     "hash": "sha256:8a347b0898907b4cd07ebd26e5f96f82f4b004ca00f56e5357d232efb85ce8f4",
@@ -11267,7 +11730,10 @@
       "luma": 105.73,
       "temperature": 0.0362,
       "frames": 1
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "gps"
   },
   {
     "hash": "sha256:8c4f79d37dc0031b3bb7e08a4ce4a14a5e5c0d80ee76773bbb19f88ef6743602",
@@ -11347,7 +11813,10 @@
       "luma": 110.84,
       "temperature": -0.0136,
       "frames": 3
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:8d6634abdf49b4cb0b5f6ea4100d9890d1f42201563ba22d59b5131174d0d7bb",
@@ -11430,7 +11899,10 @@
       "luma": 94.39,
       "temperature": 0.054,
       "frames": 4
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:993dafe5cbb339fddb13eae38ad9cc48dd4e057c1f7d16bf5467fe0a4996c9ba",
@@ -11510,7 +11982,10 @@
       "luma": 110.08,
       "temperature": -0.0025,
       "frames": 3
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:a15499da676c16082867d3592c34fe46194d8ad0a2df08ae45a1a130080d5b45",
@@ -11591,7 +12066,10 @@
       "luma": 87.82,
       "temperature": 0.09,
       "frames": 3
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:a1945f5649f8ee63cce91703f59809e7d1996dfe8e8e6559735a9331b2b2b672",
@@ -11673,7 +12151,10 @@
       "luma": 108.14,
       "temperature": -0.0749,
       "frames": 4
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:c8e39c12f332fc8825a213277ef07a1363a55bc41e29470073897718227c34fd",
@@ -11753,7 +12234,10 @@
       "luma": 104.75,
       "temperature": 0.0271,
       "frames": 3
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:c9db9491cca164d42fba7e44201f87719948842cb703759a3c59b1a675cb591b",
@@ -11764,7 +12248,7 @@
     "gps": {
       "lat": 61.87372222222222,
       "lon": 6.836258333333333,
-      "place": "Geiranger",
+      "place": "Loen",
       "elevation_m": 224.9
     },
     "probe": {
@@ -11819,7 +12303,10 @@
       "luma": 91.6,
       "temperature": -0.0352,
       "frames": 1
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "gps"
   },
   {
     "hash": "sha256:cdb78d50d02e9d9f27712ecde7badf8d6bb2cc3d5977f854a1300ea3b26a07a2",
@@ -11900,7 +12387,10 @@
       "luma": 124.72,
       "temperature": -0.0052,
       "frames": 3
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:cee8da40c9f22a6796c71413c52483ebe9c34c26e388b4f68b20f9cc98dfa7b3",
@@ -11980,7 +12470,10 @@
       "luma": 112.73,
       "temperature": 0.0522,
       "frames": 3
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:dd243f25587f13f26e5d1937ead5908a8ed7770abe7e8118a52739b811ff5407",
@@ -12046,7 +12539,10 @@
       "luma": 101.33,
       "temperature": 0.0043,
       "frames": 1
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "gps"
   },
   {
     "hash": "sha256:de30ac6806ecdc2b1f203cd58ce81b0e5bb8b6f27df3712ebb2c487438acd0e1",
@@ -12127,7 +12623,10 @@
       "luma": 89.68,
       "temperature": 0.0844,
       "frames": 3
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:e9f050348cfddd646ad7f3220f0ad3f887360e22c1c5f8ddb24e0e577c27cc93",
@@ -12208,7 +12707,10 @@
       "luma": 114.21,
       "temperature": -0.0484,
       "frames": 3
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:ed79037d10c6573dc07d3f8b37c5260a37e5db23828d5878ead1a608dee19531",
@@ -12288,7 +12790,10 @@
       "luma": 136.8,
       "temperature": 0.055,
       "frames": 4
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:eed7aa5c9a13f63911975d1fc514e368fc8b1ed28f4c2635e6c790c472ece54c",
@@ -12370,7 +12875,10 @@
       "luma": 95.49,
       "temperature": 0.0837,
       "frames": 4
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:fd430efdd6a2ec60fbbebc2c06cd9d0a0b7b3381786a0279b1be4bc9e56e36c4",
@@ -12452,7 +12960,10 @@
       "luma": 116.9,
       "temperature": -0.0199,
       "frames": 4
-    }
+    },
+    "day": 9,
+    "stage": "Aurland → Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:3cd337b674d8a2eef471529758112b4655437220a9689d78187584379ebaf704",
@@ -12532,7 +13043,10 @@
       "luma": 123.37,
       "temperature": -0.0081,
       "frames": 3
-    }
+    },
+    "day": 10,
+    "stage": "Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:50a9664c4032cfb4e1c1fa502cf517e1fe270fb860971c34a6a1632f91c6b15c",
@@ -12612,7 +13126,10 @@
       "luma": 122.9,
       "temperature": 0.0358,
       "frames": 3
-    }
+    },
+    "day": 10,
+    "stage": "Geiranger",
+    "place_source": "index"
   },
   {
     "hash": "sha256:00a3ae06e4073b33c6ce2d9e0bd75c5147e830e73f2a8b4bb260fa371b2d8bdd",
@@ -12694,7 +13211,10 @@
       "luma": 98.62,
       "temperature": -0.0774,
       "frames": 4
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:0131d3ee4a23852fa396b8ffd3bc4ff32e5c8ba72c0d43b339506466ffe9c766",
@@ -12775,7 +13295,10 @@
       "luma": 119.27,
       "temperature": -0.043,
       "frames": 3
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:17c8a487752061bab07eb768c7a7338161865cb026447e5243c58a964237ad5c",
@@ -12856,7 +13379,10 @@
       "luma": 124.74,
       "temperature": 0.0389,
       "frames": 4
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:1cc83525b60b72b61467543465afe6405451b7896fb3159581e2a1dfddde0e68",
@@ -12938,7 +13464,10 @@
       "luma": 100.82,
       "temperature": 0.0759,
       "frames": 4
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:299fb151000d31ac24f28d551ac05466c59a79e7f3a4c83cc8164a8fc3c8754b",
@@ -13017,7 +13546,10 @@
       "luma": 139.44,
       "temperature": -0.0331,
       "frames": 3
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:2abc70ca319e9cd279bfbe3860145977e37ef055a9e898a782c578e1ed466986",
@@ -13099,7 +13631,10 @@
       "luma": 93.55,
       "temperature": -0.098,
       "frames": 3
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:2be63d9cfea405c1e87f51725a8e4006b235a6512049c7ce29b5ac88c53030e5",
@@ -13180,7 +13715,10 @@
       "luma": 95.7,
       "temperature": -0.0911,
       "frames": 3
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:3f599846c949e3a85b87a36b3e24e802c2430866580e4e0e4b912422f647d4f6",
@@ -13260,7 +13798,10 @@
       "luma": 98.82,
       "temperature": -0.0702,
       "frames": 3
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:3feda71aae4ebb9678c5b2d9292f429722d02850f2ae6ed5d0d9562e1748a148",
@@ -13342,7 +13883,10 @@
       "luma": 107.69,
       "temperature": 0.0395,
       "frames": 4
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:4cae48302ab6426659c3b36d93f3b927cd4608227a0feb234dc4ed113debd15f",
@@ -13423,7 +13967,10 @@
       "luma": 115.69,
       "temperature": -0.0979,
       "frames": 4
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:51fecd09d02ccd4a6ff71b1414a20bef7a44b519b8cc836d172d3ae7b1dc5a46",
@@ -13503,7 +14050,10 @@
       "luma": 99.96,
       "temperature": -0.0259,
       "frames": 3
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:5d3cd701ae6844611a989122c8b825d8137d48aaaea8f2b522e8d92732687706",
@@ -13585,7 +14135,10 @@
       "luma": 102.57,
       "temperature": 0.0436,
       "frames": 3
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:6889741d551d523bbc9c086bbc256ec8b081556d07df4d745ded2753e3834ba5",
@@ -13666,7 +14219,10 @@
       "luma": 111.73,
       "temperature": -0.0434,
       "frames": 3
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:79c52168f4c56d9c5c1abd3741b4a0dda523931053db71728bc153e857328047",
@@ -13747,7 +14303,10 @@
       "luma": 118.31,
       "temperature": -0.0327,
       "frames": 4
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:9e4fe2140850217971e2c0aa6893ee762b5d7e0e04633b73e3cf9de0ef162b7e",
@@ -13826,7 +14385,10 @@
       "luma": 120.86,
       "temperature": -0.1724,
       "frames": 3
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:9f54f738ed83712d98ab8b1b279a039bb4e0482f6e60215b5d47514429b8287d",
@@ -13907,7 +14469,10 @@
       "luma": 111.09,
       "temperature": 0.013,
       "frames": 4
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:a30311756da3b6ccef7d7df95458e97652a6c69d2bd0146ce2e389e0ab7968fc",
@@ -13986,7 +14551,10 @@
       "luma": 115.64,
       "temperature": -0.0017,
       "frames": 3
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:b307d94bf30813fc3be8a61bd45cc8d1444425556a8627e72c652fc0ce934381",
@@ -14066,7 +14634,10 @@
       "luma": 132.8,
       "temperature": 0.0412,
       "frames": 3
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:b550d2a0923f12d63b2bb00b941c6d58346095d616c29e05e6b5fe26cd6dc766",
@@ -14147,7 +14718,10 @@
       "luma": 105.09,
       "temperature": 0.0258,
       "frames": 3
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:ba56f47d26514bae4e61d4461a5ae882d7682a395378cb9194b553399a8bb683",
@@ -14226,7 +14800,10 @@
       "luma": 160.29,
       "temperature": -0.0511,
       "frames": 3
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:c3df87b3a3b1a55b93874d19a7447ffe0bd7d6d1cbc4702d0e50d67de33a5ffc",
@@ -14307,7 +14884,10 @@
       "luma": 115.86,
       "temperature": -0.1226,
       "frames": 3
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:c4f81737096202877048670146d82a9eb235136b9ad49128578ecc0e3c6bc940",
@@ -14388,7 +14968,10 @@
       "luma": 120.24,
       "temperature": 0.031,
       "frames": 3
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:c91b2aec1e376770f6521f108e65c9e748d437655ee66a720f7c43997dca2b26",
@@ -14470,7 +15053,10 @@
       "luma": 125.1,
       "temperature": -0.0422,
       "frames": 4
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:e13194a501d3449ec2966e34a6244306b565b8973b5f8bde76e16b89bce1f383",
@@ -14549,7 +15135,10 @@
       "luma": 107.16,
       "temperature": 0.0473,
       "frames": 3
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:e3e21d6c4832eca9637a5d41c80b7ee79711f78131e95f1d89d826ca7e38e919",
@@ -14629,7 +15218,10 @@
       "luma": 111.13,
       "temperature": 0.0371,
       "frames": 4
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:e42c63a37a3b0f90a77b330ff0d9e1c4836d55303aeeb44fd60d11febc4d8f73",
@@ -14709,7 +15301,10 @@
       "luma": 114.89,
       "temperature": 0.0368,
       "frames": 3
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:eab4d942005b5faf70c94fc6fb8bdc9a81280990779b84c4763a12a2ea332944",
@@ -14791,7 +15386,10 @@
       "luma": 107.1,
       "temperature": -0.0144,
       "frames": 4
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:eb4ff35c3acbc91d5c82e1f3866c0deaaec5ecd603dc8b1fb6a11e7a834c211d",
@@ -14870,7 +15468,10 @@
       "luma": 119.26,
       "temperature": 0.052,
       "frames": 3
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:ecc6c365bbe714dae2d93d9946453d5525f57a15b5881be8dfc3aba4b24de78b",
@@ -14951,7 +15552,10 @@
       "luma": 105.44,
       "temperature": -0.1,
       "frames": 3
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:fe50bf049afc39dc7e13c71e8567841fcc5e57d039888ef796280097d6cbffb1",
@@ -15032,7 +15636,10 @@
       "luma": 121.26,
       "temperature": 0.0364,
       "frames": 4
-    }
+    },
+    "day": 11,
+    "stage": "Geiranger → Lom",
+    "place_source": "index"
   },
   {
     "hash": "sha256:0a2128e8708f71e6037f2ff9e460e441c3894462d2b4b600604e52d58beaa19b",
@@ -15115,7 +15722,10 @@
       "luma": 127.39,
       "temperature": 0.0433,
       "frames": 4
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:127306a0634445e10463b5c3a48e6171e010f0a4a591f5d71d76ccbd0c55a852",
@@ -15194,7 +15804,10 @@
       "luma": 110.41,
       "temperature": 0.0314,
       "frames": 4
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:15edc2a20a973df83d19198320adeac362eae89b6de83aa221bf304d4cc58dcc",
@@ -15275,7 +15888,10 @@
       "luma": 136.11,
       "temperature": -0.0983,
       "frames": 4
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:174d79a09f447c2c13fe10903be89666cd64ebc52247cd42a4196d76eb02f5b8",
@@ -15356,7 +15972,10 @@
       "luma": 141.96,
       "temperature": -0.0532,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:1fb49173252b41add0ce01eaacde5639f199e5cbb366c952c27b7a2b95a243ff",
@@ -15436,7 +16055,10 @@
       "luma": 108.28,
       "temperature": 0.0378,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:282819cb7706b9eabffd7398e2b6079834eb70adce9c423de40540ed65864928",
@@ -15516,7 +16138,10 @@
       "luma": 126.07,
       "temperature": 0.0199,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:399b5f2059c679bf6daa53b9a76ea4118a1488e8c7656b46521ca009ca923b7e",
@@ -15597,7 +16222,10 @@
       "luma": 108.18,
       "temperature": 0.1189,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:55d2e3acf6adea525b76687f13577e91b0e4677dd7438f333a9cc9de7f9c9783",
@@ -15678,7 +16306,10 @@
       "luma": 103.53,
       "temperature": 0.0454,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:5b8148c0d2e3def2a6850ff0516de1da735cf2cb4a7cd2849a9336e9f785cea0",
@@ -15759,7 +16390,10 @@
       "luma": 117.11,
       "temperature": 0.0848,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:61b12e726e37a2ccbd5b55f84eab7128e9755bfe9d0381377e0211d5207bba3f",
@@ -15840,7 +16474,10 @@
       "luma": 101.77,
       "temperature": 0.0035,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:63eb6b5e464dfacf861327cd3f409ae195d8cb2b0340987270bb51a3339546a6",
@@ -15921,7 +16558,10 @@
       "luma": 126.61,
       "temperature": -0.0014,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:6cbda01a037b285648c6a2e82589c85c2bf17c9b5f9484ce1ac58bcfe65bc601",
@@ -16000,7 +16640,10 @@
       "luma": 92.59,
       "temperature": 0.0256,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:7930c0cabe982abc48e7127a0b2273d28e7751411840a9b12a73a9c1c1ddefef",
@@ -16080,7 +16723,10 @@
       "luma": 121.28,
       "temperature": -0.0082,
       "frames": 4
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:799b7aa581eab689b0f4bc0780de6f843de356feb227b0598b22c4814754fad1",
@@ -16160,7 +16806,10 @@
       "luma": 106.92,
       "temperature": -0.0162,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:79c9169a143a5768b21fa0dbf6fa451308b9ff0fbdfd20cf644c73f5b7cfae55",
@@ -16240,7 +16889,10 @@
       "luma": 109.19,
       "temperature": 0.0294,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:82a8464ae4c958723dfb792b84d43f714f11a1abb870a0b14f647905b563eef8",
@@ -16320,7 +16972,10 @@
       "luma": 127.86,
       "temperature": 0.0018,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:8b3b4bcae384d3bbc8db7c17b2be535b5e9fa17d349a462d2c2c7291ff7ebb3b",
@@ -16400,7 +17055,10 @@
       "luma": 134.47,
       "temperature": 0.0581,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:91ee916d13afd3690747003ada88133df0ca99a30cff1d244a2d50ee1542428a",
@@ -16479,7 +17137,10 @@
       "luma": 132.71,
       "temperature": 0.0124,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:92f6d74a7c76e0d12f26a694488b45890e3e94a3ef3b196bc901cc1ca8227e59",
@@ -16560,7 +17221,10 @@
       "luma": 112.19,
       "temperature": 0.0065,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:9cb328a7ccaa2be1603e1bcd4228fd1b3340edb96fe07bd97cc98d67c1ea52e3",
@@ -16639,7 +17303,10 @@
       "luma": 133.3,
       "temperature": 0.0546,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:9daefa2308c30991a0e99e9296572bff119c5e2a3af2dbde73c27073f5cd254f",
@@ -16720,7 +17387,10 @@
       "luma": 106.03,
       "temperature": -0.0231,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:9ff75b940788292d01c2b3d97c4dfc16064134d8fe280c9ff94933511225736d",
@@ -16799,7 +17469,10 @@
       "luma": 127.82,
       "temperature": -0.0234,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:a1557eb06b1fe7381a1b5f8dc1efbcc963282f7021d99aae30e2132d61562e30",
@@ -16881,7 +17554,10 @@
       "luma": 99.36,
       "temperature": 0.0122,
       "frames": 4
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:a81fe634f0bbe10851eae58be15476501ab154defced0f2e8788a63f983f3482",
@@ -16960,7 +17636,10 @@
       "luma": 116.98,
       "temperature": 0.0688,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:b764c06640e3c8849070fc6df8f6a59e61f858f01c65962bf16e0b7e1d8d5248",
@@ -17042,7 +17721,10 @@
       "luma": 105.84,
       "temperature": 0.0428,
       "frames": 4
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:bff3b98aabb81a93d6e977516876610c49bb0a0ebb83797454650a483e75a8be",
@@ -17123,7 +17805,10 @@
       "luma": 121.26,
       "temperature": 0.0438,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:c01e111bd8ca9d23509c75bfeda7185849d6688a8f37021824aa24da2fc5bc45",
@@ -17204,7 +17889,10 @@
       "luma": 116.46,
       "temperature": 0.0639,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:d35631a819891b313ff520f35afbb0e8e2bf2ba75a3bbb1d17dc6fc2108e8b3c",
@@ -17286,7 +17974,10 @@
       "luma": 138.06,
       "temperature": -0.0221,
       "frames": 4
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:d64baa5c228389542a65f9a149c423caca0b38a7a27f6c687d0ed9a598281773",
@@ -17367,7 +18058,10 @@
       "luma": 108.38,
       "temperature": 0.0527,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:d743b0c0b35dea2c77a8009ddf5308c121ec72607df0ffbbd5e647fc823ff503",
@@ -17448,7 +18142,10 @@
       "luma": 126.28,
       "temperature": -0.0045,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:e226dd6eb21da9b4dfdf77def1398032fd57a5cca094d86361887ecf6588d23b",
@@ -17528,7 +18225,10 @@
       "luma": 112.21,
       "temperature": 0.0959,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:e50000b861f10b603fda987e3993f21447f98b6febbf3d46fced18ee995c967d",
@@ -17609,7 +18309,10 @@
       "luma": 125.27,
       "temperature": -0.0001,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:e6864844bdf920660ffe4edd12d72fbc8f47838420fd28ccb8ee31a22745663b",
@@ -17691,7 +18394,10 @@
       "luma": 111.7,
       "temperature": 0.1204,
       "frames": 4
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:ef19b322313bdc6b1abbb376c51a973cde88d56330e329dee0f98ee22be9b56c",
@@ -17773,7 +18479,10 @@
       "luma": 140.66,
       "temperature": 0.0326,
       "frames": 4
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:f7e055945ec1b151aae88ea100ecc3a73a93ed7142fec363834b7c544f3b8044",
@@ -17854,7 +18563,10 @@
       "luma": 87.71,
       "temperature": 0.0353,
       "frames": 3
-    }
+    },
+    "day": 12,
+    "stage": "Lom → Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:0cf76b09a105cb8cd2b9d934929207768b5cf55f1233fad68460684d440cfdfa",
@@ -17934,7 +18646,10 @@
       "luma": 124.72,
       "temperature": 0.0842,
       "frames": 3
-    }
+    },
+    "day": 13,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:488af71ec1d2b9693948e71d1a892a34eb26b1cbfb0d53db13f104b4cce16953",
@@ -18014,7 +18729,10 @@
       "luma": 119.57,
       "temperature": 0.1312,
       "frames": 3
-    }
+    },
+    "day": 13,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:4abe2d6f286f7b2bdf47a4be007b0086ac41742e37638127165f9b96e339e496",
@@ -18093,7 +18811,10 @@
       "luma": 113.12,
       "temperature": 0.0201,
       "frames": 3
-    }
+    },
+    "day": 13,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:5b69e6cc3cb0b877471e3e84b5a0cc27de37d5bfbdf3e98ed96d545b270adb19",
@@ -18172,7 +18893,10 @@
       "luma": 101.51,
       "temperature": 0.0137,
       "frames": 3
-    }
+    },
+    "day": 13,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:60547e483cde892bec721de0d7e6f7cf2719fd8dfd6a1596b5558720d6ef4ad0",
@@ -18253,7 +18977,10 @@
       "luma": 108.81,
       "temperature": -0.0026,
       "frames": 4
-    }
+    },
+    "day": 13,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:6690ab0d639fc2e783743bfb8244e0a2e266a13326fd65ff39c3b3bef86efae2",
@@ -18332,7 +19059,10 @@
       "luma": 123.23,
       "temperature": 0.1281,
       "frames": 3
-    }
+    },
+    "day": 13,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:6e8ef1c523e08cd9546e906008e3d88749d943935cfaabb44250d0a88c6d6536",
@@ -18411,7 +19141,10 @@
       "luma": 109.61,
       "temperature": 0.0294,
       "frames": 3
-    }
+    },
+    "day": 13,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:8d3d79ae084429cb8ea9233cf3c561b0a5cf480115b9733201021eb8e9e9146c",
@@ -18491,7 +19224,10 @@
       "luma": 115.75,
       "temperature": 0.076,
       "frames": 3
-    }
+    },
+    "day": 13,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:929ca1792c7afb6bb6c3e52c1a441ff7c5f2c558cb7dae751235773724fd9aeb",
@@ -18570,7 +19306,10 @@
       "luma": 128.06,
       "temperature": 0.0931,
       "frames": 3
-    }
+    },
+    "day": 13,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:b19ae7c104548d6cd714b424ae830dabb8cfca9b908f832a7a1fb3a148321f90",
@@ -18648,7 +19387,10 @@
       "luma": 102.85,
       "temperature": -0.0016,
       "frames": 4
-    }
+    },
+    "day": 13,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:b3b3a092415dee163e1ce3d2939fced7d56af88a7c700469f81e0e9cdbb3a6d8",
@@ -18727,7 +19469,10 @@
       "luma": 105.7,
       "temperature": 0.0084,
       "frames": 3
-    }
+    },
+    "day": 13,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:b7bed73552626fc2cad856da0b8319e96767a4331f17198320e56257efba164f",
@@ -18808,7 +19553,10 @@
       "luma": 145.15,
       "temperature": 0.0056,
       "frames": 3
-    }
+    },
+    "day": 13,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:c609c1a2ba5a62bbaf4cb7005eabf2bd1ac878976c180cb7286293641d1ad95e",
@@ -18889,7 +19637,10 @@
       "luma": 125.63,
       "temperature": 0.1281,
       "frames": 4
-    }
+    },
+    "day": 13,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:cb0db706e5167bf8e57c5c3dca6ec96dc9d307a100d72a36ebf7d5fb12d977e1",
@@ -18969,7 +19720,10 @@
       "luma": 121.0,
       "temperature": 0.1221,
       "frames": 3
-    }
+    },
+    "day": 13,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:e02ec61448c3fac58d731cca0e56d359a96597f7052fa52ea2b024d7a1eca1fc",
@@ -19046,7 +19800,10 @@
       "luma": 110.9,
       "temperature": 0.0197,
       "frames": 3
-    }
+    },
+    "day": 13,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:123000737017360677d689aa7c841ef908ab07233a91d5fece333b19f0f7ccab",
@@ -19124,7 +19881,10 @@
       "luma": 107.96,
       "temperature": 0.0093,
       "frames": 3
-    }
+    },
+    "day": 14,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:1c05a6210e289ada60a4c29733865530ade3dd584ad9b3e321e630df8327b325",
@@ -19204,7 +19964,10 @@
       "luma": 104.41,
       "temperature": 0.1015,
       "frames": 3
-    }
+    },
+    "day": 14,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:20563e0a30ac0836c21f1f31e05960b2454b572099f4112fb5fe3874899af463",
@@ -19283,7 +20046,10 @@
       "luma": 121.99,
       "temperature": 0.1136,
       "frames": 3
-    }
+    },
+    "day": 14,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:2a400361eda3dcaea0d2bd1c19b5bf407b5eadee518dbc7daf2e560e1426e6c3",
@@ -19362,7 +20128,10 @@
       "luma": 116.87,
       "temperature": 0.0666,
       "frames": 3
-    }
+    },
+    "day": 14,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:4e77d9390d88a8afe10e8b3f4c00b4e937f0eac60f6de7aae91cb36e26133f94",
@@ -19439,7 +20208,10 @@
       "luma": 134.92,
       "temperature": 0.0693,
       "frames": 3
-    }
+    },
+    "day": 14,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:56e1ebbc79a6f714ce3724d92d198a35d97de8db89898baa817a1cb5f6c86fd7",
@@ -19535,7 +20307,10 @@
       "luma": 109.42,
       "temperature": 0.0871,
       "frames": 6
-    }
+    },
+    "day": 14,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:61365ce04c6ba727ea183672bd9e9b9b9caac208501d19e52925237d7ecfb941",
@@ -19614,7 +20389,10 @@
       "luma": 104.22,
       "temperature": 0.0092,
       "frames": 3
-    }
+    },
+    "day": 14,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:6d01c7c36a8df469e088cae9f716b6e6176a8a4823682657475884fa703f64e2",
@@ -19693,7 +20471,10 @@
       "luma": 94.26,
       "temperature": 0.0643,
       "frames": 3
-    }
+    },
+    "day": 14,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:7eeccd9473e186877b08153c660605c890d2456e52849bb5e83aae4f7e22dc2f",
@@ -19773,7 +20554,10 @@
       "luma": 103.15,
       "temperature": 0.0475,
       "frames": 4
-    }
+    },
+    "day": 14,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:8044d311a85e66b4b949d51056d7a82e2f27780bd3528a298eb82de5f5462536",
@@ -19853,7 +20637,10 @@
       "luma": 96.93,
       "temperature": 0.0622,
       "frames": 3
-    }
+    },
+    "day": 14,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:8ece0ae3e42f9245f746ea0b4fc4594fac7f9bdd10e307a5f39cb475998600cf",
@@ -19933,7 +20720,10 @@
       "luma": 92.15,
       "temperature": 0.073,
       "frames": 3
-    }
+    },
+    "day": 14,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:8fc221f5c5bed752302bf56dfe2517712e546b87162c6ff2978ffb69de6bdd16",
@@ -20014,7 +20804,10 @@
       "luma": 95.58,
       "temperature": 0.1239,
       "frames": 4
-    }
+    },
+    "day": 14,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:939382fcf117fadf9635e16bf727eb0e450d9a0691c12a992ad1f29e58060d1f",
@@ -20093,7 +20886,10 @@
       "luma": 116.58,
       "temperature": 0.0568,
       "frames": 3
-    }
+    },
+    "day": 14,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:a04b74c2c930248acc490ff5b4ce6113a1733a3ddd7310c49242dbce2a6c315d",
@@ -20174,7 +20970,10 @@
       "luma": 103.46,
       "temperature": 0.0464,
       "frames": 4
-    }
+    },
+    "day": 14,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:bb5097bc228748fc919fa577ba68876797044d888ff1a6a0ab1e651df7a7b7dc",
@@ -20253,7 +21052,10 @@
       "luma": 112.8,
       "temperature": 0.0409,
       "frames": 3
-    }
+    },
+    "day": 14,
+    "stage": "Uvdal",
+    "place_source": "index"
   },
   {
     "hash": "sha256:50925f1e7f5e90f3115dabd606627910d8ac4af08f1e1431558dd9d9dd216ec5",
@@ -20327,7 +21129,13 @@
       "luma": 124.38,
       "temperature": 0.0489,
       "frames": 3
-    }
+    },
+    "day": 15,
+    "stage": "Uvdal → Skien",
+    "gps": {
+      "place": "unterwegs: Uvdal → Skien"
+    },
+    "place_source": "leg"
   },
   {
     "hash": "sha256:5ee01d99ff38eb4d539821cedc35cb49ca3f38f133b32199cda4c42730514ed8",
@@ -20402,7 +21210,13 @@
       "luma": 145.79,
       "temperature": 0.0395,
       "frames": 4
-    }
+    },
+    "day": 15,
+    "stage": "Uvdal → Skien",
+    "gps": {
+      "place": "unterwegs: Uvdal → Skien"
+    },
+    "place_source": "leg"
   },
   {
     "hash": "sha256:725d9189dd627fd54b71a9d3f33412d063156b4cb2a3b97fa223672ae4418b3e",
@@ -20479,7 +21293,13 @@
       "luma": 124.2,
       "temperature": 0.0729,
       "frames": 4
-    }
+    },
+    "day": 15,
+    "stage": "Uvdal → Skien",
+    "gps": {
+      "place": "unterwegs: Uvdal → Skien"
+    },
+    "place_source": "leg"
   },
   {
     "hash": "sha256:914211f090327db76a9124a716a4e225360c651e8362cbd1efea906559cb1ad4",
@@ -20556,7 +21376,13 @@
       "luma": 129.52,
       "temperature": 0.0551,
       "frames": 4
-    }
+    },
+    "day": 15,
+    "stage": "Uvdal → Skien",
+    "gps": {
+      "place": "unterwegs: Uvdal → Skien"
+    },
+    "place_source": "leg"
   },
   {
     "hash": "sha256:ae75e297b00b64dda34557b867bb9dc2bbba06bf7aaa39bfa3472c0c561b284b",
@@ -20631,7 +21457,13 @@
       "luma": 146.04,
       "temperature": 0.0425,
       "frames": 4
-    }
+    },
+    "day": 15,
+    "stage": "Uvdal → Skien",
+    "gps": {
+      "place": "unterwegs: Uvdal → Skien"
+    },
+    "place_source": "leg"
   },
   {
     "hash": "sha256:02f80968833da619f4d7f203b88be1993b656fb1f18379d7b12d5b5a33aedb3f",
@@ -20709,7 +21541,10 @@
       "luma": 132.6,
       "temperature": -0.0251,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:06de6f23ee49084fb9f7378522f30e8375a0d968417bb9692e3e3b5d14979fbb",
@@ -20787,7 +21622,10 @@
       "luma": 104.88,
       "temperature": -0.161,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:08166fd13345dd0225bd21d1e7c030d936552443e3fe5b10f966bd6462d88d05",
@@ -20867,7 +21705,10 @@
       "luma": 117.28,
       "temperature": 0.0107,
       "frames": 4
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:340b5196acd18576c221a725ef39180975f2efe3657965b881fadc7b9fc5c006",
@@ -20945,7 +21786,10 @@
       "luma": 122.47,
       "temperature": -0.0218,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:3908a9429179005dfaac792bb5d4c4471dc75d98e034b304da8072d54a686df5",
@@ -21023,7 +21867,10 @@
       "luma": 123.21,
       "temperature": 0.0338,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:4009fd384b7e4015c6de65241dcb06296b1f5ee192819a5a8537f2e7572bd763",
@@ -21101,7 +21948,10 @@
       "luma": 125.74,
       "temperature": -0.0702,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:4e76f3f090b6c851ff0e19278183658e0989f4a3d6b087926aeb59f530def290",
@@ -21180,7 +22030,10 @@
       "luma": 95.63,
       "temperature": 0.0456,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:52b622cde446895072c8863331ff1d2cd382f7dc21d3ccb35547b33fc0dceb7e",
@@ -21258,7 +22111,10 @@
       "luma": 127.99,
       "temperature": -0.0762,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:54294b50bc36ebc5494f2be4a2c1d3e5fc52b1a2ffba4130f0e9465c1bd78826",
@@ -21342,7 +22198,10 @@
       "luma": 109.09,
       "temperature": -0.0535,
       "frames": 5
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:5601dab16f20546667d28a2616624821b5863c015819a852d821990244b2926d",
@@ -21421,7 +22280,10 @@
       "luma": 117.86,
       "temperature": -0.1509,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:574c7c113170a56013f158c31b192525e0fc66caf39af29600ac29f0ff5b5ed8",
@@ -21501,7 +22363,10 @@
       "luma": 118.45,
       "temperature": -0.0513,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:6d94cfc44a914b4f56a9fc20691824dad243abc9c167abe8be5e55beeff2919e",
@@ -21581,7 +22446,10 @@
       "luma": 102.33,
       "temperature": -0.2923,
       "frames": 4
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:6eedaedb5d4f8b9d39a63f5b807314f5d354e75d68744957248e65fca097182a",
@@ -21659,7 +22527,10 @@
       "luma": 108.5,
       "temperature": -0.0493,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:795e2c6edd9100f7075b621feb04ee70b3e56d461b80037a3300d2bb9137aff6",
@@ -21739,7 +22610,10 @@
       "luma": 117.78,
       "temperature": -0.1233,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:7bbdfaf7c4fcf43cb4ac4a4b28be1a96710ad36d43d8265590e6cc966546feae",
@@ -21817,7 +22691,10 @@
       "luma": 126.72,
       "temperature": -0.057,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:9915035341e6a14118e1ee6e8cf818c4dbb81020f7f50462895a04309cb61627",
@@ -21896,7 +22773,10 @@
       "luma": 130.72,
       "temperature": -0.1664,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:9bc2c29986250526b4ddecb884e55e5829b573fa10e794edf16b00df03511dc4",
@@ -21975,7 +22855,10 @@
       "luma": 113.94,
       "temperature": -0.0036,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:a1390ae9b65aa55f41e9dcb27363ceeeedc091556135b45b6e925c92eaf91a58",
@@ -22053,7 +22936,10 @@
       "luma": 93.51,
       "temperature": 0.0289,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:a48663f35b2c6600657c08a96fa52029052dffeb3e6b649c20477415eaf65f06",
@@ -22131,7 +23017,10 @@
       "luma": 147.15,
       "temperature": 0.0145,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:a9551f2f11389de7263c6e068bdff5138b16e7ca8354861a7b5ffb27d5ad04d1",
@@ -22209,7 +23098,10 @@
       "luma": 115.67,
       "temperature": -0.1209,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:b015cca8c261e34f21c9f314457f78c644f543d570086992f9280d85c77a47f7",
@@ -22288,7 +23180,10 @@
       "luma": 121.92,
       "temperature": -0.1799,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:b226dba7831a150c31c6c8c48e8b14003d6838481fd0d460c129a98b9aabca05",
@@ -22365,7 +23260,10 @@
       "luma": 132.71,
       "temperature": -0.0135,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:c51c2bffdaca9ee19e2e2d26cfedffbd08a05e194cab044a1ab776636886bc5a",
@@ -22444,7 +23342,10 @@
       "luma": 105.78,
       "temperature": -0.0379,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:d1eb1739791350234c5b7e1db084014eba483b9f5500b85db8b19b541508716e",
@@ -22524,7 +23425,10 @@
       "luma": 142.78,
       "temperature": -0.141,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:f52dde6b3509a56bc3228fc70c9ff997005bd20359875a1d304edf42b1b5efbd",
@@ -22601,7 +23505,10 @@
       "luma": 129.89,
       "temperature": -0.0957,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   },
   {
     "hash": "sha256:f96368ff66edeed8c3d08565c4ea5c908de28b70a3d43396f7ff0d9fada4ac3a",
@@ -22678,6 +23585,9 @@
       "luma": 124.16,
       "temperature": -0.1271,
       "frames": 3
-    }
+    },
+    "day": 17,
+    "stage": "Skien",
+    "place_source": "index"
   }
 ]

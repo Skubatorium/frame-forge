@@ -48,6 +48,21 @@ def query_assets(
     return [asset for asset in load_assets(project) if matches(asset)]
 
 
+def tech_of(asset: dict) -> dict:
+    """Technische Angaben eines Assets (`w`, `h`, `fps`, `dur`, `codec`, `bitrate`).
+
+    Plan 0001 §4 nennt das Feld `tech`; `preindex._prepare_one` schreibt die ffprobe-Antwort
+    aber unter `probe` (plus `duration` daneben). Beide Schreibweisen existieren im Bestand,
+    deshalb liest **jeder** Auswerter über diese Funktion statt direkt — sonst meldet die
+    Statistik „0 s Rohmaterial" bei 142 Minuten Material (am echten Fundus gefunden,
+    2026-08-03).
+    """
+    tech = asset.get("tech") or asset.get("probe") or {}
+    if "dur" not in tech and asset.get("duration") is not None:
+        tech = {**tech, "dur": asset["duration"]}
+    return tech
+
+
 def _existing_notes(md_path) -> str:
     """Freitext-Abschnitt nach `_NOTES_MARKER` einer bestehenden `.md`-Datei, sonst der Default."""
     if not md_path.exists():
@@ -61,7 +76,7 @@ def _existing_notes(md_path) -> str:
 def _render_markdown(asset: dict, notes: str) -> str:
     content = asset.get("content", {})
     quality = asset.get("quality", {})
-    tech = asset.get("tech", {})
+    tech = tech_of(asset)
     gps = asset.get("gps") or {}
 
     lines = [

@@ -16,7 +16,7 @@ from pathlib import Path
 
 import yaml
 
-from frameforge.index import load_assets
+from frameforge.index import load_assets, tech_of
 from frameforge.ingest import scan_media
 from frameforge.project import Export, Project
 from frameforge.timeline import Timeline
@@ -72,7 +72,7 @@ def index_stats(project: Project, *, scan_disk: bool = True) -> IndexStats:
     codecs = Counter()
     total_video_seconds = 0.0
     for a in videos:
-        tech = a.get("tech", {})
+        tech = tech_of(a)
         if "w" in tech and "h" in tech:
             resolutions[f"{tech['w']}x{tech['h']}"] += 1
         if "codec" in tech:
@@ -101,7 +101,7 @@ def index_stats(project: Project, *, scan_disk: bool = True) -> IndexStats:
 
 
 def _video_seconds(asset: dict) -> float:
-    return float(asset.get("tech", {}).get("dur", 0.0)) if asset.get("kind") == "video" else 0.0
+    return float(tech_of(asset).get("dur", 0.0)) if asset.get("kind") == "video" else 0.0
 
 
 def content_composition(project: Project) -> dict:
