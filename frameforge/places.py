@@ -12,6 +12,12 @@ Trollstigen-Clips landeten unter „Geiranger". Dieses Modul leitet stattdessen 
 4. Standtag ohne Positionsangabe → der Ort des Standtags
 5. sonst `unknown` — und damit Eingabe für `frameforge places-todo` (A5)
 
+**Vorrang beim Überschreiben:** Ein Ort, der bereits im Index steht, wird nur von einer
+*gemessenen* Position ersetzt (Schritt 1 und 2) — dafür gibt es dieses Modul. Die aus dem
+Datum abgeleiteten Vermerke (Schritt 3 und 4) sind Platzhalter und ersetzen keinen konkreten
+Namen; das Asset behält seinen Ort mit `place_source: "index"` und erscheint in
+`places-todo`, damit es geprüft wird.
+
 `plan_assignment` rechnet nur, `apply_assignment` schreibt. Manuell gesetzte Orte
 (`place_source: "manual"`) werden ohne `force=True` nie überschrieben.
 """
@@ -34,8 +40,24 @@ DEFAULT_POI_TOLERANCE_KM = 5.0
 # Aufnahmepausen ab, ohne über eine Fahretappe hinwegzugehen.
 DEFAULT_GPX_TOLERANCE_S = 1800.0
 
-# Woher der Ort stammt. `manual` ist der einzige Wert, den die Automatik respektiert.
-PLACE_SOURCES = ("gps", "gpx", "leg", "stage", "manual", "unknown")
+# Woher der Ort stammt.
+PLACE_SOURCES = ("gps", "gpx", "index", "leg", "stage", "manual", "unknown")
+
+# Quellen, die auf einer **gemessenen Position** beruhen. Nur sie dürfen einen bereits
+# vorhandenen Ortsnamen überschreiben — sie sind der Grund, warum es `assign-places` gibt
+# (Ordnernamen-Orte korrigieren).
+MEASURED_SOURCES = frozenset({"gps", "gpx"})
+
+# Quellen, die **nur aus dem Datum** abgeleitet sind. `unterwegs: A → B` bzw. der Ort eines
+# Standtags sind Platzhalter, keine Ortsangabe: sie sagen nur, welcher Etappe der Tag gehört.
+# Einen konkreten Namen, der schon dasteht, dürfen sie nicht ersetzen — im Realbetrieb hätte
+# das 149 von 255 Assets verschlechtert („Aurland" → „unterwegs: Geilo → Aurland",
+# „Hütte am See, Skien" → „Skien", geprüft am 2026-08-03 per --dry-run).
+DERIVED_SOURCES = frozenset({"leg", "stage"})
+
+# Der Ort stand schon im Index (meist aus dem Ordnernamen) und die Automatik konnte ihn weder
+# bestätigen noch widerlegen. Bleibt stehen, taucht aber in `places-todo` auf.
+KEPT_SOURCE = "index"
 
 UNKNOWN_PLACE = "unknown"
 
@@ -184,12 +206,16 @@ def plan_assignment(
                 tolerance_km=tolerance_km,
                 gpx_tolerance_s=gpx_tolerance_s,
             )
-            if new_place != old_place and old_place:
+            if old_place and place_source not in MEASURED_SOURCES and not force:
+                # Nur eine gemessene Position darf einen vorhandenen Namen ersetzen. Ein aus
+                # dem Datum abgeleiteter Etappenvermerk ist keine bessere Information.
+                new_place, place_source = old_place, KEPT_SOURCE
+            elif new_place != old_place and old_place:
                 result.conflicts.append(
                     PlaceConflict(asset_id, old_place, new_place, place_source)
                 )
 
-        if place_source == "unknown":
+        if place_source in {"unknown", KEPT_SOURCE}:
             result.unresolved.append(asset_id)
         result.by_place_source[place_source] = result.by_place_source.get(place_source, 0) + 1
 
@@ -274,8 +300,9 @@ def set_place(
 def places_todo(project: Project, *, day: int | None = None) -> list[dict]:
     """Assets mit unklarem Ort — kompakte Worklist für `frameforge places-todo` (A5).
 
-    Unklar heißt: `place_source` ist `unknown` oder `leg` (Vermerk „unterwegs", kein echter
-    Ortsname), bzw. es fehlt ganz. Manuell gesetzte Orte tauchen nie auf.
+    Unklar heißt: `place_source` ist `unknown`, `leg` (Vermerk „unterwegs", kein echter
+    Ortsname) oder `index` (Ort stand schon da, ist aber unbestätigt), bzw. es fehlt ganz.
+    Manuell gesetzte und über eine gemessene Position bestätigte Orte tauchen nie auf.
     """
     out = []
     for asset in index_module.load_assets(project):

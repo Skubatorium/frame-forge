@@ -265,3 +265,54 @@ def test_gpx_point_without_time_is_not_used_as_position(proj):
         tolerance_km=5.0,
     )
     assert (place, source) == ("unknown", "unknown")
+
+
+# -- Realbetrieb-Fund: abgeleitete Vermerke duerfen keinen Ortsnamen ersetzen -------
+
+
+def test_leg_note_does_not_replace_an_existing_place(proj):
+    """Am echten Fundus haette das 149 von 255 Assets verschlechtert."""
+    _asset(proj, "a1", "2026-07-28T11:00:00+00:00", gps={"place": "Aurland"})
+
+    result = plan_assignment(proj)
+    apply_assignment(proj, result)
+
+    asset = load_assets(proj)[0]
+    assert asset["gps"]["place"] == "Aurland"  # nicht "unterwegs: Geiranger → Lom"
+    assert asset["place_source"] == "index"
+    assert result.conflicts == []  # kein Konflikt: es widerspricht sich nichts
+    assert "a1" in result.unresolved  # aber unbestaetigt -> gehoert in die Lueckenliste
+
+
+def test_stage_place_does_not_replace_a_more_precise_one(proj):
+    _asset(proj, "a2", "2026-07-29T09:00:00+00:00", gps={"place": "Hütte am See, Lom"})
+    apply_assignment(proj, plan_assignment(proj))
+    assert load_assets(proj)[0]["gps"]["place"] == "Hütte am See, Lom"  # nicht "Lom"
+
+
+def test_measured_position_still_overrides_a_wrong_folder_place(proj):
+    """Der eigentliche Zweck von A4 bleibt erhalten: GPS korrigiert Ordnernamen-Orte."""
+    _asset(
+        proj, "a3", "2026-07-28T14:05:00+00:00",
+        gps={"lat": 62.4585, "lon": 7.6710, "place": "Geiranger-Lom/Trollstigen"},
+    )
+    result = plan_assignment(proj)
+    apply_assignment(proj, result)
+
+    asset = load_assets(proj)[0]
+    assert asset["gps"]["place"] == "Trollstigen"
+    assert asset["place_source"] == "gps"
+    assert len(result.conflicts) == 1
+
+
+def test_derived_place_is_still_used_when_nothing_is_there(proj):
+    """Ohne vorhandenen Ort bleibt der Etappenvermerk die beste verfuegbare Aussage."""
+    _asset(proj, "a4", "2026-07-28T11:00:00+00:00")
+    apply_assignment(proj, plan_assignment(proj))
+    assert load_assets(proj)[0]["gps"]["place"] == "unterwegs: Geiranger → Lom"
+
+
+def test_force_still_overwrites_everything(proj):
+    _asset(proj, "a5", "2026-07-28T11:00:00+00:00", gps={"place": "Aurland"})
+    apply_assignment(proj, plan_assignment(proj, force=True))
+    assert load_assets(proj)[0]["gps"]["place"] == "unterwegs: Geiranger → Lom"
