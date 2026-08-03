@@ -1,8 +1,28 @@
 name,lat,lon,type,day
-Skien,59.2090,9.6090,overnight,2026-07-20
-Geilo,60.5340,8.2060,overnight,2026-07-23
-Aurland,60.9060,7.1900,waypoint,2026-07-24
-Flåm,60.8630,7.1130,waypoint,2026-07-24
-Geiranger,62.1010,7.2060,overnight,2026-07-26
-Lom,61.8390,8.5670,overnight,2026-07-28
-Uvdal,60.2640,8.7340,overnight,2026-07-29
+Grevenbroich,51.09556,6.56387,overnight,1
+Hamburg Hafen,53.52234,9.92686,poi,1
+Flensburg,54.78841,9.43627,overnight,1
+Hirtshals,57.59239,9.96972,poi,2
+Skagerrak (Fähre),59.02041,10.27275,poi,2
+Skien,59.21016,9.56350,overnight,2
+Hütte am See,59.38136,9.41434,poi,3
+Küste bei Langesund,59.00560,9.70523,poi,4
+Heddal Stabkirche,59.57953,9.17515,poi,6
+Rastplatz am See,59.92674,8.80067,poi,6
+Hakkesetstølen Fjellstugu,60.50157,8.21759,overnight,6
+Aurlandsfjellet,60.85538,7.30654,poi,7
+Stegastein,60.90859,7.21248,poi,7
+Flåm,60.86296,7.11357,poi,7
+Winjum Cabin Aurland,60.91180,7.19396,overnight,7
+Nærøyfjord,60.86301,7.11613,poi,8
+Gudvangen (Viking Valley),60.88107,6.84244,poi,8
+Fähre Mannheller–Fodnes,61.14950,7.37885,poi,9
+Laukifossen (Olden),61.81801,6.81042,poi,9
+Loen,61.86823,6.82835,poi,9
+Rastplatz Videdalen,61.93759,7.26306,poi,9
+Geiranger,62.09460,7.22326,overnight,9
+Gudbrandsjuvet,62.33046,7.46967,poi,11
+Trollstigen,62.45509,7.66720,poi,11
+Lom,61.83893,8.56954,overnight,11
+Camp Uvdal,60.26491,8.78824,overnight,12
+Angelplatz bei Langesund,58.97124,9.67596,poi,17
