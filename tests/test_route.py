@@ -215,3 +215,51 @@ def _tmp_csv(text: str):
     path = Path(tempfile.mkdtemp()) / f"f{_CSV_COUNTER[0]}.csv"
     path.write_text(text, encoding="utf-8")
     return path
+
+
+# -- Realbetrieb-Fund: Hoehendienst-Antwort korrekt auswerten -----------------------
+
+
+def test_default_elevation_lookup_parses_the_service_response(monkeypatch):
+    """Open-Meteo antwortet mit {"elevation": [...]} in der Reihenfolge der Anfrage."""
+    from frameforge import route as route_module
+
+    gesehen = {}
+
+    def fake_fetch(url, payload=None):
+        gesehen["url"] = url
+        return {"elevation": [1043.0, 694.0]}
+
+    monkeypatch.setattr(route_module, "_fetch_json", fake_fetch)
+    got = route_module._default_elevation_lookup([(60.50157, 8.21759), (62.45509, 7.66720)])
+
+    assert got == [1043.0, 694.0]
+    assert "latitude=60.501570%2C62.455090" in gesehen["url"]
+    assert "longitude=8.217590%2C7.667200" in gesehen["url"]
+
+
+def test_default_elevation_lookup_rejects_a_short_answer(monkeypatch):
+    """Weniger Werte als Punkte heisst: die Zuordnung stimmt nicht mehr — lieber abbrechen."""
+    from frameforge import route as route_module
+
+    monkeypatch.setattr(route_module, "_fetch_json", lambda url, payload=None: {"elevation": [1.0]})
+    with pytest.raises(RoutingError, match="1 Werte"):
+        route_module._default_elevation_lookup([(1.0, 1.0), (2.0, 2.0)])
+
+
+def test_default_elevation_lookup_batches_large_requests(monkeypatch):
+    from frameforge import route as route_module
+
+    calls = []
+
+    def fake_fetch(url, payload=None):
+        # `latitude` und `longitude` tragen je (n-1) kodierte Kommas -> n = %2C/2 + 1
+        n = url.count("%2C") // 2 + 1
+        calls.append(n)
+        return {"elevation": [100.0] * n}
+
+    monkeypatch.setattr(route_module, "_fetch_json", fake_fetch)
+    got = route_module._default_elevation_lookup([(1.0, 1.0)] * 250)
+
+    assert len(got) == 250
+    assert calls == [100, 100, 50]

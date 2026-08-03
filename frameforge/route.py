@@ -17,6 +17,7 @@ im Realbetrieb genau einmal abgefragt wird.
 from __future__ import annotations
 
 import json
+import urllib.parse
 import urllib.request
 from collections.abc import Callable, Sequence
 from pathlib import Path
@@ -28,7 +29,12 @@ from frameforge.project import Project
 # gelegentlichen Einsatz eines Privatprojekts gedacht, nicht fuer Massenabfragen. Wer das
 # haeufiger braucht, injiziert seinen eigenen Dienst.
 DEFAULT_ROUTER_URL = "https://router.project-osrm.org/route/v1/driving/"
-DEFAULT_ELEVATION_URL = "https://api.open-elevation.com/api/v1/lookup"
+# Open-Meteo statt Open-Elevation: die oeffentliche Open-Elevation-Instanz lieferte im
+# Realbetrieb (Etappe Skien->Geilo, 2026-08-03) fuer 175 von 416 Punkten **0 m** statt einer
+# Fehlermeldung — und 0 m ist von echter Meereshoehe nicht unterscheidbar, landet also
+# unbemerkt im Cache. Gegenprobe an bekannten Hoehen aus dem Reisetagebuch:
+# Hakkesetstoelen 1043 m (Tagebuch 1041), Trollstigen 694 m (702), Stegastein 614 m (639).
+DEFAULT_ELEVATION_URL = "https://api.open-meteo.com/v1/elevation"
 
 Router = Callable[[Sequence[tuple[float, float]]], list[dict]]
 ElevationLookup = Callable[[Sequence[tuple[float, float]]], list[float | None]]
@@ -67,18 +73,27 @@ def _default_router(waypoints: Sequence[tuple[float, float]]) -> list[dict]:
 
 
 def _default_elevation_lookup(points: Sequence[tuple[float, float]]) -> list[float | None]:
-    """Open-Elevation: Höhe je Koordinate, in Blöcken (die API mag keine Riesen-Requests)."""
+    """Open-Meteo: Höhe je Koordinate, in Blöcken (die API mag keine Riesen-Requests).
+
+    Der Dienst nimmt die Koordinaten als kommaseparierte Query-Parameter und antwortet mit
+    `{"elevation": [...]}` in derselben Reihenfolge.
+    """
     out: list[float | None] = []
     for start in range(0, len(points), _ELEVATION_BATCH):
         batch = points[start : start + _ELEVATION_BATCH]
-        data = _fetch_json(
-            DEFAULT_ELEVATION_URL,
-            {"locations": [{"latitude": lat, "longitude": lon} for lat, lon in batch]},
+        query = urllib.parse.urlencode(
+            {
+                "latitude": ",".join(f"{lat:.6f}" for lat, _ in batch),
+                "longitude": ",".join(f"{lon:.6f}" for _, lon in batch),
+            }
         )
-        results = data.get("results") or []
-        if len(results) != len(batch):
-            raise RoutingError("Höhendienst lieferte weniger Werte als angefragt")
-        out.extend(r.get("elevation") for r in results)
+        data = _fetch_json(f"{DEFAULT_ELEVATION_URL}?{query}")
+        values = data.get("elevation")
+        if not isinstance(values, list) or len(values) != len(batch):
+            raise RoutingError(
+                f"Höhendienst lieferte {len(values or [])} Werte für {len(batch)} Punkte"
+            )
+        out.extend(values)
     return out
 
 

@@ -427,3 +427,33 @@ def test_ascent_label_is_optional_for_other_callers():
         },
     )
     assert "{{" not in svg
+
+
+def test_hud_profile_sits_inside_the_panel(tmp_path):
+    """Realbetrieb-Fund: das Hoehenprofil schwebte oben links, das Panel lag unten."""
+    from frameforge.design import overlay_tokens
+
+    width, height = 960, 540
+    track = [{"lat": 62.0 + i * 0.05, "lon": 7.0} for i in range(8)]
+    frames = render_hud_frames(
+        tmp_path / "hud", template_path=Path("templates/svg/map-hud.svg"), tokens=_tokens(),
+        fps=1, dur=2, width=width, height=height, track=track,
+        heights=[100.0 + i * 50 for i in range(8)],
+    )
+    layout = overlay_tokens(_tokens(), width=width, height=height)
+
+    # Sichtbarer Inhalt darf nicht oberhalb des Panels liegen (Toleranz: Schattenrand).
+    image = np.array(Image.open(frames[-1]).convert("RGBA"))[..., 3]
+    rows = np.nonzero(image.any(axis=1))[0]
+    assert rows[0] >= layout["panel_y"] - height * 0.03
+    # ... und nicht rechts neben dem Panel herausragen.
+    cols = np.nonzero(image.any(axis=0))[0]
+    assert cols[-1] <= layout["margin"] + layout["panel_width"] + width * 0.03
+
+
+def test_hud_uses_only_renderable_glyphs():
+    """`→` und `↑` fehlen in den Fonts — im Bild wuerde ein leeres Kaestchen stehen."""
+    from frameforge.map import HUD_ARROW, HUD_ASCENT_PREFIX
+
+    assert "→" not in HUD_ARROW
+    assert "↑" not in HUD_ASCENT_PREFIX

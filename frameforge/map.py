@@ -385,7 +385,11 @@ def render_basemap(
     return canvas
 
 
-HUD_ARROW = "—"  # `→` fehlt in den verfuegbaren Fonts (cairosvg rendert ein leeres Kaestchen)
+# `→` und `↑` fehlen in den verfuegbaren Fonts — cairosvg rendert dafuer ein leeres Kaestchen
+# (beides am gerenderten Bild geprueft, nicht vermutet). Fuer Bildtexte deshalb Ersatzzeichen;
+# in `assets.json`, Reports und Logs bleiben die echten Zeichen stehen.
+HUD_ARROW = "—"
+HUD_ASCENT_PREFIX = "+"
 
 
 def _profile_polyline(
@@ -450,11 +454,17 @@ def render_hud_frames(
     # aufgezeichnete Spur), aber ohne diesen Fallback lief `km_at[index]` in einen IndexError.
     km_at = cumulative_km(track) or [0.0]
     step_frames = max(1, round(step_s * fps))
+    # Das Profil gehoert **in** das HUD-Panel, nicht irgendwohin ins Bild. Die Box wird deshalb
+    # aus denselben Tokens abgeleitet, die das Template fuer das Panel nutzt (`overlay_tokens`)
+    # — vorher standen hier eigene Konstanten (`height * 0.10`), sodass das Diagramm oben links
+    # schwebte, waehrend das Panel unten lag (am echten Material gesehen, 2026-08-03).
+    layout = overlay_tokens(tokens, width=width, height=height)
+    inset = round(height * 0.02)
     profile_box = (
-        round(width * 0.06),
-        round(height * 0.10),
-        round(width * 0.24),
-        round(height * 0.12),
+        layout["text_x"],
+        layout["stats_y"] + inset,
+        layout["panel_width"] - (layout["text_x"] - layout["margin"]) - inset,
+        round(height * 0.09),
     )
 
     outputs: list[Path] = []
@@ -477,7 +487,7 @@ def render_hud_frames(
                 "date_label": stage["date"].isoformat() if stage else "",
                 "km_label": km_label,
                 "elevation_label": f"{elevation:.0f} m" if elevation is not None else "",
-                "ascent_label": f"↑ {ascent:.0f} m" if ascent > 0 else "",
+                "ascent_label": f"{HUD_ASCENT_PREFIX}{ascent:.0f} hm" if ascent > 0 else "",
                 "profile_points": polyline,
                 "marker_x": marker_x,
                 "marker_y": marker_y,
