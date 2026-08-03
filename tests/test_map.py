@@ -23,6 +23,7 @@ from frameforge.map import (
     pixel_to_latlon,
     render_basemap,
     render_hud_frames,
+    render_inset_frames,
     render_route_frames,
     smooth_centers,
 )
@@ -457,3 +458,79 @@ def test_hud_uses_only_renderable_glyphs():
 
     assert "→" not in HUD_ARROW
     assert "↑" not in HUD_ASCENT_PREFIX
+
+
+# -- Karten-Inset: Fenster in der Bildecke ueber laufendem Video --------------------
+
+
+def _fake_tiles(color=(230, 235, 225, 255)):
+    def fetcher(url: str) -> bytes:
+        buffer = io.BytesIO()
+        Image.new("RGBA", (256, 256), color).save(buffer, format="PNG")
+        return buffer.getvalue()
+
+    return fetcher
+
+
+def test_inset_splits_map_and_value_bar(tmp_path):
+    """Karte oben, deckende Werteleiste unten — beide duerfen sich nicht ueberlagern."""
+    track = [{"lat": 60.0 + i * 0.02, "lon": 8.0 + i * 0.01} for i in range(12)]
+    size = (400, 240)
+    frames = render_inset_frames(
+        tmp_path / "inset",
+        template_path=Path("templates/svg/map-inset.svg"),
+        tokens=_tokens(), fps=2, dur=2, size=size, track=track, zoom=9,
+        tile_cache_dir=tmp_path / "tiles", fetcher=_fake_tiles(),
+        heights=[100.0 + i * 40 for i in range(12)], bar_ratio=0.34,
+    )
+    assert len(frames) == 4
+    image = Image.open(frames[-1]).convert("RGBA")
+    assert image.size == size
+
+    bar_top = size[1] - round(size[1] * 0.34)
+    pixels = np.array(image)
+    # Die Leiste deckt das Video darunter ab (der Verlauf startet bei 94 % Deckkraft).
+    assert pixels[bar_top + 10, size[0] // 2, 3] > 230
+    # Kartenbereich zeigt die Kachelfarbe, die Leiste die Panel-Farbe — klar getrennt.
+    assert pixels[10, 10, :3].tolist() != pixels[size[1] - 10, 10, :3].tolist()
+    assert pixels[10, 10, 3] == 255  # Karte selbst ist deckend, kein Video scheint durch
+
+
+def test_inset_km_counter_continues_across_stages(tmp_path):
+    """Der Zaehler laeuft ueber die ganze Reise weiter, nicht ab null je Etappe."""
+    track = [{"lat": 60.0 + i * 0.05, "lon": 8.0} for i in range(10)]
+    ohne = render_inset_frames(
+        tmp_path / "a", template_path=Path("templates/svg/map-inset.svg"), tokens=_tokens(),
+        fps=1, dur=1, size=(400, 240), track=track, zoom=9,
+        tile_cache_dir=tmp_path / "tiles", fetcher=_fake_tiles(), km_offset=0.0,
+    )
+    mit = render_inset_frames(
+        tmp_path / "b", template_path=Path("templates/svg/map-inset.svg"), tokens=_tokens(),
+        fps=1, dur=1, size=(400, 240), track=track, zoom=9,
+        tile_cache_dir=tmp_path / "tiles", fetcher=_fake_tiles(), km_offset=1264.0,
+    )
+    assert ohne[0].read_bytes() != mit[0].read_bytes()
+
+
+def test_route_outline_makes_the_line_stand_out(tmp_path):
+    """Ohne Rand verschwindet die Route auf einer hellen Kachelkarte."""
+    track = [{"lat": 60.0 + i * 0.05, "lon": 8.0} for i in range(6)]
+    gemeinsam = {"fps": 1, "dur": 1, "width": 200, "height": 200, "viewport": "follow", "zoom": 9}
+    ohne = render_route_frames(track, tmp_path / "ohne", **gemeinsam)
+    mit = render_route_frames(
+        track, tmp_path / "mit", **gemeinsam,
+        route_outline_color=(255, 255, 255, 255), marker_outline_color=(0, 0, 0, 255),
+    )
+    a = np.array(Image.open(ohne[-1]).convert("RGBA"))[..., 3]
+    b = np.array(Image.open(mit[-1]).convert("RGBA"))[..., 3]
+    assert b.sum() > a.sum()  # mit Rand ist mehr Flaeche gedeckt
+
+
+def test_poi_labels_can_be_switched_off(tmp_path):
+    """Im kleinen Inset liefern die Kacheln die Ortsnamen — eigene Labels stoeren dort."""
+    track = [{"lat": 60.0, "lon": 8.0}, {"lat": 60.2, "lon": 8.1}]
+    pois = [{"name": "Teststadt", "lat": 60.1, "lon": 8.05}]
+    gemeinsam = {"fps": 1, "dur": 1, "width": 300, "height": 200, "pois": pois}
+    mit = render_route_frames(track, tmp_path / "mit", **gemeinsam)
+    ohne = render_route_frames(track, tmp_path / "ohne", **gemeinsam, poi_labels=False)
+    assert mit[0].read_bytes() != ohne[0].read_bytes()

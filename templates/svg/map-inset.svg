@@ -1,0 +1,40 @@
+<svg width="{{width}}" height="{{height}}" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rahmen und Werteleiste des Karten-Insets. Die Karte selbst wird als Bild darunter
+       gelegt (`map.render_inset_frames`); dieses Template liefert nur Rahmen, Verlauf,
+       Beschriftung und das Höhenprofil. -->
+  <defs>
+    <linearGradient id="ff-inset-bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="{{primary_color}}" stop-opacity="0.94"/>
+      <stop offset="100%" stop-color="{{primary_color}}" stop-opacity="1"/>
+    </linearGradient>
+    <clipPath id="ff-inset-clip">
+      <rect x="0" y="0" width="{{width}}" height="{{height}}" rx="{{corner_radius}}" ry="{{corner_radius}}"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#ff-inset-clip)">
+    <!-- Werteleiste am unteren Rand, in die Karte eingeblendet -->
+    <rect x="0" y="{{inset_bar_y}}" width="{{width}}" height="{{inset_bar_height}}" fill="url(#ff-inset-bar)"/>
+
+    <!-- Höhenprofil der Etappe mit Positionsmarkierung -->
+    <polyline points="{{profile_points}}" fill="none" stroke="{{accent_color}}"
+              stroke-width="{{profile_stroke}}" stroke-linejoin="round" opacity="0.9"/>
+    <circle cx="{{marker_x}}" cy="{{marker_y}}" r="{{profile_marker_r}}" fill="{{text_color}}"/>
+
+    <text x="{{inset_left_x}}" y="{{km_y}}" font-family="{{font_display}}" font-size="{{km_size}}"
+          font-weight="600" fill="{{text_color}}">{{km_label}}</text>
+    <text x="{{inset_left_x}}" y="{{caption_y}}" font-family="{{font_text}}" font-size="{{inset_caption}}"
+          letter-spacing="{{subtitle_tracking}}" fill="{{accent_color}}">{{km_caption}}</text>
+
+    <text x="{{inset_right_x}}" y="{{km_y}}" font-family="{{font_display}}" font-size="{{km_size}}"
+          font-weight="600" fill="{{text_color}}" text-anchor="end">{{elevation_label}}</text>
+    <text x="{{inset_right_x}}" y="{{caption_y}}" font-family="{{font_text}}" font-size="{{inset_caption}}"
+          letter-spacing="{{subtitle_tracking}}" fill="{{accent_color}}"
+          text-anchor="end">{{elevation_caption}}</text>
+  </g>
+
+  <rect x="{{border_inset}}" y="{{border_inset}}"
+        width="{{border_width}}" height="{{border_height}}"
+        rx="{{corner_radius}}" ry="{{corner_radius}}"
+        fill="none" stroke="{{text_color}}" stroke-opacity="0.28" stroke-width="{{border_stroke}}"/>
+</svg>

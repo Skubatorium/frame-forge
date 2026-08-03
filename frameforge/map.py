@@ -198,6 +198,9 @@ def render_route_frames(
     route_color: tuple[int, int, int, int] = ROUTE_COLOR,
     route_width_px: int = ROUTE_WIDTH_PX,
     pois: list[dict] | None = None,
+    route_outline_color: tuple[int, int, int, int] | None = None,
+    marker_outline_color: tuple[int, int, int, int] | None = None,
+    poi_labels: bool = True,
     viewport: str = "fit",
     zoom: int | None = None,
     ease_s: float = 1.0,
@@ -291,14 +294,21 @@ def render_route_frames(
             if not (-MARGIN_PX <= px <= width + MARGIN_PX and -MARGIN_PX <= py <= height + MARGIN_PX):
                 continue  # ausserhalb des Ausschnitts (nur im Follow-Modus moeglich)
             draw.ellipse((px - 4, py - 4, px + 4, py + 4), fill=MARKER_COLOR)
-            if name:
+            if name and poi_labels:
                 draw.text((px + 6, py - 6), name, fill=MARKER_COLOR)
+        # Auf einer hellen Kachelkarte verschwindet eine duenne Linie; ein dunkler Rand
+        # darunter macht sie lesbar, ohne die Routenfarbe des Projekts zu aendern.
+        if route_outline_color is not None:
+            draw.line(visible, fill=route_outline_color, width=route_width_px + 4, joint="curve")
         draw.line(visible, fill=route_color, width=route_width_px, joint="curve")
         cx, cy = visible[-1]
         if icon is not None:
             image.alpha_composite(icon, (round(cx - icon.width / 2), round(cy - icon.height / 2)))
         else:
             r = MARKER_RADIUS_PX
+            if marker_outline_color is not None:
+                draw.ellipse((cx - r - 3, cy - r - 3, cx + r + 3, cy + r + 3),
+                             fill=marker_outline_color)
             draw.ellipse((cx - r, cy - r, cx + r, cy + r), fill=MARKER_COLOR)
 
         target = out_dir / f"frame_{i:04d}.png"
@@ -498,6 +508,126 @@ def render_hud_frames(
         target = out_dir / f"frame_{i:04d}.png"
         render_svg_to_png(cache[bucket], target)
         outputs.append(target)
+    return outputs
+
+
+def render_inset_frames(
+    out_dir: Path,
+    *,
+    template_path: Path,
+    tokens: dict,
+    fps: float,
+    dur: float,
+    size: tuple[int, int],
+    track: list[dict],
+    zoom: int,
+    tile_cache_dir: Path,
+    heights: list[float | None] | None = None,
+    km_offset: float = 0.0,
+    pois: list[dict] | None = None,
+    dwell_s: float = 0.0,
+    ease_s: float = 1.5,
+    step_s: float = 0.5,
+    tile_server_url: str = DEFAULT_TILE_SERVER,
+    fetcher: TileFetcher | None = None,
+    marker_icon: Path | None = None,
+    route_color: tuple[int, int, int, int] = ROUTE_COLOR,
+    route_width_px: int = ROUTE_WIDTH_PX,
+    route_outline_color: tuple[int, int, int, int] | None = None,
+    marker_outline_color: tuple[int, int, int, int] | None = None,
+    poi_labels: bool = False,
+    bar_ratio: float = 0.34,
+) -> list[Path]:
+    """Karten-**Fenster** fuer die Bildecke: Kachelkarte, mitfahrender Marker, Werteleiste.
+
+    Anders als `render_route_frames` (Alpha-Ebene ueber dem ganzen Bild) ist das hier ein
+    kleiner, in sich geschlossener Kasten, der ueber laufendes Video gelegt wird — die Karte
+    ist Zusatzinformation, nicht das Bild selbst. `size` ist die Groesse **der Box**.
+
+    `km_offset` ist der Kilometerstand, bei dem diese Etappe beginnt: der Zaehler laeuft damit
+    ueber die ganze Reise weiter, nicht bei jeder Etappe von null. Er kommt aus `stages.csv`
+    (die real gefahrenen Werte), nicht aus der gerouteten Strecke — Faehrpassagen und fehlende
+    Zwischenpunkte machen die Routing-Distanz dafuer unbrauchbar.
+
+    Die Box ist zweigeteilt: oben die Karte, unten eine deckende Werteleiste (`bar_ratio` der
+    Boxhoehe) mit Kilometerstand, Hoehe und dem Etappenprofil. Beide **nebeneinander statt
+    uebereinander** — liegt das Profil in der Karte, sind Routenlinie und Hoehenkurve auf den
+    ersten Blick nicht zu unterscheiden (am gerenderten Bild gesehen).
+
+    Die Werteleiste wird wie beim HUD nur alle `step_s` Sekunden neu gerendert; die Karte
+    dagegen pro Frame, damit die Fahrt fluessig bleibt.
+    """
+    from frameforge.design import build_svg_from_tokens, overlay_tokens, render_svg_to_png
+    from frameforge.gpx import cumulative_km
+
+    width, height = size
+    bar_height = round(height * bar_ratio)
+    map_height = height - bar_height
+    out_dir.mkdir(parents=True, exist_ok=True)
+    frames_dir = out_dir / "map"
+    overlay_dir = out_dir / "bar"
+    overlay_dir.mkdir(parents=True, exist_ok=True)
+
+    render_route_frames(
+        track, frames_dir, fps=fps, dur=dur, width=width, height=map_height,
+        pois=pois, viewport="follow", zoom=zoom, ease_s=ease_s, dwell_s=dwell_s,
+        tile_cache_dir=tile_cache_dir, tile_server_url=tile_server_url, fetcher=fetcher,
+        marker_icon=marker_icon, route_color=route_color, route_width_px=route_width_px,
+        route_outline_color=route_outline_color, marker_outline_color=marker_outline_color,
+        poi_labels=poi_labels,
+    )
+
+    frame_count = max(1, round(fps * dur))
+    reveal_counts = _dwell_schedule(
+        track, pois or [], frame_count=frame_count, fps=fps, dwell_s=dwell_s
+    )
+    km_at = cumulative_km(track) or [0.0]
+    step_frames = max(1, round(step_s * fps))
+    layout = overlay_tokens(tokens, width=width, height=height)
+    # Profil in der unteren Leiste, unterhalb der Werte-Zeile.
+    profile_box = (
+        layout["inset_left_x"],
+        map_height + round(bar_height * 0.62),
+        width - 2 * layout["inset_left_x"],
+        round(bar_height * 0.30),
+    )
+
+    outputs: list[Path] = []
+    cache: dict[int, str] = {}
+    for i in range(frame_count):
+        bucket = i // step_frames
+        if bucket not in cache:
+            index = max(0, min(reveal_counts[i], len(track)) - 1)
+            polyline, (marker_x, marker_y) = _profile_polyline(heights or [], profile_box, index)
+            elevation = heights[index] if heights and index < len(heights) else None
+            gefahren = km_offset + km_at[min(index, len(km_at) - 1)]
+            content = {
+                "km_label": f"{gefahren:,.0f} km".replace(",", "."),
+                "elevation_label": f"{elevation:.0f} m" if elevation is not None else "—",
+                "profile_points": polyline,
+                "marker_x": marker_x,
+                "marker_y": marker_y,
+            }
+            cache[bucket] = build_svg_from_tokens(
+                template_path,
+                overlay_tokens(
+                    tokens, width=width, height=height,
+                    inset_bar_y=map_height, inset_bar_height=bar_height,
+                    km_y=map_height + round(bar_height * 0.33),
+                    caption_y=map_height + round(bar_height * 0.52),
+                    **content,
+                ),
+            )
+        bar = overlay_dir / f"frame_{i:04d}.png"
+        render_svg_to_png(cache[bucket], bar)
+
+        composed = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+        composed.alpha_composite(Image.open(frames_dir / f"frame_{i:04d}.png").convert("RGBA"))
+        composed.alpha_composite(Image.open(bar).convert("RGBA"))
+        target = out_dir / f"frame_{i:04d}.png"
+        composed.save(target)
+        outputs.append(target)
+
     return outputs
 
 

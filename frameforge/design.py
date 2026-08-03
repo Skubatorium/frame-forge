@@ -200,6 +200,22 @@ def overlay_tokens(tokens: dict, *, width: int, height: int, **extra) -> dict:
         "stats_y": round(height * 0.84),
         "profile_stroke": max(2, round(height * 0.003)),
         "profile_marker_r": max(3, round(height * 0.005)),
+        # map-inset (Karten-Fenster im Bild, eigene Pixelgroesse — hier ist `width`/`height`
+        # die Groesse der Box, nicht die des Films)
+        "inset_bar_y": round(height * 0.62),
+        "inset_bar_height": round(height * 0.38),
+        "km_size": round(caption * 1.5, 1),
+        "inset_caption": round(caption * 0.72, 1),
+        "km_y": round(height * 0.82),
+        "caption_y": round(height * 0.93),
+        "inset_left_x": round(width * 0.06),
+        "inset_right_x": round(width * 0.94),
+        "km_caption": "GEFAHREN",
+        "elevation_caption": "HÖHE",
+        "border_inset": 1,
+        "border_width": width - 2,
+        "border_height": height - 2,
+        "border_stroke": max(1, round(height * 0.005)),
         # stat-badge
         "badge_width": round(width - 2 * margin),
         "badge_height": round(height - 2 * margin),
