@@ -1,0 +1,128 @@
+[
+  {
+    "day": 1,
+    "km": 578.5,
+    "source": "geschaetzt",
+    "km_user": null,
+    "km_estimated": 578.5
+  },
+  {
+    "day": 2,
+    "km": 561.0,
+    "source": "geschaetzt",
+    "km_user": null,
+    "km_estimated": 561.0
+  },
+  {
+    "day": 3,
+    "km": 0.0,
+    "source": "stages.csv",
+    "km_user": 0.0,
+    "km_estimated": 50.8
+  },
+  {
+    "day": 4,
+    "km": 0.0,
+    "source": "stages.csv",
+    "km_user": 0.0,
+    "km_estimated": 59.0
+  },
+  {
+    "day": 5,
+    "km": 0.0,
+    "source": "stages.csv",
+    "km_user": 0.0,
+    "km_estimated": 0.0
+  },
+  {
+    "day": 6,
+    "km": 220.0,
+    "source": "stages.csv",
+    "km_user": 220.0,
+    "km_estimated": 228.3
+  },
+  {
+    "day": 7,
+    "km": 190.0,
+    "source": "stages.csv",
+    "km_user": 190.0,
+    "km_estimated": 141.5
+  },
+  {
+    "day": 8,
+    "km": 10.0,
+    "source": "stages.csv",
+    "km_user": 10.0,
+    "km_estimated": 19.5
+  },
+  {
+    "day": 9,
+    "km": 278.0,
+    "source": "stages.csv",
+    "km_user": 278.0,
+    "km_estimated": 277.9
+  },
+  {
+    "day": 10,
+    "km": 0.0,
+    "source": "stages.csv",
+    "km_user": 0.0,
+    "km_estimated": 0.0
+  },
+  {
+    "day": 11,
+    "km": 266.0,
+    "source": "stages.csv",
+    "km_user": 266.0,
+    "km_estimated": 301.8
+  },
+  {
+    "day": 12,
+    "km": 300.0,
+    "source": "stages.csv",
+    "km_user": 300.0,
+    "km_estimated": 280.0
+  },
+  {
+    "day": 13,
+    "km": 0.0,
+    "source": "stages.csv",
+    "km_user": 0.0,
+    "km_estimated": 0.0
+  },
+  {
+    "day": 14,
+    "km": 0.0,
+    "source": "stages.csv",
+    "km_user": 0.0,
+    "km_estimated": 0.0
+  },
+  {
+    "day": 15,
+    "km": 190.5,
+    "source": "geschaetzt",
+    "km_user": null,
+    "km_estimated": 190.5
+  },
+  {
+    "day": 16,
+    "km": 0.0,
+    "source": "stages.csv",
+    "km_user": 0.0,
+    "km_estimated": 0.0
+  },
+  {
+    "day": 17,
+    "km": 71.0,
+    "source": "geschaetzt",
+    "km_user": null,
+    "km_estimated": 71.0
+  },
+  {
+    "day": 18,
+    "km": 1136.1,
+    "source": "geschaetzt",
+    "km_user": null,
+    "km_estimated": 1136.1
+  }
+]

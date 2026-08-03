@@ -22,6 +22,7 @@ from frameforge.route import (
     RoutingError,
     build_route_gpx,
     elevations_for,
+    estimate_stage_km,
     import_kml,
     waypoints_from_stages,
 )
@@ -263,3 +264,102 @@ def test_default_elevation_lookup_batches_large_requests(monkeypatch):
 
     assert len(got) == 250
     assert calls == [100, 100, 50]
+
+
+# -- Etappen-Kilometer aus Koordinaten (Nutzer-Feedback 2026-08-04) -----------------
+
+_ORTE = [
+    {"name": "Flensburg", "lat": 54.78841, "lon": 9.43627, "type": "overnight", "day": "1"},
+    {"name": "Hirtshals", "lat": 57.59239, "lon": 9.96972, "type": "poi", "day": "2"},
+    {"name": "Larvik", "lat": 59.05330, "lon": 10.02940, "type": "city", "day": "2"},
+    {"name": "Skien", "lat": 59.21016, "lon": 9.56350, "type": "overnight", "day": "2"},
+    {"name": "Fähre Mannheller–Fodnes", "lat": 61.14950, "lon": 7.37885, "type": "poi", "day": "9"},
+    {"name": "Geiranger", "lat": 62.09460, "lon": 7.22326, "type": "overnight", "day": "9"},
+]
+
+
+def _luftlinien_router(waypoints):
+    """Router-Ersatz: liefert die Wegpunkte unveraendert, also exakt die Luftlinie."""
+    return [{"lat": lat, "lon": lon} for lat, lon in waypoints]
+
+
+def _umweg_router(faktor: float):
+    """Router-Ersatz, der eine um `faktor` laengere Strecke liefert (Umweg um Wasser).
+
+    Umgesetzt als Zickzack senkrecht zur Verbindungslinie: die Summe der Teilstrecken ist
+    ungefaehr `faktor` mal die Luftlinie.
+    """
+
+    def router(waypoints):
+        (lat1, lon1), (lat2, lon2) = waypoints[0], waypoints[-1]
+        schritte = 20
+        auslenkung = (faktor**2 - 1) ** 0.5 / 2 if faktor > 1 else 0.0
+        punkte = []
+        for i in range(schritte + 1):
+            t = i / schritte
+            seite = 1 if i % 2 else -1
+            punkte.append(
+                {
+                    "lat": lat1 + (lat2 - lat1) * t + seite * auslenkung * (lon2 - lon1) / schritte,
+                    "lon": lon1 + (lon2 - lon1) * t - seite * auslenkung * (lat2 - lat1) / schritte,
+                }
+            )
+        return punkte
+
+    return router
+
+
+def _stage(**over):
+    basis = {"day": 1, "from": "Flensburg", "to": "Skien", "via": "", "km": None}
+    return {**basis, **over}
+
+
+def test_estimate_uses_named_ferry_ports_as_a_sea_leg():
+    """Die Faehre steht in der via-Spalte — ihre Haefen werden zu echten Wegpunkten."""
+    stage = _stage(via="Hirtshals; Fähre Color Line Hirtshals–Larvik")
+    result = estimate_stage_km(stage, _ORTE, router=_luftlinien_router)
+
+    assert result["has_sea"] is True
+    arten = [s["art"] for s in result["segments"]]
+    assert "see" in arten
+    assert result["km"] > 0
+
+
+def test_short_fjord_ferry_that_exists_as_poi_stays_a_normal_waypoint():
+    """`Fähre Mannheller–Fodnes` ist selbst ein POI — kein Sonderfall, sondern ein Punkt."""
+    stage = _stage(via="Fähre Mannheller–Fodnes", to="Geiranger")
+    result = estimate_stage_km(stage, _ORTE, router=_luftlinien_router)
+
+    assert result["has_sea"] is False  # kein kuenstlicher Seesprung
+    assert result["unresolved"] == []
+
+
+def test_long_detour_is_treated_as_sea_only_above_the_threshold():
+    """Fjordstrassen haben legitime Umwege — erst ein grosser Faktor gilt als Wasser."""
+    stage = _stage()
+    moderat = estimate_stage_km(stage, _ORTE, router=_umweg_router(2.0))
+    extrem = estimate_stage_km(stage, _ORTE, router=_umweg_router(12.0))
+
+    assert moderat["has_sea"] is False
+    assert extrem["has_sea"] is True
+
+
+def test_unresolved_waypoints_are_reported_not_skipped_silently():
+    stage = _stage(via="Numedal; Fv40")
+    result = estimate_stage_km(stage, _ORTE, router=_luftlinien_router)
+    assert result["unresolved"] == ["Numedal", "Fv40"]
+
+
+def test_standing_day_is_zero_km():
+    stage = {**_stage(), "from": "Skien", "to": "Skien", "via": ""}
+    result = estimate_stage_km(stage, _ORTE, router=_luftlinien_router)
+    assert result["km"] == 0.0
+
+
+def test_place_name_inside_a_sentence_is_resolved():
+    """`via`-Angaben wie "E134 über Notodden" nennen den Ort im Satz."""
+    from frameforge.route import _coords_for
+
+    orte = [{"name": "Notodden", "lat": 59.559, "lon": 9.2557, "type": "city", "day": "15"}]
+    assert _coords_for("E134 über Notodden", orte) == (59.559, 9.2557)
+    assert _coords_for("Blomsterdalen", [{"name": "Lom", "lat": 1.0, "lon": 2.0}]) is None

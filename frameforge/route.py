@@ -17,9 +17,11 @@ im Realbetrieb genau einmal abgefragt wird.
 from __future__ import annotations
 
 import json
+import re
 import urllib.parse
 import urllib.request
 from collections.abc import Callable, Sequence
+from itertools import pairwise
 from pathlib import Path
 
 from frameforge import gpx as gpx_module
@@ -98,11 +100,27 @@ def _default_elevation_lookup(points: Sequence[tuple[float, float]]) -> list[flo
 
 
 def _coords_for(name: str, locations: list[dict]) -> tuple[float, float] | None:
-    """Koordinaten eines Ortsnamens aus `locations.csv` (case-insensitiv), sonst `None`."""
+    """Koordinaten eines Ortsnamens aus `locations.csv` (case-insensitiv), sonst `None`.
+
+    Zweiter Versuch bei `via`-Angaben, die den Ort in einen Satz einbetten: `"E134 über
+    Notodden"` oder `"Fähre Larvik–Hirtshals 08:00"` — steht ein Ortsname aus `locations.csv`
+    als **eigenes Wort** darin, gilt er als gemeint. Der laengste Treffer gewinnt, damit
+    `"Hamburg Hafen"` nicht von `"Hamburg"` verdraengt wird. Reine Teilstring-Treffer ohne
+    Wortgrenze zaehlen nicht (sonst wuerde `"Lom"` in `"Blomsterdalen"` anschlagen).
+    """
     wanted = name.strip().casefold()
     for loc in locations:
         if loc["name"].casefold() == wanted:
             return (loc["lat"], loc["lon"])
+
+    treffer = [
+        loc
+        for loc in locations
+        if re.search(rf"(?<!\w){re.escape(loc['name'].casefold())}(?!\w)", wanted)
+    ]
+    if treffer:
+        best = max(treffer, key=lambda loc: len(loc["name"]))
+        return (best["lat"], best["lon"])
     return None
 
 
@@ -129,6 +147,156 @@ def waypoints_from_stages(
             if not waypoints or waypoints[-1] != coords:
                 waypoints.append(coords)
     return waypoints, unknown
+
+
+# Woran eine Faehrpassage in `stages.csv` erkennbar ist. Der Nutzer schreibt sie ohnehin in
+# die `via`-Spalte ("Fähre Color Line Hirtshals–Larvik") — das ist eine **Angabe**, keine
+# Vermutung, und damit die verlaesslichste Quelle.
+FERRY_MARKERS = ("fähre", "faehre", "ferry", "ferge")
+
+# Nur noch Sicherheitsnetz, falls eine Faehre nicht als solche benannt ist: ab diesem
+# Verhaeltnis Routing-Distanz zu Luftlinie liegt mit Sicherheit Wasser dazwischen. Bewusst
+# hoch angesetzt — Fjordstrassen haben legitim Faktoren um 2,5 (Geilo->Aurland kam mit dem
+# frueheren Schwellwert 2,5 faelschlich als Seeweg heraus: 126 statt 190 km).
+SEA_DETOUR_FACTOR = 4.0
+
+
+def _is_ferry(name: str) -> bool:
+    return any(marker in name.casefold() for marker in FERRY_MARKERS)
+
+
+def _ferry_ports(name: str, locations: list[dict]) -> list[tuple[float, float]]:
+    """Haefen, die ein Faehr-Eintrag nennt — in der Reihenfolge, in der sie im Text stehen.
+
+    `"Fähre Color Line Hirtshals–Larvik"` nennt beide Enden der Passage; sind sie in
+    `locations.csv` bekannt, wird daraus ein echtes Seesegment statt eines groben Sprungs.
+    Eine kurze Fjordfaehre steht dagegen oft selbst als POI (`"Fähre Mannheller–Fodnes"`) —
+    dann ist sie ein normaler Wegpunkt und dieser Weg greift nicht.
+    """
+    wanted = name.casefold()
+    treffer = []
+    for loc in locations:
+        match = re.search(rf"(?<!\w){re.escape(loc['name'].casefold())}(?!\w)", wanted)
+        if match:
+            treffer.append((match.start(), (loc["lat"], loc["lon"])))
+    return [coords for _, coords in sorted(treffer)]
+
+
+def _segment_km(
+    a: tuple[float, float], b: tuple[float, float], router: Router, *, ferry: bool = False
+) -> tuple[float, str]:
+    """`(km, art)` zwischen zwei Punkten — `art` ist `"land"` oder `"see"`.
+
+    Eine Faehrpassage kann der Router nicht: er faehrt ums Wasser herum. Ist das Segment als
+    Faehre benannt (`ferry=True`) oder weicht die gefahrene Strecke um mehr als
+    `SEA_DETOUR_FACTOR` von der Luftlinie ab, wird die Luftlinie angesetzt — ein Schiff faehrt
+    naeherungsweise gerade.
+    """
+    luftlinie = gpx_module.haversine_km(a, b)
+    if ferry:
+        return luftlinie, "see"
+    try:
+        strecke = gpx_module.cumulative_km(router([a, b]))[-1]
+    except (RoutingError, IndexError):
+        return luftlinie, "see"
+    if luftlinie > 0 and strecke / luftlinie > SEA_DETOUR_FACTOR:
+        return luftlinie, "see"
+    return strecke, "land"
+
+
+def estimate_stage_km(
+    stage: dict, locations: list[dict], *, router: Router | None = None
+) -> dict:
+    """Schaetzt die Distanz einer Etappe aus den Koordinaten ihrer Wegpunkte.
+
+    Fuer Etappen, bei denen in `stages.csv` keine Kilometerangabe steht. Rueckgabe:
+    `{"km", "segments", "unresolved", "has_sea"}` — `unresolved` nennt die Wegpunkte ohne
+    Koordinate, die uebersprungen wurden, damit nichts still unter den Tisch faellt.
+
+    Ein Standtag (`from == to`, keine `via`) ergibt 0 km, keine Schaetzung.
+    """
+    route = router or _default_router
+    namen = [stage["from"], *[v.strip() for v in stage["via"].split(";") if v.strip()], stage["to"]]
+
+    punkte: list[tuple[float, float]] = []
+    ferry_ab: set[int] = set()  # Index des Punktes, ab dem eine Faehrpassage beginnt
+    unresolved: list[str] = []
+    for name in namen:
+        if not name:
+            continue
+        if _is_ferry(name):
+            exakt = any(loc["name"].casefold() == name.strip().casefold() for loc in locations)
+            haefen = [] if exakt else _ferry_ports(name, locations)
+            if len(haefen) >= 2:
+                # Beide Enden bekannt: als echte Wegpunkte einsetzen, dazwischen Seeweg.
+                for hafen in haefen:
+                    if not punkte or punkte[-1] != hafen:
+                        punkte.append(hafen)
+                        if len(punkte) > 1:
+                            ferry_ab.add(len(punkte) - 2)
+                continue
+            if not exakt:
+                # Enden unbekannt: der Uebergang zum naechsten Punkt gilt als Seeweg.
+                if punkte:
+                    ferry_ab.add(len(punkte) - 1)
+                continue
+            # Exakter POI-Treffer (kurze Fjordfaehre): normaler Wegpunkt, unten aufgeloest.
+        coords = _coords_for(name, locations)
+        if coords is None:
+            unresolved.append(name)
+            continue
+        if not punkte or punkte[-1] != coords:
+            punkte.append(coords)
+
+    if len(punkte) < 2:
+        return {"km": 0.0, "segments": [], "unresolved": unresolved, "has_sea": False}
+
+    gesamt, segments, has_sea = 0.0, [], False
+    for i, (a, b) in enumerate(pairwise(punkte)):
+        km, art = _segment_km(a, b, route, ferry=i in ferry_ab)
+        gesamt += km
+        segments.append({"km": round(km, 1), "art": art})
+        has_sea = has_sea or art == "see"
+    return {
+        "km": round(gesamt, 1),
+        "segments": segments,
+        "unresolved": unresolved,
+        "has_sea": has_sea,
+    }
+
+
+def stage_km_table(
+    stages: list[dict], locations: list[dict], *, router: Router | None = None
+) -> list[dict]:
+    """Kilometer je Etappe: Nutzerangabe, wo vorhanden — sonst aus den Koordinaten geschaetzt.
+
+    Rueckgabe je Etappe: `{"day", "km", "source", "km_estimated", "km_user"}`. `source` ist
+    `"stages.csv"` oder `"geschaetzt"`, damit im Report und in der Anzeige unterscheidbar
+    bleibt, welche Zahl belegt ist und welche gerechnet.
+
+    Die Nutzerangabe gewinnt **immer**: sie stammt vom Tacho, die Schaetzung aus einer
+    Routenberechnung, die Umwege, Tankstopps und Routenwahl nicht kennt (an den belegten
+    Etappen dieser Reise ~25 % mittlere Abweichung).
+    """
+    out = []
+    for stage in stages:
+        geschaetzt = estimate_stage_km(stage, locations, router=router)["km"]
+        eigen = stage.get("km")
+        out.append(
+            {
+                "day": stage["day"],
+                "km": eigen if eigen is not None else geschaetzt,
+                "source": "stages.csv" if eigen is not None else "geschaetzt",
+                "km_user": eigen,
+                "km_estimated": geschaetzt,
+            }
+        )
+    return out
+
+
+def km_offset_for(day: int, table: list[dict]) -> float:
+    """Kilometerstand zu Beginn eines Reisetags — Summe aller vorherigen Etappen."""
+    return round(sum(row["km"] or 0.0 for row in table if row["day"] < day), 1)
 
 
 def import_kml(project: Project, kml_path: Path) -> Path:
