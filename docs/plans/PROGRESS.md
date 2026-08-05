@@ -74,10 +74,10 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | # | Schritt | Status | Commit |
 |---|------|--------|--------|
 | HEIC-1 | ffmpeg-Fähigkeit prüfen (entscheidet den Renderpfad) | ✅ fertig | `8636201` |
-| HEIC-2 | `pillow-heif` als Abhängigkeit, HEIF-Opener **einmal** zentral registrieren | ✅ fertig | `HEIC2` |
-| HEIC-3 | Neues Modul `frameforge/imageio.py`, `analyze`/`keyframes` gehen darüber | ✅ fertig | `HEIC2` |
-| HEIC-4 | Renderpfad: JPEG-Proxy für HEIC, `render_final` zeigt darauf | ✅ fertig | `HEIC2` |
-| HEIC-5 | `.dng` — entfernen oder klare Fehlermeldung statt stillem Scheitern | ✅ fertig | `HEIC2` |
+| HEIC-2 | `pillow-heif` als Abhängigkeit, HEIF-Opener **einmal** zentral registrieren | ✅ fertig | `658da4d` |
+| HEIC-3 | Neues Modul `frameforge/imageio.py`, `analyze`/`keyframes` gehen darüber | ✅ fertig | `658da4d` |
+| HEIC-4 | Renderpfad: JPEG-Proxy für HEIC, `render_final` zeigt darauf | ✅ fertig | `658da4d` |
+| HEIC-5 | `.dng` — entfernen oder klare Fehlermeldung statt stillem Scheitern | ✅ fertig | `658da4d` |
 
 **Ausgangslage.** `.heic` steht in `ingest.PHOTO_EXTENSIONS`, aber weder Pillow (kein
 `pillow-heif` in den Abhängigkeiten) noch OpenCV können HEIC lesen —
