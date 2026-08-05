@@ -67,6 +67,65 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 | H2 | Farbangleichung (`render.match_filter`, `color_match: off/soft/strong`) | ✅ fertig | `7f86f65` |
 | I | Abschluss-Audit (I1–I4 fertig, I5 braucht Nutzer) | 🔄 | `1917325` |
 
+---
+
+## Arbeitspaket HEIC-Unterstützung (2026-08-05)
+
+| # | Schritt | Status | Commit |
+|---|------|--------|--------|
+| HEIC-1 | ffmpeg-Fähigkeit prüfen (entscheidet den Renderpfad) | ✅ fertig | `0d9b8b4` |
+| HEIC-2 | `pillow-heif` als Abhängigkeit, HEIF-Opener **einmal** zentral registrieren | ⬜ | — |
+| HEIC-3 | Neues Modul `frameforge/imageio.py`, `analyze`/`keyframes` gehen darüber | ⬜ | — |
+| HEIC-4 | Renderpfad: JPEG-Proxy für HEIC, `render_final` zeigt darauf | ⬜ | — |
+| HEIC-5 | `.dng` — entfernen oder klare Fehlermeldung statt stillem Scheitern | ⬜ | — |
+
+**Ausgangslage.** `.heic` steht in `ingest.PHOTO_EXTENSIONS`, aber weder Pillow (kein
+`pillow-heif` in den Abhängigkeiten) noch OpenCV können HEIC lesen —
+`cv2.imread` liefert `None`, `Image.open` wirft `UnidentifiedImageError`. Damit werfen
+`keyframes.extract_keyframes` und `analyze.analyze_photo`, `preindex.prepare_index` fängt den
+Fehler pro Datei ab, und HEIC-Fotos **verschwinden still aus dem Index**, ohne dass der Lauf
+fehlschlägt. Im Fundus stehen 670 HEIC-Dateien an
+(`…/2026_Norwegen/01_Rohmaterial/Chris-iPhone/`), im aktuellen `media_root` noch keine.
+
+### HEIC-1 — ffmpeg kann HEIC **nicht** im Foto-Renderpfad verwenden (2026-08-05)
+
+Lokal installiert ist **ffmpeg 8.1.2**. Der naheliegende Test ist irreführend und wurde
+verworfen:
+
+```
+ffmpeg -demuxers | grep -i heif   →  kein Treffer
+```
+
+Daraus folgt **nicht**, dass ffmpeg die Dateien nicht anfassen kann: HEIF ist ISOBMFF, also
+greift der `mov,mp4,m4a,3gp,3g2,mj2`-Demuxer, und der `hevc`-Decoder ist vorhanden. Ein
+`ffmpeg -i IMG_9323.HEIC -frames:v 1 …` läuft mit Exit 0 durch. Entschieden wurde deshalb am
+**echten Renderpfad**, nicht an der Demuxer-Liste.
+
+Zwei Befunde an echten Dateien des Nutzers, die den Renderpfad ausschließen:
+
+1. **`-loop` existiert auf diesem Demuxer nicht.** `render.build_filtergraph` baut für Fotos
+   `-loop 1 -framerate <fps> -i <datei>` (Standbild auf Clipdauer ziehen). Gegen ein echtes
+   HEIC:
+
+   ```
+   Option loop not found.
+   Error opening input file …/IMG_0002.HEIC
+   rc = 8
+   ```
+
+   `-loop` ist eine Option des `image2`-Demuxers; über `mov` ist sie nicht verfügbar. Ohne
+   HEIF-Demuxer gibt es für Fotos also keinen Standbild-Input.
+2. **Die Stream-Auswahl ist nicht verlässlich.** `ffprobe` meldet je HEIC **118 hevc-Streams**
+   (Kacheln 640×896, Thumbnails 512×512/416×312/1024×768, abgeleitete Bilder 2016×1512). Es gibt
+   keinen Stream, der erkennbar „das Bild" ist; ffmpegs Default-Auswahl nimmt den größten und
+   trifft damit eine Kachel oder ein Derivat, nicht zwingend das Vollbild. Selbst mit
+   funktionierendem `-loop` wäre das kein reproduzierbarer Renderpfad.
+
+**Konsequenz:** Schritt 4 des Arbeitspakets greift — `ingest.build_proxies` schreibt für HEIC
+einen JPEG-Proxy statt 1:1 zu kopieren, und `render_final` zeigt für diese Assets auf den Proxy
+statt aufs Original. Begründung der Abweichung vom Prinzip „Final rendert aus den Originalen"
+siehe HEIC-4.
+
 ## Audit Plan 0003 (2026-08-01, Opus)
 
 Unabhängige Prüfung der Commits `b9a5ca2..ca596c5` gegen den Plan — Logik, Grenzfälle,
