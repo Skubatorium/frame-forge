@@ -9,8 +9,9 @@ from pathlib import Path
 import pytest
 
 from frameforge import project as project_module
+from frameforge import render as render_module
 from frameforge.index import write_asset
-from frameforge.ingest import hash_file, proxy_path
+from frameforge.ingest import build_proxies, hash_file, proxy_path
 from frameforge.probe import probe_video
 from frameforge.project import ProjectConfig, resolve_project
 from frameforge.render import (
@@ -333,6 +334,113 @@ def test_render_final_versions_instead_of_overwriting(proj):
     assert second.name == "teaser_v2.mp4"
     assert first.exists()
     assert second.exists()
+
+
+def _add_heic_asset(project) -> None:
+    """Legt ein echtes HEIC unter `media_root` ab und baut den zugehoerigen Proxy."""
+    media_root = project.config.media_root
+    shutil.copy(FIXTURES / "photo.heic", media_root / "shot.heic")
+    proxies_dir = project.cache_dir / "proxies"
+    proxies_dir.mkdir(parents=True, exist_ok=True)
+    build_proxies([media_root / "shot.heic"], proxies_dir, media_root=media_root)
+    write_asset(
+        project,
+        {
+            "id": "heic1",
+            "kind": "photo",
+            "path": "shot.heic",
+            "hash": hash_file(media_root / "shot.heic"),
+        },
+    )
+
+
+def _heic_timeline() -> Timeline:
+    return Timeline(
+        export="teaser",
+        fps=25,
+        resolution=(320, 240),
+        duration=1.0,
+        tracks={"video": [{"id": "c1", "asset": "heic1", "src_in": 0, "src_out": 1.0, "tl_in": 0}]},
+    )
+
+
+@pytest.fixture
+def spy_inputs(monkeypatch):
+    """Faengt die Eingabedateien ab, die `render_final` tatsaechlich an ffmpeg gibt."""
+    seen: list[Path] = []
+    original = render_module.build_filtergraph
+
+    def wrapper(timeline, *, resolve_asset, **kwargs):
+        def recording(asset_id: str) -> Path:
+            path = resolve_asset(asset_id)
+            seen.append(path)
+            return path
+
+        return original(timeline, resolve_asset=recording, **kwargs)
+
+    monkeypatch.setattr(render_module, "build_filtergraph", wrapper)
+    return seen
+
+
+def test_render_final_uses_jpeg_proxy_for_heic(proj, spy_inputs):
+    """Einzige Ausnahme vom Prinzip "Final rendert aus den Originalen" (PROGRESS.md HEIC-4).
+
+    Belegt wird beides: die Eingabedatei ist der `.jpg`-Proxy statt des `.heic`, **und** der
+    Render laeuft wirklich durch. Ohne den zweiten Teil saehe der Test den eigentlichen Fehler
+    nicht — `-loop 1 -i <heic>` bricht mit "Option loop not found" ab, was in reinen
+    String-Assertions unsichtbar bleibt.
+    """
+    _add_heic_asset(proj)
+    export = proj.export("teaser")
+
+    out_path = render_final(proj, export, _heic_timeline())
+
+    assert [p.suffix for p in spy_inputs] == [".jpg"]
+    assert spy_inputs[0].parent == proj.cache_dir / "proxies"
+    assert out_path.exists()
+    result = probe_video(out_path)
+    assert result["dur"] == pytest.approx(1.0, abs=0.3)
+    assert result["w"] == 320
+    assert result["h"] == 240
+
+
+def test_render_final_heic_without_proxy_raises_named_error(proj):
+    """Fehlender HEIC-Proxy ist ein benannter Fehler, keine stille Notloesung aufs Original."""
+    _add_heic_asset(proj)
+    proxy = proxy_path(
+        proj.config.media_root / "shot.heic",
+        proj.cache_dir / "proxies",
+        media_root=proj.config.media_root,
+    )
+    proxy.unlink()
+
+    with pytest.raises(RenderError, match="HEIC"):
+        render_final(proj, proj.export("teaser"), _heic_timeline())
+
+
+def test_render_final_still_maps_jpeg_to_the_original(proj, spy_inputs):
+    """Regression: fuer JPEG bleibt es beim Original — die Ausnahme gilt nur fuer HEIC."""
+    shutil.copy(FIXTURES / "photo.jpg", proj.config.media_root / "shot.jpg")
+    write_asset(
+        proj,
+        {
+            "id": "jpg1",
+            "kind": "photo",
+            "path": "shot.jpg",
+            "hash": hash_file(proj.config.media_root / "shot.jpg"),
+        },
+    )
+    timeline = Timeline(
+        export="teaser",
+        fps=25,
+        resolution=(320, 240),
+        duration=1.0,
+        tracks={"video": [{"id": "c1", "asset": "jpg1", "src_in": 0, "src_out": 1.0, "tl_in": 0}]},
+    )
+
+    render_final(proj, proj.export("teaser"), timeline)
+
+    assert spy_inputs == [proj.config.media_root / "shot.jpg"]
 
 
 def test_render_final_missing_original_raises(proj, tmp_path):

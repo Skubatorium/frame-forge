@@ -14,6 +14,8 @@ from pathlib import Path
 import cv2
 import numpy as np
 
+from frameforge import imageio
+
 _SHARPNESS_NORM = 500.0
 _STABILITY_NORM = 50.0
 _SAMPLE_FRACTIONS = (0.10, 0.50, 0.85)
@@ -104,9 +106,12 @@ def analyze_clip(path: Path, probe_data: dict) -> dict:
 
 def analyze_photo(path: Path) -> dict:
     """Liefert `quality` (ohne `stability`/`motion`/`scenes` — nicht anwendbar auf Standbilder)."""
-    image = cv2.imread(str(path))
-    if image is None:
-        raise AnalyzeError(f"{path}: Bild nicht lesbar")
+    # Ueber `imageio.read_bgr` statt `cv2.imread`: identisches Ergebnis fuer JPEG/PNG, kann
+    # zusaetzlich HEIC. `cv2.imread` lieferte dort nur `None` — die Datei fiel still aus dem Index.
+    try:
+        image = imageio.read_bgr(path)
+    except imageio.ImageReadError as exc:
+        raise AnalyzeError(str(exc)) from exc
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     sharpness = _sharpness_score(gray)
     exposure = _exposure_score(gray)

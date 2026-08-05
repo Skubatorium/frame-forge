@@ -73,11 +73,11 @@ Reihenfolge laut Plan: E → A0 → A1/A2 → A3/A4 → A5/A6 → B; C, D, F, G,
 
 | # | Schritt | Status | Commit |
 |---|------|--------|--------|
-| HEIC-1 | ffmpeg-Fähigkeit prüfen (entscheidet den Renderpfad) | ✅ fertig | `0d9b8b4` |
-| HEIC-2 | `pillow-heif` als Abhängigkeit, HEIF-Opener **einmal** zentral registrieren | ⬜ | — |
-| HEIC-3 | Neues Modul `frameforge/imageio.py`, `analyze`/`keyframes` gehen darüber | ⬜ | — |
-| HEIC-4 | Renderpfad: JPEG-Proxy für HEIC, `render_final` zeigt darauf | ⬜ | — |
-| HEIC-5 | `.dng` — entfernen oder klare Fehlermeldung statt stillem Scheitern | ⬜ | — |
+| HEIC-1 | ffmpeg-Fähigkeit prüfen (entscheidet den Renderpfad) | ✅ fertig | `8636201` |
+| HEIC-2 | `pillow-heif` als Abhängigkeit, HEIF-Opener **einmal** zentral registrieren | ✅ fertig | `HEIC2` |
+| HEIC-3 | Neues Modul `frameforge/imageio.py`, `analyze`/`keyframes` gehen darüber | ✅ fertig | `HEIC2` |
+| HEIC-4 | Renderpfad: JPEG-Proxy für HEIC, `render_final` zeigt darauf | ✅ fertig | `HEIC2` |
+| HEIC-5 | `.dng` — entfernen oder klare Fehlermeldung statt stillem Scheitern | ✅ fertig | `HEIC2` |
 
 **Ausgangslage.** `.heic` steht in `ingest.PHOTO_EXTENSIONS`, aber weder Pillow (kein
 `pillow-heif` in den Abhängigkeiten) noch OpenCV können HEIC lesen —
@@ -125,6 +125,104 @@ Zwei Befunde an echten Dateien des Nutzers, die den Renderpfad ausschließen:
 einen JPEG-Proxy statt 1:1 zu kopieren, und `render_final` zeigt für diese Assets auf den Proxy
 statt aufs Original. Begründung der Abweichung vom Prinzip „Final rendert aus den Originalen"
 siehe HEIC-4.
+
+### HEIC-2/HEIC-3 — `frameforge/imageio.py` als einziger Standbild-Lesepfad (2026-08-05)
+
+Neue Abhängigkeit `pillow-heif>=0.21`; der Opener wird **genau einmal** registriert, beim
+Import von `frameforge/imageio.py`. Verstreut über `analyze`, `keyframes`, `people` und `map`
+hinge die Lesbarkeit einer Datei sonst davon ab, welches Modul zufällig zuerst importiert wurde.
+
+Zwei Funktionen, mehr braucht es nicht: `open_image(path) -> PIL.Image` und
+`read_bgr(path) -> np.ndarray` (BGR-`uint8`, das Layout von OpenCV).
+`analyze.analyze_photo` nutzt `read_bgr` statt `cv2.imread`, `keyframes.extract_keyframes`
+nutzt `open_image` statt `Image.open`. **`cv2.imread` kann HEIC auch mit `pillow-heif` nicht** —
+die Registrierung wirkt nur auf Pillow, der Weg muss also über Pillow und dann ins Array laufen.
+Ein Test hält genau das fest (`cv2.imread(heic) is None`, `read_bgr(heic)` liefert das Bild).
+
+**Bewusst ohne `ImageOps.exif_transpose`.** Die naheliegende Ergänzung wurde geprüft und
+verworfen: `cv2.imread` hat die EXIF-Orientierung nie ausgewertet, ein Nachrüsten würde den
+JPEG-Pfad ändern. Nötig ist es auch nicht — `pillow-heif` wendet die HEIF-Transformationsboxen
+(`irot`/`imir`) beim Öffnen an. Über **alle 670** HEIC-Dateien des Fundus geprüft: Orientierung
+durchweg 1, Hochformat-Größen liegen nativ vor (304× 5712×4284, 216× 4284×5712, …).
+
+**Rückwärtskompatibilität belegt:** `read_bgr` liefert für alle 21 JPEG/PNG der Projekte
+(19 in `norwegen-2026`, Fixtures) ein zu `cv2.imread` **bitgleiches** Array
+(`np.array_equal`), als Test festgehalten.
+
+### HEIC-4 — Abweichung: der Final-Render nutzt für HEIC den Proxy (2026-08-05)
+
+`ingest.proxy_path` bildet HEIC auf `.jpg` ab; `build_proxies` setzt HEIC in **voller
+Auflösung** nach JPEG um (q95) statt 1:1 zu kopieren. `render_final` löst HEIC-Assets auf
+diesen Proxy auf — die **einzige** Stelle, an der der Final-Render nicht aus dem Original
+rendert.
+
+**Warum die Abweichung vertretbar ist:** Der Grund für das Prinzip ist Qualität — der
+Video-Proxy ist auf 1080p heruntergerechnet und im 4K-Final unbrauchbar. Beim HEIC-Proxy
+trifft das nicht zu: er hat dieselben Pixelmaße wie das Original (an echten Dateien belegt,
+5712×4284 → 5712×4284) und ist bei q95 visuell verlustfrei. Er ist hier nicht „kleiner",
+sondern schlicht „lesbar". Die Alternative wäre, HEIC-Fotos im Final gar nicht verwenden zu
+können.
+
+**Bewusst nicht zur Laufzeit entschieden.** Naheliegend wäre gewesen, ffmpeg beim Rendern nach
+seiner HEIF-Fähigkeit zu fragen und nur im Negativfall auf den Proxy zu gehen. Damit hinge die
+Eingabedatei eines Renders an der ffmpeg-Version der jeweiligen Maschine — dasselbe
+`timeline.json` ergäbe unterschiedliche Renders. Reproduzierbarkeit ist das Kernversprechen
+des Projekts, deshalb: HEIC geht **immer** über den Proxy, ohne Verzweigung. Der entsprechend
+gebaute `probe.ffmpeg_supports_heif()` wurde wieder entfernt, statt als toter Zweig
+stehenzubleiben (Befunde F3/F7).
+
+Fehlt der Proxy, ist das ein benannter `RenderError` mit Handlungsanweisung
+(`frameforge ingest <projekt>`), keine stille Notlösung aufs unlesbare Original.
+
+### HEIC-5 — `.dng` bleibt in `PHOTO_EXTENSIONS`, scheitert aber benannt (2026-08-05)
+
+Entscheidung: **nicht entfernen.** Die Endung zu streichen würde DNG-Dateien schon in
+`scan_media` verschwinden lassen — auch das wäre still, nur eine Ebene früher, und genau das
+Verhalten, das dieses Arbeitspaket abstellt. Stattdessen nennt `imageio._UNSUPPORTED_HINTS`
+das Format beim Namen und die Meldung einen Ausweg (vorher nach JPEG/HEIC exportieren oder
+einen RAW-Decoder wie `rawpy` ergänzen). Im Fundus des Nutzers kommt `.dng` nicht vor
+(0 Treffer), ein RAW-Decoder wäre also Vorratshaltung ohne Anwendungsfall.
+
+### HEIC — Abnahme (2026-08-05)
+
+**Am echten Material, nicht an Fixtures.** Testprojekt über zwei echte HEIC aus
+`…/01_Rohmaterial/Chris-iPhone/` (nach der Abnahme wieder entfernt):
+
+- `ingest` → JPEG-Proxies in voller Auflösung (5712×4284, wie die Originale), 6,5 MB / 5,9 MB.
+- `prepare-index` → 1 Keyframe je Foto als **JPEG** im Cache (768×576), Qualitätsmetriken
+  gerechnet (`sharpness` 0.155 / 0.518, `exposure` 0.902 / 0.863), Eintrag in `assets.json`.
+  Die Keyframes wurden angesehen, nicht nur gezählt: echte, richtig herum stehende Vollbilder.
+- `backfill-metadata`: `captured_at` und GPS wurden aus den Einträgen **entfernt** und der
+  Backfill neu gefahren — er liest beides aus demselben HEIC nach
+  (`2026-07-18T18:39:09` / 54.7887, 9.4370, 2.2 m — Flensburg; `2026-07-27T14:20:11` /
+  62.1024, 7.2056, 9.6 m — Geiranger), Quelle `exif`.
+
+**Gegenprobe zum Renderpfad (Lehre aus Befund F8).** Der HEIC-Rendertest wurde gegen die
+zurückgebaute Fassung laufen gelassen: er scheitert mit exakt dem Fehler, der am echten
+Material gefunden wurde — `ffmpeg fehlgeschlagen: Option loop not found`. Der Test fängt also
+wirklich den Bug und läuft nicht an ihm vorbei.
+
+**Fehlerfall statt stillem Überspringen** (Abnahmekriterium): 6 Tests decken es ab, darunter
+`test_prepare_index_reports_unreadable_asset_with_reason` — eine unlesbare Datei landet als
+`PrepFailure` **mit Dateinamen** im Report, statt wortlos aus dem Index zu fallen.
+
+**Neues Fixture** `tests/fixtures/photo.heic` (923 Bytes, erzeugt von
+`tests/fixtures/generate.py`) — sonst hinge der HEIC-Pfad am privaten Fundus des Nutzers.
+Bewusst ein Farbverlauf statt einer einfarbigen Fläche: bei Vollton wäre die Schärfe-Metrik
+konstant 0 und ein Test darauf belegte nichts.
+
+**Rückwärtskompatibilität (Plan 0003 §0):**
+- `relink norwegen-2026 --dry-run` → **286 Assets unverändert**, 0 Änderungen, 0 Waisen;
+  `relink proto --dry-run` → 5 unverändert.
+- `projects/norwegen-2026/index/assets.json` vor/nach dem gesamten Arbeitspaket **byteweise
+  identisch** (`diff` ohne Ausgabe).
+- Keines der bestehenden Projekte enthält HEIC (`norwegen-2026`: 267 mp4 + 19 jpg, `proto`:
+  3 mp4 + 2 jpg) — der neue Zweig in `render_final` wird für vorhandenes Material also nie
+  betreten, der Filtergraph ist dort schon konstruktiv unverändert.
+- Beide echten Timelines laden und bestehen `validate_semantics` (172 bzw. 5 Clips);
+  `projects/proto/` real durch `ingest` → `preview` gefahren.
+- **19 neue Tests, 546 gesamt grün** (vorher 527, per `git stash` gegengezählt), `ruff`
+  sauber, `doctor` grün.
 
 ## Audit Plan 0003 (2026-08-01, Opus)
 

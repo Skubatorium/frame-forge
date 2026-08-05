@@ -41,6 +41,20 @@ def generate_photo() -> None:
     Image.new("RGB", (64, 48), color=(120, 180, 220)).save(out, quality=80)
 
 
+def generate_heic_photo() -> None:
+    """Echtes HEIC-Fixture — sonst haengt der HEIC-Pfad am privaten Fundus des Nutzers.
+
+    Der Import registriert den HEIF-Opener (nur so kann Pillow HEIF ueberhaupt schreiben).
+    Bewusst ein Farbverlauf statt einer einfarbigen Flaeche: bei Volltonfarbe ist die
+    Schaerfe-Metrik konstant 0 und ein Test darauf wuerde nichts belegen.
+    """
+    import frameforge.imageio  # noqa: F401 — Import registriert den HEIF-Opener
+
+    image = Image.new("RGB", (64, 48))
+    image.putdata([(x * 4 % 256, y * 5 % 256, 128) for y in range(48) for x in range(64)])
+    image.save(FIXTURES_DIR / "photo.heic", format="HEIF", quality=90)
+
+
 PROTO_MEDIA_DIR = FIXTURES_DIR / "proto_media"
 
 
@@ -128,6 +142,7 @@ def generate_tone() -> None:
 if __name__ == "__main__":
     generate_clip()
     generate_photo()
+    generate_heic_photo()
     generate_proto_media()
     generate_tone()
     print("Fixtures erzeugt:", FIXTURES_DIR)

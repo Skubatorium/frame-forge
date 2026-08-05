@@ -12,6 +12,8 @@ from pathlib import Path
 import cv2
 from PIL import Image
 
+from frameforge import imageio
+
 MAX_KEYFRAMES = 6
 DEFAULT_LONG_EDGE_PX = 768
 DEFAULT_JPEG_QUALITY = 80
@@ -44,7 +46,13 @@ def extract_keyframes(
     out_dir.mkdir(parents=True, exist_ok=True)
 
     if kind == "photo":
-        image = Image.open(path)
+        # Ueber `imageio.open_image` statt `Image.open`: dort ist der HEIF-Opener registriert,
+        # und ein nicht lesbares Format wirft `ImageReadError` mit Grund statt einer nackten
+        # `UnidentifiedImageError`.
+        try:
+            image = imageio.open_image(path)
+        except imageio.ImageReadError as exc:
+            raise KeyframeError(str(exc)) from exc
         target = out_dir / f"{path.stem}_kf00.jpg"
         _resize_and_save(image, target)
         return [target]

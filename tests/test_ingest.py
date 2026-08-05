@@ -7,6 +7,7 @@ import shutil
 from pathlib import Path
 
 import pytest
+from PIL import Image
 
 from frameforge.ingest import build_proxies, hash_file, proxy_path, scan_media
 
@@ -82,6 +83,13 @@ def test_proxy_path_keeps_photo_extension(tmp_path):
     assert result.stem.startswith("photo_")
 
 
+def test_proxy_path_normalizes_heic_to_jpg(tmp_path):
+    """HEIC-Proxies sind JPEGs — ffmpeg kann HEIC nicht lesen (PROGRESS.md HEIC-1)."""
+    result = proxy_path(Path("/media/IMG_0001.HEIC"), tmp_path, media_root=Path("/media"))
+    assert result.suffix == ".jpg"
+    assert result.stem.startswith("IMG_0001_")
+
+
 def test_proxy_path_disambiguates_same_basename_in_different_dirs(tmp_path):
     """Regressionstest fuer K1 (Audit): gleicher Basename in verschiedenen Ordnern
 
@@ -114,6 +122,37 @@ def test_build_proxies_transcodes_video_and_copies_photo(media_root, tmp_path):
         assert proxy.stat().st_size > 0
     video_proxy = next(p for p in result.proxies if p.suffix == ".mp4")
     assert video_proxy.parent == out_dir
+
+
+def test_build_proxies_converts_heic_to_full_resolution_jpeg(media_root, tmp_path):
+    """HEIC wird **nicht** 1:1 kopiert, sondern nach JPEG umgesetzt — in voller Aufloesung.
+
+    Der Proxy ist hier nicht "kleiner", sondern schlicht "lesbar": er geht auch in den
+    Final-Render (`render_final`), weil ffmpeg das Original nicht verwenden kann. Ein
+    Downscale wuerde dort echte Bildgroesse kosten.
+    """
+    shutil.copy(FIXTURES / "photo.heic", media_root / "IMG_0001.HEIC")
+    out_dir = tmp_path / "proxies"
+
+    result = build_proxies(scan_media(media_root), out_dir, media_root=media_root)
+
+    assert result.failures == []
+    heic_proxy = next(p for p in result.proxies if p.stem.startswith("IMG_0001_"))
+    assert heic_proxy.suffix == ".jpg"
+    image = Image.open(heic_proxy)
+    assert image.format == "JPEG"
+    assert image.size == Image.open(FIXTURES / "photo.heic").size
+
+
+def test_build_proxies_reports_unreadable_photo_instead_of_copying_it(media_root, tmp_path):
+    """Ein kaputtes HEIC landet als `IngestFailure`, nicht als unbrauchbare Kopie im Cache."""
+    (media_root / "kaputt.heic").write_bytes(b"kein heif")
+    out_dir = tmp_path / "proxies"
+
+    result = build_proxies(scan_media(media_root), out_dir, media_root=media_root)
+
+    assert [f.asset.name for f in result.failures] == ["kaputt.heic"]
+    assert not any(p.stem.startswith("kaputt_") for p in result.proxies)
 
 
 def test_build_proxies_skips_existing_proxies(media_root, tmp_path):

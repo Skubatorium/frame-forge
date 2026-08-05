@@ -37,9 +37,24 @@ def test_analyze_photo_returns_quality_without_motion():
     assert 0.0 <= result["quality"]["exposure"] <= 1.0
 
 
+def test_analyze_photo_reads_heic():
+    """HEIC lief frueher in `cv2.imread` -> `None` -> AnalyzeError und fiel aus dem Index."""
+    result = analyze_photo(FIXTURES / "photo.heic")
+    assert 0.0 <= result["quality"]["sharpness"] <= 1.0
+    assert 0.0 <= result["quality"]["exposure"] <= 1.0
+
+
 def test_analyze_photo_missing_file_raises():
     with pytest.raises(AnalyzeError):
         analyze_photo(FIXTURES / "does-not-exist.jpg")
+
+
+def test_analyze_photo_unreadable_file_raises_with_reason(tmp_path):
+    """Kein stilles Ueberspringen: die Meldung muss Datei und Ursache benennen."""
+    broken = tmp_path / "kaputt.png"
+    broken.write_bytes(b"keine bilddaten")
+    with pytest.raises(AnalyzeError, match="kaputt.png"):
+        analyze_photo(broken)
 
 
 def test_detect_scenes_returns_at_least_one_scene():

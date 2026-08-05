@@ -118,3 +118,38 @@ def test_load_prep_excludes_indexed_assets(proj):
     remaining = load_prep(proj)
     assert len(remaining) == 1
     assert remaining[0]["hash"] != one["hash"]
+
+
+def test_prepare_index_handles_heic_instead_of_dropping_it(proj):
+    """Der Kern des Arbeitspakets: HEIC fiel vorher **still** aus dem Index.
+
+    `_prepare_one` warf ueber `cv2.imread`/`Image.open`, `prepare_index` fing das pro Datei
+    ab — der Lauf meldete Erfolg, und die Datei war weg. Jetzt wird sie regulaer vorbereitet.
+    """
+    media_root = proj.config.media_root
+    shutil.copy(FIXTURES / "photo.heic", media_root / "tag1" / "IMG_0001.HEIC")
+    ingest_module.build_proxies(
+        ingest_module.scan_media(media_root), proj.cache_dir / "proxies", media_root=media_root
+    )
+
+    result = prepare_index(proj)
+
+    assert result.failures == []
+    assert len(result.prepared) == 3
+    heic_prep = next(p for p in load_prep(proj) if p["path"].endswith("IMG_0001.HEIC"))
+    assert heic_prep["kind"] == "photo"
+    assert heic_prep["quality"]["sharpness"] is not None
+    assert len(heic_prep["keyframes"]) == 1
+    assert heic_prep["keyframes"][0].endswith(".jpg")
+
+
+def test_prepare_index_reports_unreadable_asset_with_reason(proj):
+    """Ein nicht lesbares Bild wird als `PrepFailure` **gemeldet**, nicht wortlos verschluckt."""
+    media_root = proj.config.media_root
+    (media_root / "tag1" / "kaputt.heic").write_bytes(b"kein heif")
+
+    result = prepare_index(proj)
+
+    failures = {f.asset.name: f.reason for f in result.failures}
+    assert "kaputt.heic" in failures
+    assert "kaputt.heic" in failures["kaputt.heic"]

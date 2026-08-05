@@ -7,14 +7,21 @@ import subprocess
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from frameforge.imageio import HEIF_EXTENSIONS, ImageReadError, open_image
+
 _HASH_PREFIX_BYTES = 1024 * 1024
 
 VIDEO_EXTENSIONS = frozenset({".mp4", ".mov", ".mxf", ".avi", ".mkv"})
-PHOTO_EXTENSIONS = frozenset({".jpg", ".jpeg", ".png", ".heic", ".dng"})
+PHOTO_EXTENSIONS = frozenset({".jpg", ".jpeg", ".png", ".dng"}) | HEIF_EXTENSIONS
 MEDIA_EXTENSIONS = VIDEO_EXTENSIONS | PHOTO_EXTENSIONS
 
 PROXY_WIDTH = 1920
 PROXY_HEIGHT = 1080
+
+# HEIC-Proxies gehen in den **Final**-Render (ffmpeg kann HEIC nicht lesen, siehe
+# PROGRESS.md HEIC-1) — deshalb volle Aufloesung und hohe JPEG-Qualitaet, kein 1080p-Downscale
+# wie bei Video-Proxies. q95 ist visuell verlustfrei; bei 24 MP kostet das ~5 MB je Foto.
+HEIF_PROXY_JPEG_QUALITY = 95
 
 
 @dataclass(frozen=True)
@@ -81,7 +88,7 @@ def _path_key(asset_path: Path, media_root: Path) -> str:
 
 
 def proxy_path(asset_path: Path, out_dir: Path, *, media_root: Path) -> Path:
-    """Zielpfad des Proxys fuer ein Asset — Video wird zu `.mp4`, Fotos behalten ihre Endung.
+    """Zielpfad des Proxys fuer ein Asset — Video zu `.mp4`, HEIC zu `.jpg`, sonst wie gehabt.
 
     Der Dateiname traegt einen 8-stelligen Hash des relativen Pfads. Ohne den wuerden zwei
     Dateien mit gleichem Basenamen in verschiedenen Ordnern (z.B. `DJI_0001.MP4` pro SD-Karte)
@@ -89,8 +96,11 @@ def proxy_path(asset_path: Path, out_dir: Path, *, media_root: Path) -> Path:
     still das falsche Material. Der Hash haelt die Struktur flach, aber kollisionsfrei.
     """
     digest = hashlib.sha256(_path_key(asset_path, media_root).encode()).hexdigest()[:8]
-    if asset_path.suffix.lower() in VIDEO_EXTENSIONS:
+    suffix = asset_path.suffix.lower()
+    if suffix in VIDEO_EXTENSIONS:
         return out_dir / f"{asset_path.stem}_{digest}.mp4"
+    if suffix in HEIF_EXTENSIONS:
+        return out_dir / f"{asset_path.stem}_{digest}.jpg"
     return out_dir / f"{asset_path.stem}_{digest}{asset_path.suffix}"
 
 
@@ -101,6 +111,13 @@ def build_proxies(
 
     Fotos brauchen keinen Transcode fuer den Schnitt-Workflow — sie werden ohnehin nur als
     Keyframe/Standbild verwendet, ein Proxy-Encoding waere unnoetiger Aufwand.
+
+    **Ausnahme HEIC/HEIF:** ffmpeg kann diese Dateien im Foto-Renderpfad nicht verwenden
+    (PROGRESS.md HEIC-1), eine 1:1-Kopie waere fuer Preview *und* Final unbrauchbar. Sie
+    werden deshalb in **voller Aufloesung** nach JPEG umgesetzt; der Proxy ist hier nicht
+    "kleiner", sondern schlicht "lesbar". `render_final` loest HEIC-Assets darum auf den
+    Proxy auf statt aufs Original — die einzige Stelle, an der der Final-Render nicht aus dem
+    Original rendert.
 
     **Idempotent + fehlertolerant** (Resume): bereits existierende Proxies werden uebersprungen,
     eine einzelne fehlgeschlagene/haengende Datei (ffmpeg-Timeout oder Fehler) bricht **nicht**
@@ -140,9 +157,18 @@ def build_proxies(
                     check=True,
                     timeout=timeout_s,
                 )
+            elif asset.suffix.lower() in HEIF_EXTENSIONS:
+                open_image(asset).convert("RGB").save(
+                    target, format="JPEG", quality=HEIF_PROXY_JPEG_QUALITY
+                )
             else:
                 target.write_bytes(asset.read_bytes())
-        except (subprocess.CalledProcessError, subprocess.TimeoutExpired, OSError) as exc:
+        except (
+            subprocess.CalledProcessError,
+            subprocess.TimeoutExpired,
+            OSError,
+            ImageReadError,
+        ) as exc:
             target.unlink(missing_ok=True)  # halbfertigen Proxy nicht liegen lassen
             failures.append(IngestFailure(asset, str(exc)))
             continue

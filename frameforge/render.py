@@ -18,6 +18,7 @@ from collections.abc import Callable
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from frameforge.imageio import HEIF_EXTENSIONS
 from frameforge.index import load_assets
 from frameforge.ingest import PHOTO_EXTENSIONS, proxy_path
 from frameforge.project import Export, Project, UnsafePathError, resolve_media_path
@@ -615,8 +616,13 @@ def render_final(
     `resolution` überschreibt die Timeline-Auflösung (z.B. ein 1080p-Deliverable aus einer
     4K-Timeline). `crf`/`preset` steuern Qualität vs. Dateigröße/Encoding-Zeit (kleineres CRF =
     bessere Qualität; Default 18 = visuell nahezu verlustfrei).
+
+    **Ausnahme HEIC/HEIF:** ffmpeg kann diese Dateien nicht in den Foto-Renderpfad geben
+    (PROGRESS.md HEIC-1), deshalb wird für sie der JPEG-Proxy verwendet — eine verlustarme
+    Umsetzung in voller Auflösung, kein Downscale.
     """
     assets_by_id = {a["id"]: a for a in load_assets(project)}
+    proxies_dir = project.cache_dir / "proxies"
 
     def resolve(asset_id: str) -> Path:
         asset = assets_by_id.get(asset_id)
@@ -628,6 +634,18 @@ def render_final(
             raise RenderError(str(exc)) from exc
         if not original.exists():
             raise RenderError(f"Original-Asset '{asset_id}' nicht gefunden unter {original}")
+        # Einzige Ausnahme vom Prinzip "Final rendert aus den Originalen": ffmpeg kann HEIC
+        # im Foto-Renderpfad nicht verwenden (PROGRESS.md HEIC-1). Der Proxy ist hier eine
+        # verlustarme JPEG-Umsetzung in **voller** Aufloesung, kein Downscale — es geht keine
+        # Bildgroesse verloren. Fehlt er, ist das ein Fehler und keine stille Notloesung.
+        if original.suffix.lower() in HEIF_EXTENSIONS:
+            proxy = proxy_path(original, proxies_dir, media_root=project.config.media_root)
+            if not proxy.exists():
+                raise RenderError(
+                    f"HEIC-Asset '{asset_id}': ffmpeg kann HEIC nicht lesen, der JPEG-Proxy "
+                    f"fehlt aber unter {proxy} — 'frameforge ingest {project.name}' ausfuehren"
+                )
+            return proxy
         return original
 
     graph = build_filtergraph(
