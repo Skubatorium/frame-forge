@@ -249,9 +249,9 @@ faellig, sonst bleiben die neuen Tage ohne Etappe.
 
 ### Fortschritt der Sichtung
 
-Chronologisch, Tag fuer Tag. **Hier weitermachen: 2026-07-28.** 2026-07-27 ist
-komplett abgeschlossen (61 Assets, alle neu in dieser Sitzung).
-Naechster Tag chronologisch: 2026-07-28 — komplette Liste per Standard-Query (siehe
+Chronologisch, Tag fuer Tag. **Hier weitermachen: 2026-07-29.** 2026-07-28 ist
+komplett abgeschlossen (78 Assets, alle neu in dieser Sitzung).
+Naechster Tag chronologisch: 2026-07-29 — komplette Liste per Standard-Query (siehe
 Arbeitsweise unten) neu ziehen, nicht abtippen.
 
 | Tag | Chris-iPhone-Assets | indiziert |
@@ -267,7 +267,8 @@ Arbeitsweise unten) neu ziehen, nicht abtippen.
 | 2026-07-25 | 106 | ✅ 106 — Camping-Huette am Aurlandsfjord (Fruehstueck, Abendessen), Bootsausflug mit Wasserfaellen und Faehren-Establishern, Elektro-Katamaran "Future of the Fjords" Flaam–Gudvangen (inkl. Kreuzfahrtschiff Artania am Kai), Wikingerdorf Gudvangen (Schwertkampf-Spiel, Bogenschiessen, Grassoden-Haeuser, Handwerksvorfuehrungen, Drachenboot-Nachbauten), Familienselfies auf dem Aussendeck |
 | 2026-07-26 | 58 | ✅ 58 — Aufbruch von der Camping-Huette am Aurlandsfjord (Nachtaufnahmen), Faehre "Mannheller", Laerdalstunnel, Wanderung an einem Gletscherfluss, Bergpass mit vielen Wasserfaellen im Nebel, tuerkisfarbene Gletscherseen, Ankunft am Geirangerfjord: ausfuehrliche Portraet-/Familienselfie-Serie auf dem Balkon der Huette (Kaffee, Kuesse, Grimassen), Hafen mit Kreuzfahrtschiffen, Fossen Camping (Grasdach-Rezeption), kurze Wanderung zu altem Bergbauernhof mit Ziegen |
 | 2026-07-27 | 61 | ✅ 61 — Geburtstag von Papa/Chris: festlich gedeckter Fruehstueckstisch mit Wimpelgirlande, Geschenken (Brettspiel "Brass: Birmingham"), Pop-up-Karte und Kerzenkuchen, anschliessend Wanderung zum Storsaeterfossen-Wasserfall (Metalltreppen am Wildbach), Ort Geiranger mit Marktplatz, Hafen und Kreuzfahrtschiffen, RIB-Schnellboot-Fjordtour mit Ausruestungsverleih, Familien-/Gruppenselfies auf dem Boot, Sieben-Schwestern-artige Wasserfaelle direkt am Fjord |
-| 2026-07-28 … 2026-08-04 | 195 | ⬜ |
+| 2026-07-28 | 78 | ✅ 78 — Abschied vom Geirangerfjord, Schlucht Gudbrandsjuvet (Cafe mit Zimtschnecken/Kuchen, Wasser-Steg-Park), Bergpass mit Berghuette im Nebel, spektakulaerer Trollstigen (Aussichtsplattform, Serpentinenstrasse aus der Vogelperspektive, Steinmaennchen, 'No Trolls beyond this point'-Schild), Ankunft am neuen Etappenziel bei Lom: Abendessen (Pizza), Stabkirche Lom mit Friedhof, tuerkisfarbener Fluss mit Bruecken, Bakeriet i Lom, Camping-Spielplatz (Trampolin, Schaukel) |
+| 2026-07-29 … 2026-08-04 | 117 | ⬜ |
 
 **Hinweis zur Zaehlung:** `689` ist die Gesamtzahl der neuen Chris-iPhone-Dateien (aus
 `prepare-index`, Pfadpraefix `Chris-iPhone/`). Die Tagestabellen in `assets.json` zeigen pro
@@ -298,6 +299,8 @@ ausfuehrlicher Nachmittag im Wikingerdorf Gudvangen mit Aktivitäten fuer Kinder
 **2026-07-26 abgeschlossen, mit Off-by-one-Korrektur:** In drei separaten 3er-Bloecken (Items rund um IMG_9960/9964/9965/9967, IMG_9988/9990/9994/9995 und IMG_0016/0021/0022/0024) wurde die Beschreibung des jeweils ersten gesichteten Bildes versehentlich auf den Hash des *zweiten* Assets im Block geschrieben (statt des ersten) — derselbe Fehlermodus wie am 2026-07-19, diesmal aber mit einer zusaetzlichen Verkettung: das dadurch "uebersprungene" vierte Bild im naechsten Bloecken wurde nie tatsaechlich gesichtet, bekam aber trotzdem einen (falschen) Text zugewiesen. Beim Abschluss-Check (`assets.json`-Hashes gegen Worklist abgeglichen) fielen 3 fehlende Assets auf; alle betroffenen Bilder (insgesamt 9 Eintraege: 3 fehlende + 6 mit vertauschtem Text) wurden erneut einzeln gesichtet und korrekt zugeordnet. **Lehre:** nach jedem Batch nicht nur Stichproben pruefen, sondern die vollstaendige Hash-Liste der Worklist gegen `assets.json` abgleichen (`set(todo) - set(existing)`), das deckt fehlende Eintraege zuverlaessiger auf als visuelle Stichproben.
 
 **2026-07-27 abgeschlossen:** Derselbe Off-by-one-Fehlermodus trat noch einmal auf (ein 3er-Block IMG_0088/0089/0091/0092, RIB-Bootstour), wurde diesmal aber sofort durch den Voll-Hash-Abgleich (siehe Lehre oben) gefunden und korrigiert, statt erst am Tagesende. Ab der zweiten Tageshaelfte wurde konsequent auf Einzelzuordnung mit Dateinamen-Kommentar pro `index-asset`-Aufruf umgestellt (`# IMG_XXXX -> hash-praefix`), das verhinderte weitere Vorfaelle. Inhaltlich: Geburtstag von Papa/Chris an der Camping-Huette in Geiranger (Fruehstueckstisch mit Dekoration, Geschenke, Kerzenkuchen), Vormittagswanderung zum Storsaeterfossen, Nachmittag im Ort Geiranger (Markt, Hafen, Katze), RIB-Schnellboot-Tour auf dem Fjord mit spektakulaeren Wasserfaellen direkt an der Felswand.
+
+**2026-07-28 abgeschlossen:** Trotz Dateinamen-Kommentaren trat der Fehlermodus noch zweimal auf, diesmal als Kaskade ueber zwei aufeinanderfolgende 3er-Bloecke (IMG_0227-0230, dann IMG_0230-0235 erneut verschoben) — 7 Eintraege betroffen (1 fehlend, 6 mit vertauschtem Text, 1 nie gesichtetes Bild in der Kette). Ursache: der Dateinamen-Kommentar wurde vor dem Lesen der Bilder geschrieben, aber die Zuordnung von Bildinhalt zu Kommentar erfolgte danach aus dem Gedaechtnis und verschob sich. **Verbesserte Lehre:** den Hash-Abgleich (`set(todo) - set(existing)`) nicht erst nach 15-20 Assets, sondern nach *jedem* 3er-Block laufen lassen — das haette die Kaskade sofort beim ersten Block gestoppt, statt sie ueber zwei Bloecke akkumulieren zu lassen. Inhaltlich: Abschied vom Geirangerfjord, Schlucht Gudbrandsjuvet mit Cafe, nebelverhangener Trollstigen mit Aussichtsplattform, Ankunft bei der Stabkirche Lom.
 
 **Arbeitsweise, die sich bewaehrt hat** (fuer die naechste Sitzung):
 

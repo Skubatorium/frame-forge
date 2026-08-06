@@ -38785,6 +38785,297 @@
     }
   },
   {
+    "hash": "sha256:3612f871a874207774e64fb85e5a35759bf585cf013371d745eb3a6c80cb56d0",
+    "path": "Chris-iPhone/IMG_0248.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-28T18:23:24+00:00",
+    "captured_at_source": "container",
+    "duration": 20.025,
+    "probe": {
+      "captured_at": "2026-07-28T18:23:24+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 20.025,
+      "bitrate": 54052302,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.14,
+      "exposure": 0.753,
+      "score": 0.631
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.86
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 20.03
+      }
+    ],
+    "id": "20260728-camera-3612f8",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0248_7aa9d735_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0248_7aa9d735_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0248_7aa9d735_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0248_7aa9d735_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mutter und Sohn springen zusammen auf dem Trampolin des Camping-Spielplatzes.",
+      "tags": [
+        "spielplatz",
+        "trampolin",
+        "kind",
+        "mutter",
+        "camping"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5f686154260318275a35dce0849759965cd84501ec78f07856d577b7ab0fb65e",
+    "path": "Chris-iPhone/IMG_0240.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-28T18:05:30+00:00",
+    "captured_at_source": "container",
+    "duration": 8.57,
+    "probe": {
+      "captured_at": "2026-07-28T18:05:30+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 8.57,
+      "bitrate": 66166713,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.729,
+      "stability": 0.0,
+      "exposure": 0.691,
+      "score": 0.473
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 8.57
+      }
+    ],
+    "id": "20260728-camera-5f6861",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0240_6f95a0ff_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0240_6f95a0ff_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0240_6f95a0ff_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Reissender Gletscherfluss mit grauem Schmelzwasser fliesst ueber Felsen.",
+      "tags": [
+        "fluss",
+        "gletscherfluss",
+        "wasser",
+        "natur",
+        "unterwegs"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:70cdf678f98c18f7bf19a05ece44e439d566f8b9d036a1069559c8f0c1c5fbae",
+    "path": "Chris-iPhone/IMG_0143.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-28T09:23:55+00:00",
+    "captured_at_source": "container",
+    "duration": 10.97,
+    "probe": {
+      "captured_at": "2026-07-28T09:23:55+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 10.97,
+      "bitrate": 53988923,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.9,
+      "score": 0.633
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 10.97
+      }
+    ],
+    "id": "20260728-camera-70cdf6",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0143_62f30dbf_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0143_62f30dbf_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0143_62f30dbf_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Wildbach stuerzt durch eine enge, bemooste Felsschlucht.",
+      "tags": [
+        "wildbach",
+        "schlucht",
+        "natur",
+        "wasser",
+        "felsen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:757ec256c9228bae2576ba79ec37d09ca049d7fc505b71d3822ee155b2ec30cc",
+    "path": "Chris-iPhone/IMG_0251.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-28T18:33:39+00:00",
+    "captured_at_source": "container",
+    "duration": 11.56,
+    "probe": {
+      "captured_at": "2026-07-28T18:33:39+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 11.56,
+      "bitrate": 53738019,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.868,
+      "stability": 0.205,
+      "exposure": 0.786,
+      "score": 0.62
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.795
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 11.56
+      }
+    ],
+    "id": "20260728-camera-757ec2",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0251_e7265dd3_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0251_e7265dd3_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0251_e7265dd3_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mutter und Sohn schaukeln nebeneinander auf dem Camping-Spielplatz, Huetten im Hintergrund.",
+      "tags": [
+        "spielplatz",
+        "schaukel",
+        "kind",
+        "mutter",
+        "camping"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b5d2e187663caafb35c037d2a09e27dad237c56fed370e665a9264b303e0159b",
+    "path": "Chris-iPhone/IMG_0252.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-28T18:36:13+00:00",
+    "captured_at_source": "container",
+    "duration": 16.123333,
+    "probe": {
+      "captured_at": "2026-07-28T18:36:13+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 16.123333,
+      "bitrate": 54452258,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.764,
+      "score": 0.588
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 16.12
+      }
+    ],
+    "id": "20260728-camera-b5d2e1",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0252_e63f4da4_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0252_e63f4da4_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0252_e63f4da4_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kind rutscht eine lange Metallrutsche im bewaldeten Camping-Spielplatz hinunter.",
+      "tags": [
+        "spielplatz",
+        "rutsche",
+        "kind",
+        "camping",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:00a3ae06e4073b33c6ce2d9e0bd75c5147e830e73f2a8b4bb260fa371b2d8bdd",
     "path": "2026-07-28_Norwegen_Lom_Unterkunft/Vorauwahl/DJI_20260728214940_0033_D-00.15.28.415-00.16.07.915-seg10.MP4",
     "kind": "video",
@@ -41293,6 +41584,3517 @@
     "day": 11,
     "stage": "Geiranger → Lom",
     "place_source": "index"
+  },
+  {
+    "hash": "sha256:00c6c865a47fc88123a976d3b938032991c6b84628d61a9709311ef1213f73ca",
+    "path": "Chris-iPhone/IMG_0152.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T11:36:30+00:00",
+    "gps": {
+      "lat": 62.330325,
+      "lon": 7.469563888888889,
+      "elevation_m": 231.0
+    },
+    "probe": {
+      "captured_at": "2026-07-28T11:36:30+00:00",
+      "gps": {
+        "lat": 62.330325,
+        "lon": 7.469563888888889,
+        "elevation_m": 231.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.282,
+      "exposure": 0.869,
+      "score": 0.576
+    },
+    "id": "20260728-phone-00c6c8",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0152_56924e9b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Mutter und Sohn essen Kuchen und Zimtschnecke im modernen Glas-Cafe mit Panoramafenster zum Fluss und Berg.",
+      "tags": [
+        "cafe",
+        "gudbrandsjuvet",
+        "kuchen",
+        "kind",
+        "architektur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:0141b0b0bd7a0a90dfe16a6b1c85afc070829b8d3020f56a567728d88a0895dd",
+    "path": "Chris-iPhone/IMG_0170.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:26:11+00:00",
+    "gps": {
+      "lat": 62.45386944444445,
+      "lon": 7.665119444444445,
+      "elevation_m": 699.2
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:26:11+00:00",
+      "gps": {
+        "lat": 62.45386944444445,
+        "lon": 7.665119444444445,
+        "elevation_m": 699.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.453,
+      "exposure": 0.972,
+      "score": 0.712
+    },
+    "id": "20260728-phone-0141b0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0170_8af1edd1_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Familie laeuft ueber einen Holzsteg am Bergsee, Touristen im Nebel, roter Huetten am Ufer.",
+      "tags": [
+        "bergpass",
+        "steg",
+        "nebel",
+        "familie",
+        "wanderung"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:058a38d691c4031052d14d6ddb0c3c322345277791e9c166c128d83d3d31b172",
+    "path": "Chris-iPhone/IMG_0164.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T11:46:59+00:00",
+    "gps": {
+      "lat": 62.33075277777778,
+      "lon": 7.471033333333334,
+      "elevation_m": 241.5
+    },
+    "probe": {
+      "captured_at": "2026-07-28T11:46:59+00:00",
+      "gps": {
+        "lat": 62.33075277777778,
+        "lon": 7.471033333333334,
+        "elevation_m": 241.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.862,
+      "score": 0.931
+    },
+    "id": "20260728-phone-058a38",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0164_6b3d786b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mutter und Sohn kaufen frische Erdbeeren an einem Strassenstand mit Sonnenschirm im Wald.",
+      "tags": [
+        "erdbeeren",
+        "marktstand",
+        "kind",
+        "einkauf",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:0b471265e30cc530f22407c518a7f4b80c83b44ec9c3a2e3f8c2dd2f98de1bd1",
+    "path": "Chris-iPhone/IMG_0192.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:39:46+00:00",
+    "gps": {
+      "lat": 62.455025000000006,
+      "lon": 7.672297222222222,
+      "elevation_m": 690.8
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:39:46+00:00",
+      "gps": {
+        "lat": 62.455025000000006,
+        "lon": 7.672297222222222,
+        "elevation_m": 690.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.037,
+      "exposure": 0.988,
+      "score": 0.512
+    },
+    "id": "20260728-phone-0b4712",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0192_31bff8c9_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Blick vom Trollstigen weit ins gruene Tal mit Sonnenlichtflecken, Serpentinenstrasse windet sich hinunter.",
+      "tags": [
+        "trollstigen",
+        "tal",
+        "serpentine",
+        "sonnenlicht",
+        "panorama"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:0f2f0df50022106c0dccc2a68158ad3bcc107643e672bcad524c11506a306df9",
+    "path": "Chris-iPhone/IMG_0161.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T11:44:11+00:00",
+    "gps": {
+      "lat": 62.330422222222225,
+      "lon": 7.469327777777778,
+      "elevation_m": 230.8
+    },
+    "probe": {
+      "captured_at": "2026-07-28T11:44:11+00:00",
+      "gps": {
+        "lat": 62.330422222222225,
+        "lon": 7.469327777777778,
+        "elevation_m": 230.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.899,
+      "exposure": 0.953,
+      "score": 0.926
+    },
+    "id": "20260728-phone-0f2f0d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0161_a45cc58a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Aussenbereich des modernen Besucherzentrums Gudbrandsjuvet mit Sitzplaetzen unter Sonnenschirmen, Berge im Hintergrund.",
+      "tags": [
+        "gudbrandsjuvet",
+        "architektur",
+        "cafe",
+        "berge",
+        "rasthaus"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1612978b78ffabb18e54d5ac6c6081e66c26432a54ad27e800bc88b2f89ce600",
+    "path": "Chris-iPhone/IMG_0236.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T19:59:49+00:00",
+    "gps": {
+      "lat": 61.83818333333333,
+      "lon": 8.567327777777777,
+      "elevation_m": 382.0
+    },
+    "probe": {
+      "captured_at": "2026-07-28T19:59:49+00:00",
+      "gps": {
+        "lat": 61.83818333333333,
+        "lon": 8.567327777777777,
+        "elevation_m": 382.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.472,
+      "exposure": 0.949,
+      "score": 0.711
+    },
+    "id": "20260728-phone-161297",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0236_9779e94a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Blick von der Bruecke ueber den tuerkisfarbenen Fluss durch Lom, Ortschaft mit Talkessel im Hintergrund.",
+      "tags": [
+        "lom",
+        "fluss",
+        "ort",
+        "bruecke",
+        "panorama"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1790e8b92be5f2b7e4460652d7512f1428aaccdeb3ad8f971f59a3e48cc1a832",
+    "path": "Chris-iPhone/IMG_0228.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T19:40:38+00:00",
+    "gps": {
+      "lat": 61.83861666666667,
+      "lon": 8.56873888888889,
+      "elevation_m": 374.1
+    },
+    "probe": {
+      "captured_at": "2026-07-28T19:40:38+00:00",
+      "gps": {
+        "lat": 61.83861666666667,
+        "lon": 8.56873888888889,
+        "elevation_m": 374.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.327,
+      "exposure": 0.912,
+      "score": 0.62
+    },
+    "id": "20260728-phone-1790e8",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0228_9e68cc6e_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Tuerkisfarbener Fluss fliesst an der Stabkirche Lom vorbei, Berge im Hintergrund.",
+      "tags": [
+        "lom",
+        "stabkirche",
+        "fluss",
+        "berge",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:17a59446168186140516a5b23c6e425bfe26c84d991a28b9efc792ca04886e4c",
+    "path": "Chris-iPhone/IMG_0179.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:32:50+00:00",
+    "gps": {
+      "lat": 62.454391666666666,
+      "lon": 7.668077777777778,
+      "elevation_m": 714.5
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:32:50+00:00",
+      "gps": {
+        "lat": 62.454391666666666,
+        "lon": 7.668077777777778,
+        "elevation_m": 714.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.082,
+      "exposure": 0.909,
+      "score": 0.495
+    },
+    "id": "20260728-phone-17a594",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0179_ddfb9dd2_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Blick von der Serpentine des Trollstigen tief hinunter ins gruene Tal, Wolken haengen tief in den Bergen.",
+      "tags": [
+        "trollstigen",
+        "serpentine",
+        "tal",
+        "nebel",
+        "panorama"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:17eebf7cdefc0da0b24435d5cc8e6464cee66127ea2f31860af5281d0c7881a6",
+    "path": "Chris-iPhone/IMG_0150.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T11:35:35+00:00",
+    "gps": {
+      "lat": 62.33188611111112,
+      "lon": 7.471236111111112,
+      "elevation_m": 240.6
+    },
+    "probe": {
+      "captured_at": "2026-07-28T11:35:35+00:00",
+      "gps": {
+        "lat": 62.33188611111112,
+        "lon": 7.471236111111112,
+        "elevation_m": 240.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.095,
+      "exposure": 0.997,
+      "score": 0.546
+    },
+    "id": "20260728-phone-17eebf",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0150_73d8cb12_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Nahaufnahme von Zimtschnecke und Schokoladenkuchen mit Erdbeere, Blumenvase, Fluss im Hintergrund.",
+      "tags": [
+        "cafe",
+        "zimtschnecke",
+        "kuchen",
+        "detail",
+        "gudbrandsjuvet"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1d62e558ae3da454e161d9d350fe3a912fdee77082e9b440740694054d351eb1",
+    "path": "Chris-iPhone/IMG_0136.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T09:47:45+00:00",
+    "gps": {
+      "lat": 62.094591666666666,
+      "lon": 7.223169444444444,
+      "elevation_m": 201.7
+    },
+    "probe": {
+      "captured_at": "2026-07-28T09:47:45+00:00",
+      "gps": {
+        "lat": 62.094591666666666,
+        "lon": 7.223169444444444,
+        "elevation_m": 201.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.173,
+      "exposure": 0.991,
+      "score": 0.582
+    },
+    "id": "20260728-phone-1d62e5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0136_515dec58_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Panoramablick auf Geiranger und den Fjord vom bewaldeten Aussichtspunkt bei bedecktem Himmel.",
+      "tags": [
+        "geirangerfjord",
+        "panorama",
+        "berge",
+        "fjord",
+        "ausblick"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:28f46faa87d87c82cc9b44bb6727d04000e9a3ed208512452ca1c9c5b2fb678f",
+    "path": "Chris-iPhone/IMG_0213.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T13:23:57+00:00",
+    "gps": {
+      "lat": 62.452447222222226,
+      "lon": 7.663075,
+      "elevation_m": 697.8
+    },
+    "probe": {
+      "captured_at": "2026-07-28T13:23:57+00:00",
+      "gps": {
+        "lat": 62.452447222222226,
+        "lon": 7.663075,
+        "elevation_m": 697.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.026,
+      "exposure": 0.861,
+      "score": 0.444
+    },
+    "id": "20260728-phone-28f46f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0213_bdabcab2_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Parkplatz am Trollstigen mit beladenen Autos im dichten Nebel, Berggipfel schemenhaft erkennbar.",
+      "tags": [
+        "trollstigen",
+        "nebel",
+        "parkplatz",
+        "auto",
+        "berge"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2ae5c72be18b2a2cb105c91dc158f61679301599fa22cb6059dddde1d3d6affa",
+    "path": "Chris-iPhone/IMG_0190.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:39:09+00:00",
+    "gps": {
+      "lat": 62.455022222222226,
+      "lon": 7.672319444444445,
+      "elevation_m": 690.3
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:39:09+00:00",
+      "gps": {
+        "lat": 62.455022222222226,
+        "lon": 7.672319444444445,
+        "elevation_m": 690.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.403,
+      "exposure": 0.937,
+      "score": 0.67
+    },
+    "id": "20260728-phone-2ae5c7",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0190_382cfd44_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Steile Vogelperspektive auf die elf Haarnadelkurven der Trollstigen-Strasse mit kleinen Autos, Nebel im Tal.",
+      "tags": [
+        "trollstigen",
+        "serpentine",
+        "strasse",
+        "vogelperspektive",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2be66b5b306565668e5c4bad94f17b48f9da83470f3dad5266922e06d28ab0cd",
+    "path": "Chris-iPhone/IMG_0134.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T01:56:40+00:00",
+    "gps": {
+      "lat": 62.09462222222223,
+      "lon": 7.223161111111112,
+      "elevation_m": 203.1
+    },
+    "probe": {
+      "captured_at": "2026-07-28T01:56:40+00:00",
+      "gps": {
+        "lat": 62.09462222222223,
+        "lon": 7.223161111111112,
+        "elevation_m": 203.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.023,
+      "exposure": 0.215,
+      "score": 0.119
+    },
+    "id": "20260728-phone-2be66b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0134_bbfada62_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Nachtblick durch einen Balkonpfosten auf den beleuchteten Ort Geiranger und den dunklen Fjord.",
+      "tags": [
+        "geiranger",
+        "nacht",
+        "fjord",
+        "balkon",
+        "daemmerung"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2e9d4b1be535da357b5aaaeeff53a846d70aabb44950f6e288f44a211567bac2",
+    "path": "Chris-iPhone/IMG_0187.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:38:19+00:00",
+    "gps": {
+      "lat": 62.45505277777778,
+      "lon": 7.672261111111111,
+      "elevation_m": 689.5
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:38:19+00:00",
+      "gps": {
+        "lat": 62.45505277777778,
+        "lon": 7.672261111111111,
+        "elevation_m": 689.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.169,
+      "exposure": 0.844,
+      "score": 0.507
+    },
+    "id": "20260728-phone-2e9d4b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0187_d8753066_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Familienfoto auf der Aussichtsplattform des Trollstigen, nebelverhangene Berge im Hintergrund.",
+      "tags": [
+        "familienselfie",
+        "trollstigen",
+        "aussichtsplattform",
+        "berge",
+        "nebel"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2efa8c9ee717ae79701e641bb545a6a76a51332b2069636333d20555435b1c48",
+    "path": "Chris-iPhone/IMG_0250.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T20:33:34+00:00",
+    "gps": {
+      "lat": 61.83940833333334,
+      "lon": 8.571941666666666,
+      "elevation_m": 372.7
+    },
+    "probe": {
+      "captured_at": "2026-07-28T20:33:34+00:00",
+      "gps": {
+        "lat": 61.83940833333334,
+        "lon": 8.571941666666666,
+        "elevation_m": 372.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.957,
+      "score": 0.979
+    },
+    "id": "20260728-phone-2efa8c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0250_022130c6_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mutter und Sohn schaukeln nebeneinander auf dem Camping-Spielplatz, Huetten im Hintergrund.",
+      "tags": [
+        "spielplatz",
+        "schaukel",
+        "kind",
+        "mutter",
+        "camping"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2f9f915168f7fd9c037563196d0482fe5a67733cb3b2764edf8017213693faa1",
+    "path": "Chris-iPhone/IMG_0171.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:26:25+00:00",
+    "gps": {
+      "lat": 62.45401666666667,
+      "lon": 7.665233333333334,
+      "elevation_m": 701.1
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:26:25+00:00",
+      "gps": {
+        "lat": 62.45401666666667,
+        "lon": 7.665233333333334,
+        "elevation_m": 701.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.394,
+      "exposure": 0.986,
+      "score": 0.69
+    },
+    "id": "20260728-phone-2f9f91",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0171_df478f8d_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Bergsee mit Spiegelung des nebelverhangenen Gipfels, kleine rote Huetten am Ufer.",
+      "tags": [
+        "bergsee",
+        "nebel",
+        "spiegelung",
+        "huette",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:30acfa17244c106ca571ee5ceeea48fe37b9b6ab8f08cc454a5aaa56d0528e65",
+    "path": "Chris-iPhone/IMG_0235.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T19:58:26+00:00",
+    "gps": {
+      "lat": 61.838572222222226,
+      "lon": 8.566958333333334,
+      "elevation_m": 362.0
+    },
+    "probe": {
+      "captured_at": "2026-07-28T19:58:26+00:00",
+      "gps": {
+        "lat": 61.838572222222226,
+        "lon": 8.566958333333334,
+        "elevation_m": 362.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.267,
+      "exposure": 0.805,
+      "score": 0.536
+    },
+    "id": "20260728-phone-30acfa",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0235_493e42ef_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Verkaufswagen 'Bakeriet i Lom' mit Blumentoepfen, Baeckerei-Anhaenger in Lom.",
+      "tags": [
+        "lom",
+        "baeckerei",
+        "schild",
+        "detail",
+        "ort"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:310099519e4ede7801ff4f98d11a185a78c6de0e485a786f27b288023050c6f5",
+    "path": "Chris-iPhone/IMG_0141.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T11:22:31+00:00",
+    "gps": {
+      "lat": 62.33074166666667,
+      "lon": 7.470188888888889,
+      "elevation_m": 233.0
+    },
+    "probe": {
+      "captured_at": "2026-07-28T11:22:31+00:00",
+      "gps": {
+        "lat": 62.33074166666667,
+        "lon": 7.470188888888889,
+        "elevation_m": 233.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.864,
+      "score": 0.932
+    },
+    "id": "20260728-phone-310099",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0141_0792ccda_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Touristen laufen ueber geschwungene Metallbruecken durch einen Waldpark bei Geiranger.",
+      "tags": [
+        "wanderung",
+        "bruecke",
+        "park",
+        "touristen",
+        "geiranger"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:33c185d6b40c03eafc693fc8d6b0389c7c41a639317a774411e0617fa5768a34",
+    "path": "Chris-iPhone/IMG_0195.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:54:29+00:00",
+    "gps": {
+      "lat": 62.454675,
+      "lon": 7.671758333333334,
+      "elevation_m": 705.2
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:54:29+00:00",
+      "gps": {
+        "lat": 62.454675,
+        "lon": 7.671758333333334,
+        "elevation_m": 705.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.045,
+      "exposure": 0.758,
+      "score": 0.402
+    },
+    "id": "20260728-phone-33c185",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0195_e9581484_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mutter und Kind blicken von hinten in dichten Nebel, der die Aussichtsplattform des Trollstigen fast vollstaendig verhuellt.",
+      "tags": [
+        "trollstigen",
+        "nebel",
+        "mutter",
+        "kind",
+        "ausblick"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:342a6153fb6e343fcdeb13327e0a9401baaa4b83289613490eb19bef83ecebc2",
+    "path": "Chris-iPhone/IMG_0175.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:29:39+00:00",
+    "gps": {
+      "lat": 62.45507777777778,
+      "lon": 7.667202777777778,
+      "elevation_m": 702.8
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:29:39+00:00",
+      "gps": {
+        "lat": 62.45507777777778,
+        "lon": 7.667202777777778,
+        "elevation_m": 702.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.017,
+      "exposure": 0.966,
+      "score": 0.491
+    },
+    "id": "20260728-phone-342a61",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0175_4899be07_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Blick auf die Serpentinenstrasse des Trollstigen, die sich durchs Tal hinunterwindet, Nebel in den Bergen.",
+      "tags": [
+        "trollstigen",
+        "serpentine",
+        "strasse",
+        "nebel",
+        "panorama"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:352428269d1914c3b824318c110694fccf81370457db8dd56c22f7ae49dcb64a",
+    "path": "Chris-iPhone/IMG_0205.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T13:07:34+00:00",
+    "gps": {
+      "lat": 62.45474166666667,
+      "lon": 7.671366666666667,
+      "elevation_m": 709.0
+    },
+    "probe": {
+      "captured_at": "2026-07-28T13:07:34+00:00",
+      "gps": {
+        "lat": 62.45474166666667,
+        "lon": 7.671366666666667,
+        "elevation_m": 709.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.224,
+      "exposure": 0.74,
+      "score": 0.482
+    },
+    "id": "20260728-phone-352428",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0205_a4f1eb9f_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mutter und Sohn laufen am Gelaender entlang durch dichten Nebel am Trollstigen.",
+      "tags": [
+        "trollstigen",
+        "nebel",
+        "mutter",
+        "kind",
+        "wanderung"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:3652908831f40ac503cc1f2790e125bb26db9f8d149406a9fca1ad010f4c83d5",
+    "path": "Chris-iPhone/IMG_0180.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:35:51+00:00",
+    "gps": {
+      "lat": 62.45472222222222,
+      "lon": 7.6717611111111115,
+      "elevation_m": 705.8
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:35:51+00:00",
+      "gps": {
+        "lat": 62.45472222222222,
+        "lon": 7.6717611111111115,
+        "elevation_m": 705.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.434,
+      "exposure": 0.952,
+      "score": 0.693
+    },
+    "id": "20260728-phone-365290",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0180_ef881b76_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Touristen stehen auf der auskragenden Aussichtsplattform des Trollstigen vor massiver Felswand.",
+      "tags": [
+        "trollstigen",
+        "aussichtsplattform",
+        "touristen",
+        "felswand",
+        "architektur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:36902b4df29d0049b25a1744ffbbf1d0c200cd8af28133c0f2a8e922f3c4911f",
+    "path": "Chris-iPhone/IMG_0212.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T13:17:30+00:00",
+    "gps": {
+      "lat": 62.453586111111115,
+      "lon": 7.664208333333334,
+      "elevation_m": 688.6
+    },
+    "probe": {
+      "captured_at": "2026-07-28T13:17:30+00:00",
+      "gps": {
+        "lat": 62.453586111111115,
+        "lon": 7.664208333333334,
+        "elevation_m": 688.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.053,
+      "exposure": 0.871,
+      "score": 0.462
+    },
+    "id": "20260728-phone-36902b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0212_ab4943b9_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Humorvolles Schild 'No Trolls beyond this point' am Trollstigen-Besucherzentrum.",
+      "tags": [
+        "schild",
+        "troll",
+        "humor",
+        "trollstigen",
+        "detail"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:37c8c7b281aa349e31dcedb7c613b5e236ff75441c6fb715a5ffc434387eb902",
+    "path": "Chris-iPhone/IMG_0148.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T11:35:09+00:00",
+    "gps": {
+      "lat": 62.330313888888895,
+      "lon": 7.469569444444445,
+      "elevation_m": 231.1
+    },
+    "probe": {
+      "captured_at": "2026-07-28T11:35:09+00:00",
+      "gps": {
+        "lat": 62.330313888888895,
+        "lon": 7.469569444444445,
+        "elevation_m": 231.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.239,
+      "exposure": 0.94,
+      "score": 0.589
+    },
+    "id": "20260728-phone-37c8c7",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0148_e11fba60_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Zimtschnecke und Schokoladenkuchen auf Tisch mit Blick auf Fluss und markanten Berggipfel bei Gudbrandsjuvet.",
+      "tags": [
+        "cafe",
+        "zimtschnecke",
+        "kuchen",
+        "gudbrandsjuvet",
+        "ausblick"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:3aa3b8d4f350e8fb7152f10b87f958a8f862073cc94ab2050c8cc45d3c51c60d",
+    "path": "Chris-iPhone/IMG_0145.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T11:26:16+00:00",
+    "gps": {
+      "lat": 62.33045833333334,
+      "lon": 7.469813888888889,
+      "elevation_m": 231.6
+    },
+    "probe": {
+      "captured_at": "2026-07-28T11:26:16+00:00",
+      "gps": {
+        "lat": 62.33045833333334,
+        "lon": 7.469813888888889,
+        "elevation_m": 231.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.98,
+      "score": 0.99
+    },
+    "id": "20260728-phone-3aa3b8",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0145_167dfb57_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Blick in die enge Steinschlucht Gudbrandsjuvet mit tuerkisfarbenem Gletscherwasser unter einer Steinbruecke.",
+      "tags": [
+        "gudbrandsjuvet",
+        "schlucht",
+        "fels",
+        "wasser",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:3b90bc176c117c23de1234b993e9d989dfdde385a479d4a460993a37a5bbf271",
+    "path": "Chris-iPhone/IMG_0210.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T13:13:42+00:00",
+    "gps": {
+      "lat": 62.45431111111112,
+      "lon": 7.665805555555556
+    },
+    "probe": {
+      "captured_at": "2026-07-28T13:13:42+00:00",
+      "gps": {
+        "lat": 62.45431111111112,
+        "lon": 7.665805555555556
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.021,
+      "exposure": 0.892,
+      "score": 0.457
+    },
+    "id": "20260728-phone-3b90bc",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0210_7d64294b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Modernes Betongebaeude des Trollstigen-Besucherzentrums ragt im dichten Nebel ueber das Wasser.",
+      "tags": [
+        "trollstigen",
+        "architektur",
+        "nebel",
+        "besucherzentrum",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:40b3e4b3eebfb7ffb2274de5b42ca985ea0aa5841b089306b825c73d8fd67b92",
+    "path": "Chris-iPhone/IMG_0208.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T13:12:53+00:00",
+    "gps": {
+      "lat": 62.45429722222222,
+      "lon": 7.6657777777777785,
+      "elevation_m": 704.3
+    },
+    "probe": {
+      "captured_at": "2026-07-28T13:12:53+00:00",
+      "gps": {
+        "lat": 62.45429722222222,
+        "lon": 7.6657777777777785,
+        "elevation_m": 704.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.025,
+      "exposure": 0.714,
+      "score": 0.37
+    },
+    "id": "20260728-phone-40b3e4",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0208_16c2bb0c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mutter und Sohn hocken am Rand eines wasserbedeckten Betonbeckens im dichten Nebel.",
+      "tags": [
+        "trollstigen",
+        "nebel",
+        "mutter",
+        "kind",
+        "architektur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:454596755941cbe39c3ccb139f1da1db5b4466ea78f8fa09c84775f50bfc422e",
+    "path": "Chris-iPhone/IMG_0204.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T13:06:51+00:00",
+    "gps": {
+      "lat": 62.45464722222223,
+      "lon": 7.67175,
+      "elevation_m": 704.3
+    },
+    "probe": {
+      "captured_at": "2026-07-28T13:06:51+00:00",
+      "gps": {
+        "lat": 62.45464722222223,
+        "lon": 7.67175,
+        "elevation_m": 704.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.276,
+      "exposure": 0.91,
+      "score": 0.593
+    },
+    "id": "20260728-phone-454596",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0204_99f3ea89_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Portraet des Sohns neben seinem selbstgebauten Steinmaennchen am Trollstigen, laechelnd.",
+      "tags": [
+        "trollstigen",
+        "kind",
+        "steinmaennchen",
+        "portraet",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:455fb59a8952a76acbae2721757ac9d6c4e0a7bc40fe0fd2d2c58894cb6e79ac",
+    "path": "Chris-iPhone/IMG_0224.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T19:38:21+00:00",
+    "gps": {
+      "lat": 61.83845,
+      "lon": 8.569336111111111,
+      "elevation_m": 379.7
+    },
+    "probe": {
+      "captured_at": "2026-07-28T19:38:21+00:00",
+      "gps": {
+        "lat": 61.83845,
+        "lon": 8.569336111111111,
+        "elevation_m": 379.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.304,
+      "exposure": 0.994,
+      "score": 0.649
+    },
+    "id": "20260728-phone-455fb5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0224_b004cbb7_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Stabkirche Lom mit hohem, spitzem Turm auf einem Huegel ueber dem tuerkisfarbenen Fluss, Birken im Vordergrund.",
+      "tags": [
+        "stabkirche",
+        "lom",
+        "fluss",
+        "architektur",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4610a40678ffc1672f4925bcaec04cdc0dcdf86f35dd9b4a271c269564f75e5c",
+    "path": "Chris-iPhone/IMG_0177.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:32:04+00:00",
+    "gps": {
+      "lat": 62.45451111111112,
+      "lon": 7.666941666666667,
+      "elevation_m": 696.0
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:32:04+00:00",
+      "gps": {
+        "lat": 62.45451111111112,
+        "lon": 7.666941666666667,
+        "elevation_m": 696.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.629,
+      "exposure": 0.864,
+      "score": 0.746
+    },
+    "id": "20260728-phone-4610a4",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0177_d91c163c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Steinmaennchen auf Felsplateau am Trollstigen vor nebelverhangenem Gipfel.",
+      "tags": [
+        "trollstigen",
+        "steinmaennchen",
+        "nebel",
+        "berge",
+        "detail"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4f436e69ea2a42fd219d12f54f38c4509bf6b8b572e24690e3576deafc944aef",
+    "path": "Chris-iPhone/IMG_0230.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T19:45:04+00:00",
+    "gps": {
+      "lat": 61.83886388888889,
+      "lon": 8.568958333333333,
+      "elevation_m": 369.9
+    },
+    "probe": {
+      "captured_at": "2026-07-28T19:45:04+00:00",
+      "gps": {
+        "lat": 61.83886388888889,
+        "lon": 8.568958333333333,
+        "elevation_m": 369.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.352,
+      "exposure": 0.705,
+      "score": 0.529
+    },
+    "id": "20260728-phone-4f436e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0230_6f5a54d2_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Frau klettert vorsichtig ueber Felsen am tuerkisfarbenen Fluss bei Lom.",
+      "tags": [
+        "lom",
+        "fluss",
+        "frau",
+        "natur",
+        "wanderung"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:52c0d50eb4175d49428916368461dd2916d21addae4609938f1a02a51d42708d",
+    "path": "Chris-iPhone/IMG_0156.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T11:36:54+00:00",
+    "gps": {
+      "lat": 62.33032222222223,
+      "lon": 7.469572222222222,
+      "elevation_m": 231.4
+    },
+    "probe": {
+      "captured_at": "2026-07-28T11:36:54+00:00",
+      "gps": {
+        "lat": 62.33032222222223,
+        "lon": 7.469572222222222,
+        "elevation_m": 231.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.291,
+      "exposure": 0.933,
+      "score": 0.612
+    },
+    "id": "20260728-phone-52c0d5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0156_0186e375_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Frau haelt angebissene Zimtschnecke, Fluss und Berge im Hintergrund, Cafe Gudbrandsjuvet.",
+      "tags": [
+        "cafe",
+        "gudbrandsjuvet",
+        "zimtschnecke",
+        "frau",
+        "genuss"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:54d88c426403d425fdb6fc361b26436b08a45e8dcb786c74a4166fc9163b0639",
+    "path": "Chris-iPhone/IMG_0163.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T11:45:00+00:00",
+    "gps": {
+      "lat": 62.33047777777778,
+      "lon": 7.470077777777778,
+      "elevation_m": 229.7
+    },
+    "probe": {
+      "captured_at": "2026-07-28T11:45:00+00:00",
+      "gps": {
+        "lat": 62.33047777777778,
+        "lon": 7.470077777777778,
+        "elevation_m": 229.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.818,
+      "score": 0.909
+    },
+    "id": "20260728-phone-54d88c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0163_3def6f49_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Besucher laufen ueber die geschwungenen Metallstege im Waldpark bei Gudbrandsjuvet, Berge im Hintergrund.",
+      "tags": [
+        "gudbrandsjuvet",
+        "steg",
+        "wanderung",
+        "park",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5761eb1ff8027db2167fc9a7aa546269167c04dc04cd143864d6a899077c4568",
+    "path": "Chris-iPhone/IMG_0169.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:18:59+00:00",
+    "gps": {
+      "lat": 62.45290277777778,
+      "lon": 7.663747222222223,
+      "elevation_m": 702.6
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:18:59+00:00",
+      "gps": {
+        "lat": 62.45290277777778,
+        "lon": 7.663747222222223,
+        "elevation_m": 702.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.078,
+      "exposure": 0.784,
+      "score": 0.431
+    },
+    "id": "20260728-phone-5761eb",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0169_589fde5c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Einsame Berghuette auf felsigem Grat, fast vollstaendig von Nebel umhuellt.",
+      "tags": [
+        "berghuette",
+        "nebel",
+        "natur",
+        "bergpass",
+        "einsamkeit"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:57cb17868c5ea9a9b3daf5f24a3b2a9dc6999afdc9860bd050395cec54906d62",
+    "path": "Chris-iPhone/IMG_0174.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:28:57+00:00",
+    "gps": {
+      "lat": 62.45425277777778,
+      "lon": 7.665533333333333,
+      "elevation_m": 699.2
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:28:57+00:00",
+      "gps": {
+        "lat": 62.45425277777778,
+        "lon": 7.665533333333333,
+        "elevation_m": 699.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.882,
+      "score": 0.941
+    },
+    "id": "20260728-phone-57cb17",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0174_c768d63b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Gestapelte Steinmaennchen (Cairns) am Trollstigen vor nebelverhangenem Berggipfel.",
+      "tags": [
+        "trollstigen",
+        "steinmaennchen",
+        "natur",
+        "nebel",
+        "detail"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5bab0161af0ce0a609aaa98a7fe88f3def7407fd1c436a457ec102923dd864d7",
+    "path": "Chris-iPhone/IMG_0223.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T19:12:37+00:00",
+    "gps": {
+      "lat": 61.83770277777778,
+      "lon": 8.568497222222222,
+      "elevation_m": 382.4
+    },
+    "probe": {
+      "captured_at": "2026-07-28T19:12:37+00:00",
+      "gps": {
+        "lat": 61.83770277777778,
+        "lon": 8.568497222222222,
+        "elevation_m": 382.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.158,
+      "exposure": 0.97,
+      "score": 0.564
+    },
+    "id": "20260728-phone-5bab01",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0223_9dce8241_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mutter und Sohn beim Abendessen in gemuetlichem Holzrestaurant, Sohn isst Pizza.",
+      "tags": [
+        "restaurant",
+        "essen",
+        "pizza",
+        "kind",
+        "abendessen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5d37ffc44319cac5fa83e533430e9209d1daa349df238d8bca1b5e4bea4eb536",
+    "path": "Chris-iPhone/IMG_0247.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T20:23:15+00:00",
+    "gps": {
+      "lat": 61.83934444444445,
+      "lon": 8.572272222222223,
+      "elevation_m": 379.0
+    },
+    "probe": {
+      "captured_at": "2026-07-28T20:23:15+00:00",
+      "gps": {
+        "lat": 61.83934444444445,
+        "lon": 8.572272222222223,
+        "elevation_m": 379.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.63,
+      "exposure": 0.998,
+      "score": 0.814
+    },
+    "id": "20260728-phone-5d37ff",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0247_1fda398a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mutter und Sohn springen zusammen jubelnd auf dem Trampolin des Camping-Spielplatzes, Huetten am Hang im Hintergrund.",
+      "tags": [
+        "spielplatz",
+        "trampolin",
+        "kind",
+        "mutter",
+        "camping"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:630b300ebdd8feb107c6a1cfc0bce4a8a52377dfc387d027596c192270c40477",
+    "path": "Chris-iPhone/IMG_0173.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:28:20+00:00",
+    "gps": {
+      "lat": 62.454708333333336,
+      "lon": 7.666422222222223,
+      "elevation_m": 703.3
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:28:20+00:00",
+      "gps": {
+        "lat": 62.454708333333336,
+        "lon": 7.666422222222223,
+        "elevation_m": 703.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.138,
+      "exposure": 0.899,
+      "score": 0.518
+    },
+    "id": "20260728-phone-630b30",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0173_b404d3e2_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Mutter und Sohn laufen ueber den Aussichtssteg am Trollstigen, dramatische, nebelverhangene Berggipfel im Hintergrund.",
+      "tags": [
+        "trollstigen",
+        "steg",
+        "nebel",
+        "berge",
+        "wanderung"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:6865cb1f1aa9f3fb2f0013f4c86cebc30ea1841238d2974a55bed1a50640fefb",
+    "path": "Chris-iPhone/IMG_0218.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T18:19:49+00:00",
+    "gps": {
+      "lat": 61.838925,
+      "lon": 8.56953611111111,
+      "elevation_m": 361.3
+    },
+    "probe": {
+      "captured_at": "2026-07-28T18:19:49+00:00",
+      "gps": {
+        "lat": 61.838925,
+        "lon": 8.56953611111111,
+        "elevation_m": 361.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.277,
+      "exposure": 0.808,
+      "score": 0.542
+    },
+    "id": "20260728-phone-6865cb",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0218_34ef8852_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Beladener Kombi mit Dachbox parkt vor dunklem Holzhaus, markanter Berggipfel im Hintergrund, Abendlicht.",
+      "tags": [
+        "auto",
+        "dachbox",
+        "huette",
+        "berge",
+        "ankunft"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:6c8fa5f6f26c04033c9a2d2c295cb21f12208775952f1681119792e8ba2b78e3",
+    "path": "Chris-iPhone/IMG_0214.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T15:07:35+00:00",
+    "gps": {
+      "lat": 62.27038888888889,
+      "lon": 8.163419444444445,
+      "elevation_m": 557.4
+    },
+    "probe": {
+      "captured_at": "2026-07-28T15:07:35+00:00",
+      "gps": {
+        "lat": 62.27038888888889,
+        "lon": 8.163419444444445,
+        "elevation_m": 557.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.985,
+      "score": 0.992
+    },
+    "id": "20260728-phone-6c8fa5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0214_c2c8612d_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Sohn steht im vollgepackten Kofferraum, Mutter laedt Gepaeck aus, Ankunft an neuem Etappenziel.",
+      "tags": [
+        "gepaeck",
+        "auto",
+        "ankunft",
+        "kind",
+        "unterwegs"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:73ba6b20ad06368b5e8a547ab27b1e51ec657c01dd8e30f06f290340119070b9",
+    "path": "Chris-iPhone/IMG_0193.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:40:11+00:00",
+    "gps": {
+      "lat": 62.455022222222226,
+      "lon": 7.6723,
+      "elevation_m": 691.9
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:40:11+00:00",
+      "gps": {
+        "lat": 62.455022222222226,
+        "lon": 7.6723,
+        "elevation_m": 691.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.424,
+      "exposure": 0.937,
+      "score": 0.68
+    },
+    "id": "20260728-phone-73ba6b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0193_75b81f54_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Vogelperspektive auf die Trollstigen-Serpentinen mit mehreren Haarnadelkurven und Wildbach im Tal.",
+      "tags": [
+        "trollstigen",
+        "serpentine",
+        "strasse",
+        "vogelperspektive",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7b42f137bef9d80050f978b237db1fa8dfa7b8c9ea459ca542c3e538c809b0d8",
+    "path": "Chris-iPhone/IMG_0140.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T11:22:24+00:00",
+    "gps": {
+      "lat": 62.33074166666667,
+      "lon": 7.470152777777778,
+      "elevation_m": 232.0
+    },
+    "probe": {
+      "captured_at": "2026-07-28T11:22:24+00:00",
+      "gps": {
+        "lat": 62.33074166666667,
+        "lon": 7.470152777777778,
+        "elevation_m": 232.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.495,
+      "exposure": 0.986,
+      "score": 0.74
+    },
+    "id": "20260728-phone-7b42f1",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0140_286417c2_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mutter und Sohn haltend an der Hand ueber eine geschwungene Metallbruecke im Waldpark.",
+      "tags": [
+        "wanderung",
+        "bruecke",
+        "kind",
+        "natur",
+        "geiranger"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:843cd72bd46cf239a0741539b6ead9b7e9d9864a1fff351da774638786e27aed",
+    "path": "Chris-iPhone/IMG_0153.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T11:36:39+00:00",
+    "gps": {
+      "lat": 62.330325,
+      "lon": 7.469586111111111,
+      "elevation_m": 231.1
+    },
+    "probe": {
+      "captured_at": "2026-07-28T11:36:39+00:00",
+      "gps": {
+        "lat": 62.330325,
+        "lon": 7.469586111111111,
+        "elevation_m": 231.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.289,
+      "exposure": 0.839,
+      "score": 0.564
+    },
+    "id": "20260728-phone-843cd7",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0153_5b677e42_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Frau isst Zimtschnecke im Cafe von Gudbrandsjuvet mit Blick auf Fluss und Berggipfel.",
+      "tags": [
+        "cafe",
+        "gudbrandsjuvet",
+        "zimtschnecke",
+        "frau",
+        "ausblick"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:8993acdc068d54ca4cb2a1222b2176f852fbe88c2441fb483a9dc4e06e3947b6",
+    "path": "Chris-iPhone/IMG_0155.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T11:36:52+00:00",
+    "gps": {
+      "lat": 62.33032222222223,
+      "lon": 7.469572222222222,
+      "elevation_m": 231.4
+    },
+    "probe": {
+      "captured_at": "2026-07-28T11:36:52+00:00",
+      "gps": {
+        "lat": 62.33032222222223,
+        "lon": 7.469572222222222,
+        "elevation_m": 231.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.25,
+      "exposure": 0.942,
+      "score": 0.596
+    },
+    "id": "20260728-phone-8993ac",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0155_96864c24_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Frau geniesst mit geschlossenen Augen eine Zimtschnecke, Berggipfel und Fluss im Hintergrund.",
+      "tags": [
+        "cafe",
+        "gudbrandsjuvet",
+        "zimtschnecke",
+        "frau",
+        "genuss"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:8b392de604fdd66f7aec0da1635d125028800d1206f1373ee25cb6a883e30023",
+    "path": "Chris-iPhone/IMG_0227.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T19:40:12+00:00",
+    "gps": {
+      "lat": 61.83884166666667,
+      "lon": 8.569475,
+      "elevation_m": 378.5
+    },
+    "probe": {
+      "captured_at": "2026-07-28T19:40:12+00:00",
+      "gps": {
+        "lat": 61.83884166666667,
+        "lon": 8.569475,
+        "elevation_m": 378.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.462,
+      "exposure": 0.928,
+      "score": 0.695
+    },
+    "id": "20260728-phone-8b392d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0227_ff30b47b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Tuerkisfarbener Fluss stuerzt unter einer Steinbruecke hindurch bei Lom, Wasserfallschaum am Bogen.",
+      "tags": [
+        "lom",
+        "fluss",
+        "bruecke",
+        "wasserfall",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:8ca453bd8cc41869b32936b8189e1b806e6e426f36d0fd06367cf3b8817bd271",
+    "path": "Chris-iPhone/IMG_0138.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T09:56:09+00:00",
+    "gps": {
+      "lat": 62.09460555555556,
+      "lon": 7.223136111111112,
+      "elevation_m": 197.6
+    },
+    "probe": {
+      "captured_at": "2026-07-28T09:56:09+00:00",
+      "gps": {
+        "lat": 62.09460555555556,
+        "lon": 7.223136111111112,
+        "elevation_m": 197.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.658,
+      "exposure": 0.865,
+      "score": 0.761
+    },
+    "id": "20260728-phone-8ca453",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0138_33990e22_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Familienselfie mit begeisterten Gesichtsausdruecken vom Balkon der Huette, Geirangerfjord im Hintergrund.",
+      "tags": [
+        "familienselfie",
+        "geirangerfjord",
+        "kind",
+        "emotional",
+        "balkon"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a090783dae7e1c56f6f064920f625c177fbebf059c2701fa149885f2cd658e53",
+    "path": "Chris-iPhone/IMG_0206.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T13:08:12+00:00",
+    "gps": {
+      "lat": 62.45455555555556,
+      "lon": 7.670825000000001,
+      "elevation_m": 709.5
+    },
+    "probe": {
+      "captured_at": "2026-07-28T13:08:12+00:00",
+      "gps": {
+        "lat": 62.45455555555556,
+        "lon": 7.670825000000001,
+        "elevation_m": 709.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.892,
+      "score": 0.946
+    },
+    "id": "20260728-phone-a09078",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0206_13b14171_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Steinerner Treppenpfad fuehrt an einer Felswand entlang im Nebel.",
+      "tags": [
+        "trollstigen",
+        "treppe",
+        "fels",
+        "wanderung",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a8ae0a32d45bf6f0868674e10f012725bf95db060f698840f63986aa92ed1b22",
+    "path": "Chris-iPhone/IMG_0237.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T19:59:53+00:00",
+    "gps": {
+      "lat": 61.838188888888894,
+      "lon": 8.567330555555555,
+      "elevation_m": 382.1
+    },
+    "probe": {
+      "captured_at": "2026-07-28T19:59:53+00:00",
+      "gps": {
+        "lat": 61.838188888888894,
+        "lon": 8.567330555555555,
+        "elevation_m": 382.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.938,
+      "score": 0.969
+    },
+    "id": "20260728-phone-a8ae0a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0237_fd3a9c99_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Weiterer Blick von der Bruecke ueber den tuerkisfarbenen Fluss durch Lom, Berge im Hintergrund.",
+      "tags": [
+        "lom",
+        "fluss",
+        "ort",
+        "bruecke",
+        "panorama"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:aa75b58c107fb645940dd3093e71be7d4934bfb0efece0e415eb648d196d231b",
+    "path": "Chris-iPhone/IMG_0200.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:58:01+00:00",
+    "gps": {
+      "lat": 62.454661111111115,
+      "lon": 7.671755555555555,
+      "elevation_m": 704.1
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:58:01+00:00",
+      "gps": {
+        "lat": 62.454661111111115,
+        "lon": 7.671755555555555,
+        "elevation_m": 704.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.727,
+      "exposure": 0.987,
+      "score": 0.857
+    },
+    "id": "20260728-phone-aa75b5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0200_176726a1_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kind baut ein Steinmaennchen (Cairn) auf Felsplateau am Trollstigen.",
+      "tags": [
+        "trollstigen",
+        "kind",
+        "steinmaennchen",
+        "spiel",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b09036100b0b0869498c0c8d18de034adcb64c8028ed70dcf5ca9fd85392d75a",
+    "path": "Chris-iPhone/IMG_0219.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T18:21:26+00:00",
+    "gps": {
+      "lat": 61.83846666666667,
+      "lon": 8.569266666666666,
+      "elevation_m": 379.3
+    },
+    "probe": {
+      "captured_at": "2026-07-28T18:21:26+00:00",
+      "gps": {
+        "lat": 61.83846666666667,
+        "lon": 8.569266666666666,
+        "elevation_m": 379.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.675,
+      "exposure": 0.946,
+      "score": 0.811
+    },
+    "id": "20260728-phone-b09036",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0219_732946e9_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Stabkirche mit spitzem Turm erhebt sich hinter Baeumen am tuerkisfarbenen Fluss, Berge im Hintergrund.",
+      "tags": [
+        "stabkirche",
+        "fluss",
+        "berge",
+        "architektur",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b231f1b08eda9e604c89af728ff919695f3b24fb6f2c175b0b591943f781f4cd",
+    "path": "Chris-iPhone/IMG_0157.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T11:36:59+00:00",
+    "gps": {
+      "lat": 62.33032222222223,
+      "lon": 7.469572222222222,
+      "elevation_m": 231.4
+    },
+    "probe": {
+      "captured_at": "2026-07-28T11:36:59+00:00",
+      "gps": {
+        "lat": 62.33032222222223,
+        "lon": 7.469572222222222,
+        "elevation_m": 231.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.061,
+      "exposure": 0.941,
+      "score": 0.501
+    },
+    "id": "20260728-phone-b231f1",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0157_d01e6997_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Junge isst Schokoladenkuchen am Tisch mit Blick auf Fluss und Berge im Cafe Gudbrandsjuvet.",
+      "tags": [
+        "cafe",
+        "gudbrandsjuvet",
+        "kuchen",
+        "kind",
+        "ausblick"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b29c648a90a38bf20ac147a4379ac38c419f87c5c48799d78ffdcd0fcdb5a2b8",
+    "path": "Chris-iPhone/IMG_0211.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T13:14:55+00:00",
+    "gps": {
+      "lat": 62.45391111111111,
+      "lon": 7.664616666666667,
+      "elevation_m": 704.7
+    },
+    "probe": {
+      "captured_at": "2026-07-28T13:14:55+00:00",
+      "gps": {
+        "lat": 62.45391111111111,
+        "lon": 7.664616666666667,
+        "elevation_m": 704.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.106,
+      "exposure": 0.77,
+      "score": 0.438
+    },
+    "id": "20260728-phone-b29c64",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0211_aa5452c9_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Werbeschild fuer 'Trollstigen Camping & Guesthouse' mit dreikoepfiger Troll-Statue.",
+      "tags": [
+        "schild",
+        "troll",
+        "humor",
+        "trollstigen",
+        "detail"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b697d5b6e3bbd5ec388139a45fe40e4c388c87dcc30887b2cbc7d3869030c5e2",
+    "path": "Chris-iPhone/IMG_0165.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T11:47:02+00:00",
+    "gps": {
+      "lat": 62.330738888888895,
+      "lon": 7.471038888888889,
+      "elevation_m": 239.9
+    },
+    "probe": {
+      "captured_at": "2026-07-28T11:47:02+00:00",
+      "gps": {
+        "lat": 62.330738888888895,
+        "lon": 7.471038888888889,
+        "elevation_m": 239.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.152,
+      "exposure": 0.959,
+      "score": 0.556
+    },
+    "id": "20260728-phone-b697d5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0165_f4d6f0da_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Nahaufnahme vieler Schalen frischer Erdbeeren am Verkaufsstand, Preisschild '70 kr / 7 Euro'.",
+      "tags": [
+        "erdbeeren",
+        "marktstand",
+        "detail",
+        "essen",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b7088abc8fa6e16653ba00270fdecb290e75fd037abcb3161fd703f9d589e995",
+    "path": "Chris-iPhone/IMG_0168.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:17:46+00:00",
+    "gps": {
+      "lat": 62.45238055555556,
+      "lon": 7.663116666666667,
+      "elevation_m": 699.6
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:17:46+00:00",
+      "gps": {
+        "lat": 62.45238055555556,
+        "lon": 7.663116666666667,
+        "elevation_m": 699.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.589,
+      "exposure": 0.851,
+      "score": 0.72
+    },
+    "id": "20260728-phone-b7088a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0168_3473c22c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Mutter und Sohn laufen ueber den Parkplatz eines Bergpass-Aussichtspunkts, Gipfel in dichten Wolken verhuellt (Trollstigen-Bereich).",
+      "tags": [
+        "bergpass",
+        "nebel",
+        "parkplatz",
+        "kind",
+        "wanderung"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b83bbfc50a86c5fdd92c6a2fff3a08de7e57bd6f6e9a1c4ca0698f90e12c2094",
+    "path": "Chris-iPhone/IMG_0162.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T11:44:35+00:00",
+    "gps": {
+      "lat": 62.33045555555556,
+      "lon": 7.469672222222222,
+      "elevation_m": 231.6
+    },
+    "probe": {
+      "captured_at": "2026-07-28T11:44:35+00:00",
+      "gps": {
+        "lat": 62.33045555555556,
+        "lon": 7.469672222222222,
+        "elevation_m": 231.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.144,
+      "exposure": 0.889,
+      "score": 0.516
+    },
+    "id": "20260728-phone-b83bbf",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0162_388b6b47_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Infotafel aus Metall mit der Aufschrift 'Gudbrandsjuvet - Nasjonale turistveger'.",
+      "tags": [
+        "schild",
+        "gudbrandsjuvet",
+        "infotafel",
+        "detail",
+        "architektur"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:bf5a29c6afba21b47cc47022b6b8461d364f87f8d89a9b94e95349fe32f7dc34",
+    "path": "Chris-iPhone/IMG_0229.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T19:42:20+00:00",
+    "gps": {
+      "lat": 61.83876388888889,
+      "lon": 8.568022222222222,
+      "elevation_m": 358.6
+    },
+    "probe": {
+      "captured_at": "2026-07-28T19:42:20+00:00",
+      "gps": {
+        "lat": 61.83876388888889,
+        "lon": 8.568022222222222,
+        "elevation_m": 358.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.856,
+      "exposure": 0.906,
+      "score": 0.881
+    },
+    "id": "20260728-phone-bf5a29",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0229_e8ee2de0_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mutter und Sohn stehen auf Felsen am tuerkisfarbenen Fluss bei Lom, Huettensiedlung im Hintergrund.",
+      "tags": [
+        "lom",
+        "fluss",
+        "kind",
+        "mutter",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c16b30dd52aa11da64a2926133da778bbaf14f5b98abb37ccbdc908903cc1cf3",
+    "path": "Chris-iPhone/IMG_0181.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:35:58+00:00",
+    "gps": {
+      "lat": 62.45475833333334,
+      "lon": 7.671797222222223,
+      "elevation_m": 703.2
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:35:58+00:00",
+      "gps": {
+        "lat": 62.45475833333334,
+        "lon": 7.671797222222223,
+        "elevation_m": 703.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.459,
+      "exposure": 0.916,
+      "score": 0.687
+    },
+    "id": "20260728-phone-c16b30",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0181_b14d97ae_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Frau fotografiert die Aussichtsplattform des Trollstigen mit Wasserfall an der Felswand im Hintergrund.",
+      "tags": [
+        "trollstigen",
+        "aussichtsplattform",
+        "wasserfall",
+        "frau",
+        "felswand"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c5dc5086ee61ceb6bd3b23b3326cb22dcff7b2d2a7ba77de5c53b88b26e66204",
+    "path": "Chris-iPhone/IMG_0234.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T19:54:28+00:00",
+    "gps": {
+      "lat": 61.83988888888889,
+      "lon": 8.565980555555557,
+      "elevation_m": 379.0
+    },
+    "probe": {
+      "captured_at": "2026-07-28T19:54:28+00:00",
+      "gps": {
+        "lat": 61.83988888888889,
+        "lon": 8.565980555555557,
+        "elevation_m": 379.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.983,
+      "score": 0.991
+    },
+    "id": "20260728-phone-c5dc50",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0234_4f389f45_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Friedhof neben der Stabkirche Lom mit blumengeschmueckten Grabsteinen, markanter Berg im Hintergrund.",
+      "tags": [
+        "stabkirche",
+        "lom",
+        "friedhof",
+        "berge",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c5f71dc877fd1385a080338a664241908f1827661c3d494cef398b6d5644f0bd",
+    "path": "Chris-iPhone/IMG_0144.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T11:24:18+00:00",
+    "gps": {
+      "lat": 62.330355555555556,
+      "lon": 7.470186111111111,
+      "elevation_m": 229.6
+    },
+    "probe": {
+      "captured_at": "2026-07-28T11:24:18+00:00",
+      "gps": {
+        "lat": 62.330355555555556,
+        "lon": 7.470186111111111,
+        "elevation_m": 229.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.799,
+      "exposure": 0.967,
+      "score": 0.883
+    },
+    "id": "20260728-phone-c5f71d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0144_9ddb335a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Wildbach stuerzt durch die enge Schlucht Gudbrandsjuvet, bewaldetes Tal mit rotem Haus im Hintergrund.",
+      "tags": [
+        "gudbrandsjuvet",
+        "schlucht",
+        "wildbach",
+        "natur",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ca1f714b298b10e4dc877401efe4e6e3440916d75a6a8fe39828ccb4c70c1f74",
+    "path": "Chris-iPhone/IMG_0178.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:32:46+00:00",
+    "gps": {
+      "lat": 62.454375000000006,
+      "lon": 7.668077777777778,
+      "elevation_m": 714.5
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:32:46+00:00",
+      "gps": {
+        "lat": 62.454375000000006,
+        "lon": 7.668077777777778,
+        "elevation_m": 714.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.244,
+      "exposure": 0.976,
+      "score": 0.61
+    },
+    "id": "20260728-phone-ca1f71",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0178_2f86a677_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Blick auf die Serpentinenstrasse des Trollstigen mit Wildbach, tief ins Tal hinunter, Berggipfel im Nebel.",
+      "tags": [
+        "trollstigen",
+        "serpentine",
+        "strasse",
+        "nebel",
+        "panorama"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d60a1d6042340364c130465c3d832b5bc71c46978f0ccd3ae594599c9b2d4d09",
+    "path": "Chris-iPhone/IMG_0207.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T13:11:05+00:00",
+    "gps": {
+      "lat": 62.454433333333334,
+      "lon": 7.667316666666667,
+      "elevation_m": 701.8
+    },
+    "probe": {
+      "captured_at": "2026-07-28T13:11:05+00:00",
+      "gps": {
+        "lat": 62.454433333333334,
+        "lon": 7.667316666666667,
+        "elevation_m": 701.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.227,
+      "exposure": 0.815,
+      "score": 0.521
+    },
+    "id": "20260728-phone-d60a1d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0207_e9bb402c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Zahlreiche Steinmaennchen auf nebelverhuelltem Felsplateau am Trollstigen.",
+      "tags": [
+        "trollstigen",
+        "steinmaennchen",
+        "nebel",
+        "detail",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d92becf6349ee26acc58e042ca4ed74e4b03ce70b5901b90dc71d71947154e18",
+    "path": "Chris-iPhone/IMG_0176.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:29:52+00:00",
+    "gps": {
+      "lat": 62.455086111111115,
+      "lon": 7.6672,
+      "elevation_m": 702.1
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:29:52+00:00",
+      "gps": {
+        "lat": 62.455086111111115,
+        "lon": 7.6672,
+        "elevation_m": 702.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.05,
+      "exposure": 0.896,
+      "score": 0.473
+    },
+    "id": "20260728-phone-d92bec",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0176_fad6f701_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Wildbach fliesst ueber Felsen am Trollstigen, dramatischer Berggipfel mit Wasserfaellen im Nebel.",
+      "tags": [
+        "trollstigen",
+        "wildbach",
+        "berge",
+        "nebel",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:dc6fe4474ab3aa5892399e9fc44103ee0448d8b6c7fab061ca482172f7fb71e5",
+    "path": "Chris-iPhone/IMG_0160.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T11:43:59+00:00",
+    "gps": {
+      "lat": 62.33034444444445,
+      "lon": 7.469352777777778,
+      "elevation_m": 231.9
+    },
+    "probe": {
+      "captured_at": "2026-07-28T11:43:59+00:00",
+      "gps": {
+        "lat": 62.33034444444445,
+        "lon": 7.469352777777778,
+        "elevation_m": 231.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.179,
+      "exposure": 0.917,
+      "score": 0.548
+    },
+    "id": "20260728-phone-dc6fe4",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0160_cf66dbba_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Kreidetafel 'Gudbrandsjuvet Cafe - Thank you for visiting us' am Ausgang.",
+      "tags": [
+        "schild",
+        "gudbrandsjuvet",
+        "cafe",
+        "detail",
+        "abschied"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:de256608e28d42d68514343591ed4f0151188e36076b132c137a5d1cec5bbdbc",
+    "path": "Chris-iPhone/IMG_0239.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T20:05:18+00:00",
+    "gps": {
+      "lat": 61.83781944444445,
+      "lon": 8.566880555555555,
+      "elevation_m": 383.1
+    },
+    "probe": {
+      "captured_at": "2026-07-28T20:05:18+00:00",
+      "gps": {
+        "lat": 61.83781944444445,
+        "lon": 8.566880555555555,
+        "elevation_m": 383.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.1,
+      "exposure": 0.915,
+      "score": 0.508
+    },
+    "id": "20260728-phone-de2566",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0239_843a6562_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mutter und Sohn lehnen an der Bruecke und beobachten den reissenden tuerkisfarbenen Fluss in Lom.",
+      "tags": [
+        "lom",
+        "fluss",
+        "bruecke",
+        "kind",
+        "mutter"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e07a5f815398a2fcdb446de1751ebc24f619da5982af6965d16263cfe9337e5a",
+    "path": "Chris-iPhone/IMG_0216.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T17:35:46+00:00",
+    "gps": {
+      "lat": 61.83898611111111,
+      "lon": 8.56948888888889,
+      "elevation_m": 373.1
+    },
+    "probe": {
+      "captured_at": "2026-07-28T17:35:46+00:00",
+      "gps": {
+        "lat": 61.83898611111111,
+        "lon": 8.56948888888889,
+        "elevation_m": 373.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.402,
+      "exposure": 0.949,
+      "score": 0.676
+    },
+    "id": "20260728-phone-e07a5f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0216_3d4de282_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Sohn betritt eine kleine dunkelbraune Camping-Huette mit Holztuer und Zaun.",
+      "tags": [
+        "huette",
+        "ankunft",
+        "kind",
+        "camping",
+        "unterwegs"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e4845240da09490821efcaa833bf4df16ea92b5596a7e98a23700206476a2755",
+    "path": "Chris-iPhone/IMG_0197.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:57:04+00:00",
+    "gps": {
+      "lat": 62.454661111111115,
+      "lon": 7.671683333333333,
+      "elevation_m": 702.0
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:57:04+00:00",
+      "gps": {
+        "lat": 62.454661111111115,
+        "lon": 7.671683333333333,
+        "elevation_m": 702.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.027,
+      "exposure": 0.781,
+      "score": 0.404
+    },
+    "id": "20260728-phone-e48452",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0197_1f6f6748_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Nebelschwaden geben kurz den Blick auf das Tal unterhalb des Trollstigen frei.",
+      "tags": [
+        "trollstigen",
+        "tal",
+        "nebel",
+        "natur",
+        "panorama"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ea46353742276b18c4da6b68a4808c888976fc29b6ae947285feb9571550fa87",
+    "path": "Chris-iPhone/IMG_0196.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:56:59+00:00",
+    "gps": {
+      "lat": 62.45466666666667,
+      "lon": 7.671677777777778,
+      "elevation_m": 707.4
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:56:59+00:00",
+      "gps": {
+        "lat": 62.45466666666667,
+        "lon": 7.671677777777778,
+        "elevation_m": 707.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.016,
+      "exposure": 0.781,
+      "score": 0.399
+    },
+    "id": "20260728-phone-ea4635",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0196_e6ea1b32_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Grünes Tal wird durch eine Wolkenluecke sichtbar, umgeben von dichtem Nebel am Trollstigen.",
+      "tags": [
+        "trollstigen",
+        "tal",
+        "nebel",
+        "natur",
+        "panorama"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ec3bafa4f703bf90dffa105c35da5dba607f810662e917fa31bef5dc545f694b",
+    "path": "Chris-iPhone/IMG_0225.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T19:38:33+00:00",
+    "gps": {
+      "lat": 61.83844444444445,
+      "lon": 8.569272222222223,
+      "elevation_m": 377.9
+    },
+    "probe": {
+      "captured_at": "2026-07-28T19:38:33+00:00",
+      "gps": {
+        "lat": 61.83844444444445,
+        "lon": 8.569272222222223,
+        "elevation_m": 377.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.227,
+      "exposure": 0.877,
+      "score": 0.552
+    },
+    "id": "20260728-phone-ec3baf",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0225_09476ebe_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weiter Blick auf die Stabkirche Lom mit alter Holzbruecke ueber den Fluss, Abendstimmung.",
+      "tags": [
+        "stabkirche",
+        "lom",
+        "fluss",
+        "bruecke",
+        "abendlicht"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f252b7912951610e207bad25dece427b5f16d15d3ca9d139547f0c88b4fecd73",
+    "path": "Chris-iPhone/IMG_0146.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T11:27:44+00:00",
+    "gps": {
+      "lat": 62.33034444444445,
+      "lon": 7.469363888888889,
+      "elevation_m": 229.3
+    },
+    "probe": {
+      "captured_at": "2026-07-28T11:27:44+00:00",
+      "gps": {
+        "lat": 62.33034444444445,
+        "lon": 7.469363888888889,
+        "elevation_m": 229.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.448,
+      "exposure": 0.912,
+      "score": 0.68
+    },
+    "id": "20260728-phone-f252b7",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0146_907f9465_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Humorvolle Kreidetafel wirbt fuer Zimtschnecken vor dem Besucherzentrum Gudbrandsjuvet.",
+      "tags": [
+        "schild",
+        "humor",
+        "cafe",
+        "gudbrandsjuvet",
+        "detail"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f622c8661bd68e98448ae4f5c4ddac51e2eec4f0b8dfd81e28d3e37396ecb47b",
+    "path": "Chris-iPhone/IMG_0183.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:37:42+00:00",
+    "gps": {
+      "lat": 62.455063888888894,
+      "lon": 7.672258333333334,
+      "elevation_m": 691.8
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:37:42+00:00",
+      "gps": {
+        "lat": 62.455063888888894,
+        "lon": 7.672258333333334,
+        "elevation_m": 691.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.579,
+      "exposure": 0.951,
+      "score": 0.765
+    },
+    "id": "20260728-phone-f622c8",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0183_278e9854_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Kind blickt von der Aussichtsplattform auf die spektakulaeren Haarnadelkurven der Trollstigen-Passstrasse, Autos winden sich den Berg hinauf.",
+      "tags": [
+        "trollstigen",
+        "serpentine",
+        "strasse",
+        "kind",
+        "establisher"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:fd96cc643112b95d5477d3199ea3d8613c16e38d36ee49b55659421ede3d7c6b",
+    "path": "Chris-iPhone/IMG_0154.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T11:36:43+00:00",
+    "gps": {
+      "lat": 62.33032222222223,
+      "lon": 7.469575,
+      "elevation_m": 228.4
+    },
+    "probe": {
+      "captured_at": "2026-07-28T11:36:43+00:00",
+      "gps": {
+        "lat": 62.33032222222223,
+        "lon": 7.469575,
+        "elevation_m": 228.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.312,
+      "exposure": 0.956,
+      "score": 0.634
+    },
+    "id": "20260728-phone-fd96cc",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0154_706cdfdf_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Frau beisst genussvoll in eine Zimtschnecke, Fluss und Wald im Hintergrund.",
+      "tags": [
+        "cafe",
+        "gudbrandsjuvet",
+        "zimtschnecke",
+        "frau",
+        "genuss"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ff0f8d1e0e4c4ff798cc25d2c8e3db26ea239e7b284122a8d79ed0f50474f3cc",
+    "path": "Chris-iPhone/IMG_0233.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T19:53:05+00:00",
+    "gps": {
+      "lat": 61.83960833333334,
+      "lon": 8.566158333333334,
+      "elevation_m": 382.1
+    },
+    "probe": {
+      "captured_at": "2026-07-28T19:53:05+00:00",
+      "gps": {
+        "lat": 61.83960833333334,
+        "lon": 8.566158333333334,
+        "elevation_m": 382.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.217,
+      "exposure": 0.719,
+      "score": 0.468
+    },
+    "id": "20260728-phone-ff0f8d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0233_049fc0d3_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Nahansicht der dunklen Holz-Stabkirche Lom mit Turmspitze, Friedhof im Vordergrund.",
+      "tags": [
+        "stabkirche",
+        "lom",
+        "architektur",
+        "friedhof",
+        "detail"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ffa27d2ee745f038f72e7d3161deb0c4af0a3d6f867c7ab81aa09c81b80d0133",
+    "path": "Chris-iPhone/IMG_0185.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:38:04+00:00",
+    "gps": {
+      "lat": 62.45505277777778,
+      "lon": 7.6722527777777785,
+      "elevation_m": 688.7
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:38:04+00:00",
+      "gps": {
+        "lat": 62.45505277777778,
+        "lon": 7.6722527777777785,
+        "elevation_m": 688.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.539,
+      "exposure": 0.789,
+      "score": 0.664
+    },
+    "id": "20260728-phone-ffa27d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0185_c2687c45_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Familienselfie auf der Aussichtsplattform des Trollstigen mit den Haarnadelkurven der Passstrasse im Hintergrund.",
+      "tags": [
+        "familienselfie",
+        "trollstigen",
+        "serpentine",
+        "aussichtsplattform",
+        "kind"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
   },
   {
     "hash": "sha256:0a2128e8708f71e6037f2ff9e460e441c3894462d2b4b600604e52d58beaa19b",
