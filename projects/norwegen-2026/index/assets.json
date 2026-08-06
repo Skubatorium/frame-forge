@@ -10135,6 +10135,126 @@
     }
   },
   {
+    "hash": "sha256:cc5bd645de69ee8c7d25b398badb8cae6dbaf026ffabe33e53ce621a73c71ab7",
+    "path": "Chris-iPhone/IMG_9486.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-21T12:17:06+00:00",
+    "captured_at_source": "container",
+    "duration": 17.608333,
+    "probe": {
+      "captured_at": "2026-07-21T12:17:06+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 17.608333,
+      "bitrate": 53395806,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.087,
+      "stability": 0.0,
+      "exposure": 0.745,
+      "score": 0.277
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 17.62
+      }
+    ],
+    "id": "20260721-camera-cc5bd6",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9486_b14ab295_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9486_b14ab295_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9486_b14ab295_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9486_b14ab295_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Junge mit Sonnenschutzhut isst etwas auf einem Felsen, im Hintergrund weitere Personen am Badeplatz.",
+      "tags": [
+        "kind",
+        "essen",
+        "felsen",
+        "sonnenhut",
+        "badeplatz",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f74dabacf059416eb79fd1e190fd5ab4c01eebfb779d4bf455f8e8d6a62ec64c",
+    "path": "Chris-iPhone/IMG_9485.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-21T12:16:54+00:00",
+    "captured_at_source": "container",
+    "duration": 6.2517,
+    "probe": {
+      "captured_at": "2026-07-21T12:16:54+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 6.2517,
+      "bitrate": 55396765,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.009,
+      "exposure": 0.767,
+      "score": 0.592
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.991
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 6.25
+      }
+    ],
+    "id": "20260721-camera-f74dab",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9485_1dc25b61_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9485_1dc25b61_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9485_1dc25b61_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9485_1dc25b61_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Establisher einer Badebucht mit Felsklippen und Ferienhaeusern am Ufer, Menschen baden im gruenlichen Wasser.",
+      "tags": [
+        "badebucht",
+        "felsen",
+        "meer",
+        "ferienhaeuser",
+        "establisher",
+        "baden"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
     "hash": "sha256:01db2ecf88c75fb4a3dfcc7872d341b2e39d812f27b94d60ec831a81af04a3e7",
     "path": "2026-07-21_Norwegen_Skien_Haus-1/Vorauswahl/DJI_20260721222408_0001_D-00.02.29.688-00.02.49.636-seg5.MP4",
     "kind": "video",
@@ -10553,6 +10673,643 @@
     "day": 4,
     "stage": "Skien",
     "place_source": "index"
+  },
+  {
+    "hash": "sha256:0d17505d7293a95e901e0b77f92a6830c9950cc3f00acd3b00ce4627a08dd4cd",
+    "path": "Chris-iPhone/IMG_9481.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-21T13:37:16+00:00",
+    "gps": {
+      "lat": 59.00689444444444,
+      "lon": 9.70425,
+      "elevation_m": 3.6
+    },
+    "probe": {
+      "captured_at": "2026-07-21T13:37:16+00:00",
+      "gps": {
+        "lat": 59.00689444444444,
+        "lon": 9.70425,
+        "elevation_m": 3.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.253,
+      "exposure": 0.973,
+      "score": 0.613
+    },
+    "id": "20260721-phone-0d1750",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9481_0e370b37_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Blick ueber eine Frau und ein Kind hinweg auf die Badebucht mit Kueste und Booten.",
+      "tags": [
+        "badebucht",
+        "frau",
+        "kind",
+        "meer",
+        "ruecken",
+        "kueste"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:179d7223c6ba8f8747a5df78ad35d92b1700e320a9759f2037da5e11c1679cea",
+    "path": "Chris-iPhone/IMG_9497.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-21T15:46:54+00:00",
+    "gps": {
+      "lat": 59.00806388888889,
+      "lon": 9.703716666666667,
+      "elevation_m": 4.9
+    },
+    "probe": {
+      "captured_at": "2026-07-21T15:46:54+00:00",
+      "gps": {
+        "lat": 59.00806388888889,
+        "lon": 9.703716666666667,
+        "elevation_m": 4.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.41,
+      "exposure": 0.993,
+      "score": 0.701
+    },
+    "id": "20260721-phone-179d72",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9497_34e84ec9_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Eine Frau und ein Junge tragen Taschen und laufen einen Weg unter Baeumen hinauf, Aufbruch vom Badeplatz.",
+      "tags": [
+        "frau",
+        "kind",
+        "weg",
+        "tragen",
+        "aufbruch",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2c1992a0739c0f1a23de53fd4be67bb496033735348ce9bd40321ff839c2e1f9",
+    "path": "Chris-iPhone/IMG_9477.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-21T13:10:18+00:00",
+    "gps": {
+      "lat": 59.00697777777778,
+      "lon": 9.704083333333333,
+      "elevation_m": 3.9
+    },
+    "probe": {
+      "captured_at": "2026-07-21T13:10:18+00:00",
+      "gps": {
+        "lat": 59.00697777777778,
+        "lon": 9.704083333333333,
+        "elevation_m": 3.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.207,
+      "exposure": 0.784,
+      "score": 0.496
+    },
+    "id": "20260721-phone-2c1992",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9477_04e8c0b0_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Junge steht von hinten auf einem Felsen und blickt ueber eine belebte Badebucht mit Menschen am Meer.",
+      "tags": [
+        "kind",
+        "badebucht",
+        "felsen",
+        "meer",
+        "ruecken",
+        "menschen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2cba8414f5c7b142a51a20ab07194c2933add349144d3e9f3ffe7b9d08e8585d",
+    "path": "Chris-iPhone/IMG_9495.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-21T14:57:16+00:00",
+    "gps": {
+      "lat": 59.00686666666667,
+      "lon": 9.704216666666666,
+      "elevation_m": 3.3
+    },
+    "probe": {
+      "captured_at": "2026-07-21T14:57:16+00:00",
+      "gps": {
+        "lat": 59.00686666666667,
+        "lon": 9.704216666666666,
+        "elevation_m": 3.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.52,
+      "exposure": 0.976,
+      "score": 0.748
+    },
+    "id": "20260721-phone-2cba84",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9495_0ae14866_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Ein Junge mit Sonnenhut traegt eine Schuessel am Badeplatz, im Hintergrund Ferienhaeuser am Wasser.",
+      "tags": [
+        "kind",
+        "badeplatz",
+        "sonnenhut",
+        "meer",
+        "ferienhaeuser",
+        "gehen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:33e8c57adbbbedd4843c948a715dcf9c02f01e57a6a0bf833c356bc6ea82b45d",
+    "path": "Chris-iPhone/IMG_9478.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-21T13:12:54+00:00",
+    "gps": {
+      "lat": 59.006905555555555,
+      "lon": 9.704163888888889,
+      "elevation_m": 3.3
+    },
+    "probe": {
+      "captured_at": "2026-07-21T13:12:54+00:00",
+      "gps": {
+        "lat": 59.006905555555555,
+        "lon": 9.704163888888889,
+        "elevation_m": 3.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.837,
+      "exposure": 0.958,
+      "score": 0.897
+    },
+    "id": "20260721-phone-33e8c5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9478_b9fc6c00_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Blick auf eine Badebucht mit Sandstrand, badenden Menschen und Felsklippen.",
+      "tags": [
+        "badebucht",
+        "sandstrand",
+        "menschen",
+        "felsen",
+        "meer",
+        "establisher"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4a74ad492d8d7f0fa713046984ba08cb971f385e01e58ea76f1aa786051951e5",
+    "path": "Chris-iPhone/IMG_9499.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-21T15:52:40+00:00",
+    "gps": {
+      "lat": 59.00780555555556,
+      "lon": 9.702844444444445,
+      "elevation_m": 7.9
+    },
+    "probe": {
+      "captured_at": "2026-07-21T15:52:40+00:00",
+      "gps": {
+        "lat": 59.00780555555556,
+        "lon": 9.702844444444445,
+        "elevation_m": 7.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.497,
+      "exposure": 0.971,
+      "score": 0.734
+    },
+    "id": "20260721-phone-4a74ad",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9499_23c394fa_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Junge mit Sonnenbrille und Kappe trinkt aus einem Becher mit Strohhalm auf einem Schotterweg.",
+      "tags": [
+        "kind",
+        "trinken",
+        "portraet",
+        "sonnenbrille",
+        "weg",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4d39e99e5683be8a748c1d66b316b16cbc045a12bf5ebc2fee8a38d3335eae33",
+    "path": "Chris-iPhone/IMG_9491.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-21T14:41:52+00:00",
+    "gps": {
+      "lat": 59.00701111111111,
+      "lon": 9.704477777777777,
+      "elevation_m": 3.1
+    },
+    "probe": {
+      "captured_at": "2026-07-21T14:41:52+00:00",
+      "gps": {
+        "lat": 59.00701111111111,
+        "lon": 9.704477777777777,
+        "elevation_m": 3.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.331,
+      "exposure": 0.965,
+      "score": 0.648
+    },
+    "id": "20260721-phone-4d39e9",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9491_bfc0c249_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Frau und ein Junge stehen und sitzen von hinten am Sandstrand vor einer hohen Felswand.",
+      "tags": [
+        "frau",
+        "kind",
+        "strand",
+        "felswand",
+        "ruecken",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:52393133f6208a1bd679509cf8098ea4f08e2eac2d3f862657d214bb4ba45b27",
+    "path": "Chris-iPhone/IMG_9473.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-21T12:55:46+00:00",
+    "gps": {
+      "lat": 59.007358333333336,
+      "lon": 9.70345,
+      "elevation_m": 8.0
+    },
+    "probe": {
+      "captured_at": "2026-07-21T12:55:46+00:00",
+      "gps": {
+        "lat": 59.007358333333336,
+        "lon": 9.70345,
+        "elevation_m": 8.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.846,
+      "score": 0.923
+    },
+    "id": "20260721-phone-523931",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9473_06d5c4b9_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Familien-Selfie zu dritt, alle tragen Sonnenbrillen, Fels- und Kuestenlandschaft im Hintergrund.",
+      "tags": [
+        "familie",
+        "selfie",
+        "sonnenbrille",
+        "kueste",
+        "laecheln",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:873dfd2c7a5cc0db85ab68dfd775f8401dd6ba596be7e9dfb40918f245977986",
+    "path": "Chris-iPhone/IMG_9470.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-21T12:55:14+00:00",
+    "gps": {
+      "lat": 59.00731944444444,
+      "lon": 9.70385,
+      "elevation_m": 2.0
+    },
+    "probe": {
+      "captured_at": "2026-07-21T12:55:14+00:00",
+      "gps": {
+        "lat": 59.00731944444444,
+        "lon": 9.70385,
+        "elevation_m": 2.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.807,
+      "exposure": 0.969,
+      "score": 0.888
+    },
+    "id": "20260721-phone-873dfd",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9470_1d067856_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weiter Blick ueber eine belebte Badebucht mit Felsklippen, im Hintergrund oeffnet sich das Meer.",
+      "tags": [
+        "badebucht",
+        "felsen",
+        "meer",
+        "establisher",
+        "menschen",
+        "landschaft"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ac8500360d725bc8a1a611ac548e1f365701215f7d628066dd2366ba0072f51d",
+    "path": "Chris-iPhone/IMG_9475.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-21T12:58:18+00:00",
+    "gps": {
+      "lat": 59.006725,
+      "lon": 9.703794444444444,
+      "elevation_m": 5.1
+    },
+    "probe": {
+      "captured_at": "2026-07-21T12:58:18+00:00",
+      "gps": {
+        "lat": 59.006725,
+        "lon": 9.703794444444444,
+        "elevation_m": 5.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.06,
+      "exposure": 0.873,
+      "score": 0.467
+    },
+    "id": "20260721-phone-ac8500",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9475_9a1899b2_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Junge mit Sonnenbrille und Kappe posiert auf einer Strasse, ein rotes Haeuschen im Hintergrund.",
+      "tags": [
+        "kind",
+        "portraet",
+        "sonnenbrille",
+        "strasse",
+        "posieren",
+        "haus"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ca46c2eb059f717c5be316a5ac180d6e43241d70f8d285fd2e44f8c361760df4",
+    "path": "Chris-iPhone/IMG_9476.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-21T13:04:26+00:00",
+    "gps": {
+      "lat": 59.005602777777774,
+      "lon": 9.705230555555556,
+      "elevation_m": 5.1
+    },
+    "probe": {
+      "captured_at": "2026-07-21T13:04:26+00:00",
+      "gps": {
+        "lat": 59.005602777777774,
+        "lon": 9.705230555555556,
+        "elevation_m": 5.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.809,
+      "exposure": 0.947,
+      "score": 0.878
+    },
+    "id": "20260721-phone-ca46c2",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9476_a69be8cd_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Weiter Blick ueber eine Felskueste auf glitzerndes Meer, Kuestenlinie mit Baeumen im Hintergrund.",
+      "tags": [
+        "meer",
+        "felskueste",
+        "kueste",
+        "landschaft",
+        "establisher",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d27f7bacc5c833c24d656800a7c0c2fd4cba9ac27839b4d51a5ff8572fce9525",
+    "path": "Chris-iPhone/IMG_9490.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-21T14:39:00+00:00",
+    "gps": {
+      "lat": 59.007488888888886,
+      "lon": 9.704658333333333,
+      "elevation_m": 5.4
+    },
+    "probe": {
+      "captured_at": "2026-07-21T14:39:00+00:00",
+      "gps": {
+        "lat": 59.007488888888886,
+        "lon": 9.704658333333333,
+        "elevation_m": 5.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.25,
+      "exposure": 0.976,
+      "score": 0.613
+    },
+    "id": "20260721-phone-d27f7b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9490_a8e3be61_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Eine Frau sitzt von hinten auf einem Felsen und blickt auf einen Sandstrand mit badenden Menschen und Felswaenden.",
+      "tags": [
+        "frau",
+        "strand",
+        "felsen",
+        "baden",
+        "ruecken",
+        "meer"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d9250ca5f703228a1e8980f1c0b50707f29d9a8f6a6e9fbf1e68044692377e67",
+    "path": "Chris-iPhone/IMG_9492.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-21T14:46:47+00:00",
+    "gps": {
+      "lat": 59.006930555555556,
+      "lon": 9.704313888888889,
+      "elevation_m": 2.5
+    },
+    "probe": {
+      "captured_at": "2026-07-21T14:46:47+00:00",
+      "gps": {
+        "lat": 59.006930555555556,
+        "lon": 9.704313888888889,
+        "elevation_m": 2.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.058,
+      "exposure": 0.907,
+      "score": 0.482
+    },
+    "id": "20260721-phone-d9250c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9492_92ef0dc7_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Nahaufnahme einer weissen Muschel im Sand.",
+      "tags": [
+        "muschel",
+        "strand",
+        "sand",
+        "detail",
+        "nahaufnahme",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
   },
   {
     "hash": "sha256:2c3851caf6d6bfa21781eda1963ec53121df4a553e3936c45879a42dce3aa9bb",
