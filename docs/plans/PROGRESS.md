@@ -235,7 +235,7 @@ konstant 0 und ein Test darauf belegte nichts.
 |---|---|
 | `ingest` — Proxies | ✅ 975/975 |
 | `prepare-index` — Keyframes, CV, `captured_at`, GPS | ✅ 689/689, keine Fehlschlaege |
-| Inhaltliche Sichtung (Beschreibung/Tags/Rating) | 🔄 **160 von 689** |
+| Inhaltliche Sichtung (Beschreibung/Tags/Rating) | 🔄 **199 von 689** |
 
 **Der HEIC-Weg hat sich am echten Material bewaehrt.** Ohne das Arbeitspaket von 2026-08-05
 waeren die 539 Fotos still aus dem Index gefallen. Aufnahmezeit liegt bei **allen 689** vor
@@ -249,7 +249,7 @@ faellig, sonst bleiben die neuen Tage ohne Etappe.
 
 ### Fortschritt der Sichtung
 
-Chronologisch, Tag fuer Tag. **Hier weitermachen: 2026-07-23**.
+Chronologisch, Tag fuer Tag. **Hier weitermachen: 2026-07-24**.
 
 | Tag | Chris-iPhone-Assets | indiziert |
 |---|---:|---|
@@ -259,7 +259,8 @@ Chronologisch, Tag fuer Tag. **Hier weitermachen: 2026-07-23**.
 | 2026-07-20 | 45 | ✅ 45 — Huette/Ferienhaus: Terrasse, Panorama-Portraets, Wanderung (Moltebeeren, Blaubeeren, Weidenroeschen), Ruderboot-Ausflug auf Waldsee, Beerenpfluecken, Grillabend |
 | 2026-07-21 | 15 | ✅ 15 — Badebucht mit Felsklippen (Establisher, Familienselfies, Kinder-Portraets), Sandstrand mit vielen Badegaesten, Aufbruch |
 | 2026-07-22 | 19 | ✅ 19 — Ruhetag an der Huette: Videospiele, gemeinsames Grillessen mit grosser Gruppe, Kinder spielen/toben, Establisher der dunklen Holzhuette |
-| 2026-07-23 … 2026-08-04 | 529 | ⬜ |
+| 2026-07-23 | 39 | ✅ 39 — Ausflug zur Stabkirche Heddal (Establisher, Museum, Aexte-Vitrine, Rosemaling), Picknick auf Wiese, Fahrt am Fjord entlang, Wanderung mit Familienselfies, Uebernachtung in Grasdach-Huette (Zimmerschilder) |
+| 2026-07-24 … 2026-08-04 | 490 | ⬜ |
 
 **Hinweis zur Zaehlung:** `689` ist die Gesamtzahl der neuen Chris-iPhone-Dateien (aus
 `prepare-index`, Pfadpraefix `Chris-iPhone/`). Die Tagestabellen in `assets.json` zeigen pro

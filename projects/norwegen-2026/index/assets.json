@@ -13532,6 +13532,425 @@
     }
   },
   {
+    "hash": "sha256:0df50b797b22ed13dc5ab2d82110775d4d5c9edb9182b9d4b8d0ac28febf86d0",
+    "path": "Chris-iPhone/IMG_9548.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-23T10:24:23+00:00",
+    "captured_at_source": "container",
+    "duration": 12.395,
+    "probe": {
+      "captured_at": "2026-07-23T10:24:23+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 12.395,
+      "bitrate": 53934844,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.915,
+      "stability": 0.006,
+      "exposure": 0.704,
+      "score": 0.542
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.994
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 12.4
+      }
+    ],
+    "id": "20260723-camera-0df50b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9548_6c43574e_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9548_6c43574e_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9548_6c43574e_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Blick auf die Stabkirche aus anderem Winkel, Besuchergruppen vor dem Gebaeude.",
+      "tags": [
+        "stabkirche",
+        "kirche",
+        "architektur",
+        "menschen",
+        "establisher",
+        "himmel"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:24d747cf6067b728d8ed9e161ce37145c49ee06dc5edb0b3ea18301287c6c4b2",
+    "path": "Chris-iPhone/IMG_9613.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-23T16:28:05+00:00",
+    "captured_at_source": "container",
+    "duration": 15.14,
+    "probe": {
+      "captured_at": "2026-07-23T16:28:05+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 15.14,
+      "bitrate": 53690478,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.743,
+      "stability": 0.0,
+      "exposure": 0.771,
+      "score": 0.505
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 15.13
+      }
+    ],
+    "id": "20260723-camera-24d747",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9613_df037bb1_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9613_df037bb1_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9613_df037bb1_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Traditionelles norwegisches Blockhaus mit Grasdach, Eingang zu einem Cafe/Laden.",
+      "tags": [
+        "blockhaus",
+        "grasdach",
+        "architektur",
+        "cafe",
+        "establisher",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2b60bc29d567a40eb1b1440775e9f7d53fb156e9af7331b307cf495f171164b2",
+    "path": "Chris-iPhone/IMG_9604.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-23T15:50:03+00:00",
+    "captured_at_source": "container",
+    "duration": 60.26,
+    "probe": {
+      "captured_at": "2026-07-23T15:50:03+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 60.26,
+      "bitrate": 106228653,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.839,
+      "score": 0.613
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 58.78
+      },
+      {
+        "start": 58.78,
+        "end": 60.27
+      }
+    ],
+    "id": "20260723-camera-2b60bc",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9604_bd9acb93_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9604_bd9acb93_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9604_bd9acb93_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9604_bd9acb93_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9604_bd9acb93_kf04.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Ein Wanderpfad schlaengelt sich durch gruenes Gebuesch und Birken.",
+      "tags": [
+        "wanderweg",
+        "natur",
+        "gruen",
+        "birken",
+        "pfad",
+        "landschaft"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:3058c67894f1460d70d77829c7b522ade8619caadb440677db8c7d3152a7c359",
+    "path": "Chris-iPhone/IMG_9547.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-23T10:23:33+00:00",
+    "captured_at_source": "container",
+    "duration": 6.806667,
+    "probe": {
+      "captured_at": "2026-07-23T10:23:33+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 6.806667,
+      "bitrate": 54236858,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.718,
+      "score": 0.573
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 6.81
+      }
+    ],
+    "id": "20260723-camera-3058c6",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9547_d363fff8_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9547_d363fff8_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9547_d363fff8_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Establisher einer markanten norwegischen Stabkirche mit mehreren Tuermchen, Steinmauer eines Friedhofs davor, Besucher gehen umher.",
+      "tags": [
+        "stabkirche",
+        "kirche",
+        "establisher",
+        "friedhof",
+        "architektur",
+        "menschen"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:49948e3698a70c806ed14c1516d0cc83b0b61c133c0b9c38f820eeb9f6493295",
+    "path": "Chris-iPhone/IMG_9549.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-23T10:24:44+00:00",
+    "captured_at_source": "container",
+    "duration": 8.258333,
+    "probe": {
+      "captured_at": "2026-07-23T10:24:44+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 8.258333,
+      "bitrate": 54225921,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.956,
+      "stability": 0.004,
+      "exposure": 0.736,
+      "score": 0.565
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.996
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 8.26
+      }
+    ],
+    "id": "20260723-camera-49948e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9549_702a9488_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9549_702a9488_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9549_702a9488_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Weitwinkelblick mit der Stabkirche links im Bild und offener Sicht ueber Friedhof und Tal.",
+      "tags": [
+        "stabkirche",
+        "friedhof",
+        "tal",
+        "landschaft",
+        "weitwinkel",
+        "establisher"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5bdc7a5986eb972ef3419103562487e3523b0646180ba29c8441e7518449f2b0",
+    "path": "Chris-iPhone/IMG_9558.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-23T10:29:39+00:00",
+    "captured_at_source": "container",
+    "duration": 16.975,
+    "probe": {
+      "captured_at": "2026-07-23T10:29:39+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 16.975,
+      "bitrate": 53791172,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.911,
+      "stability": 0.0,
+      "exposure": 0.801,
+      "score": 0.571
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 16.98
+      }
+    ],
+    "id": "20260723-camera-5bdc7a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9558_6ff37f4e_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9558_6ff37f4e_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9558_6ff37f4e_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Friedhof mit Grabsteinen und Blumen, hoegelige Landschaft mit rotem Haus im Hintergrund.",
+      "tags": [
+        "friedhof",
+        "grabsteine",
+        "blumen",
+        "landschaft",
+        "huegel",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:edb7d17b20e5a4d6b5f2457e105091ca57252856318653b911d366565505c0a9",
+    "path": "Chris-iPhone/IMG_9550.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-23T10:24:55+00:00",
+    "captured_at_source": "container",
+    "duration": 9.058333,
+    "probe": {
+      "captured_at": "2026-07-23T10:24:55+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 9.058333,
+      "bitrate": 53956079,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.527,
+      "stability": 0.03,
+      "exposure": 0.687,
+      "score": 0.415
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.97
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 9.06
+      }
+    ],
+    "id": "20260723-camera-edb7d1",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9550_21033a09_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9550_21033a09_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9550_21033a09_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Nahsicht der Tuermchen der Stabkirche von unten gegen den Wolkenhimmel.",
+      "tags": [
+        "stabkirche",
+        "tuermchen",
+        "architektur",
+        "himmel",
+        "detail",
+        "kirche"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
     "hash": "sha256:07b1efc01bd4811ef26439c8f74cbb9efffe7459e6210d3bf86051b65846e0f4",
     "path": "2026-07-23_Skien-Geilo_Roadshots_Unterkunft/Vorauswahl/DJI_20260723174340_0003_D-00.01.23.570-00.01.45.924-seg2.MP4",
     "kind": "video",
@@ -15033,6 +15452,1574 @@
     "day": 6,
     "stage": "Skien → Geilo",
     "place_source": "index"
+  },
+  {
+    "hash": "sha256:013f678c1b81aae661b20923e9402729a74925ab5a4d9172a5db39487db49d35",
+    "path": "Chris-iPhone/IMG_9590.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T15:17:51+00:00",
+    "gps": {
+      "lat": 60.14566111111111,
+      "lon": 8.632625,
+      "elevation_m": 970.1
+    },
+    "probe": {
+      "captured_at": "2026-07-23T15:17:51+00:00",
+      "gps": {
+        "lat": 60.14566111111111,
+        "lon": 8.632625,
+        "elevation_m": 970.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.724,
+      "exposure": 0.933,
+      "score": 0.828
+    },
+    "id": "20260723-phone-013f67",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9590_b949091a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Paar-Selfie mit weitem Bergpanorama und Wald im Hintergrund.",
+      "tags": [
+        "paar",
+        "selfie",
+        "berge",
+        "wald",
+        "laecheln",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:07e01abce3b9d3d747ac2dc6fb49e9127f8c73bcb70cd13a5cf8e75a977f32b8",
+    "path": "Chris-iPhone/IMG_9592.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T17:08:43+00:00",
+    "gps": {
+      "lat": 60.50161111111111,
+      "lon": 8.217263888888889,
+      "elevation_m": 1041.9
+    },
+    "probe": {
+      "captured_at": "2026-07-23T17:08:43+00:00",
+      "gps": {
+        "lat": 60.50161111111111,
+        "lon": 8.217263888888889,
+        "elevation_m": 1041.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.032,
+      "exposure": 0.759,
+      "score": 0.396
+    },
+    "id": "20260723-phone-07e01a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9592_5689ac12_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Zimmertuerschild aus Holz mit gezeichneter grimmiger Figur mit Nudelholz, Nummer 8.",
+      "tags": [
+        "schild",
+        "zimmer",
+        "tuer",
+        "detail",
+        "zeichnung",
+        "holz"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:09cf7bed2ee966da5d81be00d3d8fa4ca4f73d3b59bce304707d5c895454bcf6",
+    "path": "Chris-iPhone/IMG_9564.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T12:37:03+00:00",
+    "gps": {
+      "lat": 59.57901666666667,
+      "lon": 9.175480555555556,
+      "elevation_m": 26.9
+    },
+    "probe": {
+      "captured_at": "2026-07-23T12:37:03+00:00",
+      "gps": {
+        "lat": 59.57901666666667,
+        "lon": 9.175480555555556,
+        "elevation_m": 26.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.098,
+      "exposure": 0.918,
+      "score": 0.508
+    },
+    "id": "20260723-phone-09cf7b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9564_94db0026_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Museumsexponat: detailgetreues Holzmodell der Stabkirche in einer Vitrine.",
+      "tags": [
+        "museum",
+        "modell",
+        "stabkirche",
+        "vitrine",
+        "detail",
+        "handwerk"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:0ad20a85f0cfee6e18131bf9ab9ade7909eb2abd03de4833dd5de47dc830fefc",
+    "path": "Chris-iPhone/IMG_9583.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T13:49:31+00:00",
+    "gps": {
+      "lat": 59.86576388888889,
+      "lon": 8.933911111111112,
+      "elevation_m": 197.4
+    },
+    "probe": {
+      "captured_at": "2026-07-23T13:49:31+00:00",
+      "gps": {
+        "lat": 59.86576388888889,
+        "lon": 8.933911111111112,
+        "elevation_m": 197.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.066,
+      "exposure": 0.954,
+      "score": 0.51
+    },
+    "id": "20260723-phone-0ad20a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9583_4872c592_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Eine Frau schlaeft mit Kissen im Auto, ein See und bewaldete Huegel sind durchs Fenster sichtbar.",
+      "tags": [
+        "auto",
+        "schlafen",
+        "frau",
+        "fjord",
+        "fahrt",
+        "fenster"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:10b41ae7a11ac6a95e261128d2dd4f2a3c57883ca5f98b1b3a622ec7acf788c2",
+    "path": "Chris-iPhone/IMG_9552.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T12:26:11+00:00",
+    "gps": {
+      "lat": 59.57951111111112,
+      "lon": 9.176097222222221,
+      "elevation_m": 26.2
+    },
+    "probe": {
+      "captured_at": "2026-07-23T12:26:11+00:00",
+      "gps": {
+        "lat": 59.57951111111112,
+        "lon": 9.176097222222221,
+        "elevation_m": 26.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.245,
+      "exposure": 0.955,
+      "score": 0.6
+    },
+    "id": "20260723-phone-10b41a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9552_f192d045_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Detailaufnahme des Schuppendachs und der Drachenkopf-Verzierungen der Stabkirche von unten.",
+      "tags": [
+        "stabkirche",
+        "dach",
+        "detail",
+        "architektur",
+        "holz",
+        "drachenkopf"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1194409b5f6d6c3db8762952cba0be1bd54c0e1b4b6fcc59b9559a61d17d1815",
+    "path": "Chris-iPhone/IMG_9600.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T17:31:05+00:00",
+    "gps": {
+      "lat": 60.50077777777778,
+      "lon": 8.215397222222222,
+      "elevation_m": 1037.7
+    },
+    "probe": {
+      "captured_at": "2026-07-23T17:31:05+00:00",
+      "gps": {
+        "lat": 60.50077777777778,
+        "lon": 8.215397222222222,
+        "elevation_m": 1037.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.608,
+      "exposure": 0.965,
+      "score": 0.787
+    },
+    "id": "20260723-phone-119440",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9600_05cd4a22_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Drittes Foto der Serie, der Junge blickt laechelnd zur Seite.",
+      "tags": [
+        "kind",
+        "portraet",
+        "fels",
+        "wald",
+        "laecheln",
+        "sitzen"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:23067409b000b558b5b61adc23018ccba289e0aea1867c5c391eca5af0e6b443",
+    "path": "Chris-iPhone/IMG_9573.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T12:55:50+00:00",
+    "gps": {
+      "lat": 59.57973888888889,
+      "lon": 9.174302777777777,
+      "elevation_m": 23.8
+    },
+    "probe": {
+      "captured_at": "2026-07-23T12:55:50+00:00",
+      "gps": {
+        "lat": 59.57973888888889,
+        "lon": 9.174302777777777,
+        "elevation_m": 23.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.878,
+      "exposure": 0.914,
+      "score": 0.896
+    },
+    "id": "20260723-phone-230674",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9573_28fa368c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Familien-Picknick auf einer Wiese, alle drei laecheln, die Frau isst einen Apfel.",
+      "tags": [
+        "familie",
+        "picknick",
+        "wiese",
+        "laecheln",
+        "essen",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:23628389e845da908b010f893939d609287fe3f02787eac8817637a3b16356be",
+    "path": "Chris-iPhone/IMG_9599.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T17:31:01+00:00",
+    "gps": {
+      "lat": 60.50077777777778,
+      "lon": 8.215397222222222,
+      "elevation_m": 1037.7
+    },
+    "probe": {
+      "captured_at": "2026-07-23T17:31:01+00:00",
+      "gps": {
+        "lat": 60.50077777777778,
+        "lon": 8.215397222222222,
+        "elevation_m": 1037.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.946,
+      "exposure": 0.946,
+      "score": 0.946
+    },
+    "id": "20260723-phone-236283",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9599_23f29a4b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Aehnliches Foto des Jungen auf dem Felsen aus anderem Winkel.",
+      "tags": [
+        "kind",
+        "portraet",
+        "fels",
+        "wald",
+        "laecheln",
+        "sitzen"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:24aeedc5b2f69ba1292944e236c923f1f716d24090977635b13d6edd1a7dc909",
+    "path": "Chris-iPhone/IMG_9606.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T17:55:58+00:00",
+    "gps": {
+      "lat": 60.50039722222222,
+      "lon": 8.213944444444444,
+      "elevation_m": 1035.0
+    },
+    "probe": {
+      "captured_at": "2026-07-23T17:55:58+00:00",
+      "gps": {
+        "lat": 60.50039722222222,
+        "lon": 8.213944444444444,
+        "elevation_m": 1035.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.956,
+      "score": 0.978
+    },
+    "id": "20260723-phone-24aeed",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9606_c7b1a033_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Familien-Selfie am Wanderweg im Wald, alle drei laecheln.",
+      "tags": [
+        "familie",
+        "selfie",
+        "wanderweg",
+        "wald",
+        "laecheln",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2fed836c771ca24df3b3942f0e1fb0b90fbccd53a9cb1bb2e17987eb6a2f7d74",
+    "path": "Chris-iPhone/IMG_9565.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T12:37:30+00:00",
+    "gps": {
+      "lat": 59.57899722222223,
+      "lon": 9.175516666666667,
+      "elevation_m": 26.4
+    },
+    "probe": {
+      "captured_at": "2026-07-23T12:37:30+00:00",
+      "gps": {
+        "lat": 59.57899722222223,
+        "lon": 9.175516666666667,
+        "elevation_m": 26.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.819,
+      "score": 0.91
+    },
+    "id": "20260723-phone-2fed83",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9565_3e5be4b8_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Grosser Teller mit traditioneller Rosenmalerei (Rosemaling) in einer Museumsausstellung.",
+      "tags": [
+        "museum",
+        "rosemaling",
+        "teller",
+        "handwerk",
+        "kunst",
+        "detail"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:336fcb1a2b3ec7c1b3129f5f68918a5bfa88f3e1a4e1de14b384813a5ef85c32",
+    "path": "Chris-iPhone/IMG_9545.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T12:21:20+00:00",
+    "gps": {
+      "lat": 59.57949444444445,
+      "lon": 9.174425,
+      "elevation_m": 19.3
+    },
+    "probe": {
+      "captured_at": "2026-07-23T12:21:20+00:00",
+      "gps": {
+        "lat": 59.57949444444445,
+        "lon": 9.174425,
+        "elevation_m": 19.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.787,
+      "exposure": 0.997,
+      "score": 0.892
+    },
+    "id": "20260723-phone-336fcb",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9545_8adae3ac_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Infotafel 'Heddal Stavkyrkje og Bygdetun' mit historischen Fotos und mehrsprachigem Text.",
+      "tags": [
+        "infotafel",
+        "stabkirche",
+        "schild",
+        "geschichte",
+        "text",
+        "detail"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:3a599bf35b449d5b3acde88697be70a21441ddf375e7278b090ec5acc14e9585",
+    "path": "Chris-iPhone/IMG_9562.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T12:35:19+00:00",
+    "gps": {
+      "lat": 59.579033333333335,
+      "lon": 9.175544444444444,
+      "elevation_m": 26.8
+    },
+    "probe": {
+      "captured_at": "2026-07-23T12:35:19+00:00",
+      "gps": {
+        "lat": 59.579033333333335,
+        "lon": 9.175544444444444,
+        "elevation_m": 26.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.152,
+      "exposure": 0.953,
+      "score": 0.552
+    },
+    "id": "20260723-phone-3a599b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9562_e987d872_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Junge posiert im Museum vor einer Vitrine mit historischen Aexten.",
+      "tags": [
+        "kind",
+        "museum",
+        "vitrine",
+        "aexte",
+        "posieren",
+        "geschichte"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:50681552f20193be52ed879858866c00dec0f44381f615bcf1a5515dca2d41ce",
+    "path": "Chris-iPhone/IMG_9555.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T12:28:29+00:00",
+    "gps": {
+      "lat": 59.57969722222222,
+      "lon": 9.175447222222221,
+      "elevation_m": 24.3
+    },
+    "probe": {
+      "captured_at": "2026-07-23T12:28:29+00:00",
+      "gps": {
+        "lat": 59.57969722222222,
+        "lon": 9.175447222222221,
+        "elevation_m": 24.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.908,
+      "exposure": 0.948,
+      "score": 0.928
+    },
+    "id": "20260723-phone-506815",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9555_f0ccb0ad_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Aehnliches Foto, die Frau umarmt den Jungen laechelnd naeher zur Kamera, Stabkirche im Hintergrund.",
+      "tags": [
+        "frau",
+        "kind",
+        "umarmen",
+        "laecheln",
+        "stabkirche",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5db0d1b361372437356dfff61eb40f3a4c8b910248dcc3217713b8eec09bb00e",
+    "path": "Chris-iPhone/IMG_9612.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T18:27:48+00:00",
+    "gps": {
+      "lat": 60.50159166666667,
+      "lon": 8.217483333333334,
+      "elevation_m": 1042.0
+    },
+    "probe": {
+      "captured_at": "2026-07-23T18:27:48+00:00",
+      "gps": {
+        "lat": 60.50159166666667,
+        "lon": 8.217483333333334,
+        "elevation_m": 1042.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.445,
+      "exposure": 0.99,
+      "score": 0.717
+    },
+    "id": "20260723-phone-5db0d1",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9612_b201be52_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Frontaler Blick auf das Blockhaus mit Grasdach, Namensschild ueber dem Eingang.",
+      "tags": [
+        "blockhaus",
+        "grasdach",
+        "architektur",
+        "establisher",
+        "eingang",
+        "haus"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5e9027f58bedaefdc39fef33e0173a9352f48d593554b6010473262b81db19ee",
+    "path": "Chris-iPhone/IMG_9609.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T18:23:51+00:00",
+    "gps": {
+      "lat": 60.50162777777778,
+      "lon": 8.217427777777777,
+      "elevation_m": 1042.6
+    },
+    "probe": {
+      "captured_at": "2026-07-23T18:23:51+00:00",
+      "gps": {
+        "lat": 60.50162777777778,
+        "lon": 8.217427777777777,
+        "elevation_m": 1042.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.064,
+      "exposure": 0.99,
+      "score": 0.527
+    },
+    "id": "20260723-phone-5e9027",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9609_f8603e67_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Zimmertuerschild aus Holz mit Nummer 6, Motiv eines sich kuessenden Paares.",
+      "tags": [
+        "schild",
+        "zimmer",
+        "tuer",
+        "detail",
+        "zeichnung",
+        "holz"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:71205ca2838256e59a66bdb3418532f08ef5aa9dab25bf3a9cb0532227e609f0",
+    "path": "Chris-iPhone/IMG_9589.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T15:02:37+00:00",
+    "gps": {
+      "lat": 60.10828333333333,
+      "lon": 8.737869444444444,
+      "elevation_m": 635.9
+    },
+    "probe": {
+      "captured_at": "2026-07-23T15:02:37+00:00",
+      "gps": {
+        "lat": 60.10828333333333,
+        "lon": 8.737869444444444,
+        "elevation_m": 635.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.061,
+      "exposure": 0.885,
+      "score": 0.473
+    },
+    "id": "20260723-phone-71205c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9589_2e5cd013_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Junge posiert grinsend auf einem Schotterweg, ein altes Holzhaus im Hintergrund.",
+      "tags": [
+        "kind",
+        "portraet",
+        "schotterweg",
+        "haus",
+        "laecheln",
+        "posieren"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7567894bded308c5d6e6623b988ad4768ef5b86fd2073b451d42931fd737d247",
+    "path": "Chris-iPhone/IMG_9553.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T12:28:17+00:00",
+    "gps": {
+      "lat": 59.5797,
+      "lon": 9.175438888888888,
+      "elevation_m": 24.1
+    },
+    "probe": {
+      "captured_at": "2026-07-23T12:28:17+00:00",
+      "gps": {
+        "lat": 59.5797,
+        "lon": 9.175438888888888,
+        "elevation_m": 24.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.83,
+      "exposure": 0.899,
+      "score": 0.864
+    },
+    "id": "20260723-phone-756789",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9553_b64694ea_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Frau und ein Junge posieren vor einem bluehenden Strauch, die Stabkirche im Hintergrund.",
+      "tags": [
+        "frau",
+        "kind",
+        "posieren",
+        "stabkirche",
+        "strauch",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:75f097360a3eeaf0858cce6d5fb6733c8178360646039462a3d5e2704121ac59",
+    "path": "Chris-iPhone/IMG_9586.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T14:13:32+00:00",
+    "gps": {
+      "lat": 59.92673611111111,
+      "lon": 8.800669444444445,
+      "elevation_m": 194.5
+    },
+    "probe": {
+      "captured_at": "2026-07-23T14:13:32+00:00",
+      "gps": {
+        "lat": 59.92673611111111,
+        "lon": 8.800669444444445,
+        "elevation_m": 194.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.249,
+      "exposure": 0.897,
+      "score": 0.573
+    },
+    "id": "20260723-phone-75f097",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9586_6ed2a52a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Establisher: Blick durch Wildblumen auf einen Kiesstrand am Fjord, Berge im Hintergrund.",
+      "tags": [
+        "fjord",
+        "blumen",
+        "strand",
+        "berge",
+        "natur",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:765d947350954cf66b3cd7c6988d6e40c20e8c7283f18e5f126593d92e4e22fe",
+    "path": "Chris-iPhone/IMG_9551.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T12:25:22+00:00",
+    "gps": {
+      "lat": 59.57933333333334,
+      "lon": 9.176327777777777,
+      "elevation_m": 24.8
+    },
+    "probe": {
+      "captured_at": "2026-07-23T12:25:22+00:00",
+      "gps": {
+        "lat": 59.57933333333334,
+        "lon": 9.176327777777777,
+        "elevation_m": 24.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.47,
+      "exposure": 0.91,
+      "score": 0.69
+    },
+    "id": "20260723-phone-765d94",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9551_f8fc5bdb_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Weiterer Establisher der Stabkirche, Besucher laufen davor.",
+      "tags": [
+        "stabkirche",
+        "kirche",
+        "establisher",
+        "menschen",
+        "himmel",
+        "architektur"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7936366f5c301e4be91f14712b47daffd51bd7bdf9cc00b5f848b3ecd16d80d8",
+    "path": "Chris-iPhone/IMG_9608.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T17:59:35+00:00",
+    "gps": {
+      "lat": 60.50106111111111,
+      "lon": 8.216099999999999,
+      "elevation_m": 1038.6
+    },
+    "probe": {
+      "captured_at": "2026-07-23T17:59:35+00:00",
+      "gps": {
+        "lat": 60.50106111111111,
+        "lon": 8.216099999999999,
+        "elevation_m": 1038.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.187,
+      "exposure": 0.884,
+      "score": 0.536
+    },
+    "id": "20260723-phone-793636",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9608_b4d91903_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Nahaufnahme von Gras am Wegrand, ein Sandpfad im Hintergrund.",
+      "tags": [
+        "gras",
+        "natur",
+        "wanderweg",
+        "detail",
+        "pflanzen",
+        "landschaft"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7e3673b02578591fb0a8dc376591ca621b081f7df126e30e3fee16cf1191c721",
+    "path": "Chris-iPhone/IMG_9546.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T12:22:36+00:00",
+    "gps": {
+      "lat": 59.579527777777784,
+      "lon": 9.175152777777777,
+      "elevation_m": 25.7
+    },
+    "probe": {
+      "captured_at": "2026-07-23T12:22:36+00:00",
+      "gps": {
+        "lat": 59.579527777777784,
+        "lon": 9.175152777777777,
+        "elevation_m": 25.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.425,
+      "exposure": 0.913,
+      "score": 0.669
+    },
+    "id": "20260723-phone-7e3673",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9546_c0fd828c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Frontaler Blick auf die Stabkirche mit Friedhof im Vordergrund, bewaldete Berge im Hintergrund.",
+      "tags": [
+        "stabkirche",
+        "friedhof",
+        "berge",
+        "wald",
+        "establisher",
+        "kirche"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7fbd8212b266e6a665a9b889a8f19848fee83fd7d93cf531ad821223bbacdfd9",
+    "path": "Chris-iPhone/IMG_9559.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T12:30:26+00:00",
+    "gps": {
+      "lat": 59.579433333333334,
+      "lon": 9.176138888888888,
+      "elevation_m": 24.8
+    },
+    "probe": {
+      "captured_at": "2026-07-23T12:30:26+00:00",
+      "gps": {
+        "lat": 59.579433333333334,
+        "lon": 9.176138888888888,
+        "elevation_m": 24.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.756,
+      "exposure": 0.837,
+      "score": 0.796
+    },
+    "id": "20260723-phone-7fbd82",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9559_ac62f622_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Nahsicht der Stabkirche von der Seite, Holzdetails der Tueren und des Schuppendachs gut sichtbar.",
+      "tags": [
+        "stabkirche",
+        "architektur",
+        "holz",
+        "detail",
+        "kirche",
+        "himmel"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:804b4af07b3704ed2d547992051777d9912a14c3b07829574382d26f4a1c4bf1",
+    "path": "Chris-iPhone/IMG_9602.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T17:40:14+00:00",
+    "gps": {
+      "lat": 60.50021666666667,
+      "lon": 8.21091111111111,
+      "elevation_m": 1040.5
+    },
+    "probe": {
+      "captured_at": "2026-07-23T17:40:14+00:00",
+      "gps": {
+        "lat": 60.50021666666667,
+        "lon": 8.21091111111111,
+        "elevation_m": 1040.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.791,
+      "exposure": 0.955,
+      "score": 0.873
+    },
+    "id": "20260723-phone-804b4a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9602_356caa60_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Junge laeuft allein einen Wanderpfad entlang, ein kleiner See ist in der Ferne sichtbar.",
+      "tags": [
+        "kind",
+        "wandern",
+        "pfad",
+        "see",
+        "natur",
+        "gehen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:952b4083a7546ce003289caabe002b7199616d6991d68bb08be60c6adb67bb92",
+    "path": "Chris-iPhone/IMG_9566.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T12:38:19+00:00",
+    "gps": {
+      "lat": 59.57904722222222,
+      "lon": 9.17553888888889,
+      "elevation_m": 26.5
+    },
+    "probe": {
+      "captured_at": "2026-07-23T12:38:19+00:00",
+      "gps": {
+        "lat": 59.57904722222222,
+        "lon": 9.17553888888889,
+        "elevation_m": 26.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.104,
+      "exposure": 0.995,
+      "score": 0.549
+    },
+    "id": "20260723-phone-952b40",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9566_12d4cfb9_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Troll-Souvenirfigur mit norwegischer Flagge auf einer Kiste mit Aufschrift 'Norway' im Souvenirladen.",
+      "tags": [
+        "troll",
+        "souvenir",
+        "figur",
+        "norwegen",
+        "laden",
+        "detail"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:994f9c27f05b8ea32cc80fff6a900d677b0f64727ae1a244778420645ffe9d7c",
+    "path": "Chris-iPhone/IMG_9544.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T12:20:41+00:00",
+    "gps": {
+      "lat": 59.57963055555556,
+      "lon": 9.17406111111111,
+      "elevation_m": 23.9
+    },
+    "probe": {
+      "captured_at": "2026-07-23T12:20:41+00:00",
+      "gps": {
+        "lat": 59.57963055555556,
+        "lon": 9.17406111111111,
+        "elevation_m": 23.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.681,
+      "exposure": 0.985,
+      "score": 0.833
+    },
+    "id": "20260723-phone-994f9c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9544_2b5d8294_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Eine Frau und ein Junge laufen ueber einen Parkplatz, im Hintergrund parkende Autos und Baeume.",
+      "tags": [
+        "frau",
+        "kind",
+        "parkplatz",
+        "gehen",
+        "auto",
+        "ausflug"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:99c66f6cd935444c6b41b486a2ba8c7fa34704e856356231a6ec2e72ce7c9b56",
+    "path": "Chris-iPhone/IMG_9593.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T17:28:46+00:00",
+    "gps": {
+      "lat": 60.501155555555556,
+      "lon": 8.216574999999999,
+      "elevation_m": 1040.4
+    },
+    "probe": {
+      "captured_at": "2026-07-23T17:28:46+00:00",
+      "gps": {
+        "lat": 60.501155555555556,
+        "lon": 8.216574999999999,
+        "elevation_m": 1040.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.907,
+      "exposure": 0.766,
+      "score": 0.836
+    },
+    "id": "20260723-phone-99c66f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9593_f7f2d5e8_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Frau und ein Kind wandern von hinten Hand in Hand einen Schotterweg entlang, karge Hochebenen-Landschaft.",
+      "tags": [
+        "wandern",
+        "frau",
+        "kind",
+        "schotterweg",
+        "landschaft",
+        "hochebene"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:9fe078be92f750faf9682826e8c4449a3a232b40522998498673ae16b88b76c6",
+    "path": "Chris-iPhone/IMG_9556.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T12:28:45+00:00",
+    "gps": {
+      "lat": 59.5797,
+      "lon": 9.175408333333333,
+      "elevation_m": 23.2
+    },
+    "probe": {
+      "captured_at": "2026-07-23T12:28:45+00:00",
+      "gps": {
+        "lat": 59.5797,
+        "lon": 9.175408333333333,
+        "elevation_m": 23.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.992,
+      "exposure": 0.936,
+      "score": 0.964
+    },
+    "id": "20260723-phone-9fe078",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9556_27451737_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Mann und ein Junge posieren an gleicher Stelle vor der Stabkirche, bluehender Strauch daneben.",
+      "tags": [
+        "mann",
+        "kind",
+        "posieren",
+        "stabkirche",
+        "portraet",
+        "laecheln"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a0e9f54e810300abcc2b767fc6905ec478e129e577c52a9b9821bb538c865b57",
+    "path": "Chris-iPhone/IMG_9542.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T10:55:23+00:00",
+    "gps": {
+      "lat": 59.210208333333334,
+      "lon": 9.56365277777778,
+      "elevation_m": 92.9
+    },
+    "probe": {
+      "captured_at": "2026-07-23T10:55:23+00:00",
+      "gps": {
+        "lat": 59.210208333333334,
+        "lon": 9.56365277777778,
+        "elevation_m": 92.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.187,
+      "exposure": 0.983,
+      "score": 0.585
+    },
+    "id": "20260723-phone-a0e9f5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9542_38394b2a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Familien-Selfie im Auto, alle drei laecheln, unterwegs zum Ausflug.",
+      "tags": [
+        "familie",
+        "selfie",
+        "auto",
+        "laecheln",
+        "fahrt",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a70de4426a84c98df616db21660599dcf5272bbfb11179a81d91fe523b1abeba",
+    "path": "Chris-iPhone/IMG_9567.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T12:39:04+00:00",
+    "gps": {
+      "lat": 59.57898333333333,
+      "lon": 9.17563611111111,
+      "elevation_m": 27.9
+    },
+    "probe": {
+      "captured_at": "2026-07-23T12:39:04+00:00",
+      "gps": {
+        "lat": 59.57898333333333,
+        "lon": 9.17563611111111,
+        "elevation_m": 27.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.836,
+      "exposure": 0.846,
+      "score": 0.841
+    },
+    "id": "20260723-phone-a70de4",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9567_36c33043_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Establisher: ein Steinweg fuehrt gerade auf die Stabkirche zu, bewaldete Berge im Hintergrund.",
+      "tags": [
+        "stabkirche",
+        "weg",
+        "establisher",
+        "berge",
+        "himmel",
+        "landschaft"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c42193055dfcf8188ca78c3fca0663c0779246240553e84d005015e2b17347f4",
+    "path": "Chris-iPhone/IMG_9572.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T12:45:17+00:00",
+    "gps": {
+      "lat": 59.579752777777784,
+      "lon": 9.174233333333333,
+      "elevation_m": 26.7
+    },
+    "probe": {
+      "captured_at": "2026-07-23T12:45:17+00:00",
+      "gps": {
+        "lat": 59.579752777777784,
+        "lon": 9.174233333333333,
+        "elevation_m": 26.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.349,
+      "exposure": 0.867,
+      "score": 0.608
+    },
+    "id": "20260723-phone-c42193",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9572_71d39791_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Frau und ein Junge sitzen picknickend auf einer Wiese, ein weisses Haus mit Steildach im Hintergrund.",
+      "tags": [
+        "frau",
+        "kind",
+        "picknick",
+        "wiese",
+        "haus",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ebe39342f2d6a462462be44a04fd4cfb99b4c5976c66f073188b0edfbbd4a531",
+    "path": "Chris-iPhone/IMG_9596.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T17:30:44+00:00",
+    "gps": {
+      "lat": 60.500794444444445,
+      "lon": 8.215383333333333,
+      "elevation_m": 1038.5
+    },
+    "probe": {
+      "captured_at": "2026-07-23T17:30:44+00:00",
+      "gps": {
+        "lat": 60.500794444444445,
+        "lon": 8.215383333333333,
+        "elevation_m": 1038.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.11,
+      "exposure": 0.933,
+      "score": 0.522
+    },
+    "id": "20260723-phone-ebe393",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9596_3feee0df_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Junge sitzt laechelnd im Schneidersitz auf einem flechtenbedeckten Felsen zwischen Birken.",
+      "tags": [
+        "kind",
+        "portraet",
+        "fels",
+        "wald",
+        "laecheln",
+        "sitzen"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f96a698fbcf7e5ccb59c42442a72354548412ffe91a369214759ccb7aa44a66e",
+    "path": "Chris-iPhone/IMG_9582.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T13:49:29+00:00",
+    "gps": {
+      "lat": 59.86539722222222,
+      "lon": 8.934127777777778,
+      "elevation_m": 197.9
+    },
+    "probe": {
+      "captured_at": "2026-07-23T13:49:29+00:00",
+      "gps": {
+        "lat": 59.86539722222222,
+        "lon": 8.934127777777778,
+        "elevation_m": 197.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.048,
+      "exposure": 0.983,
+      "score": 0.515
+    },
+    "id": "20260723-phone-f96a69",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9582_8a506b1d_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Blick durch die Windschutzscheibe auf eine Strasse entlang eines Fjords mit bewaldeten Bergen.",
+      "tags": [
+        "auto",
+        "fahrt",
+        "fjord",
+        "strasse",
+        "berge",
+        "windschutzscheibe"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
   },
   {
     "hash": "sha256:085879219e1a91b2e88e8fdad964b5702d78c5c76666cb8918009438fc308e93",
