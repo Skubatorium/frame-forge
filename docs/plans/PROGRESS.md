@@ -249,9 +249,9 @@ faellig, sonst bleiben die neuen Tage ohne Etappe.
 
 ### Fortschritt der Sichtung
 
-Chronologisch, Tag fuer Tag. **Hier weitermachen: 2026-07-29.** 2026-07-28 ist
-komplett abgeschlossen (78 Assets, alle neu in dieser Sitzung).
-Naechster Tag chronologisch: 2026-07-29 — komplette Liste per Standard-Query (siehe
+Chronologisch, Tag fuer Tag. **Hier weitermachen: 2026-07-30.** 2026-07-29 ist
+komplett abgeschlossen (15 Assets, alle neu in dieser Sitzung).
+Naechster Tag chronologisch: 2026-07-30 — komplette Liste per Standard-Query (siehe
 Arbeitsweise unten) neu ziehen, nicht abtippen.
 
 | Tag | Chris-iPhone-Assets | indiziert |
@@ -268,7 +268,8 @@ Arbeitsweise unten) neu ziehen, nicht abtippen.
 | 2026-07-26 | 58 | ✅ 58 — Aufbruch von der Camping-Huette am Aurlandsfjord (Nachtaufnahmen), Faehre "Mannheller", Laerdalstunnel, Wanderung an einem Gletscherfluss, Bergpass mit vielen Wasserfaellen im Nebel, tuerkisfarbene Gletscherseen, Ankunft am Geirangerfjord: ausfuehrliche Portraet-/Familienselfie-Serie auf dem Balkon der Huette (Kaffee, Kuesse, Grimassen), Hafen mit Kreuzfahrtschiffen, Fossen Camping (Grasdach-Rezeption), kurze Wanderung zu altem Bergbauernhof mit Ziegen |
 | 2026-07-27 | 61 | ✅ 61 — Geburtstag von Papa/Chris: festlich gedeckter Fruehstueckstisch mit Wimpelgirlande, Geschenken (Brettspiel "Brass: Birmingham"), Pop-up-Karte und Kerzenkuchen, anschliessend Wanderung zum Storsaeterfossen-Wasserfall (Metalltreppen am Wildbach), Ort Geiranger mit Marktplatz, Hafen und Kreuzfahrtschiffen, RIB-Schnellboot-Fjordtour mit Ausruestungsverleih, Familien-/Gruppenselfies auf dem Boot, Sieben-Schwestern-artige Wasserfaelle direkt am Fjord |
 | 2026-07-28 | 78 | ✅ 78 — Abschied vom Geirangerfjord, Schlucht Gudbrandsjuvet (Cafe mit Zimtschnecken/Kuchen, Wasser-Steg-Park), Bergpass mit Berghuette im Nebel, spektakulaerer Trollstigen (Aussichtsplattform, Serpentinenstrasse aus der Vogelperspektive, Steinmaennchen, 'No Trolls beyond this point'-Schild), Ankunft am neuen Etappenziel bei Lom: Abendessen (Pizza), Stabkirche Lom mit Friedhof, tuerkisfarbener Fluss mit Bruecken, Bakeriet i Lom, Camping-Spielplatz (Trampolin, Schaukel) |
-| 2026-07-29 … 2026-08-04 | 117 | ⬜ |
+| 2026-07-29 | 15 | ✅ 15 — Abend in Lom: Angler faengt Fisch im tuerkisfarbenen Fluss, Stabkirche Lom in der Abenddaemmerung gespiegelt, streunende Katze, gruener Ford-Mustang-Oldtimer auf dem Campingplatz; am naechsten Tag Weiterfahrt zu neuer Huette am See (Fruehstueck, Ankunft, Reihe Camping-Huetten am spiegelglatten Wasser), Sonnenuntergang am Fluss, Abendessen (Lachs mit Zitrone) in der neuen Huette |
+| 2026-07-30 … 2026-08-04 | 102 | ⬜ |
 
 **Hinweis zur Zaehlung:** `689` ist die Gesamtzahl der neuen Chris-iPhone-Dateien (aus
 `prepare-index`, Pfadpraefix `Chris-iPhone/`). Die Tagestabellen in `assets.json` zeigen pro

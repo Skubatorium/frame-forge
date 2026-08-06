@@ -42115,6 +42115,54 @@
     }
   },
   {
+    "hash": "sha256:2940b290a7641e7522710b642b22384190d2b4a3352e53cdc42f2fcd66c37406",
+    "path": "Chris-iPhone/IMG_0260.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T22:31:36+00:00",
+    "gps": {
+      "lat": 61.83898055555556,
+      "lon": 8.569475,
+      "elevation_m": 370.5
+    },
+    "probe": {
+      "captured_at": "2026-07-28T22:31:36+00:00",
+      "gps": {
+        "lat": 61.83898055555556,
+        "lon": 8.569475,
+        "elevation_m": 370.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.074,
+      "exposure": 0.789,
+      "score": 0.432
+    },
+    "id": "20260728-phone-2940b2",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0260_8df09b4f_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Langhaarige orangefarbene Katze sitzt von hinten auf der Strasse in Lom.",
+      "tags": [
+        "katze",
+        "tier",
+        "strasse",
+        "lom",
+        "detail"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:2ae5c72be18b2a2cb105c91dc158f61679301599fa22cb6059dddde1d3d6affa",
     "path": "Chris-iPhone/IMG_0190.HEIC",
     "kind": "photo",
@@ -43027,6 +43075,54 @@
     }
   },
   {
+    "hash": "sha256:4cbed23d315ad64518d1fd78d34621ae6f76827eaa5ebdb73fa6ab814591df71",
+    "path": "Chris-iPhone/IMG_0255.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T22:17:54+00:00",
+    "gps": {
+      "lat": 61.83876388888889,
+      "lon": 8.569947222222222,
+      "elevation_m": 378.5
+    },
+    "probe": {
+      "captured_at": "2026-07-28T22:17:54+00:00",
+      "gps": {
+        "lat": 61.83876388888889,
+        "lon": 8.569947222222222,
+        "elevation_m": 378.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.168,
+      "exposure": 0.922,
+      "score": 0.545
+    },
+    "id": "20260728-phone-4cbed2",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0255_f5de2d72_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Stabkirche Lom in der Abenddaemmerung, gespiegelt im ruhigen tuerkisfarbenen Fluss.",
+      "tags": [
+        "stabkirche",
+        "lom",
+        "fluss",
+        "abenddaemmerung",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
     "hash": "sha256:4f436e69ea2a42fd219d12f54f38c4509bf6b8b572e24690e3576deafc944aef",
     "path": "Chris-iPhone/IMG_0230.HEIC",
     "kind": "photo",
@@ -43600,6 +43696,150 @@
       "people": true,
       "usable_as": [
         "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7c5346ffa71bef0afd2b8aff592e413c4ad550604cb051b6b797cc900750a721",
+    "path": "Chris-iPhone/IMG_0256.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T22:18:03+00:00",
+    "gps": {
+      "lat": 61.83878333333334,
+      "lon": 8.570027777777778,
+      "elevation_m": 378.5
+    },
+    "probe": {
+      "captured_at": "2026-07-28T22:18:03+00:00",
+      "gps": {
+        "lat": 61.83878333333334,
+        "lon": 8.570027777777778,
+        "elevation_m": 378.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.113,
+      "exposure": 0.894,
+      "score": 0.504
+    },
+    "id": "20260728-phone-7c5346",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0256_0fc711e4_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Portraet eines Anglers mit gefangenem Fisch am Ufer des Flusses bei Lom, strahlendes Laecheln.",
+      "tags": [
+        "lom",
+        "fluss",
+        "angeln",
+        "fisch",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:828abba803fb902f6afe67813f0cbf9b88f5e10721548c693cf18e68a831c273",
+    "path": "Chris-iPhone/IMG_0262.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T22:33:27+00:00",
+    "gps": {
+      "lat": 61.83893333333334,
+      "lon": 8.569419444444444,
+      "elevation_m": 369.3
+    },
+    "probe": {
+      "captured_at": "2026-07-28T22:33:27+00:00",
+      "gps": {
+        "lat": 61.83893333333334,
+        "lon": 8.569419444444444,
+        "elevation_m": 369.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.082,
+      "exposure": 0.956,
+      "score": 0.519
+    },
+    "id": "20260728-phone-828abb",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0262_a42dbded_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Gruener Ford Mustang Oldtimer parkt auf Campingplatz zwischen Wohnmobilen in der Abenddaemmerung.",
+      "tags": [
+        "auto",
+        "oldtimer",
+        "mustang",
+        "campingplatz",
+        "detail"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:8392b3cca08e96ecaea5cc3aa556dfb8f2e7070178faf06ab3954bbe31e535e9",
+    "path": "Chris-iPhone/IMG_0258.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T22:26:13+00:00",
+    "gps": {
+      "lat": 61.839447222222226,
+      "lon": 8.568991666666667,
+      "elevation_m": 372.8
+    },
+    "probe": {
+      "captured_at": "2026-07-28T22:26:13+00:00",
+      "gps": {
+        "lat": 61.839447222222226,
+        "lon": 8.568991666666667,
+        "elevation_m": 372.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.106,
+      "exposure": 0.956,
+      "score": 0.531
+    },
+    "id": "20260728-phone-8392b3",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0258_7ce582d9_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Stabkirche Lom mit hoher Turmspitze am Ufer des tuerkisfarbenen Flusses in der Abenddaemmerung, Berg im Hintergrund.",
+      "tags": [
+        "stabkirche",
+        "lom",
+        "fluss",
+        "abenddaemmerung",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
       ]
     }
   },
@@ -44278,6 +44518,54 @@
     }
   },
   {
+    "hash": "sha256:c1679a211fea8aafc31aa438d7f594350d19302d0450679a4557fba20f7b62c3",
+    "path": "Chris-iPhone/IMG_0254.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T22:16:37+00:00",
+    "gps": {
+      "lat": 61.83893611111111,
+      "lon": 8.568955555555556,
+      "elevation_m": 372.4
+    },
+    "probe": {
+      "captured_at": "2026-07-28T22:16:37+00:00",
+      "gps": {
+        "lat": 61.83893611111111,
+        "lon": 8.568955555555556,
+        "elevation_m": 372.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.074,
+      "exposure": 0.891,
+      "score": 0.483
+    },
+    "id": "20260728-phone-c1679a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0254_012b54cf_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Angler steht im tuerkisfarbenen Fluss bei Lom in der Abenddaemmerung.",
+      "tags": [
+        "lom",
+        "fluss",
+        "angeln",
+        "mann",
+        "abenddaemmerung"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:c16b30dd52aa11da64a2926133da778bbaf14f5b98abb37ccbdc908903cc1cf3",
     "path": "Chris-iPhone/IMG_0181.HEIC",
     "kind": "photo",
@@ -44948,6 +45236,54 @@
       "people": true,
       "usable_as": [
         "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:faae140a7bc623d13f7188640b903559f791bf30af30129bbee515d6533af4a8",
+    "path": "Chris-iPhone/IMG_0261.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T22:32:50+00:00",
+    "gps": {
+      "lat": 61.83898611111111,
+      "lon": 8.56946111111111,
+      "elevation_m": 378.2
+    },
+    "probe": {
+      "captured_at": "2026-07-28T22:32:50+00:00",
+      "gps": {
+        "lat": 61.83898611111111,
+        "lon": 8.56946111111111,
+        "elevation_m": 378.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.041,
+      "exposure": 0.753,
+      "score": 0.397
+    },
+    "id": "20260728-phone-faae14",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0261_799e909c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Nahportraet einer langhaarigen orangefarbenen Katze auf der Strasse in Lom.",
+      "tags": [
+        "katze",
+        "tier",
+        "portraet",
+        "lom",
+        "detail"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
       ]
     }
   },
@@ -48022,6 +48358,391 @@
     "day": 12,
     "stage": "Lom → Uvdal",
     "place_source": "index"
+  },
+  {
+    "hash": "sha256:06264d4fe4091351e596f9b6df2c30577612ca69cc60ed407a1a47107621e95a",
+    "path": "Chris-iPhone/IMG_0279.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-29T19:39:38+00:00",
+    "gps": {
+      "lat": 60.26475555555555,
+      "lon": 8.787494444444444,
+      "elevation_m": 472.4
+    },
+    "probe": {
+      "captured_at": "2026-07-29T19:39:38+00:00",
+      "gps": {
+        "lat": 60.26475555555555,
+        "lon": 8.787494444444444,
+        "elevation_m": 472.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.512,
+      "exposure": 0.763,
+      "score": 0.637
+    },
+    "id": "20260729-phone-06264d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0279_d16a5b7a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Fluss bei Sonnenuntergang mit Wolkenspiegelung, Berge in Silhouette, ruhige Stimmung.",
+      "tags": [
+        "fluss",
+        "sonnenuntergang",
+        "berge",
+        "natur",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:138d789e056e695647ca0653639219fdf17db59268bc8a5651c762219c4fedc7",
+    "path": "Chris-iPhone/IMG_0267.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-29T09:42:09+00:00",
+    "gps": {
+      "lat": 61.83893611111111,
+      "lon": 8.569433333333333,
+      "elevation_m": 369.1
+    },
+    "probe": {
+      "captured_at": "2026-07-29T09:42:09+00:00",
+      "gps": {
+        "lat": 61.83893611111111,
+        "lon": 8.569433333333333,
+        "elevation_m": 369.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.277,
+      "exposure": 0.83,
+      "score": 0.553
+    },
+    "id": "20260729-phone-138d78",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0267_9c470136_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mutter und Sohn beim Fruehstueck in gemuetlicher Holzhuette mit Broetchen und Kaffee.",
+      "tags": [
+        "fruehstueck",
+        "huette",
+        "kind",
+        "mutter",
+        "indoor"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1a20060a7ec1603370faf8c14f6ec2b7a14fb9dabe056ceeb553ba4b12419b57",
+    "path": "Chris-iPhone/IMG_0269.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-29T16:44:48+00:00",
+    "gps": {
+      "lat": 60.26490833333333,
+      "lon": 8.78823888888889,
+      "elevation_m": 472.7
+    },
+    "probe": {
+      "captured_at": "2026-07-29T16:44:48+00:00",
+      "gps": {
+        "lat": 60.26490833333333,
+        "lon": 8.78823888888889,
+        "elevation_m": 472.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.994,
+      "score": 0.997
+    },
+    "id": "20260729-phone-1a2006",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0269_eda70f13_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Beladener Kombi mit Dachbox vor kleiner Camping-Huette an einem See, Berge im Hintergrund.",
+      "tags": [
+        "auto",
+        "dachbox",
+        "huette",
+        "see",
+        "camping"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:33d218aa0661fc907e7203e90c3c4db1e21f524f45c41581b237aa0461d74f70",
+    "path": "Chris-iPhone/IMG_0280.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-29T20:39:45+00:00",
+    "gps": {
+      "lat": 60.26478888888889,
+      "lon": 8.788419444444445,
+      "elevation_m": 471.5
+    },
+    "probe": {
+      "captured_at": "2026-07-29T20:39:45+00:00",
+      "gps": {
+        "lat": 60.26478888888889,
+        "lon": 8.788419444444445,
+        "elevation_m": 471.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.138,
+      "exposure": 0.995,
+      "score": 0.566
+    },
+    "id": "20260729-phone-33d218",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0280_1ef44144_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Gebratenes Lachsfilet mit Zitronenscheibe auf Nudeln, Tomaten-Oliven-Salat im Hintergrund.",
+      "tags": [
+        "essen",
+        "lachs",
+        "abendessen",
+        "huette",
+        "detail"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:49d17fa2f637a038b0c91a0883bbe86429046256361f0e61ad3af6687cd4ac8f",
+    "path": "Chris-iPhone/IMG_0282.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-29T20:39:56+00:00",
+    "gps": {
+      "lat": 60.264633333333336,
+      "lon": 8.7886,
+      "elevation_m": 472.6
+    },
+    "probe": {
+      "captured_at": "2026-07-29T20:39:56+00:00",
+      "gps": {
+        "lat": 60.264633333333336,
+        "lon": 8.7886,
+        "elevation_m": 472.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.131,
+      "exposure": 0.812,
+      "score": 0.471
+    },
+    "id": "20260729-phone-49d17f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0282_70e42269_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Sohn isst Nudeln im Wohnzimmer der Huette, Mutter kocht in der Kueche im Hintergrund.",
+      "tags": [
+        "abendessen",
+        "huette",
+        "kind",
+        "mutter",
+        "indoor"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:842cc16b17a04bdbc2b52a0bd7994bc3fce7f9cd669c85b677cad75fcf5eddc0",
+    "path": "Chris-iPhone/IMG_0270.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-29T16:45:02+00:00",
+    "gps": {
+      "lat": 60.26467777777778,
+      "lon": 8.788555555555556,
+      "elevation_m": 468.4
+    },
+    "probe": {
+      "captured_at": "2026-07-29T16:45:02+00:00",
+      "gps": {
+        "lat": 60.26467777777778,
+        "lon": 8.788555555555556,
+        "elevation_m": 468.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.997,
+      "score": 0.998
+    },
+    "id": "20260729-phone-842cc1",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0270_80285bb4_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kleine dunkelbraune Camping-Huette mit rotem Eingang und Terrasse an einem See.",
+      "tags": [
+        "huette",
+        "camping",
+        "see",
+        "architektur",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:8464dfc9ee8ada0d23551aac5a2b5e64c0d944a0032fc996f26dc62b30feae50",
+    "path": "Chris-iPhone/IMG_0277.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-29T19:38:44+00:00",
+    "gps": {
+      "lat": 60.26442222222222,
+      "lon": 8.787216666666666,
+      "elevation_m": 473.3
+    },
+    "probe": {
+      "captured_at": "2026-07-29T19:38:44+00:00",
+      "gps": {
+        "lat": 60.26442222222222,
+        "lon": 8.787216666666666,
+        "elevation_m": 473.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.987,
+      "score": 0.993
+    },
+    "id": "20260729-phone-8464df",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0277_7ed8baec_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Camping-Huetten am Seeufer im Abendlicht, Autos parken davor, Spiegelung im Wasser.",
+      "tags": [
+        "huette",
+        "camping",
+        "see",
+        "abendlicht",
+        "spiegelung"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:992a2282ee9b15dc9b4dd738e456dbdb3d8951f9f71293b41a6745376737d462",
+    "path": "Chris-iPhone/IMG_0274.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-29T19:19:45+00:00",
+    "gps": {
+      "lat": 60.264697222222225,
+      "lon": 8.787461111111112,
+      "elevation_m": 473.6
+    },
+    "probe": {
+      "captured_at": "2026-07-29T19:19:45+00:00",
+      "gps": {
+        "lat": 60.264697222222225,
+        "lon": 8.787461111111112,
+        "elevation_m": 473.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.541,
+      "exposure": 0.832,
+      "score": 0.687
+    },
+    "id": "20260729-phone-992a22",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0274_10cd5409_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Reihe von Camping-Huetten am Seeufer, Berge im Hintergrund, spiegelglattes Wasser.",
+      "tags": [
+        "huette",
+        "camping",
+        "see",
+        "berge",
+        "panorama"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
   },
   {
     "hash": "sha256:0cf76b09a105cb8cd2b9d934929207768b5cf55f1233fad68460684d440cfdfa",
