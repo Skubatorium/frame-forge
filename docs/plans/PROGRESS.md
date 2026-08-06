@@ -235,7 +235,7 @@ konstant 0 und ein Test darauf belegte nichts.
 |---|---|
 | `ingest` — Proxies | ✅ 975/975 |
 | `prepare-index` — Keyframes, CV, `captured_at`, GPS | ✅ 689/689, keine Fehlschlaege |
-| Inhaltliche Sichtung (Beschreibung/Tags/Rating) | 🔄 **269 von 689** |
+| Inhaltliche Sichtung (Beschreibung/Tags/Rating) | 🔄 **272 von 689** |
 
 **Der HEIC-Weg hat sich am echten Material bewaehrt.** Ohne das Arbeitspaket von 2026-08-05
 waeren die 539 Fotos still aus dem Index gefallen. Aufnahmezeit liegt bei **allen 689** vor
@@ -249,7 +249,13 @@ faellig, sonst bleiben die neuen Tage ohne Etappe.
 
 ### Fortschritt der Sichtung
 
-Chronologisch, Tag fuer Tag. **Hier weitermachen: 2026-07-25**.
+Chronologisch, Tag fuer Tag. **Hier weitermachen: 2026-07-25 — laufend, 3 von 106
+erledigt.** Dieser Tag ist mit Abstand der groesste bisher (viele kurze Videoclips,
+vermutlich Boots-/Fjordausflug). Bereits indiziert: `5a21c7` (Kreuzfahrtschiff "Artania"
+am Kai), `f5dd6b` (gelbes Kajak auf dem Fjord), `55822e` (Felswand vom Boot aus). Naechstes
+Asset chronologisch: `IMG_9767.MOV` (09:14:13 UTC), danach `IMG_9769`, `9773`, `9778`, `9783`,
+`9785`, `9790`, dann Fotos `9740`/`9741` (09:56) usw. — komplette Liste der 106 (davon 103
+offen) per Standard-Query (siehe Arbeitsweise unten) neu ziehen, nicht abtippen.
 
 | Tag | Chris-iPhone-Assets | indiziert |
 |---|---:|---|

@@ -24020,6 +24020,183 @@
     }
   },
   {
+    "hash": "sha256:55822e6dbfa6457918648e1542cb981f5483206a557178bb70e550296874de1b",
+    "path": "Chris-iPhone/IMG_9758.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T08:52:15+00:00",
+    "captured_at_source": "container",
+    "duration": 15.64,
+    "probe": {
+      "captured_at": "2026-07-25T08:52:15+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 15.64,
+      "bitrate": 54016391,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.389,
+      "exposure": 0.838,
+      "score": 0.743
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.611
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 15.63
+      }
+    ],
+    "id": "20260725-camera-55822e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9758_72e481dc_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9758_72e481dc_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9758_72e481dc_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Steile bewaldete Felswand am Fjord, Wasserfallrinne in der Mitte, vom Boot aus gefilmt.",
+      "tags": [
+        "fjord",
+        "felsen",
+        "berge",
+        "natur",
+        "establisher",
+        "wasser"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5a21c76524753fb05fe29d1868dd59b96b632535a7aaaade6a6e10083f3bfad1",
+    "path": "Chris-iPhone/IMG_9745.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T08:20:02+00:00",
+    "captured_at_source": "container",
+    "duration": 15.623333,
+    "probe": {
+      "captured_at": "2026-07-25T08:20:02+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 15.623333,
+      "bitrate": 53161495,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.992,
+      "stability": 0.362,
+      "exposure": 0.888,
+      "score": 0.747
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.638
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 15.62
+      }
+    ],
+    "id": "20260725-camera-5a21c7",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9745_13f19887_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9745_13f19887_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9745_13f19887_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kreuzfahrtschiff 'Artania' liegt am Kai eines Fjord-Ortes, Berge im Hintergrund.",
+      "tags": [
+        "kreuzfahrtschiff",
+        "hafen",
+        "fjord",
+        "berge",
+        "establisher",
+        "schiff"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f5dd6bff2a45676d2873cedfe59aae8ac67c79dbf43196818d7dc2edadf88998",
+    "path": "Chris-iPhone/IMG_9751.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T08:26:29+00:00",
+    "captured_at_source": "container",
+    "duration": 14.078333,
+    "probe": {
+      "captured_at": "2026-07-25T08:26:29+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 14.078333,
+      "bitrate": 106356964,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.13,
+      "stability": 0.613,
+      "exposure": 0.685,
+      "score": 0.476
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.387
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 14.08
+      }
+    ],
+    "id": "20260725-camera-f5dd6b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9751_063e734e_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9751_063e734e_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9751_063e734e_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein gelbes Kajak paddelt auf ruhigem Fjordwasser entlang der Ufermauer, Wald im Hintergrund.",
+      "tags": [
+        "kajak",
+        "fjord",
+        "wasser",
+        "natur",
+        "boot",
+        "ufer"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:1d384fde74dc35b51ac0a4473f0a373cde6f9a0359e6728c17fed4022a1cd6b1",
     "path": "2026-07-26_Norwegen_Geiranger_Unterkunft/Vorauwahl/DJI_20260726164301_0023_D-00.03.17.240-00.04.39.134-seg3.MP4",
     "kind": "video",
