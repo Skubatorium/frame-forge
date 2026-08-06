@@ -860,6 +860,106 @@
     }
   },
   {
+    "hash": "sha256:0ad093c6667a906af4c6733f7d46f2a60b4e75205d58b67ddaf196beab593b47",
+    "path": "Chris-iPhone/IMG_9286.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T16:59:51+00:00",
+    "gps": {
+      "lat": 54.78838611111111,
+      "lon": 9.436283333333334,
+      "elevation_m": 2.3
+    },
+    "probe": {
+      "captured_at": "2026-07-18T16:59:51+00:00",
+      "gps": {
+        "lat": 54.78838611111111,
+        "lon": 9.436283333333334,
+        "elevation_m": 2.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.611,
+      "exposure": 0.847,
+      "score": 0.729
+    },
+    "id": "20260718-phone-0ad093",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9286_094030ad_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Familie steht am Flensburger Hafenkai vor einem Traditionssegler mit hohen Masten, im Vordergrund ein Blumenbeet.",
+      "tags": [
+        "flensburg",
+        "hafen",
+        "segelschiff",
+        "familie",
+        "masten",
+        "blumen"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2951e8709caf3dc577f2d1bdc38c7204b1b7bcb875987d662fb19f8c6e81abf4",
+    "path": "Chris-iPhone/IMG_9281.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T15:00:13+00:00",
+    "gps": {
+      "lat": 54.319472222222224,
+      "lon": 9.741630555555554,
+      "elevation_m": 20.2
+    },
+    "probe": {
+      "captured_at": "2026-07-18T15:00:13+00:00",
+      "gps": {
+        "lat": 54.319472222222224,
+        "lon": 9.741630555555554,
+        "elevation_m": 20.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.554,
+      "exposure": 0.815,
+      "score": 0.684
+    },
+    "id": "20260718-phone-2951e8",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9281_ab376449_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Drei Monteure arbeiten in luftiger Hoehe an den Leitungen eines Strommasts vor grauem Himmel.",
+      "tags": [
+        "strommast",
+        "monteure",
+        "hoehe",
+        "arbeit",
+        "leitungen",
+        "zwischenstopp"
+      ],
+      "people": true,
+      "usable_as": [
+        "cutaway",
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:2cca83bd839cbb19c478766ee746cc0dea60c8cd98b57e77e098431fd769bb8b",
     "path": "Chris-iPhone/IMG_9265.HEIC",
     "kind": "photo",
@@ -951,6 +1051,55 @@
         "langeweile",
         "autofahrt",
         "anreise"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:45feeced0f7853e6d424fa28d444e66a142dde6ce850619150f31646ff47c153",
+    "path": "Chris-iPhone/IMG_9279.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T14:47:06+00:00",
+    "gps": {
+      "lat": 54.317061111111116,
+      "lon": 9.85956388888889,
+      "elevation_m": 20.5
+    },
+    "probe": {
+      "captured_at": "2026-07-18T14:47:06+00:00",
+      "gps": {
+        "lat": 54.317061111111116,
+        "lon": 9.85956388888889,
+        "elevation_m": 20.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.769,
+      "exposure": 0.882,
+      "score": 0.826
+    },
+    "id": "20260718-phone-45feec",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9279_e3e7b819_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Zwischenstopp an einer Bushaltestelle an einer Landstrasse, eine Person geht auf das Auto mit geoeffneter Tuer zu.",
+      "tags": [
+        "pause",
+        "bushaltestelle",
+        "landstrasse",
+        "auto",
+        "unterwegs",
+        "schleswig-holstein"
       ],
       "people": true,
       "usable_as": [
@@ -1059,6 +1208,156 @@
     }
   },
   {
+    "hash": "sha256:78974be96d95f0713802ca371ea42fe3d1336a2e2aeb24be66fd088dd6080737",
+    "path": "Chris-iPhone/IMG_9276.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T13:13:46+00:00",
+    "gps": {
+      "lat": 53.52234166666666,
+      "lon": 9.926855555555555,
+      "elevation_m": 16.0
+    },
+    "probe": {
+      "captured_at": "2026-07-18T13:13:46+00:00",
+      "gps": {
+        "lat": 53.52234166666666,
+        "lon": 9.926855555555555,
+        "elevation_m": 16.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.029,
+      "exposure": 0.768,
+      "score": 0.399
+    },
+    "id": "20260718-phone-78974b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9276_9163cca8_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Containerbruecken des Hamburger Hafens in Rot und Blau, aus dem fahrenden Auto ueber die Leitplanke fotografiert.",
+      "tags": [
+        "hamburg",
+        "hafen",
+        "containerbruecken",
+        "industrie",
+        "anreise",
+        "bewoelkt"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:91b3e772d6fe6019fbd40a5191a8a3c74b8fe9e3fc6b573902d8f8b776620fca",
+    "path": "Chris-iPhone/IMG_9319.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T18:13:53+00:00",
+    "gps": {
+      "lat": 54.78866111111111,
+      "lon": 9.437347222222222,
+      "elevation_m": 2.3
+    },
+    "probe": {
+      "captured_at": "2026-07-18T18:13:53+00:00",
+      "gps": {
+        "lat": 54.78866111111111,
+        "lon": 9.437347222222222,
+        "elevation_m": 2.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.561,
+      "exposure": 0.902,
+      "score": 0.731
+    },
+    "id": "20260718-phone-91b3e7",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9319_1aefa0e5_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Bierdeckel auf einem Holztisch mit plattdeutschem Spruch, Nahaufnahme von oben.",
+      "tags": [
+        "bierdeckel",
+        "detail",
+        "restaurant",
+        "plattdeutsch",
+        "holztisch",
+        "flensburg"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail",
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:9de7630894abeb736706af42b1a817540753390b13d809798b491cc758ff9dc6",
+    "path": "Chris-iPhone/IMG_9278.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T14:20:56+00:00",
+    "gps": {
+      "lat": 54.07282222222223,
+      "lon": 9.923794444444443,
+      "elevation_m": 28.5
+    },
+    "probe": {
+      "captured_at": "2026-07-18T14:20:56+00:00",
+      "gps": {
+        "lat": 54.07282222222223,
+        "lon": 9.923794444444443,
+        "elevation_m": 28.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.392,
+      "exposure": 0.869,
+      "score": 0.631
+    },
+    "id": "20260718-phone-9de763",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9278_91d318d0_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Navigationsanzeige kurz vor dem Ziel: 93 km und 1:33 Stunden verbleibend, Abfahrt Richtung Flensburg in 9,7 km.",
+      "tags": [
+        "navigation",
+        "carplay",
+        "flensburg",
+        "zielnaehe",
+        "a7",
+        "anreise"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail",
+        "transition"
+      ]
+    }
+  },
+  {
     "hash": "sha256:a788c95c72667f526e9a531bbacf73beade7974f3957f8a491f636d58d341076",
     "path": "Chris-iPhone/IMG_9264.HEIC",
     "kind": "photo",
@@ -1154,6 +1453,56 @@
       "people": true,
       "usable_as": [
         "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b6301c7a029ec0f40e03109dc4658413c893f9d6c02496281955d75461a07ec5",
+    "path": "Chris-iPhone/IMG_9291.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T17:06:45+00:00",
+    "gps": {
+      "lat": 54.78905833333333,
+      "lon": 9.437419444444444,
+      "elevation_m": 2.5
+    },
+    "probe": {
+      "captured_at": "2026-07-18T17:06:45+00:00",
+      "gps": {
+        "lat": 54.78905833333333,
+        "lon": 9.437419444444444,
+        "elevation_m": 2.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.945,
+      "score": 0.972
+    },
+    "id": "20260718-phone-b6301c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9291_34d2222a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Belebte Hafenpromenade mit Spaziergaengern, Radfahrern und geschlossenen Sonnenschirmen vor einer Strandbar.",
+      "tags": [
+        "flensburg",
+        "promenade",
+        "spaziergang",
+        "strandbar",
+        "menschen",
+        "sommer"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll",
+        "establisher"
       ]
     }
   },

@@ -235,7 +235,7 @@ konstant 0 und ein Test darauf belegte nichts.
 |---|---|
 | `ingest` — Proxies | ✅ 975/975 |
 | `prepare-index` — Keyframes, CV, `captured_at`, GPS | ✅ 689/689, keine Fehlschlaege |
-| Inhaltliche Sichtung (Beschreibung/Tags/Rating) | 🔄 **21 von 689** |
+| Inhaltliche Sichtung (Beschreibung/Tags/Rating) | 🔄 **28 von 689** |
 
 **Der HEIC-Weg hat sich am echten Material bewaehrt.** Ohne das Arbeitspaket von 2026-08-05
 waeren die 539 Fotos still aus dem Index gefallen. Aufnahmezeit liegt bei **allen 689** vor
@@ -249,13 +249,29 @@ faellig, sonst bleiben die neuen Tage ohne Etappe.
 
 ### Fortschritt der Sichtung
 
-Chronologisch, Tag fuer Tag. **Naechster offener Tag: 2026-07-18 ab `IMG_9276` (13:13).**
+Chronologisch, Tag fuer Tag. **Hier weitermachen: 2026-07-18 ab `IMG_9288.HEIC` (17:00:14)** —
+es fehlen nur noch die 20 Hafen-/Restaurantfotos aus Flensburg, alles zwischen 17:00 und 19:21
+am selben Ort (54.789, 9.437). Danach 2026-07-19 (33 Assets).
 
 | Tag | Assets | indiziert |
 |---|---:|---|
-| 2026-07-17 | 6 | ✅ 6 (Verladen zu Hause, Abend vor der Abreise) |
-| 2026-07-18 | 42 | 🔄 15 (Fahrt NRW → Flensburg; offen: 4 Roadshots + 23 Fotos Flensburg) |
+| 2026-07-17 | 6 | ✅ 6 — Verladen zu Hause am Abend vor der Abreise |
+| 2026-07-18 | 42 | 🔄 22 — Fahrt NRW → Flensburg komplett (Aufbruch, Raststaette, Hamburger Hafen, Nord-Ostsee-Kanal, Ankunft); offen: 20 Fotos Flensburg |
 | 2026-07-19 … 2026-08-04 | 641 | ⬜ |
+
+**Arbeitsweise, die sich bewaehrt hat** (fuer die naechste Sitzung):
+
+1. Offene Assets eines Tages aus den Prep-Dateien ziehen (`captured_at[:10]` filtern,
+   nach `hash not in assets.json`), sortiert nach Zeit — der Tagesablauf erzaehlt die
+   Geschichte und macht die Beschreibungen praeziser.
+2. **Volle Hashes** holen: `index-asset` akzeptiert keine Kurzpraefixe.
+3. Keyframes in Bloecken von 3 sichten. Bei Videos reicht der **mittlere** Keyframe
+   (`kf01`/`kf02`); nur bei unklarem Inhalt weitere ansehen.
+4. Pro Block ein `index-asset`-Aufruf je Asset, danach den Stand hier fortschreiben.
+
+Rating-Massstab, wie bisher vergeben: 4 = traegt eine Szene (Establisher, emotionaler
+Moment), 3 = brauchbares B-Roll/Detail, 2 = nur als Lueckenfueller (Stau, unruhige
+Handaufnahme).
 
 ### Beobachtung: `source_guess` liegt bei iPhone-Videos daneben
 
