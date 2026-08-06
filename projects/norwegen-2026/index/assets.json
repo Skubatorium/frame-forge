@@ -1,5 +1,1163 @@
 [
   {
+    "hash": "sha256:0247f03de29d9768d8d3ac16ceb6c8c0c590b8f18c5e5292abcc53976bb9798e",
+    "path": "Chris-iPhone/IMG_9251.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-17T18:13:44+00:00",
+    "gps": {
+      "lat": 51.09556944444444,
+      "lon": 6.563883333333333,
+      "elevation_m": 75.5
+    },
+    "probe": {
+      "captured_at": "2026-07-17T18:13:44+00:00",
+      "gps": {
+        "lat": 51.09556944444444,
+        "lon": 6.563883333333333,
+        "elevation_m": 75.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.675,
+      "exposure": 0.878,
+      "score": 0.776
+    },
+    "id": "20260717-phone-0247f0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9251_474044c1_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Heckansicht des Kombis in der Einfahrt, Dachbox noch geoeffnet, Beifahrertuer auf, Abendsonne.",
+      "tags": [
+        "abreise",
+        "packen",
+        "auto",
+        "dachbox",
+        "einfahrt",
+        "abendlicht"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5b6139273551353c154c140f116f5bfb53b7939fb32b164c3d2d963fde0e7deb",
+    "path": "Chris-iPhone/IMG_9254.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-17T18:17:31+00:00",
+    "gps": {
+      "lat": 51.09514166666667,
+      "lon": 6.564391666666666,
+      "elevation_m": 73.5
+    },
+    "probe": {
+      "captured_at": "2026-07-17T18:17:31+00:00",
+      "gps": {
+        "lat": 51.09514166666667,
+        "lon": 6.564391666666666,
+        "elevation_m": 73.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.828,
+      "exposure": 0.806,
+      "score": 0.817
+    },
+    "id": "20260717-phone-5b6139",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9254_d8e9dcd8_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Der beladene Kombi mit Dachbox am Strassenrand einer Wohnsiedlung, Heck-Seiten-Ansicht bei Sonnenschein.",
+      "tags": [
+        "abreise",
+        "auto",
+        "dachbox",
+        "wohnsiedlung",
+        "strasse"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:8177bf3ec757bde165d2789cc34dccca11ce363f89702f6144b996fc8130b4dc",
+    "path": "Chris-iPhone/IMG_9250.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-17T18:13:21+00:00",
+    "gps": {
+      "lat": 51.095555555555556,
+      "lon": 6.563883333333333,
+      "elevation_m": 72.8
+    },
+    "probe": {
+      "captured_at": "2026-07-17T18:13:21+00:00",
+      "gps": {
+        "lat": 51.095555555555556,
+        "lon": 6.563883333333333,
+        "elevation_m": 72.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.164,
+      "exposure": 0.864,
+      "score": 0.514
+    },
+    "id": "20260717-phone-8177bf",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9250_ad80e6ea_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Blick in die geoeffnete Dachbox auf dem Autodach, gefuellt mit blauen Transporttaschen und einem Beutel.",
+      "tags": [
+        "packen",
+        "dachbox",
+        "detail",
+        "gepaeck",
+        "abreise"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:822c50ded3457808c9ba4ccd3d8f9e18e1c231a19703bb07f821e5bf3b7cf786",
+    "path": "Chris-iPhone/IMG_9255.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-17T18:17:50+00:00",
+    "gps": {
+      "lat": 51.095130555555556,
+      "lon": 6.5641388888888885,
+      "elevation_m": 71.4
+    },
+    "probe": {
+      "captured_at": "2026-07-17T18:17:50+00:00",
+      "gps": {
+        "lat": 51.095130555555556,
+        "lon": 6.5641388888888885,
+        "elevation_m": 71.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.701,
+      "exposure": 0.989,
+      "score": 0.845
+    },
+    "id": "20260717-phone-822c50",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9255_8d7485e7_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Der beladene Kombi mit Dachbox von schraeg vorn an der Strasse, blauer Himmel mit Schaefchenwolken.",
+      "tags": [
+        "abreise",
+        "auto",
+        "dachbox",
+        "strasse",
+        "blauer-himmel",
+        "aufbruch"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c60eb11447cd0b0f28636b88f38c80d818cb696c1b98ea50a110f56aec50d88b",
+    "path": "Chris-iPhone/IMG_9252.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-17T18:15:17+00:00",
+    "gps": {
+      "lat": 51.09549722222223,
+      "lon": 6.563886111111111,
+      "elevation_m": 75.0
+    },
+    "probe": {
+      "captured_at": "2026-07-17T18:15:17+00:00",
+      "gps": {
+        "lat": 51.09549722222223,
+        "lon": 6.563886111111111,
+        "elevation_m": 75.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.594,
+      "exposure": 0.918,
+      "score": 0.756
+    },
+    "id": "20260717-phone-c60eb1",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9252_5058de87_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Heckansicht des fertig beladenen Kombis mit geschlossener Dachbox, bereit zur Abfahrt.",
+      "tags": [
+        "abreise",
+        "auto",
+        "dachbox",
+        "fertig-gepackt",
+        "einfahrt"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c7dff03c5a44595fa8cc889744d7f2d9287b2184cfe36a0ff10165afbaa56cf3",
+    "path": "Chris-iPhone/IMG_9248.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-17T18:13:04+00:00",
+    "gps": {
+      "lat": 51.095511111111115,
+      "lon": 6.563825,
+      "elevation_m": 71.9
+    },
+    "probe": {
+      "captured_at": "2026-07-17T18:13:04+00:00",
+      "gps": {
+        "lat": 51.095511111111115,
+        "lon": 6.563825,
+        "elevation_m": 71.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.581,
+      "exposure": 0.903,
+      "score": 0.742
+    },
+    "id": "20260717-phone-c7dff0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9248_8500c0fd_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kofferraum und Dachbox eines grauen Kombis stehen zum Beladen offen, blaue Transporttaschen und eine Kiste sind bereits verstaut.",
+      "tags": [
+        "abreise",
+        "packen",
+        "auto",
+        "dachbox",
+        "einfahrt",
+        "vorbereitung"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:138b67f374fc87944d14c470eb2b6ee8f051b3337c664d40667808ca5933a414",
+    "path": "Chris-iPhone/IMG_9280_orig.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-18T12:57:10+00:00",
+    "captured_at_source": "container",
+    "duration": 31.458333,
+    "probe": {
+      "captured_at": "2026-07-18T12:57:10+00:00",
+      "captured_at_source": "container",
+      "w": 1920,
+      "h": 1080,
+      "fps": 29.97002997002997,
+      "dur": 31.458333,
+      "bitrate": 9233007,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.065,
+      "stability": 0.0,
+      "exposure": 0.899,
+      "score": 0.321
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 31.46
+      }
+    ],
+    "id": "20260718-camera-138b67",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9280_orig_b19d7c1d_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9280_orig_b19d7c1d_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9280_orig_b19d7c1d_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Hund streckt den Kopf aus dem Seitenfenster des vorausfahrenden Autos, Baustellenbaken am Fahrbahnrand.",
+      "tags": [
+        "hund",
+        "autofahrt",
+        "baustelle",
+        "landstrasse",
+        "unterwegs",
+        "humor"
+      ],
+      "people": false,
+      "usable_as": [
+        "cutaway",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1b50ad30fee77a796d9bd5f2985f6bd89ebd04e7f1626101d6a8916f434c90b0",
+    "path": "Chris-iPhone/IMG_9277.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-18T11:14:51+00:00",
+    "captured_at_source": "container",
+    "duration": 72.026667,
+    "probe": {
+      "captured_at": "2026-07-18T11:14:51+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 72.026667,
+      "bitrate": 53870308,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.129,
+      "stability": 0.0,
+      "exposure": 0.627,
+      "score": 0.252
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 22.54
+      },
+      {
+        "start": 22.54,
+        "end": 72.04
+      }
+    ],
+    "id": "20260718-camera-1b50ad",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9277_9b4fcd0f_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9277_9b4fcd0f_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9277_9b4fcd0f_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9277_9b4fcd0f_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9277_9b4fcd0f_kf04.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Stockender Verkehr auf einer Hochstrasse mit Containerhafen-Kraenen im Hintergrund, Blick aus dem Seitenfenster.",
+      "tags": [
+        "hafen",
+        "container",
+        "kraene",
+        "stau",
+        "hochstrasse",
+        "hamburg"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4a336b0e9533ec3126f91d5ab2a4181b591b3f20ec4d858302f93a42928c8402",
+    "path": "Chris-iPhone/IMG_9283.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-18T14:58:10+00:00",
+    "captured_at_source": "container",
+    "duration": 18.541667,
+    "probe": {
+      "captured_at": "2026-07-18T14:58:10+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 18.541667,
+      "bitrate": 53301859,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.668,
+      "stability": 0.0,
+      "exposure": 0.639,
+      "score": 0.436
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 18.55
+      }
+    ],
+    "id": "20260718-camera-4a336b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9283_8650dfc6_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9283_8650dfc6_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9283_8650dfc6_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9283_8650dfc6_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Schwenk ueber die gepflasterte Hafenpromenade in Flensburg mit Traditionssegler am Kai und Spaziergaengern.",
+      "tags": [
+        "flensburg",
+        "hafen",
+        "promenade",
+        "segelschiff",
+        "kopfsteinpflaster",
+        "ankunft"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b80ebd866be81d7743800815352ee3fefaffc5cdf09cc58b7437b92b7adc6191",
+    "path": "Chris-iPhone/IMG_9275.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-18T10:38:29+00:00",
+    "captured_at_source": "container",
+    "duration": 38.518333,
+    "probe": {
+      "captured_at": "2026-07-18T10:38:29+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 38.518333,
+      "bitrate": 53068819,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.339,
+      "stability": 0.0,
+      "exposure": 0.841,
+      "score": 0.393
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 38.52
+      }
+    ],
+    "id": "20260718-camera-b80ebd",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9275_eb0ad5a6_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9275_eb0ad5a6_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9275_eb0ad5a6_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Schwenk durch den Innenraum waehrend der Fahrt: Kind schlaeft im Kindersitz, daneben Kissen und Spielzeug.",
+      "tags": [
+        "kind",
+        "schlafen",
+        "rueckbank",
+        "autofahrt",
+        "innenraum",
+        "anreise"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll",
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b903ebb8b27c09cafc8de29361985b4e11e5196e23e05b90c22deef088c2dd17",
+    "path": "Chris-iPhone/IMG_9284.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-18T14:58:34+00:00",
+    "captured_at_source": "container",
+    "duration": 9.453333,
+    "probe": {
+      "captured_at": "2026-07-18T14:58:34+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 9.453333,
+      "bitrate": 57288980,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.597,
+      "stability": 0.288,
+      "exposure": 0.621,
+      "score": 0.502
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.712
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 9.45
+      }
+    ],
+    "id": "20260718-camera-b903eb",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9284_d6283a48_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9284_d6283a48_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9284_d6283a48_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9284_d6283a48_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Moewe laeuft auf dem Kopfsteinpflaster der Hafenkante, dahinter leicht bewegtes Wasser.",
+      "tags": [
+        "moewe",
+        "hafen",
+        "flensburg",
+        "kopfsteinpflaster",
+        "wasser",
+        "tier"
+      ],
+      "people": false,
+      "usable_as": [
+        "cutaway",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b9d1d7fb5c9444c2823d2094613dead8a4b0399a783e43c6406792e6fa1b584f",
+    "path": "Chris-iPhone/IMG_9274.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-18T10:37:47+00:00",
+    "captured_at_source": "container",
+    "duration": 31.103333,
+    "probe": {
+      "captured_at": "2026-07-18T10:37:47+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 31.103333,
+      "bitrate": 53251475,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.596,
+      "stability": 0.177,
+      "exposure": 0.68,
+      "score": 0.484
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.823
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 31.11
+      }
+    ],
+    "id": "20260718-camera-b9d1d7",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9274_35d13068_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9274_35d13068_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9274_35d13068_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Fahrt im Stau auf der Autobahn bei bedecktem Himmel, dichter Verkehr auf beiden Spuren, aufgenommen durch die Frontscheibe.",
+      "tags": [
+        "autobahn",
+        "stau",
+        "anreise",
+        "verkehr",
+        "bewoelkt",
+        "roadshot"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:bacc27497df0165c1ab9c6296a186476c0c8e8686ea07d8dca0f86d4c6bbf27e",
+    "path": "Chris-iPhone/IMG_9325.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-18T16:39:28+00:00",
+    "captured_at_source": "container",
+    "duration": 64.911667,
+    "probe": {
+      "captured_at": "2026-07-18T16:39:28+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 64.911667,
+      "bitrate": 53658778,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.345,
+      "stability": 0.0,
+      "exposure": 0.885,
+      "score": 0.41
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 64.91
+      }
+    ],
+    "id": "20260718-camera-bacc27",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9325_eec9bf5c_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9325_eec9bf5c_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9325_eec9bf5c_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9325_eec9bf5c_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kind und Erwachsene bauen an einem Restauranttisch am Hafenfenster ein Kartenhaus aus Bierdeckeln.",
+      "tags": [
+        "restaurant",
+        "bierdeckel",
+        "kartenhaus",
+        "spiel",
+        "familie",
+        "flensburg"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d268fbbcaa757da98aa320b913c8125d8a6307f1e4f0f0cdae03d25d6bdcfd3e",
+    "path": "Chris-iPhone/IMG_9292.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-18T15:10:52+00:00",
+    "captured_at_source": "container",
+    "duration": 4.87,
+    "probe": {
+      "captured_at": "2026-07-18T15:10:52+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 4.87,
+      "bitrate": 52706956,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.02,
+      "exposure": 0.761,
+      "score": 0.594
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.98
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 4.87
+      }
+    ],
+    "id": "20260718-camera-d268fb",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9292_3e063c15_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9292_3e063c15_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9292_3e063c15_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Blick ueber den Yachthafen von Flensburg auf Masten, Stege und die Altstadt mit Kirchturm unter grauem Himmel.",
+      "tags": [
+        "flensburg",
+        "yachthafen",
+        "masten",
+        "altstadt",
+        "bewoelkt",
+        "hafen"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d81da52fda230dcb732060abc9d2f23192991060dfe894295d58fce896352449",
+    "path": "Chris-iPhone/IMG_9285.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-18T14:59:20+00:00",
+    "captured_at_source": "container",
+    "duration": 17.893333,
+    "probe": {
+      "captured_at": "2026-07-18T14:59:20+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 17.893333,
+      "bitrate": 57383282,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.888,
+      "stability": 0.0,
+      "exposure": 0.83,
+      "score": 0.573
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 0.43
+      },
+      {
+        "start": 0.43,
+        "end": 3.03
+      },
+      {
+        "start": 3.03,
+        "end": 15.53
+      },
+      {
+        "start": 15.53,
+        "end": 17.17
+      },
+      {
+        "start": 17.17,
+        "end": 17.9
+      }
+    ],
+    "id": "20260718-camera-d81da5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9285_95a993df_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9285_95a993df_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9285_95a993df_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9285_95a993df_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9285_95a993df_kf04.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9285_95a993df_kf05.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Nahaufnahme eines dicht bewachsenen Blumenbeets mit Petunien in Pink, Violett und Weiss.",
+      "tags": [
+        "blumen",
+        "petunien",
+        "nahaufnahme",
+        "farben",
+        "sommer",
+        "detail"
+      ],
+      "people": false,
+      "usable_as": [
+        "cutaway",
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2cca83bd839cbb19c478766ee746cc0dea60c8cd98b57e77e098431fd769bb8b",
+    "path": "Chris-iPhone/IMG_9265.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T07:06:05+00:00",
+    "gps": {
+      "lat": 51.094661111111115,
+      "lon": 6.563497222222222,
+      "elevation_m": 72.4
+    },
+    "probe": {
+      "captured_at": "2026-07-18T07:06:05+00:00",
+      "gps": {
+        "lat": 51.094661111111115,
+        "lon": 6.563497222222222,
+        "elevation_m": 72.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.011,
+      "exposure": 0.872,
+      "score": 0.442
+    },
+    "id": "20260718-phone-2cca83",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9265_9fad077a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Navigationsanzeige im Auto zeigt den Start der Fahrt: 584 km Restweg, 6 Stunden, Ankunft 13:06.",
+      "tags": [
+        "navigation",
+        "carplay",
+        "fahrtbeginn",
+        "kilometer",
+        "armaturenbrett",
+        "roadtrip"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail",
+        "transition"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:30d4060b6eafd87b126a0f148a09a42f90ec483453979fd67ec87e3425283bda",
+    "path": "Chris-iPhone/IMG_9271.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T09:40:24+00:00",
+    "gps": {
+      "lat": 52.53933611111111,
+      "lon": 8.114902777777777,
+      "elevation_m": 70.3
+    },
+    "probe": {
+      "captured_at": "2026-07-18T09:40:24+00:00",
+      "gps": {
+        "lat": 52.53933611111111,
+        "lon": 8.114902777777777,
+        "elevation_m": 70.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.022,
+      "exposure": 0.684,
+      "score": 0.353
+    },
+    "id": "20260718-phone-30d406",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9271_4649f966_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kind auf der Rueckbank schaut auf ein Tablet an der Kopfstuetze, daneben ein Trinkpaeckchen und ein Snack.",
+      "tags": [
+        "kind",
+        "rueckbank",
+        "tablet",
+        "langeweile",
+        "autofahrt",
+        "anreise"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4ef48d6da0267247b66d37b18718a29e3aedaa0723633b757a8f4371d3f91a4c",
+    "path": "Chris-iPhone/IMG_9263.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T07:00:39+00:00",
+    "gps": {
+      "lat": 51.09555833333334,
+      "lon": 6.563866666666667,
+      "elevation_m": 84.5
+    },
+    "probe": {
+      "captured_at": "2026-07-18T07:00:39+00:00",
+      "gps": {
+        "lat": 51.09555833333334,
+        "lon": 6.563866666666667,
+        "elevation_m": 84.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.605,
+      "exposure": 0.887,
+      "score": 0.746
+    },
+    "id": "20260718-phone-4ef48d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9263_e67c9e7f_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Vollgepackter Kofferraum am Morgen der Abfahrt: Reisetaschen, Rucksack, Sandalen und eine Decke, Dachbox darueber geoeffnet.",
+      "tags": [
+        "abreise",
+        "packen",
+        "kofferraum",
+        "gepaeck",
+        "morgen",
+        "aufbruch"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:67a053c6174f852576b9dd58421822c902ce8925141dd26c3d63012ebe8187af",
+    "path": "Chris-iPhone/IMG_9272.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T10:51:47+00:00",
+    "gps": {
+      "lat": 53.023716666666665,
+      "lon": 8.817641666666667,
+      "elevation_m": 5.1
+    },
+    "probe": {
+      "captured_at": "2026-07-18T10:51:47+00:00",
+      "gps": {
+        "lat": 53.023716666666665,
+        "lon": 8.817641666666667,
+        "elevation_m": 5.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.726,
+      "exposure": 0.839,
+      "score": 0.783
+    },
+    "id": "20260718-phone-67a053",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9272_4d807795_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Navigationsanzeige waehrend der Fahrt: noch 264 km und 4 Stunden, 27 Minuten Stau gemeldet.",
+      "tags": [
+        "navigation",
+        "carplay",
+        "stau",
+        "kilometer",
+        "fortschritt",
+        "anreise"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail",
+        "transition"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a788c95c72667f526e9a531bbacf73beade7974f3957f8a491f636d58d341076",
+    "path": "Chris-iPhone/IMG_9264.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T07:00:54+00:00",
+    "gps": {
+      "lat": 51.09554166666667,
+      "lon": 6.563899999999999,
+      "elevation_m": 72.3
+    },
+    "probe": {
+      "captured_at": "2026-07-18T07:00:54+00:00",
+      "gps": {
+        "lat": 51.09554166666667,
+        "lon": 6.563899999999999,
+        "elevation_m": 72.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.099,
+      "exposure": 0.861,
+      "score": 0.48
+    },
+    "id": "20260718-phone-a788c9",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9264_271c78d0_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kind sitzt angeschnallt im Kindersitz auf der Rueckbank und laechelt in die Kamera, ein Kuscheltier in der Hand.",
+      "tags": [
+        "kind",
+        "rueckbank",
+        "anschnallen",
+        "aufbruch",
+        "portraet",
+        "vorfreude"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:aed4c06bb826225156f921430cefba1d06e841ef1fb0aa0ecdc3043a38b237b3",
+    "path": "Chris-iPhone/IMG_9268.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T09:29:32+00:00",
+    "gps": {
+      "lat": 52.53978055555555,
+      "lon": 8.113486111111111,
+      "elevation_m": 69.4
+    },
+    "probe": {
+      "captured_at": "2026-07-18T09:29:32+00:00",
+      "gps": {
+        "lat": 52.53978055555555,
+        "lon": 8.113486111111111,
+        "elevation_m": 69.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.218,
+      "exposure": 0.955,
+      "score": 0.587
+    },
+    "id": "20260718-phone-aed4c0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9268_dcba840b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Menschen stehen an der Theke eines Coffee-Fellows-Cafes an einer Autobahnraststaette.",
+      "tags": [
+        "raststaette",
+        "pause",
+        "cafe",
+        "kaffee",
+        "unterwegs",
+        "anreise"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:00c7c2020f8240de3b9641c1c86bbaefa6e689929e13f01b5459909175ff3e6f",
     "path": "2026-07-20_Norwegen_Skien_Rudern-See/Vorauswahl/DJI_20260720153625_0006_D-00.02.10.556-00.02.18.774-seg5.MP4",
     "kind": "video",

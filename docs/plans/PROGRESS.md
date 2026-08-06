@@ -224,6 +224,60 @@ konstant 0 und ein Test darauf belegte nichts.
 - **19 neue Tests, 546 gesamt grün** (vorher 527, per `git stash` gegengezählt), `ruff`
   sauber, `doctor` grün.
 
+---
+
+## Fundus-Erweiterung „Chris-iPhone" (2026-08-06) — **laufend**
+
+689 neue Dateien aus `First-Selection/Chris-iPhone/` (27 GB): **539 HEIC + 150 MOV**
+(iPhone, 4K60). Damit waechst `norwegen-2026` von 286 auf **975 Assets**.
+
+| Schritt | Status |
+|---|---|
+| `ingest` — Proxies | ✅ 975/975 |
+| `prepare-index` — Keyframes, CV, `captured_at`, GPS | ✅ 689/689, keine Fehlschlaege |
+| Inhaltliche Sichtung (Beschreibung/Tags/Rating) | 🔄 **21 von 689** |
+
+**Der HEIC-Weg hat sich am echten Material bewaehrt.** Ohne das Arbeitspaket von 2026-08-05
+waeren die 539 Fotos still aus dem Index gefallen. Aufnahmezeit liegt bei **allen 689** vor
+(100 %), GPS bei 536 (78 % — die 153 ohne sind die Videos, iPhone-MOV tragen keine
+auswertbaren Koordinaten).
+
+**Der Zeitraum waechst an beiden Enden:** bisher 20.07.–31.07., jetzt **17.07.–04.08.**,
+19 Reisetage. Neu dazu kommen Anreise (Verladen zu Hause, Fahrt NRW → Flensburg) und Abreise.
+`route/stages.csv` deckt diese Tage noch nicht ab — vor `assign-places` ist `/ff-route`
+faellig, sonst bleiben die neuen Tage ohne Etappe.
+
+### Fortschritt der Sichtung
+
+Chronologisch, Tag fuer Tag. **Naechster offener Tag: 2026-07-18 ab `IMG_9276` (13:13).**
+
+| Tag | Assets | indiziert |
+|---|---:|---|
+| 2026-07-17 | 6 | ✅ 6 (Verladen zu Hause, Abend vor der Abreise) |
+| 2026-07-18 | 42 | 🔄 15 (Fahrt NRW → Flensburg; offen: 4 Roadshots + 23 Fotos Flensburg) |
+| 2026-07-19 … 2026-08-04 | 641 | ⬜ |
+
+### Beobachtung: `source_guess` liegt bei iPhone-Videos daneben
+
+Die provisorischen IDs der MOV-Dateien lauten `20260718-**camera**-…`, obwohl es
+iPhone-Aufnahmen sind; das gesetzte Feld `source` ist korrekt `phone`. Die ID entsteht in
+`preindex._provisional_id` aus `probe.guess_source`, das bei `IMG_*.MOV` keinen Hinweis
+findet — dieselbe Klasse von Abweichung wie Audit-Punkt I2. **Kein Handlungsbedarf:** die ID
+ist nur ein stabiler Schluessel, die inhaltliche Wahrheit steht in `source`. Ein Umbenennen
+wuerde bestehende Referenzen brechen, der Nutzen waere kosmetisch.
+
+### Hintergrund-Laeufe brechen ohne Meldung ab
+
+Zweimal wurde ein im Hintergrund gestarteter Lauf beendet, ohne Ausgabe und ohne Fehler
+(`ingest` nach ~55 min bei 882/975, `prepare-index` nach ~10 min bei 476/689). Beide Male
+war die Ausgabedatei 0 Bytes. **Ursache ungeklaert** — ein Zeitlimit passt nicht zu den
+unterschiedlichen Laufzeiten; naheliegend, aber unbelegt, ist Speicherdruck (`vm_stat` zeigte
+~209 MB freie Seiten). Im **Vordergrund** lief derselbe Schritt jeweils durch.
+
+Praktische Konsequenz, keine Codeaenderung noetig: `ingest` und `prepare-index` sind
+idempotent und nehmen den Faden dort wieder auf, wo sie standen. Lange Laeufe daher besser im
+Vordergrund starten oder nach einem Abbruch schlicht erneut anstossen.
+
 ## Audit Plan 0003 (2026-08-01, Opus)
 
 Unabhängige Prüfung der Commits `b9a5ca2..ca596c5` gegen den Plan — Logik, Grenzfälle,
