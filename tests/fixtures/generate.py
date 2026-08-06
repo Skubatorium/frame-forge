@@ -55,6 +55,54 @@ def generate_heic_photo() -> None:
     image.save(FIXTURES_DIR / "photo.heic", format="HEIF", quality=90)
 
 
+def generate_multiaudio_clip() -> None:
+    """Clip mit **zwei** Tonspuren, die zweite kanalreicher als die erste.
+
+    Bildet die Falle nach, an der `IMG_9838.MOV` gescheitert ist: iPhone-Clips mit Spatial
+    Audio tragen neben der AAC-Stereospur eine 4-kanalige `apac`-Spur ohne ffmpeg-Decoder.
+    ffmpegs automatische Stream-Auswahl bevorzugt die kanalreichere Spur. `apac` laesst sich
+    hier nicht erzeugen (kein Encoder), die **Kanalzahl** als Auswahlkriterium schon — und
+    genau die entscheidet.
+    """
+    out = FIXTURES_DIR / "clip_multiaudio.mov"
+    subprocess.run(
+        [
+            "ffmpeg",
+            "-y",
+            "-f",
+            "lavfi",
+            "-i",
+            "testsrc=duration=1:size=320x240:rate=25",
+            "-f",
+            "lavfi",
+            "-i",
+            "sine=frequency=440:duration=1",
+            "-f",
+            "lavfi",
+            "-i",
+            "sine=frequency=880:duration=1",
+            "-filter_complex",
+            "[1:a]aformat=channel_layouts=stereo[a1];[2:a]aformat=channel_layouts=quad[a2]",
+            "-map",
+            "0:v",
+            "-map",
+            "[a1]",
+            "-map",
+            "[a2]",
+            "-c:v",
+            "libx264",
+            "-pix_fmt",
+            "yuv420p",
+            "-c:a",
+            "aac",
+            "-loglevel",
+            "error",
+            str(out),
+        ],
+        check=True,
+    )
+
+
 PROTO_MEDIA_DIR = FIXTURES_DIR / "proto_media"
 
 
@@ -143,6 +191,7 @@ if __name__ == "__main__":
     generate_clip()
     generate_photo()
     generate_heic_photo()
+    generate_multiaudio_clip()
     generate_proto_media()
     generate_tone()
     print("Fixtures erzeugt:", FIXTURES_DIR)

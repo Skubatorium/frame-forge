@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+import json
 import os
 import shutil
+import subprocess
 from pathlib import Path
 
 import pytest
@@ -12,6 +14,17 @@ from PIL import Image
 from frameforge.ingest import build_proxies, hash_file, proxy_path, scan_media
 
 FIXTURES = Path(__file__).parent / "fixtures"
+
+
+def _streams(path: Path) -> list[dict]:
+    """Streams einer Mediendatei per ffprobe — fuer Assertions ueber Spurauswahl."""
+    result = subprocess.run(
+        ["ffprobe", "-v", "error", "-show_streams", "-of", "json", str(path)],
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+    return json.loads(result.stdout)["streams"]
 
 
 def test_hash_file_is_deterministic_for_unchanged_file(tmp_path):
@@ -122,6 +135,40 @@ def test_build_proxies_transcodes_video_and_copies_photo(media_root, tmp_path):
         assert proxy.stat().st_size > 0
     video_proxy = next(p for p in result.proxies if p.suffix == ".mp4")
     assert video_proxy.parent == out_dir
+
+
+def test_build_proxies_takes_exactly_the_first_audio_track(media_root, tmp_path):
+    """Der Proxy traegt genau **eine** Tonspur, und zwar die erste.
+
+    **Was dieser Test nicht leistet:** Er reproduziert den Absturz von `IMG_9838.MOV` nicht.
+    Ausloeser dort ist eine `apac`-Spur ohne ffmpeg-Decoder; ein solches Fixture liess sich
+    nicht bauen (ffmpeg verweigert den Tag beim Muxen, ein Byte-Patch setzt zwar den Tag,
+    ffmpeg findet aber weiterhin einen Decoder). Gegengeprueft: dieser Test besteht auch mit
+    zurueckgebautem `-map`. Der Fix ist stattdessen **direkt an der echten Datei** belegt
+    (Exit 234 ohne, Exit 0 mit Mapping) — siehe PROGRESS.md.
+
+    Was er leistet: er haelt die Spurauswahl fest. Ein spaeteres `-map 0:a` (alle Spuren)
+    oder `-map 0:a:1` faellt hier auf.
+    """
+    shutil.copy(FIXTURES / "clip_multiaudio.mov", media_root / "spatial.mov")
+    out_dir = tmp_path / "proxies"
+
+    result = build_proxies([media_root / "spatial.mov"], out_dir, media_root=media_root)
+
+    assert result.failures == []
+    audio = [s for s in _streams(result.proxies[0]) if s["codec_type"] == "audio"]
+    assert len(audio) == 1, "genau eine Tonspur im Proxy"
+    assert audio[0]["channels"] == 2, "die erste (Stereo-), nicht die kanalreichere Spur"
+
+
+def test_build_proxies_handles_video_without_audio(media_root, tmp_path):
+    """`-map 0:a:0?` ist optional — ein stummer Clip darf daran nicht scheitern."""
+    out_dir = tmp_path / "proxies"
+
+    result = build_proxies([media_root / "clip.mp4"], out_dir, media_root=media_root)
+
+    assert result.failures == []
+    assert [s["codec_type"] for s in _streams(result.proxies[0])] == ["video"]
 
 
 def test_build_proxies_converts_heic_to_full_resolution_jpeg(media_root, tmp_path):

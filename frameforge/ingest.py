@@ -140,6 +140,20 @@ def build_proxies(
                         "-y",
                         "-i",
                         str(asset),
+                        # Streams **explizit** waehlen statt ffmpegs Automatik zu vertrauen:
+                        # erstes Bild, erste Tonspur. iPhone-Clips mit Spatial Audio tragen
+                        # neben der AAC-Stereospur eine 4-kanalige `apac`-Spur (Apple Positional
+                        # Audio) ohne ffmpeg-Decoder. Bei `IMG_9838.MOV` griff die Automatik
+                        # diese Spur und der Proxy scheiterte mit Exit 234
+                        # ("no decoder found for: none"); mit explizitem Mapping laeuft dieselbe
+                        # Datei durch. Warum es nur diese eine von 147 Dateien mit apac-Spur
+                        # traf, ist **nicht** geklaert — die Automatik ist hier schlicht nicht
+                        # vorhersagbar, und genau deshalb waehlen wir selbst.
+                        # `0:a:0?` macht den Ton optional — stumme Clips bleiben gueltig.
+                        "-map",
+                        "0:v:0",
+                        "-map",
+                        "0:a:0?",
                         "-vf",
                         f"scale='min({PROXY_WIDTH},iw)':'min({PROXY_HEIGHT},ih)':force_original_aspect_ratio=decrease",
                         "-c:v",
