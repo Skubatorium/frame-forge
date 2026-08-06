@@ -4840,6 +4840,65 @@
     "place_source": "index"
   },
   {
+    "hash": "sha256:2e93704f85f9941ea4c1fda8142ce73131f86f9965f8ed54051c0a4593b26809",
+    "path": "Chris-iPhone/IMG_9397.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-20T12:36:27+00:00",
+    "captured_at_source": "container",
+    "duration": 11.488333,
+    "probe": {
+      "captured_at": "2026-07-20T12:36:27+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 11.488333,
+      "bitrate": 53991347,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.089,
+      "exposure": 0.897,
+      "score": 0.662
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.911
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 11.48
+      }
+    ],
+    "id": "20260720-camera-2e9370",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9397_1936c421_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9397_1936c421_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9397_1936c421_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weiter Ausblick ueber eine bewaldete Huegellandschaft unter blauem Himmel mit Wolken.",
+      "tags": [
+        "landschaft",
+        "wald",
+        "huegel",
+        "himmel",
+        "ausblick",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
     "hash": "sha256:341c9ab53aca4e5275b792c97618bea1e24f085606915c8cd647ad18f0ccf45e",
     "path": "2026-07-20_Norwegen_Skien_Rudern-See/Vorauswahl/DJI_20260720151858_0002_D-00.01.25.999-00.01.44.610-seg3.MP4",
     "kind": "video",
@@ -6609,6 +6668,66 @@
     "place_source": "stage"
   },
   {
+    "hash": "sha256:c138fe6a5c37286fdac41e5af093796c87dc4fe13e981a534b2c58eeed5b69af",
+    "path": "Chris-iPhone/IMG_9448.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-20T14:02:17+00:00",
+    "captured_at_source": "container",
+    "duration": 39.7667,
+    "probe": {
+      "captured_at": "2026-07-20T14:02:17+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 39.7667,
+      "bitrate": 53402855,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.799,
+      "stability": 0.0,
+      "exposure": 0.845,
+      "score": 0.548
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 39.77
+      }
+    ],
+    "id": "20260720-camera-c138fe",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9448_9519fdf2_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9448_9519fdf2_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9448_9519fdf2_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9448_9519fdf2_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Zwei Kinder stehen auf einem Bootssteg an einem spiegelglatten See, ein Ruderboot ist festgemacht, Felswaende ringsum.",
+      "tags": [
+        "see",
+        "steg",
+        "ruderboot",
+        "kinder",
+        "natur",
+        "spiegelung"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
     "hash": "sha256:c4c360176725474694827a249c5d8ca51f7acea7077b1cb5961ea6325364afe3",
     "path": "2026-07-20_Norwegen_Skien_Hütte-1/Vorauswahl/DJI_20260720140705_0010_D_huette-landscape-1.MP4",
     "kind": "video",
@@ -7909,6 +8028,2111 @@
     "day": 3,
     "stage": "Skien",
     "place_source": "gps"
+  },
+  {
+    "hash": "sha256:01214e4e599156b58bff2ed5b85c5c062474ce94ef8afcd5b430d9d5cdb989f6",
+    "path": "Chris-iPhone/IMG_9439.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T15:14:22+00:00",
+    "gps": {
+      "lat": 59.388352777777776,
+      "lon": 9.406083333333333,
+      "elevation_m": 536.9
+    },
+    "probe": {
+      "captured_at": "2026-07-20T15:14:22+00:00",
+      "gps": {
+        "lat": 59.388352777777776,
+        "lon": 9.406083333333333,
+        "elevation_m": 536.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.246,
+      "exposure": 0.878,
+      "score": 0.562
+    },
+    "id": "20260720-phone-01214e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9439_15c9faee_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Eine Familie zu dritt laechelt auf einem Steg am See, der Junge posiert mit Sonnenbrille.",
+      "tags": [
+        "familie",
+        "see",
+        "steg",
+        "laecheln",
+        "portraet",
+        "kind"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:07ef9fa8005696257b172cf947b3f24d8568f95b72338aae8dfbfc52221e7ba6",
+    "path": "Chris-iPhone/IMG_9453.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T16:37:27+00:00",
+    "gps": {
+      "lat": 59.38735555555556,
+      "lon": 9.409086111111112,
+      "elevation_m": 552.3
+    },
+    "probe": {
+      "captured_at": "2026-07-20T16:37:27+00:00",
+      "gps": {
+        "lat": 59.38735555555556,
+        "lon": 9.409086111111112,
+        "elevation_m": 552.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.635,
+      "score": 0.818
+    },
+    "id": "20260720-phone-07ef9f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9453_a8322903_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Die Sonne strahlt durch die Silhouetten hoher Kiefern im Wald.",
+      "tags": [
+        "wald",
+        "sonne",
+        "kiefern",
+        "silhouette",
+        "himmel",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:0955bac5b4bc971281bb44598159222b9dd14562bca846712d15908c8ae5784b",
+    "path": "Chris-iPhone/IMG_9410.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T14:41:01+00:00",
+    "gps": {
+      "lat": 59.381569444444445,
+      "lon": 9.414319444444445,
+      "elevation_m": 588.0
+    },
+    "probe": {
+      "captured_at": "2026-07-20T14:41:01+00:00",
+      "gps": {
+        "lat": 59.381569444444445,
+        "lon": 9.414319444444445,
+        "elevation_m": 588.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.057,
+      "exposure": 0.913,
+      "score": 0.485
+    },
+    "id": "20260720-phone-0955ba",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9410_cce357f8_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Frau mit Rucksack, Kappe und Sonnenbrille laechelt im Seitenprofil vor einem Waldpanorama.",
+      "tags": [
+        "frau",
+        "portraet",
+        "rucksack",
+        "wald",
+        "laecheln",
+        "sonnenbrille"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:09a067df8c19bc853563e867e3542aa19280514a7e134cbbe26ac64135fdf454",
+    "path": "Chris-iPhone/IMG_9395.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T14:35:59+00:00",
+    "gps": {
+      "lat": 59.381508333333336,
+      "lon": 9.414052777777778,
+      "elevation_m": 559.4
+    },
+    "probe": {
+      "captured_at": "2026-07-20T14:35:59+00:00",
+      "gps": {
+        "lat": 59.381508333333336,
+        "lon": 9.414052777777778,
+        "elevation_m": 559.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.104,
+      "exposure": 0.891,
+      "score": 0.498
+    },
+    "id": "20260720-phone-09a067",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9395_1bb90a3b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Zwei Personen mit Kappen sitzen von hinten auf einer Terrasse und blicken ueber eine weite Wald- und Seenlandschaft.",
+      "tags": [
+        "terrasse",
+        "ausblick",
+        "landschaft",
+        "wald",
+        "see",
+        "ruecken"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:0bd1534d1d3d57ec2e4824e84df2a6c97a739ff9070b64e8241b239f7cd6e1eb",
+    "path": "Chris-iPhone/IMG_9446.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T16:01:57+00:00",
+    "gps": {
+      "lat": 59.38824722222222,
+      "lon": 9.40615,
+      "elevation_m": 537.7
+    },
+    "probe": {
+      "captured_at": "2026-07-20T16:01:57+00:00",
+      "gps": {
+        "lat": 59.38824722222222,
+        "lon": 9.40615,
+        "elevation_m": 537.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.819,
+      "score": 0.909
+    },
+    "id": "20260720-phone-0bd153",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9446_3bcacdd2_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Zwei Frauen und ein Kind pfluecken Beeren am Ufer eines idyllischen Sees, Felswaende im Hintergrund.",
+      "tags": [
+        "beeren",
+        "pfluecken",
+        "see",
+        "frauen",
+        "kind",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:0d05aba18e59ac1fb1c2178c869346dbfc3e86193384611731e6278a2aee4999",
+    "path": "Chris-iPhone/IMG_9392.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T13:47:17+00:00",
+    "gps": {
+      "lat": 59.38174444444444,
+      "lon": 9.414525000000001,
+      "elevation_m": 581.3
+    },
+    "probe": {
+      "captured_at": "2026-07-20T13:47:17+00:00",
+      "gps": {
+        "lat": 59.38174444444444,
+        "lon": 9.414525000000001,
+        "elevation_m": 581.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.316,
+      "exposure": 0.859,
+      "score": 0.588
+    },
+    "id": "20260720-phone-0d05ab",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9392_22d42e45_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Vier Kinder entspannen mit Snacks auf Ledersofas in einer holzverkleideten Stube, Fensterreihe mit Blick auf Felsen.",
+      "tags": [
+        "kinder",
+        "wohnzimmer",
+        "huette",
+        "entspannen",
+        "essen",
+        "sofa"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:0d9a6c15f0ee7d6dbde8e1178a203876d072a201ef9d07af5795cd74ae0f15e9",
+    "path": "Chris-iPhone/IMG_9391.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T13:45:29+00:00",
+    "gps": {
+      "lat": 59.38151666666667,
+      "lon": 9.414458333333334,
+      "elevation_m": 586.3
+    },
+    "probe": {
+      "captured_at": "2026-07-20T13:45:29+00:00",
+      "gps": {
+        "lat": 59.38151666666667,
+        "lon": 9.414458333333334,
+        "elevation_m": 586.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.579,
+      "exposure": 0.983,
+      "score": 0.781
+    },
+    "id": "20260720-phone-0d9a6c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9391_b9151671_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Zwei Frauen unterhalten sich auf einer Holzterrasse, im Vordergrund ein aufblasbares Planschbecken, Blockhuette und Landschaft im Hintergrund.",
+      "tags": [
+        "frauen",
+        "gespraech",
+        "terrasse",
+        "planschbecken",
+        "huette",
+        "landschaft"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1956e73cbaf0c570246d26788ec7952b44823b2300eea9ea3d81b38ed53c448b",
+    "path": "Chris-iPhone/IMG_9447.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T16:02:07+00:00",
+    "gps": {
+      "lat": 59.388263888888886,
+      "lon": 9.406136111111111,
+      "elevation_m": 537.4
+    },
+    "probe": {
+      "captured_at": "2026-07-20T16:02:07+00:00",
+      "gps": {
+        "lat": 59.388263888888886,
+        "lon": 9.406136111111111,
+        "elevation_m": 537.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.439,
+      "exposure": 0.895,
+      "score": 0.667
+    },
+    "id": "20260720-phone-1956e7",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9447_ce4dad58_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Drei Kinder stehen auf einem Steg neben einem festgemachten Ruderboot am See, Felswaende spiegeln sich im Wasser.",
+      "tags": [
+        "kinder",
+        "steg",
+        "ruderboot",
+        "see",
+        "spiegelung",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2308e592ad30fa4d830fc1c39b701c135d1c3d3f842bfb8b13f1491be328355b",
+    "path": "Chris-iPhone/IMG_9468.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T18:11:44+00:00",
+    "gps": {
+      "lat": 59.38152777777778,
+      "lon": 9.414347222222222,
+      "elevation_m": 583.8
+    },
+    "probe": {
+      "captured_at": "2026-07-20T18:11:44+00:00",
+      "gps": {
+        "lat": 59.38152777777778,
+        "lon": 9.414347222222222,
+        "elevation_m": 583.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.168,
+      "exposure": 0.994,
+      "score": 0.581
+    },
+    "id": "20260720-phone-2308e5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9468_baeb05dd_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Familie sitzt am reich gedeckten Esstisch mit gegrilltem Fleisch und Beilagen, Kueche im Hintergrund.",
+      "tags": [
+        "familie",
+        "essen",
+        "grillen",
+        "esstisch",
+        "kueche",
+        "abendessen"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2cd01e1d0915bb0e8ee29267b2784f50e4fe5f625f4b3dc1f4d63288f0bb1162",
+    "path": "Chris-iPhone/IMG_9406.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T14:39:38+00:00",
+    "gps": {
+      "lat": 59.381508333333336,
+      "lon": 9.414402777777779,
+      "elevation_m": 587.1
+    },
+    "probe": {
+      "captured_at": "2026-07-20T14:39:38+00:00",
+      "gps": {
+        "lat": 59.381508333333336,
+        "lon": 9.414402777777779,
+        "elevation_m": 587.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.274,
+      "exposure": 0.97,
+      "score": 0.622
+    },
+    "id": "20260720-phone-2cd01e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9406_b21062ee_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Derselbe Mann im Seitenprofil mit Rucksack vor Landschaftspanorama, ohne Hut.",
+      "tags": [
+        "mann",
+        "portraet",
+        "rucksack",
+        "landschaft",
+        "berge",
+        "seitenprofil"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2e2cf24d8318cc236e2c2b98ddab9549568d95ab8dc07540d8949857a3c3d034",
+    "path": "Chris-iPhone/IMG_9416.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T14:44:03+00:00",
+    "gps": {
+      "lat": 59.381747222222224,
+      "lon": 9.413541666666667,
+      "elevation_m": 577.7
+    },
+    "probe": {
+      "captured_at": "2026-07-20T14:44:03+00:00",
+      "gps": {
+        "lat": 59.381747222222224,
+        "lon": 9.413541666666667,
+        "elevation_m": 577.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.924,
+      "score": 0.962
+    },
+    "id": "20260720-phone-2e2cf2",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9416_0449a0aa_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Nahaufnahme von bluehendem Weidenroeschen vor Waldkulisse und Berghuegeln.",
+      "tags": [
+        "blumen",
+        "weidenroeschen",
+        "wald",
+        "natur",
+        "nahaufnahme",
+        "landschaft"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:38a72ecc55da596736660206b1a967885e5c715012ad73c9272b8f32d51d2975",
+    "path": "Chris-iPhone/IMG_9419.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T14:58:50+00:00",
+    "gps": {
+      "lat": 59.38520555555556,
+      "lon": 9.411652777777778,
+      "elevation_m": 568.3
+    },
+    "probe": {
+      "captured_at": "2026-07-20T14:58:50+00:00",
+      "gps": {
+        "lat": 59.38520555555556,
+        "lon": 9.411652777777778,
+        "elevation_m": 568.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.916,
+      "score": 0.958
+    },
+    "id": "20260720-phone-38a72e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9419_35e590d2_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Drei Kinder laufen ueber Felsen mit Heidekraut in einer Waldlichtung.",
+      "tags": [
+        "kinder",
+        "wandern",
+        "fels",
+        "heidekraut",
+        "wald",
+        "gehen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:3b57bd3b0944e9c1eee7736a82e1175a2c4c24595a9b6dc4f3a47b77b769bf9e",
+    "path": "Chris-iPhone/IMG_9444.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T15:57:03+00:00",
+    "gps": {
+      "lat": 59.38820277777778,
+      "lon": 9.406225000000001,
+      "elevation_m": 530.0
+    },
+    "probe": {
+      "captured_at": "2026-07-20T15:57:03+00:00",
+      "gps": {
+        "lat": 59.38820277777778,
+        "lon": 9.406225000000001,
+        "elevation_m": 530.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.8,
+      "exposure": 0.999,
+      "score": 0.899
+    },
+    "id": "20260720-phone-3b57bd",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9444_27cedf6d_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Frau und zwei Kinder sitzen auf einer Bank am See, ein Steg fuehrt ins Wasser, Felskulisse spiegelt sich.",
+      "tags": [
+        "see",
+        "bank",
+        "familie",
+        "kinder",
+        "natur",
+        "spiegelung"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:3ed4fdff8f7f3d603c7afbb8492831ed0a59cb7c8c9a674df427d25a44f6ad6f",
+    "path": "Chris-iPhone/IMG_9452.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T16:32:28+00:00",
+    "gps": {
+      "lat": 59.388263888888886,
+      "lon": 9.40615,
+      "elevation_m": 538.5
+    },
+    "probe": {
+      "captured_at": "2026-07-20T16:32:28+00:00",
+      "gps": {
+        "lat": 59.388263888888886,
+        "lon": 9.40615,
+        "elevation_m": 538.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.863,
+      "score": 0.931
+    },
+    "id": "20260720-phone-3ed4fd",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9452_f64ec075_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Ein leerer Badesteg an einem spiegelglatten See, Felswand und Wald spiegeln sich im Wasser.",
+      "tags": [
+        "see",
+        "steg",
+        "spiegelung",
+        "natur",
+        "establisher",
+        "fels"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:444b040bce938ea1b340f051120b9dadddaac86c380dd7c00838baff2fd2bec3",
+    "path": "Chris-iPhone/IMG_9423.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T15:04:09+00:00",
+    "gps": {
+      "lat": 59.38706666666667,
+      "lon": 9.409608333333333,
+      "elevation_m": 560.8
+    },
+    "probe": {
+      "captured_at": "2026-07-20T15:04:09+00:00",
+      "gps": {
+        "lat": 59.38706666666667,
+        "lon": 9.409608333333333,
+        "elevation_m": 560.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.926,
+      "exposure": 0.971,
+      "score": 0.948
+    },
+    "id": "20260720-phone-444b04",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9423_f6dbd08a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Frau mit Rucksack wandert von hinten durch dichten Nadelwald, ein Kind vor ihr.",
+      "tags": [
+        "wandern",
+        "frau",
+        "wald",
+        "rucksack",
+        "gehen",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4e7717c7f732f3c291c58908f924dad2468cdb17e5e81d672511ef38538dd4ec",
+    "path": "Chris-iPhone/IMG_9393.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T13:53:24+00:00",
+    "gps": {
+      "lat": 59.381225,
+      "lon": 9.41441111111111,
+      "elevation_m": 587.9
+    },
+    "probe": {
+      "captured_at": "2026-07-20T13:53:24+00:00",
+      "gps": {
+        "lat": 59.381225,
+        "lon": 9.41441111111111,
+        "elevation_m": 587.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.526,
+      "exposure": 0.937,
+      "score": 0.731
+    },
+    "id": "20260720-phone-4e7717",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9393_984007da_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Mann und eine Frau sitzen laechelnd in Klappstuehlen auf der sonnigen Terrasse einer Holzhuette, Landschaft im Hintergrund.",
+      "tags": [
+        "mann",
+        "frau",
+        "terrasse",
+        "huette",
+        "laecheln",
+        "sonne"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4f931965590d5d2fe3dc1ec7c352d5912a6cce0b3d1b3e1cad176d0d1437373d",
+    "path": "Chris-iPhone/IMG_9466.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T18:04:26+00:00",
+    "gps": {
+      "lat": 59.38152222222222,
+      "lon": 9.414341666666667,
+      "elevation_m": 585.0
+    },
+    "probe": {
+      "captured_at": "2026-07-20T18:04:26+00:00",
+      "gps": {
+        "lat": 59.38152222222222,
+        "lon": 9.414341666666667,
+        "elevation_m": 585.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.232,
+      "exposure": 0.96,
+      "score": 0.596
+    },
+    "id": "20260720-phone-4f9319",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9466_1cb0870d_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Vier Kinder entspannen mit Handheld-Spielkonsolen auf Ledersofas in der Huettenstube.",
+      "tags": [
+        "kinder",
+        "spielkonsole",
+        "wohnzimmer",
+        "huette",
+        "entspannen",
+        "sofa"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:58efb4b7b420d23b53208577adb1790d009d3a9646fb929d52c45cf6f571777c",
+    "path": "Chris-iPhone/IMG_9433.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T15:13:40+00:00",
+    "gps": {
+      "lat": 59.388352777777776,
+      "lon": 9.406066666666668,
+      "elevation_m": 538.1
+    },
+    "probe": {
+      "captured_at": "2026-07-20T15:13:40+00:00",
+      "gps": {
+        "lat": 59.388352777777776,
+        "lon": 9.406066666666668,
+        "elevation_m": 538.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.165,
+      "exposure": 0.996,
+      "score": 0.58
+    },
+    "id": "20260720-phone-58efb4",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9433_a466af8a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Dieselbe Familie posiert ruhiger auf dem Steg am See, Felswaende im Hintergrund.",
+      "tags": [
+        "familie",
+        "kinder",
+        "see",
+        "steg",
+        "gruppenfoto",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5f105b13feba4f3d5d7340ff2135854dfddbfe335134b1d99246b948eac72955",
+    "path": "Chris-iPhone/IMG_9441.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T15:31:05+00:00",
+    "gps": {
+      "lat": 59.38800833333333,
+      "lon": 9.406230555555556,
+      "elevation_m": 525.9
+    },
+    "probe": {
+      "captured_at": "2026-07-20T15:31:05+00:00",
+      "gps": {
+        "lat": 59.38800833333333,
+        "lon": 9.406230555555556,
+        "elevation_m": 525.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.239,
+      "exposure": 0.985,
+      "score": 0.612
+    },
+    "id": "20260720-phone-5f105b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9441_010df5d3_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kinder und ein Erwachsener stehen am Seeufer bei einem angelegten Ruderboot, Wald spiegelt sich im Wasser.",
+      "tags": [
+        "see",
+        "ruderboot",
+        "kinder",
+        "ufer",
+        "wald",
+        "spiegelung"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:602619a10313961ed01562bbcc7d628cfcae0232c39838d1499fc0c53494ba38",
+    "path": "Chris-iPhone/IMG_9431.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T15:13:26+00:00",
+    "gps": {
+      "lat": 59.388355555555556,
+      "lon": 9.406066666666668,
+      "elevation_m": 538.4
+    },
+    "probe": {
+      "captured_at": "2026-07-20T15:13:26+00:00",
+      "gps": {
+        "lat": 59.388355555555556,
+        "lon": 9.406066666666668,
+        "elevation_m": 538.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.35,
+      "exposure": 0.885,
+      "score": 0.617
+    },
+    "id": "20260720-phone-602619",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9431_805e3430_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Eine Familie mit drei Kindern posiert lachend eng zusammen auf einem Bootssteg am See, Felswaende und Wald im Hintergrund.",
+      "tags": [
+        "familie",
+        "kinder",
+        "see",
+        "steg",
+        "laecheln",
+        "gruppenfoto"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:61e8c27908e7b33464f2bc6ee44bcb2e63a44a9c2c80a493a2302816c634e281",
+    "path": "Chris-iPhone/IMG_9399.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T14:37:05+00:00",
+    "gps": {
+      "lat": 59.38151944444444,
+      "lon": 9.414361111111111,
+      "elevation_m": 586.6
+    },
+    "probe": {
+      "captured_at": "2026-07-20T14:37:05+00:00",
+      "gps": {
+        "lat": 59.38151944444444,
+        "lon": 9.414361111111111,
+        "elevation_m": 586.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.129,
+      "exposure": 0.95,
+      "score": 0.54
+    },
+    "id": "20260720-phone-61e8c2",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9399_196e3a0d_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Ein Junge und eine Frau mit Sonnenbrillen laecheln auf einer Terrasse, der Junge zeigt Daumen hoch, Berglandschaft im Hintergrund.",
+      "tags": [
+        "kind",
+        "frau",
+        "laecheln",
+        "terrasse",
+        "berge",
+        "sonnenbrille"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7ac1fbdc7db56d19abbffea6576c1fce4ae3a3c66cb7ef88135abf92d5b66375",
+    "path": "Chris-iPhone/IMG_9456.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T16:48:08+00:00",
+    "gps": {
+      "lat": 59.38343888888889,
+      "lon": 9.413655555555556,
+      "elevation_m": 591.9
+    },
+    "probe": {
+      "captured_at": "2026-07-20T16:48:08+00:00",
+      "gps": {
+        "lat": 59.38343888888889,
+        "lon": 9.413655555555556,
+        "elevation_m": 591.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.578,
+      "exposure": 0.996,
+      "score": 0.787
+    },
+    "id": "20260720-phone-7ac1fb",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9456_7b56d1f2_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Gruppe steht auf einem Schotterweg unter dramatischem Wolkenhimmel, Bergpanorama im Hintergrund.",
+      "tags": [
+        "gruppe",
+        "schotterweg",
+        "wolken",
+        "berge",
+        "wandern",
+        "himmel"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7c3e31a3c1c20a3559c349432ae5c34b311c1de656c934d1b4dfa8baf8fdc22d",
+    "path": "Chris-iPhone/IMG_9415.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T14:43:55+00:00",
+    "gps": {
+      "lat": 59.381747222222224,
+      "lon": 9.41355,
+      "elevation_m": 577.3
+    },
+    "probe": {
+      "captured_at": "2026-07-20T14:43:55+00:00",
+      "gps": {
+        "lat": 59.381747222222224,
+        "lon": 9.41355,
+        "elevation_m": 577.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.828,
+      "exposure": 0.895,
+      "score": 0.861
+    },
+    "id": "20260720-phone-7c3e31",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9415_c639ac97_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Bluehendes Weidenroeschen-Feld vor einem abgestorbenen Baum und Waldpanorama unter blauem Himmel.",
+      "tags": [
+        "blumen",
+        "weidenroeschen",
+        "wald",
+        "natur",
+        "himmel",
+        "landschaft"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:8130855504d9f15af691cdc5741d32567f6e6d69374108d03181d10712cc9136",
+    "path": "Chris-iPhone/IMG_9458.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T16:48:48+00:00",
+    "gps": {
+      "lat": 59.38345833333333,
+      "lon": 9.413791666666667,
+      "elevation_m": 598.7
+    },
+    "probe": {
+      "captured_at": "2026-07-20T16:48:48+00:00",
+      "gps": {
+        "lat": 59.38345833333333,
+        "lon": 9.413791666666667,
+        "elevation_m": 598.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.854,
+      "exposure": 0.98,
+      "score": 0.917
+    },
+    "id": "20260720-phone-813085",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9458_9c8a4818_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Zwei Kinder rennen laechelnd einen Schotterweg entlang unter Wolkenhimmel.",
+      "tags": [
+        "kinder",
+        "rennen",
+        "schotterweg",
+        "wolken",
+        "laecheln",
+        "bewegung"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:948d748cddad8d1378c4ba51ccbd603410dbde81b3263d99600b4a743798db9c",
+    "path": "Chris-iPhone/IMG_9390.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T12:18:44+00:00",
+    "gps": {
+      "lat": 59.210213888888894,
+      "lon": 9.564083333333334,
+      "elevation_m": 94.9
+    },
+    "probe": {
+      "captured_at": "2026-07-20T12:18:44+00:00",
+      "gps": {
+        "lat": 59.210213888888894,
+        "lon": 9.564083333333334,
+        "elevation_m": 94.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.259,
+      "exposure": 0.785,
+      "score": 0.522
+    },
+    "id": "20260720-phone-948d74",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9390_eb38f515_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Eine Frau und ein Kind stehen auf einem Balkon und blicken in den blauen Himmel mit Sonne, im Tal eine Haeuserzeile.",
+      "tags": [
+        "balkon",
+        "himmel",
+        "sonne",
+        "frau",
+        "kind",
+        "ausblick"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:9f4dbeb0c0cf10d6426fe923b0e3def25461bc8affd6e857eebcc9c7f7fecef9",
+    "path": "Chris-iPhone/IMG_9465.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T17:27:58+00:00",
+    "gps": {
+      "lat": 59.381480555555555,
+      "lon": 9.41441111111111,
+      "elevation_m": 589.1
+    },
+    "probe": {
+      "captured_at": "2026-07-20T17:27:58+00:00",
+      "gps": {
+        "lat": 59.381480555555555,
+        "lon": 9.41441111111111,
+        "elevation_m": 589.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.876,
+      "score": 0.938
+    },
+    "id": "20260720-phone-9f4dbe",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9465_da1ccd9f_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Mann grillt Fleisch auf einem Kugelgrill im Freien, Rauch steigt auf, Fels- und Waldkulisse im Hintergrund.",
+      "tags": [
+        "grillen",
+        "mann",
+        "essen",
+        "rauch",
+        "natur",
+        "huette"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b4aa6a0b5f46f8dafac228a22f076e1f98633accac68e38f324d6d00f91cfec4",
+    "path": "Chris-iPhone/IMG_9405.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T14:39:07+00:00",
+    "gps": {
+      "lat": 59.38152222222222,
+      "lon": 9.414366666666668,
+      "elevation_m": 587.7
+    },
+    "probe": {
+      "captured_at": "2026-07-20T14:39:07+00:00",
+      "gps": {
+        "lat": 59.38152222222222,
+        "lon": 9.414366666666668,
+        "elevation_m": 587.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.092,
+      "exposure": 0.909,
+      "score": 0.5
+    },
+    "id": "20260720-phone-b4aa6a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9405_59ee25c5_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Mann mit Strohhut und Rucksack laechelt vor einem Panorama aus Wald und Bergen.",
+      "tags": [
+        "mann",
+        "portraet",
+        "laecheln",
+        "huegel",
+        "wald",
+        "himmel"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ba4a15b7ea874649d45dbc08b2cd29222fd3a9af1b509efd8fce31e1339bee3d",
+    "path": "Chris-iPhone/IMG_9442.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T15:33:27+00:00",
+    "gps": {
+      "lat": 59.38827777777778,
+      "lon": 9.405752777777778
+    },
+    "probe": {
+      "captured_at": "2026-07-20T15:33:27+00:00",
+      "gps": {
+        "lat": 59.38827777777778,
+        "lon": 9.405752777777778
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.619,
+      "exposure": 0.995,
+      "score": 0.807
+    },
+    "id": "20260720-phone-ba4a15",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9442_fe43cad1_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Ein Ruderboot mit einem Mann und Kindern gleitet ueber einen spiegelglatten Waldsee.",
+      "tags": [
+        "ruderboot",
+        "see",
+        "wald",
+        "spiegelung",
+        "natur",
+        "establisher"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:bcc3b52c3f3a2d0da059afa098730e409a21ed4ad4ef9a2f4a309e13c2a77a0d",
+    "path": "Chris-iPhone/IMG_9420.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T15:00:40+00:00",
+    "gps": {
+      "lat": 59.38522777777778,
+      "lon": 9.411605555555555,
+      "elevation_m": 571.6
+    },
+    "probe": {
+      "captured_at": "2026-07-20T15:00:40+00:00",
+      "gps": {
+        "lat": 59.38522777777778,
+        "lon": 9.411605555555555,
+        "elevation_m": 571.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.023,
+      "exposure": 0.886,
+      "score": 0.455
+    },
+    "id": "20260720-phone-bcc3b5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9420_dfaf8f71_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Nahaufnahme einer Moltebeere auf einer Hand vor gruener Vegetation.",
+      "tags": [
+        "moltebeere",
+        "natur",
+        "nahaufnahme",
+        "hand",
+        "wald",
+        "detail"
+      ],
+      "people": true,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:be944c4bd2956824b4c69cea08e6e1692509f23fdd7b45f79c9d8dc630e8ab70",
+    "path": "Chris-iPhone/IMG_9455.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T16:37:43+00:00",
+    "gps": {
+      "lat": 59.38729166666667,
+      "lon": 9.409180555555556,
+      "elevation_m": 553.8
+    },
+    "probe": {
+      "captured_at": "2026-07-20T16:37:43+00:00",
+      "gps": {
+        "lat": 59.38729166666667,
+        "lon": 9.409180555555556,
+        "elevation_m": 553.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.901,
+      "score": 0.95
+    },
+    "id": "20260720-phone-be944c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9455_89fe1db0_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Selfie eines Mannes mit Kappe im Wald, im Hintergrund naehert sich laechelnd ein zweiter Mann mit Rucksack.",
+      "tags": [
+        "mann",
+        "selfie",
+        "wald",
+        "wandern",
+        "laecheln",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c81868c8d831d4ae55234f0f2d4471327583d09e059077fdf742d02da2e5bdc0",
+    "path": "Chris-iPhone/IMG_9417.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T14:47:31+00:00",
+    "gps": {
+      "lat": 59.38216666666667,
+      "lon": 9.413611111111111,
+      "elevation_m": 584.0
+    },
+    "probe": {
+      "captured_at": "2026-07-20T14:47:31+00:00",
+      "gps": {
+        "lat": 59.38216666666667,
+        "lon": 9.413611111111111,
+        "elevation_m": 584.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.973,
+      "score": 0.986
+    },
+    "id": "20260720-phone-c81868",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9417_9e731711_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Zwei Frauen und zwei Kinder wandern von hinten auf einem Schotterweg durch den Wald.",
+      "tags": [
+        "wandern",
+        "gruppe",
+        "kinder",
+        "schotterweg",
+        "wald",
+        "gehen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c98d3dbee6cebdf2450bb87d2d434eedd345362807378b05a8eb3b2bbe9e3734",
+    "path": "Chris-iPhone/IMG_9394.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T13:53:30+00:00",
+    "gps": {
+      "lat": 59.38135555555556,
+      "lon": 9.414338888888889,
+      "elevation_m": 581.0
+    },
+    "probe": {
+      "captured_at": "2026-07-20T13:53:30+00:00",
+      "gps": {
+        "lat": 59.38135555555556,
+        "lon": 9.414338888888889,
+        "elevation_m": 581.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.493,
+      "exposure": 0.982,
+      "score": 0.737
+    },
+    "id": "20260720-phone-c98d3d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9394_f44e05b8_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kiesplatz mit parkenden Autos vor einer dunklen Holzhuette, weiter Blick ueber Wald- und Berglandschaft.",
+      "tags": [
+        "huette",
+        "parkplatz",
+        "auto",
+        "landschaft",
+        "wald",
+        "berge"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d10ecb24675d916cf6490aed3a7daf71802d3f814547ce313d8708840f475948",
+    "path": "Chris-iPhone/IMG_9424.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T15:04:55+00:00",
+    "gps": {
+      "lat": 59.387,
+      "lon": 9.409611111111111,
+      "elevation_m": 563.1
+    },
+    "probe": {
+      "captured_at": "2026-07-20T15:04:55+00:00",
+      "gps": {
+        "lat": 59.387,
+        "lon": 9.409611111111111,
+        "elevation_m": 563.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.909,
+      "score": 0.954
+    },
+    "id": "20260720-phone-d10ecb",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9424_76995183_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Nahaufnahme eines Mannes, der grinsend wilde Blaubeeren isst, Wald im Hintergrund.",
+      "tags": [
+        "mann",
+        "blaubeeren",
+        "essen",
+        "grimasse",
+        "wald",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d308b8d15e2e7d0382dcb85c7fdbbfe6759c3a06a813c07c38d5e2e6161724bb",
+    "path": "Chris-iPhone/IMG_9460.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T16:54:12+00:00",
+    "gps": {
+      "lat": 59.382308333333334,
+      "lon": 9.414352777777777,
+      "elevation_m": 585.7
+    },
+    "probe": {
+      "captured_at": "2026-07-20T16:54:12+00:00",
+      "gps": {
+        "lat": 59.382308333333334,
+        "lon": 9.414352777777777,
+        "elevation_m": 585.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.848,
+      "score": 0.924
+    },
+    "id": "20260720-phone-d308b8",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9460_e3ef1e9c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Aehnlicher Blick auf denselben Schotterweg mit Weidenroeschen aus leicht anderem Winkel.",
+      "tags": [
+        "weg",
+        "wald",
+        "weidenroeschen",
+        "himmel",
+        "natur",
+        "landschaft"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d7355200bb7d3dd54bf1f24fca8be341ed3469459b3c97b7dceaad9550358d5d",
+    "path": "Chris-iPhone/IMG_9418.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T14:57:22+00:00",
+    "gps": {
+      "lat": 59.38541111111111,
+      "lon": 9.41178611111111,
+      "elevation_m": 568.5
+    },
+    "probe": {
+      "captured_at": "2026-07-20T14:57:22+00:00",
+      "gps": {
+        "lat": 59.38541111111111,
+        "lon": 9.41178611111111,
+        "elevation_m": 568.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.586,
+      "exposure": 0.894,
+      "score": 0.74
+    },
+    "id": "20260720-phone-d73552",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9418_2d23c438_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Gruppe wandert von hinten auf einem schmalen Waldpfad zwischen Birken und Kiefern.",
+      "tags": [
+        "wandern",
+        "gruppe",
+        "waldpfad",
+        "rucksaecke",
+        "natur",
+        "gehen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d7e4d0a8202a760de956b646022cbed79e04d3c40701e3adbdf683950abd5299",
+    "path": "Chris-iPhone/IMG_9407.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T14:40:42+00:00",
+    "gps": {
+      "lat": 59.38161111111111,
+      "lon": 9.414347222222222,
+      "elevation_m": 588.8
+    },
+    "probe": {
+      "captured_at": "2026-07-20T14:40:42+00:00",
+      "gps": {
+        "lat": 59.38161111111111,
+        "lon": 9.414347222222222,
+        "elevation_m": 588.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.286,
+      "exposure": 0.847,
+      "score": 0.566
+    },
+    "id": "20260720-phone-d7e4d0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9407_c1f330ea_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Gruppe aus Erwachsenen und Kindern mit Rucksaecken laeuft ueber die Terrasse einer Holzhuette, Aufbruch zur Wanderung.",
+      "tags": [
+        "gruppe",
+        "kinder",
+        "wanderung",
+        "huette",
+        "terrasse",
+        "rucksaecke"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d870fd6bde8fb39cec2fc5ab0218af880e22499a754da65482774431ad70b381",
+    "path": "Chris-iPhone/IMG_9425.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T15:11:18+00:00",
+    "gps": {
+      "lat": 59.387877777777774,
+      "lon": 9.406516666666667,
+      "elevation_m": 535.2
+    },
+    "probe": {
+      "captured_at": "2026-07-20T15:11:18+00:00",
+      "gps": {
+        "lat": 59.387877777777774,
+        "lon": 9.406516666666667,
+        "elevation_m": 535.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.819,
+      "score": 0.91
+    },
+    "id": "20260720-phone-d870fd",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9425_de4776e3_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Eine Frau mit Rucksack naehert sich einem See mit kleiner Huette am Ufer, Waldkulisse ringsum.",
+      "tags": [
+        "see",
+        "huette",
+        "wandern",
+        "wald",
+        "natur",
+        "frau"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:dc1167896364f5f8b7baaebe96680dfa009d4f709f8c5cf3e68176526d292a9c",
+    "path": "Chris-iPhone/IMG_9457.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T16:48:41+00:00",
+    "gps": {
+      "lat": 59.38345277777778,
+      "lon": 9.413783333333333,
+      "elevation_m": 595.2
+    },
+    "probe": {
+      "captured_at": "2026-07-20T16:48:41+00:00",
+      "gps": {
+        "lat": 59.38345277777778,
+        "lon": 9.413783333333333,
+        "elevation_m": 595.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.485,
+      "exposure": 0.85,
+      "score": 0.668
+    },
+    "id": "20260720-phone-dc1167",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9457_6638a5bb_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Drei Kinder laufen auf einem Schotterweg, Bergpanorama mit Waldhuegel im Hintergrund.",
+      "tags": [
+        "kinder",
+        "schotterweg",
+        "berge",
+        "wald",
+        "gehen",
+        "wandern"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:dcd06476769a20f098dfd1d059d5e0f8a50cc55f4a18491723dd52ad78deeddc",
+    "path": "Chris-iPhone/IMG_9414.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T14:41:35+00:00",
+    "gps": {
+      "lat": 59.38156111111111,
+      "lon": 9.414325,
+      "elevation_m": 587.9
+    },
+    "probe": {
+      "captured_at": "2026-07-20T14:41:35+00:00",
+      "gps": {
+        "lat": 59.38156111111111,
+        "lon": 9.414325,
+        "elevation_m": 587.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.073,
+      "exposure": 0.962,
+      "score": 0.517
+    },
+    "id": "20260720-phone-dcd064",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9414_55c73e88_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein baertiger Mann mit Kappe laechelt im Seitenprofil vor einem Waldpanorama.",
+      "tags": [
+        "mann",
+        "portraet",
+        "bart",
+        "wald",
+        "laecheln",
+        "huegel"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f6d23b066f8698baec96d84f92240526ccc64c4213eb95fa5bd90949bb82d701",
+    "path": "Chris-iPhone/IMG_9462.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T17:12:40+00:00",
+    "gps": {
+      "lat": 59.381477777777775,
+      "lon": 9.414425,
+      "elevation_m": 586.7
+    },
+    "probe": {
+      "captured_at": "2026-07-20T17:12:40+00:00",
+      "gps": {
+        "lat": 59.381477777777775,
+        "lon": 9.414425,
+        "elevation_m": 586.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.215,
+      "exposure": 0.913,
+      "score": 0.564
+    },
+    "id": "20260720-phone-f6d23b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9462_8cb2157d_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Zweistoeckige dunkle Holzhuette mit Terrasse und aufblasbarem Planschbecken, Abendhimmel im Hintergrund.",
+      "tags": [
+        "huette",
+        "terrasse",
+        "planschbecken",
+        "haus",
+        "abend",
+        "himmel"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:fae5568a614e4e05085797e840aa2e5631b7a380c4b1638b3711732d2700f13f",
+    "path": "Chris-iPhone/IMG_9459.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T16:54:10+00:00",
+    "gps": {
+      "lat": 59.38206944444445,
+      "lon": 9.414258333333335,
+      "elevation_m": 569.4
+    },
+    "probe": {
+      "captured_at": "2026-07-20T16:54:10+00:00",
+      "gps": {
+        "lat": 59.38206944444445,
+        "lon": 9.414258333333335,
+        "elevation_m": 569.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.794,
+      "score": 0.897
+    },
+    "id": "20260720-phone-fae556",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9459_00fa69cc_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Leerer Schotterweg zwischen Wald und bluehendem Weidenroeschen, Wolkenhimmel.",
+      "tags": [
+        "weg",
+        "wald",
+        "weidenroeschen",
+        "himmel",
+        "natur",
+        "landschaft"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:fd733a7bfa96b123f78a5c326f01140fce078d801a7985aae0c681ffd2002baf",
+    "path": "Chris-iPhone/IMG_9443.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T15:33:45+00:00",
+    "gps": {
+      "lat": 59.38823333333333,
+      "lon": 9.406233333333335,
+      "elevation_m": 537.7
+    },
+    "probe": {
+      "captured_at": "2026-07-20T15:33:45+00:00",
+      "gps": {
+        "lat": 59.38823333333333,
+        "lon": 9.406233333333335,
+        "elevation_m": 537.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.231,
+      "exposure": 0.803,
+      "score": 0.517
+    },
+    "id": "20260720-phone-fd733a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9443_865286ef_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Zwei Frauen posieren laechelnd vor einem dunklen Bootshaus mit Rettungsring, Wald im Hintergrund.",
+      "tags": [
+        "frauen",
+        "bootshaus",
+        "rettungsring",
+        "laecheln",
+        "posieren",
+        "wald"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ffc1efa2bfa6723f990cb7c6311b46d826ac476adc204953f000c09946de6cd5",
+    "path": "Chris-iPhone/IMG_9422.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T15:00:44+00:00",
+    "gps": {
+      "lat": 59.38601666666666,
+      "lon": 9.411111111111111,
+      "elevation_m": 573.6
+    },
+    "probe": {
+      "captured_at": "2026-07-20T15:00:44+00:00",
+      "gps": {
+        "lat": 59.38601666666666,
+        "lon": 9.411111111111111,
+        "elevation_m": 573.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.185,
+      "exposure": 0.991,
+      "score": 0.588
+    },
+    "id": "20260720-phone-ffc1ef",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9422_109bbd3b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Eine Frau mit Rucksack laechelt und zeigt eine gefundene Moltebeere in der Hand, im Hintergrund eine weitere Person am Waldweg.",
+      "tags": [
+        "frau",
+        "moltebeere",
+        "wandern",
+        "laecheln",
+        "wald",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
   },
   {
     "hash": "sha256:01db2ecf88c75fb4a3dfcc7872d341b2e39d812f27b94d60ec831a81af04a3e7",

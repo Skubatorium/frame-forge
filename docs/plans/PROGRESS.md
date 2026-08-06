@@ -235,7 +235,7 @@ konstant 0 und ein Test darauf belegte nichts.
 |---|---|
 | `ingest` — Proxies | ✅ 975/975 |
 | `prepare-index` — Keyframes, CV, `captured_at`, GPS | ✅ 689/689, keine Fehlschlaege |
-| Inhaltliche Sichtung (Beschreibung/Tags/Rating) | 🔄 **81 von 689** |
+| Inhaltliche Sichtung (Beschreibung/Tags/Rating) | 🔄 **126 von 689** |
 
 **Der HEIC-Weg hat sich am echten Material bewaehrt.** Ohne das Arbeitspaket von 2026-08-05
 waeren die 539 Fotos still aus dem Index gefallen. Aufnahmezeit liegt bei **allen 689** vor
@@ -249,14 +249,23 @@ faellig, sonst bleiben die neuen Tage ohne Etappe.
 
 ### Fortschritt der Sichtung
 
-Chronologisch, Tag fuer Tag. **Hier weitermachen: 2026-07-20**.
+Chronologisch, Tag fuer Tag. **Hier weitermachen: 2026-07-21** (nur noch 5 neue
+Chris-iPhone-Assets an diesem Tag, Rest der 15 war schon aus dem urspruenglichen
+286er-Bestand indiziert).
 
-| Tag | Assets | indiziert |
+| Tag | Chris-iPhone-Assets | indiziert |
 |---|---:|---|
 | 2026-07-17 | 6 | ✅ 6 — Verladen zu Hause am Abend vor der Abreise |
 | 2026-07-18 | 42 | ✅ 42 — Fahrt NRW → Flensburg (Aufbruch, Raststaette, Hamburger Hafen, Nord-Ostsee-Kanal, Ankunft) + Abend am Hafen: Blumenkaesten/Establisher, Restaurant "Gosch" (Essen, Kartenhaus-Spiel, Anstossen), Spaziergang am Hafensteg, Willkommenstafel B&B Hotel Flensburg |
 | 2026-07-19 | 33 | ✅ 33 — Abreise vom Hotel, Faehrterminal Color Line, Ueberfahrt (Deck, Bordrestaurant, Brettspiel, Familienselfies), Ankunft bei Freunden/Familie: Pizzaessen, Kinder spielen, Fernsehen |
-| 2026-07-20 … 2026-08-04 | 608 | ⬜ |
+| 2026-07-20 | 45 | ✅ 45 — Huette/Ferienhaus: Terrasse, Panorama-Portraets, Wanderung (Moltebeeren, Blaubeeren, Weidenroeschen), Ruderboot-Ausflug auf Waldsee, Beerenpfluecken, Grillabend |
+| 2026-07-21 … 2026-08-04 | 563 | ⬜ |
+
+**Hinweis zur Zaehlung:** `689` ist die Gesamtzahl der neuen Chris-iPhone-Dateien (aus
+`prepare-index`, Pfadpraefix `Chris-iPhone/`). Die Tagestabellen in `assets.json` zeigen pro
+Kalendertag oft mehr Eintraege, weil der urspruengliche 286er-Bestand (andere Kameras, bereits
+vollstaendig indiziert) dieselben Tage abdeckt — die Tabelle hier zaehlt nur die neuen
+Chris-iPhone-Assets, nicht den Tages-Gesamtbestand.
 
 **Selbstkontrolle nach 2026-07-18** (Auftrag: 5 Beschreibungen gegen Keyframes gegenpruefen):
 `945bc1`, `e1f63e`, `833dc9`, `b0640a`, `af6f76` geprueft — alle halten, keine Korrektur noetig.
