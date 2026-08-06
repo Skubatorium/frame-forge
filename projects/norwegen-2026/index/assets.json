@@ -17022,6 +17022,1611 @@
     }
   },
   {
+    "hash": "sha256:0110fca57a6739749cb4aaa4eceac8e3d11e89b247a77f793902481425211a48",
+    "path": "Chris-iPhone/IMG_9699.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T15:22:53+00:00",
+    "captured_at_source": "container",
+    "duration": 11.305,
+    "probe": {
+      "captured_at": "2026-07-24T15:22:53+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 11.305,
+      "bitrate": 54653474,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.076,
+      "exposure": 0.858,
+      "score": 0.645
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.924
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 11.3
+      }
+    ],
+    "id": "20260724-camera-0110fc",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9699_90c54179_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9699_90c54179_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9699_90c54179_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Person in rotem Kleid steht bei einer Steinruine neben einem grossen Wasserfall.",
+      "tags": [
+        "wasserfall",
+        "ruine",
+        "fels",
+        "natur",
+        "person",
+        "landschaft"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:0995b524855dd3b2ad79e216f79781f2849310e3a4859d7b444fd9bef152c6ed",
+    "path": "Chris-iPhone/IMG_9675.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T14:35:54+00:00",
+    "captured_at_source": "container",
+    "duration": 72.363333,
+    "probe": {
+      "captured_at": "2026-07-24T14:35:54+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 72.363333,
+      "bitrate": 80806844,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.759,
+      "stability": 0.231,
+      "exposure": 0.793,
+      "score": 0.594
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.769
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 13.18
+      },
+      {
+        "start": 13.18,
+        "end": 13.88
+      },
+      {
+        "start": 13.88,
+        "end": 34.28
+      },
+      {
+        "start": 34.28,
+        "end": 71.1
+      },
+      {
+        "start": 71.1,
+        "end": 72.37
+      }
+    ],
+    "id": "20260724-camera-0995b5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9675_2051ef82_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9675_2051ef82_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9675_2051ef82_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9675_2051ef82_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9675_2051ef82_kf04.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9675_2051ef82_kf05.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Bergwiesen mit mehreren duennen Wasserfaellen, aus dem Zug gefilmt.",
+      "tags": [
+        "berge",
+        "wasserfall",
+        "wiese",
+        "zug",
+        "natur",
+        "landschaft"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:105248791ba2b4962d58c35a507a54665819215203717c947221777e841374ab",
+    "path": "Chris-iPhone/IMG_9709.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T16:38:31+00:00",
+    "captured_at_source": "container",
+    "duration": 8.24,
+    "probe": {
+      "captured_at": "2026-07-24T16:38:31+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 8.24,
+      "bitrate": 53956665,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.588,
+      "stability": 0.0,
+      "exposure": 0.822,
+      "score": 0.47
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 8.24
+      }
+    ],
+    "id": "20260724-camera-105248",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9709_368b3d25_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9709_368b3d25_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9709_368b3d25_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Eine Frau geht von der Terrasse einer Ferienhuette, Fjordblick mit kleinen Nebengebaeuden.",
+      "tags": [
+        "frau",
+        "huette",
+        "terrasse",
+        "fjord",
+        "gehen",
+        "ferienhaus"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:12a4a1e93158448ca68812ec37c81fdf12bf6939090ce038cfe0f68b2dc419d0",
+    "path": "Chris-iPhone/IMG_9697.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T15:20:40+00:00",
+    "captured_at_source": "container",
+    "duration": 16.49,
+    "probe": {
+      "captured_at": "2026-07-24T15:20:40+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 16.49,
+      "bitrate": 41832675,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.515,
+      "stability": 0.187,
+      "exposure": 0.611,
+      "score": 0.438
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.813
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 16.5
+      }
+    ],
+    "id": "20260724-camera-12a4a1",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9697_2b3217a1_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9697_2b3217a1_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9697_2b3217a1_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9697_2b3217a1_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Aehnlicher Blick auf ein neblig verhangenes Tal mit Wasserfall, steile Felswand rechts im Bild.",
+      "tags": [
+        "tal",
+        "nebel",
+        "wasserfall",
+        "fels",
+        "berge",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:17dfe8e43252353abb0abb209384698f1df926b62d7fe13ec7c6d26b86fc0bac",
+    "path": "Chris-iPhone/IMG_9665.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T14:12:51+00:00",
+    "captured_at_source": "container",
+    "duration": 24.823333,
+    "probe": {
+      "captured_at": "2026-07-24T14:12:51+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 24.823333,
+      "bitrate": 57452269,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.418,
+      "stability": 0.13,
+      "exposure": 0.792,
+      "score": 0.447
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.87
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 24.82
+      }
+    ],
+    "id": "20260724-camera-17dfe8",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9665_b366a2c1_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9665_b366a2c1_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9665_b366a2c1_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Nebelverhangenes Tal mit steilen bewaldeten Berghaengen, Wiese und Fluss im Talgrund.",
+      "tags": [
+        "tal",
+        "nebel",
+        "berge",
+        "wald",
+        "fluss",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1f785905d3de79d00aeaa8fa7ed2f7582652d70fb34062780e8df896a9193df3",
+    "path": "Chris-iPhone/IMG_9706.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T15:51:49+00:00",
+    "captured_at_source": "container",
+    "duration": 59.476667,
+    "probe": {
+      "captured_at": "2026-07-24T15:51:49+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 59.476667,
+      "bitrate": 83501580,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.816,
+      "score": 0.605
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 28.63
+      },
+      {
+        "start": 28.63,
+        "end": 30.03
+      },
+      {
+        "start": 30.03,
+        "end": 30.63
+      },
+      {
+        "start": 30.63,
+        "end": 31.3
+      },
+      {
+        "start": 31.3,
+        "end": 59.48
+      }
+    ],
+    "id": "20260724-camera-1f7859",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9706_a603c5a3_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9706_a603c5a3_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9706_a603c5a3_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9706_a603c5a3_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9706_a603c5a3_kf04.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9706_a603c5a3_kf05.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Blick aus dem Zugfenster ueber Baumwipfel ins Tal, steile Felswaende im Hintergrund.",
+      "tags": [
+        "zug",
+        "baeume",
+        "tal",
+        "felsen",
+        "fenster",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:45209c546170f70b2e6ffd48be8568b477e32a878b4c83f73bf59d48adae1e34",
+    "path": "Chris-iPhone/IMG_9624.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T09:59:16+00:00",
+    "captured_at_source": "container",
+    "duration": 11.805,
+    "probe": {
+      "captured_at": "2026-07-24T09:59:16+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 11.805,
+      "bitrate": 65272935,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.79,
+      "score": 0.597
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 11.8
+      }
+    ],
+    "id": "20260724-camera-45209c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9624_d68e4b0c_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9624_d68e4b0c_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9624_d68e4b0c_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Nahezu identische Aufnahme desselben Wildbachs ueber Felsen.",
+      "tags": [
+        "bach",
+        "wasser",
+        "felsen",
+        "natur",
+        "wildbach",
+        "landschaft"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:45e18d7bf3347d0a3e1fedd24f6777f5be0dbba49f4a482fabb08952dce63668",
+    "path": "Chris-iPhone/IMG_9671.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T14:29:19+00:00",
+    "captured_at_source": "container",
+    "duration": 11.408333,
+    "probe": {
+      "captured_at": "2026-07-24T14:29:19+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 11.408333,
+      "bitrate": 54525806,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.572,
+      "stability": 0.0,
+      "exposure": 0.853,
+      "score": 0.475
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 11.42
+      }
+    ],
+    "id": "20260724-camera-45e18d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9671_aedf6d21_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9671_aedf6d21_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9671_aedf6d21_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9671_aedf6d21_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Zug faehrt vorbei, entgegenkommender gruener Waggon auf Nachbargleis.",
+      "tags": [
+        "zug",
+        "bahnhof",
+        "fahrt",
+        "detail",
+        "waggon",
+        "gleis"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4fbe9ee41d85d95abbffe3559a16497900d76d64f317a73206f56e7ca6ac3d5f",
+    "path": "Chris-iPhone/IMG_9680.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T14:42:00+00:00",
+    "captured_at_source": "container",
+    "duration": 133.678333,
+    "probe": {
+      "captured_at": "2026-07-24T14:42:00+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 133.678333,
+      "bitrate": 63395601,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.931,
+      "stability": 0.0,
+      "exposure": 0.732,
+      "score": 0.554
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 9.43
+      },
+      {
+        "start": 9.43,
+        "end": 63.6
+      },
+      {
+        "start": 63.6,
+        "end": 89.31
+      },
+      {
+        "start": 89.31,
+        "end": 106.66
+      },
+      {
+        "start": 106.66,
+        "end": 133.7
+      }
+    ],
+    "id": "20260724-camera-4fbe9e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9680_624ebb1e_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9680_624ebb1e_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9680_624ebb1e_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9680_624ebb1e_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9680_624ebb1e_kf04.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9680_624ebb1e_kf05.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Weitere Perspektive desselben Wasserfalls, eine verlassene Steinruine steht daneben.",
+      "tags": [
+        "wasserfall",
+        "ruine",
+        "fels",
+        "natur",
+        "landschaft",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:510f9804b8703fa234f63b3aaf8b5ab2cdf2044ef2499bec025723dce6a60a28",
+    "path": "Chris-iPhone/IMG_9704.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T15:45:21+00:00",
+    "captured_at_source": "container",
+    "duration": 20.486667,
+    "probe": {
+      "captured_at": "2026-07-24T15:45:21+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 20.486667,
+      "bitrate": 58059790,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.021,
+      "exposure": 0.777,
+      "score": 0.599
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.979
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 20.49
+      }
+    ],
+    "id": "20260724-camera-510f98",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9704_2f8ffb45_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9704_2f8ffb45_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9704_2f8ffb45_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Blick vom fahrenden Zug auf ein gruenes Tal mit vereinzelten Holzhaeusern.",
+      "tags": [
+        "zug",
+        "tal",
+        "haus",
+        "gruen",
+        "natur",
+        "fahrt"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:75c7e90b578ff1f4db8114898e83eacad1b97d7ce308a0c560fb1315e4f9f118",
+    "path": "Chris-iPhone/IMG_9718.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T17:43:03+00:00",
+    "captured_at_source": "container",
+    "duration": 8.758333,
+    "probe": {
+      "captured_at": "2026-07-24T17:43:03+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 8.758333,
+      "bitrate": 54183601,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.529,
+      "stability": 0.0,
+      "exposure": 0.856,
+      "score": 0.462
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 8.76
+      }
+    ],
+    "id": "20260724-camera-75c7e9",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9718_17bf7de0_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9718_17bf7de0_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9718_17bf7de0_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Establisher einer Ferienhaeuschen-Siedlung mit Fjordblick, Berge im Hintergrund.",
+      "tags": [
+        "ferienhaeuser",
+        "fjord",
+        "establisher",
+        "berge",
+        "siedlung",
+        "landschaft"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:86552a8641cd3e88bf66abbfa12fa10a7485139481c5bf1337096fb5eca49435",
+    "path": "Chris-iPhone/IMG_9700.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T15:24:48+00:00",
+    "captured_at_source": "container",
+    "duration": 10.2567,
+    "probe": {
+      "captured_at": "2026-07-24T15:24:48+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 10.2567,
+      "bitrate": 59997254,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.247,
+      "stability": 0.0,
+      "exposure": 0.951,
+      "score": 0.399
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 10.27
+      }
+    ],
+    "id": "20260724-camera-86552a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9700_ca4094f8_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9700_ca4094f8_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9700_ca4094f8_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Junge sitzt gespannt am Fenster im historischen Zugabteil mit alten Polstersitzen.",
+      "tags": [
+        "kind",
+        "zug",
+        "fenster",
+        "abteil",
+        "portraet",
+        "unterwegs"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:86b010430cc70e9a2c4d47d980bdd7e95ee0c15f7fa79ab6133796f02e5859e7",
+    "path": "Chris-iPhone/IMG_9645.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T13:05:20+00:00",
+    "captured_at_source": "container",
+    "duration": 10.7867,
+    "probe": {
+      "captured_at": "2026-07-24T13:05:20+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 10.7867,
+      "bitrate": 53118410,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.896,
+      "score": 0.632
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 10.78
+      }
+    ],
+    "id": "20260724-camera-86b010",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9645_f9323820_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9645_f9323820_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9645_f9323820_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein grosses Kreuzfahrtschiff liegt im Hafen, ein Baum steht im Vordergrund.",
+      "tags": [
+        "kreuzfahrtschiff",
+        "hafen",
+        "schiff",
+        "establisher",
+        "baum",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a690e2466eb541a8d7518ad53b3a0be172d3366603ecccf1d96820f04a388742",
+    "path": "Chris-iPhone/IMG_9637.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T11:58:29+00:00",
+    "captured_at_source": "container",
+    "duration": 17.44,
+    "probe": {
+      "captured_at": "2026-07-24T11:58:29+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 17.44,
+      "bitrate": 53615877,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.175,
+      "stability": 0.222,
+      "exposure": 0.796,
+      "score": 0.398
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.778
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 17.45
+      }
+    ],
+    "id": "20260724-camera-a690e2",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9637_8fe643b7_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9637_8fe643b7_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9637_8fe643b7_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Spektakulaerer Blick auf einen Fjord von einem erhoehten Aussichtspunkt, Nebel haengt ueber den Berghaengen.",
+      "tags": [
+        "fjord",
+        "aussicht",
+        "berge",
+        "nebel",
+        "establisher",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b1135ded78cd89e6e5af16b18a0341aec0e8d261b6d910d4b769978f1a38fea2",
+    "path": "Chris-iPhone/IMG_9628.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T11:00:15+00:00",
+    "captured_at_source": "container",
+    "duration": 15.0067,
+    "probe": {
+      "captured_at": "2026-07-24T11:00:15+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 15.0067,
+      "bitrate": 100740353,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.457,
+      "stability": 0.024,
+      "exposure": 0.652,
+      "score": 0.378
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.976
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 15.0
+      }
+    ],
+    "id": "20260724-camera-b1135d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9628_6c377faf_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9628_6c377faf_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9628_6c377faf_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Kameraschwenk von dichtem Gebuesch zum bewoelkten Himmel mit einer Bergspitze am Horizont.",
+      "tags": [
+        "gebuesch",
+        "himmel",
+        "berge",
+        "natur",
+        "wolken",
+        "landschaft"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:bebaab07387ad67568d4fc185aeab7a755c10535dc8b51673ceb3bbcf409dbc5",
+    "path": "Chris-iPhone/IMG_9623.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T09:59:04+00:00",
+    "captured_at_source": "container",
+    "duration": 7.718333,
+    "probe": {
+      "captured_at": "2026-07-24T09:59:04+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 7.718333,
+      "bitrate": 70296985,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.762,
+      "score": 0.587
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 7.72
+      }
+    ],
+    "id": "20260724-camera-bebaab",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9623_4797a519_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9623_4797a519_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9623_4797a519_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Wildbach fliesst ueber Felsen zwischen dichtem Gebuesch, Naturaufnahme.",
+      "tags": [
+        "bach",
+        "wasser",
+        "felsen",
+        "natur",
+        "wildbach",
+        "landschaft"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c4555ce1044c6e6c0397668489bc59cfb6d17da964411bcd21301ec7f0570b85",
+    "path": "Chris-iPhone/IMG_9705.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T15:48:08+00:00",
+    "captured_at_source": "container",
+    "duration": 66.1917,
+    "probe": {
+      "captured_at": "2026-07-24T15:48:08+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 66.1917,
+      "bitrate": 58538879,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.875,
+      "stability": 0.158,
+      "exposure": 0.71,
+      "score": 0.581
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.842
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 42.35
+      },
+      {
+        "start": 42.35,
+        "end": 66.2
+      }
+    ],
+    "id": "20260724-camera-c4555c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9705_c69116df_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9705_c69116df_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9705_c69116df_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9705_c69116df_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9705_c69116df_kf04.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein schmaler Wasserfall stuerzt eine bewaldete Felswand hinab.",
+      "tags": [
+        "wasserfall",
+        "fels",
+        "wald",
+        "natur",
+        "berge",
+        "landschaft"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c5c9777fe6451510876d6f9bfa22a6c9a0ea5deb0134db1decffed86c3d50ebc",
+    "path": "Chris-iPhone/IMG_9618.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T06:58:01+00:00",
+    "captured_at_source": "container",
+    "duration": 9.553333,
+    "probe": {
+      "captured_at": "2026-07-24T06:58:01+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 9.553333,
+      "bitrate": 53774238,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.9,
+      "stability": 0.13,
+      "exposure": 0.677,
+      "score": 0.569
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.87
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 9.55
+      }
+    ],
+    "id": "20260724-camera-c5c977",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9618_ceba07db_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9618_ceba07db_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9618_ceba07db_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Eine Frau und ein Kind laufen von hinten zurueck zum geparkten Auto auf einem Schotterweg, hoegelige Landschaft im Hintergrund.",
+      "tags": [
+        "auto",
+        "gehen",
+        "schotterweg",
+        "landschaft",
+        "aufbruch",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c9166a97206e7a6676b954fd86d0a77786fc68186c970432470631f38345b395",
+    "path": "Chris-iPhone/IMG_9654.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T13:11:59+00:00",
+    "captured_at_source": "container",
+    "duration": 10.288333,
+    "probe": {
+      "captured_at": "2026-07-24T13:11:59+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 10.288333,
+      "bitrate": 54118730,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.646,
+      "stability": 0.0,
+      "exposure": 0.906,
+      "score": 0.517
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 10.28
+      }
+    ],
+    "id": "20260724-camera-c9166a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9654_5cefd4cb_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9654_5cefd4cb_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9654_5cefd4cb_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Junge beruehrt eine grosse spiegelnde Steinkugel-Brunneninstallation in einem Ort, Passanten schauen zu.",
+      "tags": [
+        "kind",
+        "brunnen",
+        "kugel",
+        "dorf",
+        "menschen",
+        "detail"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:cc5cbc51cd63ae582b09f2db3b0f6dfe220e37605795c19f04b65fb9aeda7e28",
+    "path": "Chris-iPhone/IMG_9701.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T15:27:47+00:00",
+    "captured_at_source": "container",
+    "duration": 56.618333,
+    "probe": {
+      "captured_at": "2026-07-24T15:27:47+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 56.618333,
+      "bitrate": 82820404,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.319,
+      "stability": 0.473,
+      "exposure": 0.708,
+      "score": 0.5
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.527
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 56.01
+      },
+      {
+        "start": 56.01,
+        "end": 56.66
+      }
+    ],
+    "id": "20260724-camera-cc5cbc",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9701_6522e9f2_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9701_6522e9f2_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9701_6522e9f2_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9701_6522e9f2_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9701_6522e9f2_kf04.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Die Zugbahn schlaengelt sich in Serpentinen den neblig verhangenen Berghang hinauf, ein Bach in der Talmitte.",
+      "tags": [
+        "zug",
+        "bahn",
+        "serpentine",
+        "berge",
+        "nebel",
+        "tal"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d29ae99a3de389a8f1e759c35254a9d7a930ec6ad31fc347860675e4c4e8120d",
+    "path": "Chris-iPhone/IMG_9696.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T15:17:48+00:00",
+    "captured_at_source": "container",
+    "duration": 18.19,
+    "probe": {
+      "captured_at": "2026-07-24T15:17:48+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 18.19,
+      "bitrate": 55225130,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.236,
+      "stability": 0.198,
+      "exposure": 0.844,
+      "score": 0.426
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.802
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 1.07
+      },
+      {
+        "start": 1.07,
+        "end": 3.27
+      },
+      {
+        "start": 3.27,
+        "end": 5.37
+      },
+      {
+        "start": 5.37,
+        "end": 7.6
+      },
+      {
+        "start": 7.6,
+        "end": 9.63
+      },
+      {
+        "start": 9.63,
+        "end": 12.12
+      },
+      {
+        "start": 12.12,
+        "end": 13.92
+      },
+      {
+        "start": 13.92,
+        "end": 16.17
+      },
+      {
+        "start": 16.17,
+        "end": 16.75
+      },
+      {
+        "start": 16.75,
+        "end": 17.03
+      },
+      {
+        "start": 17.03,
+        "end": 17.43
+      },
+      {
+        "start": 17.43,
+        "end": 18.2
+      }
+    ],
+    "id": "20260724-camera-d29ae9",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9696_86b0f491_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9696_86b0f491_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9696_86b0f491_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9696_86b0f491_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9696_86b0f491_kf04.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9696_86b0f491_kf05.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Blick aus dem Zugfenster auf ein gruenes Flusstal mit Wanderpfad, Nebel in den Bergen.",
+      "tags": [
+        "zug",
+        "tal",
+        "fluss",
+        "nebel",
+        "berge",
+        "fenster"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d667f890f036506ff69f578b9437b161eb0694480929a1dbb5d563259cf6185d",
+    "path": "Chris-iPhone/IMG_9666.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T14:15:11+00:00",
+    "captured_at_source": "container",
+    "duration": 18.591667,
+    "probe": {
+      "captured_at": "2026-07-24T14:15:11+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 18.591667,
+      "bitrate": 56289007,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.146,
+      "stability": 0.576,
+      "exposure": 0.685,
+      "score": 0.469
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.424
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 18.6
+      }
+    ],
+    "id": "20260724-camera-d667f8",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9666_acb4e81e_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9666_acb4e81e_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9666_acb4e81e_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Blick aus einem Zugfenster in ein gruenes, nebliges Tal mit kleinem Bauernhof.",
+      "tags": [
+        "zug",
+        "tal",
+        "nebel",
+        "fenster",
+        "landschaft",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:df52898ac4d35b8653dbf19ad0bba63b4140d57775860e24b8b1431939a4d432",
+    "path": "Chris-iPhone/IMG_9703.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T15:34:33+00:00",
+    "captured_at_source": "container",
+    "duration": 40.243333,
+    "probe": {
+      "captured_at": "2026-07-24T15:34:33+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 40.243333,
+      "bitrate": 73770415,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.073,
+      "exposure": 0.75,
+      "score": 0.608
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.927
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 29.77
+      },
+      {
+        "start": 29.77,
+        "end": 39.02
+      },
+      {
+        "start": 39.02,
+        "end": 40.25
+      }
+    ],
+    "id": "20260724-camera-df5289",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9703_26f0f93f_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9703_26f0f93f_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9703_26f0f93f_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9703_26f0f93f_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9703_26f0f93f_kf04.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9703_26f0f93f_kf05.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Blick aus dem fahrenden Zug auf eine Steinmauer und Wald am Bahndamm.",
+      "tags": [
+        "zug",
+        "steinmauer",
+        "wald",
+        "fenster",
+        "fahrt",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e1e3ae5b781457ee929e76e01a5658db60fffb7be3f926ab0c7f316c2923ced4",
+    "path": "Chris-iPhone/IMG_9672.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T14:32:39+00:00",
+    "captured_at_source": "container",
+    "duration": 72.5517,
+    "probe": {
+      "captured_at": "2026-07-24T14:32:39+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 72.5517,
+      "bitrate": 55482929,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.055,
+      "exposure": 0.757,
+      "score": 0.604
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.945
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 72.52
+      }
+    ],
+    "id": "20260724-camera-e1e3ae",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9672_b29be8b9_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9672_b29be8b9_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9672_b29be8b9_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9672_b29be8b9_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Blick aus dem Zugfenster auf ein gruenes Flusstal mit steilen Felswaenden, ein Wasserfall am Rand.",
+      "tags": [
+        "zug",
+        "tal",
+        "fluss",
+        "wasserfall",
+        "felsen",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f543d44f36de81dbc3252515413e6c890be5e3fc1c7e95af2fc2570a8264c1b1",
+    "path": "Chris-iPhone/IMG_9676.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T14:40:58+00:00",
+    "captured_at_source": "container",
+    "duration": 20.2,
+    "probe": {
+      "captured_at": "2026-07-24T14:40:58+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 20.2,
+      "bitrate": 54490506,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.885,
+      "score": 0.628
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 20.2
+      }
+    ],
+    "id": "20260724-camera-f543d4",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9676_60445eac_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9676_60445eac_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9676_60445eac_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Establisher: ein grosser Wasserfall stuerzt zwischen Felsklippen hinab, ein kleiner Pool am Fuss.",
+      "tags": [
+        "wasserfall",
+        "fels",
+        "natur",
+        "establisher",
+        "landschaft",
+        "wasser"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
     "hash": "sha256:085879219e1a91b2e88e8fdad964b5702d78c5c76666cb8918009438fc308e93",
     "path": "2026-07-24_Geilo-Aurland-Flam_Roadshots_Winjun_Cruise/Images/DJI_20260724220846_0013_D.JPG",
     "kind": "photo",
@@ -20212,6 +21817,2207 @@
     "day": 7,
     "stage": "Geilo → Aurland",
     "place_source": "gps"
+  },
+  {
+    "hash": "sha256:048c28d2b59a0f38db0202816335750a60afbbcb342eba479b30139c0c53a600",
+    "path": "Chris-iPhone/IMG_9694.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T17:11:57+00:00",
+    "gps": {
+      "lat": 60.74401944444445,
+      "lon": 7.130405555555555,
+      "elevation_m": 821.8
+    },
+    "probe": {
+      "captured_at": "2026-07-24T17:11:57+00:00",
+      "gps": {
+        "lat": 60.74401944444445,
+        "lon": 7.130405555555555,
+        "elevation_m": 821.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.762,
+      "exposure": 0.967,
+      "score": 0.865
+    },
+    "id": "20260724-phone-048c28",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9694_36feb53c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Familien-Selfie im Zugabteil, die Eltern laecheln, der Junge blickt ernst.",
+      "tags": [
+        "familie",
+        "selfie",
+        "zug",
+        "laecheln",
+        "portraet",
+        "abteil"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:09891cd99763f43e4f3e8c8fe15565b6aef23e9c3a00b2ab6ba21dd81f95da0a",
+    "path": "Chris-iPhone/IMG_9708.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T18:38:01+00:00",
+    "gps": {
+      "lat": 60.911833333333334,
+      "lon": 7.1936638888888895,
+      "elevation_m": 72.8
+    },
+    "probe": {
+      "captured_at": "2026-07-24T18:38:01+00:00",
+      "gps": {
+        "lat": 60.911833333333334,
+        "lon": 7.1936638888888895,
+        "elevation_m": 72.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.885,
+      "exposure": 0.921,
+      "score": 0.903
+    },
+    "id": "20260724-phone-09891c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9708_7f92f1d6_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Eine Frau und ein Junge gehen zu Ferienhaeuschen mit Grasdach, ein geparktes Auto mit Dachbox daneben.",
+      "tags": [
+        "frau",
+        "kind",
+        "ferienhaeuser",
+        "grasdach",
+        "auto",
+        "gehen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:13786e45fd05fcf584eecae0589d1a12dd20363c7d51e810c2199439607006f8",
+    "path": "Chris-iPhone/IMG_9731.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T22:41:06+00:00",
+    "gps": {
+      "lat": 60.911788888888886,
+      "lon": 7.193672222222222,
+      "elevation_m": 84.8
+    },
+    "probe": {
+      "captured_at": "2026-07-24T22:41:06+00:00",
+      "gps": {
+        "lat": 60.911788888888886,
+        "lon": 7.193672222222222,
+        "elevation_m": 84.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.163,
+      "exposure": 0.993,
+      "score": 0.578
+    },
+    "id": "20260724-phone-13786e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9731_02c4c228_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Naeherer Zoom auf das hell erleuchtete Ausflugsschiff auf dem Fjord in der Daemmerung.",
+      "tags": [
+        "fjord",
+        "schiff",
+        "daemmerung",
+        "licht",
+        "berge",
+        "detail"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1d01e4bddea8df9f5d11947fc7011232617242f0ca388b2cb5947e47697623fc",
+    "path": "Chris-iPhone/IMG_9707.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T18:03:16+00:00",
+    "gps": {
+      "lat": 60.863147222222224,
+      "lon": 7.113933333333333,
+      "elevation_m": 9.3
+    },
+    "probe": {
+      "captured_at": "2026-07-24T18:03:16+00:00",
+      "gps": {
+        "lat": 60.863147222222224,
+        "lon": 7.113933333333333,
+        "elevation_m": 9.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.069,
+      "exposure": 0.727,
+      "score": 0.398
+    },
+    "id": "20260724-phone-1d01e4",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9707_752d40e4_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Bahnhofsschild 'Flaamsbana - The Flaam Railway' an einer Wand.",
+      "tags": [
+        "bahnhof",
+        "schild",
+        "flaamsbana",
+        "zug",
+        "detail",
+        "text"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2da083a7a1d12a0ba0554bef94398bb2b3c003d8cd41fc8037556eb812aba448",
+    "path": "Chris-iPhone/IMG_9651.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T15:10:54+00:00",
+    "gps": {
+      "lat": 60.86321944444445,
+      "lon": 7.116555555555555,
+      "elevation_m": 9.3
+    },
+    "probe": {
+      "captured_at": "2026-07-24T15:10:54+00:00",
+      "gps": {
+        "lat": 60.86321944444445,
+        "lon": 7.116555555555555,
+        "elevation_m": 9.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.392,
+      "exposure": 0.981,
+      "score": 0.686
+    },
+    "id": "20260724-phone-2da083",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9651_9a7b40cb_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Frau und ein Junge posieren neben einer geschnitzten Holzstatue einer Frauenfigur mit Kind.",
+      "tags": [
+        "frau",
+        "kind",
+        "statue",
+        "holz",
+        "posieren",
+        "skulptur"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2f2ffe5a30386e0b7ee926fc2c44e81a44130745ae12db57aa3528d3324bc9db",
+    "path": "Chris-iPhone/IMG_9657.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T15:24:59+00:00",
+    "gps": {
+      "lat": 60.86316388888889,
+      "lon": 7.115572222222222,
+      "elevation_m": -1.6
+    },
+    "probe": {
+      "captured_at": "2026-07-24T15:24:59+00:00",
+      "gps": {
+        "lat": 60.86316388888889,
+        "lon": 7.115572222222222,
+        "elevation_m": -1.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.548,
+      "exposure": 0.886,
+      "score": 0.717
+    },
+    "id": "20260724-phone-2f2ffe",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9657_df933ba2_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Junge isst Pommes mit Ketchup auf einer Bank sitzend, Marktplatz im Hintergrund.",
+      "tags": [
+        "kind",
+        "essen",
+        "pommes",
+        "markt",
+        "portraet",
+        "sitzen"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:3287926213c5e5b5428a5c35fb3ba6b3aba8f5495102f140e01e3539ee289d2a",
+    "path": "Chris-iPhone/IMG_9729.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T22:40:59+00:00",
+    "gps": {
+      "lat": 60.91181944444444,
+      "lon": 7.193625,
+      "elevation_m": 78.2
+    },
+    "probe": {
+      "captured_at": "2026-07-24T22:40:59+00:00",
+      "gps": {
+        "lat": 60.91181944444444,
+        "lon": 7.193625,
+        "elevation_m": 78.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.094,
+      "exposure": 0.809,
+      "score": 0.452
+    },
+    "id": "20260724-phone-328792",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9729_16c00f9c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Abenddaemmerung ueber dem Fjord, ein orangefarbenes Boot ist in der Ferne sichtbar.",
+      "tags": [
+        "fjord",
+        "abend",
+        "daemmerung",
+        "boot",
+        "berge",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:34b450cfcaae73b70781aa4fef1bd99384dfa4c1a9a1299aefcc17ee00d26a2c",
+    "path": "Chris-iPhone/IMG_9730.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T22:41:02+00:00",
+    "gps": {
+      "lat": 60.91182222222222,
+      "lon": 7.193616666666667,
+      "elevation_m": 78.1
+    },
+    "probe": {
+      "captured_at": "2026-07-24T22:41:02+00:00",
+      "gps": {
+        "lat": 60.91182222222222,
+        "lon": 7.193616666666667,
+        "elevation_m": 78.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.085,
+      "exposure": 0.877,
+      "score": 0.481
+    },
+    "id": "20260724-phone-34b450",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9730_89f75898_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Abendaufnahme des Fjords, ein beleuchtetes Ausflugsschiff faehrt am Ufer entlang.",
+      "tags": [
+        "fjord",
+        "abend",
+        "schiff",
+        "daemmerung",
+        "berge",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:391d4c549a722eec1e526f4de6c962cf5f6050e83471adb3ce2b5925cbd2468b",
+    "path": "Chris-iPhone/IMG_9682.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T16:44:30+00:00",
+    "gps": {
+      "lat": 60.747036111111115,
+      "lon": 7.135975,
+      "elevation_m": 672.7
+    },
+    "probe": {
+      "captured_at": "2026-07-24T16:44:30+00:00",
+      "gps": {
+        "lat": 60.747036111111115,
+        "lon": 7.135975,
+        "elevation_m": 672.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.57,
+      "exposure": 0.937,
+      "score": 0.753
+    },
+    "id": "20260724-phone-391d4c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9682_37471fbf_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Bahnsteig voller Fahrgaeste vor Tunneleingang und Zug am Haltepunkt.",
+      "tags": [
+        "zug",
+        "bahnsteig",
+        "tunnel",
+        "menschen",
+        "touristen",
+        "haltepunkt"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:39584085cc14e210e77f39f49d26dbd376762e2398c220f6d25878ce3dab6dfe",
+    "path": "Chris-iPhone/IMG_9627.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T12:59:58+00:00",
+    "gps": {
+      "lat": 60.85537222222222,
+      "lon": 7.306541666666666,
+      "elevation_m": 506.1
+    },
+    "probe": {
+      "captured_at": "2026-07-24T12:59:58+00:00",
+      "gps": {
+        "lat": 60.85537222222222,
+        "lon": 7.306541666666666,
+        "elevation_m": 506.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.372,
+      "exposure": 0.91,
+      "score": 0.641
+    },
+    "id": "20260724-phone-395840",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9627_e41999c0_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Aehnlicher Fjordblick, eine Aussichtsplattform ist auf einer Felsspitze rechts erkennbar.",
+      "tags": [
+        "fjord",
+        "berge",
+        "aussicht",
+        "aussichtsplattform",
+        "establisher",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:41865b18511daf51c9a7ba7acbefd98ab47f8c68b84df3072a305eb1af298277",
+    "path": "Chris-iPhone/IMG_9639.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T13:58:59+00:00",
+    "gps": {
+      "lat": 60.90864166666667,
+      "lon": 7.211811111111111,
+      "elevation_m": 642.2
+    },
+    "probe": {
+      "captured_at": "2026-07-24T13:58:59+00:00",
+      "gps": {
+        "lat": 60.90864166666667,
+        "lon": 7.211811111111111,
+        "elevation_m": 642.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.223,
+      "exposure": 0.981,
+      "score": 0.602
+    },
+    "id": "20260724-phone-41865b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9639_3abe105d_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Aehnlicher Blick, eine moderne Aussichtsplattform mit Glasgelaender im Vordergrund.",
+      "tags": [
+        "fjord",
+        "aussichtsplattform",
+        "dorf",
+        "glasgelaender",
+        "establisher",
+        "berge"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:447e12029fd9079eef85751390898d2a38b7b51557b6f08137d05da993ff3fe6",
+    "path": "Chris-iPhone/IMG_9710.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T18:38:53+00:00",
+    "gps": {
+      "lat": 60.91179722222222,
+      "lon": 7.193963888888889,
+      "elevation_m": 74.7
+    },
+    "probe": {
+      "captured_at": "2026-07-24T18:38:53+00:00",
+      "gps": {
+        "lat": 60.91179722222222,
+        "lon": 7.193963888888889,
+        "elevation_m": 74.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.14,
+      "exposure": 0.955,
+      "score": 0.547
+    },
+    "id": "20260724-phone-447e12",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9710_f22f1ff7_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Blick von der Ferienhaussiedlung ueber den Fjord, Haeuschendaecher im Vordergrund.",
+      "tags": [
+        "fjord",
+        "ferienhaeuser",
+        "establisher",
+        "berge",
+        "aussicht",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:486897a23305459a809b6742249231072f8f3a69ef6fe9d0ee7d26e7d660db2d",
+    "path": "Chris-iPhone/IMG_9721.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T20:08:19+00:00",
+    "gps": {
+      "lat": 60.91172777777778,
+      "lon": 7.193505555555555,
+      "elevation_m": 77.6
+    },
+    "probe": {
+      "captured_at": "2026-07-24T20:08:19+00:00",
+      "gps": {
+        "lat": 60.91172777777778,
+        "lon": 7.193505555555555,
+        "elevation_m": 77.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.529,
+      "exposure": 0.971,
+      "score": 0.75
+    },
+    "id": "20260724-phone-486897",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9721_1c69117e_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Junge sitzt laechelnd auf einer roten Bank mit norwegischer Flagge, alte Wagenraeder daneben.",
+      "tags": [
+        "kind",
+        "bank",
+        "norwegen",
+        "portraet",
+        "laecheln",
+        "deko"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4dd69b649947ad03d0dab6e606effdb07ced70a80defee776a93f49e25a41feb",
+    "path": "Chris-iPhone/IMG_9625.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T12:59:46+00:00",
+    "gps": {
+      "lat": 60.85537777777778,
+      "lon": 7.306541666666666,
+      "elevation_m": 506.2
+    },
+    "probe": {
+      "captured_at": "2026-07-24T12:59:46+00:00",
+      "gps": {
+        "lat": 60.85537777777778,
+        "lon": 7.306541666666666,
+        "elevation_m": 506.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.391,
+      "exposure": 0.998,
+      "score": 0.695
+    },
+    "id": "20260724-phone-4dd69b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9625_d2628a6c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weiterer beeindruckender Blick auf den Fjord zwischen steilen Felswaenden, Nebel im Hintergrund.",
+      "tags": [
+        "fjord",
+        "berge",
+        "aussicht",
+        "nebel",
+        "establisher",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5707f84000593eadc62bb9b4111e59b643ab997b986849fc84642dd8ca6dd0d2",
+    "path": "Chris-iPhone/IMG_9652.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T15:11:13+00:00",
+    "gps": {
+      "lat": 60.86315833333334,
+      "lon": 7.116549999999999,
+      "elevation_m": 8.1
+    },
+    "probe": {
+      "captured_at": "2026-07-24T15:11:13+00:00",
+      "gps": {
+        "lat": 60.86315833333334,
+        "lon": 7.116549999999999,
+        "elevation_m": 8.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.339,
+      "exposure": 0.802,
+      "score": 0.571
+    },
+    "id": "20260724-phone-5707f8",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9652_e894890c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Mann posiert neben einer geschnitzten Wikinger-Holzstatue, Kreuzfahrtschiff im Hintergrund.",
+      "tags": [
+        "mann",
+        "statue",
+        "wikinger",
+        "holz",
+        "posieren",
+        "kreuzfahrtschiff"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5b2c993b366e3fff292ca6d3dacd03cbefc9d18fee49073a33ae5610bf4e4b6b",
+    "path": "Chris-iPhone/IMG_9658.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T15:50:22+00:00",
+    "gps": {
+      "lat": 60.8629,
+      "lon": 7.113297222222222,
+      "elevation_m": 9.0
+    },
+    "probe": {
+      "captured_at": "2026-07-24T15:50:22+00:00",
+      "gps": {
+        "lat": 60.8629,
+        "lon": 7.113297222222222,
+        "elevation_m": 9.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.734,
+      "exposure": 0.983,
+      "score": 0.858
+    },
+    "id": "20260724-phone-5b2c99",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9658_f3c312cc_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Ein Mann und ein Junge laecheln im historischen Zugabteil, Fenster mit Landschaftsblick im Hintergrund.",
+      "tags": [
+        "mann",
+        "kind",
+        "zug",
+        "laecheln",
+        "selfie",
+        "unterwegs"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5b62ed07d741c64886d495eedff6d2975301ae065d543c0e1a46b9b03251cf5d",
+    "path": "Chris-iPhone/IMG_9683.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T16:45:05+00:00",
+    "gps": {
+      "lat": 60.74700555555555,
+      "lon": 7.136002777777779,
+      "elevation_m": 673.7
+    },
+    "probe": {
+      "captured_at": "2026-07-24T16:45:05+00:00",
+      "gps": {
+        "lat": 60.74700555555555,
+        "lon": 7.136002777777779,
+        "elevation_m": 673.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.636,
+      "exposure": 0.972,
+      "score": 0.804
+    },
+    "id": "20260724-phone-5b62ed",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9683_d58eb63c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Ein Mann und ein Junge laecheln vor dem grossen Wasserfall, Daumen hoch.",
+      "tags": [
+        "mann",
+        "kind",
+        "wasserfall",
+        "laecheln",
+        "portraet",
+        "selfie"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5bb61182e039d2818a8ba6f6e1a144bfcb80dc2e5e2c5f4266933a67f7fb5f2e",
+    "path": "Chris-iPhone/IMG_9663.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T16:09:40+00:00",
+    "gps": {
+      "lat": 60.85243611111111,
+      "lon": 7.110658333333333
+    },
+    "probe": {
+      "captured_at": "2026-07-24T16:09:40+00:00",
+      "gps": {
+        "lat": 60.85243611111111,
+        "lon": 7.110658333333333
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.108,
+      "exposure": 0.995,
+      "score": 0.552
+    },
+    "id": "20260724-phone-5bb611",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9663_622ad72f_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Blick aus dem Zugfenster auf ein kleines Dorf am Fluss im Tal, ein Kinderkopf im Vordergrund.",
+      "tags": [
+        "zug",
+        "dorf",
+        "fluss",
+        "tal",
+        "fenster",
+        "kind"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5fa2fca746cc0d83de93260477405781f8fccaf777dd67092ae1dcee7744b343",
+    "path": "Chris-iPhone/IMG_9678.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T16:41:28+00:00",
+    "gps": {
+      "lat": 60.74702777777778,
+      "lon": 7.135983333333334,
+      "elevation_m": 666.1
+    },
+    "probe": {
+      "captured_at": "2026-07-24T16:41:28+00:00",
+      "gps": {
+        "lat": 60.74702777777778,
+        "lon": 7.135983333333334,
+        "elevation_m": 666.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.967,
+      "score": 0.983
+    },
+    "id": "20260724-phone-5fa2fc",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9678_27740df2_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Weitere Aufnahme desselben Wasserfalls im Hochformat.",
+      "tags": [
+        "wasserfall",
+        "fels",
+        "natur",
+        "establisher",
+        "landschaft",
+        "wasser"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:611f1d87f1f9fa2cf2493b594c19795ed5ca1ce938169ce42cd2b4d9c5a3adbc",
+    "path": "Chris-iPhone/IMG_9717.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T19:42:53+00:00",
+    "gps": {
+      "lat": 60.911791666666666,
+      "lon": 7.194016666666667,
+      "elevation_m": 75.7
+    },
+    "probe": {
+      "captured_at": "2026-07-24T19:42:53+00:00",
+      "gps": {
+        "lat": 60.911791666666666,
+        "lon": 7.194016666666667,
+        "elevation_m": 75.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.776,
+      "exposure": 0.731,
+      "score": 0.754
+    },
+    "id": "20260724-phone-611f1d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9717_034d9f9f_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Familien-Selfie beim Essen auf der Terrasse mit Fjordblick.",
+      "tags": [
+        "familie",
+        "selfie",
+        "essen",
+        "terrasse",
+        "fjord",
+        "laecheln"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:612570a1574c66181e8d99bae355fdded4151c9e05882d176d424d2a4ba71777",
+    "path": "Chris-iPhone/IMG_9711.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T18:55:07+00:00",
+    "gps": {
+      "lat": 60.911788888888886,
+      "lon": 7.193447222222223,
+      "elevation_m": 72.7
+    },
+    "probe": {
+      "captured_at": "2026-07-24T18:55:07+00:00",
+      "gps": {
+        "lat": 60.911788888888886,
+        "lon": 7.193447222222223,
+        "elevation_m": 72.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.904,
+      "exposure": 0.862,
+      "score": 0.883
+    },
+    "id": "20260724-phone-612570",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9711_86b05017_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Ein Junge steht vor dem Rezeptionsgebaeude 'Winjum Hytter' mit Bergblick.",
+      "tags": [
+        "kind",
+        "rezeption",
+        "huette",
+        "berge",
+        "gebaeude",
+        "ferienpark"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:6513c78d6636593af385f4a948571a800291e1740dc41184171a538f7a5bfd86",
+    "path": "Chris-iPhone/IMG_9646.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T15:07:35+00:00",
+    "gps": {
+      "lat": 60.863772222222224,
+      "lon": 7.118105555555555,
+      "elevation_m": 10.9
+    },
+    "probe": {
+      "captured_at": "2026-07-24T15:07:35+00:00",
+      "gps": {
+        "lat": 60.863772222222224,
+        "lon": 7.118105555555555,
+        "elevation_m": 10.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.967,
+      "exposure": 0.821,
+      "score": 0.894
+    },
+    "id": "20260724-phone-6513c7",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9646_ed45fdd7_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Frau geht mit einem Kind einen Weg mit Wikingerschild-Dekoration entlang, das Kreuzfahrtschiff 'Saga' und Berge im Hintergrund.",
+      "tags": [
+        "frau",
+        "kind",
+        "kreuzfahrtschiff",
+        "weg",
+        "berge",
+        "gehen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:6821fb74135e0d83e5954730a630a117ff7178e6658ce486bc9ddf9e9b6035ed",
+    "path": "Chris-iPhone/IMG_9655.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T15:21:21+00:00",
+    "gps": {
+      "lat": 60.8634,
+      "lon": 7.115830555555555,
+      "elevation_m": 8.4
+    },
+    "probe": {
+      "captured_at": "2026-07-24T15:21:21+00:00",
+      "gps": {
+        "lat": 60.8634,
+        "lon": 7.115830555555555,
+        "elevation_m": 8.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.301,
+      "exposure": 0.907,
+      "score": 0.604
+    },
+    "id": "20260724-phone-6821fb",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9655_d19c9227_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Belebter Marktplatz mit Imbissstaenden und vielen Touristen, ein Kreuzfahrtschiff im Hintergrund.",
+      "tags": [
+        "markt",
+        "touristen",
+        "imbiss",
+        "kreuzfahrtschiff",
+        "menschen",
+        "berge"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:6efc5d13a152619306124fe32d08f8538c326a88a342d99c7d8e03bdb0deb890",
+    "path": "Chris-iPhone/IMG_9643.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T15:04:33+00:00",
+    "gps": {
+      "lat": 60.86374166666667,
+      "lon": 7.117988888888888,
+      "elevation_m": 7.1
+    },
+    "probe": {
+      "captured_at": "2026-07-24T15:04:33+00:00",
+      "gps": {
+        "lat": 60.86374166666667,
+        "lon": 7.117988888888888,
+        "elevation_m": 7.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.442,
+      "exposure": 0.959,
+      "score": 0.701
+    },
+    "id": "20260724-phone-6efc5d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9643_c7650431_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Riesiges Kreuzfahrtschiff liegt im Hafen, Passanten und Baeume im Vordergrund.",
+      "tags": [
+        "kreuzfahrtschiff",
+        "hafen",
+        "schiff",
+        "menschen",
+        "establisher",
+        "himmel"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:73ac232b0c26e45b8f055381ee8622cda60233d64a48cfef5fe7a578c485d3c5",
+    "path": "Chris-iPhone/IMG_9681.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T16:44:25+00:00",
+    "gps": {
+      "lat": 60.74701666666667,
+      "lon": 7.135975,
+      "elevation_m": 674.8
+    },
+    "probe": {
+      "captured_at": "2026-07-24T16:44:25+00:00",
+      "gps": {
+        "lat": 60.74701666666667,
+        "lon": 7.135975,
+        "elevation_m": 674.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.982,
+      "exposure": 0.963,
+      "score": 0.973
+    },
+    "id": "20260724-phone-73ac23",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9681_f4ec05c9_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Fahrgaeste steigen am Bahnsteig aus dem gruenen Zug aus, Tunnel und Felswand im Hintergrund.",
+      "tags": [
+        "zug",
+        "bahnsteig",
+        "menschen",
+        "tunnel",
+        "felsen",
+        "touristen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7513395659c8410fa4820029f901c7c37f29dae47829a4989b8b2a5c7c1d8854",
+    "path": "Chris-iPhone/IMG_9638.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T13:58:56+00:00",
+    "gps": {
+      "lat": 60.90864166666667,
+      "lon": 7.211811111111111,
+      "elevation_m": 641.7
+    },
+    "probe": {
+      "captured_at": "2026-07-24T13:58:56+00:00",
+      "gps": {
+        "lat": 60.90864166666667,
+        "lon": 7.211811111111111,
+        "elevation_m": 641.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.116,
+      "exposure": 0.967,
+      "score": 0.542
+    },
+    "id": "20260724-phone-751339",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9638_2bbd7e64_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weiter Blick von oben auf einen kleinen Ort am Fjord mit gruenen Wiesen und Sportplatz.",
+      "tags": [
+        "fjord",
+        "dorf",
+        "aussicht",
+        "establisher",
+        "wiese",
+        "berge"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:87885e1b9abc3bb9bd642cb5297c36d6bfe164f073da68d35da77a6fd79931b0",
+    "path": "Chris-iPhone/IMG_9698.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T17:22:31+00:00",
+    "gps": {
+      "lat": 60.74723888888889,
+      "lon": 7.136,
+      "elevation_m": 675.7
+    },
+    "probe": {
+      "captured_at": "2026-07-24T17:22:31+00:00",
+      "gps": {
+        "lat": 60.74723888888889,
+        "lon": 7.136,
+        "elevation_m": 675.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.579,
+      "exposure": 0.848,
+      "score": 0.713
+    },
+    "id": "20260724-phone-87885e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9698_77e6ff0c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine grosse Besuchergruppe steht auf einer Holz-Aussichtsplattform vor dem Wasserfall.",
+      "tags": [
+        "wasserfall",
+        "touristen",
+        "aussichtsplattform",
+        "menschen",
+        "natur",
+        "establisher"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:89b46d150e4e9eec0a0ddf6f8a98a9f13c688879ba8ae13dd5902659410e872b",
+    "path": "Chris-iPhone/IMG_9723.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T20:39:26+00:00",
+    "gps": {
+      "lat": 60.911880555555555,
+      "lon": 7.1937194444444446,
+      "elevation_m": 72.8
+    },
+    "probe": {
+      "captured_at": "2026-07-24T20:39:26+00:00",
+      "gps": {
+        "lat": 60.911880555555555,
+        "lon": 7.1937194444444446,
+        "elevation_m": 72.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.142,
+      "exposure": 0.669,
+      "score": 0.406
+    },
+    "id": "20260724-phone-89b46d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9723_75460daf_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Etagenbett-Nische unter einer Dachschraege, Vorhang teilweise geoeffnet, warmes Abendlicht.",
+      "tags": [
+        "huette",
+        "zimmer",
+        "etagenbett",
+        "vorhang",
+        "abend",
+        "detail"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:908d3fd24d55e786edc83d0e79feb107879e4b51323acdec174c0a7c84e0d90a",
+    "path": "Chris-iPhone/IMG_9632.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T13:55:57+00:00",
+    "gps": {
+      "lat": 60.90865,
+      "lon": 7.211980555555556,
+      "elevation_m": 637.3
+    },
+    "probe": {
+      "captured_at": "2026-07-24T13:55:57+00:00",
+      "gps": {
+        "lat": 60.90865,
+        "lon": 7.211980555555556,
+        "elevation_m": 637.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.049,
+      "exposure": 0.935,
+      "score": 0.492
+    },
+    "id": "20260724-phone-908d3f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9632_9934a14b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Nebelverhangener Fjordblick mit einem kleinen Boot auf dem Wasser.",
+      "tags": [
+        "fjord",
+        "nebel",
+        "boot",
+        "berge",
+        "aussicht",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:91411c29230d621468c3005d734ab05f6d990df415793e42b3eb782f56f9f57c",
+    "path": "Chris-iPhone/IMG_9722.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T20:10:29+00:00",
+    "gps": {
+      "lat": 60.91191388888889,
+      "lon": 7.1932888888888895,
+      "elevation_m": 71.4
+    },
+    "probe": {
+      "captured_at": "2026-07-24T20:10:29+00:00",
+      "gps": {
+        "lat": 60.91191388888889,
+        "lon": 7.1932888888888895,
+        "elevation_m": 71.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.325,
+      "exposure": 0.974,
+      "score": 0.649
+    },
+    "id": "20260724-phone-91411c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9722_97f5bb36_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Blick vom Kuechenfenster ueber einen Parkplatz auf Fjord und Berge, Petunien haengen am Fenster.",
+      "tags": [
+        "fjord",
+        "kueche",
+        "fenster",
+        "parkplatz",
+        "berge",
+        "blumen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:9e75747123f90765974b22529eccf96434a3054c3c0ba5c7c792ed830ae0b5e9",
+    "path": "Chris-iPhone/IMG_9634.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T13:56:35+00:00",
+    "gps": {
+      "lat": 60.90865,
+      "lon": 7.211875,
+      "elevation_m": 640.9
+    },
+    "probe": {
+      "captured_at": "2026-07-24T13:56:35+00:00",
+      "gps": {
+        "lat": 60.90865,
+        "lon": 7.211875,
+        "elevation_m": 640.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.04,
+      "exposure": 0.988,
+      "score": 0.514
+    },
+    "id": "20260724-phone-9e7574",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9634_74c15bef_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Weiterer breiter Fjordblick vom Aussichtspunkt aus.",
+      "tags": [
+        "fjord",
+        "aussichtspunkt",
+        "berge",
+        "natur",
+        "establisher",
+        "wolken"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a2daeb8114c3a8c706d0dadf2a69de43637af7702ef05830b14c6c4ea9b47550",
+    "path": "Chris-iPhone/IMG_9631.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T13:55:53+00:00",
+    "gps": {
+      "lat": 60.90867222222222,
+      "lon": 7.211969444444445,
+      "elevation_m": 632.5
+    },
+    "probe": {
+      "captured_at": "2026-07-24T13:55:53+00:00",
+      "gps": {
+        "lat": 60.90867222222222,
+        "lon": 7.211969444444445,
+        "elevation_m": 632.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.07,
+      "exposure": 0.967,
+      "score": 0.519
+    },
+    "id": "20260724-phone-a2daeb",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9631_5caec940_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weiterer breiter Fjordblick, Nebel zieht durch die Berghaenge.",
+      "tags": [
+        "fjord",
+        "berge",
+        "nebel",
+        "establisher",
+        "aussicht",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a9415afff2f7ba183375d199746f608c0830ad36d096dccb0bec879b3c621d2d",
+    "path": "Chris-iPhone/IMG_9621.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T11:58:22+00:00",
+    "gps": {
+      "lat": 60.72296111111111,
+      "lon": 7.770377777777778,
+      "elevation_m": 1005.7
+    },
+    "probe": {
+      "captured_at": "2026-07-24T11:58:22+00:00",
+      "gps": {
+        "lat": 60.72296111111111,
+        "lon": 7.770377777777778,
+        "elevation_m": 1005.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.141,
+      "exposure": 0.834,
+      "score": 0.487
+    },
+    "id": "20260724-phone-a9415a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9621_88b4447c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Frau geht allein von hinten auf einer Gebirgsstrasse, dramatisches Bergpanorama mit tiefhaengenden Wolken.",
+      "tags": [
+        "frau",
+        "strasse",
+        "berge",
+        "wolken",
+        "gehen",
+        "landschaft"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ac6765607475297974e53d3642170939cebd818664ec8d5422d7da3e5f020a91",
+    "path": "Chris-iPhone/IMG_9725.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T20:39:49+00:00",
+    "gps": {
+      "lat": 60.91177777777778,
+      "lon": 7.194058333333333,
+      "elevation_m": 78.7
+    },
+    "probe": {
+      "captured_at": "2026-07-24T20:39:49+00:00",
+      "gps": {
+        "lat": 60.91177777777778,
+        "lon": 7.194058333333333,
+        "elevation_m": 78.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.069,
+      "exposure": 0.93,
+      "score": 0.499
+    },
+    "id": "20260724-phone-ac6765",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9725_c2083e13_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Blick durch ein Sprossenfenster auf den Fjord und ein rotes Haus.",
+      "tags": [
+        "fjord",
+        "fenster",
+        "haus",
+        "berge",
+        "ausblick",
+        "detail"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b1435883c6a1d05c8fc15d6f979d41505cd77de2a1dab0a737bc37b2a8fe1233",
+    "path": "Chris-iPhone/IMG_9636.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T13:58:09+00:00",
+    "gps": {
+      "lat": 60.90865,
+      "lon": 7.2118166666666665,
+      "elevation_m": 641.8
+    },
+    "probe": {
+      "captured_at": "2026-07-24T13:58:09+00:00",
+      "gps": {
+        "lat": 60.90865,
+        "lon": 7.2118166666666665,
+        "elevation_m": 641.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.138,
+      "exposure": 0.971,
+      "score": 0.555
+    },
+    "id": "20260724-phone-b14358",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9636_ad62e136_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Frau und ein Junge stehen auf einer Aussichtsplattform, Fjord und kleiner Ort im Hintergrund.",
+      "tags": [
+        "frau",
+        "kind",
+        "aussichtsplattform",
+        "fjord",
+        "portraet",
+        "laecheln"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:be1f0dcf931414496eede16778a6ac85b58f1991a19ad16d9e06e900868890fa",
+    "path": "Chris-iPhone/IMG_9687.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T16:49:21+00:00",
+    "gps": {
+      "lat": 60.746608333333334,
+      "lon": 7.128172222222222
+    },
+    "probe": {
+      "captured_at": "2026-07-24T16:49:21+00:00",
+      "gps": {
+        "lat": 60.746608333333334,
+        "lon": 7.128172222222222
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.045,
+      "exposure": 0.78,
+      "score": 0.413
+    },
+    "id": "20260724-phone-be1f0d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9687_63d2b9e0_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Frau haelt einen Jungen im Zugabteil, beide blicken gespannt zur Seite.",
+      "tags": [
+        "frau",
+        "kind",
+        "zug",
+        "portraet",
+        "gespannt",
+        "abteil"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:dbcf6e24dae6642e02eeebcbf631060f7fcbc11a1ee4298112bf063446aca188",
+    "path": "Chris-iPhone/IMG_9677.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T16:41:24+00:00",
+    "gps": {
+      "lat": 60.74701666666667,
+      "lon": 7.136005555555556,
+      "elevation_m": 663.4
+    },
+    "probe": {
+      "captured_at": "2026-07-24T16:41:24+00:00",
+      "gps": {
+        "lat": 60.74701666666667,
+        "lon": 7.136005555555556,
+        "elevation_m": 663.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.94,
+      "score": 0.97
+    },
+    "id": "20260724-phone-dbcf6e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9677_10ac86fe_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Establisher desselben grossen Wasserfalls aus naeherer Distanz, Steinruine am Rand.",
+      "tags": [
+        "wasserfall",
+        "fels",
+        "ruine",
+        "natur",
+        "establisher",
+        "landschaft"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e166982c657f2a9ffed3d8cbc91f24f17234c2fcefcb673ce867b9a6ac325c2e",
+    "path": "Chris-iPhone/IMG_9712.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T18:55:49+00:00",
+    "gps": {
+      "lat": 60.91185,
+      "lon": 7.193405555555556,
+      "elevation_m": 71.4
+    },
+    "probe": {
+      "captured_at": "2026-07-24T18:55:49+00:00",
+      "gps": {
+        "lat": 60.91185,
+        "lon": 7.193405555555556,
+        "elevation_m": 71.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.856,
+      "score": 0.928
+    },
+    "id": "20260724-phone-e16698",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9712_024d2b7a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Reihe von Ferienhaeuschen vor bewaldetem Berghang, Gartenmoebel im Vordergrund.",
+      "tags": [
+        "ferienhaeuser",
+        "huette",
+        "establisher",
+        "berge",
+        "garten",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e4411136f48fa1914a6b75579d69cabbce462c02cf3ba2ab37d58ef986940308",
+    "path": "Chris-iPhone/IMG_9732.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T22:41:10+00:00",
+    "gps": {
+      "lat": 60.911769444444445,
+      "lon": 7.193616666666667,
+      "elevation_m": 82.7
+    },
+    "probe": {
+      "captured_at": "2026-07-24T22:41:10+00:00",
+      "gps": {
+        "lat": 60.911769444444445,
+        "lon": 7.193616666666667,
+        "elevation_m": 82.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.179,
+      "exposure": 0.988,
+      "score": 0.583
+    },
+    "id": "20260724-phone-e44111",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9732_7e730727_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Weiterer Zoom auf das erleuchtete Ausflugsschiff mit deutlich erkennbaren Fenstern.",
+      "tags": [
+        "fjord",
+        "schiff",
+        "daemmerung",
+        "licht",
+        "detail",
+        "wasser"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e4cb8854e25439c240caf265d133e03c89005ae808e3e9ab8b0f76baec86977b",
+    "path": "Chris-iPhone/IMG_9661.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T16:00:02+00:00",
+    "gps": {
+      "lat": 60.86295833333333,
+      "lon": 7.113575,
+      "elevation_m": 9.5
+    },
+    "probe": {
+      "captured_at": "2026-07-24T16:00:02+00:00",
+      "gps": {
+        "lat": 60.86295833333333,
+        "lon": 7.113575,
+        "elevation_m": 9.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.095,
+      "exposure": 0.803,
+      "score": 0.449
+    },
+    "id": "20260724-phone-e4cb88",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9661_f8fc7aac_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Infobildschirm im Zugabteil zeigt Streckendaten der 'Flaamsbana' (Laenge, Steigung, Tunnel, Bruecken).",
+      "tags": [
+        "zug",
+        "infobildschirm",
+        "flaamsbana",
+        "schild",
+        "detail",
+        "strecke"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e9bffbc2f0fef921d4b23b83dd92ba7edec769a444fe9f32f822b91a0e3b2b5e",
+    "path": "Chris-iPhone/IMG_9633.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T13:56:23+00:00",
+    "gps": {
+      "lat": 60.90865,
+      "lon": 7.211875,
+      "elevation_m": 639.6
+    },
+    "probe": {
+      "captured_at": "2026-07-24T13:56:23+00:00",
+      "gps": {
+        "lat": 60.90865,
+        "lon": 7.211875,
+        "elevation_m": 639.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.715,
+      "exposure": 0.977,
+      "score": 0.846
+    },
+    "id": "20260724-phone-e9bffb",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9633_ed4e562d_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Familien-Selfie am Aussichtspunkt mit spektakulaerem Fjordblick, weitere Besucher im Hintergrund.",
+      "tags": [
+        "familie",
+        "selfie",
+        "fjord",
+        "aussichtspunkt",
+        "laecheln",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:eae01de4de59fe1b8c9a3d6cf1337f7f99d3bf37b1a7794b25a5ecbd8ade84c7",
+    "path": "Chris-iPhone/IMG_9733.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T22:41:36+00:00",
+    "gps": {
+      "lat": 60.91174722222222,
+      "lon": 7.193583333333334,
+      "elevation_m": 87.5
+    },
+    "probe": {
+      "captured_at": "2026-07-24T22:41:36+00:00",
+      "gps": {
+        "lat": 60.91174722222222,
+        "lon": 7.193583333333334,
+        "elevation_m": 87.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.023,
+      "exposure": 0.835,
+      "score": 0.429
+    },
+    "id": "20260724-phone-eae01d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9733_99b1a971_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Staerkster Zoom auf das erleuchtete Kreuzfahrtschiff auf dem dunklen Fjordwasser.",
+      "tags": [
+        "fjord",
+        "schiff",
+        "daemmerung",
+        "licht",
+        "nacht",
+        "detail"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ec834bf9e9672f4e55a46592bb9c4328fbdfeeb9c2a9b799de7a7d6256ed1c1c",
+    "path": "Chris-iPhone/IMG_9619.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T09:46:44+00:00",
+    "gps": {
+      "lat": 60.501625,
+      "lon": 8.217569444444445,
+      "elevation_m": 1043.0
+    },
+    "probe": {
+      "captured_at": "2026-07-24T09:46:44+00:00",
+      "gps": {
+        "lat": 60.501625,
+        "lon": 8.217569444444445,
+        "elevation_m": 1043.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.104,
+      "exposure": 0.87,
+      "score": 0.487
+    },
+    "id": "20260724-phone-ec834b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9619_72e9bf3c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Ausgestopfter Rentierkopf mit grossem Geweih an einer Holzwand montiert.",
+      "tags": [
+        "rentier",
+        "geweih",
+        "deko",
+        "huette",
+        "detail",
+        "jagdtrophaee"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ecccc5014a96b5322260ada18017f323064f9fe9ab3144a7640dd60ea66e9f44",
+    "path": "Chris-iPhone/IMG_9622.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T11:58:29+00:00",
+    "gps": {
+      "lat": 60.72295833333334,
+      "lon": 7.770375,
+      "elevation_m": 1005.2
+    },
+    "probe": {
+      "captured_at": "2026-07-24T11:58:29+00:00",
+      "gps": {
+        "lat": 60.72295833333334,
+        "lon": 7.770375,
+        "elevation_m": 1005.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.925,
+      "exposure": 0.941,
+      "score": 0.933
+    },
+    "id": "20260724-phone-ecccc5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9622_1307dabc_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Ein Auto parkt am Strassenrand mit Blick auf einen See, Berge im Hintergrund.",
+      "tags": [
+        "auto",
+        "strasse",
+        "see",
+        "berge",
+        "fahrt",
+        "landschaft"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:fe7f84a59064523d24bba703d6561d76f7863131501eee85494d8dbef9410796",
+    "path": "Chris-iPhone/IMG_9615.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T08:46:57+00:00",
+    "gps": {
+      "lat": 60.501644444444445,
+      "lon": 8.217152777777779,
+      "elevation_m": 1041.7
+    },
+    "probe": {
+      "captured_at": "2026-07-24T08:46:57+00:00",
+      "gps": {
+        "lat": 60.501644444444445,
+        "lon": 8.217152777777779,
+        "elevation_m": 1041.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.037,
+      "exposure": 0.956,
+      "score": 0.497
+    },
+    "id": "20260724-phone-fe7f84",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9615_759b84f4_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Ein Junge sitzt morgens auf einem Etagenbett und spielt mit einem Kinder-Tablet.",
+      "tags": [
+        "kind",
+        "tablet",
+        "bett",
+        "huette",
+        "morgens",
+        "spielen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
   },
   {
     "hash": "sha256:1d384fde74dc35b51ac0a4473f0a373cde6f9a0359e6728c17fed4022a1cd6b1",
