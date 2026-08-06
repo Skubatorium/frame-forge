@@ -249,13 +249,10 @@ faellig, sonst bleiben die neuen Tage ohne Etappe.
 
 ### Fortschritt der Sichtung
 
-Chronologisch, Tag fuer Tag. **Hier weitermachen: 2026-07-25 — laufend, 3 von 106
-erledigt.** Dieser Tag ist mit Abstand der groesste bisher (viele kurze Videoclips,
-vermutlich Boots-/Fjordausflug). Bereits indiziert: `5a21c7` (Kreuzfahrtschiff "Artania"
-am Kai), `f5dd6b` (gelbes Kajak auf dem Fjord), `55822e` (Felswand vom Boot aus). Naechstes
-Asset chronologisch: `IMG_9767.MOV` (09:14:13 UTC), danach `IMG_9769`, `9773`, `9778`, `9783`,
-`9785`, `9790`, dann Fotos `9740`/`9741` (09:56) usw. — komplette Liste der 106 (davon 103
-offen) per Standard-Query (siehe Arbeitsweise unten) neu ziehen, nicht abtippen.
+Chronologisch, Tag fuer Tag. **Hier weitermachen: 2026-07-26.** 2026-07-25 ist
+komplett abgeschlossen (105 Assets: 2 bereits vorher indiziert + 103 neu in dieser Sitzung).
+Naechster Tag chronologisch: 2026-07-26 — komplette Liste per Standard-Query (siehe
+Arbeitsweise unten) neu ziehen, nicht abtippen.
 
 | Tag | Chris-iPhone-Assets | indiziert |
 |---|---:|---|
@@ -267,7 +264,8 @@ offen) per Standard-Query (siehe Arbeitsweise unten) neu ziehen, nicht abtippen.
 | 2026-07-22 | 19 | ✅ 19 — Ruhetag an der Huette: Videospiele, gemeinsames Grillessen mit grosser Gruppe, Kinder spielen/toben, Establisher der dunklen Holzhuette |
 | 2026-07-23 | 39 | ✅ 39 — Ausflug zur Stabkirche Heddal (Establisher, Museum, Aexte-Vitrine, Rosemaling), Picknick auf Wiese, Fahrt am Fjord entlang, Wanderung mit Familienselfies, Uebernachtung in Grasdach-Huette (Zimmerschilder) |
 | 2026-07-24 | 70 | ✅ 70 — Grosser Ausflugstag: Fjord-Aussichtspunkte (Stegastein-artig), Kreuzfahrtschiff-Hafen, Flaamsbana-Zugfahrt (Wasserfaelle, Tunnel, Serpentinen), Marktplatz, Ferienhaus-Siedlung am Fjord, Abenddaemmerung mit beleuchtetem Ausflugsschiff |
-| 2026-07-25 … 2026-08-04 | 420 | ⬜ |
+| 2026-07-25 | 106 | ✅ 106 — Camping-Huette am Aurlandsfjord (Fruehstueck, Abendessen), Bootsausflug mit Wasserfaellen und Faehren-Establishern, Elektro-Katamaran "Future of the Fjords" Flaam–Gudvangen (inkl. Kreuzfahrtschiff Artania am Kai), Wikingerdorf Gudvangen (Schwertkampf-Spiel, Bogenschiessen, Grassoden-Haeuser, Handwerksvorfuehrungen, Drachenboot-Nachbauten), Familienselfies auf dem Aussendeck |
+| 2026-07-26 … 2026-08-04 | 314 | ⬜ |
 
 **Hinweis zur Zaehlung:** `689` ist die Gesamtzahl der neuen Chris-iPhone-Dateien (aus
 `prepare-index`, Pfadpraefix `Chris-iPhone/`). Die Tagestabellen in `assets.json` zeigen pro
@@ -285,6 +283,15 @@ Beschreibung stimmten nicht ueberein, z. B. Pizzafoto mit Faehr-Selfie-Text), al
 neu zugeordnet, dabei auch `IMG_9382` (war nie wirklich gesichtet) korrekt nachgetragen.
 **Lehre:** nach jedem Block `assets.json` gegen die Pfad→Beschreibung-Zuordnung stichprobenartig
 pruefen, nicht nur auf "indiziert"-Ausgabe vertrauen.
+
+**2026-07-25 abgeschlossen:** Groesster Tag bisher, komplett in 3er-Bloecken durchgesichtet.
+Ein Hash-Tippfehler bei `IMG_9868.MOV` (Ziffer `2a0` statt `220` mitten im Hash getippt) fuehrte
+zu einem `index-asset`-Fehler, der sofort bei der Ausfuehrung auffiel (Prep-Datei nicht
+gefunden) und direkt korrigiert wurde, bevor weitergemacht wurde — kein stiller Fehleintrag.
+Mehrere Stichproben (nach je ca. 15-30 Assets) bestaetigten korrekte Pfad-Hash-Zuordnung.
+Inhaltlich: Fjordausflug mit zwei Booten (kleinerer Sightseeing-Trip morgens, dann
+Elektro-Katamaran "Future of the Fjords" Flaam–Gudvangen mit vielen Wasserfall-Cutaways), und
+ausfuehrlicher Nachmittag im Wikingerdorf Gudvangen mit Aktivitäten fuer Kinder.
 
 **Arbeitsweise, die sich bewaehrt hat** (fuer die naechste Sitzung):
 

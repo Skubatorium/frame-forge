@@ -24020,6 +24020,627 @@
     }
   },
   {
+    "hash": "sha256:05d54225411e0b9b93f77605184a60c79f357a860628f9e370d99dd01bcdaeed",
+    "path": "Chris-iPhone/IMG_9783.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T09:19:58+00:00",
+    "captured_at_source": "container",
+    "duration": 20.925,
+    "probe": {
+      "captured_at": "2026-07-25T09:19:58+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 20.925,
+      "bitrate": 53450636,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.985,
+      "stability": 0.331,
+      "exposure": 0.91,
+      "score": 0.742
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.669
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 20.93
+      }
+    ],
+    "id": "20260725-camera-05d542",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9783_bd18bb8c_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9783_bd18bb8c_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9783_bd18bb8c_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 3,
+    "content": {
+      "summary": "Aehnliche Einstellung Faehrenheck mit norwegischer Flagge, Kielwasser, enger Fjord, bewoelkter Himmel.",
+      "tags": [
+        "faehre",
+        "flagge",
+        "fjord",
+        "kielwasser",
+        "felswand",
+        "schifffahrt"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Aurlandsfjord"
+    }
+  },
+  {
+    "hash": "sha256:06b5b097c0abc26bd40b4661bef837f3c677c1940b06125dcfe565c612f4c4fa",
+    "path": "Chris-iPhone/IMG_9773.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T09:15:41+00:00",
+    "captured_at_source": "container",
+    "duration": 16.258333,
+    "probe": {
+      "captured_at": "2026-07-25T09:15:41+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 16.258333,
+      "bitrate": 54472542,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.75,
+      "score": 0.583
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 16.27
+      }
+    ],
+    "id": "20260725-camera-06b5b0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9773_d796919e_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9773_d796919e_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9773_d796919e_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 3,
+    "content": {
+      "summary": "Weiterer Blick auf denselben Wasserfall in der V-foermigen Bergschlucht, dichter Wald im Vordergrund.",
+      "tags": [
+        "wasserfall",
+        "schlucht",
+        "berge",
+        "wald",
+        "fjord",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    },
+    "gps": {
+      "place": "Aurlandsfjord"
+    }
+  },
+  {
+    "hash": "sha256:08eda642c4c16204762b773fe58154d22d1ebb5cd0e25b6fab4f711ab1fc1df1",
+    "path": "Chris-iPhone/IMG_9859.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T12:26:46+00:00",
+    "captured_at_source": "container",
+    "duration": 7.42,
+    "probe": {
+      "captured_at": "2026-07-25T12:26:46+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 7.42,
+      "bitrate": 53562592,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.214,
+      "stability": 0.0,
+      "exposure": 0.856,
+      "score": 0.356
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 7.42
+      }
+    ],
+    "id": "20260725-camera-08eda6",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9859_9524eb35_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9859_9524eb35_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9859_9524eb35_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 3,
+    "content": {
+      "summary": "Wikinger-Darsteller mit Kutte und Bart spricht mit kleinem Kind vor wartender Gruppe an der Kette, unterhaltsame Szene.",
+      "tags": [
+        "wikingerdorf",
+        "darsteller",
+        "kind",
+        "interaktion",
+        "mittelalter",
+        "gruppe"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Wikingerdorf"
+    }
+  },
+  {
+    "hash": "sha256:0be02c752bf41e937f9e3810a3969d00898d7b483d81e9215a9114dc215836f1",
+    "path": "Chris-iPhone/IMG_9838.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T12:01:45+00:00",
+    "captured_at_source": "container",
+    "duration": 1.6167,
+    "probe": {
+      "captured_at": "2026-07-25T12:01:45+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 1.6167,
+      "bitrate": 56473215,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.281,
+      "exposure": 0.75,
+      "score": 0.677
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.719
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 1.62
+      }
+    ],
+    "id": "20260725-camera-0be02c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9838_f4441355_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9838_f4441355_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9838_f4441355_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 3,
+    "content": {
+      "summary": "Kind kreuzt Holzschwert hoch ueber dem Kopf mit dem Darsteller, Holzstapel und Bergnebel im Hintergrund.",
+      "tags": [
+        "wikingerdorf",
+        "schwertkampf",
+        "kind",
+        "spiel",
+        "mittelalter",
+        "nebel"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Wikingerdorf"
+    }
+  },
+  {
+    "hash": "sha256:246b898ff176a380e5e401e9f11872e14cf67777d36fab15fdea4cab12762437",
+    "path": "Chris-iPhone/IMG_9837.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T12:00:54+00:00",
+    "captured_at_source": "container",
+    "duration": 45.14,
+    "probe": {
+      "captured_at": "2026-07-25T12:00:54+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 45.14,
+      "bitrate": 57611378,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.723,
+      "stability": 0.0,
+      "exposure": 0.734,
+      "score": 0.485
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 45.15
+      }
+    ],
+    "id": "20260725-camera-246b89",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9837_ec59e716_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9837_ec59e716_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9837_ec59e716_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 2,
+    "content": {
+      "summary": "Verwackelte Nahaufnahme, Mann hebt Kind vom Boden hoch, Wiese im Hintergrund.",
+      "tags": [
+        "wikingerdorf",
+        "kind",
+        "spiel",
+        "verwackelt",
+        "familie",
+        "nahaufnahme"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Wikingerdorf"
+    }
+  },
+  {
+    "hash": "sha256:265baa1cdb33bdc6bd55cc36ad9a3d424f1f942a317f4bc29da6da322d06c1ef",
+    "path": "Chris-iPhone/IMG_9767.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T09:14:13+00:00",
+    "captured_at_source": "container",
+    "duration": 9.375,
+    "probe": {
+      "captured_at": "2026-07-25T09:14:13+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 9.375,
+      "bitrate": 54819684,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.543,
+      "stability": 0.304,
+      "exposure": 0.734,
+      "score": 0.527
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.696
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 9.38
+      }
+    ],
+    "id": "20260725-camera-265baa",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9767_67665bc5_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9767_67665bc5_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9767_67665bc5_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 3,
+    "content": {
+      "summary": "Rotes Rettungs-/Safariboot mit Besatzung in gelben Regenjacken faehrt schnell ueber den Fjord vor bewaldeter Felswand.",
+      "tags": [
+        "boot",
+        "fjord",
+        "rib",
+        "safari",
+        "schnellfahrt",
+        "felswand"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Aurlandsfjord"
+    }
+  },
+  {
+    "hash": "sha256:3c5ccc7fa1608fb8df55493887d7dd7de076d0f43d24b7b5ace90e0453cad1ca",
+    "path": "Chris-iPhone/IMG_9785.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T09:22:56+00:00",
+    "captured_at_source": "container",
+    "duration": 46.963333,
+    "probe": {
+      "captured_at": "2026-07-25T09:22:56+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 46.963333,
+      "bitrate": 53568277,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.872,
+      "score": 0.624
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 46.98
+      }
+    ],
+    "id": "20260725-camera-3c5ccc",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9785_59c9d420_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9785_59c9d420_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9785_59c9d420_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9785_59c9d420_kf03.jpg"
+    ],
+    "source": "camera",
+    "rating": 3,
+    "content": {
+      "summary": "Blick vom Boot auf bewaldete Steilhaenge und schroffen Gipfel am schmalen Fjord, ruhiges Wasser.",
+      "tags": [
+        "fjord",
+        "berge",
+        "steilwand",
+        "wasser",
+        "natur",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Aurlandsfjord"
+    }
+  },
+  {
+    "hash": "sha256:4e8191598f8b7595fa90b8a36a4f9067f79588d45f92038347696f8d8be2f9bb",
+    "path": "Chris-iPhone/IMG_9858.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T12:25:23+00:00",
+    "captured_at_source": "container",
+    "duration": 7.09,
+    "probe": {
+      "captured_at": "2026-07-25T12:25:23+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 7.09,
+      "bitrate": 62534465,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.285,
+      "stability": 0.0,
+      "exposure": 0.885,
+      "score": 0.39
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 7.09
+      }
+    ],
+    "id": "20260725-camera-4e8191",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9858_e0cf2ab6_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9858_e0cf2ab6_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9858_e0cf2ab6_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 4,
+    "content": {
+      "summary": "Kind zielt mit Pfeil und Bogen auf die Zielscheibe im Schiessstand, weiterer Bogen im Vordergrund, GoPro-Blickwinkel.",
+      "tags": [
+        "bogenschiessen",
+        "kind",
+        "zielscheibe",
+        "wikingerdorf",
+        "aktivitaet"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Wikingerdorf"
+    }
+  },
+  {
+    "hash": "sha256:51dbad3ad0adb1e62618628dfa52975b5c1b75f8e3852a2159a2210d67b7fc5d",
+    "path": "Chris-iPhone/IMG_9826.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T11:39:33+00:00",
+    "captured_at_source": "container",
+    "duration": 86.103333,
+    "probe": {
+      "captured_at": "2026-07-25T11:39:33+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 86.103333,
+      "bitrate": 53892763,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.992,
+      "stability": 1.0,
+      "exposure": 0.976,
+      "score": 0.989
+    },
+    "motion": {
+      "type": "static",
+      "speed": 0.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 22.7
+      }
+    ],
+    "id": "20260725-camera-51dbad",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9826_9788b287_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9826_9788b287_kf01.jpg"
+    ],
+    "source": "camera",
+    "rating": 3,
+    "content": {
+      "summary": "Faehrenheck mit Flagge blickt zurueck auf breites Kielwasser und sich weitenden Fjord mit Bergpanorama.",
+      "tags": [
+        "faehre",
+        "flagge",
+        "fjord",
+        "kielwasser",
+        "panorama",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    },
+    "gps": {
+      "place": "Naeroeyfjord"
+    }
+  },
+  {
+    "hash": "sha256:52a4cae26d976d3968093954f2f715ad2c4d5f6a4d6a843e5207bb4448b83db7",
+    "path": "Chris-iPhone/IMG_9867.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T13:59:01+00:00",
+    "captured_at_source": "container",
+    "duration": 6.021667,
+    "probe": {
+      "captured_at": "2026-07-25T13:59:01+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 6.021667,
+      "bitrate": 54708523,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.844,
+      "stability": 0.177,
+      "exposure": 0.739,
+      "score": 0.587
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.823
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 6.02
+      }
+    ],
+    "id": "20260725-camera-52a4ca",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9867_601f4ed1_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9867_601f4ed1_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9867_601f4ed1_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 2,
+    "content": {
+      "summary": "Frau mit Kapuze und Rucksack laeuft ueber den Kiesplatz zwischen Palisadenzaun und Grassoden-Huetten im Nieselregen.",
+      "tags": [
+        "wikingerdorf",
+        "regen",
+        "palisade",
+        "gehen",
+        "rucksack",
+        "alltag"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Wikingerdorf"
+    }
+  },
+  {
     "hash": "sha256:55822e6dbfa6457918648e1542cb981f5483206a557178bb70e550296874de1b",
     "path": "Chris-iPhone/IMG_9758.MOV",
     "kind": "video",
@@ -24076,6 +24697,68 @@
       "usable_as": [
         "establisher"
       ]
+    }
+  },
+  {
+    "hash": "sha256:596948743666207ef0d138c6ce7f29402d003236c67d7e7f08c3005bfb6275b7",
+    "path": "Chris-iPhone/IMG_9868.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T13:59:09+00:00",
+    "captured_at_source": "container",
+    "duration": 4.82,
+    "probe": {
+      "captured_at": "2026-07-25T13:59:09+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 4.82,
+      "bitrate": 54267314,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.033,
+      "exposure": 0.745,
+      "score": 0.593
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.967
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 4.82
+      }
+    ],
+    "id": "20260725-camera-596948",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9868_bc54e841_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9868_bc54e841_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9868_bc54e841_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 2,
+    "content": {
+      "summary": "Kind laeuft mit Speer/Stock ueber den Kiesplatz Richtung Zelt und Palisade, regnerischer Tag im Wikingerdorf.",
+      "tags": [
+        "wikingerdorf",
+        "kind",
+        "regen",
+        "palisade",
+        "spiel",
+        "gehen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Wikingerdorf"
     }
   },
   {
@@ -24138,6 +24821,1344 @@
     }
   },
   {
+    "hash": "sha256:69ef03153b12739208deda268525e23ccebadc91fb803c03d726b271ba6fe06f",
+    "path": "Chris-iPhone/IMG_9861.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T12:28:06+00:00",
+    "captured_at_source": "container",
+    "duration": 31.361667,
+    "probe": {
+      "captured_at": "2026-07-25T12:28:06+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 31.361667,
+      "bitrate": 53661817,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.284,
+      "stability": 0.033,
+      "exposure": 0.858,
+      "score": 0.392
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.967
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 31.36
+      }
+    ],
+    "id": "20260725-camera-69ef03",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9861_f0c19869_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9861_f0c19869_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9861_f0c19869_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 3,
+    "content": {
+      "summary": "Erwachsener spannt den Bogen am Schiessstand, zielt auf Zielscheibe, GoPro-Blickwinkel vom Nachbarstand aus.",
+      "tags": [
+        "bogenschiessen",
+        "erwachsener",
+        "zielscheibe",
+        "wikingerdorf",
+        "aktivitaet"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Wikingerdorf"
+    }
+  },
+  {
+    "hash": "sha256:6d5ae035455f50b2d85cd485c918117e216dbebe4717ac5b81f6022f75737f09",
+    "path": "Chris-iPhone/IMG_9910.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T16:25:58+00:00",
+    "captured_at_source": "container",
+    "duration": 7.79,
+    "probe": {
+      "captured_at": "2026-07-25T16:25:58+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 7.79,
+      "bitrate": 83969207,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.288,
+      "stability": 0.502,
+      "exposure": 0.84,
+      "score": 0.544
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.498
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 7.79
+      }
+    ],
+    "id": "20260725-camera-6d5ae0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9910_cc9262bb_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9910_cc9262bb_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9910_cc9262bb_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 4,
+    "content": {
+      "summary": "Entgegenkommendes Fjordboot klein in der weiten, wolkenverhangenen Fjordschlucht mit Schneeresten am Gipfel.",
+      "tags": [
+        "faehre",
+        "fjord",
+        "weite",
+        "wolken",
+        "schnee",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Naeroeyfjord"
+    }
+  },
+  {
+    "hash": "sha256:73d0ad50a150cdaff1d8ee2c92bdb19ceb8ed10b5f013db4641b67eca7e8708f",
+    "path": "Chris-iPhone/IMG_9836.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T12:00:20+00:00",
+    "captured_at_source": "container",
+    "duration": 14.823333,
+    "probe": {
+      "captured_at": "2026-07-25T12:00:20+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 14.823333,
+      "bitrate": 55412025,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.078,
+      "exposure": 0.785,
+      "score": 0.621
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.922
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 14.82
+      }
+    ],
+    "id": "20260725-camera-73d0ad",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9836_2b928dec_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9836_2b928dec_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9836_2b928dec_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 4,
+    "content": {
+      "summary": "Kind kaempft mit Holzschwert gegen bärtigen Mann (Wikinger-Darsteller) auf dem Dorfplatz, Zuschauerin im Hintergrund.",
+      "tags": [
+        "wikingerdorf",
+        "schwertkampf",
+        "kind",
+        "spiel",
+        "mittelalter",
+        "familie"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Wikingerdorf"
+    }
+  },
+  {
+    "hash": "sha256:7a412e89fcc97ece857e37ee652bdc9a35994f9e8bf0926c02bcb680bb625ece",
+    "path": "Chris-iPhone/IMG_9905.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T16:18:55+00:00",
+    "captured_at_source": "container",
+    "duration": 5.868333,
+    "probe": {
+      "captured_at": "2026-07-25T16:18:55+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 5.868333,
+      "bitrate": 73087577,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.337,
+      "exposure": 0.885,
+      "score": 0.741
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.663
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 5.87
+      }
+    ],
+    "id": "20260725-camera-7a412e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9905_a5b3775d_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9905_a5b3775d_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9905_a5b3775d_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9905_a5b3775d_kf03.jpg"
+    ],
+    "source": "camera",
+    "rating": 4,
+    "content": {
+      "summary": "Nahaufnahme des Wasserfalls direkt an der Muendung ins gruene Fjordwasser, kraftvolle Gischt auf Felsen.",
+      "tags": [
+        "wasserfall",
+        "fjord",
+        "gischt",
+        "felsen",
+        "muendung",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    },
+    "gps": {
+      "place": "Naeroeyfjord"
+    }
+  },
+  {
+    "hash": "sha256:83f3bb7479ed2b7f0b78d44797d0f52430d262c51f2a0bc5c9b4201052bbae7e",
+    "path": "Chris-iPhone/IMG_9909.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T16:24:19+00:00",
+    "captured_at_source": "container",
+    "duration": 36.5967,
+    "probe": {
+      "captured_at": "2026-07-25T16:24:19+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 36.5967,
+      "bitrate": 65578732,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.798,
+      "stability": 0.056,
+      "exposure": 0.772,
+      "score": 0.542
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.944
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 36.6
+      }
+    ],
+    "id": "20260725-camera-83f3bb",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9909_585bcb9a_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9909_585bcb9a_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9909_585bcb9a_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 3,
+    "content": {
+      "summary": "Baugleiches Elektro-Katamarantour-Schiff faehrt entgegen auf dem Fjord vorbei, Steilwand im Hintergrund.",
+      "tags": [
+        "faehre",
+        "katamaran",
+        "fjord",
+        "entgegenkommend",
+        "elektroboot",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Naeroeyfjord"
+    }
+  },
+  {
+    "hash": "sha256:85faae6239e8a693506e6e692a1fb42721930e551da088182032f4003f151c69",
+    "path": "Chris-iPhone/IMG_9790.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T09:52:48+00:00",
+    "captured_at_source": "container",
+    "duration": 9.025,
+    "probe": {
+      "captured_at": "2026-07-25T09:52:48+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 9.025,
+      "bitrate": 53830274,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.223,
+      "stability": 0.107,
+      "exposure": 0.753,
+      "score": 0.361
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.893
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 9.03
+      }
+    ],
+    "id": "20260725-camera-85faae",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9790_225490e1_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9790_225490e1_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9790_225490e1_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 2,
+    "content": {
+      "summary": "Person mit Airpods blickt aus dem Fensterplatz des Fjordboots auf bewaldete Ufer und gruenes Wasser, Regen an der Scheibe.",
+      "tags": [
+        "faehre",
+        "fensterplatz",
+        "fjord",
+        "regen",
+        "portrait",
+        "unterwegs"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Naeroeyfjord"
+    }
+  },
+  {
+    "hash": "sha256:91a441bd8e1094bb2b06507143bb8d8f468466651e51d6389be4c398e26f10af",
+    "path": "Chris-iPhone/IMG_9835.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T11:59:07+00:00",
+    "captured_at_source": "container",
+    "duration": 43.503333,
+    "probe": {
+      "captured_at": "2026-07-25T11:59:07+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 43.503333,
+      "bitrate": 53752994,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.441,
+      "stability": 0.0,
+      "exposure": 0.722,
+      "score": 0.388
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 31.85
+      },
+      {
+        "start": 31.85,
+        "end": 43.5
+      }
+    ],
+    "id": "20260725-camera-91a441",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9835_e21e0555_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9835_e21e0555_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9835_e21e0555_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9835_e21e0555_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9835_e21e0555_kf04.jpg"
+    ],
+    "source": "camera",
+    "rating": 4,
+    "content": {
+      "summary": "Schwertkampf-Spiel zwischen Mutter und Sohn mit Holzschwertern auf dem Sandplatz des Wikingerdorfs, weitere Familien im Hintergrund.",
+      "tags": [
+        "wikingerdorf",
+        "spiel",
+        "familie",
+        "schwert",
+        "kind",
+        "mittelalter"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Wikingerdorf"
+    }
+  },
+  {
+    "hash": "sha256:99aa689e9f8d42bbd0accc12fe0a437d84d5415a4d2edb71f5b66aa7053ac35f",
+    "path": "Chris-iPhone/IMG_9884.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T14:43:55+00:00",
+    "captured_at_source": "container",
+    "duration": 8.0717,
+    "probe": {
+      "captured_at": "2026-07-25T14:43:55+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 8.0717,
+      "bitrate": 53573460,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.176,
+      "stability": 0.459,
+      "exposure": 0.626,
+      "score": 0.42
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.541
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 8.07
+      }
+    ],
+    "id": "20260725-camera-99aa68",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9884_4a40f7ff_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9884_4a40f7ff_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9884_4a40f7ff_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 3,
+    "content": {
+      "summary": "Weisses Fjordboot faehrt fern durch dunstigen, nebelverhangenen Fjord zwischen steilen Bergflanken.",
+      "tags": [
+        "fjord",
+        "boot",
+        "nebel",
+        "berge",
+        "weite",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Naeroeyfjord"
+    }
+  },
+  {
+    "hash": "sha256:9d4c4454098c7d9381533df1ee73b81a1e82f970eb7df002c12e99fe8dd3fdeb",
+    "path": "Chris-iPhone/IMG_9891.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T15:46:25+00:00",
+    "captured_at_source": "container",
+    "duration": 17.2567,
+    "probe": {
+      "captured_at": "2026-07-25T15:46:25+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 17.2567,
+      "bitrate": 53170929,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.406,
+      "stability": 0.0,
+      "exposure": 0.773,
+      "score": 0.393
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 17.27
+      }
+    ],
+    "id": "20260725-camera-9d4c44",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9891_fb94b378_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9891_fb94b378_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9891_fb94b378_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 3,
+    "content": {
+      "summary": "Blick durch grosse Panoramafenster des Fjordboots auf ein kleines Dorf mit Wasserfall, Info-Bildschirm links im Bild.",
+      "tags": [
+        "faehre",
+        "innenraum",
+        "panoramafenster",
+        "dorf",
+        "wasserfall",
+        "fjord"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Naeroeyfjord"
+    }
+  },
+  {
+    "hash": "sha256:af4e2c96416c95b2f941d596fe7877dc471b1d4339b867c966ef6b7f300da8e0",
+    "path": "Chris-iPhone/IMG_9778.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T09:18:10+00:00",
+    "captured_at_source": "container",
+    "duration": 23.3367,
+    "probe": {
+      "captured_at": "2026-07-25T09:18:10+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 23.3367,
+      "bitrate": 53336593,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.484,
+      "exposure": 0.88,
+      "score": 0.788
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.516
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 23.34
+      }
+    ],
+    "id": "20260725-camera-af4e2c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9778_c3f89c29_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9778_c3f89c29_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9778_c3f89c29_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 4,
+    "content": {
+      "summary": "Heck der Faehre mit wehender norwegischer Flagge, Kielwasser und enger Fjord mit steilen Felswaenden im Hintergrund.",
+      "tags": [
+        "faehre",
+        "flagge",
+        "fjord",
+        "kielwasser",
+        "felswand",
+        "schifffahrt"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Aurlandsfjord"
+    }
+  },
+  {
+    "hash": "sha256:b31d73d83b789dd381d44a887cdd2b431c076ed2eabfe30c4624ea0ed39cebb1",
+    "path": "Chris-iPhone/IMG_9904.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T16:18:33+00:00",
+    "captured_at_source": "container",
+    "duration": 17.44,
+    "probe": {
+      "captured_at": "2026-07-25T16:18:33+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 17.44,
+      "bitrate": 54548311,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.824,
+      "score": 0.608
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 17.45
+      }
+    ],
+    "id": "20260725-camera-b31d73",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9904_211f7909_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9904_211f7909_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9904_211f7909_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 3,
+    "content": {
+      "summary": "Naeherer Blick auf denselben Wasserfall, Wasser stuerzt ueber Felsstufen durch den Wald.",
+      "tags": [
+        "wasserfall",
+        "fjord",
+        "wald",
+        "felsen",
+        "kaskade",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    },
+    "gps": {
+      "place": "Naeroeyfjord"
+    }
+  },
+  {
+    "hash": "sha256:b98ead8693141fa2d6f2f7054d41f3c096c5674464731c0113a28f49e0640f31",
+    "path": "Chris-iPhone/IMG_9857.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T12:24:28+00:00",
+    "captured_at_source": "container",
+    "duration": 5.005,
+    "probe": {
+      "captured_at": "2026-07-25T12:24:28+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 5.005,
+      "bitrate": 54753133,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.227,
+      "stability": 0.0,
+      "exposure": 0.891,
+      "score": 0.373
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 5.0
+      }
+    ],
+    "id": "20260725-camera-b98ead",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9857_de7311ba_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9857_de7311ba_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9857_de7311ba_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 4,
+    "content": {
+      "summary": "Kind zielt mit Pfeil und Bogen auf eine Zielscheibe im Bogenschiess-Stand, Erwachsene sehen zu, GoPro-Blickwinkel.",
+      "tags": [
+        "bogenschiessen",
+        "kind",
+        "zielscheibe",
+        "wikingerdorf",
+        "aktivitaet"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Wikingerdorf"
+    }
+  },
+  {
+    "hash": "sha256:bbb451c42141f4bfcdd68a1cc69bb61b8783dc4a2415e573ff57b78bda7df5ea",
+    "path": "Chris-iPhone/IMG_9832.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T11:52:02+00:00",
+    "captured_at_source": "container",
+    "duration": 34.015,
+    "probe": {
+      "captured_at": "2026-07-25T11:52:02+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 34.015,
+      "bitrate": 54419360,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.854,
+      "score": 0.618
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 34.02
+      }
+    ],
+    "id": "20260725-camera-bbb451",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9832_01118ead_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9832_01118ead_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9832_01118ead_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 3,
+    "content": {
+      "summary": "Wikinger-Darsteller zwischen geschnitzten Holztotems mit bemalten Gesichtern im Waldgarten des Wikingerdorfs.",
+      "tags": [
+        "wikingerdorf",
+        "totem",
+        "holzschnitzerei",
+        "kostuem",
+        "mittelalter",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Wikingerdorf"
+    }
+  },
+  {
+    "hash": "sha256:ca97b0cabb6d0c655d9418212d43ce3ce7e26dfc1396af08d0b33983f616adaf",
+    "path": "Chris-iPhone/IMG_9769.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T09:14:51+00:00",
+    "captured_at_source": "container",
+    "duration": 21.5467,
+    "probe": {
+      "captured_at": "2026-07-25T09:14:51+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 21.5467,
+      "bitrate": 54564410,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.862,
+      "score": 0.621
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 21.55
+      }
+    ],
+    "id": "20260725-camera-ca97b0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9769_9eec6d0b_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9769_9eec6d0b_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9769_9eec6d0b_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9769_9eec6d0b_kf03.jpg"
+    ],
+    "source": "camera",
+    "rating": 4,
+    "content": {
+      "summary": "Wasserfall stuerzt in zwei Stufen durch bewaldete Felsschlucht, Blick vom Fjord aus, ruhige Einstellung.",
+      "tags": [
+        "wasserfall",
+        "fjord",
+        "wald",
+        "felsen",
+        "natur",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    },
+    "gps": {
+      "place": "Aurlandsfjord"
+    }
+  },
+  {
+    "hash": "sha256:d6f0309c89755d394249abfd24c932d1d104f8665c2c7c6669bbb00631f60e1f",
+    "path": "Chris-iPhone/IMG_9863.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T12:28:46+00:00",
+    "captured_at_source": "container",
+    "duration": 7.2717,
+    "probe": {
+      "captured_at": "2026-07-25T12:28:46+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 7.2717,
+      "bitrate": 53822112,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.428,
+      "stability": 0.429,
+      "exposure": 0.91,
+      "score": 0.589
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.571
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 7.27
+      }
+    ],
+    "id": "20260725-camera-d6f030",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9863_2523cb06_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9863_2523cb06_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9863_2523cb06_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9863_2523cb06_kf03.jpg"
+    ],
+    "source": "camera",
+    "rating": 3,
+    "content": {
+      "summary": "Erwachsener zielt konzentriert mit gespanntem Bogen auf die Zielscheibe, Wikinger-Darsteller mit Kutte rechts im Bild.",
+      "tags": [
+        "bogenschiessen",
+        "erwachsener",
+        "zielscheibe",
+        "wikingerdorf",
+        "konzentration"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Wikingerdorf"
+    }
+  },
+  {
+    "hash": "sha256:dd6f0d2a38ffc58fe184a840aa0c0f66bb3661ced331c1bc90d7b0acf574e393",
+    "path": "Chris-iPhone/IMG_9792.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T09:58:04+00:00",
+    "captured_at_source": "container",
+    "duration": 55.3917,
+    "probe": {
+      "captured_at": "2026-07-25T09:58:04+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 55.3917,
+      "bitrate": 58506401,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.836,
+      "stability": 0.327,
+      "exposure": 0.656,
+      "score": 0.606
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.673
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 55.41
+      }
+    ],
+    "id": "20260725-camera-dd6f0d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9792_92ecd626_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9792_92ecd626_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9792_92ecd626_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 3,
+    "content": {
+      "summary": "Gelbes Tandem-Kajak mit zwei Paddlern nahe steinigem Ufer am Fjord, sonniger Moment.",
+      "tags": [
+        "kajak",
+        "fjord",
+        "paddeln",
+        "ufer",
+        "sonne",
+        "wassersport"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Aurlandsfjord"
+    }
+  },
+  {
+    "hash": "sha256:e000e7c77340006fd7bd2fd8d70a654140e4ab84db70563ec016d91ea942b889",
+    "path": "Chris-iPhone/IMG_9834.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T11:58:02+00:00",
+    "captured_at_source": "container",
+    "duration": 52.34,
+    "probe": {
+      "captured_at": "2026-07-25T11:58:02+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 52.34,
+      "bitrate": 53884945,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.74,
+      "stability": 0.0,
+      "exposure": 0.728,
+      "score": 0.489
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 52.33
+      }
+    ],
+    "id": "20260725-camera-e000e7",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9834_d64895c7_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9834_d64895c7_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9834_d64895c7_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9834_d64895c7_kf03.jpg"
+    ],
+    "source": "camera",
+    "rating": 4,
+    "content": {
+      "summary": "Mutter und Sohn spielen Schwertkampf mit Schild und Holzschwert im Wikingerdorf, ausgelassene Stimmung auf Wiese.",
+      "tags": [
+        "wikingerdorf",
+        "spiel",
+        "familie",
+        "schwert",
+        "schild",
+        "kind"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Wikingerdorf"
+    }
+  },
+  {
+    "hash": "sha256:e1853d8a96297c110099b598d28a157bea72ba73cfcb92afb3573b95c7fbe07f",
+    "path": "Chris-iPhone/IMG_9894.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T16:05:50+00:00",
+    "captured_at_source": "container",
+    "duration": 15.94,
+    "probe": {
+      "captured_at": "2026-07-25T16:05:50+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 15.94,
+      "bitrate": 53623746,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.399,
+      "stability": 0.62,
+      "exposure": 0.866,
+      "score": 0.628
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.38
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 15.93
+      }
+    ],
+    "id": "20260725-camera-e1853d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9894_ca05f20f_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9894_ca05f20f_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9894_ca05f20f_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9894_ca05f20f_kf03.jpg"
+    ],
+    "source": "camera",
+    "rating": 4,
+    "content": {
+      "summary": "Nebelverhangene Berggipfel saeumen den Fjord, mehrere schmale Wasserfaelle an den Haengen, Regentropfen auf Fensterscheibe.",
+      "tags": [
+        "fjord",
+        "nebel",
+        "berge",
+        "wasserfall",
+        "regen",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Naeroeyfjord"
+    }
+  },
+  {
+    "hash": "sha256:e2a01fa0809f726dae31a2a404a52f98516352eabe98f6571b709ffc86840039",
+    "path": "Chris-iPhone/IMG_9849.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T12:03:38+00:00",
+    "captured_at_source": "container",
+    "duration": 73.283333,
+    "probe": {
+      "captured_at": "2026-07-25T12:03:38+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 73.283333,
+      "bitrate": 54314039,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.791,
+      "stability": 0.0,
+      "exposure": 0.755,
+      "score": 0.515
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 0.68
+      },
+      {
+        "start": 0.68,
+        "end": 1.97
+      },
+      {
+        "start": 1.97,
+        "end": 2.38
+      },
+      {
+        "start": 2.38,
+        "end": 72.48
+      },
+      {
+        "start": 72.48,
+        "end": 73.28
+      }
+    ],
+    "id": "20260725-camera-e2a01f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9849_13fbcec7_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9849_13fbcec7_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9849_13fbcec7_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9849_13fbcec7_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9849_13fbcec7_kf04.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9849_13fbcec7_kf05.jpg"
+    ],
+    "source": "camera",
+    "rating": 3,
+    "content": {
+      "summary": "Zwei Kaempfer mit runden Wikingerschilden und Schwertern auf der Wiese des Dorfplatzes, Blick durch grosses Schild im Vordergrund.",
+      "tags": [
+        "wikingerdorf",
+        "schwertkampf",
+        "schild",
+        "mittelalter",
+        "spiel"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Wikingerdorf"
+    }
+  },
+  {
+    "hash": "sha256:eb2e420f538292e1668065a234ce47aa8ea0d4609e01dd6763c3c20857316f62",
+    "path": "Chris-iPhone/IMG_9900.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T16:17:02+00:00",
+    "captured_at_source": "container",
+    "duration": 34.233333,
+    "probe": {
+      "captured_at": "2026-07-25T16:17:02+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 34.233333,
+      "bitrate": 53978832,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.184,
+      "exposure": 0.789,
+      "score": 0.658
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.816
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 34.23
+      }
+    ],
+    "id": "20260725-camera-eb2e42",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9900_d814f7cd_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9900_d814f7cd_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9900_d814f7cd_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9900_d814f7cd_kf03.jpg"
+    ],
+    "source": "camera",
+    "rating": 3,
+    "content": {
+      "summary": "Wasserfall stuerzt in langen Kaskaden durch bewaldeten Bergeinschnitt bis zum Fjordufer, Weitwinkel vom Boot.",
+      "tags": [
+        "wasserfall",
+        "fjord",
+        "wald",
+        "kaskade",
+        "berge",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    },
+    "gps": {
+      "place": "Naeroeyfjord"
+    }
+  },
+  {
+    "hash": "sha256:f43f74795f94c12cd7a45ba466db2d054b2a75f9eebfdd3e493328fe2db47bbc",
+    "path": "Chris-iPhone/IMG_9813.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T11:03:09+00:00",
+    "captured_at_source": "container",
+    "duration": 23.26,
+    "probe": {
+      "captured_at": "2026-07-25T11:03:09+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 23.26,
+      "bitrate": 53851542,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.902,
+      "score": 0.634
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 23.27
+      }
+    ],
+    "id": "20260725-camera-f43f74",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9813_5f3dbde5_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9813_5f3dbde5_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9813_5f3dbde5_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 4,
+    "content": {
+      "summary": "Schauspieler in Wikinger-Kostuem vor Grassoden-Haus und Pranger-Nachbau, Touristen mit Regenschirmen im Hintergrund, Nieselregen.",
+      "tags": [
+        "wikingerdorf",
+        "kostuem",
+        "schauspieler",
+        "touristen",
+        "regen",
+        "mittelalter"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    },
+    "gps": {
+      "place": "Wikingerdorf"
+    }
+  },
+  {
     "hash": "sha256:f5dd6bff2a45676d2873cedfe59aae8ac67c79dbf43196818d7dc2edadf88998",
     "path": "Chris-iPhone/IMG_9751.MOV",
     "kind": "video",
@@ -24193,6 +26214,3531 @@
       "people": false,
       "usable_as": [
         "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f5e3180babd673d37a80ad09a149fc04884378b247f2b125ddc63d414d561d21",
+    "path": "Chris-iPhone/IMG_9899.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T16:16:18+00:00",
+    "captured_at_source": "container",
+    "duration": 29.3717,
+    "probe": {
+      "captured_at": "2026-07-25T16:16:18+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 29.3717,
+      "bitrate": 53845221,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.816,
+      "score": 0.605
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 29.38
+      }
+    ],
+    "id": "20260725-camera-f5e318",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9899_856365d2_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9899_856365d2_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9899_856365d2_kf02.jpg"
+    ],
+    "source": "camera",
+    "rating": 3,
+    "content": {
+      "summary": "Wasserfall stuerzt durch dichten Nadelwald an steiler Felswand direkt ins Fjordwasser, Blick vom Boot.",
+      "tags": [
+        "wasserfall",
+        "fjord",
+        "wald",
+        "felswand",
+        "natur",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    },
+    "gps": {
+      "place": "Naeroeyfjord"
+    }
+  },
+  {
+    "hash": "sha256:0175144005484a3df40def8e8e6d0a37a0d19c7328feebf4b72c43b9ebff0569",
+    "path": "Chris-iPhone/IMG_9740.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T09:56:52+00:00",
+    "gps": {
+      "lat": 60.86293333333334,
+      "lon": 7.114977777777778,
+      "elevation_m": 4.9,
+      "place": "Flaam"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T09:56:52+00:00",
+      "gps": {
+        "lat": 60.86293333333334,
+        "lon": 7.114977777777778,
+        "elevation_m": 4.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.989,
+      "score": 0.995
+    },
+    "id": "20260725-phone-017514",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9740_cc9a1eaa_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Werbetafel 'Go Green - Future of The Fjords, Zero Emission' fuer die Naeroeyfjord-Kreuzfahrt am Anleger, bewaldeter Hang im Hintergrund.",
+      "tags": [
+        "schild",
+        "werbung",
+        "faehre",
+        "naeroeyfjord",
+        "anleger",
+        "elektroboot"
+      ],
+      "people": false,
+      "usable_as": [
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:0cef1decbabf0982d74bab9abea7b4e0dc737a91f8f518d82a43f1a7bcf343a9",
+    "path": "Chris-iPhone/IMG_9744.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T10:19:58+00:00",
+    "gps": {
+      "lat": 60.862808333333334,
+      "lon": 7.1166277777777776,
+      "elevation_m": 40.9,
+      "place": "Flaam"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T10:19:58+00:00",
+      "gps": {
+        "lat": 60.862808333333334,
+        "lon": 7.1166277777777776,
+        "elevation_m": 40.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.304,
+      "exposure": 0.942,
+      "score": 0.623
+    },
+    "id": "20260725-phone-0cef1d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9744_9764ba78_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Bug der Artania am Kai von Flaam vom Wasser aus fotografiert, bewoelkter Himmel, Berge im Hintergrund.",
+      "tags": [
+        "kreuzfahrtschiff",
+        "artania",
+        "flaam",
+        "hafen",
+        "bug",
+        "fjord"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:0ee2f3a991cdb64b2c14173a3217ab7167b477842826769ddc73d694c6c0fd30",
+    "path": "Chris-iPhone/IMG_9771.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T11:15:25+00:00",
+    "gps": {
+      "lat": 60.978005555555555,
+      "lon": 7.011133333333333,
+      "elevation_m": 6.9,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T11:15:25+00:00",
+      "gps": {
+        "lat": 60.978005555555555,
+        "lon": 7.011133333333333,
+        "elevation_m": 6.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.879,
+      "score": 0.939
+    },
+    "id": "20260725-phone-0ee2f3",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9771_f4fb459d_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Passagiere in Regenjacken fotografieren vom Bootsdeck die enge, tief bewaldete Fjordschlucht voraus.",
+      "tags": [
+        "faehre",
+        "passagiere",
+        "fjord",
+        "regenjacke",
+        "fotografieren",
+        "aussichtsdeck"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1625fdaf9be127b2e77744a44f9abcf5bdbd7f673ed079e799608993920fb699",
+    "path": "Chris-iPhone/IMG_9817.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T13:11:32+00:00",
+    "gps": {
+      "lat": 60.87914722222222,
+      "lon": 6.842491666666667,
+      "elevation_m": 5.0,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T13:11:32+00:00",
+      "gps": {
+        "lat": 60.87914722222222,
+        "lon": 6.842491666666667,
+        "elevation_m": 5.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.388,
+      "exposure": 0.946,
+      "score": 0.667
+    },
+    "id": "20260725-phone-1625fd",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9817_e8f7e9ca_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Gruppe von Grassoden-Huetten und Feuerstelle im Wikingerdorf, eingebettet zwischen steilen, wolkenverhangenen Bergen.",
+      "tags": [
+        "wikingerdorf",
+        "grassodenhaus",
+        "feuerstelle",
+        "berge",
+        "wolken",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:240ea4e5ef994f54e29d9a7ea142128d57ed80389ec157c2a88c4e2aba43c1a7",
+    "path": "Chris-iPhone/IMG_9805.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T12:47:42+00:00",
+    "gps": {
+      "lat": 60.879866666666665,
+      "lon": 6.843305555555555,
+      "elevation_m": 6.9,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T12:47:42+00:00",
+      "gps": {
+        "lat": 60.879866666666665,
+        "lon": 6.843305555555555,
+        "elevation_m": 6.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.896,
+      "exposure": 0.981,
+      "score": 0.939
+    },
+    "id": "20260725-phone-240ea4",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9805_b0083fce_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Mutter und Sohn posieren laechelnd auf dem Fjordweg neben bluehendem Weidenroeschen, Victory-Zeichen, Berge im Hintergrund.",
+      "tags": [
+        "familie",
+        "portrait",
+        "wanderweg",
+        "fjord",
+        "laecheln",
+        "blumen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2e213d7402f9631ddb94bd6a3a90ec4e8d525c2857e87c49d13e9566cbd82f20",
+    "path": "Chris-iPhone/IMG_9802.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T12:27:40+00:00",
+    "gps": {
+      "lat": 60.88106666666667,
+      "lon": 6.842441666666667,
+      "elevation_m": 5.0,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T12:27:40+00:00",
+      "gps": {
+        "lat": 60.88106666666667,
+        "lon": 6.842441666666667,
+        "elevation_m": 5.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.282,
+      "exposure": 0.839,
+      "score": 0.56
+    },
+    "id": "20260725-phone-2e213d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9802_f38e5121_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Nahaufnahme der geschnitzten Wikingerstatue mit Drachenkopf-Boot vor dem Fjord, Bergpanorama im Hintergrund.",
+      "tags": [
+        "wikingerdorf",
+        "holzstatue",
+        "skulptur",
+        "fjord",
+        "drachenboot",
+        "nahaufnahme"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2f5678b5fca46be4384beb3f99ca5469b55107dc87f7ffc472bc0868def90a8a",
+    "path": "Chris-iPhone/IMG_9885.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T16:51:49+00:00",
+    "gps": {
+      "lat": 60.881169444444446,
+      "lon": 6.8417861111111105,
+      "elevation_m": -40.0,
+      "place": "Gudvangen"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T16:51:49+00:00",
+      "gps": {
+        "lat": 60.881169444444446,
+        "lon": 6.8417861111111105,
+        "elevation_m": -40.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.118,
+      "exposure": 0.974,
+      "score": 0.546
+    },
+    "id": "20260725-phone-2f5678",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9885_0bda0b02_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Bug des 'Future of the Fjords'-Katamarans legt am Anleger von Gudvangen an, Norwegen-Flagge und Rettungsboot sichtbar.",
+      "tags": [
+        "katamaran",
+        "faehre",
+        "anleger",
+        "gudvangen",
+        "elektroboot",
+        "fjord"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:31591a7222a6bf28997c7a10de7189ff3ffb7c7df5b7e3dc5ca9b7a7fc037d21",
+    "path": "Chris-iPhone/IMG_9737.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T09:04:34+00:00",
+    "gps": {
+      "lat": 60.91178611111111,
+      "lon": 7.1932888888888895,
+      "elevation_m": 68.5,
+      "place": "Camping, Aurland"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T09:04:34+00:00",
+      "gps": {
+        "lat": 60.91178611111111,
+        "lon": 7.1932888888888895,
+        "elevation_m": 68.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.426,
+      "exposure": 0.937,
+      "score": 0.681
+    },
+    "id": "20260725-phone-31591a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9737_21f9a040_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Reihe brauner Holzhuetten des Campingplatzes vor bewaldetem Hang, Morgenlicht, gruener Rasen mit Blumentopf im Vordergrund.",
+      "tags": [
+        "campingplatz",
+        "huetten",
+        "wald",
+        "morgen",
+        "norwegen",
+        "ruhig"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:32c7d94dbf97bb590a1852f73e6c900957ac48f5b53fdf6f0f2ab8ccea00c501",
+    "path": "Chris-iPhone/IMG_9798.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T12:14:37+00:00",
+    "gps": {
+      "lat": 60.881375,
+      "lon": 6.842225,
+      "elevation_m": 8.1,
+      "place": "Gudvangen"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T12:14:37+00:00",
+      "gps": {
+        "lat": 60.881375,
+        "lon": 6.842225,
+        "elevation_m": 8.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.072,
+      "exposure": 0.892,
+      "score": 0.482
+    },
+    "id": "20260725-phone-32c7d9",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9798_4abe6d1a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Kind schaut aus dem Bootsinnenraum auf den Anleger mit einer weiteren Faehre, Passagiere im Vordergrund.",
+      "tags": [
+        "fjordboot",
+        "innenraum",
+        "kind",
+        "anleger",
+        "faehre",
+        "fenster"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:36ddf3e27edeacd6da4c01830624cd40608442aa929dc6baccd3991855f08764",
+    "path": "Chris-iPhone/IMG_9787.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T11:24:05+00:00",
+    "gps": {
+      "lat": 60.95915277777778,
+      "lon": 6.963044444444445,
+      "elevation_m": 1.0,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T11:24:05+00:00",
+      "gps": {
+        "lat": 60.95915277777778,
+        "lon": 6.963044444444445,
+        "elevation_m": 1.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.34,
+      "exposure": 0.993,
+      "score": 0.667
+    },
+    "id": "20260725-phone-36ddf3",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9787_70783ab6_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Heck der Faehre mit norwegischer Flagge, breites Kielwasser im weiten Teil des Fjords, sanfte Berghaenge.",
+      "tags": [
+        "faehre",
+        "flagge",
+        "fjord",
+        "kielwasser",
+        "heck",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:3e506d9ef8ccbde55124b15a980e95f6ceba59758cdbc4c16384451b0c449846",
+    "path": "Chris-iPhone/IMG_9903.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T18:18:28+00:00",
+    "gps": {
+      "lat": 60.978233333333336,
+      "lon": 7.01025,
+      "elevation_m": 21.6,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T18:18:28+00:00",
+      "gps": {
+        "lat": 60.978233333333336,
+        "lon": 7.01025,
+        "elevation_m": 21.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.575,
+      "exposure": 0.974,
+      "score": 0.775
+    },
+    "id": "20260725-phone-3e506d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9903_b45333b2_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Naeherer Blick auf den Wasserfall, der in tuerkisfarbenes Fjordwasser stuerzt, umgeben von Wald.",
+      "tags": [
+        "wasserfall",
+        "fjord",
+        "tuerkis",
+        "wald",
+        "felsen",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:3ee3a5dc7ec941d4d79de3ecdfc141b27c6ed0adc7b5dc4b77024b5853be368b",
+    "path": "Chris-iPhone/IMG_9816.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T13:11:20+00:00",
+    "gps": {
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T13:11:20+00:00",
+      "gps": null,
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.938,
+      "score": 0.969
+    },
+    "id": "20260725-phone-3ee3a5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9816_1246b8d0_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Wikinger-Darstellerinnen unter offener Werkstatt-Huette handwerken am Tisch, Waren und Koerbe im Vordergrund.",
+      "tags": [
+        "wikingerdorf",
+        "werkstatt",
+        "handwerk",
+        "darsteller",
+        "markt",
+        "mittelalter"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:425e4c4143d6c2c6164ad157fddf7768c05cb2e9beb9789ff49eb9d25b308ac8",
+    "path": "Chris-iPhone/IMG_9806.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T12:47:51+00:00",
+    "gps": {
+      "lat": 60.87987777777778,
+      "lon": 6.843297222222222,
+      "elevation_m": 7.8,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T12:47:51+00:00",
+      "gps": {
+        "lat": 60.87987777777778,
+        "lon": 6.843297222222222,
+        "elevation_m": 7.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.062,
+      "exposure": 0.956,
+      "score": 0.509
+    },
+    "id": "20260725-phone-425e4c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9806_d02d96f6_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Mutter und Sohn posieren laechelnd auf dem Fjordweg, Victory-Zeichen, Wegweiser und Fjord im Hintergrund.",
+      "tags": [
+        "familie",
+        "portrait",
+        "wanderweg",
+        "fjord",
+        "laecheln",
+        "wegweiser"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4589a9c453871aac91b57a8c7f7f71d4fdac8504166007880ffe5f64a5d35301",
+    "path": "Chris-iPhone/IMG_9738.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T09:13:25+00:00",
+    "gps": {
+      "lat": 60.91180555555555,
+      "lon": 7.194052777777778,
+      "elevation_m": 76.9,
+      "place": "Camping, Aurland"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T09:13:25+00:00",
+      "gps": {
+        "lat": 60.91180555555555,
+        "lon": 7.194052777777778,
+        "elevation_m": 76.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.313,
+      "exposure": 0.967,
+      "score": 0.64
+    },
+    "id": "20260725-phone-4589a9",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9738_c4a3ddc9_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Fruehstueck auf der Huettenveranda mit Fjordblick, Mutter und Kind am Tisch mit Cerealien und Broten, bedeckter Himmel.",
+      "tags": [
+        "fruehstueck",
+        "familie",
+        "kind",
+        "huette",
+        "fjord",
+        "alltag"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:480d454f9a2ac739287cd0f061fd87fdeeca08c1ce85b7f3977d6406d6c785d7",
+    "path": "Chris-iPhone/IMG_9907.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T18:20:45+00:00",
+    "gps": {
+      "lat": 60.97768888888889,
+      "lon": 7.010588888888889,
+      "elevation_m": 12.9,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T18:20:45+00:00",
+      "gps": {
+        "lat": 60.97768888888889,
+        "lon": 7.010588888888889,
+        "elevation_m": 12.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.204,
+      "exposure": 0.767,
+      "score": 0.486
+    },
+    "id": "20260725-phone-480d45",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9907_3f6050f1_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Nahaufnahme des Logos 'THE FJORDS - Part of Norway's best' auf beschlagener schwarzer Bootswand, Regentropfen.",
+      "tags": [
+        "logo",
+        "schild",
+        "faehre",
+        "marke",
+        "regen",
+        "nahaufnahme"
+      ],
+      "people": false,
+      "usable_as": [
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:49ee6dd5c5038112cda3cf57688c6865852d8586c132f398daeb865b0ac43149",
+    "path": "Chris-iPhone/IMG_9747.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T10:20:34+00:00",
+    "gps": {
+      "lat": 60.86253333333333,
+      "lon": 7.117566666666666,
+      "elevation_m": 23.3,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T10:20:34+00:00",
+      "gps": {
+        "lat": 60.86253333333333,
+        "lon": 7.117566666666666,
+        "elevation_m": 23.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.093,
+      "exposure": 0.912,
+      "score": 0.503
+    },
+    "id": "20260725-phone-49ee6d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9747_626996f2_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mutter und Kind am Fensterplatz des Fjordboots essen Apfel, Artania draussen vorbeiziehend, entspannte Stimmung.",
+      "tags": [
+        "familie",
+        "fjordboot",
+        "fenster",
+        "artania",
+        "portrait",
+        "kreuzfahrtschiff"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4f6759a4ad2addf12c21de1402d37b35713a3a8eeecdf9e755207605e863ffb0",
+    "path": "Chris-iPhone/IMG_9803.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T12:29:11+00:00",
+    "gps": {
+      "lat": 60.88083611111111,
+      "lon": 6.8421611111111105,
+      "elevation_m": 8.1,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T12:29:11+00:00",
+      "gps": {
+        "lat": 60.88083611111111,
+        "lon": 6.8421611111111105,
+        "elevation_m": 8.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.244,
+      "exposure": 0.966,
+      "score": 0.605
+    },
+    "id": "20260725-phone-4f6759",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9803_cb8b5c6e_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Touristen ueberqueren nachgebaute Wikingerschiff-Bruecke ueber den Flusslauf im Wikingerdorf, bewaldeter Berghang.",
+      "tags": [
+        "wikingerdorf",
+        "bruecke",
+        "drachenboot",
+        "touristen",
+        "fluss",
+        "holzbau"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4fcfc357aadf26cb929ff736d1524d68b1e941127cf991eef2b9d59fc1f8f52f",
+    "path": "Chris-iPhone/IMG_9883.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T16:42:01+00:00",
+    "gps": {
+      "lat": 60.88001666666667,
+      "lon": 6.8434,
+      "elevation_m": 1.6,
+      "place": "Gudvangen"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T16:42:01+00:00",
+      "gps": {
+        "lat": 60.88001666666667,
+        "lon": 6.8434,
+        "elevation_m": 1.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.455,
+      "exposure": 0.968,
+      "score": 0.711
+    },
+    "id": "20260725-phone-4fcfc3",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9883_1c246d7f_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kind schaut auf Reihen bunter Kajaks am Verleih-Stand am Fjordufer, Segelboote im Hintergrund.",
+      "tags": [
+        "kajak",
+        "verleih",
+        "fjord",
+        "kind",
+        "wassersport",
+        "ufer"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:50dea496ed493cf9770bd0fbfdeda317024b43deb2e3e9c376a7b14027ca74f7",
+    "path": "Chris-iPhone/IMG_9794.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T11:59:34+00:00",
+    "gps": {
+      "lat": 60.89528611111111,
+      "lon": 6.859977777777777,
+      "elevation_m": 8.6,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T11:59:34+00:00",
+      "gps": {
+        "lat": 60.89528611111111,
+        "lon": 6.859977777777777,
+        "elevation_m": 8.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.157,
+      "exposure": 0.942,
+      "score": 0.55
+    },
+    "id": "20260725-phone-50dea4",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9794_a1903b7f_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Schmaler Wasserfall stuerzt in langer Kaskade eine steile bewaldete Felswand hinab.",
+      "tags": [
+        "wasserfall",
+        "felswand",
+        "wald",
+        "kaskade",
+        "fjord",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:525d39960af9e38761de7b23578185c995a5d484b7122e4cb1d6c76d706af9d1",
+    "path": "Chris-iPhone/IMG_9825.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T13:37:03+00:00",
+    "gps": {
+      "lat": 60.87897777777778,
+      "lon": 6.842524999999999,
+      "elevation_m": 9.4,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T13:37:03+00:00",
+      "gps": {
+        "lat": 60.87897777777778,
+        "lon": 6.842524999999999,
+        "elevation_m": 9.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.442,
+      "exposure": 0.865,
+      "score": 0.654
+    },
+    "id": "20260725-phone-525d39",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9825_accedf4f_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Wikinger-Darsteller mit Speer und Rundschild schaut wachsam zur Seite vor dem Langhaus, Waffen auf Bank dahinter.",
+      "tags": [
+        "wikingerdorf",
+        "speer",
+        "schild",
+        "darsteller",
+        "wache",
+        "mittelalter"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:556b251498b90c8722709303227d4657ed52aa7a579fff5271754b3a6c28802a",
+    "path": "Chris-iPhone/IMG_9830.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T13:48:27+00:00",
+    "gps": {
+      "lat": 60.878905555555555,
+      "lon": 6.8417055555555555,
+      "elevation_m": 10.0,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T13:48:27+00:00",
+      "gps": {
+        "lat": 60.878905555555555,
+        "lon": 6.8417055555555555,
+        "elevation_m": 10.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.896,
+      "score": 0.948
+    },
+    "id": "20260725-phone-556b25",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9830_bac52d14_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Grassoden-Haus mit Wolfsbanner und Tierschaedel am Giebel, Wasserfaelle an der Felswand im Hintergrund.",
+      "tags": [
+        "wikingerdorf",
+        "grassodenhaus",
+        "banner",
+        "wasserfall",
+        "giebel",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5671a3fdf46ff8ef66a8035ac9ddfea2dbd31c21475622377cd77ce03941386e",
+    "path": "Chris-iPhone/IMG_9848.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T14:02:47+00:00",
+    "gps": {
+      "lat": 60.87852777777778,
+      "lon": 6.841480555555555,
+      "elevation_m": 7.0,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T14:02:47+00:00",
+      "gps": {
+        "lat": 60.87852777777778,
+        "lon": 6.841480555555555,
+        "elevation_m": 7.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.857,
+      "exposure": 0.873,
+      "score": 0.865
+    },
+    "id": "20260725-phone-5671a3",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9848_09bb6615_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Vater jagt spielerisch das laufende Kind ueber die Wiese vor der Feuerstelle, dynamische Bewegung.",
+      "tags": [
+        "familie",
+        "spiel",
+        "jagen",
+        "kind",
+        "wiese",
+        "bewegung"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:57bb0646f99734c4949e1b37c8c76f533f4a3fbac68ab4ade81741856380c3e2",
+    "path": "Chris-iPhone/IMG_9763.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T11:13:29+00:00",
+    "gps": {
+      "lat": 60.97866944444445,
+      "lon": 7.021213888888889,
+      "elevation_m": -4.7,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T11:13:29+00:00",
+      "gps": {
+        "lat": 60.97866944444445,
+        "lon": 7.021213888888889,
+        "elevation_m": -4.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.239,
+      "exposure": 0.979,
+      "score": 0.609
+    },
+    "id": "20260725-phone-57bb06",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9763_d2d5d478_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Bug des Fjordboots symmetrisch auf die enge Fjordmuendung zwischen Steilwaenden ausgerichtet, dramatischer Wolkenhimmel.",
+      "tags": [
+        "faehre",
+        "bug",
+        "fjord",
+        "steilwand",
+        "symmetrie",
+        "wolken"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5e133fc0c93f789190849937637b5863b90b5d75bcf2adfce68a7b4efbda5968",
+    "path": "Chris-iPhone/IMG_9774.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T11:16:05+00:00",
+    "gps": {
+      "lat": 60.97780277777778,
+      "lon": 7.010383333333333,
+      "elevation_m": 18.3,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T11:16:05+00:00",
+      "gps": {
+        "lat": 60.97780277777778,
+        "lon": 7.010383333333333,
+        "elevation_m": 18.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.961,
+      "score": 0.98
+    },
+    "id": "20260725-phone-5e133f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9774_21e2d01c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Hoher Wasserfall stuerzt in mehreren Kaskaden durch Wald an der Fjordwand, Blick vom Boot.",
+      "tags": [
+        "wasserfall",
+        "fjord",
+        "wald",
+        "kaskade",
+        "felswand",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:6139fcc62c950b766a59291b96ab87cba338f7559587e0ff07b9a9a90c8aff9f",
+    "path": "Chris-iPhone/IMG_9845.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T14:02:15+00:00",
+    "gps": {
+      "lat": 60.87853611111111,
+      "lon": 6.841486111111111,
+      "elevation_m": 6.3,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T14:02:15+00:00",
+      "gps": {
+        "lat": 60.87853611111111,
+        "lon": 6.841486111111111,
+        "elevation_m": 6.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.752,
+      "exposure": 0.911,
+      "score": 0.832
+    },
+    "id": "20260725-phone-6139fc",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9845_bc3c4bef_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Vater und Sohn im Schwertkampf-Spiel vor der Feuerstelle im Tal, Baum und Berge im Hintergrund.",
+      "tags": [
+        "familie",
+        "schwertkampf",
+        "spiel",
+        "kind",
+        "berge",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:640ba4c15eeb7b70262878acb54aa7e2721dafd0df0f81915626fd75f4b1eda6",
+    "path": "Chris-iPhone/IMG_9741.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T09:56:59+00:00",
+    "gps": {
+      "lat": 60.862944444444445,
+      "lon": 7.115069444444444,
+      "elevation_m": 7.4,
+      "place": "Flaam"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T09:56:59+00:00",
+      "gps": {
+        "lat": 60.862944444444445,
+        "lon": 7.115069444444444,
+        "elevation_m": 7.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.154,
+      "exposure": 0.957,
+      "score": 0.555
+    },
+    "id": "20260725-phone-640ba4",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9741_171b557d_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weisses Elektro-Katamaran-Fahrgastschiff 'Future of the Fjords' liegt am Kai, im Hintergrund ein grosses Kreuzfahrtschiff und bewaldeter Berghang.",
+      "tags": [
+        "katamaran",
+        "faehre",
+        "anleger",
+        "kreuzfahrtschiff",
+        "elektroboot",
+        "hafen"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:6b8ab926797ce481db48e0ee1061b6ffd892cd50c772534053da8ad32e9d0620",
+    "path": "Chris-iPhone/IMG_9757.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T10:52:04+00:00",
+    "gps": {
+      "lat": 60.945116666666664,
+      "lon": 7.140844444444445,
+      "elevation_m": -15.4,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T10:52:04+00:00",
+      "gps": {
+        "lat": 60.945116666666664,
+        "lon": 7.140844444444445,
+        "elevation_m": -15.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.152,
+      "exposure": 0.944,
+      "score": 0.548
+    },
+    "id": "20260725-phone-6b8ab9",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9757_b5aa75df_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Zerklueftete Berggipfel am Fjordufer unter dichter Wolkendecke, ruhiges dunkles Wasser.",
+      "tags": [
+        "berge",
+        "fjord",
+        "wolken",
+        "wasser",
+        "felsen",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:6b8e30d37a326795db740d00c54980cb573581c32d34e359bd417f1e2d6df4d7",
+    "path": "Chris-iPhone/IMG_9824.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T13:25:09+00:00",
+    "gps": {
+      "lat": 60.87941388888889,
+      "lon": 6.842119444444444,
+      "elevation_m": 11.3,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T13:25:09+00:00",
+      "gps": {
+        "lat": 60.87941388888889,
+        "lon": 6.842119444444444,
+        "elevation_m": 11.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.303,
+      "exposure": 0.883,
+      "score": 0.593
+    },
+    "id": "20260725-phone-6b8e30",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9824_b57124f4_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Historischer Webstuhl mit begonnenem Gewebe und Wollknaeueln in offener Werkstatt-Huette.",
+      "tags": [
+        "wikingerdorf",
+        "webstuhl",
+        "handwerk",
+        "wolle",
+        "textilherstellung",
+        "requisite"
+      ],
+      "people": false,
+      "usable_as": [
+        "cutaway",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:6e35e962081051816fd693827ead9ba696f3fc0ef219320d9a46e2d3fe8e2532",
+    "path": "Chris-iPhone/IMG_9742.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T09:59:45+00:00",
+    "gps": {
+      "lat": 60.863061111111115,
+      "lon": 7.1165611111111104,
+      "elevation_m": 8.7,
+      "place": "Flaam"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T09:59:45+00:00",
+      "gps": {
+        "lat": 60.863061111111115,
+        "lon": 7.1165611111111104,
+        "elevation_m": 8.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.132,
+      "exposure": 0.929,
+      "score": 0.53
+    },
+    "id": "20260725-phone-6e35e9",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9742_357e99a8_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kreuzfahrtschiff Artania liegt am Kai von Flaam, Passanten auf der Holzpromenade, bewoelkter Himmel.",
+      "tags": [
+        "kreuzfahrtschiff",
+        "artania",
+        "flaam",
+        "hafen",
+        "promenade",
+        "anleger"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7193224c5ffe77206adf2114e8ff7cce0dcee7307317a509a27a6b520e3a4f43",
+    "path": "Chris-iPhone/IMG_9898.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T18:15:44+00:00",
+    "gps": {
+      "lat": 60.97529166666667,
+      "lon": 7.008213888888889,
+      "elevation_m": 7.4,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T18:15:44+00:00",
+      "gps": {
+        "lat": 60.97529166666667,
+        "lon": 7.008213888888889,
+        "elevation_m": 7.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.686,
+      "exposure": 0.948,
+      "score": 0.817
+    },
+    "id": "20260725-phone-719322",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9898_8016d84f_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weiteres Familienselfie auf dem Aussendeck, Fjordkulisse mit Wasserfall links im Hintergrund, ausgelassene Stimmung.",
+      "tags": [
+        "familie",
+        "portrait",
+        "selfie",
+        "fjord",
+        "wasserfall",
+        "ausgelassen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:74005a6da14890e628f2944d2303231a0b822921d5300a4a45a6bb68e01f986b",
+    "path": "Chris-iPhone/IMG_9831.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T13:50:48+00:00",
+    "gps": {
+      "lat": 60.878433333333334,
+      "lon": 6.841202777777777,
+      "elevation_m": 6.3,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T13:50:48+00:00",
+      "gps": {
+        "lat": 60.878433333333334,
+        "lon": 6.841202777777777,
+        "elevation_m": 6.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.97,
+      "score": 0.985
+    },
+    "id": "20260725-phone-74005a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9831_0b3f6162_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Darsteller steht zwischen bemalten Holztotems im gruenen Pfad des Wikingerdorfs, Bergwand im Hintergrund.",
+      "tags": [
+        "wikingerdorf",
+        "totem",
+        "darsteller",
+        "pfad",
+        "holzschnitzerei",
+        "mittelalter"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:79239baa9c0d8b91405472dfff355282f7cb70801b9494d28373cd4925789fbd",
+    "path": "Chris-iPhone/IMG_9906.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T18:19:14+00:00",
+    "gps": {
+      "lat": 60.97833888888889,
+      "lon": 7.010222222222223,
+      "elevation_m": 10.7,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T18:19:14+00:00",
+      "gps": {
+        "lat": 60.97833888888889,
+        "lon": 7.010222222222223,
+        "elevation_m": 10.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.961,
+      "score": 0.981
+    },
+    "id": "20260725-phone-79239b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9906_07098f07_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Wasserfall in enger Bergschlucht, Blick von unten nach oben zum fernen Gipfel-Wasserfall, dichter Wald.",
+      "tags": [
+        "wasserfall",
+        "schlucht",
+        "berge",
+        "wald",
+        "perspektive",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7ff5de92c2e23db21b60ebbcde616c17aee84e4abbb485c4c3856cfee940cb58",
+    "path": "Chris-iPhone/IMG_9765.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T11:13:43+00:00",
+    "gps": {
+      "lat": 60.97848055555556,
+      "lon": 7.019461111111111,
+      "elevation_m": 7.8,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T11:13:43+00:00",
+      "gps": {
+        "lat": 60.97848055555556,
+        "lon": 7.019461111111111,
+        "elevation_m": 7.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.081,
+      "exposure": 0.916,
+      "score": 0.499
+    },
+    "id": "20260725-phone-7ff5de",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9765_2176a80f_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Blick durch die enge Fjordschlucht mit Schneeresten im fernen Bergstock, dramatischer Wolkenhimmel.",
+      "tags": [
+        "fjord",
+        "schlucht",
+        "schnee",
+        "berge",
+        "wolken",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:811e19190ce9492cc3abcc4e9f34eba781dd08d02acab916ffcb79f90921c9ef",
+    "path": "Chris-iPhone/IMG_9743.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T10:05:58+00:00",
+    "gps": {
+      "lat": 60.86301111111111,
+      "lon": 7.116130555555555,
+      "elevation_m": 1.9,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T10:05:58+00:00",
+      "gps": {
+        "lat": 60.86301111111111,
+        "lon": 7.116130555555555,
+        "elevation_m": 1.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.198,
+      "exposure": 0.904,
+      "score": 0.551
+    },
+    "id": "20260725-phone-811e19",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9743_29def6f1_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Innenraum des Fjordboots, Frau schaut aufs Handy, Kind im Vordergrund, Routenkarte auf Bildschirm an der Wand, Fjordblick durchs Fenster.",
+      "tags": [
+        "fjordboot",
+        "innenraum",
+        "familie",
+        "routenkarte",
+        "fenster",
+        "unterwegs"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:81719a63c44ea4d569c3a4c63eac405603b08e5bee40e60fae51761d89049bc9",
+    "path": "Chris-iPhone/IMG_9818.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T13:12:42+00:00",
+    "gps": {
+      "lat": 60.87925,
+      "lon": 6.842033333333333,
+      "elevation_m": 2.5,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T13:12:42+00:00",
+      "gps": {
+        "lat": 60.87925,
+        "lon": 6.842033333333333,
+        "elevation_m": 2.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.81,
+      "exposure": 0.932,
+      "score": 0.871
+    },
+    "id": "20260725-phone-81719a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9818_acd7a9a9_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Darsteller mit Speer und Frau im gruenen Wikingerkleid vor Grassoden-Langhaus mit Geweih und Fellen an der Wand.",
+      "tags": [
+        "wikingerdorf",
+        "kostuem",
+        "langhaus",
+        "speer",
+        "geweih",
+        "darsteller"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:890fe062fcaaaa2f838e12e8ce2df24c3d5212134bbf90730500654c120f29b2",
+    "path": "Chris-iPhone/IMG_9854.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T14:10:41+00:00",
+    "gps": {
+      "lat": 60.87928055555555,
+      "lon": 6.8425972222222216,
+      "elevation_m": 5.1,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T14:10:41+00:00",
+      "gps": {
+        "lat": 60.87928055555555,
+        "lon": 6.8425972222222216,
+        "elevation_m": 5.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.75,
+      "exposure": 0.932,
+      "score": 0.841
+    },
+    "id": "20260725-phone-890fe0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9854_e56b2ff4_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Wikinger-Darstellerinnen sitzen auf Fellbaenken um eine offene Feuerstelle unter Holzdach und spinnen Wolle.",
+      "tags": [
+        "wikingerdorf",
+        "feuerstelle",
+        "darsteller",
+        "handwerk",
+        "gemuetlich",
+        "sitzkreis"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:8f9c285ebd91bfde912fefc53fa7a0f712a6428d8b211c105f34d2808056364d",
+    "path": "Chris-iPhone/IMG_9759.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T11:10:17+00:00",
+    "gps": {
+      "lat": 60.98520555555556,
+      "lon": 7.041052777777778,
+      "elevation_m": 5.5,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T11:10:17+00:00",
+      "gps": {
+        "lat": 60.98520555555556,
+        "lon": 7.041052777777778,
+        "elevation_m": 5.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.03,
+      "exposure": 0.922,
+      "score": 0.476
+    },
+    "id": "20260725-phone-8f9c28",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9759_8719e0a7_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weiter Blick den Fjord hinunter zwischen zwei Bergflanken, tief haengende Wolken ueber dem Wasser, dramatische Stimmung.",
+      "tags": [
+        "fjord",
+        "berge",
+        "wolken",
+        "weite",
+        "natur",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:93f8b8a2d8e6c589736e9c07dd52fbe3cb8b937b902abf457e0ddf51a60a6e81",
+    "path": "Chris-iPhone/IMG_9844.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T14:02:14+00:00",
+    "gps": {
+      "lat": 60.87853611111111,
+      "lon": 6.841486111111111,
+      "elevation_m": 6.1,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T14:02:14+00:00",
+      "gps": {
+        "lat": 60.87853611111111,
+        "lon": 6.841486111111111,
+        "elevation_m": 6.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.846,
+      "exposure": 0.87,
+      "score": 0.858
+    },
+    "id": "20260725-phone-93f8b8",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9844_79762a10_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Vater und Sohn spielen Schwertkampf vor Feuerstelle im Tal, hohe Berge und bewoelkter Himmel im Hintergrund.",
+      "tags": [
+        "familie",
+        "schwertkampf",
+        "spiel",
+        "kind",
+        "berge",
+        "feuerstelle"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:98ad356075fc59dbe98513510c179e29038a965153039643c4f760d13f71a937",
+    "path": "Chris-iPhone/IMG_9780.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T11:19:41+00:00",
+    "gps": {
+      "lat": 60.969411111111114,
+      "lon": 6.991186111111111,
+      "elevation_m": 8.1,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T11:19:41+00:00",
+      "gps": {
+        "lat": 60.969411111111114,
+        "lon": 6.991186111111111,
+        "elevation_m": 8.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.166,
+      "exposure": 0.98,
+      "score": 0.573
+    },
+    "id": "20260725-phone-98ad35",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9780_ca947530_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Wasserfall stuerzt von hohem Felskamm durch bewaldeten Hang direkt ins Fjordwasser, Blick vom Boot.",
+      "tags": [
+        "wasserfall",
+        "fjord",
+        "wald",
+        "felsen",
+        "kaskade",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:98cc76e662c4f777ca6afd5e491c6564dda47e22ff433d1ddd8ce0541d6e7a65",
+    "path": "Chris-iPhone/IMG_9801.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T12:27:29+00:00",
+    "gps": {
+      "lat": 60.88105,
+      "lon": 6.842427777777777,
+      "elevation_m": 5.0,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T12:27:29+00:00",
+      "gps": {
+        "lat": 60.88105,
+        "lon": 6.842427777777777,
+        "elevation_m": 5.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.087,
+      "exposure": 0.817,
+      "score": 0.452
+    },
+    "id": "20260725-phone-98cc76",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9801_8722f217_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Geschnitzte Holzstatue eines Wikingers mit Drachenboot-Bug vor Fjordkulisse, Touristen im Hintergrund.",
+      "tags": [
+        "wikingerdorf",
+        "holzstatue",
+        "skulptur",
+        "fjord",
+        "drachenboot",
+        "wahrzeichen"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:9b26c78971c3a8effebde4c54a8e77e442bf4294116e590bf98c7a75dacf8daf",
+    "path": "Chris-iPhone/IMG_9889.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T17:12:06+00:00",
+    "gps": {
+      "lat": 60.881119444444444,
+      "lon": 6.841869444444444,
+      "elevation_m": 8.2,
+      "place": "Gudvangen"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T17:12:06+00:00",
+      "gps": {
+        "lat": 60.881119444444444,
+        "lon": 6.841869444444444,
+        "elevation_m": 8.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.264,
+      "exposure": 0.978,
+      "score": 0.621
+    },
+    "id": "20260725-phone-9b26c7",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9889_23f779fb_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mutter haelt Kind kopfueber verspielt fest in der Warteschlange am Anleger unter Regenschirmen, laechelnd in die Kamera.",
+      "tags": [
+        "familie",
+        "portrait",
+        "warteschlange",
+        "anleger",
+        "regen",
+        "spielerisch"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:9c1fcdd51495d87620c57a79dd86874371f451becb8f7054038e974a7aabf113",
+    "path": "Chris-iPhone/IMG_9736.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T09:03:22+00:00",
+    "gps": {
+      "lat": 60.911769444444445,
+      "lon": 7.193472222222223,
+      "elevation_m": 71.5,
+      "place": "Aurlandsfjord, Camping"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T09:03:22+00:00",
+      "gps": {
+        "lat": 60.911769444444445,
+        "lon": 7.193472222222223,
+        "elevation_m": 71.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.314,
+      "exposure": 0.943,
+      "score": 0.628
+    },
+    "id": "20260725-phone-9c1fcd",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9736_2d7f847b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Blick von der Camping-Huette ueber Rasen und Nachbarhuetten auf den Aurlandsfjord, bewoelkter Morgen, zwei Radfahrer auf der Strasse.",
+      "tags": [
+        "fjord",
+        "huette",
+        "camping",
+        "morgen",
+        "bewoelkt",
+        "ausblick",
+        "radfahrer"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:9e1f7df42c2c21ef70f9167872f181442956532c75d3aec17d9324c40aef4980",
+    "path": "Chris-iPhone/IMG_9810.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T12:59:19+00:00",
+    "gps": {
+      "lat": 60.879044444444446,
+      "lon": 6.8423,
+      "elevation_m": 10.6,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T12:59:19+00:00",
+      "gps": {
+        "lat": 60.879044444444446,
+        "lon": 6.8423,
+        "elevation_m": 10.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.428,
+      "exposure": 0.568,
+      "score": 0.498
+    },
+    "id": "20260725-phone-9e1f7d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9810_cf84bc10_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Rekonstruierte Wikinger-Halle mit karierten Wandbehaengen, Schilden, Geweih und Kerzenlicht auf Baumstumpf-Podesten.",
+      "tags": [
+        "wikingerdorf",
+        "halle",
+        "interieur",
+        "kerzen",
+        "schilde",
+        "mittelalter"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a15413919864f5090d417bc35d7c706209138aed2c70c01cb3f526d02b5d42b3",
+    "path": "Chris-iPhone/IMG_9852.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T14:08:34+00:00",
+    "gps": {
+      "lat": 60.878883333333334,
+      "lon": 6.841613888888888,
+      "elevation_m": 6.9,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T14:08:34+00:00",
+      "gps": {
+        "lat": 60.878883333333334,
+        "lon": 6.841613888888888,
+        "elevation_m": 6.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.609,
+      "exposure": 0.916,
+      "score": 0.763
+    },
+    "id": "20260725-phone-a15413",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9852_d62bc73c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kind steht jubelnd im begehbaren Drachenboot-Nachbau mit geschnitztem Bug, Ruder und Fjordkulisse dahinter.",
+      "tags": [
+        "wikingerdorf",
+        "drachenboot",
+        "kind",
+        "jubeln",
+        "fjord",
+        "spielplatz"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a1c3c24e32241a40de108d1d362bb5785707be1546eb62bf6b72d22dc7ed05d3",
+    "path": "Chris-iPhone/IMG_9860.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T14:27:59+00:00",
+    "gps": {
+      "lat": 60.879441666666665,
+      "lon": 6.842169444444444,
+      "elevation_m": 1.6,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T14:27:59+00:00",
+      "gps": {
+        "lat": 60.879441666666665,
+        "lon": 6.842169444444444,
+        "elevation_m": 1.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.255,
+      "exposure": 0.926,
+      "score": 0.59
+    },
+    "id": "20260725-phone-a1c3c2",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9860_abc3b3ec_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Erwachsener zielt konzentriert mit gespanntem Bogen auf die Zielscheibe im Schiessstand.",
+      "tags": [
+        "bogenschiessen",
+        "erwachsener",
+        "zielscheibe",
+        "wikingerdorf",
+        "konzentration"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a2d833a86a0afc4fc4cfdd853d383ef57be3691b102b68fdd61485049b74e9a6",
+    "path": "Chris-iPhone/IMG_9901.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T18:17:43+00:00",
+    "gps": {
+      "lat": 60.97779444444445,
+      "lon": 7.009763888888889,
+      "elevation_m": -54.1,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T18:17:43+00:00",
+      "gps": {
+        "lat": 60.97779444444445,
+        "lon": 7.009763888888889,
+        "elevation_m": -54.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.964,
+      "score": 0.982
+    },
+    "id": "20260725-phone-a2d833",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9901_f2c97097_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Wasserfall stuerzt in mehreren Stufen durch bewaldete Felsschlucht bis zum Fjordufer, aufreissender Himmel.",
+      "tags": [
+        "wasserfall",
+        "fjord",
+        "wald",
+        "felsen",
+        "kaskade",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a347c14e3c8f80e971afcd46fed879b7a94969a42885d6240017b670d4e3ed19",
+    "path": "Chris-iPhone/IMG_9750.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T10:22:32+00:00",
+    "gps": {
+      "lat": 60.862575,
+      "lon": 7.119791666666666,
+      "elevation_m": -7.9,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T10:22:32+00:00",
+      "gps": {
+        "lat": 60.862575,
+        "lon": 7.119791666666666,
+        "elevation_m": -7.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.279,
+      "exposure": 0.902,
+      "score": 0.59
+    },
+    "id": "20260725-phone-a347c1",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9750_02cf4e1c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Vier rote Bootshaeuser auf Stelzen am Fjordufer vor bewaldetem Hang, spiegelglattes Wasser.",
+      "tags": [
+        "bootshaus",
+        "fjord",
+        "rot",
+        "ufer",
+        "spiegelung",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b0cd3e6ec4c82edceac619cdf141baddb4635b9bc9356f5b034f5fd8181b4ec0",
+    "path": "Chris-iPhone/IMG_9853.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T14:10:12+00:00",
+    "gps": {
+      "lat": 60.87916111111111,
+      "lon": 6.842238888888889,
+      "elevation_m": 3.4,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T14:10:12+00:00",
+      "gps": {
+        "lat": 60.87916111111111,
+        "lon": 6.842238888888889,
+        "elevation_m": 3.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.5,
+      "exposure": 0.959,
+      "score": 0.729
+    },
+    "id": "20260725-phone-b0cd3e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9853_5b98354a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Familie geht den Kiesweg zwischen Grassoden-Huetten hinunter, weiterer Fjordblick am Talende, weitere Besucher unterwegs.",
+      "tags": [
+        "wikingerdorf",
+        "gehen",
+        "familie",
+        "weg",
+        "grassodenhaus",
+        "establisher"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b3425b2794e6ca4797e5ad69a765e63262462a790e472bfe5215e76596cf3083",
+    "path": "Chris-iPhone/IMG_9815.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T13:04:34+00:00",
+    "gps": {
+      "lat": 60.87927222222222,
+      "lon": 6.842577777777778,
+      "elevation_m": 9.6,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T13:04:34+00:00",
+      "gps": {
+        "lat": 60.87927222222222,
+        "lon": 6.842577777777778,
+        "elevation_m": 9.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.94,
+      "score": 0.97
+    },
+    "id": "20260725-phone-b3425b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9815_8abef592_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Darsteller lehnt nachdenklich am Bug eines nachgebauten Wikinger-Ruderboots, umgeben von Buschwerk und Bergpanorama.",
+      "tags": [
+        "wikingerdorf",
+        "ruderboot",
+        "darsteller",
+        "mittelalter",
+        "bootsbau",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b3a6a93553b73daa25c64542822cbb843dcd56e5dd2d5c98f26106f81d75c147",
+    "path": "Chris-iPhone/IMG_9828.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T13:48:17+00:00",
+    "gps": {
+      "lat": 60.87900833333333,
+      "lon": 6.841952777777777,
+      "elevation_m": 11.9,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T13:48:17+00:00",
+      "gps": {
+        "lat": 60.87900833333333,
+        "lon": 6.841952777777777,
+        "elevation_m": 11.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.111,
+      "exposure": 0.902,
+      "score": 0.507
+    },
+    "id": "20260725-phone-b3a6a9",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9828_98e622a5_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Schwarze Wikingerbanner-Flagge mit rotem Wolfskopf weht vor bewaldeter Felswand.",
+      "tags": [
+        "wikingerdorf",
+        "banner",
+        "flagge",
+        "wolf",
+        "symbolik",
+        "berge"
+      ],
+      "people": false,
+      "usable_as": [
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ba2f592245f25ab28dda262f3830fcc1facc17c9fdf6d7e803e3b34fd5141a32",
+    "path": "Chris-iPhone/IMG_9850.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T14:06:39+00:00",
+    "gps": {
+      "lat": 60.87867777777778,
+      "lon": 6.841572222222222,
+      "elevation_m": 7.4,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T14:06:39+00:00",
+      "gps": {
+        "lat": 60.87867777777778,
+        "lon": 6.841572222222222,
+        "elevation_m": 7.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.046,
+      "exposure": 0.796,
+      "score": 0.421
+    },
+    "id": "20260725-phone-ba2f59",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9850_d4fed995_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Mutter und Kind schauen im dunklen Grassoden-Haus in eine offene Feuerstelle mit brennendem Feuer, Kessel und Felle an der Wand.",
+      "tags": [
+        "wikingerdorf",
+        "feuerstelle",
+        "innenraum",
+        "familie",
+        "langhaus",
+        "gemuetlich"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:bfbde28711d7db7f5891ae83b756e7b12bff4ab567b30151988c390b28a2e888",
+    "path": "Chris-iPhone/IMG_9764.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T11:13:37+00:00",
+    "gps": {
+      "lat": 60.978569444444446,
+      "lon": 7.020269444444445,
+      "elevation_m": 6.5,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T11:13:37+00:00",
+      "gps": {
+        "lat": 60.978569444444446,
+        "lon": 7.020269444444445,
+        "elevation_m": 6.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.073,
+      "exposure": 0.946,
+      "score": 0.51
+    },
+    "id": "20260725-phone-bfbde2",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9764_27f83f40_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Blick vom Boot auf den sich verengenden Fjord mit schneeresten am fernen Gipfel, dunkles Wasser.",
+      "tags": [
+        "fjord",
+        "berge",
+        "schnee",
+        "wolken",
+        "wasser",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c0001020163d73ede0692c5e1219b8b54264763daedf996f250b36b34adce7b6",
+    "path": "Chris-iPhone/IMG_9822.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T13:22:32+00:00",
+    "gps": {
+      "lat": 60.879352777777775,
+      "lon": 6.841855555555555,
+      "elevation_m": 11.8,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T13:22:32+00:00",
+      "gps": {
+        "lat": 60.879352777777775,
+        "lon": 6.841855555555555,
+        "elevation_m": 11.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.253,
+      "exposure": 0.996,
+      "score": 0.625
+    },
+    "id": "20260725-phone-c00010",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9822_6b6408f9_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Nahaufnahme von Wikinger-Ausruestung auf Tisch: Helme, Kettenhemd, Schwerter, Schild und Trinkhorn.",
+      "tags": [
+        "wikingerdorf",
+        "ausruestung",
+        "helm",
+        "schwert",
+        "schild",
+        "requisiten"
+      ],
+      "people": false,
+      "usable_as": [
+        "cutaway",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c04b915c3ec5900fb61095d3327c0ed3f8faca07f6dfc5cf9e26dafcd35e2a69",
+    "path": "Chris-iPhone/IMG_9804.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T12:33:25+00:00",
+    "gps": {
+      "lat": 60.88056944444445,
+      "lon": 6.843683333333333,
+      "elevation_m": 5.7,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T12:33:25+00:00",
+      "gps": {
+        "lat": 60.88056944444445,
+        "lon": 6.843683333333333,
+        "elevation_m": 5.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.813,
+      "exposure": 0.923,
+      "score": 0.868
+    },
+    "id": "20260725-phone-c04b91",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9804_3afcf64d_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Uebersicht des Wikingerdorfs mit Grassoden-Haeusern am Fjordufer, Kajaks am Strand, steile Wasserfall-Felswand dahinter.",
+      "tags": [
+        "wikingerdorf",
+        "grassodenhaus",
+        "kajak",
+        "fjord",
+        "establisher",
+        "norwegen"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c67736aa727d2053884237dc8ae87ceceb970e20dd56a335e8209a6c27284dd1",
+    "path": "Chris-iPhone/IMG_9892.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T17:47:04+00:00",
+    "gps": {
+      "lat": 60.92435555555555,
+      "lon": 6.872405555555556,
+      "elevation_m": -1.4,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T17:47:04+00:00",
+      "gps": {
+        "lat": 60.92435555555555,
+        "lon": 6.872405555555556,
+        "elevation_m": -1.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.467,
+      "exposure": 0.925,
+      "score": 0.696
+    },
+    "id": "20260725-phone-c67736",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9892_26be198d_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mutter und Sohn sitzen am Panoramafenster des Fjordboots und blicken bei starkem Regen auf Kielwasser und Berge.",
+      "tags": [
+        "familie",
+        "fjordboot",
+        "regen",
+        "fenster",
+        "kielwasser",
+        "gemuetlich"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c69bde6fe841bf107815cb6afaf1e21381fa05f80f77eaab4e9cc5e437290a5e",
+    "path": "Chris-iPhone/IMG_9793.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T11:59:16+00:00",
+    "gps": {
+      "lat": 60.89578611111111,
+      "lon": 6.860416666666667,
+      "elevation_m": 6.7,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T11:59:16+00:00",
+      "gps": {
+        "lat": 60.89578611111111,
+        "lon": 6.860416666666667,
+        "elevation_m": 6.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.446,
+      "exposure": 0.949,
+      "score": 0.697
+    },
+    "id": "20260725-phone-c69bde",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9793_43f8548e_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Blick von der Bootsseite auf den weiten Fjord mit bewaldetem Steilhang, regnerischer Nachmittag.",
+      "tags": [
+        "fjord",
+        "boot",
+        "steilwand",
+        "regen",
+        "wald",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:cce497c12bffc2e8ad280295ffabef48eb7e46dc67401ec8aa6db57a127d18de",
+    "path": "Chris-iPhone/IMG_9823.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T13:25:04+00:00",
+    "gps": {
+      "lat": 60.878994444444444,
+      "lon": 6.841958333333333,
+      "elevation_m": 8.8,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T13:25:04+00:00",
+      "gps": {
+        "lat": 60.878994444444444,
+        "lon": 6.841958333333333,
+        "elevation_m": 8.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.757,
+      "exposure": 0.892,
+      "score": 0.825
+    },
+    "id": "20260725-phone-cce497",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9823_ef50c54a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Wikinger-Darsteller demonstriert Wollverarbeitung vor Zuschauergruppe, Wollfaeden und Werkzeuge im Stand.",
+      "tags": [
+        "wikingerdorf",
+        "handwerk",
+        "wolle",
+        "vorfuehrung",
+        "touristen",
+        "darsteller"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:cfa0ec5759955a29468d900a147318579b2bf68ef39bccb186957e1083869f35",
+    "path": "Chris-iPhone/IMG_9886.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T17:09:35+00:00",
+    "gps": {
+      "lat": 60.88126666666667,
+      "lon": 6.841638888888888,
+      "elevation_m": 8.0,
+      "place": "Gudvangen"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T17:09:35+00:00",
+      "gps": {
+        "lat": 60.88126666666667,
+        "lon": 6.841638888888888,
+        "elevation_m": 8.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.677,
+      "exposure": 0.846,
+      "score": 0.762
+    },
+    "id": "20260725-phone-cfa0ec",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9886_c82de9bc_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Paar-Selfie vor Gudvangen-Gebaeude mit Wasserfall am Berghang im Hintergrund, laechelnd, Regenwetter.",
+      "tags": [
+        "portrait",
+        "paar",
+        "selfie",
+        "gudvangen",
+        "wasserfall",
+        "laecheln"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d56ddbcce775b999e6902c48105e46185fd421d550a5ee87c16ca1e1babaec6e",
+    "path": "Chris-iPhone/IMG_9856.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T14:24:22+00:00",
+    "gps": {
+      "lat": 60.87940277777778,
+      "lon": 6.842172222222222,
+      "elevation_m": 15.2,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T14:24:22+00:00",
+      "gps": {
+        "lat": 60.87940277777778,
+        "lon": 6.842172222222222,
+        "elevation_m": 15.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.184,
+      "exposure": 0.921,
+      "score": 0.552
+    },
+    "id": "20260725-phone-d56ddb",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9856_5223e39e_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Wikinger-Darsteller mit Kapuze erklaert Kind den Bogen am Schiessstand, freundliche Interaktion.",
+      "tags": [
+        "wikingerdorf",
+        "bogenschiessen",
+        "darsteller",
+        "kind",
+        "interaktion",
+        "mittelalter"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d7b0ee9161cb5af2ebf2e5013789a03c21cbfb056d142bb3c5a467e69a3838fc",
+    "path": "Chris-iPhone/IMG_9791.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T11:53:07+00:00",
+    "gps": {
+      "lat": 60.90900555555555,
+      "lon": 6.870144444444445,
+      "elevation_m": 74.7,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T11:53:07+00:00",
+      "gps": {
+        "lat": 60.90900555555555,
+        "lon": 6.870144444444445,
+        "elevation_m": 74.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.626,
+      "exposure": 0.908,
+      "score": 0.767
+    },
+    "id": "20260725-phone-d7b0ee",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9791_bd9f6bc6_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Person am Fensterplatz des Fjordboots blickt auf bewaldetes Ufer, Kaffeebecher am Tisch, ruhige Fahrt.",
+      "tags": [
+        "fjordboot",
+        "fensterplatz",
+        "portrait",
+        "kaffee",
+        "ufer",
+        "unterwegs"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d9951891b0764778379166750009476896fbf126c813ad865e9e2b72e628025f",
+    "path": "Chris-iPhone/IMG_9888.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T17:09:45+00:00",
+    "gps": {
+      "lat": 60.88127222222222,
+      "lon": 6.841644444444444,
+      "elevation_m": 6.4,
+      "place": "Gudvangen"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T17:09:45+00:00",
+      "gps": {
+        "lat": 60.88127222222222,
+        "lon": 6.841644444444444,
+        "elevation_m": 6.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.594,
+      "exposure": 0.873,
+      "score": 0.734
+    },
+    "id": "20260725-phone-d99518",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9888_f2376de0_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Paar-Selfie, Frau kuesst Mann auf die Wange vor Bergkulisse in Gudvangen, verspielte Stimmung.",
+      "tags": [
+        "portrait",
+        "paar",
+        "selfie",
+        "kuss",
+        "gudvangen",
+        "liebevoll"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e077273c45fe6ad5dae47e29659da83b1ef3f636f33e5d9e97fcbd5527b5da5f",
+    "path": "Chris-iPhone/IMG_9812.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T13:00:29+00:00",
+    "gps": {
+      "lat": 60.87904722222222,
+      "lon": 6.842172222222222,
+      "elevation_m": 8.7,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T13:00:29+00:00",
+      "gps": {
+        "lat": 60.87904722222222,
+        "lon": 6.842172222222222,
+        "elevation_m": 8.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.996,
+      "exposure": 0.982,
+      "score": 0.989
+    },
+    "id": "20260725-phone-e07727",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9812_0b29e386_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Wikinger-Darsteller mit Schild vor Grassoden-Haus, wartende Touristengruppe mit Kindern im Vordergrund.",
+      "tags": [
+        "wikingerdorf",
+        "darsteller",
+        "touristen",
+        "gruppe",
+        "grassodenhaus",
+        "kinder"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e0fa032bfefe86e57f4ba3a1b325af3ba75e1747359c00afda5eb9d569ad2e4a",
+    "path": "Chris-iPhone/IMG_9893.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T17:47:12+00:00",
+    "gps": {
+      "lat": 60.92468888888889,
+      "lon": 6.872661111111111,
+      "elevation_m": -9.5,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T17:47:12+00:00",
+      "gps": {
+        "lat": 60.92468888888889,
+        "lon": 6.872661111111111,
+        "elevation_m": -9.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.397,
+      "exposure": 0.932,
+      "score": 0.665
+    },
+    "id": "20260725-phone-e0fa03",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9893_43e01a36_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Mutter und Sohn mit Tablet am Panoramafenster des Fjordboots, starker Regen auf der Scheibe, Berge im Hintergrund.",
+      "tags": [
+        "familie",
+        "fjordboot",
+        "tablet",
+        "regen",
+        "fenster",
+        "gemuetlich"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e3e3b2441583f00482a4703791a4c1b486bfb7802237230bd45f5d4870c3b7f7",
+    "path": "Chris-iPhone/IMG_9895.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T18:13:08+00:00",
+    "gps": {
+      "lat": 60.968155555555555,
+      "lon": 6.992030555555556,
+      "elevation_m": 6.7,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T18:13:08+00:00",
+      "gps": {
+        "lat": 60.968155555555555,
+        "lon": 6.992030555555556,
+        "elevation_m": 6.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.04,
+      "exposure": 0.723,
+      "score": 0.381
+    },
+    "id": "20260725-phone-e3e3b2",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9895_2aefc9be_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Frau posiert laechelnd am Bootsdeck-Gelaender vor bewoelktem Himmel, Weitwinkel von unten.",
+      "tags": [
+        "portrait",
+        "boot",
+        "deck",
+        "himmel",
+        "laecheln",
+        "fjord"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e5cb101aa24b400c1c11919610ef92dbc1ee7a63a658930d07ef38270e3c4dec",
+    "path": "Chris-iPhone/IMG_9911.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T18:27:27+00:00",
+    "gps": {
+      "lat": 60.985175,
+      "lon": 7.054763888888889,
+      "elevation_m": 36.7,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T18:27:27+00:00",
+      "gps": {
+        "lat": 60.985175,
+        "lon": 7.054763888888889,
+        "elevation_m": 36.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.404,
+      "exposure": 0.795,
+      "score": 0.6
+    },
+    "id": "20260725-phone-e5cb10",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9911_922ec4c9_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kind schaut aus dem Panoramafenster des Fjordboots auf Kielwasser und aufklarenden Fjord mit blauem Himmel.",
+      "tags": [
+        "fjordboot",
+        "kind",
+        "panoramafenster",
+        "kielwasser",
+        "aufklarend",
+        "fjord"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:eafc47b3ba94a51a3d0234d54ac295a288f21f111929c977a96122bbb325d376",
+    "path": "Chris-iPhone/IMG_9897.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T18:15:33+00:00",
+    "gps": {
+      "lat": 60.97485277777778,
+      "lon": 7.007213888888889,
+      "elevation_m": 8.1,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T18:15:33+00:00",
+      "gps": {
+        "lat": 60.97485277777778,
+        "lon": 7.007213888888889,
+        "elevation_m": 8.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.788,
+      "exposure": 0.967,
+      "score": 0.877
+    },
+    "id": "20260725-phone-eafc47",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9897_e84bcb5d_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Familienselfie auf dem Aussendeck des Fjordboots, im Hintergrund Fjordschlucht mit Schneeresten am Gipfel.",
+      "tags": [
+        "familie",
+        "portrait",
+        "selfie",
+        "fjord",
+        "aussendeck",
+        "schnee"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f19e4549523625185167a974d748d00de95fb33cc38d3f6ecd70212a8d72bdcd",
+    "path": "Chris-iPhone/IMG_9917.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T20:27:40+00:00",
+    "gps": {
+      "lat": 60.911858333333335,
+      "lon": 7.193675,
+      "elevation_m": 89.3,
+      "place": "Camping, Aurland"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T20:27:40+00:00",
+      "gps": {
+        "lat": 60.911858333333335,
+        "lon": 7.193675,
+        "elevation_m": 89.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.452,
+      "exposure": 0.965,
+      "score": 0.709
+    },
+    "id": "20260725-phone-f19e45",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9917_bd86f07b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mutter und Sohn essen Abendessen (Nudeln, Reispfanne) auf der Huettenveranda mit Fjordblick, Tagesabschluss am Campingplatz.",
+      "tags": [
+        "abendessen",
+        "familie",
+        "huette",
+        "fjord",
+        "camping",
+        "tagesende"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f4b33d952e47f2b739abbd4d17e34941a887fcf5d8e17fb7e54d521f54cf6623",
+    "path": "Chris-iPhone/IMG_9748.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T10:22:16+00:00",
+    "gps": {
+      "lat": 60.86289722222222,
+      "lon": 7.116655555555555,
+      "elevation_m": 9.3,
+      "place": "Naeroeyfjord"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T10:22:16+00:00",
+      "gps": {
+        "lat": 60.86289722222222,
+        "lon": 7.116655555555555,
+        "elevation_m": 9.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.722,
+      "exposure": 0.98,
+      "score": 0.851
+    },
+    "id": "20260725-phone-f4b33d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9748_cbd591db_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kleines Fjorddorf mit Segelboot und roten Bootshaeusern am Ufer, bewaldete Berghaenge, vom Boot aus fotografiert.",
+      "tags": [
+        "dorf",
+        "fjord",
+        "segelboot",
+        "bootshaeuser",
+        "ufer",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f64740bc56d949600363f972272e937319b274167fff9be0d0525c9a07ac70da",
+    "path": "Chris-iPhone/IMG_9820.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T13:15:02+00:00",
+    "gps": {
+      "lat": 60.87922777777778,
+      "lon": 6.841947222222222,
+      "elevation_m": 8.8,
+      "place": "Wikingerdorf"
+    },
+    "probe": {
+      "captured_at": "2026-07-25T13:15:02+00:00",
+      "gps": {
+        "lat": 60.87922777777778,
+        "lon": 6.841947222222222,
+        "elevation_m": 8.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.956,
+      "exposure": 0.937,
+      "score": 0.947
+    },
+    "id": "20260725-phone-f64740",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9820_c13d0b35_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Grassoden-Langhaus mit blumenbewachsenem Dach und geschnitztem Giebel vor steiler Bergwand, Ruestung auf Bank davor.",
+      "tags": [
+        "wikingerdorf",
+        "grassodenhaus",
+        "langhaus",
+        "giebel",
+        "berge",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
       ]
     }
   },
