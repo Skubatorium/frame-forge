@@ -235,7 +235,7 @@ konstant 0 und ein Test darauf belegte nichts.
 |---|---|
 | `ingest` — Proxies | ✅ 975/975 |
 | `prepare-index` — Keyframes, CV, `captured_at`, GPS | ✅ 689/689, keine Fehlschlaege |
-| Inhaltliche Sichtung (Beschreibung/Tags/Rating) | 🔄 **48 von 689** |
+| Inhaltliche Sichtung (Beschreibung/Tags/Rating) | 🔄 **81 von 689** |
 
 **Der HEIC-Weg hat sich am echten Material bewaehrt.** Ohne das Arbeitspaket von 2026-08-05
 waeren die 539 Fotos still aus dem Index gefallen. Aufnahmezeit liegt bei **allen 689** vor
@@ -249,16 +249,25 @@ faellig, sonst bleiben die neuen Tage ohne Etappe.
 
 ### Fortschritt der Sichtung
 
-Chronologisch, Tag fuer Tag. **Hier weitermachen: 2026-07-19** (33 Assets).
+Chronologisch, Tag fuer Tag. **Hier weitermachen: 2026-07-20**.
 
 | Tag | Assets | indiziert |
 |---|---:|---|
 | 2026-07-17 | 6 | ✅ 6 — Verladen zu Hause am Abend vor der Abreise |
 | 2026-07-18 | 42 | ✅ 42 — Fahrt NRW → Flensburg (Aufbruch, Raststaette, Hamburger Hafen, Nord-Ostsee-Kanal, Ankunft) + Abend am Hafen: Blumenkaesten/Establisher, Restaurant "Gosch" (Essen, Kartenhaus-Spiel, Anstossen), Spaziergang am Hafensteg, Willkommenstafel B&B Hotel Flensburg |
-| 2026-07-19 … 2026-08-04 | 641 | ⬜ |
+| 2026-07-19 | 33 | ✅ 33 — Abreise vom Hotel, Faehrterminal Color Line, Ueberfahrt (Deck, Bordrestaurant, Brettspiel, Familienselfies), Ankunft bei Freunden/Familie: Pizzaessen, Kinder spielen, Fernsehen |
+| 2026-07-20 … 2026-08-04 | 608 | ⬜ |
 
 **Selbstkontrolle nach 2026-07-18** (Auftrag: 5 Beschreibungen gegen Keyframes gegenpruefen):
 `945bc1`, `e1f63e`, `833dc9`, `b0640a`, `af6f76` geprueft — alle halten, keine Korrektur noetig.
+
+**Fehler bei 2026-07-19 gefunden und korrigiert:** im Block IMG_9372–9382 (7 Assets) griff jeder
+`index-asset`-Aufruf auf den Hash des jeweils *naechsten* Fotos statt des gerade gesichteten
+zu — Off-by-one beim Abtippen der Hash-Liste. Wurde beim Abschluss-Check bemerkt (Pfad vs.
+Beschreibung stimmten nicht ueberein, z. B. Pizzafoto mit Faehr-Selfie-Text), alle 7 Eintraege
+neu zugeordnet, dabei auch `IMG_9382` (war nie wirklich gesichtet) korrekt nachgetragen.
+**Lehre:** nach jedem Block `assets.json` gegen die Pfad→Beschreibung-Zuordnung stichprobenartig
+pruefen, nicht nur auf "indiziert"-Ausgabe vertrauen.
 
 **Arbeitsweise, die sich bewaehrt hat** (fuer die naechste Sitzung):
 

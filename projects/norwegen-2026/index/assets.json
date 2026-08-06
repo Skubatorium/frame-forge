@@ -2487,6 +2487,1685 @@
     }
   },
   {
+    "hash": "sha256:1dc4ac9cfc4ab6dd705b6fad64a798bf05def9f125a3b6609a5538d94a493ad9",
+    "path": "Chris-iPhone/IMG_9340.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-19T09:08:08+00:00",
+    "captured_at_source": "container",
+    "duration": 10.005,
+    "probe": {
+      "captured_at": "2026-07-19T09:08:08+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 10.005,
+      "bitrate": 53473911,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.276,
+      "stability": 0.0,
+      "exposure": 0.896,
+      "score": 0.391
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 10.01
+      }
+    ],
+    "id": "20260719-camera-1dc4ac",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9340_97085fbd_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9340_97085fbd_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9340_97085fbd_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Warteschlange aus Autos in einer Unterfuehrung vor dem Faehrterminal, Color-Line-Hinweisschild an der Bruecke.",
+      "tags": [
+        "stau",
+        "faehre",
+        "warteschlange",
+        "auto",
+        "color-line",
+        "strasse"
+      ],
+      "people": false,
+      "usable_as": [
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:21e343101ee3bc3a54cfabccbffe19593f4beb4e42dee7fe2a582d793ea84bcd",
+    "path": "Chris-iPhone/IMG_9366.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-19T13:04:25+00:00",
+    "captured_at_source": "container",
+    "duration": 13.2617,
+    "probe": {
+      "captured_at": "2026-07-19T13:04:25+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 13.2617,
+      "bitrate": 53081092,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.403,
+      "stability": 0.196,
+      "exposure": 0.601,
+      "score": 0.4
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.804
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 13.26
+      }
+    ],
+    "id": "20260719-camera-21e343",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9366_20ba61f5_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9366_20ba61f5_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9366_20ba61f5_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Ein kleiner Junge rennt lachend ueber das Schiffsdeck auf eine ausgestreckte Hand zu, Haare vom Wind zerzaust.",
+      "tags": [
+        "kind",
+        "laufen",
+        "laecheln",
+        "schiffsdeck",
+        "wind",
+        "faehre"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2cf858631387372e3880475826c7b170e550ef99fc5a61c43baa0f06da72365c",
+    "path": "Chris-iPhone/IMG_9355.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-19T11:23:41+00:00",
+    "captured_at_source": "container",
+    "duration": 8.573333,
+    "probe": {
+      "captured_at": "2026-07-19T11:23:41+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 8.573333,
+      "bitrate": 65184792,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.078,
+      "stability": 0.492,
+      "exposure": 0.563,
+      "score": 0.378
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.508
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 8.58
+      }
+    ],
+    "id": "20260719-camera-2cf858",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9355_4c863577_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9355_4c863577_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9355_4c863577_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Blick durch ein Fenster auf Wellen an der Bordwand eines fahrenden Schiffs.",
+      "tags": [
+        "faehre",
+        "schiff",
+        "wasser",
+        "wellen",
+        "fenster",
+        "unterwegs"
+      ],
+      "people": false,
+      "usable_as": [
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:3333c08dd510303c2ff2d05beae5d2bb1830bc71b32abe754e5ad117313eef7b",
+    "path": "Chris-iPhone/IMG_9369.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-19T13:16:35+00:00",
+    "captured_at_source": "container",
+    "duration": 38.2,
+    "probe": {
+      "captured_at": "2026-07-19T13:16:35+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 38.2,
+      "bitrate": 53262250,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.258,
+      "stability": 0.0,
+      "exposure": 0.683,
+      "score": 0.314
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 38.2
+      }
+    ],
+    "id": "20260719-camera-3333c0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9369_be479766_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9369_be479766_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9369_be479766_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein kleiner Junge posiert lachend mit den Haenden an der Kapuze auf dem Schiffsdeck.",
+      "tags": [
+        "kind",
+        "laecheln",
+        "schiffsdeck",
+        "posieren",
+        "faehre",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:464f2e060c9ceef9baf2ed5661ad3be4855b578307f8865058a9ebfd80514cad",
+    "path": "Chris-iPhone/IMG_9361.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-19T12:43:51+00:00",
+    "captured_at_source": "container",
+    "duration": 19.951667,
+    "probe": {
+      "captured_at": "2026-07-19T12:43:51+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 19.951667,
+      "bitrate": 53041445,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.038,
+      "stability": 0.663,
+      "exposure": 0.604,
+      "score": 0.435
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.337
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 19.95
+      }
+    ],
+    "id": "20260719-camera-464f2e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9361_1bd28794_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9361_1bd28794_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9361_1bd28794_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9361_1bd28794_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Offene See mit bewegtem Wellengang unter bewoelktem Himmel, im Hintergrund ein Windpark am Horizont, von einem fahrenden Schiff aus gefilmt.",
+      "tags": [
+        "meer",
+        "wellen",
+        "see",
+        "himmel",
+        "windpark",
+        "faehre"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:6cac180471be67dcba502b1cc7b54ced6dfd9389cebccfae7653225d5893dc00",
+    "path": "Chris-iPhone/IMG_9363.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-19T13:03:29+00:00",
+    "captured_at_source": "container",
+    "duration": 6.635,
+    "probe": {
+      "captured_at": "2026-07-19T13:03:29+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 6.635,
+      "bitrate": 53287452,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.719,
+      "stability": 0.0,
+      "exposure": 0.664,
+      "score": 0.461
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 6.63
+      }
+    ],
+    "id": "20260719-camera-6cac18",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9363_cca07dfb_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9363_cca07dfb_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9363_cca07dfb_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9363_cca07dfb_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Blick vom Heck eines Faehrschiffs zurueck aufs Kielwasser, auf dem Fahrzeugdeck stehen LKW und Camper.",
+      "tags": [
+        "faehre",
+        "kielwasser",
+        "heck",
+        "lkw",
+        "deck",
+        "meer"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a37b5f098bd42257d3594d8f98ac731c7aa8a704c2736cacddd72a1a0f8aeadc",
+    "path": "Chris-iPhone/IMG_9342.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-19T09:32:36+00:00",
+    "captured_at_source": "container",
+    "duration": 10.37,
+    "probe": {
+      "captured_at": "2026-07-19T09:32:36+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 10.37,
+      "bitrate": 52952716,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.782,
+      "stability": 0.0,
+      "exposure": 0.786,
+      "score": 0.523
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 10.37
+      }
+    ],
+    "id": "20260719-camera-a37b5f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9342_c62b2b17_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9342_c62b2b17_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9342_c62b2b17_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Faehrschiff der Color Line am Terminal mit Gangway-Bauwerk, wartende Autos im Vordergrund.",
+      "tags": [
+        "faehre",
+        "color-line",
+        "hafen",
+        "schiff",
+        "terminal",
+        "auto"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:06c1ed837377b40d949cff70c568ba51c5ab90dd883add8efafb461ad802001b",
+    "path": "Chris-iPhone/IMG_9379.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T18:14:56+00:00",
+    "gps": {
+      "lat": 59.21015555555556,
+      "lon": 9.563497222222223,
+      "elevation_m": 100.7
+    },
+    "probe": {
+      "captured_at": "2026-07-19T18:14:56+00:00",
+      "gps": {
+        "lat": 59.21015555555556,
+        "lon": 9.563497222222223,
+        "elevation_m": 100.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.188,
+      "exposure": 0.987,
+      "score": 0.588
+    },
+    "id": "20260719-phone-06c1ed",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9379_2f6c30bd_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mehrere Kinder und zwei Frauen sitzen an einem gedeckten Tisch und essen Pizza in einem Wohnzimmer, eine Frau zeigt ein Peace-Zeichen.",
+      "tags": [
+        "kinder",
+        "essen",
+        "pizza",
+        "wohnzimmer",
+        "gruppe",
+        "laecheln"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:0d87b4b9bac1baa6771108d9c63c460a7efb668be5c2ba1bf7907f7a5f8cf189",
+    "path": "Chris-iPhone/IMG_9334.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T06:40:52+00:00",
+    "gps": {
+      "lat": 54.78992777777778,
+      "lon": 9.433869444444445,
+      "elevation_m": 3.3
+    },
+    "probe": {
+      "captured_at": "2026-07-19T06:40:52+00:00",
+      "gps": {
+        "lat": 54.78992777777778,
+        "lon": 9.433869444444445,
+        "elevation_m": 3.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.053,
+      "exposure": 0.769,
+      "score": 0.411
+    },
+    "id": "20260719-phone-0d87b4",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9334_b01f6b28_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Morgensonne ueber einer Hafensilhouette mit Faehrterminal, durch eine beschlagene Fensterscheibe fotografiert.",
+      "tags": [
+        "hafen",
+        "morgen",
+        "sonne",
+        "faehre",
+        "silhouette",
+        "fenster"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:13fc2203e42e1837c0e871b68df16bf97a33460ddc001a52057ddb90aa67b531",
+    "path": "Chris-iPhone/IMG_9365.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T15:04:17+00:00",
+    "gps": {
+      "lat": 58.410525,
+      "lon": 10.057608333333334,
+      "elevation_m": 18.3
+    },
+    "probe": {
+      "captured_at": "2026-07-19T15:04:17+00:00",
+      "gps": {
+        "lat": 58.410525,
+        "lon": 10.057608333333334,
+        "elevation_m": 18.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.077,
+      "exposure": 0.729,
+      "score": 0.403
+    },
+    "id": "20260719-phone-13fc22",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9365_908a79ed_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Ein Junge streckt lachend die Arme aus und spielt im Wind auf dem gelben Schiffsdeck.",
+      "tags": [
+        "kind",
+        "wind",
+        "spielen",
+        "schiffsdeck",
+        "laecheln",
+        "faehre"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:16d7f709ef84a8c34f26bdd3f403024337ced93ef27f16bb72350f693517dd8a",
+    "path": "Chris-iPhone/IMG_9381.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T18:58:15+00:00",
+    "gps": {
+      "lat": 59.210225,
+      "lon": 9.563733333333333,
+      "elevation_m": 99.7
+    },
+    "probe": {
+      "captured_at": "2026-07-19T18:58:15+00:00",
+      "gps": {
+        "lat": 59.210225,
+        "lon": 9.563733333333333,
+        "elevation_m": 99.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.116,
+      "exposure": 0.906,
+      "score": 0.511
+    },
+    "id": "20260719-phone-16d7f7",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9381_a603917b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Junge laesst sich auf einer Decke ueber den Flurboden ziehen, zwei Erwachsene stehen daneben.",
+      "tags": [
+        "kind",
+        "spielen",
+        "flur",
+        "decke",
+        "ziehen",
+        "haus"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:18891f0d761cae81840ef1d11541edeab3b08bd7417f8f415cbee415a7efc584",
+    "path": "Chris-iPhone/IMG_9332.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T06:33:05+00:00",
+    "gps": {
+      "lat": 54.78595833333333,
+      "lon": 9.437566666666667,
+      "elevation_m": 6.4
+    },
+    "probe": {
+      "captured_at": "2026-07-19T06:33:05+00:00",
+      "gps": {
+        "lat": 54.78595833333333,
+        "lon": 9.437566666666667,
+        "elevation_m": 6.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.213,
+      "exposure": 0.862,
+      "score": 0.537
+    },
+    "id": "20260719-phone-18891f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9332_ba164044_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Eine Frau packt blaue Gepaecktaschen neben einem Auto mit geoeffneter Dachbox in einer Tiefgarage.",
+      "tags": [
+        "gepaeck",
+        "auto",
+        "dachbox",
+        "tiefgarage",
+        "packen",
+        "abreise"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1b1b79d3247dfee9e71799173f08d65e6f8d350dc225b00f1d8a460ba34b4047",
+    "path": "Chris-iPhone/IMG_9382.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T19:11:57+00:00",
+    "gps": {
+      "lat": 59.21021944444445,
+      "lon": 9.563733333333333,
+      "elevation_m": 99.7
+    },
+    "probe": {
+      "captured_at": "2026-07-19T19:11:57+00:00",
+      "gps": {
+        "lat": 59.21021944444445,
+        "lon": 9.563733333333333,
+        "elevation_m": 99.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.159,
+      "exposure": 0.993,
+      "score": 0.576
+    },
+    "id": "20260719-phone-1b1b79",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9382_c5b34df0_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Drei Kinder sitzen an Kindertischen und schauen ein Retro-Videospiel (Donkey Kong Country) auf dem Fernseher im Wohnzimmer.",
+      "tags": [
+        "kinder",
+        "fernsehen",
+        "videospiel",
+        "wohnzimmer",
+        "gruppe",
+        "sitzen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1f71b510d5eb8e3516e8844cba5a91c535cd3683aca60d74da04d769d95b15f4",
+    "path": "Chris-iPhone/IMG_9380.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T18:55:21+00:00",
+    "gps": {
+      "lat": 59.210169444444446,
+      "lon": 9.563661111111111,
+      "elevation_m": 99.7
+    },
+    "probe": {
+      "captured_at": "2026-07-19T18:55:21+00:00",
+      "gps": {
+        "lat": 59.210169444444446,
+        "lon": 9.563661111111111,
+        "elevation_m": 99.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.074,
+      "exposure": 0.998,
+      "score": 0.536
+    },
+    "id": "20260719-phone-1f71b5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9380_6e356d2b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Ein Junge liegt spielerisch mit einem Ball und einer Decke auf dem Holzboden im Flur eines Hauses.",
+      "tags": [
+        "kind",
+        "spielen",
+        "flur",
+        "holzboden",
+        "decke",
+        "haus"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:37ce70e7976dd6a11eb039bb532483ebb37185c066f680cdda67f4b5df7f32c4",
+    "path": "Chris-iPhone/IMG_9371.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T16:06:05+00:00",
+    "gps": {
+      "lat": 59.020408333333336,
+      "lon": 10.272747222222224
+    },
+    "probe": {
+      "captured_at": "2026-07-19T16:06:05+00:00",
+      "gps": {
+        "lat": 59.020408333333336,
+        "lon": 10.272747222222224
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.043,
+      "exposure": 0.958,
+      "score": 0.501
+    },
+    "id": "20260719-phone-37ce70",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9371_5a48f18f_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Bildschirm an Bord zeigt eine Live-Routenkarte im Skagerrak zwischen Norwegen und Schweden.",
+      "tags": [
+        "karte",
+        "route",
+        "faehre",
+        "bildschirm",
+        "navigation",
+        "skagerrak"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4286c0ba4e751c15976cbea7ed36638f13766efd14d4ddf3593a0e4bbad02f3e",
+    "path": "Chris-iPhone/IMG_9384.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T19:36:17+00:00",
+    "gps": {
+      "lat": 59.21022777777778,
+      "lon": 9.56388888888889,
+      "elevation_m": 97.2
+    },
+    "probe": {
+      "captured_at": "2026-07-19T19:36:17+00:00",
+      "gps": {
+        "lat": 59.21022777777778,
+        "lon": 9.56388888888889,
+        "elevation_m": 97.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.086,
+      "exposure": 0.952,
+      "score": 0.519
+    },
+    "id": "20260719-phone-4286c0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9384_7c98cd7a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Drei Deko-Tierfiguren (Baer, Elch, Fuchs) mit reflektierenden Solaraugen stehen auf einer Fensterbank.",
+      "tags": [
+        "deko",
+        "figuren",
+        "fensterbank",
+        "tiere",
+        "detail",
+        "haus"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:461c7bbb702384a1e69a1e4c66b498f17d0f417c8c03752275ee58ad998215e6",
+    "path": "Chris-iPhone/IMG_9362.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T14:59:46+00:00",
+    "gps": {
+      "lat": 58.37858333333333,
+      "lon": 10.053597222222223,
+      "elevation_m": 26.4
+    },
+    "probe": {
+      "captured_at": "2026-07-19T14:59:46+00:00",
+      "gps": {
+        "lat": 58.37858333333333,
+        "lon": 10.053597222222223,
+        "elevation_m": 26.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.028,
+      "exposure": 0.889,
+      "score": 0.459
+    },
+    "id": "20260719-phone-461c7b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9362_b14539d1_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Blick ueber einen Kinderkopf hinweg auf das offene Meer durch ein Bordfenster.",
+      "tags": [
+        "kind",
+        "meer",
+        "fenster",
+        "faehre",
+        "ausblick",
+        "detail"
+      ],
+      "people": true,
+      "usable_as": [
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4a097079e4dd561d88572ce0cb9de1cd3f8fd0f2b2da8cadb5762071374469b0",
+    "path": "Chris-iPhone/IMG_9360.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T14:33:19+00:00",
+    "gps": {
+      "lat": 57.81089444444444,
+      "lon": 9.95876111111111,
+      "elevation_m": 1.3
+    },
+    "probe": {
+      "captured_at": "2026-07-19T14:33:19+00:00",
+      "gps": {
+        "lat": 57.81089444444444,
+        "lon": 9.95876111111111,
+        "elevation_m": 1.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.24,
+      "exposure": 0.994,
+      "score": 0.617
+    },
+    "id": "20260719-phone-4a0970",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9360_d77c4d23_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Junge jubelt mit erhobenen Armen an einem Brettspiel-Tisch, eine Frau daneben schaut skeptisch auf das Spielfeld, Bordrestaurant der Faehre.",
+      "tags": [
+        "kind",
+        "frau",
+        "brettspiel",
+        "jubel",
+        "faehre",
+        "restaurant"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:57e0dea32b72df06b29941999997d2c3fbf6f9635be828e6edf867c05be8ff1c",
+    "path": "Chris-iPhone/IMG_9339.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T10:00:33+00:00",
+    "gps": {
+      "lat": 56.751625,
+      "lon": 9.695655555555556,
+      "elevation_m": 73.6
+    },
+    "probe": {
+      "captured_at": "2026-07-19T10:00:33+00:00",
+      "gps": {
+        "lat": 56.751625,
+        "lon": 9.695655555555556,
+        "elevation_m": 73.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.073,
+      "exposure": 0.873,
+      "score": 0.473
+    },
+    "id": "20260719-phone-57e0de",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9339_56d8447e_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Junge sitzt angeschnallt im Kindersitz im Auto und blickt aus dem Fenster.",
+      "tags": [
+        "kind",
+        "auto",
+        "fahrt",
+        "kindersitz",
+        "portraet",
+        "unterwegs"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5b36fe8d235acfc019ef8fa0fe554b9f85c4c3b30ad7d391862a86454ba79f89",
+    "path": "Chris-iPhone/IMG_9341.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T11:26:03+00:00",
+    "gps": {
+      "lat": 57.59239166666667,
+      "lon": 9.969722222222222,
+      "elevation_m": 4.5
+    },
+    "probe": {
+      "captured_at": "2026-07-19T11:26:03+00:00",
+      "gps": {
+        "lat": 57.59239166666667,
+        "lon": 9.969722222222222,
+        "elevation_m": 4.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.12,
+      "exposure": 0.879,
+      "score": 0.499
+    },
+    "id": "20260719-phone-5b36fe",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9341_b0baafbe_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Wegweiser-Schild am Faehrterminal (Toilet, Automat, Reception), im Hintergrund das Faehrschiff.",
+      "tags": [
+        "faehre",
+        "terminal",
+        "schild",
+        "hafen",
+        "hinweis",
+        "parkplatz"
+      ],
+      "people": false,
+      "usable_as": [
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:6f73715f4b4f36bfc84ba9b08594a5cfa9f81e15435672fdd76ad45eaddf789d",
+    "path": "Chris-iPhone/IMG_9349.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T12:39:56+00:00",
+    "gps": {
+      "lat": 57.60140277777778,
+      "lon": 9.956697222222221
+    },
+    "probe": {
+      "captured_at": "2026-07-19T12:39:56+00:00",
+      "gps": {
+        "lat": 57.60140277777778,
+        "lon": 9.956697222222221
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.013,
+      "exposure": 0.694,
+      "score": 0.353
+    },
+    "id": "20260719-phone-6f7371",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9349_019d6d6f_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Familien-Selfie im Auto: Frau und Mann laecheln vorne, Junge im Kindersitz macht ein Peace-Zeichen.",
+      "tags": [
+        "familie",
+        "auto",
+        "selfie",
+        "laecheln",
+        "kind",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:8c2d91152aa331229591ca1044a41fce3c7b231a71001a394639ce8c3d527afa",
+    "path": "Chris-iPhone/IMG_9348.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T12:28:59+00:00",
+    "gps": {
+      "lat": 57.59396111111111,
+      "lon": 9.966608333333333
+    },
+    "probe": {
+      "captured_at": "2026-07-19T12:28:59+00:00",
+      "gps": {
+        "lat": 57.59396111111111,
+        "lon": 9.966608333333333
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.073,
+      "exposure": 0.902,
+      "score": 0.488
+    },
+    "id": "20260719-phone-8c2d91",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9348_e2f728a0_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Frau und ein Junge gehen Hand in Hand eine Treppe im Faehrschiff hinauf, weitere Passagiere davor.",
+      "tags": [
+        "faehre",
+        "treppe",
+        "frau",
+        "kind",
+        "gehen",
+        "innenraum"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a0dd5521fe44c311642060d63415e23ca763289805c690ac2061fdcb5c451b7e",
+    "path": "Chris-iPhone/IMG_9357.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T13:40:02+00:00",
+    "gps": {
+      "lat": 57.80204444444444,
+      "lon": 9.956916666666666,
+      "elevation_m": 1.1
+    },
+    "probe": {
+      "captured_at": "2026-07-19T13:40:02+00:00",
+      "gps": {
+        "lat": 57.80204444444444,
+        "lon": 9.956916666666666,
+        "elevation_m": 1.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.067,
+      "exposure": 0.925,
+      "score": 0.496
+    },
+    "id": "20260719-phone-a0dd55",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9357_e827f2e4_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Junge isst Chicken-Nuggets mit erstauntem Blick in die Kamera im Bordrestaurant, Meerblick durchs Fenster.",
+      "tags": [
+        "kind",
+        "essen",
+        "faehre",
+        "restaurant",
+        "portraet",
+        "meerblick"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a62059fa1a2bba8eb1f329a278b6d1225f22ad0f8fb2d866ad772d539c0b721f",
+    "path": "Chris-iPhone/IMG_9353.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T13:08:57+00:00",
+    "gps": {
+      "lat": 57.60338333333333,
+      "lon": 9.987394444444444
+    },
+    "probe": {
+      "captured_at": "2026-07-19T13:08:57+00:00",
+      "gps": {
+        "lat": 57.60338333333333,
+        "lon": 9.987394444444444
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.126,
+      "exposure": 0.915,
+      "score": 0.52
+    },
+    "id": "20260719-phone-a62059",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9353_e9a0cce6_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Frau und ein Junge laecheln beim Essen im Bordrestaurant der Faehre, ein Brettspiel liegt auf dem Tisch.",
+      "tags": [
+        "faehre",
+        "restaurant",
+        "frau",
+        "kind",
+        "essen",
+        "laecheln"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ad1e8f3c61c12c014bdb6e0e3287c2eeac54ddd1311228cf20dcd29c8726802a",
+    "path": "Chris-iPhone/IMG_9385.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T19:36:36+00:00",
+    "gps": {
+      "lat": 59.21027777777778,
+      "lon": 9.564033333333334,
+      "elevation_m": 98.8
+    },
+    "probe": {
+      "captured_at": "2026-07-19T19:36:36+00:00",
+      "gps": {
+        "lat": 59.21027777777778,
+        "lon": 9.564033333333334,
+        "elevation_m": 98.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.244,
+      "exposure": 0.857,
+      "score": 0.551
+    },
+    "id": "20260719-phone-ad1e8f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9385_5545d124_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Vier Kinder sitzen von hinten an Kindertischen und schauen gemeinsam einen Cartoon auf einem Fernseher im Wohnzimmer.",
+      "tags": [
+        "kinder",
+        "fernsehen",
+        "wohnzimmer",
+        "gruppe",
+        "cartoon",
+        "sitzen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b32249be9d3ce646bd593ec17c97b80b850c4493ce94b77bf4691281718a0e8c",
+    "path": "Chris-iPhone/IMG_9347.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T11:49:01+00:00",
+    "gps": {
+      "lat": 57.5933,
+      "lon": 9.969391666666667,
+      "elevation_m": 3.8
+    },
+    "probe": {
+      "captured_at": "2026-07-19T11:49:01+00:00",
+      "gps": {
+        "lat": 57.5933,
+        "lon": 9.969391666666667,
+        "elevation_m": 3.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.824,
+      "exposure": 0.942,
+      "score": 0.883
+    },
+    "id": "20260719-phone-b32249",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9347_d09c3ee3_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Color-Line-Faehrschiff auf See mit Lotsenboot davor, durch eine Fensterscheibe fotografiert.",
+      "tags": [
+        "faehre",
+        "color-line",
+        "schiff",
+        "see",
+        "lotsenboot",
+        "wasser"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b530d45f10e8567892e68a6ddccc2fb64053a18d6684bbb78f4790534b1784b5",
+    "path": "Chris-iPhone/IMG_9331.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T06:21:32+00:00",
+    "gps": {
+      "lat": 54.78502777777778,
+      "lon": 9.437280555555557,
+      "elevation_m": 9.2
+    },
+    "probe": {
+      "captured_at": "2026-07-19T06:21:32+00:00",
+      "gps": {
+        "lat": 54.78502777777778,
+        "lon": 9.437280555555557,
+        "elevation_m": 9.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.287,
+      "exposure": 0.905,
+      "score": 0.596
+    },
+    "id": "20260719-phone-b530d4",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9331_5c30de04_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Eine Familie steht mit Gepaeck im Fahrstuhl eines Hotels und macht ein Spiegelfoto.",
+      "tags": [
+        "familie",
+        "hotel",
+        "fahrstuhl",
+        "gepaeck",
+        "abreise",
+        "spiegel"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b5868d8f86955492d2764562b1c66d01ad215f55e1e5ef0885037b4e58794781",
+    "path": "Chris-iPhone/IMG_9374.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T16:11:23+00:00",
+    "gps": {
+      "lat": 58.89669722222222,
+      "lon": 10.093380555555557,
+      "elevation_m": 17.9
+    },
+    "probe": {
+      "captured_at": "2026-07-19T16:11:23+00:00",
+      "gps": {
+        "lat": 58.89669722222222,
+        "lon": 10.093380555555557,
+        "elevation_m": 17.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.326,
+      "exposure": 0.803,
+      "score": 0.565
+    },
+    "id": "20260719-phone-b5868d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9374_84fd983b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Familien-Selfie zu dritt auf dem Schiffsdeck, alle laecheln, Meer im Hintergrund.",
+      "tags": [
+        "familie",
+        "selfie",
+        "laecheln",
+        "schiffsdeck",
+        "meer",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c5237f83e21c0cdf23827391f990d99f12d4a38fb5323fd51f7a36734c34705b",
+    "path": "Chris-iPhone/IMG_9370.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T15:43:26+00:00",
+    "gps": {
+      "lat": 58.651263888888884,
+      "lon": 10.08678888888889
+    },
+    "probe": {
+      "captured_at": "2026-07-19T15:43:26+00:00",
+      "gps": {
+        "lat": 58.651263888888884,
+        "lon": 10.08678888888889
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.171,
+      "exposure": 0.994,
+      "score": 0.582
+    },
+    "id": "20260719-phone-c5237f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9370_d10a8770_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Junge malt konzentriert in einem Malbuch, eine Frau beobachtet ihn nachdenklich, Bordrestaurant der Faehre.",
+      "tags": [
+        "kind",
+        "malen",
+        "frau",
+        "konzentration",
+        "faehre",
+        "restaurant"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d58b1f9d8f4602ec1db8579d9e0255b1117a086f1b9dc62f92c5df0c5ac90f88",
+    "path": "Chris-iPhone/IMG_9337.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T10:00:26+00:00",
+    "gps": {
+      "lat": 56.749716666666664,
+      "lon": 9.696180555555555,
+      "elevation_m": 74.5
+    },
+    "probe": {
+      "captured_at": "2026-07-19T10:00:26+00:00",
+      "gps": {
+        "lat": 56.749716666666664,
+        "lon": 9.696180555555555,
+        "elevation_m": 74.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.237,
+      "exposure": 0.938,
+      "score": 0.588
+    },
+    "id": "20260719-phone-d58b1f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9337_a6072f88_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Frau schlaeft mit dem Kopf auf einem Kissen im Auto, Blick durch das Fenster auf Baeume.",
+      "tags": [
+        "auto",
+        "schlafen",
+        "frau",
+        "fahrt",
+        "portraet",
+        "ruhe"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ddeefe4b9ff5f040fa7ce85f40e9fedf79eb8e6dbbc5a300277ba19f0241a9bb",
+    "path": "Chris-iPhone/IMG_9367.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T15:07:48+00:00",
+    "gps": {
+      "lat": 58.43561111111111,
+      "lon": 10.060891666666667,
+      "elevation_m": 16.9
+    },
+    "probe": {
+      "captured_at": "2026-07-19T15:07:48+00:00",
+      "gps": {
+        "lat": 58.43561111111111,
+        "lon": 10.060891666666667,
+        "elevation_m": 16.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.068,
+      "exposure": 0.817,
+      "score": 0.443
+    },
+    "id": "20260719-phone-ddeefe",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9367_ceff5ad4_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Junge posiert mit Peace-Zeichen und Hand an der Stirn auf dem Schiffsdeck, Meer im Hintergrund.",
+      "tags": [
+        "kind",
+        "posieren",
+        "peace",
+        "schiffsdeck",
+        "portraet",
+        "meer"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:fc5feed0909aba8553f44ea64263582bcb383b1640e2f555740561f739728c7e",
+    "path": "Chris-iPhone/IMG_9372.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T16:10:42+00:00",
+    "gps": {
+      "lat": 58.891666666666666,
+      "lon": 10.093777777777778,
+      "elevation_m": 22.1
+    },
+    "probe": {
+      "captured_at": "2026-07-19T16:10:42+00:00",
+      "gps": {
+        "lat": 58.891666666666666,
+        "lon": 10.093777777777778,
+        "elevation_m": 22.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.761,
+      "exposure": 0.802,
+      "score": 0.781
+    },
+    "id": "20260719-phone-fc5fee",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9372_8dc86467_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Paar-Selfie auf dem Schiffsdeck, die Frau haelt eine Brettspiel-Schachtel, Meer und Kielwasser im Hintergrund.",
+      "tags": [
+        "paar",
+        "selfie",
+        "laecheln",
+        "schiffsdeck",
+        "meer",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ffeaee027096e39b7657e1966ee2cf83ce407475b8dc8c36c9f792f8989515ec",
+    "path": "Chris-iPhone/IMG_9377.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-19T16:11:26+00:00",
+    "gps": {
+      "lat": 58.89707222222222,
+      "lon": 10.093358333333335,
+      "elevation_m": 17.5
+    },
+    "probe": {
+      "captured_at": "2026-07-19T16:11:26+00:00",
+      "gps": {
+        "lat": 58.89707222222222,
+        "lon": 10.093358333333335,
+        "elevation_m": 17.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.555,
+      "exposure": 0.797,
+      "score": 0.676
+    },
+    "id": "20260719-phone-ffeaee",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9377_03f418c2_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Weiteres Familien-Selfie zu dritt auf dem Schiffsdeck mit Kielwasser im Hintergrund.",
+      "tags": [
+        "familie",
+        "selfie",
+        "schiffsdeck",
+        "meer",
+        "kielwasser",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
     "hash": "sha256:00c7c2020f8240de3b9641c1c86bbaefa6e689929e13f01b5459909175ff3e6f",
     "path": "2026-07-20_Norwegen_Skien_Rudern-See/Vorauswahl/DJI_20260720153625_0006_D-00.02.10.556-00.02.18.774-seg5.MP4",
     "kind": "video",
