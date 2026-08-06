@@ -35172,6 +35172,55 @@
     }
   },
   {
+    "hash": "sha256:d8752a927be0d6002e8508aab2522adaff4ff6b4c371dfef79bb4b08be56d42d",
+    "path": "Chris-iPhone/IMG_0032.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-26T22:55:42+00:00",
+    "gps": {
+      "lat": 62.094638888888895,
+      "lon": 7.223058333333333,
+      "elevation_m": 203.0
+    },
+    "probe": {
+      "captured_at": "2026-07-26T22:55:42+00:00",
+      "gps": {
+        "lat": 62.094638888888895,
+        "lon": 7.223058333333333,
+        "elevation_m": 203.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.131,
+      "exposure": 0.736,
+      "score": 0.433
+    },
+    "id": "20260726-phone-d8752a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0032_6187f6b0_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Abenddaemmerungsblick auf den Geirangerfjord vom bewaldeten Balkon, Ortslichter beginnen zu leuchten.",
+      "tags": [
+        "geirangerfjord",
+        "daemmerung",
+        "fjord",
+        "panorama",
+        "abend"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:e8650640736202c8ed8e29b71015d51d8ed05932299caeb6e2331240876e79cb",
     "path": "Chris-iPhone/IMG_9997.HEIC",
     "kind": "photo",
@@ -35510,6 +35559,949 @@
     }
   },
   {
+    "hash": "sha256:1107d295ed45c33fe48368f1d80826770ed195056e4a2460d18b4f5324198940",
+    "path": "Chris-iPhone/IMG_0068.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-27T09:56:05+00:00",
+    "captured_at_source": "container",
+    "duration": 22.676667,
+    "probe": {
+      "captured_at": "2026-07-27T09:56:05+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 22.676667,
+      "bitrate": 53853662,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.896,
+      "stability": 0.083,
+      "exposure": 0.757,
+      "score": 0.579
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.917
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 22.68
+      }
+    ],
+    "id": "20260727-camera-1107d2",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0068_a9405a10_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0068_a9405a10_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0068_a9405a10_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Blick durch Nadelbaeume auf ein grosses Kreuzfahrtschiff im Geirangerfjord bei diesigem Wetter.",
+      "tags": [
+        "geirangerfjord",
+        "kreuzfahrtschiff",
+        "fjord",
+        "natur",
+        "panorama"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:145b8a88280f9e4b797f3539c4aeff3c53551fa4d05c1ac25a39fb085eb3cb4e",
+    "path": "Chris-iPhone/IMG_0089.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-27T11:14:48+00:00",
+    "captured_at_source": "container",
+    "duration": 39.903333,
+    "probe": {
+      "captured_at": "2026-07-27T11:14:48+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 39.903333,
+      "bitrate": 63099581,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.2,
+      "stability": 0.052,
+      "exposure": 0.792,
+      "score": 0.348
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.948
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 39.91
+      }
+    ],
+    "id": "20260727-camera-145b8a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0089_fb726629_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0089_fb726629_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0089_fb726629_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Moewe steht auf einem Steinblock am tuerkisfarbenen Fjordwasser.",
+      "tags": [
+        "moewe",
+        "voegel",
+        "fjord",
+        "tuerkis",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1b14b3692d8d554ed35555db774f3bcf153f5d3836c7d2b766d6e691fb4eeda9",
+    "path": "Chris-iPhone/IMG_0091.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-27T11:31:13+00:00",
+    "captured_at_source": "container",
+    "duration": 27.8117,
+    "probe": {
+      "captured_at": "2026-07-27T11:31:13+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 27.8117,
+      "bitrate": 53490782,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.772,
+      "stability": 0.037,
+      "exposure": 0.804,
+      "score": 0.538
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.963
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 27.82
+      }
+    ],
+    "id": "20260727-camera-1b14b3",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0091_d7395c2e_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0091_d7395c2e_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0091_d7395c2e_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Passagiere steigen in Neoprenanzuegen in RIB-Schnellboote fuer eine Fjordtour am Steg.",
+      "tags": [
+        "rib",
+        "schnellboot",
+        "fjordtour",
+        "ausflug",
+        "steg"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:26a354914bb22068d918820bd0b6d42caff90c4d68926aa52177d7868398974e",
+    "path": "Chris-iPhone/IMG_0059.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-27T09:49:46+00:00",
+    "captured_at_source": "container",
+    "duration": 14.273333,
+    "probe": {
+      "captured_at": "2026-07-27T09:49:46+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 14.273333,
+      "bitrate": 60711971,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.787,
+      "score": 0.596
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 14.27
+      }
+    ],
+    "id": "20260727-camera-26a354",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0059_e9e6340e_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0059_e9e6340e_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0059_e9e6340e_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0059_e9e6340e_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Wasserfall stuerzt ueber breite Felsstufen in Gletscherfluss, junger Baum am Ufer.",
+      "tags": [
+        "wasserfall",
+        "fluss",
+        "natur",
+        "wanderung",
+        "wasser"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:448a45cb996cfefc1c46951911c65d8839855eb4c228765193c12dbcc53d5467",
+    "path": "Chris-iPhone/IMG_0056.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-27T09:46:32+00:00",
+    "captured_at_source": "container",
+    "duration": 10.888333,
+    "probe": {
+      "captured_at": "2026-07-27T09:46:32+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 10.888333,
+      "bitrate": 60206158,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.868,
+      "score": 0.623
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 10.88
+      }
+    ],
+    "id": "20260727-camera-448a45",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0056_afce0dab_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0056_afce0dab_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0056_afce0dab_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Reissender Wasserfall stuerzt ueber bemooste Felsen im dichten Wald.",
+      "tags": [
+        "wasserfall",
+        "wald",
+        "natur",
+        "wanderung",
+        "wasser"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:81211a0c68989cc69d8c4a8f13d4a69455d07cdee191f542a58722796c8415fc",
+    "path": "Chris-iPhone/IMG_0116.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-27T13:23:09+00:00",
+    "captured_at_source": "container",
+    "duration": 11.538333,
+    "probe": {
+      "captured_at": "2026-07-27T13:23:09+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 11.538333,
+      "bitrate": 53009488,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.799,
+      "stability": 0.0,
+      "exposure": 0.761,
+      "score": 0.52
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 11.53
+      }
+    ],
+    "id": "20260727-camera-81211a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0116_70269bc8_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0116_70269bc8_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0116_70269bc8_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0116_70269bc8_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Nahaufnahme eines schmalen Wasserfalls an einer steilen, nassen Felswand im Fjord.",
+      "tags": [
+        "wasserfall",
+        "felswand",
+        "fjord",
+        "natur",
+        "close-up"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:847bd7daa963404caff5775dafd242390b7701cedfca650dce8f74915b7580c7",
+    "path": "Chris-iPhone/IMG_0113.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-27T13:06:20+00:00",
+    "captured_at_source": "container",
+    "duration": 9.0517,
+    "probe": {
+      "captured_at": "2026-07-27T13:06:20+00:00",
+      "captured_at_source": "container",
+      "w": 2160,
+      "h": 3840,
+      "fps": 60.0,
+      "dur": 9.0517,
+      "bitrate": 71933416,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.873,
+      "score": 0.624
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 9.05
+      }
+    ],
+    "id": "20260727-camera-847bd7",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0113_c84fee3d_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0113_c84fee3d_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0113_c84fee3d_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Familienselfie auf dem RIB-Schnellboot, alle mit Rettungswesten und Schutzbrillen, Fjordberge im Hintergrund.",
+      "tags": [
+        "familienselfie",
+        "rib",
+        "schnellboot",
+        "fjord",
+        "ausflug"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:9dcc734102c4c27c05be55e014dd59d0032b86570e60ffe8b35485de5801bdd7",
+    "path": "Chris-iPhone/IMG_0112.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-27T13:05:59+00:00",
+    "captured_at_source": "container",
+    "duration": 15.63,
+    "probe": {
+      "captured_at": "2026-07-27T13:05:59+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 15.63,
+      "bitrate": 52904813,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.921,
+      "stability": 0.0,
+      "exposure": 0.738,
+      "score": 0.553
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 15.63
+      }
+    ],
+    "id": "20260727-camera-9dcc73",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0112_b557b888_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0112_b557b888_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0112_b557b888_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "RIB-Schnellboot faehrt nah an einem riesigen Kreuzfahrtschiff im Geirangerfjord vorbei.",
+      "tags": [
+        "rib",
+        "schnellboot",
+        "kreuzfahrtschiff",
+        "geirangerfjord",
+        "ausflug"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a0ea47eae6de01476cb9ad9f098956d8b07144c23a7299879023a97752f41196",
+    "path": "Chris-iPhone/IMG_0070.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-27T09:57:22+00:00",
+    "captured_at_source": "container",
+    "duration": 44.336667,
+    "probe": {
+      "captured_at": "2026-07-27T09:57:22+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 44.336667,
+      "bitrate": 53582756,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.029,
+      "exposure": 0.792,
+      "score": 0.607
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.971
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 44.33
+      }
+    ],
+    "id": "20260727-camera-a0ea47",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0070_34fb718c_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0070_34fb718c_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0070_34fb718c_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0070_34fb718c_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weiter Panoramablick auf den Geirangerfjord mit Kreuzfahrtschiff, Campingplatz und Talort am Fjordufer.",
+      "tags": [
+        "geirangerfjord",
+        "kreuzfahrtschiff",
+        "fjord",
+        "panorama",
+        "campingplatz"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a7e386f8d889e89b940e0ae7937ec2e67959a78ee2cb58d0905415a348e9f2dc",
+    "path": "Chris-iPhone/IMG_0120.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-27T13:40:18+00:00",
+    "captured_at_source": "container",
+    "duration": 15.163333,
+    "probe": {
+      "captured_at": "2026-07-27T13:40:18+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 15.163333,
+      "bitrate": 54001691,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.123,
+      "exposure": 0.806,
+      "score": 0.643
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.877
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 15.17
+      }
+    ],
+    "id": "20260727-camera-a7e386",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0120_f95c469c_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0120_f95c469c_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0120_f95c469c_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Blick vom RIB-Boot auf einen hohen, mehrstufigen Wasserfall an steiler Felswand direkt am Fjord.",
+      "tags": [
+        "wasserfall",
+        "fjord",
+        "rib",
+        "felswand",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:abbc2f6fed2009dffcddea4537a9a0f27af7c1b2ae95390001c915635bb3ad4b",
+    "path": "Chris-iPhone/IMG_0088.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-27T11:12:24+00:00",
+    "captured_at_source": "container",
+    "duration": 25.69,
+    "probe": {
+      "captured_at": "2026-07-27T11:12:24+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 25.69,
+      "bitrate": 62388866,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.266,
+      "stability": 0.152,
+      "exposure": 0.716,
+      "score": 0.378
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.848
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 25.69
+      }
+    ],
+    "id": "20260727-camera-abbc2f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0088_e0cdb95f_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0088_e0cdb95f_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0088_e0cdb95f_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Schnellboot (RIB) faehrt auf dem Fjord vorbei an Ferienhaussiedlung am Hang.",
+      "tags": [
+        "fjord",
+        "schnellboot",
+        "rib",
+        "ferienhaus",
+        "ausflug"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c5386172745c3a2c94d87ef433b16ff29684876c83a766d26690cc5d5f58ab08",
+    "path": "Chris-iPhone/IMG_0122.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-27T13:48:53+00:00",
+    "captured_at_source": "container",
+    "duration": 25.55,
+    "probe": {
+      "captured_at": "2026-07-27T13:48:53+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 25.55,
+      "bitrate": 53044435,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.321,
+      "stability": 0.0,
+      "exposure": 0.764,
+      "score": 0.362
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 25.55
+      }
+    ],
+    "id": "20260727-camera-c53861",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0122_9e7124e6_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0122_9e7124e6_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0122_9e7124e6_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Passagiere in Regenausruestung auf dem RIB-Boot, Ortschaft am gegenueberliegenden Fjordufer.",
+      "tags": [
+        "rib",
+        "schnellboot",
+        "regen",
+        "fjord",
+        "ausflug"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:cf9e1d50e205517628cb4e1ae7d873b283483552bd22f7dd6f0900ec908bce7b",
+    "path": "Chris-iPhone/IMG_0118.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-27T13:24:03+00:00",
+    "captured_at_source": "container",
+    "duration": 12.188333,
+    "probe": {
+      "captured_at": "2026-07-27T13:24:03+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 12.188333,
+      "bitrate": 52802993,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.372,
+      "stability": 0.0,
+      "exposure": 0.708,
+      "score": 0.36
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 12.18
+      }
+    ],
+    "id": "20260727-camera-cf9e1d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0118_5a39d806_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0118_5a39d806_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0118_5a39d806_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Blick vom Bug des RIB-Bootes in einen engen, nebligen Fjordarm mit steilen Felswaenden.",
+      "tags": [
+        "rib",
+        "schnellboot",
+        "fjord",
+        "nebel",
+        "fahrt"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e61b927bd798d2f6ec6ae3e95330852719655836456a12a69a5b2f659b94be59",
+    "path": "Chris-iPhone/IMG_0058.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-27T09:48:40+00:00",
+    "captured_at_source": "container",
+    "duration": 22.2917,
+    "probe": {
+      "captured_at": "2026-07-27T09:48:40+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 22.2917,
+      "bitrate": 53079678,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.808,
+      "stability": 0.0,
+      "exposure": 0.913,
+      "score": 0.574
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 22.3
+      }
+    ],
+    "id": "20260727-camera-e61b92",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0058_2aae73b1_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0058_2aae73b1_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0058_2aae73b1_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Mutter und Kind steigen eine Metalltreppe an einem tosenden Wildbach hinauf, Gelaender aus Stahlseilen.",
+      "tags": [
+        "wanderung",
+        "treppe",
+        "wasserfall",
+        "kind",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ecff06abc571131ef23faf4c29c5989b5858ac6cd0d64764ff094062e167fb0d",
+    "path": "Chris-iPhone/IMG_0092.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-27T11:31:49+00:00",
+    "captured_at_source": "container",
+    "duration": 23.2717,
+    "probe": {
+      "captured_at": "2026-07-27T11:31:49+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 23.2717,
+      "bitrate": 54310170,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.327,
+      "stability": 0.211,
+      "exposure": 0.737,
+      "score": 0.425
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.789
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 23.27
+      }
+    ],
+    "id": "20260727-camera-ecff06",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0092_4b6aa0fe_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0092_4b6aa0fe_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0092_4b6aa0fe_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0092_4b6aa0fe_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "RIB-Schnellboot mit Passagieren in gelben Regenjacken faehrt auf dem Fjord an einer Huettensiedlung vorbei.",
+      "tags": [
+        "rib",
+        "schnellboot",
+        "fjord",
+        "ferienhaus",
+        "ausflug"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f66b39fd0250309997a316512dba9238fdc108a01767dfb17a1f625ef5225cda",
+    "path": "Chris-iPhone/IMG_0117.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-27T13:23:30+00:00",
+    "captured_at_source": "container",
+    "duration": 23.903333,
+    "probe": {
+      "captured_at": "2026-07-27T13:23:30+00:00",
+      "captured_at_source": "container",
+      "w": 2160,
+      "h": 3840,
+      "fps": 60.0,
+      "dur": 23.903333,
+      "bitrate": 59356494,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.259,
+      "stability": 0.0,
+      "exposure": 0.767,
+      "score": 0.342
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 23.42
+      },
+      {
+        "start": 23.42,
+        "end": 23.9
+      }
+    ],
+    "id": "20260727-camera-f66b39",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0117_ae02df7f_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0117_ae02df7f_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0117_ae02df7f_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0117_ae02df7f_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0117_ae02df7f_kf04.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Familienselfie in gelben Regenjacken und Schutzbrillen auf dem RIB-Boot bei Regen, steile Felswand im Nebel.",
+      "tags": [
+        "familienselfie",
+        "rib",
+        "schnellboot",
+        "regen",
+        "fjord"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:3cd337b674d8a2eef471529758112b4655437220a9689d78187584379ebaf704",
     "path": "2026-07-27_Norwegen_Geiranger_Cruise/Vorauwahl/DJI_20260727104208_0030_D-00.00.52.073-00.05.54.612-seg1.MP4",
     "kind": "video",
@@ -35674,6 +36666,2123 @@
     "day": 10,
     "stage": "Geiranger",
     "place_source": "index"
+  },
+  {
+    "hash": "sha256:114cda0cba6a5bb703eeda1df81cb0b12a2c112e6790406013e1ce86ed41313d",
+    "path": "Chris-iPhone/IMG_0083.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T12:41:00+00:00",
+    "gps": {
+      "lat": 62.09572222222222,
+      "lon": 7.2100638888888895,
+      "elevation_m": 83.7
+    },
+    "probe": {
+      "captured_at": "2026-07-27T12:41:00+00:00",
+      "gps": {
+        "lat": 62.09572222222222,
+        "lon": 7.2100638888888895,
+        "elevation_m": 83.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.183,
+      "exposure": 0.979,
+      "score": 0.581
+    },
+    "id": "20260727-phone-114cda",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0083_f62f7710_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Nahaufnahme von pinkfarbenen Astilben-Blueten und rotem Ahornlaub, Berge im Hintergrund.",
+      "tags": [
+        "makro",
+        "blumen",
+        "astilbe",
+        "natur",
+        "detail"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:143b06da944db0ed25b18812a40a1f651e62bb7eb9a5920973b8a8f508ad5d2e",
+    "path": "Chris-iPhone/IMG_0077.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T12:06:12+00:00",
+    "gps": {
+      "lat": 62.09600555555556,
+      "lon": 7.209355555555556,
+      "elevation_m": 80.8
+    },
+    "probe": {
+      "captured_at": "2026-07-27T12:06:12+00:00",
+      "gps": {
+        "lat": 62.09600555555556,
+        "lon": 7.209355555555556,
+        "elevation_m": 80.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.921,
+      "score": 0.961
+    },
+    "id": "20260727-phone-143b06",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0077_81ca8c82_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Wildbach fliesst durch den Ort Geiranger an einem grauen Gebaeude vorbei, markanter Gipfel im Hintergrund.",
+      "tags": [
+        "wildbach",
+        "geiranger",
+        "ort",
+        "berge",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:151c49b2f0439bc38a61ed49029f2b72c0414ca5614ba99d7ddafaa333b26186",
+    "path": "Chris-iPhone/IMG_0101.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T14:19:43+00:00",
+    "gps": {
+      "lat": 62.102294444444446,
+      "lon": 7.205966666666667,
+      "elevation_m": 23.4
+    },
+    "probe": {
+      "captured_at": "2026-07-27T14:19:43+00:00",
+      "gps": {
+        "lat": 62.102294444444446,
+        "lon": 7.205966666666667,
+        "elevation_m": 23.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.27,
+      "exposure": 0.934,
+      "score": 0.602
+    },
+    "id": "20260727-phone-151c49",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0101_eaa6e1fd_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Mutter und Sohn posieren unter grosser norwegischer Flagge in Geiranger, Marktbuden und Touristenmenge im Hintergrund.",
+      "tags": [
+        "portraet",
+        "geiranger",
+        "flagge",
+        "kind",
+        "markt"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1b82b0cc7f4cf187684ee9bf252b3238260c63452f469880e3a849fca9e16381",
+    "path": "Chris-iPhone/IMG_0043.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T09:13:10+00:00",
+    "gps": {
+      "lat": 62.09462777777778,
+      "lon": 7.223161111111112,
+      "elevation_m": 202.7
+    },
+    "probe": {
+      "captured_at": "2026-07-27T09:13:10+00:00",
+      "gps": {
+        "lat": 62.09462777777778,
+        "lon": 7.223161111111112,
+        "elevation_m": 202.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.045,
+      "exposure": 0.906,
+      "score": 0.476
+    },
+    "id": "20260727-phone-1b82b0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0043_626c8a8e_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Geburtstagsgeschenk: eingeschweisstes Brettspiel 'Brass: Birmingham' auf dem Fruehstueckstisch.",
+      "tags": [
+        "geburtstag",
+        "geschenk",
+        "brettspiel",
+        "fruehstueck"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1d6624106697f821777538430212009155c87e4aeb5c42953fdc47e75dc88c42",
+    "path": "Chris-iPhone/IMG_0063.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T11:53:19+00:00",
+    "gps": {
+      "lat": 62.09722222222222,
+      "lon": 7.207783333333333,
+      "elevation_m": 56.9
+    },
+    "probe": {
+      "captured_at": "2026-07-27T11:53:19+00:00",
+      "gps": {
+        "lat": 62.09722222222222,
+        "lon": 7.207783333333333,
+        "elevation_m": 56.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.355,
+      "exposure": 0.971,
+      "score": 0.663
+    },
+    "id": "20260727-phone-1d6624",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0063_f9e5126f_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Grosser Wasserfall stuerzt ueber Felsstufen mitten im Ort Geiranger, Aussichtsplattform am Rand.",
+      "tags": [
+        "wasserfall",
+        "geiranger",
+        "ort",
+        "natur",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1e0f803c7cd9f93321627ff100f2c05a39a2cd41f51416321c28b4d6dfc9f398",
+    "path": "Chris-iPhone/IMG_0064.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T11:54:54+00:00",
+    "gps": {
+      "lat": 62.096919444444445,
+      "lon": 7.207913888888889,
+      "elevation_m": 68.2
+    },
+    "probe": {
+      "captured_at": "2026-07-27T11:54:54+00:00",
+      "gps": {
+        "lat": 62.096919444444445,
+        "lon": 7.207913888888889,
+        "elevation_m": 68.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.119,
+      "exposure": 0.926,
+      "score": 0.523
+    },
+    "id": "20260727-phone-1e0f80",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0064_04676a2b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Humorvolles Holzschild 'Do not feed the garden gnome' mit Wichtel-Zeichnung im Gebuesch.",
+      "tags": [
+        "schild",
+        "humor",
+        "garten",
+        "detail",
+        "geiranger"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:21a3c9919d58b4648b988fff2cdece314c350d276049d46a1578a6ecd3e5e3d9",
+    "path": "Chris-iPhone/IMG_0085.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T12:41:24+00:00",
+    "gps": {
+      "lat": 62.09576666666667,
+      "lon": 7.2099166666666665,
+      "elevation_m": 84.8
+    },
+    "probe": {
+      "captured_at": "2026-07-27T12:41:24+00:00",
+      "gps": {
+        "lat": 62.09576666666667,
+        "lon": 7.2099166666666665,
+        "elevation_m": 84.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.037,
+      "exposure": 0.9,
+      "score": 0.468
+    },
+    "id": "20260727-phone-21a3c9",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0085_415386f3_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Makroaufnahme von pinkfarbenen und weissen Nelkenblueten.",
+      "tags": [
+        "makro",
+        "blumen",
+        "nelken",
+        "detail",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:24028cc963ba581aa786ce5f4d777770f859c027508a3c3f3a5b4daf3e2244ba",
+    "path": "Chris-iPhone/IMG_0075.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T12:03:22+00:00",
+    "gps": {
+      "lat": 62.09659166666667,
+      "lon": 7.2089083333333335,
+      "elevation_m": 76.1
+    },
+    "probe": {
+      "captured_at": "2026-07-27T12:03:22+00:00",
+      "gps": {
+        "lat": 62.09659166666667,
+        "lon": 7.2089083333333335,
+        "elevation_m": 76.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.275,
+      "exposure": 0.969,
+      "score": 0.622
+    },
+    "id": "20260727-phone-24028c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0075_1d7d287f_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Hellorangefarbene, langhaarige Katze sitzt vor einer Steinmauer auf gepflastertem Weg.",
+      "tags": [
+        "katze",
+        "tier",
+        "portraet",
+        "geiranger"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:270b2971773af63b5dd6b738a40d5a15bb9ff470f91dcdd174d3e24cface7ec2",
+    "path": "Chris-iPhone/IMG_0057.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T11:48:37+00:00",
+    "gps": {
+      "lat": 62.09748333333334,
+      "lon": 7.206894444444445,
+      "elevation_m": 27.6
+    },
+    "probe": {
+      "captured_at": "2026-07-27T11:48:37+00:00",
+      "gps": {
+        "lat": 62.09748333333334,
+        "lon": 7.206894444444445,
+        "elevation_m": 27.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.937,
+      "score": 0.969
+    },
+    "id": "20260727-phone-270b29",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0057_367bc5a5_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Blick eine Metalltreppe hinunter zum tosenden Wildbach mit Ort und Fjord im Hintergrund, zwei Personen auf dem Steg.",
+      "tags": [
+        "wanderung",
+        "treppe",
+        "wildbach",
+        "fjord",
+        "geiranger"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:276d064abc52844c72e8fe7fb3bd211640da96d4e99780578161454395acb637",
+    "path": "Chris-iPhone/IMG_0106.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T14:47:53+00:00",
+    "gps": {
+      "lat": 62.101936111111115,
+      "lon": 7.205988888888889,
+      "elevation_m": 5.9
+    },
+    "probe": {
+      "captured_at": "2026-07-27T14:47:53+00:00",
+      "gps": {
+        "lat": 62.101936111111115,
+        "lon": 7.205988888888889,
+        "elevation_m": 5.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.054,
+      "exposure": 0.781,
+      "score": 0.418
+    },
+    "id": "20260727-phone-276d06",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0106_aed35227_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Familienselfie vor Reihen aufgehaengter RIB-Regenanzuege im Ausruestungsschuppen, alle laecheln.",
+      "tags": [
+        "familienselfie",
+        "rib",
+        "ausruestung",
+        "vorbereitung",
+        "ausflug"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:27bf877d95d3a3d4b1cd725cd31eaf74b63d802742d08c3e35f12d3bbaa585e7",
+    "path": "Chris-iPhone/IMG_0108.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T15:00:47+00:00",
+    "gps": {
+      "lat": 62.101975,
+      "lon": 7.205225,
+      "elevation_m": 8.7
+    },
+    "probe": {
+      "captured_at": "2026-07-27T15:00:47+00:00",
+      "gps": {
+        "lat": 62.101975,
+        "lon": 7.205225,
+        "elevation_m": 8.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.034,
+      "exposure": 0.962,
+      "score": 0.498
+    },
+    "id": "20260727-phone-27bf87",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0108_eb98b47e_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Portraet des Sohns mit Schwimmweste und Schutzbrille auf dem Bootssteg, kleiner Hafen im Hintergrund.",
+      "tags": [
+        "kind",
+        "portraet",
+        "rib",
+        "hafen",
+        "ausflug"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:293147cd4453435677ad10b9ac72735f570c4d05e72279f6ca2dfea3e88aa0f4",
+    "path": "Chris-iPhone/IMG_0051.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T11:43:13+00:00",
+    "gps": {
+      "lat": 62.098216666666666,
+      "lon": 7.204847222222222,
+      "elevation_m": 10.6
+    },
+    "probe": {
+      "captured_at": "2026-07-27T11:43:13+00:00",
+      "gps": {
+        "lat": 62.098216666666666,
+        "lon": 7.204847222222222,
+        "elevation_m": 10.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.33,
+      "exposure": 0.954,
+      "score": 0.642
+    },
+    "id": "20260727-phone-293147",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0051_3aecd082_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Portraet von Mutter und Sohn am felsigen Ufer des Wildbachs bei Geiranger, Wasserfall im Hintergrund.",
+      "tags": [
+        "portraet",
+        "kind",
+        "mutter",
+        "wildbach",
+        "geiranger"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2cb2a15377b631286642b3cea78aeb6686d6bbc932690f9d11fe2d0206c77cbd",
+    "path": "Chris-iPhone/IMG_0097.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T14:15:53+00:00",
+    "gps": {
+      "lat": 62.10176944444444,
+      "lon": 7.206533333333334,
+      "elevation_m": 3.9
+    },
+    "probe": {
+      "captured_at": "2026-07-27T14:15:53+00:00",
+      "gps": {
+        "lat": 62.10176944444444,
+        "lon": 7.206533333333334,
+        "elevation_m": 3.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.137,
+      "exposure": 0.901,
+      "score": 0.519
+    },
+    "id": "20260727-phone-2cb2a1",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0097_45b6e106_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mutter und Sohn essen Waffeln auf der Strasse in Geiranger vor weissem Holzhaus.",
+      "tags": [
+        "geiranger",
+        "waffeln",
+        "essen",
+        "kind",
+        "strasse"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2ed4afeffaf32c778b347a09df4b7a901bf0d06a6623fe362515910cf25970fb",
+    "path": "Chris-iPhone/IMG_0038.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T09:08:36+00:00",
+    "gps": {
+      "lat": 62.09464722222222,
+      "lon": 7.223163888888889,
+      "elevation_m": 202.0
+    },
+    "probe": {
+      "captured_at": "2026-07-27T09:08:36+00:00",
+      "gps": {
+        "lat": 62.09464722222222,
+        "lon": 7.223163888888889,
+        "elevation_m": 202.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.629,
+      "exposure": 0.753,
+      "score": 0.691
+    },
+    "id": "20260727-phone-2ed4af",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0038_1890d672_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Festlich gedeckter Geburtstags-Fruehstueckstisch mit Wimpelgirlande vor dem Fenster, Blick auf den Fjord, Geschenk und Kerzenkuchen.",
+      "tags": [
+        "geburtstag",
+        "fruehstueck",
+        "fjord",
+        "dekoration",
+        "huette"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:314959f39fb416c562925a725ba8989b3a9e1742e23b3ec343a001ed20cdef02",
+    "path": "Chris-iPhone/IMG_0067.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T11:55:47+00:00",
+    "gps": {
+      "lat": 62.09699722222222,
+      "lon": 7.208083333333334,
+      "elevation_m": 69.1
+    },
+    "probe": {
+      "captured_at": "2026-07-27T11:55:47+00:00",
+      "gps": {
+        "lat": 62.09699722222222,
+        "lon": 7.208083333333334,
+        "elevation_m": 69.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.202,
+      "exposure": 0.959,
+      "score": 0.581
+    },
+    "id": "20260727-phone-314959",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0067_d5c540a3_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kreuzfahrtschiff liegt im Geirangerfjord vor gewaltigem Bergpanorama mit Almwiesen am Hang.",
+      "tags": [
+        "geirangerfjord",
+        "kreuzfahrtschiff",
+        "berge",
+        "panorama",
+        "fjord"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:31748188983db19510ba142d427d6e30ade1fd41917600f1f804903e17cf7df8",
+    "path": "Chris-iPhone/IMG_0040.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T09:08:55+00:00",
+    "gps": {
+      "lat": 62.094591666666666,
+      "lon": 7.223225,
+      "elevation_m": 200.9
+    },
+    "probe": {
+      "captured_at": "2026-07-27T09:08:55+00:00",
+      "gps": {
+        "lat": 62.094591666666666,
+        "lon": 7.223225,
+        "elevation_m": 200.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.047,
+      "exposure": 0.877,
+      "score": 0.462
+    },
+    "id": "20260727-phone-317481",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0040_7b71314a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Drei brennende Geburtstagskerzen auf einem Kuchenstueck, Beschriftung 'Papa/Chris' im Hintergrund.",
+      "tags": [
+        "geburtstag",
+        "kerzen",
+        "kuchen",
+        "close-up",
+        "feier"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:3b9e821d732342ffcbfcbd5856f49fb4ddf98d4c9a89f4e9e7be72bf69db4508",
+    "path": "Chris-iPhone/IMG_0055.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T11:46:25+00:00",
+    "gps": {
+      "lat": 62.09758888888889,
+      "lon": 7.2059194444444445,
+      "elevation_m": 29.8
+    },
+    "probe": {
+      "captured_at": "2026-07-27T11:46:25+00:00",
+      "gps": {
+        "lat": 62.09758888888889,
+        "lon": 7.2059194444444445,
+        "elevation_m": 29.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.966,
+      "score": 0.983
+    },
+    "id": "20260727-phone-3b9e82",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0055_7235cdc2_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Frau blickt von einer Stegplattform auf einen kleinen Wasserfall in bewaldeter Schlucht.",
+      "tags": [
+        "wasserfall",
+        "frau",
+        "natur",
+        "geiranger",
+        "steg"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:3eb28a211c16a6d5f731082be59be11b34ab76395371bce62ec6b830be97d9d0",
+    "path": "Chris-iPhone/IMG_0110.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T15:00:56+00:00",
+    "gps": {
+      "lat": 62.101483333333334,
+      "lon": 7.205263888888889,
+      "elevation_m": 11.2
+    },
+    "probe": {
+      "captured_at": "2026-07-27T15:00:56+00:00",
+      "gps": {
+        "lat": 62.101483333333334,
+        "lon": 7.205263888888889,
+        "elevation_m": 11.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.619,
+      "exposure": 0.862,
+      "score": 0.74
+    },
+    "id": "20260727-phone-3eb28a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0110_1fc702b1_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Familienselfie mit Rettungswesten und Schutzbrillen am Fjordufer vor der RIB-Bootstour, Geiranger im Hintergrund.",
+      "tags": [
+        "familienselfie",
+        "rib",
+        "geiranger",
+        "fjord",
+        "ausflug"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:42aeaac3dff0751f227f17dee2bb9d853ed47e4919b5fc1135406ef42f64432a",
+    "path": "Chris-iPhone/IMG_0039.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T09:08:45+00:00",
+    "gps": {
+      "lat": 62.09461944444445,
+      "lon": 7.223161111111112,
+      "elevation_m": 198.7
+    },
+    "probe": {
+      "captured_at": "2026-07-27T09:08:45+00:00",
+      "gps": {
+        "lat": 62.09461944444445,
+        "lon": 7.223161111111112,
+        "elevation_m": 198.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.067,
+      "exposure": 0.934,
+      "score": 0.501
+    },
+    "id": "20260727-phone-42aeaa",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0039_fe04c687_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Nahaufnahme des Geburtstagstischs: brennende Kerzen vor Geschenk, selbstgemalte 'Happy Birthday'-Karte, Kaffeetasse.",
+      "tags": [
+        "geburtstag",
+        "kerzen",
+        "geschenk",
+        "geburtstagskarte",
+        "fruehstueck"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4521786c997052c5039d4c03580faf51c918f2b1a2ccd4393e579f60f11760e0",
+    "path": "Chris-iPhone/IMG_0050.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T11:43:09+00:00",
+    "gps": {
+      "lat": 62.098216666666666,
+      "lon": 7.204841666666667,
+      "elevation_m": 10.6
+    },
+    "probe": {
+      "captured_at": "2026-07-27T11:43:09+00:00",
+      "gps": {
+        "lat": 62.098216666666666,
+        "lon": 7.204841666666667,
+        "elevation_m": 10.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.292,
+      "exposure": 0.922,
+      "score": 0.607
+    },
+    "id": "20260727-phone-452178",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0050_41041b9e_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Portraet von Mutter und Sohn am Wildbach in Geiranger, umgeben von Waldbergen.",
+      "tags": [
+        "portraet",
+        "kind",
+        "mutter",
+        "wildbach",
+        "geiranger"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4c50621f3df1f2e6a8b67d676af73a9a22a2c6604b78d8fc1ffca06b5e488d88",
+    "path": "Chris-iPhone/IMG_0086.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T13:10:08+00:00",
+    "gps": {
+      "lat": 62.10096111111111,
+      "lon": 7.204436111111112,
+      "elevation_m": 8.8
+    },
+    "probe": {
+      "captured_at": "2026-07-27T13:10:08+00:00",
+      "gps": {
+        "lat": 62.10096111111111,
+        "lon": 7.204436111111112,
+        "elevation_m": 8.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.155,
+      "exposure": 0.997,
+      "score": 0.576
+    },
+    "id": "20260727-phone-4c5062",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0086_b88d8c4c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Leeres RIB-Schnellboot liegt am Steg im ruhigen Fjordwasser, bewaldeter Hang im Hintergrund.",
+      "tags": [
+        "rib",
+        "schnellboot",
+        "fjord",
+        "steg",
+        "ausflug"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5c0907dcf55b372190803c74f452ee2ba6631d6e31367cbe9433af605488ed7d",
+    "path": "Chris-iPhone/IMG_0079.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T12:15:12+00:00",
+    "gps": {
+      "lat": 62.09571944444445,
+      "lon": 7.211533333333334,
+      "elevation_m": 82.2
+    },
+    "probe": {
+      "captured_at": "2026-07-27T12:15:12+00:00",
+      "gps": {
+        "lat": 62.09571944444445,
+        "lon": 7.211533333333334,
+        "elevation_m": 82.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.952,
+      "score": 0.976
+    },
+    "id": "20260727-phone-5c0907",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0079_4a5ef058_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Alte, windschiefe Grasdachhuette auf Steinfundament, markanter Berggipfel im Hintergrund.",
+      "tags": [
+        "grasdach",
+        "huette",
+        "geiranger",
+        "historisch",
+        "berge"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:64d2fb351d04175f6d5ddf811be7ebb6333155690d3ea253e89288561ce472d5",
+    "path": "Chris-iPhone/IMG_0111.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T15:04:34+00:00",
+    "gps": {
+      "lat": 62.101600000000005,
+      "lon": 7.204330555555556,
+      "elevation_m": 1.0
+    },
+    "probe": {
+      "captured_at": "2026-07-27T15:04:34+00:00",
+      "gps": {
+        "lat": 62.101600000000005,
+        "lon": 7.204330555555556,
+        "elevation_m": 1.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.476,
+      "exposure": 0.898,
+      "score": 0.687
+    },
+    "id": "20260727-phone-64d2fb",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0111_02a842d5_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Gruppenselfie im wartenden RIB-Boot vor der Abfahrt, Vater und Mutter vorne, Sohn und andere Passagiere dahinter, Felswand im Hintergrund.",
+      "tags": [
+        "familienselfie",
+        "rib",
+        "fjord",
+        "gruppenfoto",
+        "ausflug"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:6a772202da2ad32a4f985c48052278c3bdb0c29a912d1c72ca14f59fbb38c767",
+    "path": "Chris-iPhone/IMG_0035.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T09:06:48+00:00",
+    "gps": {
+      "lat": 62.09462777777778,
+      "lon": 7.223161111111112,
+      "elevation_m": 202.7
+    },
+    "probe": {
+      "captured_at": "2026-07-27T09:06:48+00:00",
+      "gps": {
+        "lat": 62.09462777777778,
+        "lon": 7.223161111111112,
+        "elevation_m": 202.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.072,
+      "exposure": 0.955,
+      "score": 0.513
+    },
+    "id": "20260727-phone-6a7722",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0035_4d73ebab_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Junge im Minecraft-Pyjama zeigt eine selbstgemalte Geburtstagskarte 'Happy Birthday' fuer Papa am gedeckten Fruehstuckstisch.",
+      "tags": [
+        "geburtstag",
+        "kind",
+        "geburtstagskarte",
+        "fruehstueck",
+        "huette"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:6aec4cf8cd68bf3847dcb1bc5f4b730ddeed21de4ee65dd600757a772a5fe4ae",
+    "path": "Chris-iPhone/IMG_0054.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T11:43:47+00:00",
+    "gps": {
+      "lat": 62.098225,
+      "lon": 7.204863888888889,
+      "elevation_m": 8.2
+    },
+    "probe": {
+      "captured_at": "2026-07-27T11:43:47+00:00",
+      "gps": {
+        "lat": 62.098225,
+        "lon": 7.204863888888889,
+        "elevation_m": 8.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.97,
+      "score": 0.985
+    },
+    "id": "20260727-phone-6aec4c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0054_8f792cbf_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Portraet von Vater und Sohn lachend am Wildbach bei Geiranger, beide in Outdoorkleidung.",
+      "tags": [
+        "portraet",
+        "kind",
+        "vater",
+        "wildbach",
+        "geiranger"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:6f2658a6d88f67c08c934df7b852779ee6f0704f104b63a73f3752da80ce1253",
+    "path": "Chris-iPhone/IMG_0041.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T09:10:36+00:00",
+    "gps": {
+      "lat": 62.09462222222223,
+      "lon": 7.223161111111112,
+      "elevation_m": 202.7
+    },
+    "probe": {
+      "captured_at": "2026-07-27T09:10:36+00:00",
+      "gps": {
+        "lat": 62.09462222222223,
+        "lon": 7.223161111111112,
+        "elevation_m": 202.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.064,
+      "exposure": 0.842,
+      "score": 0.453
+    },
+    "id": "20260727-phone-6f2658",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0041_b807ff39_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Aufgeklappte Geburtstags-Pop-up-Karte mit Sektglaesern und Luftballons, Aufschrift 'Herzlichen Glueckwunsch! Lieber Papa'.",
+      "tags": [
+        "geburtstag",
+        "karte",
+        "pop-up",
+        "feier",
+        "geschenk"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7f89741142765f10b6846bd1d8833fdad336eaf08348c99811e5aa60015ba024",
+    "path": "Chris-iPhone/IMG_0114.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T15:19:07+00:00",
+    "gps": {
+      "lat": 62.11213055555556,
+      "lon": 7.107222222222222,
+      "elevation_m": 7.7
+    },
+    "probe": {
+      "captured_at": "2026-07-27T15:19:07+00:00",
+      "gps": {
+        "lat": 62.11213055555556,
+        "lon": 7.107222222222222,
+        "elevation_m": 7.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.372,
+      "exposure": 0.977,
+      "score": 0.674
+    },
+    "id": "20260727-phone-7f8974",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0114_682d74dc_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Gruppe von Passagieren im RIB-Boot waehrend der Fahrt durch den engen, nebligen Fjordarm, Guide steht am Heck.",
+      "tags": [
+        "rib",
+        "schnellboot",
+        "fjord",
+        "gruppe",
+        "fahrt"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:83ab98f313b1491dded0c071a42c2df3a6515d01e4dcaa53dcbe39a09dfbda08",
+    "path": "Chris-iPhone/IMG_0048.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T11:42:19+00:00",
+    "gps": {
+      "lat": 62.0983,
+      "lon": 7.204719444444445,
+      "elevation_m": 16.7
+    },
+    "probe": {
+      "captured_at": "2026-07-27T11:42:19+00:00",
+      "gps": {
+        "lat": 62.0983,
+        "lon": 7.204719444444445,
+        "elevation_m": 16.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.448,
+      "exposure": 0.968,
+      "score": 0.708
+    },
+    "id": "20260727-phone-83ab98",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0048_a37dd34c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Wildbach fliesst durch den Ort Geiranger zwischen Baeumen hindurch, kleiner Wasserfall im Hintergrund.",
+      "tags": [
+        "wildbach",
+        "geiranger",
+        "ort",
+        "natur",
+        "wasser"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:871d318c91e9a6b778ee8183c03ccbfca6b08c47e5d1b17b8bacd14df635e18e",
+    "path": "Chris-iPhone/IMG_0062.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T11:52:01+00:00",
+    "gps": {
+      "lat": 62.097325000000005,
+      "lon": 7.207441666666667,
+      "elevation_m": 42.7
+    },
+    "probe": {
+      "captured_at": "2026-07-27T11:52:01+00:00",
+      "gps": {
+        "lat": 62.097325000000005,
+        "lon": 7.207441666666667,
+        "elevation_m": 42.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.95,
+      "score": 0.975
+    },
+    "id": "20260727-phone-871d31",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0062_ff63ffd8_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Blick durch Baeume auf den Geirangerfjord mit Kreuzfahrtschiff, Wasserfall im Vordergrund.",
+      "tags": [
+        "geirangerfjord",
+        "kreuzfahrtschiff",
+        "wasserfall",
+        "panorama",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:8e3af874e8d7c3f0974ba30df4ababa4e87e755cfbfe1fd0b10e122025bbbc1f",
+    "path": "Chris-iPhone/IMG_0102.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T14:20:11+00:00",
+    "gps": {
+      "lat": 62.102375,
+      "lon": 7.205583333333333,
+      "elevation_m": 9.6
+    },
+    "probe": {
+      "captured_at": "2026-07-27T14:20:11+00:00",
+      "gps": {
+        "lat": 62.102375,
+        "lon": 7.205583333333333,
+        "elevation_m": 9.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.518,
+      "exposure": 0.863,
+      "score": 0.691
+    },
+    "id": "20260727-phone-8e3af8",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0102_bf5b7265_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Belebter Marktplatz von Geiranger mit Souvenirstaenden, Kreuzfahrtschiff im Hafen, Touristenmenge.",
+      "tags": [
+        "geiranger",
+        "markt",
+        "kreuzfahrtschiff",
+        "touristen",
+        "ort"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:924e13182f60fa7f11b3c587a51060792f621a9a61d5c01768d29e160c7f1db9",
+    "path": "Chris-iPhone/IMG_0119.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T15:40:13+00:00",
+    "gps": {
+      "lat": 62.102402777777776,
+      "lon": 7.105341666666666,
+      "elevation_m": 9.4
+    },
+    "probe": {
+      "captured_at": "2026-07-27T15:40:13+00:00",
+      "gps": {
+        "lat": 62.102402777777776,
+        "lon": 7.105341666666666,
+        "elevation_m": 9.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.977,
+      "score": 0.989
+    },
+    "id": "20260727-phone-924e13",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0119_a541cf60_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Hoher Wasserfall stuerzt vom Bergkamm ueber mehrere Felsstufen direkt ins Fjordwasser.",
+      "tags": [
+        "wasserfall",
+        "fjord",
+        "felswand",
+        "natur",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:954545f0f46147a6ff20674cdc987c1ca67e9bf28f9bc1f5e594bf362d4b36ef",
+    "path": "Chris-iPhone/IMG_0105.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T14:47:43+00:00",
+    "gps": {
+      "lat": 62.10187222222223,
+      "lon": 7.206025,
+      "elevation_m": 6.7
+    },
+    "probe": {
+      "captured_at": "2026-07-27T14:47:43+00:00",
+      "gps": {
+        "lat": 62.10187222222223,
+        "lon": 7.206025,
+        "elevation_m": 6.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.141,
+      "exposure": 0.695,
+      "score": 0.418
+    },
+    "id": "20260727-phone-954545",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0105_6c8bbf5d_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Reihen von gelb-schwarzen RIB-Boot-Regenanzuegen haengen an Kleiderstangen in einem Holzschuppen.",
+      "tags": [
+        "rib",
+        "ausruestung",
+        "regenanzug",
+        "detail",
+        "ausflug"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:9bdd912e678f647d86f089550a40325c07234bebe29ca0d066ff6a3c0c2f9d5a",
+    "path": "Chris-iPhone/IMG_0123.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T15:58:11+00:00",
+    "gps": {
+      "lat": 62.10158888888889,
+      "lon": 7.204488888888889,
+      "elevation_m": -3.0
+    },
+    "probe": {
+      "captured_at": "2026-07-27T15:58:11+00:00",
+      "gps": {
+        "lat": 62.10158888888889,
+        "lon": 7.204488888888889,
+        "elevation_m": -3.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.227,
+      "exposure": 0.905,
+      "score": 0.566
+    },
+    "id": "20260727-phone-9bdd91",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0123_f5358643_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Familienfoto in RIB-Overalls am Steg nach der Bootstour, alte Grasdachhaeuser und Boote im Hintergrund.",
+      "tags": [
+        "familienselfie",
+        "rib",
+        "steg",
+        "geiranger",
+        "ausflug"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a643d14d074c32897e3018324e1c837a0007ac72709425342319235448666986",
+    "path": "Chris-iPhone/IMG_0033.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T00:23:39+00:00",
+    "gps": {
+      "lat": 62.094636111111114,
+      "lon": 7.223163888888889,
+      "elevation_m": 224.8
+    },
+    "probe": {
+      "captured_at": "2026-07-27T00:23:39+00:00",
+      "gps": {
+        "lat": 62.094636111111114,
+        "lon": 7.223163888888889,
+        "elevation_m": 224.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.018,
+      "exposure": 0.426,
+      "score": 0.222
+    },
+    "id": "20260727-phone-a643d1",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0033_d84b7461_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Nachtansicht des Geirangerfjords mit beleuchtetem Ort am Fjordufer, Silhouette der Berge.",
+      "tags": [
+        "geirangerfjord",
+        "nacht",
+        "fjord",
+        "lichter",
+        "panorama"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b9ea098d7eff8024e483f7112fa0319f757381826436ce9bcf1710668d03f0de",
+    "path": "Chris-iPhone/IMG_0121.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T15:40:42+00:00",
+    "gps": {
+      "lat": 62.10287777777778,
+      "lon": 7.106825,
+      "elevation_m": 5.1
+    },
+    "probe": {
+      "captured_at": "2026-07-27T15:40:42+00:00",
+      "gps": {
+        "lat": 62.10287777777778,
+        "lon": 7.106825,
+        "elevation_m": 5.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.628,
+      "exposure": 0.989,
+      "score": 0.809
+    },
+    "id": "20260727-phone-b9ea09",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0121_2afc9a4b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Blick vom Bug des RIB-Bootes auf einen breiten, mehrstufigen Wasserfall, der ins Fjordwasser stuerzt.",
+      "tags": [
+        "wasserfall",
+        "fjord",
+        "rib",
+        "felswand",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c25c1593952d25f91289ae8a2d8afc982cc6d2b99e4d2570f146b39a8df6bac6",
+    "path": "Chris-iPhone/IMG_0129.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T15:58:15+00:00",
+    "gps": {
+      "lat": 62.10161111111111,
+      "lon": 7.204452777777778,
+      "elevation_m": 3.1
+    },
+    "probe": {
+      "captured_at": "2026-07-27T15:58:15+00:00",
+      "gps": {
+        "lat": 62.10161111111111,
+        "lon": 7.204452777777778,
+        "elevation_m": 3.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.216,
+      "exposure": 0.993,
+      "score": 0.605
+    },
+    "id": "20260727-phone-c25c15",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0129_f0ec4bac_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Gruppenfoto mit Guide am Steg nach der RIB-Bootstour, alle in Overalls, Grasdachhaeuser im Hintergrund.",
+      "tags": [
+        "gruppenfoto",
+        "rib",
+        "steg",
+        "geiranger",
+        "ausflug"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c36a38bd8696337ca5f7f4ebc3d41c7ffb3d864130b8bf5ea0b095257e19fb1a",
+    "path": "Chris-iPhone/IMG_0061.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T11:50:41+00:00",
+    "gps": {
+      "lat": 62.09750833333334,
+      "lon": 7.206966666666667,
+      "elevation_m": 33.6
+    },
+    "probe": {
+      "captured_at": "2026-07-27T11:50:41+00:00",
+      "gps": {
+        "lat": 62.09750833333334,
+        "lon": 7.206966666666667,
+        "elevation_m": 33.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.884,
+      "score": 0.942
+    },
+    "id": "20260727-phone-c36a38",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0061_e8df34cf_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mutter und Sohn steigen die Metalltreppe am Wildbach hinauf, bewoelkter Himmel, Wasserfall im Hintergrund.",
+      "tags": [
+        "wanderung",
+        "treppe",
+        "wildbach",
+        "kind",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c3b3cb2f314462d174b9440f8093ab152c8082a5fc46cc1b2a45789127637b32",
+    "path": "Chris-iPhone/IMG_0046.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T11:35:15+00:00",
+    "gps": {
+      "lat": 62.101391666666665,
+      "lon": 7.205444444444445,
+      "elevation_m": 5.7
+    },
+    "probe": {
+      "captured_at": "2026-07-27T11:35:15+00:00",
+      "gps": {
+        "lat": 62.101391666666665,
+        "lon": 7.205444444444445,
+        "elevation_m": 5.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.975,
+      "exposure": 0.997,
+      "score": 0.986
+    },
+    "id": "20260727-phone-c3b3cb",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0046_a3449fdd_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Fischerhafen von Geiranger mit Bootshaeusern, aufgescheuchte Moewen fliegen ueber das Wasser, steile Felswand im Hintergrund.",
+      "tags": [
+        "geiranger",
+        "hafen",
+        "moewen",
+        "bootshaus",
+        "fjord"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c5a7565cf39e466908e9a1a174e99358e95183177ee7252959b30f43e79fe513",
+    "path": "Chris-iPhone/IMG_0069.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T11:57:15+00:00",
+    "gps": {
+      "lat": 62.09708055555556,
+      "lon": 7.208180555555556,
+      "elevation_m": 69.1
+    },
+    "probe": {
+      "captured_at": "2026-07-27T11:57:15+00:00",
+      "gps": {
+        "lat": 62.09708055555556,
+        "lon": 7.208180555555556,
+        "elevation_m": 69.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.616,
+      "exposure": 0.994,
+      "score": 0.805
+    },
+    "id": "20260727-phone-c5a756",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0069_a2e21232_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weiter Blick auf den Geirangerfjord mit Kreuzfahrtschiff und Campingplatz, Wildbach im Vordergrund stuerzt durch Felsen.",
+      "tags": [
+        "geirangerfjord",
+        "kreuzfahrtschiff",
+        "wildbach",
+        "campingplatz",
+        "panorama"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c959248e09bca45f203592f2da10dcddd8776ba8fb6bb9e1d34ed3adacf6b6a1",
+    "path": "Chris-iPhone/IMG_0045.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T09:29:28+00:00",
+    "gps": {
+      "lat": 62.094611111111114,
+      "lon": 7.223188888888889,
+      "elevation_m": 193.1
+    },
+    "probe": {
+      "captured_at": "2026-07-27T09:29:28+00:00",
+      "gps": {
+        "lat": 62.094611111111114,
+        "lon": 7.223188888888889,
+        "elevation_m": 193.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.044,
+      "exposure": 0.653,
+      "score": 0.348
+    },
+    "id": "20260727-phone-c95924",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0045_19b92a23_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kind mit erhobenen Armen tanzt ausgelassen am Fruehstueckstisch in der Kuechenhuette, Minecraft-Pyjama.",
+      "tags": [
+        "kind",
+        "fruehstueck",
+        "huette",
+        "tanz",
+        "geburtstag"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d42ed6afc1d436ba332d83988994922a07678f2eddc1bf61baab8be345740749",
+    "path": "Chris-iPhone/IMG_0090.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T13:29:38+00:00",
+    "gps": {
+      "lat": 62.101711111111115,
+      "lon": 7.204902777777778,
+      "elevation_m": 2.3
+    },
+    "probe": {
+      "captured_at": "2026-07-27T13:29:38+00:00",
+      "gps": {
+        "lat": 62.101711111111115,
+        "lon": 7.204902777777778,
+        "elevation_m": 2.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.105,
+      "exposure": 0.981,
+      "score": 0.543
+    },
+    "id": "20260727-phone-d42ed6",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0090_84253c40_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Gruppe von Passagieren in gelben Regenjacken sitzt im RIB-Boot am Steg, wartet auf Abfahrt der Fjordtour.",
+      "tags": [
+        "rib",
+        "schnellboot",
+        "fjord",
+        "ausflug",
+        "steg"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e946ec725ae35f287247cb76b9d9186c352596b72e7fbc9651ce4a35c517d002",
+    "path": "Chris-iPhone/IMG_0066.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T11:55:35+00:00",
+    "gps": {
+      "lat": 62.097,
+      "lon": 7.208127777777778,
+      "elevation_m": 66.9
+    },
+    "probe": {
+      "captured_at": "2026-07-27T11:55:35+00:00",
+      "gps": {
+        "lat": 62.097,
+        "lon": 7.208127777777778,
+        "elevation_m": 66.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.671,
+      "exposure": 0.976,
+      "score": 0.823
+    },
+    "id": "20260727-phone-e946ec",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0066_f24749c5_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Panoramablick auf den Geirangerfjord mit Kreuzfahrtschiff, Aussichtssteg und Wildbach im Vordergrund.",
+      "tags": [
+        "geirangerfjord",
+        "kreuzfahrtschiff",
+        "panorama",
+        "steg",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f3980c7b1fa689cedd495b55f0fc839e1cd85d87a57c871507d54bcbf31a639e",
+    "path": "Chris-iPhone/IMG_0084.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T12:41:14+00:00",
+    "gps": {
+      "lat": 62.09574166666667,
+      "lon": 7.21,
+      "elevation_m": 85.8
+    },
+    "probe": {
+      "captured_at": "2026-07-27T12:41:14+00:00",
+      "gps": {
+        "lat": 62.09574166666667,
+        "lon": 7.21,
+        "elevation_m": 85.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.165,
+      "exposure": 0.955,
+      "score": 0.56
+    },
+    "id": "20260727-phone-f3980c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0084_8aa8e44e_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Pinkfarbene Astilbenblueten vor modernem Cafegebaeude und Berghotel in Geiranger.",
+      "tags": [
+        "blumen",
+        "astilbe",
+        "geiranger",
+        "cafe",
+        "architektur"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f621c095690e7e8ee3dccc44613e0b2f965c8a9cd5a26187cb95f037e3bb462e",
+    "path": "Chris-iPhone/IMG_0044.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T09:29:23+00:00",
+    "gps": {
+      "lat": 62.09461666666667,
+      "lon": 7.223172222222223,
+      "elevation_m": 203.3
+    },
+    "probe": {
+      "captured_at": "2026-07-27T09:29:23+00:00",
+      "gps": {
+        "lat": 62.09461666666667,
+        "lon": 7.223172222222223,
+        "elevation_m": 203.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.155,
+      "exposure": 0.936,
+      "score": 0.546
+    },
+    "id": "20260727-phone-f621c0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0044_da883284_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Portraet des Geburtstagskindes am Fruehstueckstisch, schaelt ein Ei, laechelt in die Kamera.",
+      "tags": [
+        "geburtstag",
+        "portraet",
+        "fruehstueck",
+        "mann",
+        "huette"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
   },
   {
     "hash": "sha256:00a3ae06e4073b33c6ce2d9e0bd75c5147e830e73f2a8b4bb260fa371b2d8bdd",
