@@ -11312,6 +11312,191 @@
     }
   },
   {
+    "hash": "sha256:7545fc26749bbadfe2a81398d1f2b89c5754f55823f3a260ae1b12fb016d4645",
+    "path": "Chris-iPhone/IMG_9531.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-22T15:28:39+00:00",
+    "captured_at_source": "container",
+    "duration": 19.808333,
+    "probe": {
+      "captured_at": "2026-07-22T15:28:39+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 19.808333,
+      "bitrate": 52999245,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.442,
+      "stability": 0.149,
+      "exposure": 0.805,
+      "score": 0.465
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.851
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 19.82
+      }
+    ],
+    "id": "20260722-camera-7545fc",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9531_ddcc4787_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9531_ddcc4787_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9531_ddcc4787_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9531_ddcc4787_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Ein Mann kitzelt lachend einen Jungen im Arm, ein Maedchen daneben lacht mit, Huettenwohnzimmer.",
+      "tags": [
+        "mann",
+        "kind",
+        "lachen",
+        "kitzeln",
+        "huette",
+        "wohnzimmer"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:85e7ab087440920a0f7f5dcacdb7f9ffa3279506b62297c26df9f110b2d583ad",
+    "path": "Chris-iPhone/IMG_9530.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-22T15:23:18+00:00",
+    "captured_at_source": "container",
+    "duration": 20.97,
+    "probe": {
+      "captured_at": "2026-07-22T15:23:18+00:00",
+      "captured_at_source": "container",
+      "w": 1920,
+      "h": 1080,
+      "fps": 29.97002997002997,
+      "dur": 20.97,
+      "bitrate": 9186717,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.29,
+      "stability": 0.0,
+      "exposure": 0.827,
+      "score": 0.372
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 12.35
+      },
+      {
+        "start": 12.35,
+        "end": 20.99
+      }
+    ],
+    "id": "20260722-camera-85e7ab",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9530_224e17f9_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9530_224e17f9_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9530_224e17f9_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9530_224e17f9_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9530_224e17f9_kf04.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Kinder toben auf einem Sitzsack in der offenen Kueche der Huette, ein Mann steht am Kuehlschrank im Hintergrund.",
+      "tags": [
+        "kinder",
+        "spielen",
+        "kueche",
+        "huette",
+        "sitzsack",
+        "mann"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:cdd0f692239b01de5752a3b951a67274b4d7a3d6913798a26876d2fba96417bc",
+    "path": "Chris-iPhone/IMG_9527.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-22T15:21:33+00:00",
+    "captured_at_source": "container",
+    "duration": 21.681667,
+    "probe": {
+      "captured_at": "2026-07-22T15:21:33+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 21.681667,
+      "bitrate": 52987659,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.477,
+      "stability": 0.0,
+      "exposure": 0.778,
+      "score": 0.418
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 21.69
+      }
+    ],
+    "id": "20260722-camera-cdd0f6",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9527_eaf298d2_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9527_eaf298d2_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9527_eaf298d2_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9527_eaf298d2_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Kinder spielen auf dem Boden der Huettenstube, Waesche trocknet am Kaminschutzgitter.",
+      "tags": [
+        "kinder",
+        "spielen",
+        "huette",
+        "wohnzimmer",
+        "waesche",
+        "kamin"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:2c3851caf6d6bfa21781eda1963ec53121df4a553e3936c45879a42dce3aa9bb",
     "path": "2026-07-22_Norwegen_Skien_Hütte-2/Vorauswahl/DJI_20260722154643_0002_D-00.07.25.343-00.07.41.616-seg09.MP4",
     "kind": "video",
@@ -12561,6 +12746,790 @@
     "day": 5,
     "stage": "Skien",
     "place_source": "index"
+  },
+  {
+    "hash": "sha256:06068afd8499cae928b5e3a345c805b1b6f68ea8654e77b3debe87b3b9cd2102",
+    "path": "Chris-iPhone/IMG_9518.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-22T17:09:19+00:00",
+    "gps": {
+      "lat": 59.38154166666667,
+      "lon": 9.414380555555557,
+      "elevation_m": 587.6
+    },
+    "probe": {
+      "captured_at": "2026-07-22T17:09:19+00:00",
+      "gps": {
+        "lat": 59.38154166666667,
+        "lon": 9.414380555555557,
+        "elevation_m": 587.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.035,
+      "exposure": 0.952,
+      "score": 0.494
+    },
+    "id": "20260722-phone-06068a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9518_2006ee64_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Frau haelt die Haende eines tanzenden Jungen hoch, ein weiteres Kind steht daneben, Huettenwohnzimmer.",
+      "tags": [
+        "frau",
+        "kind",
+        "tanzen",
+        "spielen",
+        "huette",
+        "laecheln"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:074074c1b922916e5956ca436640a73aa48f790f06959069bc4cb4556033f75b",
+    "path": "Chris-iPhone/IMG_9534.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-22T17:52:03+00:00",
+    "gps": {
+      "lat": 59.381591666666665,
+      "lon": 9.414041666666668,
+      "elevation_m": 578.6
+    },
+    "probe": {
+      "captured_at": "2026-07-22T17:52:03+00:00",
+      "gps": {
+        "lat": 59.381591666666665,
+        "lon": 9.414041666666668,
+        "elevation_m": 578.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.061,
+      "exposure": 0.864,
+      "score": 0.463
+    },
+    "id": "20260722-phone-074074",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9534_dc072168_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Frau winkt von der Terrasse einer Huette, Kinder stehen und sitzen neben ihr.",
+      "tags": [
+        "frau",
+        "kinder",
+        "terrasse",
+        "huette",
+        "winken",
+        "laecheln"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:0b08fc30b49fdc30473b0e7feae952490e74767b152e5e682c2f3afee7e5a902",
+    "path": "Chris-iPhone/IMG_9528.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-22T17:22:08+00:00",
+    "gps": {
+      "lat": 59.381547222222224,
+      "lon": 9.414419444444444,
+      "elevation_m": 587.6
+    },
+    "probe": {
+      "captured_at": "2026-07-22T17:22:08+00:00",
+      "gps": {
+        "lat": 59.381547222222224,
+        "lon": 9.414419444444444,
+        "elevation_m": 587.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.227,
+      "exposure": 0.89,
+      "score": 0.559
+    },
+    "id": "20260722-phone-0b08fc",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9528_ee9fd4e7_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Alltagsszene in offener Kueche und Wohnbereich der Huette: Erwachsene raeumen auf, Kinder liegen und sitzen auf Sitzsaecken.",
+      "tags": [
+        "kueche",
+        "huette",
+        "kinder",
+        "alltag",
+        "aufraeumen",
+        "wohnzimmer"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2a3d3714608a71e01a1ad8fac9aab98ec5fa07b480240e4b5835c282c3e79dbe",
+    "path": "Chris-iPhone/IMG_9514.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-22T15:36:50+00:00",
+    "gps": {
+      "lat": 59.38149722222222,
+      "lon": 9.414408333333334,
+      "elevation_m": 583.0
+    },
+    "probe": {
+      "captured_at": "2026-07-22T15:36:50+00:00",
+      "gps": {
+        "lat": 59.38149722222222,
+        "lon": 9.414408333333334,
+        "elevation_m": 583.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.176,
+      "exposure": 0.891,
+      "score": 0.534
+    },
+    "id": "20260722-phone-2a3d37",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9514_892b64d3_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Mehrere Kinder entspannen auf Ledersofas in der Huettenstube, ein Junge setzt einem Maedchen eine Kappe auf.",
+      "tags": [
+        "kinder",
+        "sofa",
+        "huette",
+        "spielen",
+        "wohnzimmer",
+        "entspannen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:401c518ca7e13e90320468191cff294d6d4125d30f5aae4b54cd528d51c67586",
+    "path": "Chris-iPhone/IMG_9521.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-22T17:09:36+00:00",
+    "gps": {
+      "lat": 59.38153333333334,
+      "lon": 9.414444444444445,
+      "elevation_m": 585.1
+    },
+    "probe": {
+      "captured_at": "2026-07-22T17:09:36+00:00",
+      "gps": {
+        "lat": 59.38153333333334,
+        "lon": 9.414444444444445,
+        "elevation_m": 585.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.058,
+      "exposure": 0.789,
+      "score": 0.423
+    },
+    "id": "20260722-phone-401c51",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9521_abd34b9a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Maedchen mit Brille laechelt breit ins Kameraobjektiv, Selfie-Perspektive.",
+      "tags": [
+        "kind",
+        "brille",
+        "laecheln",
+        "selfie",
+        "portraet",
+        "huette"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:43e6ad48b1c73e4eb857e58accb78a2e7e7b95eace2bf5f13d3e5d1cf8afff04",
+    "path": "Chris-iPhone/IMG_9532.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-22T17:51:56+00:00",
+    "gps": {
+      "lat": 59.380855555555556,
+      "lon": 9.414655555555555,
+      "elevation_m": 582.5
+    },
+    "probe": {
+      "captured_at": "2026-07-22T17:51:56+00:00",
+      "gps": {
+        "lat": 59.380855555555556,
+        "lon": 9.414655555555555,
+        "elevation_m": 582.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.488,
+      "exposure": 0.919,
+      "score": 0.704
+    },
+    "id": "20260722-phone-43e6ad",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9532_7eb688db_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Establisher einer dunklen Holzhuette auf einem Huegel mit Terrasse, Menschen und ein Auto im Vordergrund.",
+      "tags": [
+        "huette",
+        "haus",
+        "establisher",
+        "terrasse",
+        "auto",
+        "landschaft"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5c23843941afa356efdab5310b39da7d57c80fd8467452e435f36911f592e8a0",
+    "path": "Chris-iPhone/IMG_9511.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-22T14:00:15+00:00",
+    "gps": {
+      "lat": 59.381547222222224,
+      "lon": 9.414383333333333,
+      "elevation_m": 587.5
+    },
+    "probe": {
+      "captured_at": "2026-07-22T14:00:15+00:00",
+      "gps": {
+        "lat": 59.381547222222224,
+        "lon": 9.414383333333333,
+        "elevation_m": 587.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.165,
+      "exposure": 0.957,
+      "score": 0.561
+    },
+    "id": "20260722-phone-5c2384",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9511_318ce784_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Zwei Frauen sitzen laechelnd am Kuechentisch vor einem Laptop, Kinderzeichnungen liegen auf dem Tisch.",
+      "tags": [
+        "frauen",
+        "laptop",
+        "kueche",
+        "laecheln",
+        "tisch",
+        "zeichnungen"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7ed7197ee01257cae36d09ed8feec22e042208b2b5452d64bf404aa00dd244d9",
+    "path": "Chris-iPhone/IMG_9506.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-22T12:22:22+00:00",
+    "gps": {
+      "lat": 59.38153055555556,
+      "lon": 9.414405555555556,
+      "elevation_m": 587.2
+    },
+    "probe": {
+      "captured_at": "2026-07-22T12:22:22+00:00",
+      "gps": {
+        "lat": 59.38153055555556,
+        "lon": 9.414405555555556,
+        "elevation_m": 587.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.037,
+      "exposure": 0.859,
+      "score": 0.448
+    },
+    "id": "20260722-phone-7ed719",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9506_c9795f30_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Frau laechelt mit einem Kuscheltier-Einhorn auf der Schulter in einer Huettenkueche.",
+      "tags": [
+        "frau",
+        "laecheln",
+        "kuscheltier",
+        "huette",
+        "kueche",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:94430b9266006c7fc9fdff2e2cec37f32e808e4ea67b0f8c72c234630fa9b0c3",
+    "path": "Chris-iPhone/IMG_9508.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-22T12:26:38+00:00",
+    "gps": {
+      "lat": 59.38153333333334,
+      "lon": 9.414391666666667,
+      "elevation_m": 587.2
+    },
+    "probe": {
+      "captured_at": "2026-07-22T12:26:38+00:00",
+      "gps": {
+        "lat": 59.38153333333334,
+        "lon": 9.414391666666667,
+        "elevation_m": 587.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.393,
+      "exposure": 0.915,
+      "score": 0.654
+    },
+    "id": "20260722-phone-94430b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9508_d6aae058_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Ein Maedchen sitzt auf dem Boden und spielt ein Videospiel vor einem grossen Fernseher.",
+      "tags": [
+        "kind",
+        "videospiel",
+        "fernseher",
+        "wohnzimmer",
+        "huette",
+        "spielen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a62a4a108e9d045067117e0aa29c463141e41a80f1a3c38c5044cce959741afb",
+    "path": "Chris-iPhone/IMG_9512.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-22T14:00:22+00:00",
+    "gps": {
+      "lat": 59.38154166666667,
+      "lon": 9.414380555555557,
+      "elevation_m": 587.5
+    },
+    "probe": {
+      "captured_at": "2026-07-22T14:00:22+00:00",
+      "gps": {
+        "lat": 59.38154166666667,
+        "lon": 9.414380555555557,
+        "elevation_m": 587.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.037,
+      "exposure": 0.846,
+      "score": 0.442
+    },
+    "id": "20260722-phone-a62a4a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9512_615d0d0c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Mann und drei Kinder schauen gemeinsam auf einen Laptop auf einem Ledersofa in der Huettenstube.",
+      "tags": [
+        "mann",
+        "kinder",
+        "laptop",
+        "sofa",
+        "huette",
+        "gemeinsam"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b3612243b18d0c7760b1f7415bc5ac27deeb091a8ac4fb67c122e3d196c4d24c",
+    "path": "Chris-iPhone/IMG_9509.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-22T12:26:43+00:00",
+    "gps": {
+      "lat": 59.38153333333334,
+      "lon": 9.414391666666667,
+      "elevation_m": 587.2
+    },
+    "probe": {
+      "captured_at": "2026-07-22T12:26:43+00:00",
+      "gps": {
+        "lat": 59.38153333333334,
+        "lon": 9.414391666666667,
+        "elevation_m": 587.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.269,
+      "exposure": 0.843,
+      "score": 0.556
+    },
+    "id": "20260722-phone-b36122",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9509_aa820c21_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Drei Kinder sitzen mit Snacks auf Ledersofas in einer Huettenstube.",
+      "tags": [
+        "kinder",
+        "sofa",
+        "snacks",
+        "huette",
+        "wohnzimmer",
+        "entspannen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b9cdc4e80de0efbb7e25f25b2fad774b88f66b94aaa19288fe38520ad5fb2edf",
+    "path": "Chris-iPhone/IMG_9513.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-22T15:36:47+00:00",
+    "gps": {
+      "lat": 59.38153888888889,
+      "lon": 9.414380555555557,
+      "elevation_m": 587.5
+    },
+    "probe": {
+      "captured_at": "2026-07-22T15:36:47+00:00",
+      "gps": {
+        "lat": 59.38153888888889,
+        "lon": 9.414380555555557,
+        "elevation_m": 587.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.077,
+      "exposure": 0.795,
+      "score": 0.436
+    },
+    "id": "20260722-phone-b9cdc4",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9513_f4c364b0_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Maedchen mit Kappe und Sonnenbrille laechelt zusammengekauert auf einem Ledersofa.",
+      "tags": [
+        "kind",
+        "laecheln",
+        "sonnenbrille",
+        "sofa",
+        "portraet",
+        "huette"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c9cfd6ef2f260a52047b6aa3e0e12f48d2d06f872d076fb64c20b1c55fe2b559",
+    "path": "Chris-iPhone/IMG_9529.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-22T17:23:10+00:00",
+    "gps": {
+      "lat": 59.38154166666667,
+      "lon": 9.414397222222222,
+      "elevation_m": 587.6
+    },
+    "probe": {
+      "captured_at": "2026-07-22T17:23:10+00:00",
+      "gps": {
+        "lat": 59.38154166666667,
+        "lon": 9.414397222222222,
+        "elevation_m": 587.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.084,
+      "exposure": 0.96,
+      "score": 0.522
+    },
+    "id": "20260722-phone-c9cfd6",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9529_7f6a7016_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Kinder liegen auf einem Sitzsack in der Kueche, im Hintergrund raeumt eine Person auf.",
+      "tags": [
+        "kinder",
+        "sitzsack",
+        "kueche",
+        "huette",
+        "entspannen",
+        "alltag"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d9b55c0b0743313baa58c15e0497723230a5009fb023112a1ea5d11a65e12470",
+    "path": "Chris-iPhone/IMG_9522.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-22T17:09:40+00:00",
+    "gps": {
+      "lat": 59.38153888888889,
+      "lon": 9.414436111111112,
+      "elevation_m": 585.3
+    },
+    "probe": {
+      "captured_at": "2026-07-22T17:09:40+00:00",
+      "gps": {
+        "lat": 59.38153888888889,
+        "lon": 9.414436111111112,
+        "elevation_m": 585.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.04,
+      "exposure": 0.995,
+      "score": 0.517
+    },
+    "id": "20260722-phone-d9b55c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9522_1a9ba452_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Frau haelt lachend einen Jungen an den Armen hoch, ein Maedchen daneben, im Hintergrund eine weitere Frau am Kuehlschrank.",
+      "tags": [
+        "frau",
+        "kind",
+        "lachen",
+        "spielen",
+        "kueche",
+        "huette"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:dde9a0ecb9169bc91d29e2e6ed12ba1c79458190406a8d0a86d81136481728a3",
+    "path": "Chris-iPhone/IMG_9524.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-22T17:10:03+00:00",
+    "gps": {
+      "lat": 59.38153333333334,
+      "lon": 9.414402777777779,
+      "elevation_m": 585.8
+    },
+    "probe": {
+      "captured_at": "2026-07-22T17:10:03+00:00",
+      "gps": {
+        "lat": 59.38153333333334,
+        "lon": 9.414402777777779,
+        "elevation_m": 585.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.158,
+      "exposure": 0.843,
+      "score": 0.501
+    },
+    "id": "20260722-phone-dde9a0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9524_8c841f26_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Mann laeuft spielerisch durch die Kueche mit einem Kind an seinem Bein, im Hintergrund raeumen andere den Geschirrspueler aus.",
+      "tags": [
+        "mann",
+        "kind",
+        "spielen",
+        "kueche",
+        "huette",
+        "alltag"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:fdc96c5c2f5561ba2766fb22ecaedbefa545db3f8311492518f6622048df6bb5",
+    "path": "Chris-iPhone/IMG_9517.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-22T16:10:09+00:00",
+    "gps": {
+      "lat": 59.38156111111111,
+      "lon": 9.414377777777778,
+      "elevation_m": 587.6
+    },
+    "probe": {
+      "captured_at": "2026-07-22T16:10:09+00:00",
+      "gps": {
+        "lat": 59.38156111111111,
+        "lon": 9.414377777777778,
+        "elevation_m": 587.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.188,
+      "exposure": 0.947,
+      "score": 0.568
+    },
+    "id": "20260722-phone-fdc96c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9517_e184c319_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine grosse Gruppe versammelt sich am reich gedeckten Tisch mit gegrilltem Fleisch, ein Mann teilt Essen aus.",
+      "tags": [
+        "gruppe",
+        "essen",
+        "grillen",
+        "tisch",
+        "kueche",
+        "gemeinsam"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
   },
   {
     "hash": "sha256:07b1efc01bd4811ef26439c8f74cbb9efffe7459e6210d3bf86051b65846e0f4",
