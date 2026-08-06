@@ -860,6 +860,55 @@
     }
   },
   {
+    "hash": "sha256:03548ce7128b0afc609aab81ba8911531e80f8345232a51d2fc9e9d3748bc9fc",
+    "path": "Chris-iPhone/IMG_9304.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T17:30:28+00:00",
+    "gps": {
+      "lat": 54.788719444444446,
+      "lon": 9.437236111111112,
+      "elevation_m": 2.7
+    },
+    "probe": {
+      "captured_at": "2026-07-18T17:30:28+00:00",
+      "gps": {
+        "lat": 54.788719444444446,
+        "lon": 9.437236111111112,
+        "elevation_m": 2.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.018,
+      "exposure": 0.999,
+      "score": 0.508
+    },
+    "id": "20260718-phone-03548c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9304_b8054315_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Zwei Getraenke in Glaesern mit Restaurant-Logo auf einem Holztisch, im Hintergrund Fenster mit Blick auf einen Hafen.",
+      "tags": [
+        "restaurant",
+        "getraenke",
+        "glas",
+        "detail",
+        "tisch",
+        "hafen"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
     "hash": "sha256:0ad093c6667a906af4c6733f7d46f2a60b4e75205d58b67ddaf196beab593b47",
     "path": "Chris-iPhone/IMG_9286.HEIC",
     "kind": "photo",
@@ -906,6 +955,55 @@
       "usable_as": [
         "establisher",
         "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2415d23a0c1ddaaa284f4ad07e24c3d2e2c1e5ea7e48a1faa888bd0d82d26c51",
+    "path": "Chris-iPhone/IMG_9329.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T19:21:29+00:00",
+    "gps": {
+      "lat": 54.78520833333333,
+      "lon": 9.437377777777778,
+      "elevation_m": 6.8
+    },
+    "probe": {
+      "captured_at": "2026-07-18T19:21:29+00:00",
+      "gps": {
+        "lat": 54.78520833333333,
+        "lon": 9.437377777777778,
+        "elevation_m": 6.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.21,
+      "exposure": 0.986,
+      "score": 0.598
+    },
+    "id": "20260718-phone-2415d2",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9329_c9c7b959_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Nahaufnahme der Kreidetafel 'Willkommen Welcome Velkomst, Moin, B&B Hotel Flensburg' mit gemaltem Herz.",
+      "tags": [
+        "hotel",
+        "tafel",
+        "willkommen",
+        "detail",
+        "nahaufnahme",
+        "schrift"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
       ]
     }
   },
@@ -1158,6 +1256,104 @@
     }
   },
   {
+    "hash": "sha256:4ffbeb4eb087d460f926f96361a849410e650937fd43cd9f0c99331b59aa1225",
+    "path": "Chris-iPhone/IMG_9313.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T17:37:19+00:00",
+    "gps": {
+      "lat": 54.78865833333333,
+      "lon": 9.437363888888889,
+      "elevation_m": 3.6
+    },
+    "probe": {
+      "captured_at": "2026-07-18T17:37:19+00:00",
+      "gps": {
+        "lat": 54.78865833333333,
+        "lon": 9.437363888888889,
+        "elevation_m": 3.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.044,
+      "exposure": 0.977,
+      "score": 0.51
+    },
+    "id": "20260718-phone-4ffbeb",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9313_41239311_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Nahaufnahme einer Hand, die ein Fischbroetchen mit Zwiebeln haelt, im Hintergrund eine Suppenschale.",
+      "tags": [
+        "essen",
+        "fischbroetchen",
+        "detail",
+        "nahaufnahme",
+        "hand",
+        "restaurant"
+      ],
+      "people": true,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5439f663e8f5995b201a96de91d7be87299760ac169c63fbf9e0b594428e89da",
+    "path": "Chris-iPhone/IMG_9322.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T18:39:00+00:00",
+    "gps": {
+      "lat": 54.788691666666665,
+      "lon": 9.436763888888889,
+      "elevation_m": 3.8
+    },
+    "probe": {
+      "captured_at": "2026-07-18T18:39:00+00:00",
+      "gps": {
+        "lat": 54.788691666666665,
+        "lon": 9.436763888888889,
+        "elevation_m": 3.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.143,
+      "exposure": 0.915,
+      "score": 0.529
+    },
+    "id": "20260718-phone-5439f6",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9322_1c5b5a80_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Ein fertiges Kartenhaus aus Bierdeckeln steht auf dem Tisch, ein Junge und eine Frau reagieren erstaunt mit der Hand vor dem Mund.",
+      "tags": [
+        "kind",
+        "frau",
+        "erstaunen",
+        "spiel",
+        "restaurant",
+        "tisch"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
     "hash": "sha256:67a053c6174f852576b9dd58421822c902ce8925141dd26c3d63012ebe8187af",
     "path": "Chris-iPhone/IMG_9272.HEIC",
     "kind": "photo",
@@ -1258,6 +1454,251 @@
     }
   },
   {
+    "hash": "sha256:833dc997cb660b5f40b061804d0ef23a5e7455540c85e3d04cf49a45908c447c",
+    "path": "Chris-iPhone/IMG_9326.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T18:48:58+00:00",
+    "gps": {
+      "lat": 54.78839444444444,
+      "lon": 9.437247222222222,
+      "elevation_m": 2.4
+    },
+    "probe": {
+      "captured_at": "2026-07-18T18:48:58+00:00",
+      "gps": {
+        "lat": 54.78839444444444,
+        "lon": 9.437247222222222,
+        "elevation_m": 2.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.473,
+      "exposure": 0.896,
+      "score": 0.685
+    },
+    "id": "20260718-phone-833dc9",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9326_3c1215a2_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Frau mit Rucksack fuehrt einen Jungen an der Hand ueber einen Holzsteg am Hafen, im Hintergrund eine Haeuserzeile und ein Segelschiff.",
+      "tags": [
+        "frau",
+        "kind",
+        "hafen",
+        "steg",
+        "haeuserzeile",
+        "gehen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:83859aa5c362931222fcbef75f589a5d87fc73beefadedf65b1f8a829790686d",
+    "path": "Chris-iPhone/IMG_9289.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T17:00:42+00:00",
+    "gps": {
+      "lat": 54.78832222222222,
+      "lon": 9.43651388888889,
+      "elevation_m": 2.8
+    },
+    "probe": {
+      "captured_at": "2026-07-18T17:00:42+00:00",
+      "gps": {
+        "lat": 54.78832222222222,
+        "lon": 9.43651388888889,
+        "elevation_m": 2.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.115,
+      "exposure": 0.863,
+      "score": 0.489
+    },
+    "id": "20260718-phone-83859a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9289_d47811ce_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Blumenkasten im Vordergrund, dahinter Hafenbecken mit Segelschiff, Sportbooten und einem roten Gebaeude mit Kirchturm.",
+      "tags": [
+        "hafen",
+        "blumen",
+        "segelschiff",
+        "establisher",
+        "gebaeude",
+        "kirchturm"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:83f7e08ca12a89885b9291ec0ff13a00fe9a8982896071791660d6621c73221b",
+    "path": "Chris-iPhone/IMG_9308.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T17:32:58+00:00",
+    "gps": {
+      "lat": 54.78877222222222,
+      "lon": 9.436680555555556,
+      "elevation_m": 3.8
+    },
+    "probe": {
+      "captured_at": "2026-07-18T17:32:58+00:00",
+      "gps": {
+        "lat": 54.78877222222222,
+        "lon": 9.436680555555556,
+        "elevation_m": 3.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.076,
+      "exposure": 0.938,
+      "score": 0.507
+    },
+    "id": "20260718-phone-83f7e0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9308_6f82ad8f_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Junge baut konzentriert ein Kartenhaus aus Bierdeckeln auf einem Restauranttisch, im Hintergrund Fenster mit Hafenblick.",
+      "tags": [
+        "kind",
+        "konzentration",
+        "spiel",
+        "restaurant",
+        "tisch",
+        "hafen"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:8435825e168f95397edd55e92af7525485f0c92e0e2a9239f700a2fcfe2c1b24",
+    "path": "Chris-iPhone/IMG_9310.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T17:35:25+00:00",
+    "gps": {
+      "lat": 54.78876388888889,
+      "lon": 9.436880555555556,
+      "elevation_m": 3.7
+    },
+    "probe": {
+      "captured_at": "2026-07-18T17:35:25+00:00",
+      "gps": {
+        "lat": 54.78876388888889,
+        "lon": 9.436880555555556,
+        "elevation_m": 3.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.06,
+      "exposure": 0.969,
+      "score": 0.514
+    },
+    "id": "20260718-phone-843582",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9310_d3402ab0_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Junge sitzt vor einem Kinderteller mit Fischfrikadellen und Pommes und betrachtet eine kleine Spielfigur, Restaurant mit Hafenblick im Hintergrund.",
+      "tags": [
+        "kind",
+        "essen",
+        "restaurant",
+        "pommes",
+        "tisch",
+        "hafen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:87f48ec181b4eb2e5988fbb2ad282bcbc0b15165c289bf8d86e36da6b4be8999",
+    "path": "Chris-iPhone/IMG_9296.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T17:22:15+00:00",
+    "gps": {
+      "lat": 54.788738888888886,
+      "lon": 9.437236111111112,
+      "elevation_m": 2.2
+    },
+    "probe": {
+      "captured_at": "2026-07-18T17:22:15+00:00",
+      "gps": {
+        "lat": 54.788738888888886,
+        "lon": 9.437236111111112,
+        "elevation_m": 2.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.076,
+      "exposure": 0.99,
+      "score": 0.533
+    },
+    "id": "20260718-phone-87f48e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9296_78609039_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Ein Junge mit Kappe laechelt und haelt Handshake/Armdruecken mit einem Erwachsenen ueber einem Tisch in einem Restaurant.",
+      "tags": [
+        "kind",
+        "restaurant",
+        "handshake",
+        "laecheln",
+        "tisch",
+        "innenraum"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
     "hash": "sha256:91b3e772d6fe6019fbd40a5191a8a3c74b8fe9e3fc6b573902d8f8b776620fca",
     "path": "Chris-iPhone/IMG_9319.HEIC",
     "kind": "photo",
@@ -1304,6 +1745,104 @@
       "usable_as": [
         "detail",
         "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:945bc14e4684c09cda595e2668219e155b050b410c557863d287d183f57ae1cf",
+    "path": "Chris-iPhone/IMG_9288.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T17:00:14+00:00",
+    "gps": {
+      "lat": 54.78841388888889,
+      "lon": 9.436266666666667,
+      "elevation_m": 2.0
+    },
+    "probe": {
+      "captured_at": "2026-07-18T17:00:14+00:00",
+      "gps": {
+        "lat": 54.78841388888889,
+        "lon": 9.436266666666667,
+        "elevation_m": 2.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.014,
+      "exposure": 0.979,
+      "score": 0.497
+    },
+    "id": "20260718-phone-945bc1",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9288_4773f2d9_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Blumenkasten mit Petunien im Vordergrund, dahinter unscharf ein Boot am Kai.",
+      "tags": [
+        "blumen",
+        "hafen",
+        "nahaufnahme",
+        "detail",
+        "unschaerfe",
+        "boot"
+      ],
+      "people": false,
+      "usable_as": [
+        "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:953589c7f5c5d65e9941f769a21851b1012d467ead4f507195c18c807d8fc328",
+    "path": "Chris-iPhone/IMG_9317.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T18:13:17+00:00",
+    "gps": {
+      "lat": 54.78874722222222,
+      "lon": 9.437125,
+      "elevation_m": 3.9
+    },
+    "probe": {
+      "captured_at": "2026-07-18T18:13:17+00:00",
+      "gps": {
+        "lat": 54.78874722222222,
+        "lon": 9.437125,
+        "elevation_m": 3.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.118,
+      "exposure": 0.896,
+      "score": 0.507
+    },
+    "id": "20260718-phone-953589",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9317_a2d6de67_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Eine Frau und ein Junge essen gemeinsam Milchreis aus einer Schale am Restauranttisch.",
+      "tags": [
+        "frau",
+        "kind",
+        "essen",
+        "milchreis",
+        "restaurant",
+        "tisch"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
       ]
     }
   },
@@ -1408,6 +1947,55 @@
     }
   },
   {
+    "hash": "sha256:ad57a3b2b4a3936445aacb9afcec32d04c6aec943769a96e79c8073fb5235120",
+    "path": "Chris-iPhone/IMG_9327.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T18:53:30+00:00",
+    "gps": {
+      "lat": 54.788669444444444,
+      "lon": 9.435752777777777,
+      "elevation_m": 2.6
+    },
+    "probe": {
+      "captured_at": "2026-07-18T18:53:30+00:00",
+      "gps": {
+        "lat": 54.788669444444444,
+        "lon": 9.435752777777777,
+        "elevation_m": 2.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.157,
+      "exposure": 0.988,
+      "score": 0.572
+    },
+    "id": "20260718-phone-ad57a3",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9327_42a9622c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Ein blauer Werbewuerfel mit Schriftzug 'flensburg einhundert' steht im Hafenbecken, umgeben von Segelbooten.",
+      "tags": [
+        "hafen",
+        "werbung",
+        "segelboote",
+        "schild",
+        "wasser",
+        "detail"
+      ],
+      "people": false,
+      "usable_as": [
+        "cutaway"
+      ]
+    }
+  },
+  {
     "hash": "sha256:aed4c06bb826225156f921430cefba1d06e841ef1fb0aa0ecdc3043a38b237b3",
     "path": "Chris-iPhone/IMG_9268.HEIC",
     "kind": "photo",
@@ -1453,6 +2041,153 @@
       "people": true,
       "usable_as": [
         "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:af6f76cb93b8a516c114caf64464c3d7969602c7baed80988209f207822109b6",
+    "path": "Chris-iPhone/IMG_9328.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T19:21:15+00:00",
+    "gps": {
+      "lat": 54.785222222222224,
+      "lon": 9.43741111111111,
+      "elevation_m": 7.7
+    },
+    "probe": {
+      "captured_at": "2026-07-18T19:21:15+00:00",
+      "gps": {
+        "lat": 54.785222222222224,
+        "lon": 9.43741111111111,
+        "elevation_m": 7.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.271,
+      "exposure": 0.839,
+      "score": 0.555
+    },
+    "id": "20260718-phone-af6f76",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9328_8fded22f_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Deko-Willkommenstafel aus Palettenholz mit Kreidetafel 'Willkommen Welcome Velkomst, B&B Hotel Flensburg', Kunstgras und Moewenfigur, Hoteleingang.",
+      "tags": [
+        "hotel",
+        "eingang",
+        "deko",
+        "tafel",
+        "willkommen",
+        "detail"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b0640a00197837689826fa40a7bf96a0483dadba61958f2ab6ff55c29c4aed8b",
+    "path": "Chris-iPhone/IMG_9323.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T18:39:09+00:00",
+    "gps": {
+      "lat": 54.788688888888885,
+      "lon": 9.436958333333333,
+      "elevation_m": 2.2
+    },
+    "probe": {
+      "captured_at": "2026-07-18T18:39:09+00:00",
+      "gps": {
+        "lat": 54.788688888888885,
+        "lon": 9.436958333333333,
+        "elevation_m": 2.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.155,
+      "exposure": 0.902,
+      "score": 0.528
+    },
+    "id": "20260718-phone-b0640a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9323_aaab93a1_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Ein Junge und eine Frau jubeln laechelnd mit erhobenen Armen neben einem fertigen hohen Kartenhaus aus Bierdeckeln.",
+      "tags": [
+        "kind",
+        "frau",
+        "jubel",
+        "laecheln",
+        "spiel",
+        "restaurant"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b0d0be238fc4fd16cec321c7a7c3143541766403ec1efb88e937819207a95375",
+    "path": "Chris-iPhone/IMG_9290.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T17:06:41+00:00",
+    "gps": {
+      "lat": 54.78904722222222,
+      "lon": 9.437408333333334,
+      "elevation_m": 2.8
+    },
+    "probe": {
+      "captured_at": "2026-07-18T17:06:41+00:00",
+      "gps": {
+        "lat": 54.78904722222222,
+        "lon": 9.437408333333334,
+        "elevation_m": 2.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.409,
+      "exposure": 0.927,
+      "score": 0.668
+    },
+    "id": "20260718-phone-b0d0be",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9290_f7538478_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Hafensteg mit mehreren Segelbooten, im Hintergrund eine Haeuserzeile, im Vordergrund eine Blumenampel an einer Laterne, Gegenlicht.",
+      "tags": [
+        "hafen",
+        "segelboote",
+        "steg",
+        "haeuserzeile",
+        "gegenlicht",
+        "blumen"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
       ]
     }
   },
@@ -1503,6 +2238,251 @@
       "usable_as": [
         "b-roll",
         "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d55cc871cc8015702ec2363ad1c0d1db867bcfee2b203aa577af670e2b6b0022",
+    "path": "Chris-iPhone/IMG_9316.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T18:10:48+00:00",
+    "gps": {
+      "lat": 54.78867777777778,
+      "lon": 9.437052777777778,
+      "elevation_m": 3.9
+    },
+    "probe": {
+      "captured_at": "2026-07-18T18:10:48+00:00",
+      "gps": {
+        "lat": 54.78867777777778,
+        "lon": 9.437052777777778,
+        "elevation_m": 3.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.082,
+      "exposure": 0.975,
+      "score": 0.528
+    },
+    "id": "20260718-phone-d55cc8",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9316_76949827_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ein Junge loeffelt Milchreis mit Zimt in einer Schale, Restaurant mit Hafenblick im Hintergrund.",
+      "tags": [
+        "kind",
+        "essen",
+        "milchreis",
+        "restaurant",
+        "hafen",
+        "tisch"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e1321e4c56d8095965013cbd96e566f0f2dc1c72aa4bef090c3ea1fc7d631c72",
+    "path": "Chris-iPhone/IMG_9299.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T17:22:35+00:00",
+    "gps": {
+      "lat": 54.78863611111111,
+      "lon": 9.437275,
+      "elevation_m": 2.7
+    },
+    "probe": {
+      "captured_at": "2026-07-18T17:22:35+00:00",
+      "gps": {
+        "lat": 54.78863611111111,
+        "lon": 9.437275,
+        "elevation_m": 2.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.185,
+      "exposure": 0.949,
+      "score": 0.567
+    },
+    "id": "20260718-phone-e1321e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9299_bd360c59_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Ein Junge mit Kappe laechelt am Tisch in einem Restaurant, im Hintergrund ein Erwachsener und Fenster mit Blick auf Bootsmasten.",
+      "tags": [
+        "kind",
+        "restaurant",
+        "laecheln",
+        "tisch",
+        "fenster",
+        "hafen"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e1f63e0b537b45bd2f3fdc253201064e00fb600f8033c41bd4fee3bf4fdcbb86",
+    "path": "Chris-iPhone/IMG_9312.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T17:37:01+00:00",
+    "gps": {
+      "lat": 54.78867777777778,
+      "lon": 9.437352777777779,
+      "elevation_m": 3.1
+    },
+    "probe": {
+      "captured_at": "2026-07-18T17:37:01+00:00",
+      "gps": {
+        "lat": 54.78867777777778,
+        "lon": 9.437352777777779,
+        "elevation_m": 3.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.126,
+      "exposure": 0.909,
+      "score": 0.518
+    },
+    "id": "20260718-phone-e1f63e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9312_ca74de8b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Eine Frau laechelt in die Kamera, ein Junge isst neben ihr, gedeckter Restauranttisch mit Suppen und Getraenken.",
+      "tags": [
+        "frau",
+        "kind",
+        "restaurant",
+        "laecheln",
+        "essen",
+        "tisch"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f1dabb0fd5cd0dea9b6d7bb0d5c118512e3b5626e895e031b94b4f05f9d2dbdd",
+    "path": "Chris-iPhone/IMG_9307.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T17:32:04+00:00",
+    "gps": {
+      "lat": 54.78873055555555,
+      "lon": 9.437208333333334,
+      "elevation_m": 3.7
+    },
+    "probe": {
+      "captured_at": "2026-07-18T17:32:04+00:00",
+      "gps": {
+        "lat": 54.78873055555555,
+        "lon": 9.437208333333334,
+        "elevation_m": 3.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.158,
+      "exposure": 0.85,
+      "score": 0.504
+    },
+    "id": "20260718-phone-f1dabb",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9307_636dbb81_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Eine Frau laechelt und stoesst mit einem Getraenk an, ein Junge sitzt daneben vor einem Kartenhaus aus Bierdeckeln, Restaurant im Hintergrund.",
+      "tags": [
+        "restaurant",
+        "frau",
+        "kind",
+        "anstossen",
+        "laecheln",
+        "tisch"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:fa0f82e7f9c3cfbb961f8458d1db57538d558ccccfa5f94456a693a18f2cb4d5",
+    "path": "Chris-iPhone/IMG_9321.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-18T18:30:04+00:00",
+    "gps": {
+      "lat": 54.78871111111111,
+      "lon": 9.436944444444444,
+      "elevation_m": 4.1
+    },
+    "probe": {
+      "captured_at": "2026-07-18T18:30:04+00:00",
+      "gps": {
+        "lat": 54.78871111111111,
+        "lon": 9.436944444444444,
+        "elevation_m": 4.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.117,
+      "exposure": 0.941,
+      "score": 0.529
+    },
+    "id": "20260718-phone-fa0f82",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9321_bf3661ed_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Ein Junge und eine Frau bauen gemeinsam konzentriert an einem Kartenhaus aus Bierdeckeln am Restauranttisch.",
+      "tags": [
+        "kind",
+        "frau",
+        "spiel",
+        "konzentration",
+        "restaurant",
+        "tisch"
+      ],
+      "people": true,
+      "usable_as": [
+        "emotional"
       ]
     }
   },

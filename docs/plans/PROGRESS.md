@@ -235,7 +235,7 @@ konstant 0 und ein Test darauf belegte nichts.
 |---|---|
 | `ingest` — Proxies | ✅ 975/975 |
 | `prepare-index` — Keyframes, CV, `captured_at`, GPS | ✅ 689/689, keine Fehlschlaege |
-| Inhaltliche Sichtung (Beschreibung/Tags/Rating) | 🔄 **28 von 689** |
+| Inhaltliche Sichtung (Beschreibung/Tags/Rating) | 🔄 **48 von 689** |
 
 **Der HEIC-Weg hat sich am echten Material bewaehrt.** Ohne das Arbeitspaket von 2026-08-05
 waeren die 539 Fotos still aus dem Index gefallen. Aufnahmezeit liegt bei **allen 689** vor
@@ -249,15 +249,16 @@ faellig, sonst bleiben die neuen Tage ohne Etappe.
 
 ### Fortschritt der Sichtung
 
-Chronologisch, Tag fuer Tag. **Hier weitermachen: 2026-07-18 ab `IMG_9288.HEIC` (17:00:14)** —
-es fehlen nur noch die 20 Hafen-/Restaurantfotos aus Flensburg, alles zwischen 17:00 und 19:21
-am selben Ort (54.789, 9.437). Danach 2026-07-19 (33 Assets).
+Chronologisch, Tag fuer Tag. **Hier weitermachen: 2026-07-19** (33 Assets).
 
 | Tag | Assets | indiziert |
 |---|---:|---|
 | 2026-07-17 | 6 | ✅ 6 — Verladen zu Hause am Abend vor der Abreise |
-| 2026-07-18 | 42 | 🔄 22 — Fahrt NRW → Flensburg komplett (Aufbruch, Raststaette, Hamburger Hafen, Nord-Ostsee-Kanal, Ankunft); offen: 20 Fotos Flensburg |
+| 2026-07-18 | 42 | ✅ 42 — Fahrt NRW → Flensburg (Aufbruch, Raststaette, Hamburger Hafen, Nord-Ostsee-Kanal, Ankunft) + Abend am Hafen: Blumenkaesten/Establisher, Restaurant "Gosch" (Essen, Kartenhaus-Spiel, Anstossen), Spaziergang am Hafensteg, Willkommenstafel B&B Hotel Flensburg |
 | 2026-07-19 … 2026-08-04 | 641 | ⬜ |
+
+**Selbstkontrolle nach 2026-07-18** (Auftrag: 5 Beschreibungen gegen Keyframes gegenpruefen):
+`945bc1`, `e1f63e`, `833dc9`, `b0640a`, `af6f76` geprueft — alle halten, keine Korrektur noetig.
 
 **Arbeitsweise, die sich bewaehrt hat** (fuer die naechste Sitzung):
 
