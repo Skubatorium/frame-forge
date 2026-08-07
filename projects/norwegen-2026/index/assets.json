@@ -49611,6 +49611,48 @@
     }
   },
   {
+    "hash": "sha256:07f7b7f92f923d75b8a0f5eb58b3ea593f561dd6827fe76a4d850407cc04ca7e",
+    "path": "Christina-iPhone/d05f1c16-4523-4477-8cb0-adc048787d1b.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": "2026-07-28T20:52:12+00:00",
+    "gps": null,
+    "probe": {
+      "captured_at": "2026-07-28T20:52:12+00:00",
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.948,
+      "score": 0.974
+    },
+    "id": "20260728-unknown-07f7b7",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/d05f1c16-4523-4477-8cb0-adc048787d1b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Blick von einer Bruecke auf einen tuerkisen Gletscherfluss durch eine Felsschlucht mit Ortschaft und Bergen im Hintergrund.",
+      "tags": [
+        "fluss",
+        "gletscherfluss",
+        "felsschlucht",
+        "ortschaft",
+        "berge",
+        "bruecke"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:1f07059e18881faaa2968a83c1ca70bb7e5da43ae35e64e2cd3009de99e0bd23",
     "path": "Christina-iPhone/c7dd24db-c211-48e3-ab35-7ea298c169a6.JPG",
     "kind": "photo",
@@ -49648,6 +49690,47 @@
       "people": false,
       "usable_as": [
         "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2ab7c1a064e5ac3408a15e8737039635cb39bb43e0b74666e2b8eb9c02ab7fa2",
+    "path": "Christina-iPhone/786d5422-a634-49a7-956f-6a9720f2f44b.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": "2026-07-28T20:52:07+00:00",
+    "gps": null,
+    "probe": {
+      "captured_at": "2026-07-28T20:52:07+00:00",
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.908,
+      "score": 0.954
+    },
+    "id": "20260728-unknown-2ab7c1",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/786d5422-a634-49a7-956f-6a9720f2f44b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kind kniet laechelnd neben einem Steinmaennchen auf einem Felsplateau im Nebel.",
+      "tags": [
+        "kind",
+        "steinmaennchen",
+        "felsen",
+        "nebel",
+        "portraet",
+        "trollstigen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
       ]
     }
   },
@@ -49693,6 +49776,47 @@
     }
   },
   {
+    "hash": "sha256:47e002b552a75f0d06a9c5f55fd94f0ed7164b9b158cf037d341baba033be779",
+    "path": "Christina-iPhone/85b2be11-cc54-4756-9c0b-6d8422fd9975.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": "2026-07-28T20:52:09+00:00",
+    "gps": null,
+    "probe": {
+      "captured_at": "2026-07-28T20:52:09+00:00",
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.947,
+      "score": 0.973
+    },
+    "id": "20260728-unknown-47e002",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/85b2be11-cc54-4756-9c0b-6d8422fd9975_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Stabkirche mit spitzem Turm hinter Birken an einem tuerkisen Gletscherfluss, umgeben von Bergen und Wolken.",
+      "tags": [
+        "stabkirche",
+        "fluss",
+        "birken",
+        "berge",
+        "architektur",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
     "hash": "sha256:6eb68fd0859857f693f243b0d6feec7adf0b5dceb6d8cb09f4d69e83d5960704",
     "path": "Christina-iPhone/bbdbdf13-f6a1-4f40-95ec-d7ddb0b3dc76.JPG",
     "kind": "photo",
@@ -49731,6 +49855,131 @@
       "usable_as": [
         "establisher",
         "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a8ebe2af3ac5fd8ec81c85757a95bcb3a76eef04053a12ebb45e7190c793f605",
+    "path": "Christina-iPhone/985da576-a522-418f-af15-67493325b1e2.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": "2026-07-28T20:52:08+00:00",
+    "gps": null,
+    "probe": {
+      "captured_at": "2026-07-28T20:52:08+00:00",
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.06,
+      "exposure": 0.89,
+      "score": 0.475
+    },
+    "id": "20260728-unknown-a8ebe2",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/985da576-a522-418f-af15-67493325b1e2_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Markantes, angeschnittenes Betongebaeude mit Glasfront am Wasser, umgeben von dichtem Nebel — moderne Aussichtsarchitektur.",
+      "tags": [
+        "architektur",
+        "beton",
+        "nebel",
+        "aussichtsgebaeude",
+        "modern",
+        "wasser"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:afd311a7b596f5e61952a4c8bf20485a02422f7680428e5165bd30a1b1a59502",
+    "path": "Christina-iPhone/f727291b-3702-4101-bdaf-b2cb81b9b0c6.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": "2026-07-28T20:52:10+00:00",
+    "gps": null,
+    "probe": {
+      "captured_at": "2026-07-28T20:52:10+00:00",
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.994,
+      "score": 0.997
+    },
+    "id": "20260728-unknown-afd311",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/f727291b-3702-4101-bdaf-b2cb81b9b0c6_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Lom Stabkirche mit hohem Spitzturm auf einem Huegel ueber einem tuerkisen Gletscherfluss, gerahmt von Birken.",
+      "tags": [
+        "stabkirche",
+        "lom",
+        "fluss",
+        "birken",
+        "berge",
+        "architektur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c456377e2981652ff33676ed92628e28ac5a4675f8ecafe1f868b25895f47bfe",
+    "path": "Christina-iPhone/3d613d07-fa73-4308-a95c-4105bc27ca3a.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": "2026-07-28T20:52:10+00:00",
+    "gps": null,
+    "probe": {
+      "captured_at": "2026-07-28T20:52:10+00:00",
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.924,
+      "score": 0.962
+    },
+    "id": "20260728-unknown-c45637",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/3d613d07-fa73-4308-a95c-4105bc27ca3a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Steinbruecke ueberspannt einen tuerkisen Gletscherfluss mit kleinem Wasserfall, Felsschlucht im Vordergrund.",
+      "tags": [
+        "bruecke",
+        "fluss",
+        "wasserfall",
+        "felsschlucht",
+        "gletscherfluss",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "establisher"
       ]
     }
   },
@@ -52703,6 +52952,104 @@
     "place_source": "index"
   },
   {
+    "hash": "sha256:00043fc0c0a609889bd7b8a47d0223b72d0b35e8290b38a0f85b2aab968f19ad",
+    "path": "Christina-iPhone/IMG_3457.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-29T19:27:07+00:00",
+    "gps": {
+      "lat": 60.26457222222222,
+      "lon": 8.78855,
+      "elevation_m": 472.9
+    },
+    "probe": {
+      "captured_at": "2026-07-29T19:27:07+00:00",
+      "gps": {
+        "lat": 60.26457222222222,
+        "lon": 8.78855,
+        "elevation_m": 472.9
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.875,
+      "exposure": 0.928,
+      "score": 0.901
+    },
+    "id": "20260729-phone-00043f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3457_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Selfie eines Paares auf einer Wiese am Fluss mit Bootsrand im Bild, bewaldete Huegel im Hintergrund.",
+      "tags": [
+        "paar",
+        "selfie",
+        "fluss",
+        "wiese",
+        "portraet",
+        "sommer"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:00223c5d41610b85991384bc032ab152265b7ce2f290d0ca506cba95728ca5eb",
+    "path": "Christina-iPhone/IMG_3408.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-29T09:16:10+00:00",
+    "gps": {
+      "lat": 61.83790555555556,
+      "lon": 8.567538888888889,
+      "elevation_m": 382.5
+    },
+    "probe": {
+      "captured_at": "2026-07-29T09:16:10+00:00",
+      "gps": {
+        "lat": 61.83790555555556,
+        "lon": 8.567538888888889,
+        "elevation_m": 382.5
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.151,
+      "exposure": 0.747,
+      "score": 0.449
+    },
+    "id": "20260729-phone-00223c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3408_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Innenraum einer Baeckerei-Cafeteria mit gestapelten Brotlaiben, Gebaeck und Bedientheke, mehrere Gaeste im Hintergrund.",
+      "tags": [
+        "baeckerei",
+        "cafe",
+        "brot",
+        "essen",
+        "drinnen",
+        "gaeste"
+      ],
+      "people": true,
+      "usable_as": [
+        "cutaway"
+      ]
+    }
+  },
+  {
     "hash": "sha256:06264d4fe4091351e596f9b6df2c30577612ca69cc60ed407a1a47107621e95a",
     "path": "Chris-iPhone/IMG_0279.HEIC",
     "kind": "photo",
@@ -52743,6 +53090,55 @@
         "berge",
         "natur",
         "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1197cc20cfe16e0c10879275795735332495223a1f59971a4a6fc7479efe201c",
+    "path": "Christina-iPhone/IMG_3424.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-29T12:12:15+00:00",
+    "gps": {
+      "lat": 61.46890555555556,
+      "lon": 8.814847222222223,
+      "elevation_m": 1059.7
+    },
+    "probe": {
+      "captured_at": "2026-07-29T12:12:15+00:00",
+      "gps": {
+        "lat": 61.46890555555556,
+        "lon": 8.814847222222223,
+        "elevation_m": 1059.7
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.524,
+      "exposure": 0.897,
+      "score": 0.711
+    },
+    "id": "20260729-phone-1197cc",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3424_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Weiter Blick ueber einen Bergsee im Jotunheimen-Gebiet mit schneebedeckten Gipfeln unter blauem Himmel mit Wolken.",
+      "tags": [
+        "bergsee",
+        "jotunheimen",
+        "berge",
+        "schnee",
+        "panorama",
+        "sommer"
       ],
       "people": false,
       "usable_as": [
@@ -52843,6 +53239,154 @@
       "people": true,
       "usable_as": [
         "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1dcacfd6818a258a8fe1d6afe5fbbe7e04aa7786e2c16e4e5602c5838666a743",
+    "path": "Christina-iPhone/IMG_3437.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-29T12:16:16+00:00",
+    "gps": {
+      "lat": 61.427363888888884,
+      "lon": 8.802733333333334,
+      "elevation_m": 1183.1
+    },
+    "probe": {
+      "captured_at": "2026-07-29T12:16:16+00:00",
+      "gps": {
+        "lat": 61.427363888888884,
+        "lon": 8.802733333333334,
+        "elevation_m": 1183.1
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.314,
+      "exposure": 0.837,
+      "score": 0.576
+    },
+    "id": "20260729-phone-1dcacf",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3437_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weite Hochebenen-Landschaft im Jotunheimen mit schneegefleckten Gipfeln, blauem Himmel und Schoenwetterwolken.",
+      "tags": [
+        "hochebene",
+        "jotunheimen",
+        "berge",
+        "schnee",
+        "natur",
+        "weite"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:334261b916af0d35f325a4135f1972aaad5c3f1e5b537688aba323c14c0a1c4a",
+    "path": "Christina-iPhone/IMG_3451.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-29T19:24:51+00:00",
+    "gps": {
+      "lat": 60.26403888888889,
+      "lon": 8.78903888888889,
+      "elevation_m": 472.4
+    },
+    "probe": {
+      "captured_at": "2026-07-29T19:24:51+00:00",
+      "gps": {
+        "lat": 60.26403888888889,
+        "lon": 8.78903888888889,
+        "elevation_m": 472.4
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.797,
+      "exposure": 0.957,
+      "score": 0.877
+    },
+    "id": "20260729-phone-334261",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3451_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ruhiger Fluss mit Kiesufer, Bruecke und kleinen Huetten in einem bewaldeten Tal unter bewoelktem Himmel.",
+      "tags": [
+        "fluss",
+        "huetten",
+        "bruecke",
+        "tal",
+        "kiesufer",
+        "ruhig"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:33bedcd691846d35f09987c97492cab18851b3f399b11a78d7664a589f5ec906",
+    "path": "Christina-iPhone/IMG_3429.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-29T12:12:34+00:00",
+    "gps": {
+      "lat": 61.46613055555556,
+      "lon": 8.811133333333334,
+      "elevation_m": 1093.0
+    },
+    "probe": {
+      "captured_at": "2026-07-29T12:12:34+00:00",
+      "gps": {
+        "lat": 61.46613055555556,
+        "lon": 8.811133333333334,
+        "elevation_m": 1093.0
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.697,
+      "exposure": 0.913,
+      "score": 0.805
+    },
+    "id": "20260729-phone-33bedc",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3429_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Aehnlicher Blick auf den Bergsee mit umliegenden Gipfeln und Wolkenspiel, karge Hochgebirgsvegetation im Vordergrund.",
+      "tags": [
+        "bergsee",
+        "jotunheimen",
+        "berge",
+        "hochgebirge",
+        "panorama",
+        "sommer"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
       ]
     }
   },
@@ -53040,6 +53584,53 @@
     }
   },
   {
+    "hash": "sha256:8811049d5fc9c0bceb5a0904188bbf2fbb39830b73600d2405a38959bd6c5fc6",
+    "path": "Christina-iPhone/IMG_3419.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-29T12:05:18+00:00",
+    "gps": {
+      "lat": 61.53039166666667,
+      "lon": 8.879147222222223
+    },
+    "probe": {
+      "captured_at": "2026-07-29T12:05:18+00:00",
+      "gps": {
+        "lat": 61.53039166666667,
+        "lon": 8.879147222222223
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.337,
+      "exposure": 0.859,
+      "score": 0.598
+    },
+    "id": "20260729-phone-881104",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3419_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Fahraufnahme entlang einer Landstrasse mit Blick auf einen See und schneebedeckte Berge unter blauem Himmel.",
+      "tags": [
+        "autofahrt",
+        "strasse",
+        "see",
+        "berge",
+        "schnee",
+        "sommer"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:992a2282ee9b15dc9b4dd738e456dbdb3d8951f9f71293b41a6745376737d462",
     "path": "Chris-iPhone/IMG_0274.HEIC",
     "kind": "photo",
@@ -53084,6 +53675,155 @@
       "people": false,
       "usable_as": [
         "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:cb64bf948b1230f2e9dd27a703be391a0d34380678412d4bea6f95615fceab26",
+    "path": "Christina-iPhone/IMG_3416.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-29T09:33:33+00:00",
+    "gps": {
+      "lat": 61.83810555555556,
+      "lon": 8.567402777777778,
+      "elevation_m": 382.7
+    },
+    "probe": {
+      "captured_at": "2026-07-29T09:33:33+00:00",
+      "gps": {
+        "lat": 61.83810555555556,
+        "lon": 8.567402777777778,
+        "elevation_m": 382.7
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.987,
+      "score": 0.993
+    },
+    "id": "20260729-phone-cb64bf",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3416_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Birken am Ufer eines tuerkisen Gletscherflusses mit Huetten und Berghaengen im Hintergrund, herbstliche Blattfaerbung.",
+      "tags": [
+        "birken",
+        "gletscherfluss",
+        "huetten",
+        "berge",
+        "natur",
+        "ufer"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d2a14ce183b88f4c958ca06798b3603b650a1bb7a4d883c977bfeea1ed27280a",
+    "path": "Christina-iPhone/IMG_3443.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-29T15:37:17+00:00",
+    "gps": {
+      "lat": 60.45562777777778,
+      "lon": 8.797369444444444,
+      "elevation_m": 775.5
+    },
+    "probe": {
+      "captured_at": "2026-07-29T15:37:17+00:00",
+      "gps": {
+        "lat": 60.45562777777778,
+        "lon": 8.797369444444444,
+        "elevation_m": 775.5
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.379,
+      "exposure": 0.954,
+      "score": 0.666
+    },
+    "id": "20260729-phone-d2a14c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3443_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Fahraufnahme auf ein bewaldetes Hochland mit dramatischem, wolkenverhangenem Himmel.",
+      "tags": [
+        "autofahrt",
+        "hochland",
+        "wald",
+        "wolken",
+        "strasse",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e64e6797fbe2a8c9370c3845ccbd7c6dbf544ec14074b7784e4cf7a633347b6b",
+    "path": "Christina-iPhone/IMG_3454.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-29T19:26:20+00:00",
+    "gps": {
+      "lat": 60.264633333333336,
+      "lon": 8.788502777777778,
+      "elevation_m": 472.7
+    },
+    "probe": {
+      "captured_at": "2026-07-29T19:26:20+00:00",
+      "gps": {
+        "lat": 60.264633333333336,
+        "lon": 8.788502777777778,
+        "elevation_m": 472.7
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.316,
+      "exposure": 0.904,
+      "score": 0.61
+    },
+    "id": "20260729-phone-e64e67",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3454_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Historische Fussgaengerbruecke mit filigranem Gelaender ueber einen ruhigen Fluss, spiegelt sich im Wasser vor bewaldeten Huegeln.",
+      "tags": [
+        "bruecke",
+        "fluss",
+        "spiegelung",
+        "wald",
+        "architektur",
+        "ruhig"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
       ]
     }
   },
