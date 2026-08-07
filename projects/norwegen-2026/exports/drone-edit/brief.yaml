@@ -1,0 +1,47 @@
+# Reiner Drohnen-Export. Ruhig, episch, Ramps/Slow-Mo statt harter Cuts, keine Karte.
+preset: nordic-cinematic
+target_duration_s: 720  # ~12 Min. Zielwert, flexibel 600–840 s (10–14 Min.) je nach Material
+language: de
+
+# --- Overrides ---
+transition_vocabulary: [fade, slow_dissolve, speed_ramp, slow_mo]
+map_usage: none
+text_density: minimal  # nur Intro-Titel, sonst textfrei
+
+# --- Inhaltliche Vorgaben ---
+chronological: true
+selection:
+  prefer_source: drone
+  min_rating: 3
+
+audio:
+  tracks: [naturaleza-mose-edit, cuatro-vientos]  # beide Pflicht, keiner komplett durchlaufen
+  transition: fluid_crossfade  # fliessender Uebergang zwischen den Titeln, kein harter Schnitt
+  structure_hint: three_parts_approx_4min  # optional: 3 Abschnitte a ca. 4 Min.
+  fade_in_s: 3
+  fade_out_s: 3
+
+intro:
+  transition_in: black   # Schwarzblende am Anfang
+  title: "Norwegen 2026"
+  subtitle: "Drone Edit"  # kleiner, versetzt unter dem Titel
+  motif: norwegian_flag_optional
+  fade: slow
+
+outro:
+  transition_out: black  # Schwarzblende am Ende
+
+notes: >-
+  Reiner Drohnen-Reel, keine Kartenanimation, keine Streckendetails. Bildsprache ruhig und
+  episch (Establisher, langsamer Push, Ramps/Slow-Mo statt harter Schnittfolge) — Drohnenbilder
+  sollen atmen, nicht im Beat-Takt geschnitten werden. Chronologisch entlang der Reise, wie der
+  Rest des Projekts. Musik: die zwei Pflicht-Tracks (Naturaleza Mose Edit, Cuatro Vientos)
+  fliessend ineinander ueberblenden statt nacheinander komplett abzuspielen, gerne in ca. 3
+  Abschnitte a 4 Minuten aufgeteilt, passend zur Energiekurve. Anfang und Ende jeweils mit
+  Schwarzblende, Audio blendet ein/aus (~3 s), kein hartes Abschneiden. Intro-Titelgrafik:
+  "Norwegen 2026", darunter kleiner/versetzt "Drone Edit", evtl. norwegische Flagge als Motiv,
+  langsames ruhiges Einblenden. Reicht das bestehende Titel-Template nicht, Grafik-Prompt an
+  den Nutzer statt selbst zu improvisieren. Laenge flexibel 10-14 Min., Material entscheidet.
+
+must_shots: []
+forbidden_shots: []
