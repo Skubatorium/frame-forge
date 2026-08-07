@@ -2,36 +2,36 @@
   {
     "day": 1,
     "km": 578.5,
-    "source": "geschaetzt",
-    "km_user": null,
-    "km_estimated": 578.5
+    "source": "stages.csv",
+    "km_user": 578.5,
+    "km_estimated": 606.5
   },
   {
     "day": 2,
-    "km": 561.0,
-    "source": "geschaetzt",
-    "km_user": null,
+    "km": 390.0,
+    "source": "stages.csv",
+    "km_user": 390.0,
     "km_estimated": 561.0
   },
   {
     "day": 3,
-    "km": 0.0,
+    "km": 40.0,
     "source": "stages.csv",
-    "km_user": 0.0,
+    "km_user": 40.0,
     "km_estimated": 50.8
   },
   {
     "day": 4,
-    "km": 0.0,
+    "km": 40.0,
     "source": "stages.csv",
-    "km_user": 0.0,
-    "km_estimated": 59.0
+    "km_user": 40.0,
+    "km_estimated": 59.2
   },
   {
     "day": 5,
-    "km": 0.0,
+    "km": 20.0,
     "source": "stages.csv",
-    "km_user": 0.0,
+    "km_user": 20.0,
     "km_estimated": 0.0
   },
   {
@@ -53,21 +53,21 @@
     "km": 10.0,
     "source": "stages.csv",
     "km_user": 10.0,
-    "km_estimated": 19.5
+    "km_estimated": 57.5
   },
   {
     "day": 9,
     "km": 278.0,
     "source": "stages.csv",
     "km_user": 278.0,
-    "km_estimated": 277.9
+    "km_estimated": 291.7
   },
   {
     "day": 10,
-    "km": 0.0,
+    "km": 10.0,
     "source": "stages.csv",
-    "km_user": 0.0,
-    "km_estimated": 0.0
+    "km_user": 10.0,
+    "km_estimated": 4.8
   },
   {
     "day": 11,
@@ -85,9 +85,9 @@
   },
   {
     "day": 13,
-    "km": 0.0,
+    "km": 10.0,
     "source": "stages.csv",
-    "km_user": 0.0,
+    "km_user": 10.0,
     "km_estimated": 0.0
   },
   {
@@ -100,8 +100,8 @@
   {
     "day": 15,
     "km": 190.5,
-    "source": "geschaetzt",
-    "km_user": null,
+    "source": "stages.csv",
+    "km_user": 190.5,
     "km_estimated": 190.5
   },
   {
@@ -114,15 +114,15 @@
   {
     "day": 17,
     "km": 71.0,
-    "source": "geschaetzt",
-    "km_user": null,
-    "km_estimated": 71.0
+    "source": "stages.csv",
+    "km_user": 71.0,
+    "km_estimated": 71.1
   },
   {
     "day": 18,
-    "km": 1136.1,
-    "source": "geschaetzt",
-    "km_user": null,
-    "km_estimated": 1136.1
+    "km": 890.0,
+    "source": "stages.csv",
+    "km_user": 890.0,
+    "km_estimated": 1136.2
   }
 ]

@@ -1863,6 +1863,44 @@ lange Autofahrten) nicht einfach kürzen, sondern per Timelapse/Speed-Ramp (Verz
 Beschleunigung, Wechsel in Slow-Mo bei epischen Momenten) filmisch verdichten. Relevant für
 `story-architect`/`timeline-builder`, noch nicht in Style-Katalog nachgezogen.
 
+## Routen-/Kilometer-Aufbereitung (2026-08-07)
+
+Auf Nutzerwunsch: Fotos/Videos (Chris- + Christina-iPhone), Tagebuch (`route/diary.md`),
+Google-Maps-Screenshot der Roadtrip-Schleife und die bereits erfassten `stages.csv`/
+`locations.csv` zu einem plausiblen Gesamtbild kombiniert.
+
+**Zwei GPX-Dateien, unterschiedlicher Zweck:**
+- `route/photo-points.gpx` — 663 echte GPS-Punkte aus Chris-/Christina-iPhone-EXIF, gesamter
+  Reisezeitraum (17.07.–04.08.) lückenlos. Für „wo wurde was aufgenommen" (Asset-Platzierung),
+  **nicht** als Streckengeometrie geeignet (Standtage erzeugen durch GPS-Rauschen künstliche
+  Kilometer, roher Punktabstand kam auf 3532 km).
+- `route/roadtrip.gpx` — echtes Straßen-Routing (OSRM) über die Etappenpunkte,
+  117.845 Punkte. Gut für die Kartenlinie. Fährtage (2, 18) treibt der Autorouter auf absurde
+  Landumwege hoch — für die Gesamt-km unbrauchbar, dafür gilt `stages.csv`.
+
+**Kilometer-Korrektur nach Nutzer-Feedback:** Fährstrecken zählen **0 gefahrene km**
+(Schiffsweg ist keine Autostrecke). Tag 2 (Flensburg→Skien) und Tag 18 (Skien→Grevenbroich)
+in Fahrt-Etappen aufgeteilt (Anfahrt zum Fährhafen + Weiterfahrt nach der Überfahrt), Fähre
+selbst nur im `via`-Text vermerkt. Aktivitätstage (3, 4, 5, 10, 13) hatten fälschlich 0 km —
+Nutzer bestätigte reale Kurzstrecken (Hütten-/Küstenausflüge, Einkaufsfahrten), jetzt 10–40 km
+je Tag statt 0. Neue Summe: **3504 km gefahren** (vorher 3801 km bei falscher
+Fähr-/Aktivitätstag-Zählung), vom Nutzer als „knapp bei 4000, aber plausibel" eingeordnet —
+Restdifferenz sind die ~260 km Fährstrecke, die bewusst nicht mitgezählt werden.
+
+**Fehlende Koordinaten ergänzt** in `locations.csv`: `Valdresflye (Fv51)` mit **echter
+GPS-Koordinate** aus `Christina-iPhone/IMG_3437.HEIC` (61.42736, 8.80273, 1183 m — höchster
+real gemessener Punkt der ganzen Reise), `Lærdalstunnel` und `Storsæterfossen` (geschätzte
+Koordinaten, keine Fotobelegung). Bewusst **nicht** geraten: `Numedal` (Talregion, kein
+Punkt), `Fv40` (Straßenbezeichnung, kein Punkt), `Hütte` als Via-Punkt an Tag 16 (uneindeutig,
+welche Hütte gemeint ist) — bleiben als Lücken in `route-build`-Warnungen sichtbar statt
+falsch aufgelöst zu werden.
+
+**Höhenprofil:** `route.elevations_for` (Open-Meteo, 301 Stichproben entlang der Route,
+projektweit gecacht in `elevation.json`) bestätigt den höchsten Punkt unabhängig: 1157 m
+(gegen 1183 m aus der echten GPS-Messung — Abweichung durch Downsampling/Streckenabschnitt
+statt exaktem Fotopunkt). Kumulierter Anstieg über die Stichprobe: ~14.200 Höhenmeter — grobe
+Schätzung, keine kontinuierliche Aufzeichnung.
+
 **Zeitraum:** 2026-07-20 bis 2026-08-04, deckt sich mit dem bestehenden Reisezeitraum
 (Chris-iPhone-Fundus 17.07.–04.08.). Aufnahmeort-Cluster grob: Waldsee-Huette (20.–23.07.),
 Aurlandsfjord/Flaamsbana (24.–25.07.), Geirangerfjord/Trollstigen (26.–28.07.), Lom/Stabkirche
