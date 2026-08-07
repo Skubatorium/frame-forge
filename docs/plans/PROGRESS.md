@@ -226,7 +226,7 @@ konstant 0 und ein Test darauf belegte nichts.
 
 ---
 
-## Fundus-Erweiterung „Chris-iPhone" (2026-08-06) — **laufend**
+## Fundus-Erweiterung „Chris-iPhone" (2026-08-06) — **fertig**
 
 689 neue Dateien aus `First-Selection/Chris-iPhone/` (27 GB): **539 HEIC + 150 MOV**
 (iPhone, 4K60). Damit waechst `norwegen-2026` von 286 auf **975 Assets**.
@@ -235,7 +235,7 @@ konstant 0 und ein Test darauf belegte nichts.
 |---|---|
 | `ingest` — Proxies | ✅ 975/975 |
 | `prepare-index` — Keyframes, CV, `captured_at`, GPS | ✅ 689/689, keine Fehlschlaege |
-| Inhaltliche Sichtung (Beschreibung/Tags/Rating) | 🔄 **297 von 689** |
+| Inhaltliche Sichtung (Beschreibung/Tags/Rating) | ✅ **689 von 689** |
 
 **Der HEIC-Weg hat sich am echten Material bewaehrt.** Ohne das Arbeitspaket von 2026-08-05
 waeren die 539 Fotos still aus dem Index gefallen. Aufnahmezeit liegt bei **allen 689** vor
@@ -249,10 +249,8 @@ faellig, sonst bleiben die neuen Tage ohne Etappe.
 
 ### Fortschritt der Sichtung
 
-Chronologisch, Tag fuer Tag. **Hier weitermachen: 2026-08-01.** 2026-07-30 und
-2026-07-31 sind komplett abgeschlossen.
-Naechster Tag chronologisch: 2026-08-01 — komplette Liste per Standard-Query (siehe
-Arbeitsweise unten) neu ziehen, nicht abtippen.
+Chronologisch, Tag fuer Tag. **Alle 689 Chris-iPhone-Assets sind durchgesichtet, der
+Fundus ist komplett.**
 
 | Tag | Chris-iPhone-Assets | indiziert |
 |---|---:|---|
@@ -271,7 +269,17 @@ Arbeitsweise unten) neu ziehen, nicht abtippen.
 | 2026-07-29 | 15 | ✅ 15 — Abend in Lom: Angler faengt Fisch im tuerkisfarbenen Fluss, Stabkirche Lom in der Abenddaemmerung gespiegelt, streunende Katze, gruener Ford-Mustang-Oldtimer auf dem Campingplatz; am naechsten Tag Weiterfahrt zu neuer Huette am See (Fruehstueck, Ankunft, Reihe Camping-Huetten am spiegelglatten Wasser), Sonnenuntergang am Fluss, Abendessen (Lachs mit Zitrone) in der neuen Huette |
 | 2026-07-30 | 10 | ✅ 10 — Rest des Tages an der neuen Huette am See: Jungen laufen ueber Wiese Richtung Wald, Kind watet/angelt im Fluss unter Holzbruecke, Kinder plantschen auf Kiesbank, Establisher der Holzbruecke, Familien-Pizzaessen am Flussufer bei Abendlicht, dramatischer Sonnenuntergang mit Wolken und Bruecken-Silhouette |
 | 2026-07-31 | 15 | ✅ 15 — Wandertag/Ruhetag: Weidenroeschen-Nahaufnahme, Kanufahrt von Mutter und Kind auf See, Bruecke zur Huettensiedlung, Kind mit Tablet im Bett, Tischtennis und Bogenschiessen im Camping-Aktivbereich, Kinder-Portraets und -Aktion am Kiesufer eines Sees (Steine werfen), Selfie-Portraet am See |
-| 2026-08-01 … 2026-08-04 | 77 | ⬜ |
+| 2026-08-01 | 6 | ✅ 6 — Rennradfahrer auf Passstrasse (Fjell), Dungeon-Brettspielabend mit Familie (Jubel, Detailaufnahmen) |
+| 2026-08-02 | 10 | ✅ 10 — Kind mit Kopfhoerern auf Sofa, Schweinebraten-Zubereitung/Tranchieren, Kinder im Wohnzimmer mit Panoramablick, grosses Familienessen, Kinder spielen Videospiel, weiterer Brettspielabend, Beginn Tuer-/Terrassen-Renovierung |
+| 2026-08-03 | 20 | ✅ 20 — Rest der Renovierung, Cafeteria-Rast (Eis/Hotdogs), ausfuehrliche Angel-Session an Kuestenfelsen (Fang, Jubel, Establisher-Weitwinkel), Wanderung zur Bucht, Establisher tuerkisfarbene Meeresbucht, Innenaufnahme Treppe |
+| 2026-08-04 | 18 | ✅ 18 — Rueckreise: Faehrterminal/-deck am fruehen Morgen, Fahrt im Gegenlicht, Familienselfie im Auto, Hund am Autofenster, Ueberfahrt mit Bordrestaurant (Eis, Fruehstueck, Lego-Bauen mit Jubel), Ankunftshafen Color Line, Routenkarte an Bord, naechtliche Ankunft zuhause mit beladenem Auto als Schlussbild |
+
+**Abschluss (2026-08-07):** Beim Ziehen der Worklist fuer 2026-08-01 fiel per
+Hash-Abgleich ein zuvor uebersehenes Asset vom 2026-07-25 auf (`IMG_9762.HEIC`, Blick vom
+Achterdeck eines Fjord-Ausflugsschiffs) — nachtraeglich einzeln nachindiziert, die 106 in der
+Zeile oben bleiben unveraendert (zaehlt separat). Damit sind alle **689/689**
+Chris-iPhone-Assets durchgesichtet, der Gesamtfundus (975 Assets, alle Kameras) ist komplett
+inhaltlich indiziert.
 
 **Hinweis zur Zaehlung:** `689` ist die Gesamtzahl der neuen Chris-iPhone-Dateien (aus
 `prepare-index`, Pfadpraefix `Chris-iPhone/`). Die Tagestabellen in `assets.json` zeigen pro

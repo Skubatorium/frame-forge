@@ -26877,6 +26877,55 @@
     }
   },
   {
+    "hash": "sha256:3fba89f99da5c042c4a83a1b80ab6494fc7d48fe8e7fcd641955a7fdc5046479",
+    "path": "Chris-iPhone/IMG_9762.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T11:11:29+00:00",
+    "gps": {
+      "lat": 60.98265,
+      "lon": 7.033630555555556,
+      "elevation_m": 8.0
+    },
+    "probe": {
+      "captured_at": "2026-07-25T11:11:29+00:00",
+      "gps": {
+        "lat": 60.98265,
+        "lon": 7.033630555555556,
+        "elevation_m": 8.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.077,
+      "exposure": 0.961,
+      "score": 0.519
+    },
+    "id": "20260725-phone-3fba89",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9762_67aa5412_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Blick vom Achterdeck eines Fjord-Ausflugsschiffs auf enges Fjordbecken zwischen steilen Felswaenden, bedeckter Himmel.",
+      "tags": [
+        "fjord",
+        "schiff",
+        "achterdeck",
+        "berge",
+        "wolken",
+        "ausflugsboot"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:425e4c4143d6c2c6164ad157fddf7768c05cb2e9beb9789ff49eb9d25b308ac8",
     "path": "Chris-iPhone/IMG_9806.HEIC",
     "kind": "photo",
@@ -53796,6 +53845,125 @@
     }
   },
   {
+    "hash": "sha256:11cea7bf2a3d4d0ff8171c3cec6cb79ad96d3870fcd49e587abbb41dd697544c",
+    "path": "Chris-iPhone/IMG_0383.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-01T09:40:34+00:00",
+    "captured_at_source": "container",
+    "duration": 8.953333,
+    "probe": {
+      "captured_at": "2026-08-01T09:40:34+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 8.953333,
+      "bitrate": 54738547,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.99,
+      "stability": 0.125,
+      "exposure": 0.7,
+      "score": 0.605
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.875
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 8.95
+      }
+    ],
+    "id": "20260801-camera-11cea7",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0383_d1a6f8ae_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0383_d1a6f8ae_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0383_d1a6f8ae_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0383_d1a6f8ae_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Rennradfahrer faehrt auf kurviger Passstrasse durch weite Fjell-Landschaft mit Steinmauern und See, bedeckter Himmel.",
+      "tags": [
+        "rennrad",
+        "passstrasse",
+        "fjell",
+        "landschaft",
+        "see",
+        "steinmauer"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:9e8eab3d22dd11ac342e715f5c01f1738b22939c9abc9d1f998671b7324fc12c",
+    "path": "Chris-iPhone/IMG_0384.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-01T09:40:46+00:00",
+    "captured_at_source": "container",
+    "duration": 12.405,
+    "probe": {
+      "captured_at": "2026-08-01T09:40:46+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 12.405,
+      "bitrate": 54127706,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.681,
+      "score": 0.56
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 12.4
+      }
+    ],
+    "id": "20260801-camera-9e8eab",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0384_a5688e37_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0384_a5688e37_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0384_a5688e37_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Nahaufnahme des vorbeifahrenden Rennradfahrers auf Passstrasse vor gruenem Huegel, Steinmauer im Vordergrund.",
+      "tags": [
+        "rennrad",
+        "passstrasse",
+        "fjell",
+        "huegel",
+        "sport",
+        "strasse"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:50925f1e7f5e90f3115dabd606627910d8ac4af08f1e1431558dd9d9dd216ec5",
     "path": "2026-08-01_Uvdal-Skien_Roadshots_Bikes/Vorauswahl/DJI_20260801125246_0001_D-00.02.38.506-00.02.48.506-seg4.MP4",
     "kind": "video",
@@ -54202,6 +54370,946 @@
       "place": "unterwegs: Uvdal → Skien"
     },
     "place_source": "leg"
+  },
+  {
+    "hash": "sha256:40fac82a884e317cef0b6c9d2b31909b77ceb653d2b312dbca3cf55af52694aa",
+    "path": "Chris-iPhone/IMG_0390.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-01T20:12:25+00:00",
+    "gps": {
+      "lat": 59.210322222222224,
+      "lon": 9.564075,
+      "elevation_m": 100.2
+    },
+    "probe": {
+      "captured_at": "2026-08-01T20:12:25+00:00",
+      "gps": {
+        "lat": 59.210322222222224,
+        "lon": 9.564075,
+        "elevation_m": 100.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.936,
+      "exposure": 0.902,
+      "score": 0.919
+    },
+    "id": "20260801-phone-40fac8",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0390_2f4d660a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Familie sitzt am Kuechentisch mit kariertem Tischtuch und spielt ein Dungeon-Brettspiel mit modularen Gangfliesen, Abendlicht durch Fenster.",
+      "tags": [
+        "brettspiel",
+        "abend",
+        "familie",
+        "tisch",
+        "dungeon",
+        "spielsteine"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:698a183b230e9f4f17614846970473ac2a8e0f22b7ceda48fb7b52c002b993ee",
+    "path": "Chris-iPhone/IMG_0393.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-01T20:46:23+00:00",
+    "gps": {
+      "lat": 59.210322222222224,
+      "lon": 9.564075,
+      "elevation_m": 100.2
+    },
+    "probe": {
+      "captured_at": "2026-08-01T20:46:23+00:00",
+      "gps": {
+        "lat": 59.210322222222224,
+        "lon": 9.564075,
+        "elevation_m": 100.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.193,
+      "exposure": 0.961,
+      "score": 0.577
+    },
+    "id": "20260801-phone-698a18",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0393_ab325a64_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Junge jubelt mit erhobenen Armen am Spieltisch, Mutter laechelt daneben, Dungeon-Brettspiel auf kariertem Tischtuch.",
+      "tags": [
+        "brettspiel",
+        "jubel",
+        "junge",
+        "familie",
+        "sieg",
+        "abend"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7942c5cbe99dd008d1979edd4ed2f22bcf74c8e2c423301559a9d7afdf67108f",
+    "path": "Chris-iPhone/IMG_0394.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-01T20:46:32+00:00",
+    "gps": {
+      "lat": 59.210322222222224,
+      "lon": 9.564075,
+      "elevation_m": 100.2
+    },
+    "probe": {
+      "captured_at": "2026-08-01T20:46:32+00:00",
+      "gps": {
+        "lat": 59.210322222222224,
+        "lon": 9.564075,
+        "elevation_m": 100.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.479,
+      "exposure": 0.856,
+      "score": 0.667
+    },
+    "id": "20260801-phone-7942c5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0394_975b5fd5_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Naheinstellung des Dungeon-Spielbretts mit Charakterkarte, Truhensymbolen und Spielfiguren, Familie unscharf im Hintergrund.",
+      "tags": [
+        "brettspiel",
+        "detail",
+        "spielfigur",
+        "dungeon",
+        "tisch",
+        "abend"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:11a1374453e7fdd19c9763ef1f84fd610f067355aa40cbc6a1deda6ae87fbfca",
+    "path": "Chris-iPhone/IMG_0401.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-02T15:57:01+00:00",
+    "gps": {
+      "lat": 59.38153333333334,
+      "lon": 9.414425,
+      "elevation_m": 585.9
+    },
+    "probe": {
+      "captured_at": "2026-08-02T15:57:01+00:00",
+      "gps": {
+        "lat": 59.38153333333334,
+        "lon": 9.414425,
+        "elevation_m": 585.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.145,
+      "exposure": 0.974,
+      "score": 0.559
+    },
+    "id": "20260802-phone-11a137",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0401_299ac26e_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mehrere Kinder spielen und sitzen in geraeumigem Wohnzimmer mit dunklen Ledersofas und Panoramafenstern der Huette.",
+      "tags": [
+        "kinder",
+        "wohnzimmer",
+        "huette",
+        "spielen",
+        "sofa",
+        "drinnen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2efca32ca829978ae90e0381286e17115a1af8d3a0ef86371ae79e87f60bfa1a",
+    "path": "Chris-iPhone/IMG_0412.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-02T21:05:14+00:00",
+    "gps": {
+      "lat": 59.21032777777778,
+      "lon": 9.564080555555556,
+      "elevation_m": 102.7
+    },
+    "probe": {
+      "captured_at": "2026-08-02T21:05:14+00:00",
+      "gps": {
+        "lat": 59.21032777777778,
+        "lon": 9.564080555555556,
+        "elevation_m": 102.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.145,
+      "exposure": 0.971,
+      "score": 0.558
+    },
+    "id": "20260802-phone-2efca3",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0412_e02aff2e_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Familie spielt abends Dungeon-Brettspiel am karierten Esstisch in gemuetlichem Wohnzimmer mit Kamin.",
+      "tags": [
+        "brettspiel",
+        "abend",
+        "familie",
+        "wohnzimmer",
+        "kamin",
+        "spiel"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:33d2c15d5288be3dd05334e49733160913897ecb4b1900b770931d56849440bc",
+    "path": "Chris-iPhone/IMG_0398.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-02T10:51:47+00:00",
+    "gps": {
+      "lat": 59.21030555555556,
+      "lon": 9.564061111111112,
+      "elevation_m": 97.2
+    },
+    "probe": {
+      "captured_at": "2026-08-02T10:51:47+00:00",
+      "gps": {
+        "lat": 59.21030555555556,
+        "lon": 9.564061111111112,
+        "elevation_m": 97.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.039,
+      "exposure": 0.851,
+      "score": 0.445
+    },
+    "id": "20260802-phone-33d2c1",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0398_da324cd3_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Junge mit Kopfhoerern sitzt entspannt auf Sofa vor Fenster mit Gruenblick, Poolnudel im Arm, Tablet auf dem Sitz.",
+      "tags": [
+        "kind",
+        "sofa",
+        "kopfhoerer",
+        "entspannen",
+        "fenster",
+        "drinnen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:720a7c7f1724f0765f6980961000e8c00136f4a6ff2a24d90c06e054e4c3c483",
+    "path": "Chris-iPhone/IMG_0399.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-02T14:54:07+00:00",
+    "gps": {
+      "lat": 59.38154166666667,
+      "lon": 9.414372222222223,
+      "elevation_m": 587.9
+    },
+    "probe": {
+      "captured_at": "2026-08-02T14:54:07+00:00",
+      "gps": {
+        "lat": 59.38154166666667,
+        "lon": 9.414372222222223,
+        "elevation_m": 587.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.101,
+      "exposure": 0.818,
+      "score": 0.46
+    },
+    "id": "20260802-phone-720a7c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0399_7315cde5_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Krosser Schweinebraten mit Schwarte im Backblech im Ofen.",
+      "tags": [
+        "essen",
+        "braten",
+        "ofen",
+        "kochen",
+        "schwein",
+        "kueche"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:9c6f90b589f96de95e3d202381561297bad9abe482e13760dfa905ca81b6a923",
+    "path": "Chris-iPhone/IMG_0404.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-02T16:04:21+00:00",
+    "gps": {
+      "lat": 59.38154166666667,
+      "lon": 9.414416666666668,
+      "elevation_m": 585.9
+    },
+    "probe": {
+      "captured_at": "2026-08-02T16:04:21+00:00",
+      "gps": {
+        "lat": 59.38154166666667,
+        "lon": 9.414416666666668,
+        "elevation_m": 585.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.042,
+      "exposure": 0.928,
+      "score": 0.485
+    },
+    "id": "20260802-phone-9c6f90",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0404_e1348683_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Junge neckt Maedchen am Esstisch, im Hintergrund Panoramafenster mit weitem Blick ueber bewaldetes Tal und See.",
+      "tags": [
+        "geschwister",
+        "tisch",
+        "huette",
+        "aussicht",
+        "panorama",
+        "albern"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:aaf1d45a00d700dc83bfd6d4c576c0948c767561ab5d072e3fcb0352a73bb2b4",
+    "path": "Chris-iPhone/IMG_0406.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-02T17:01:35+00:00",
+    "gps": {
+      "lat": 59.38153888888889,
+      "lon": 9.414405555555556,
+      "elevation_m": 586.2
+    },
+    "probe": {
+      "captured_at": "2026-08-02T17:01:35+00:00",
+      "gps": {
+        "lat": 59.38153888888889,
+        "lon": 9.414405555555556,
+        "elevation_m": 586.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.121,
+      "exposure": 0.986,
+      "score": 0.554
+    },
+    "id": "20260802-phone-aaf1d4",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0406_31790e69_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Kinder spielen Videospiel auf grossem Fernseher im holzverkleideten Wohnzimmer der Huette, Erwachsene sitzt daneben.",
+      "tags": [
+        "kinder",
+        "videospiel",
+        "wohnzimmer",
+        "huette",
+        "fernseher",
+        "drinnen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b7efdd9b20bbca02a860f0ef36fae69897b6345167a2a18955da694f5182bfee",
+    "path": "Chris-iPhone/IMG_0405.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-02T16:07:42+00:00",
+    "gps": {
+      "lat": 59.38155,
+      "lon": 9.414416666666668,
+      "elevation_m": 586.4
+    },
+    "probe": {
+      "captured_at": "2026-08-02T16:07:42+00:00",
+      "gps": {
+        "lat": 59.38155,
+        "lon": 9.414416666666668,
+        "elevation_m": 586.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.209,
+      "exposure": 0.919,
+      "score": 0.564
+    },
+    "id": "20260802-phone-b7efdd",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0405_4e26fa5c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Grosse Familienrunde am langen Esstisch mit Braten und Kartoffeln, Panoramablick ueber Waldtal durch die Fenster.",
+      "tags": [
+        "familie",
+        "mittagessen",
+        "huette",
+        "aussicht",
+        "tisch",
+        "essen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:bcc6f930408d6a063c826ca49b4d831c2aba51cc0e0adb5fcb87df6dbf38ea0d",
+    "path": "Chris-iPhone/IMG_0400.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-02T15:55:55+00:00",
+    "gps": {
+      "lat": 59.38153333333334,
+      "lon": 9.414427777777778,
+      "elevation_m": 585.9
+    },
+    "probe": {
+      "captured_at": "2026-08-02T15:55:55+00:00",
+      "gps": {
+        "lat": 59.38153333333334,
+        "lon": 9.414427777777778,
+        "elevation_m": 585.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.166,
+      "exposure": 0.934,
+      "score": 0.55
+    },
+    "id": "20260802-phone-bcc6f9",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0400_12eea49f_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Mann schneidet den fertigen Schweinebraten mit Kruste in der Kueche auf einem Schneidebrett auf.",
+      "tags": [
+        "essen",
+        "kueche",
+        "braten",
+        "tranchieren",
+        "kochen",
+        "mann"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e72dbe648a7b9c77a63aa654139f30a685ae7f08da3543a0e4835bc6ec60115e",
+    "path": "Chris-iPhone/IMG_0403.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-02T15:59:50+00:00",
+    "gps": {
+      "lat": 59.38154166666667,
+      "lon": 9.414419444444444,
+      "elevation_m": 585.9
+    },
+    "probe": {
+      "captured_at": "2026-08-02T15:59:50+00:00",
+      "gps": {
+        "lat": 59.38154166666667,
+        "lon": 9.414419444444444,
+        "elevation_m": 585.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.155,
+      "exposure": 0.882,
+      "score": 0.519
+    },
+    "id": "20260802-phone-e72dbe",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0403_8cb89d0e_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Bunt gedeckter Esstisch mit Toepfen (Karotten, Sosse), farbigem Geschirr und Blick durch Panoramafenster auf Huettensiedlung.",
+      "tags": [
+        "esstisch",
+        "mittagessen",
+        "huette",
+        "geschirr",
+        "gedeckt",
+        "fenster"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f6406ab8483b23472e6d62952fc0a4ed76f0ce0bdd00ec37b826507fca764f0e",
+    "path": "Chris-iPhone/IMG_0402.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-02T15:58:23+00:00",
+    "gps": {
+      "lat": 59.38154166666667,
+      "lon": 9.414425,
+      "elevation_m": 585.9
+    },
+    "probe": {
+      "captured_at": "2026-08-02T15:58:23+00:00",
+      "gps": {
+        "lat": 59.38154166666667,
+        "lon": 9.414425,
+        "elevation_m": 585.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.057,
+      "exposure": 0.978,
+      "score": 0.518
+    },
+    "id": "20260802-phone-f6406a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0402_b1ee21d7_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Platte mit tranchiertem Schweinebraten und Kruste, gedeckter Tisch mit Glas und Teller im Hintergrund.",
+      "tags": [
+        "essen",
+        "braten",
+        "tisch",
+        "platte",
+        "mittagessen",
+        "detail"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1d32ef1ea30928c611a546e679f68e4237811fc73a8c0f523c0f9123c1aa2b06",
+    "path": "Chris-iPhone/IMG_0431.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-03T13:12:52+00:00",
+    "captured_at_source": "container",
+    "duration": 8.553333,
+    "probe": {
+      "captured_at": "2026-08-03T13:12:52+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 8.553333,
+      "bitrate": 54500409,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.936,
+      "score": 0.645
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 8.55
+      }
+    ],
+    "id": "20260803-camera-1d32ef",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0431_a5b2914a_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0431_a5b2914a_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0431_a5b2914a_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kind jubelt mit erhobenem Daumen ueber gefangenen Fisch am Haken auf Kuestenfelsen.",
+      "tags": [
+        "angeln",
+        "fisch",
+        "kind",
+        "jubel",
+        "felsen",
+        "kueste"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2a499ce29e0fbfdc93193417b866d7661a89e27717041a9998f84e9432855816",
+    "path": "Chris-iPhone/IMG_0441.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-03T16:24:48+00:00",
+    "captured_at_source": "container",
+    "duration": 26.111667,
+    "probe": {
+      "captured_at": "2026-08-03T16:24:48+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 26.111667,
+      "bitrate": 53104772,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.312,
+      "stability": 0.0,
+      "exposure": 0.855,
+      "score": 0.389
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 26.12
+      }
+    ],
+    "id": "20260803-camera-2a499c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0441_e2308e55_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0441_e2308e55_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0441_e2308e55_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Innenaufnahme einer Treppe mit Kindersicherungsgitter und Backsteinkamin, Kind sitzt im Hintergrund.",
+      "tags": [
+        "innenraum",
+        "treppe",
+        "kindersicherung",
+        "haus",
+        "kamin",
+        "drinnen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4110bcf109ad528aa03f4555cbb834281dc6172059b2774d229f02d4474a17d9",
+    "path": "Chris-iPhone/IMG_0429.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-03T13:11:56+00:00",
+    "captured_at_source": "container",
+    "duration": 17.623333,
+    "probe": {
+      "captured_at": "2026-08-03T13:11:56+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 17.623333,
+      "bitrate": 53371026,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.48,
+      "stability": 0.0,
+      "exposure": 0.883,
+      "score": 0.454
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 17.63
+      }
+    ],
+    "id": "20260803-camera-4110bc",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0429_6d096c04_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0429_6d096c04_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0429_6d096c04_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kind angelt mit Rute auf sonnenbeschienenen Kuestenfelsen, Blick auf klares tuerkises Wasser.",
+      "tags": [
+        "angeln",
+        "kind",
+        "felsen",
+        "kueste",
+        "meer",
+        "sonnig"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:8db1ce8667b12833ca45f75bd3c052e9a1adef35cd3c6883f50a8e9276d4c02a",
+    "path": "Chris-iPhone/IMG_0430.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-03T13:12:28+00:00",
+    "captured_at_source": "container",
+    "duration": 0.433333,
+    "probe": {
+      "captured_at": "2026-08-03T13:12:28+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 0.433333,
+      "bitrate": 63120565,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.469,
+      "exposure": 0.872,
+      "score": 0.781
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.531
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 0.43
+      }
+    ],
+    "id": "20260803-camera-8db1ce",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0430_f607d7f5_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0430_f607d7f5_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0430_f607d7f5_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0430_f607d7f5_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kind zieht einen kleinen Fisch aus dem Wasser auf Felsen an der Kueste, Angelrute im Bild, Schatten auf dem Fels.",
+      "tags": [
+        "angeln",
+        "fisch",
+        "kind",
+        "felsen",
+        "kueste",
+        "fangen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c9543eaa56242804416412892e9254bf477d7b53de078383d80bfa6785447d13",
+    "path": "Chris-iPhone/IMG_0433.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-03T13:17:53+00:00",
+    "captured_at_source": "container",
+    "duration": 28.643333,
+    "probe": {
+      "captured_at": "2026-08-03T13:17:53+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 28.643333,
+      "bitrate": 53588865,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.196,
+      "exposure": 0.813,
+      "score": 0.67
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.804
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 28.65
+      }
+    ],
+    "id": "20260803-camera-c9543e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0433_b5e0cfa9_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0433_b5e0cfa9_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0433_b5e0cfa9_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weite Einstellung: Kind angelt von Felsvorsprung an ruhiger Kuestenbucht mit bewaldeten Ufern und Sandstrand im Hintergrund.",
+      "tags": [
+        "angeln",
+        "kueste",
+        "bucht",
+        "establisher",
+        "kind",
+        "sonnig"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
   },
   {
     "hash": "sha256:02f80968833da619f4d7f203b88be1993b656fb1f18379d7b12d5b5a33aedb3f",
@@ -56327,5 +57435,1652 @@
     "day": 17,
     "stage": "Skien",
     "place_source": "index"
+  },
+  {
+    "hash": "sha256:030748a90f4c67ba2f91f26a6a4f1d0387d32d73f91c9cf424e0769a106cb800",
+    "path": "Chris-iPhone/IMG_0421.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T14:36:00+00:00",
+    "gps": {
+      "lat": 58.97404166666667,
+      "lon": 9.669866666666666,
+      "elevation_m": 29.4
+    },
+    "probe": {
+      "captured_at": "2026-08-03T14:36:00+00:00",
+      "gps": {
+        "lat": 58.97404166666667,
+        "lon": 9.669866666666666,
+        "elevation_m": 29.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.929,
+      "exposure": 0.89,
+      "score": 0.91
+    },
+    "id": "20260803-phone-030748",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0421_1ca6961c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Frau laechelt in die Kamera, haelt zwei Angelruten auf Parkplatz vor Wald, sonniger Tag.",
+      "tags": [
+        "angeln",
+        "parkplatz",
+        "frau",
+        "laecheln",
+        "wald",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:0bfb0be3cd417265103af618f32087877ac6465d01fb3f2c6640f9811fcb0de9",
+    "path": "Chris-iPhone/IMG_0439.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T16:41:38+00:00",
+    "gps": {
+      "lat": 58.971805555555555,
+      "lon": 9.67516111111111,
+      "elevation_m": 5.1
+    },
+    "probe": {
+      "captured_at": "2026-08-03T16:41:38+00:00",
+      "gps": {
+        "lat": 58.971805555555555,
+        "lon": 9.67516111111111,
+        "elevation_m": 5.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.812,
+      "exposure": 0.931,
+      "score": 0.872
+    },
+    "id": "20260803-phone-0bfb0b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0439_fe75e58e_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Establisher einer tuerkisfarbenen Meeresbucht mit Motorboot, roter Huette und Sandstrand, gerahmt von Kiefernzweigen.",
+      "tags": [
+        "bucht",
+        "establisher",
+        "boot",
+        "meer",
+        "kueste",
+        "idyllisch"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2bfef9b032f90b9b8553a0c5876f6152dab0278fd479e547b64dc4a6039889f3",
+    "path": "Chris-iPhone/IMG_0418.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T12:42:33+00:00",
+    "gps": {
+      "lat": 59.174683333333334,
+      "lon": 9.628130555555556,
+      "elevation_m": 22.6
+    },
+    "probe": {
+      "captured_at": "2026-08-03T12:42:33+00:00",
+      "gps": {
+        "lat": 59.174683333333334,
+        "lon": 9.628130555555556,
+        "elevation_m": 22.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.183,
+      "exposure": 0.924,
+      "score": 0.553
+    },
+    "id": "20260803-phone-2bfef9",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0418_5e16d63f_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Familie mit mehreren Kindern isst Eisbecher an einem Tisch in heller Cafeteria mit grossen Fenstern.",
+      "tags": [
+        "cafeteria",
+        "eis",
+        "familie",
+        "kinder",
+        "rastplatz",
+        "essen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2ec76134f047873869e35e19aa1fbae551cd0ed4f49e0abf96db6a22e6e222b4",
+    "path": "Chris-iPhone/IMG_0419.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T13:06:24+00:00",
+    "gps": {
+      "lat": 59.17471666666666,
+      "lon": 9.628119444444446,
+      "elevation_m": 22.6
+    },
+    "probe": {
+      "captured_at": "2026-08-03T13:06:24+00:00",
+      "gps": {
+        "lat": 59.17471666666666,
+        "lon": 9.628119444444446,
+        "elevation_m": 22.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.215,
+      "exposure": 0.93,
+      "score": 0.573
+    },
+    "id": "20260803-phone-2ec761",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0419_3a9b7e5f_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Vater und Kinder essen Hotdogs am Cafeteria-Tisch, Kind grinst in die Kamera, Grossraum mit vielen Sitzplaetzen im Hintergrund.",
+      "tags": [
+        "cafeteria",
+        "hotdog",
+        "familie",
+        "kinder",
+        "rastplatz",
+        "essen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:3979fab7d909ec426c2b73cccaaf40b6b8f6dac32f52cafb1c3ba9f923e29fed",
+    "path": "Chris-iPhone/IMG_0417.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T12:09:52+00:00",
+    "gps": {
+      "lat": 59.21028611111112,
+      "lon": 9.564019444444446,
+      "elevation_m": 100.3
+    },
+    "probe": {
+      "captured_at": "2026-08-03T12:09:52+00:00",
+      "gps": {
+        "lat": 59.21028611111112,
+        "lon": 9.564019444444446,
+        "elevation_m": 100.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.27,
+      "exposure": 0.947,
+      "score": 0.608
+    },
+    "id": "20260803-phone-3979fa",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0417_f33d5270_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Vier Kinder sitzen und liegen entspannt auf blauer Couch im hellen Wohnzimmer, Sonne faellt durchs Fenster.",
+      "tags": [
+        "kinder",
+        "wohnzimmer",
+        "couch",
+        "entspannen",
+        "drinnen",
+        "sonnig"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4f45f3dc31262e36048f91ce756579942bcee9655e2a03200ed14b7040ab1093",
+    "path": "Chris-iPhone/IMG_0425.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T14:39:33+00:00",
+    "gps": {
+      "lat": 58.97463333333334,
+      "lon": 9.672088888888888,
+      "elevation_m": 17.3
+    },
+    "probe": {
+      "captured_at": "2026-08-03T14:39:33+00:00",
+      "gps": {
+        "lat": 58.97463333333334,
+        "lon": 9.672088888888888,
+        "elevation_m": 17.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.998,
+      "exposure": 0.719,
+      "score": 0.859
+    },
+    "id": "20260803-phone-4f45f3",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0425_5d9a0979_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Familie mit Angelausruestung wandert auf sonnigem Waldweg zur Kueste, Kinder und Erwachsene von hinten.",
+      "tags": [
+        "wanderung",
+        "wald",
+        "familie",
+        "angeln",
+        "weg",
+        "sonnig"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:55e29dbe1336c5a73ab4db03b3f9a5447b9882e6b57083757052127210f8f72c",
+    "path": "Chris-iPhone/IMG_0428.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T15:02:38+00:00",
+    "gps": {
+      "lat": 58.97166388888889,
+      "lon": 9.685869444444444
+    },
+    "probe": {
+      "captured_at": "2026-08-03T15:02:38+00:00",
+      "gps": {
+        "lat": 58.97166388888889,
+        "lon": 9.685869444444444
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.887,
+      "score": 0.943
+    },
+    "id": "20260803-phone-55e29d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0428_7a12cdb6_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mann bereitet Angelrute auf Kuestenfelsen vor, umringt von Kindern, Meer und bewaldete Kueste im Hintergrund.",
+      "tags": [
+        "angeln",
+        "kueste",
+        "felsen",
+        "familie",
+        "kinder",
+        "meer"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5be4ddc151690ee9e1ab0956f6d12a86e6deed84338eff1e8a7f21c3bd65014c",
+    "path": "Chris-iPhone/IMG_0432.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T15:16:39+00:00",
+    "gps": {
+      "lat": 58.97123611111111,
+      "lon": 9.675958333333332,
+      "elevation_m": 2.0
+    },
+    "probe": {
+      "captured_at": "2026-08-03T15:16:39+00:00",
+      "gps": {
+        "lat": 58.97123611111111,
+        "lon": 9.675958333333332,
+        "elevation_m": 2.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.996,
+      "score": 0.998
+    },
+    "id": "20260803-phone-5be4dd",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0432_48d8eb9b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Junge angelt auf zerkluefteten Kuestenfelsen an einer kleinen Meeresbucht, klarer Himmel.",
+      "tags": [
+        "angeln",
+        "kind",
+        "felsen",
+        "kueste",
+        "meer",
+        "sonnig"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:61f958536ffb48332766377debf2c941dbcad896f9e23c8048e71d964af9dbb8",
+    "path": "Chris-iPhone/IMG_0422.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T14:39:19+00:00",
+    "gps": {
+      "lat": 58.9747,
+      "lon": 9.670527777777778
+    },
+    "probe": {
+      "captured_at": "2026-08-03T14:39:19+00:00",
+      "gps": {
+        "lat": 58.9747,
+        "lon": 9.670527777777778
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.711,
+      "exposure": 0.86,
+      "score": 0.785
+    },
+    "id": "20260803-phone-61f958",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0422_aca3201c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Familie mit Kindern wandert von hinten auf schmalem Waldweg, Vater traegt Rucksack und Angelruten, Maedchen haelt seine Hand.",
+      "tags": [
+        "wanderung",
+        "wald",
+        "familie",
+        "kinder",
+        "angeln",
+        "weg"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:6401b9aaa232197e208c29998e02f2266711d695e69184704ec485257325630d",
+    "path": "Chris-iPhone/IMG_0434.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T15:26:16+00:00",
+    "gps": {
+      "lat": 58.97150555555556,
+      "lon": 9.675775,
+      "elevation_m": 0.8
+    },
+    "probe": {
+      "captured_at": "2026-08-03T15:26:16+00:00",
+      "gps": {
+        "lat": 58.97150555555556,
+        "lon": 9.675775,
+        "elevation_m": 0.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.761,
+      "exposure": 0.884,
+      "score": 0.822
+    },
+    "id": "20260803-phone-6401b9",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0434_edfe9fd4_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weite Establisher-Einstellung: Familie angelt auf Felsvorsprung am offenen Meer mit Inselchen am Horizont.",
+      "tags": [
+        "angeln",
+        "familie",
+        "kueste",
+        "meer",
+        "establisher",
+        "felsen"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:677664af7920bb41cadf53fe8e34a3ef73c3e4b1b39523c0828467fdfd221ddc",
+    "path": "Chris-iPhone/IMG_0415.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T11:28:09+00:00",
+    "gps": {
+      "lat": 59.21031111111111,
+      "lon": 9.564097222222223,
+      "elevation_m": 93.4
+    },
+    "probe": {
+      "captured_at": "2026-08-03T11:28:09+00:00",
+      "gps": {
+        "lat": 59.21031111111111,
+        "lon": 9.564097222222223,
+        "elevation_m": 93.4
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.392,
+      "exposure": 0.961,
+      "score": 0.676
+    },
+    "id": "20260803-phone-677664",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0415_9023dd3d_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Zwei Maenner knien und montieren eine Holzschwelle in einer Tueroeffnung, Blick von der Terrasse ins Haus.",
+      "tags": [
+        "handwerk",
+        "renovierung",
+        "holz",
+        "tuer",
+        "maenner",
+        "terrasse"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ca683762c1aee995b0189e914f259246db54b53a0375efe87a8db6f87ebc32e3",
+    "path": "Chris-iPhone/IMG_0435.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T15:26:23+00:00",
+    "gps": {
+      "lat": 58.97150833333333,
+      "lon": 9.675783333333333,
+      "elevation_m": 2.0
+    },
+    "probe": {
+      "captured_at": "2026-08-03T15:26:23+00:00",
+      "gps": {
+        "lat": 58.97150833333333,
+        "lon": 9.675783333333333,
+        "elevation_m": 2.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.579,
+      "exposure": 0.874,
+      "score": 0.727
+    },
+    "id": "20260803-phone-ca6837",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0435_953cf369_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Ganze Familie verteilt auf Felsvorsprung am Meer, angelnd und sitzend, weiter Blick auf das offene Wasser.",
+      "tags": [
+        "angeln",
+        "familie",
+        "kueste",
+        "meer",
+        "establisher",
+        "felsen"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d3c2f5f9ea7f7e44ab48b2b8ac55174dc2221cd2fcacce1381c82435da74fc4a",
+    "path": "Chris-iPhone/IMG_0414.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T09:56:36+00:00",
+    "gps": {
+      "lat": 59.21032777777778,
+      "lon": 9.564080555555556,
+      "elevation_m": 100.3
+    },
+    "probe": {
+      "captured_at": "2026-08-03T09:56:36+00:00",
+      "gps": {
+        "lat": 59.21032777777778,
+        "lon": 9.564080555555556,
+        "elevation_m": 100.3
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.297,
+      "exposure": 0.914,
+      "score": 0.605
+    },
+    "id": "20260803-phone-d3c2f5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0414_f9c843ac_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Mann isoliert eine Tueroeffnung mit Daemmwolle im Rohbau, Blick durch die Oeffnung auf sonnige Terrasse und Baeume.",
+      "tags": [
+        "handwerk",
+        "renovierung",
+        "daemmung",
+        "terrasse",
+        "mann",
+        "sonnig"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:da71b1cc5299daed95dd2dcba987260002b1e718718776a7f1de23fcbce0adea",
+    "path": "Chris-iPhone/IMG_0420.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T14:35:58+00:00",
+    "gps": {
+      "lat": 58.97405555555556,
+      "lon": 9.669858333333332,
+      "elevation_m": 30.5
+    },
+    "probe": {
+      "captured_at": "2026-08-03T14:35:58+00:00",
+      "gps": {
+        "lat": 58.97405555555556,
+        "lon": 9.669858333333332,
+        "elevation_m": 30.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.967,
+      "score": 0.984
+    },
+    "id": "20260803-phone-da71b1",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0420_50dd2e80_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Frau posiert mit zwei Angelruten auf leerem Parkplatz vor Waldrand, sonniger Tag.",
+      "tags": [
+        "angeln",
+        "parkplatz",
+        "frau",
+        "wald",
+        "sonnig",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e637b1f890fe5b74d1f1c73e5940c43daa1f3cc45f9a3df78359a5c041bb15e5",
+    "path": "Chris-iPhone/IMG_0426.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T14:42:41+00:00",
+    "gps": {
+      "lat": 58.97311388888889,
+      "lon": 9.674486111111111,
+      "elevation_m": -2.7
+    },
+    "probe": {
+      "captured_at": "2026-08-03T14:42:41+00:00",
+      "gps": {
+        "lat": 58.97311388888889,
+        "lon": 9.674486111111111,
+        "elevation_m": -2.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.981,
+      "score": 0.99
+    },
+    "id": "20260803-phone-e637b1",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0426_2029148c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mutter und Kind gehen mit Eimer Richtung Meer, am Ende des Wegs oeffnet sich der Blick auf die Kueste mit rotem Bootshaus.",
+      "tags": [
+        "wanderung",
+        "kueste",
+        "mutter",
+        "kind",
+        "eimer",
+        "meer"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:0fc69870e6a1ab48687d97d6be4d8bea5511c48dccd8681ae4dbe29c74f313bb",
+    "path": "Chris-iPhone/IMG_0447.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-04T05:22:06+00:00",
+    "captured_at_source": "container",
+    "duration": 32.113333,
+    "probe": {
+      "captured_at": "2026-08-04T05:22:06+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 32.113333,
+      "bitrate": 53245516,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.683,
+      "stability": 0.0,
+      "exposure": 0.859,
+      "score": 0.514
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 32.12
+      }
+    ],
+    "id": "20260804-camera-0fc698",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0447_63da1842_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0447_63da1842_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0447_63da1842_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Auto faehrt durchs Wageninnere gefilmt auf das Fahrzeugdeck einer grossen Faehre, fruehmorgendliches Licht.",
+      "tags": [
+        "faehre",
+        "auto",
+        "abreise",
+        "fahrzeugdeck",
+        "morgen",
+        "fahrt"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:59ef0c64427ccbac145012b8ae6f4129921ed9078fbb3b8fc83a02f1e3c281a7",
+    "path": "Chris-iPhone/IMG_0468.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-04T09:07:55+00:00",
+    "captured_at_source": "container",
+    "duration": 20.325,
+    "probe": {
+      "captured_at": "2026-08-04T09:07:55+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 20.325,
+      "bitrate": 53574371,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.28,
+      "stability": 0.715,
+      "exposure": 0.574,
+      "score": 0.523
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.285
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 20.33
+      }
+    ],
+    "id": "20260804-camera-59ef0c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0468_8d49eddb_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0468_8d49eddb_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0468_8d49eddb_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weite Establisher-Einstellung von Bord der Faehre: offenes Meer mit Sonnenstrahlen durch Wolkendecke, Horizont.",
+      "tags": [
+        "faehre",
+        "meer",
+        "establisher",
+        "himmel",
+        "wolken",
+        "horizont"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:6d5d0c849ca659302a59b11bcaf7f9681fe9c845d1ff691b0bbfb5d4d39cde7f",
+    "path": "Chris-iPhone/IMG_9280.mov",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-04T07:23:43+00:00",
+    "captured_at_source": "container",
+    "duration": 9.3,
+    "probe": {
+      "captured_at": "2026-08-04T07:23:43+00:00",
+      "captured_at_source": "container",
+      "w": 1920,
+      "h": 1080,
+      "fps": 29.97002997002997,
+      "dur": 9.3,
+      "bitrate": 9653847,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.042,
+      "stability": 0.0,
+      "exposure": 0.888,
+      "score": 0.31
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 9.28
+      }
+    ],
+    "id": "20260804-camera-6d5d0c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9280_3035fff6_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9280_3035fff6_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9280_3035fff6_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_9280_3035fff6_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Hund haengt Kopf aus dem Autofenster waehrend der Fahrt an einer gruenen Landstrasse.",
+      "tags": [
+        "hund",
+        "auto",
+        "fahrt",
+        "strasse",
+        "landschaft",
+        "tier"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:80b8d0903d183d7edeeecd12295e8bd92ad750d4640a5222c3f367d95ee23c81",
+    "path": "Chris-iPhone/IMG_0472.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-04T09:57:29+00:00",
+    "captured_at_source": "container",
+    "duration": 17.923333,
+    "probe": {
+      "captured_at": "2026-08-04T09:57:29+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 17.923333,
+      "bitrate": 53176771,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.707,
+      "stability": 0.0,
+      "exposure": 0.727,
+      "score": 0.478
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 17.93
+      }
+    ],
+    "id": "20260804-camera-80b8d0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0472_9d192511_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0472_9d192511_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0472_9d192511_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Autos fahren im Hafen vom Faehrterminal weg, im Hintergrund die grosse Color-Line-Faehre 'SuperSpeed' am Kai.",
+      "tags": [
+        "faehre",
+        "hafen",
+        "ankunft",
+        "auto",
+        "colorline",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:108f0872f1772fd43839d8a9f65b39edc10f1a5aca51c5c19b0f531e841a0973",
+    "path": "Chris-iPhone/IMG_0445.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-04T07:01:24+00:00",
+    "gps": {
+      "lat": 59.040974999999996,
+      "lon": 10.047480555555556,
+      "elevation_m": 4.2
+    },
+    "probe": {
+      "captured_at": "2026-08-04T07:01:24+00:00",
+      "gps": {
+        "lat": 59.040974999999996,
+        "lon": 10.047480555555556,
+        "elevation_m": 4.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.548,
+      "exposure": 0.892,
+      "score": 0.72
+    },
+    "id": "20260804-phone-108f08",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0445_19610df8_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Familienselfie im Auto: Eltern vorne laechelnd, Kind mit Pikachu-Spielzeug im Kindersitz hinten.",
+      "tags": [
+        "familienselfie",
+        "auto",
+        "fahrt",
+        "eltern",
+        "kind",
+        "laecheln"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1f3f42cf4c6b9ec3f41b073e4b494cf61345b97007e814b43e9edb81c7e7b33d",
+    "path": "Chris-iPhone/IMG_0471.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-04T11:09:18+00:00",
+    "gps": {
+      "lat": 57.76126388888889,
+      "lon": 9.9651,
+      "elevation_m": -1.0
+    },
+    "probe": {
+      "captured_at": "2026-08-04T11:09:18+00:00",
+      "gps": {
+        "lat": 57.76126388888889,
+        "lon": 9.9651,
+        "elevation_m": -1.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.01,
+      "exposure": 0.763,
+      "score": 0.386
+    },
+    "id": "20260804-phone-1f3f42",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0471_481d7490_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Bildschirm an Bord zeigt die Live-Routenkarte der Faehre mit Kurs auf die daenische Kueste bei Skagen.",
+      "tags": [
+        "faehre",
+        "routenkarte",
+        "navigation",
+        "daenemark",
+        "bildschirm",
+        "ueberfahrt"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:20630101c24cd03a433615667640a1c1d4c38300ccd6c88b53ae5baef14fea14",
+    "path": "Chris-iPhone/IMG_0453.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-04T08:02:35+00:00",
+    "gps": {
+      "lat": 59.03809444444444,
+      "lon": 10.023433333333335
+    },
+    "probe": {
+      "captured_at": "2026-08-04T08:02:35+00:00",
+      "gps": {
+        "lat": 59.03809444444444,
+        "lon": 10.023433333333335
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.05,
+      "exposure": 0.747,
+      "score": 0.399
+    },
+    "id": "20260804-phone-206301",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0453_6ee7ea47_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Frau blickt aus dem Panoramafenster des Bordrestaurants aufs Meer, gedeckter Tisch mit Fruehstueck (Melone, Bier, Croissant).",
+      "tags": [
+        "faehre",
+        "bordrestaurant",
+        "fruehstueck",
+        "meer",
+        "ueberfahrt",
+        "frau"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2c97567979d8645ba9238225a62521d678c1612005bef69aed0a8fe275776b87",
+    "path": "Chris-iPhone/IMG_0467.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-04T11:03:05+00:00",
+    "gps": {
+      "lat": 57.67477777777778,
+      "lon": 9.973005555555556
+    },
+    "probe": {
+      "captured_at": "2026-08-04T11:03:05+00:00",
+      "gps": {
+        "lat": 57.67477777777778,
+        "lon": 9.973005555555556
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.089,
+      "exposure": 0.919,
+      "score": 0.504
+    },
+    "id": "20260804-phone-2c9756",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0467_4476d5e7_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Nahaufnahme des Lego-Gelaendewagens mit geoeffneter Seitentuer und Spielfigur am Steuer, Bordrestaurant im Hintergrund.",
+      "tags": [
+        "faehre",
+        "lego",
+        "detail",
+        "spielfigur",
+        "restaurant",
+        "fertig"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2eda17b68ac140ac263c6bdff46e373c19191bd69cdf79bfd6710532edc5a7af",
+    "path": "Chris-iPhone/IMG_0458.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-04T09:36:22+00:00",
+    "gps": {
+      "lat": 59.03809444444444,
+      "lon": 10.023433333333335
+    },
+    "probe": {
+      "captured_at": "2026-08-04T09:36:22+00:00",
+      "gps": {
+        "lat": 59.03809444444444,
+        "lon": 10.023433333333335
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.149,
+      "exposure": 0.944,
+      "score": 0.546
+    },
+    "id": "20260804-phone-2eda17",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0458_76b25b7b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Junge zeigt stolz zwei neue Lego-City-Schachteln im Bordshop der Faehre.",
+      "tags": [
+        "faehre",
+        "lego",
+        "einkauf",
+        "kind",
+        "shop",
+        "geschenk"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:31e6f2b8b31a3677f6ddf331ec05ee7697e668bbe1a773ca826a8dfbe4605ec9",
+    "path": "Chris-iPhone/IMG_0451.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-04T08:02:08+00:00",
+    "gps": {
+      "lat": 59.03850277777778,
+      "lon": 10.02508888888889
+    },
+    "probe": {
+      "captured_at": "2026-08-04T08:02:08+00:00",
+      "gps": {
+        "lat": 59.03850277777778,
+        "lon": 10.02508888888889
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.056,
+      "exposure": 0.868,
+      "score": 0.462
+    },
+    "id": "20260804-phone-31e6f2",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0451_20345954_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Junge macht begeistertes Selfie mit Eisbecher im Bordrestaurant der Rueckfaehre.",
+      "tags": [
+        "faehre",
+        "bordrestaurant",
+        "eis",
+        "kind",
+        "selfie",
+        "ueberfahrt"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7916ce0d1cd3f3d94b000bc5480bf169b509490a52dd4caa1eaea17292520a82",
+    "path": "Chris-iPhone/IMG_0463.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-04T11:02:36+00:00",
+    "gps": {
+      "lat": 57.78753333333333,
+      "lon": 9.853494444444443
+    },
+    "probe": {
+      "captured_at": "2026-08-04T11:02:36+00:00",
+      "gps": {
+        "lat": 57.78753333333333,
+        "lon": 9.853494444444443
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.067,
+      "exposure": 0.898,
+      "score": 0.483
+    },
+    "id": "20260804-phone-7916ce",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0463_30dcd875_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Junge jubelt mit erhobenem Arm ueber fertig gebauten Lego-Geländewagen auf dem Restauranttisch der Faehre.",
+      "tags": [
+        "faehre",
+        "lego",
+        "jubel",
+        "kind",
+        "restaurant",
+        "fertig"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:90159e76b63452f0aee04dcd4fd4c077806e543be8bd552b80c1801596f085e6",
+    "path": "Chris-iPhone/IMG_0482.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-04T22:15:13+00:00",
+    "gps": {
+      "lat": 51.09515833333334,
+      "lon": 6.5643111111111105,
+      "elevation_m": 67.9
+    },
+    "probe": {
+      "captured_at": "2026-08-04T22:15:13+00:00",
+      "gps": {
+        "lat": 51.09515833333334,
+        "lon": 6.5643111111111105,
+        "elevation_m": 67.9
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.174,
+      "exposure": 0.6,
+      "score": 0.387
+    },
+    "id": "20260804-phone-90159e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0482_44820789_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Nachtaufnahme des beladenen Kombis mit Dachbox auf dem dunklen Parkplatz zuhause, Bremslichter leuchten, Ankunft nach der Rueckreise.",
+      "tags": [
+        "ankunft",
+        "nacht",
+        "auto",
+        "dachbox",
+        "parkplatz",
+        "zuhause"
+      ],
+      "people": false,
+      "usable_as": [
+        "outro",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:9667021e427f89ff890ad924232156b916e68022f3302768c832905463d1ae98",
+    "path": "Chris-iPhone/IMG_0466.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-04T11:02:59+00:00",
+    "gps": {
+      "lat": 57.66264722222222,
+      "lon": 10.027327777777778
+    },
+    "probe": {
+      "captured_at": "2026-08-04T11:02:59+00:00",
+      "gps": {
+        "lat": 57.66264722222222,
+        "lon": 10.027327777777778
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.083,
+      "exposure": 0.918,
+      "score": 0.5
+    },
+    "id": "20260804-phone-966702",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0466_9ed80b39_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Detailaufnahme des fertigen Lego-Gelaendewagens mit Sternenmuster von vorne auf dem Restauranttisch.",
+      "tags": [
+        "faehre",
+        "lego",
+        "detail",
+        "fertig",
+        "restaurant",
+        "spielzeug"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:99ec32feddd1cfd6059e0884f7f5eb753d254f235d40457e780b1a33c64f3eea",
+    "path": "Chris-iPhone/IMG_0465.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-04T11:02:51+00:00",
+    "gps": {
+      "lat": 57.698722222222216,
+      "lon": 9.948097222222222
+    },
+    "probe": {
+      "captured_at": "2026-08-04T11:02:51+00:00",
+      "gps": {
+        "lat": 57.698722222222216,
+        "lon": 9.948097222222222
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.125,
+      "exposure": 0.877,
+      "score": 0.501
+    },
+    "id": "20260804-phone-99ec32",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0465_859e83c4_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Nahaufnahme des fertigen Lego-Gelaendewagens mit Fahrraedern auf dem Tisch im Bordrestaurant.",
+      "tags": [
+        "faehre",
+        "lego",
+        "detail",
+        "fertig",
+        "restaurant",
+        "spielzeug"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:9a60ebbc29c61d9f2d69cec4c385c9bcb46af0f47d1faa0267b10cf0f63341ae",
+    "path": "Chris-iPhone/IMG_0460.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-04T10:05:25+00:00",
+    "gps": {
+      "lat": 59.03809444444444,
+      "lon": 10.023433333333335
+    },
+    "probe": {
+      "captured_at": "2026-08-04T10:05:25+00:00",
+      "gps": {
+        "lat": 59.03809444444444,
+        "lon": 10.023433333333335
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.079,
+      "exposure": 0.995,
+      "score": 0.537
+    },
+    "id": "20260804-phone-9a60eb",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0460_c8ea19fd_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Junge baut konzentriert am Lego-City-Set im Bordrestaurant der Faehre, Bauanleitung aufgeschlagen.",
+      "tags": [
+        "faehre",
+        "lego",
+        "bauen",
+        "kind",
+        "restaurant",
+        "konzentriert"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a03292f0f8e8df784fb8a76ea1f16ba824ac2ecae37e491b99ceafa95d1647b6",
+    "path": "Chris-iPhone/IMG_0459.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-04T09:45:52+00:00",
+    "gps": {
+      "lat": 59.03809444444444,
+      "lon": 10.023433333333335
+    },
+    "probe": {
+      "captured_at": "2026-08-04T09:45:52+00:00",
+      "gps": {
+        "lat": 59.03809444444444,
+        "lon": 10.023433333333335
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.129,
+      "exposure": 0.888,
+      "score": 0.509
+    },
+    "id": "20260804-phone-a03292",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0459_630b75f3_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Junge baut Lego-Set am Restauranttisch der Faehre, Einzelteile ausgebreitet neben Getraenken.",
+      "tags": [
+        "faehre",
+        "lego",
+        "bauen",
+        "kind",
+        "restaurant",
+        "ueberfahrt"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ccbc5d7a1dbe88b8d994e2bb6a95e52a48b2635a7bb25736cbfc9cf0c7f55395",
+    "path": "Chris-iPhone/IMG_0461.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-04T10:41:12+00:00",
+    "gps": {
+      "lat": 58.53381666666667,
+      "lon": 9.939805555555555
+    },
+    "probe": {
+      "captured_at": "2026-08-04T10:41:12+00:00",
+      "gps": {
+        "lat": 58.53381666666667,
+        "lon": 9.939805555555555
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.038,
+      "exposure": 0.803,
+      "score": 0.421
+    },
+    "id": "20260804-phone-ccbc5d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0461_f54ecb20_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Junge jubelt begeistert im Bordrestaurant der Faehre, Softeisbecher auf dem Tisch neben ihm.",
+      "tags": [
+        "faehre",
+        "kind",
+        "jubel",
+        "eis",
+        "restaurant",
+        "ueberfahrt"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ec694554f4bc58622e3af37b10e54b60a0565e22cc4635033e35f07109075415",
+    "path": "Chris-iPhone/IMG_0444.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-04T06:17:02+00:00",
+    "gps": {
+      "lat": 59.19519444444444,
+      "lon": 9.585991666666667,
+      "elevation_m": 28.1
+    },
+    "probe": {
+      "captured_at": "2026-08-04T06:17:02+00:00",
+      "gps": {
+        "lat": 59.19519444444444,
+        "lon": 9.585991666666667,
+        "elevation_m": 28.1
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.056,
+      "exposure": 0.98,
+      "score": 0.518
+    },
+    "id": "20260804-phone-ec6945",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0444_bc7102e7_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Frau am Steuer im Gegenlicht der aufgehenden Sonne, Autobahn mit Leitplanke, starke Lens-Flares.",
+      "tags": [
+        "auto",
+        "fahrt",
+        "sonnenaufgang",
+        "gegenlicht",
+        "strasse",
+        "abreise"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
   }
 ]
