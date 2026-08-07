@@ -8226,6 +8226,55 @@
     }
   },
   {
+    "hash": "sha256:0a8843786f24440d604a5635cfda7b04e9b27164d3c8328bfbea84d08bc02d0f",
+    "path": "Christina-iPhone/IMG_2689.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T16:11:14+00:00",
+    "gps": {
+      "lat": 59.38955,
+      "lon": 9.404069444444445,
+      "elevation_m": 534.0
+    },
+    "probe": {
+      "captured_at": "2026-07-20T16:11:14+00:00",
+      "gps": {
+        "lat": 59.38955,
+        "lon": 9.404069444444445,
+        "elevation_m": 534.0
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.157,
+      "exposure": 0.962,
+      "score": 0.56
+    },
+    "id": "20260720-phone-0a8843",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2689_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Bärtiger Mann mit Cap rudert laechelnd ein Boot auf einem Waldsee, Wald und Wolkenhimmel im Hintergrund.",
+      "tags": [
+        "mann",
+        "boot",
+        "rudern",
+        "see",
+        "portraet",
+        "sommer"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:0bd1534d1d3d57ec2e4824e84df2a6c97a739ff9070b64e8241b239f7cd6e1eb",
     "path": "Chris-iPhone/IMG_9446.HEIC",
     "kind": "photo",
@@ -8373,6 +8422,56 @@
     }
   },
   {
+    "hash": "sha256:13f953da1745eea54f7120d133b4cdd2a70774facca694689f18f77b4711e893",
+    "path": "Christina-iPhone/IMG_2692.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T16:11:37+00:00",
+    "gps": {
+      "lat": 59.389602777777775,
+      "lon": 9.403808333333334,
+      "elevation_m": 538.6
+    },
+    "probe": {
+      "captured_at": "2026-07-20T16:11:37+00:00",
+      "gps": {
+        "lat": 59.389602777777775,
+        "lon": 9.403808333333334,
+        "elevation_m": 538.6
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.644,
+      "exposure": 0.833,
+      "score": 0.738
+    },
+    "id": "20260720-phone-13f953",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2692_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Weiter Blick ueber einen Waldsee mit dramatischem Wolkenhimmel, keine Personen im Bild.",
+      "tags": [
+        "see",
+        "wolken",
+        "himmel",
+        "wald",
+        "stimmung",
+        "sommer"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
     "hash": "sha256:1956e73cbaf0c570246d26788ec7952b44823b2300eea9ea3d81b38ed53c448b",
     "path": "Chris-iPhone/IMG_9447.HEIC",
     "kind": "photo",
@@ -8422,6 +8521,55 @@
     }
   },
   {
+    "hash": "sha256:210af00fb2708a123aeba79a5f569b8722d03bc317731649b7e499155f3b7a1b",
+    "path": "Christina-iPhone/IMG_2693.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T16:11:53+00:00",
+    "gps": {
+      "lat": 59.389808333333335,
+      "lon": 9.40361388888889,
+      "elevation_m": 537.4
+    },
+    "probe": {
+      "captured_at": "2026-07-20T16:11:53+00:00",
+      "gps": {
+        "lat": 59.389808333333335,
+        "lon": 9.40361388888889,
+        "elevation_m": 537.4
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.996,
+      "score": 0.998
+    },
+    "id": "20260720-phone-210af0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2693_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Selfie eines Paares im Ruderboot auf dem Waldsee, Frau im Vordergrund laechelt in die Kamera, Mann rudert.",
+      "tags": [
+        "paar",
+        "selfie",
+        "boot",
+        "see",
+        "rudern",
+        "sommer"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:2308e592ad30fa4d830fc1c39b701c135d1c3d3f842bfb8b13f1491be328355b",
     "path": "Chris-iPhone/IMG_9468.HEIC",
     "kind": "photo",
@@ -8467,6 +8615,56 @@
       "people": true,
       "usable_as": [
         "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:28062d77d706c580a363690e1c4b671767f5dde68d14e65d2f365723d3af2816",
+    "path": "Christina-iPhone/IMG_2673.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T13:49:41+00:00",
+    "gps": {
+      "lat": 59.38158055555556,
+      "lon": 9.414330555555557,
+      "elevation_m": 587.7
+    },
+    "probe": {
+      "captured_at": "2026-07-20T13:49:41+00:00",
+      "gps": {
+        "lat": 59.38158055555556,
+        "lon": 9.414330555555557,
+        "elevation_m": 587.7
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.639,
+      "exposure": 0.762,
+      "score": 0.7
+    },
+    "id": "20260720-phone-28062d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2673_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weiter Blick von einer Anhoehe ueber bewaldete Huegelketten unter blauem Himmel mit Schoenwetterwolken.",
+      "tags": [
+        "aussicht",
+        "wald",
+        "huegel",
+        "himmel",
+        "sommer",
+        "tageslicht"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
       ]
     }
   },
@@ -8757,6 +8955,55 @@
         "rucksack",
         "gehen",
         "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4e6fbbe45157c94c84bd7ad4753f6fedee0fa77975312353d87f8632def66272",
+    "path": "Christina-iPhone/IMG_2676.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T15:42:04+00:00",
+    "gps": {
+      "lat": 59.38833611111111,
+      "lon": 9.406077777777778,
+      "elevation_m": 536.6
+    },
+    "probe": {
+      "captured_at": "2026-07-20T15:42:04+00:00",
+      "gps": {
+        "lat": 59.38833611111111,
+        "lon": 9.406077777777778,
+        "elevation_m": 536.6
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.424,
+      "exposure": 0.963,
+      "score": 0.694
+    },
+    "id": "20260720-phone-4e6fbb",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2676_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Nahaufnahme desselben Ruderboots mit zwei Personen vor bewaldeten Felsklippen am Fjordsee.",
+      "tags": [
+        "see",
+        "fjord",
+        "boot",
+        "personen",
+        "felsen",
+        "wald"
       ],
       "people": true,
       "usable_as": [
@@ -9059,6 +9306,56 @@
     }
   },
   {
+    "hash": "sha256:682f0c4836ed6c92bfd6eab52afec0bf8493e840671e866474d6755e43e12772",
+    "path": "Christina-iPhone/IMG_2675.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T15:41:59+00:00",
+    "gps": {
+      "lat": 59.388333333333335,
+      "lon": 9.406075,
+      "elevation_m": 536.3
+    },
+    "probe": {
+      "captured_at": "2026-07-20T15:41:59+00:00",
+      "gps": {
+        "lat": 59.388333333333335,
+        "lon": 9.406075,
+        "elevation_m": 536.3
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.393,
+      "exposure": 0.871,
+      "score": 0.632
+    },
+    "id": "20260720-phone-682f0c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2675_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Ruhiger Fjordsee mit Felsklippen und Wald, ein Ruderboot mit Personen spiegelt sich im glatten Wasser.",
+      "tags": [
+        "see",
+        "fjord",
+        "boot",
+        "spiegelung",
+        "felsen",
+        "wald"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:7ac1fbdc7db56d19abbffea6576c1fce4ae3a3c66cb7ef88135abf92d5b66375",
     "path": "Chris-iPhone/IMG_9456.HEIC",
     "kind": "photo",
@@ -9151,6 +9448,55 @@
         "landschaft"
       ],
       "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7d5c725e3ba63101396351becb587557cf867d382db3d422f202e63ea106a37f",
+    "path": "Christina-iPhone/IMG_2696.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T16:13:20+00:00",
+    "gps": {
+      "lat": 59.390008333333334,
+      "lon": 9.403280555555556,
+      "elevation_m": 536.8
+    },
+    "probe": {
+      "captured_at": "2026-07-20T16:13:20+00:00",
+      "gps": {
+        "lat": 59.390008333333334,
+        "lon": 9.403280555555556,
+        "elevation_m": 536.8
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.994,
+      "exposure": 0.811,
+      "score": 0.903
+    },
+    "id": "20260720-phone-7d5c72",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2696_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mann rudert das Boot direkt auf die Kamera zu, dramatischer Wolkenhimmel und Waldufer im Hintergrund.",
+      "tags": [
+        "mann",
+        "boot",
+        "rudern",
+        "see",
+        "wolken",
+        "sommer"
+      ],
+      "people": true,
       "usable_as": [
         "b-roll"
       ]
@@ -9300,6 +9646,105 @@
       "people": true,
       "usable_as": [
         "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a0e8dc8553bb846cc914e792b4857a2ce078ba3cce70fff08055ee3e0956c620",
+    "path": "Christina-iPhone/IMG_2680.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T15:42:45+00:00",
+    "gps": {
+      "lat": 59.388358333333336,
+      "lon": 9.406097222222222,
+      "elevation_m": 539.1
+    },
+    "probe": {
+      "captured_at": "2026-07-20T15:42:45+00:00",
+      "gps": {
+        "lat": 59.388358333333336,
+        "lon": 9.406097222222222,
+        "elevation_m": 539.1
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.997,
+      "exposure": 0.851,
+      "score": 0.924
+    },
+    "id": "20260720-phone-a0e8dc",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2680_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Selfie einer laechelnden Frau mit Sonnenbrille auf einem Holzsteg an einem Waldsee, im Hintergrund eine Huette.",
+      "tags": [
+        "selfie",
+        "portraet",
+        "see",
+        "steg",
+        "waldsee",
+        "sommer"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a24f8fde3c5641f99607cb97416c69c0b49ff4e1ce36f36ef902166d154c3a7a",
+    "path": "Christina-iPhone/IMG_2682.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T15:43:13+00:00",
+    "gps": {
+      "lat": 59.38836388888889,
+      "lon": 9.40608888888889,
+      "elevation_m": 539.6
+    },
+    "probe": {
+      "captured_at": "2026-07-20T15:43:13+00:00",
+      "gps": {
+        "lat": 59.38836388888889,
+        "lon": 9.40608888888889,
+        "elevation_m": 539.6
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.845,
+      "score": 0.922
+    },
+    "id": "20260720-phone-a24f8f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2682_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Stiller Waldsee mit Spiegelung von Wolkenhimmel und Nadelwaldufer, kein Wind.",
+      "tags": [
+        "see",
+        "spiegelung",
+        "wald",
+        "himmel",
+        "ruhig",
+        "sommer"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "establisher"
       ]
     }
   },
@@ -9494,6 +9939,55 @@
       "people": true,
       "usable_as": [
         "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:beef0240147a6ebfab9bfba6519f5c9f05d6fb400172d54502df6cf3d0a767f0",
+    "path": "Christina-iPhone/IMG_2688.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T15:58:38+00:00",
+    "gps": {
+      "lat": 59.388263888888886,
+      "lon": 9.40611111111111,
+      "elevation_m": 538.7
+    },
+    "probe": {
+      "captured_at": "2026-07-20T15:58:38+00:00",
+      "gps": {
+        "lat": 59.388263888888886,
+        "lon": 9.40611111111111,
+        "elevation_m": 538.7
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.474,
+      "exposure": 0.909,
+      "score": 0.692
+    },
+    "id": "20260720-phone-beef02",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2688_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Zwei Kinder sitzen auf einer Holzbank am Waldsee und teilen sich einen Snack, Felsufer und Wald spiegeln sich im Wasser.",
+      "tags": [
+        "kinder",
+        "see",
+        "bank",
+        "wald",
+        "spiegelung",
+        "sommer"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
       ]
     }
   },
@@ -9935,6 +10429,56 @@
       "people": true,
       "usable_as": [
         "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:eabf37fe1efb35102a75e6ee8150150f0bc95b60533de81dbee436efcdedaa94",
+    "path": "Christina-iPhone/IMG_2683.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-20T15:43:20+00:00",
+    "gps": {
+      "lat": 59.388355555555556,
+      "lon": 9.406075,
+      "elevation_m": 539.6
+    },
+    "probe": {
+      "captured_at": "2026-07-20T15:43:20+00:00",
+      "gps": {
+        "lat": 59.388355555555556,
+        "lon": 9.406075,
+        "elevation_m": 539.6
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.823,
+      "score": 0.911
+    },
+    "id": "20260720-phone-eabf37",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2683_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kleine Blockhuette an einem Waldsee-Ufer zwischen Kiefern, eine Person steht am Wasser, Felsplatte im Vordergrund.",
+      "tags": [
+        "huette",
+        "see",
+        "wald",
+        "person",
+        "felsen",
+        "camping"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
       ]
     }
   },
@@ -12895,6 +13439,55 @@
     }
   },
   {
+    "hash": "sha256:100f4e2cf97dcaf9ad26cbbf67bab2c22ede993fe9fd5426b41b32b02d0e0a29",
+    "path": "Christina-iPhone/IMG_2795.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-22T12:42:49+00:00",
+    "gps": {
+      "lat": 59.38158055555556,
+      "lon": 9.414552777777779,
+      "elevation_m": 590.1
+    },
+    "probe": {
+      "captured_at": "2026-07-22T12:42:49+00:00",
+      "gps": {
+        "lat": 59.38158055555556,
+        "lon": 9.414552777777779,
+        "elevation_m": 590.1
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.148,
+      "exposure": 0.95,
+      "score": 0.549
+    },
+    "id": "20260722-phone-100f4e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2795_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Familie entspannt im holzvertaefelten Wohnzimmer einer Huette, Kinder auf dem Sofa, Mann liegt vor dem Fernseher am Boden.",
+      "tags": [
+        "familie",
+        "huette",
+        "wohnzimmer",
+        "kinder",
+        "drinnen",
+        "entspannen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:2a3d3714608a71e01a1ad8fac9aab98ec5fa07b480240e4b5835c282c3e79dbe",
     "path": "Chris-iPhone/IMG_9514.HEIC",
     "kind": "photo",
@@ -13087,6 +13680,56 @@
       "people": true,
       "usable_as": [
         "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7550b0b51f8fb8fa4c2ff64f70a01c52264dc6d0f418f6dc5cd553c38339925a",
+    "path": "Christina-iPhone/IMG_2798.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-22T12:45:13+00:00",
+    "gps": {
+      "lat": 59.3815,
+      "lon": 9.414325,
+      "elevation_m": 585.3
+    },
+    "probe": {
+      "captured_at": "2026-07-22T12:45:13+00:00",
+      "gps": {
+        "lat": 59.3815,
+        "lon": 9.414325,
+        "elevation_m": 585.3
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.903,
+      "score": 0.951
+    },
+    "id": "20260722-phone-7550b0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2798_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "POV-Aufnahme mit Buch und hochgelegten Fuessen auf einer Huettenterrasse mit Blick auf bewaldete Berglandschaft.",
+      "tags": [
+        "huette",
+        "terrasse",
+        "lesen",
+        "entspannen",
+        "aussicht",
+        "pov"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "establisher"
       ]
     }
   },
@@ -13479,6 +14122,55 @@
       "people": true,
       "usable_as": [
         "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:fb8b00541ded3dda0853331e4cb220f0674cb79dcd6f3df4fea305811dafad28",
+    "path": "Christina-iPhone/IMG_2804.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-22T18:06:32+00:00",
+    "gps": {
+      "lat": 59.33305277777778,
+      "lon": 9.484886111111111,
+      "elevation_m": 253.7
+    },
+    "probe": {
+      "captured_at": "2026-07-22T18:06:32+00:00",
+      "gps": {
+        "lat": 59.33305277777778,
+        "lon": 9.484886111111111,
+        "elevation_m": 253.7
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.041,
+      "exposure": 0.792,
+      "score": 0.416
+    },
+    "id": "20260722-phone-fb8b00",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2804_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Junge schlaeft im Kindersitz waehrend der Autofahrt, Fussball-Trikot, Berglandschaft durchs Fenster erkennbar.",
+      "tags": [
+        "kind",
+        "auto",
+        "schlafen",
+        "fahrt",
+        "portraet",
+        "unterwegs"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
       ]
     }
   },
@@ -15650,6 +16342,56 @@
     }
   },
   {
+    "hash": "sha256:0fff0f653fbae326ea666c68ec9b4bcd1a097f05d14bd5e10845bed2630427d0",
+    "path": "Christina-iPhone/IMG_2830.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T17:42:24+00:00",
+    "gps": {
+      "lat": 60.50041944444445,
+      "lon": 8.209938888888889,
+      "elevation_m": 1038.2
+    },
+    "probe": {
+      "captured_at": "2026-07-23T17:42:24+00:00",
+      "gps": {
+        "lat": 60.50041944444445,
+        "lon": 8.209938888888889,
+        "elevation_m": 1038.2
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.972,
+      "exposure": 0.977,
+      "score": 0.974
+    },
+    "id": "20260723-phone-0fff0f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2830_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Mann und Kind blicken auf einen Bergsee (Hakkeset-tjørne) unter bewoelktem Himmel, Hinweisschild mit Ortsname im Vordergrund.",
+      "tags": [
+        "bergsee",
+        "wanderung",
+        "schild",
+        "hochebene",
+        "bewoelkt",
+        "familie"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:10b41ae7a11ac6a95e261128d2dd4f2a3c57883ca5f98b1b3a622ec7acf788c2",
     "path": "Chris-iPhone/IMG_9552.HEIC",
     "kind": "photo",
@@ -15944,6 +16686,56 @@
     }
   },
   {
+    "hash": "sha256:304617ec1c06284b3403bf394167cd933199fd40b044f96d630fe41aa506263e",
+    "path": "Christina-iPhone/IMG_2828.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T16:30:25+00:00",
+    "gps": {
+      "lat": 60.50161388888889,
+      "lon": 8.217425,
+      "elevation_m": 1043.0
+    },
+    "probe": {
+      "captured_at": "2026-07-23T16:30:25+00:00",
+      "gps": {
+        "lat": 60.50161388888889,
+        "lon": 8.217425,
+        "elevation_m": 1043.0
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.23,
+      "exposure": 0.781,
+      "score": 0.505
+    },
+    "id": "20260723-phone-304617",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2828_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Traditionelle Holzstube mit rustikalem Esstisch, Rentierfell an der Wand und gemustertem Gardinen-Vorhang.",
+      "tags": [
+        "huette",
+        "interieur",
+        "holz",
+        "esstisch",
+        "tradition",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "cutaway"
+      ]
+    }
+  },
+  {
     "hash": "sha256:336fcb1a2b3ec7c1b3129f5f68918a5bfa88f3e1a4e1de14b384813a5ef85c32",
     "path": "Chris-iPhone/IMG_9545.HEIC",
     "kind": "photo",
@@ -16185,6 +16977,55 @@
       "people": false,
       "usable_as": [
         "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:607e8b8e54e3928e6ce564d65595e6c30cfcb022214349d578d7a1255b7a909a",
+    "path": "Christina-iPhone/IMG_2848.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T19:03:18+00:00",
+    "gps": {
+      "lat": 60.501641666666664,
+      "lon": 8.217283333333333,
+      "elevation_m": 1040.7
+    },
+    "probe": {
+      "captured_at": "2026-07-23T19:03:18+00:00",
+      "gps": {
+        "lat": 60.501641666666664,
+        "lon": 8.217283333333333,
+        "elevation_m": 1040.7
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.1,
+      "exposure": 0.861,
+      "score": 0.48
+    },
+    "id": "20260723-phone-607e8b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2848_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Vater und Sohn laecheln am Restauranttisch in einer traditionell dekorierten Holzstube, Sohn zeigt Peace-Zeichen.",
+      "tags": [
+        "vater",
+        "sohn",
+        "restaurant",
+        "portraet",
+        "holzstube",
+        "essen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
       ]
     }
   },
@@ -16581,6 +17422,55 @@
     }
   },
   {
+    "hash": "sha256:8e233f17f3920b47d6708a81b544a44d738b2b9b7787e4901c78e8c5e8a3ef57",
+    "path": "Christina-iPhone/IMG_2833.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T18:34:00+00:00",
+    "gps": {
+      "lat": 60.501575,
+      "lon": 8.217455555555556,
+      "elevation_m": 1041.1
+    },
+    "probe": {
+      "captured_at": "2026-07-23T18:34:00+00:00",
+      "gps": {
+        "lat": 60.501575,
+        "lon": 8.217455555555556,
+        "elevation_m": 1041.1
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.272,
+      "exposure": 0.933,
+      "score": 0.602
+    },
+    "id": "20260723-phone-8e233f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2833_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Vater und Sohn spielen ein Wuerfelspiel am Holztisch in einer gemuetlichen Huettenstube.",
+      "tags": [
+        "spiel",
+        "huette",
+        "vater",
+        "sohn",
+        "drinnen",
+        "brettspiel"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:952b4083a7546ce003289caabe002b7199616d6991d68bb08be60c6adb67bb92",
     "path": "Chris-iPhone/IMG_9566.HEIC",
     "kind": "photo",
@@ -16920,6 +17810,106 @@
       "people": true,
       "usable_as": [
         "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c8e2313cb5783926028ca67605b746bded29217d4c9b3fac300241324dc67dd1",
+    "path": "Christina-iPhone/IMG_2832.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T17:58:54+00:00",
+    "gps": {
+      "lat": 60.500933333333336,
+      "lon": 8.215844444444445,
+      "elevation_m": 1038.8
+    },
+    "probe": {
+      "captured_at": "2026-07-23T17:58:54+00:00",
+      "gps": {
+        "lat": 60.500933333333336,
+        "lon": 8.215844444444445,
+        "elevation_m": 1038.8
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.897,
+      "score": 0.949
+    },
+    "id": "20260723-phone-c8e231",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2832_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Mann und Kind gehen haendehaltend einen Schotterweg zu einer Grasdach-Huette hinauf, bewoelkter Himmel.",
+      "tags": [
+        "wanderung",
+        "huette",
+        "grasdach",
+        "weg",
+        "familie",
+        "hochebene"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e74602471144dcaa1ed6b1506fb1269a91b57bb784599e98953962b4b04114b3",
+    "path": "Christina-iPhone/IMG_2815.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-23T14:57:37+00:00",
+    "gps": {
+      "lat": 60.10820833333334,
+      "lon": 8.738080555555555,
+      "elevation_m": 638.3
+    },
+    "probe": {
+      "captured_at": "2026-07-23T14:57:37+00:00",
+      "gps": {
+        "lat": 60.10820833333334,
+        "lon": 8.738080555555555,
+        "elevation_m": 638.3
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.951,
+      "score": 0.975
+    },
+    "id": "20260723-phone-e74602",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2815_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Steiniger Wildbach im Wald, bewoelkter Himmel, keine Personen im Bild.",
+      "tags": [
+        "fluss",
+        "wildbach",
+        "steine",
+        "wald",
+        "natur",
+        "bewoelkt"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "establisher"
       ]
     }
   },
@@ -22015,6 +23005,55 @@
     }
   },
   {
+    "hash": "sha256:20ab838b8b0e6e9871b6c3ba379dccf697c108e5d8679c64b855d5e667115254",
+    "path": "Christina-iPhone/IMG_2901.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T13:37:17+00:00",
+    "gps": {
+      "lat": 60.91986111111111,
+      "lon": 7.210105555555556,
+      "elevation_m": 336.9
+    },
+    "probe": {
+      "captured_at": "2026-07-24T13:37:17+00:00",
+      "gps": {
+        "lat": 60.91986111111111,
+        "lon": 7.210105555555556,
+        "elevation_m": 336.9
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.02,
+      "exposure": 0.976,
+      "score": 0.498
+    },
+    "id": "20260724-phone-20ab83",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2901_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Stau auf enger, gruener Bergstrasse mit mehreren Fahrzeugen und Reisebus, Blick durch die Windschutzscheibe.",
+      "tags": [
+        "stau",
+        "autofahrt",
+        "strasse",
+        "berge",
+        "verkehr",
+        "unterwegs"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:2da083a7a1d12a0ba0554bef94398bb2b3c003d8cd41fc8037556eb812aba448",
     "path": "Chris-iPhone/IMG_9651.HEIC",
     "kind": "photo",
@@ -22309,6 +23348,154 @@
     }
   },
   {
+    "hash": "sha256:3dedb940244cb5ff4248ce90511c1bd2a37d7b1cebd20e4cc6db55e8765ef54e",
+    "path": "Christina-iPhone/IMG_2853.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T09:42:57+00:00",
+    "gps": {
+      "lat": 60.50171388888889,
+      "lon": 8.217269444444444,
+      "elevation_m": 1042.1
+    },
+    "probe": {
+      "captured_at": "2026-07-24T09:42:57+00:00",
+      "gps": {
+        "lat": 60.50171388888889,
+        "lon": 8.217269444444444,
+        "elevation_m": 1042.1
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.125,
+      "exposure": 0.79,
+      "score": 0.457
+    },
+    "id": "20260724-phone-3dedb9",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2853_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Mann mit Kaffeetasse und Tellern in einer rustikalen Holzstube mit gedecktem Fruehstueckstisch.",
+      "tags": [
+        "mann",
+        "huette",
+        "fruehstueck",
+        "holzstube",
+        "portraet",
+        "drinnen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:3e6f37677fc4bcda733d9b32469763ff04e920a8cee7adc25cfd817a95c029ec",
+    "path": "Christina-iPhone/IMG_2849.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T09:08:53+00:00",
+    "gps": {
+      "lat": 60.50170833333333,
+      "lon": 8.217308333333333,
+      "elevation_m": 1043.0
+    },
+    "probe": {
+      "captured_at": "2026-07-24T09:08:53+00:00",
+      "gps": {
+        "lat": 60.50170833333333,
+        "lon": 8.217308333333333,
+        "elevation_m": 1043.0
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.207,
+      "exposure": 0.777,
+      "score": 0.492
+    },
+    "id": "20260724-phone-3e6f37",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2849_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Fruehstueckstisch in einer Huette, Vater und Sohn mit Toast und Orangensaft, norwegisch dekorierte Stube im Hintergrund.",
+      "tags": [
+        "fruehstueck",
+        "vater",
+        "sohn",
+        "huette",
+        "essen",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4112ca512de767d884395afd611d74ad5ccc28b3416d6f60df51fe33449d98e2",
+    "path": "Christina-iPhone/IMG_2857.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T10:09:32+00:00",
+    "gps": {
+      "lat": 60.50168611111111,
+      "lon": 8.21723888888889,
+      "elevation_m": 1043.7
+    },
+    "probe": {
+      "captured_at": "2026-07-24T10:09:32+00:00",
+      "gps": {
+        "lat": 60.50168611111111,
+        "lon": 8.21723888888889,
+        "elevation_m": 1043.7
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.081,
+      "exposure": 0.615,
+      "score": 0.348
+    },
+    "id": "20260724-phone-4112ca",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2857_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Holzvertaefelter Flur einer Berghuette mit gerahmten Bildern, im Hintergrund eine Person am Esstisch.",
+      "tags": [
+        "huette",
+        "flur",
+        "holz",
+        "interieur",
+        "dekoration",
+        "drinnen"
+      ],
+      "people": true,
+      "usable_as": [
+        "cutaway",
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:41865b18511daf51c9a7ba7acbefd98ab47f8c68b84df3072a305eb1af298277",
     "path": "Chris-iPhone/IMG_9639.HEIC",
     "kind": "photo",
@@ -22505,6 +23692,56 @@
     }
   },
   {
+    "hash": "sha256:50406205266c5c18ba5fa83085cdd2c686fe1d4233783d46e0cb0a6db6f11406",
+    "path": "Christina-iPhone/IMG_2912.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T14:31:35+00:00",
+    "gps": {
+      "lat": 60.921363888888884,
+      "lon": 7.203,
+      "elevation_m": 142.8
+    },
+    "probe": {
+      "captured_at": "2026-07-24T14:31:35+00:00",
+      "gps": {
+        "lat": 60.921363888888884,
+        "lon": 7.203,
+        "elevation_m": 142.8
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.354,
+      "exposure": 0.997,
+      "score": 0.675
+    },
+    "id": "20260724-phone-504062",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2912_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Grau-blaues Haus mit Terrasse und Blick auf einen tiefen Fjord zwischen steilen Berghaengen unter Wolken.",
+      "tags": [
+        "fjord",
+        "haus",
+        "terrasse",
+        "berge",
+        "unterkunft",
+        "panorama"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:5707f84000593eadc62bb9b4111e59b643ab997b986849fc84642dd8ca6dd0d2",
     "path": "Chris-iPhone/IMG_9652.HEIC",
     "kind": "photo",
@@ -22694,6 +23931,56 @@
       ],
       "people": true,
       "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5bd7533d04e30bada78b3fd16dfb8f86b8f36c53414b07b36b99b09a41cd7b5d",
+    "path": "Christina-iPhone/IMG_2872.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T11:54:41+00:00",
+    "gps": {
+      "lat": 60.71595277777778,
+      "lon": 7.822297222222222,
+      "elevation_m": 997.4
+    },
+    "probe": {
+      "captured_at": "2026-07-24T11:54:41+00:00",
+      "gps": {
+        "lat": 60.71595277777778,
+        "lon": 7.822297222222222,
+        "elevation_m": 997.4
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.3,
+      "exposure": 0.998,
+      "score": 0.649
+    },
+    "id": "20260724-phone-5bd753",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2872_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Fahraufnahme aus dem Auto entlang einer Fjordstrasse mit rotem Holzhaus, Bergpanorama und bewoelktem Himmel.",
+      "tags": [
+        "autofahrt",
+        "fjord",
+        "strasse",
+        "berge",
+        "haus",
+        "unterwegs"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
         "establisher"
       ]
     }
@@ -23091,6 +24378,55 @@
     }
   },
   {
+    "hash": "sha256:84ed90505ccf89f6cbc13ce8aa318f66abd92e8fe7c2c147b86fb6781271310a",
+    "path": "Christina-iPhone/IMG_2891.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T12:51:50+00:00",
+    "gps": {
+      "lat": 60.85537777777778,
+      "lon": 7.306305555555555,
+      "elevation_m": 499.2
+    },
+    "probe": {
+      "captured_at": "2026-07-24T12:51:50+00:00",
+      "gps": {
+        "lat": 60.85537777777778,
+        "lon": 7.306305555555555,
+        "elevation_m": 499.2
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.742,
+      "exposure": 0.98,
+      "score": 0.861
+    },
+    "id": "20260724-phone-84ed90",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2891_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Weiter Blick von einem Aussichtspunkt ueber einen tiefen norwegischen Fjord mit steilen Felswaenden und Seilbahnstation auf dem Gipfel.",
+      "tags": [
+        "fjord",
+        "aussicht",
+        "berge",
+        "seilbahn",
+        "panorama",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
     "hash": "sha256:87885e1b9abc3bb9bd642cb5297c36d6bfe164f073da68d35da77a6fd79931b0",
     "path": "Chris-iPhone/IMG_9698.HEIC",
     "kind": "photo",
@@ -23281,6 +24617,55 @@
         "blumen"
       ],
       "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:9a383cf36ea08ba1ea003efc53bd1826ed4691154191ac96a892ee008115e4ba",
+    "path": "Christina-iPhone/IMG_2897.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T13:36:22+00:00",
+    "gps": {
+      "lat": 60.91473333333333,
+      "lon": 7.203227777777778,
+      "elevation_m": 323.7
+    },
+    "probe": {
+      "captured_at": "2026-07-24T13:36:22+00:00",
+      "gps": {
+        "lat": 60.91473333333333,
+        "lon": 7.203227777777778,
+        "elevation_m": 323.7
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.304,
+      "exposure": 0.972,
+      "score": 0.638
+    },
+    "id": "20260724-phone-9a383c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2897_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Fahraufnahme durch die Windschutzscheibe auf einer engen, gruen ueberwucherten Bergstrasse hinter einem vorausfahrenden Auto.",
+      "tags": [
+        "autofahrt",
+        "strasse",
+        "berge",
+        "gruen",
+        "unterwegs",
+        "verkehr"
+      ],
+      "people": false,
       "usable_as": [
         "b-roll"
       ]
@@ -23532,6 +24917,55 @@
     }
   },
   {
+    "hash": "sha256:be0ddb88210c5f4879d406121d868dac3782cd1a8e0bd480c97f02aae01571a5",
+    "path": "Christina-iPhone/IMG_2859.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T10:10:06+00:00",
+    "gps": {
+      "lat": 60.501641666666664,
+      "lon": 8.217205555555555,
+      "elevation_m": 1041.7
+    },
+    "probe": {
+      "captured_at": "2026-07-24T10:10:06+00:00",
+      "gps": {
+        "lat": 60.501641666666664,
+        "lon": 8.217205555555555,
+        "elevation_m": 1041.7
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.404,
+      "exposure": 0.762,
+      "score": 0.583
+    },
+    "id": "20260724-phone-be0ddb",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2859_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Schlafzimmer mit Etagenbett und Nachttischlampe in holzvertaefelter Huette, niemand im Bild.",
+      "tags": [
+        "huette",
+        "schlafzimmer",
+        "etagenbett",
+        "interieur",
+        "holz",
+        "unterkunft"
+      ],
+      "people": false,
+      "usable_as": [
+        "cutaway"
+      ]
+    }
+  },
+  {
     "hash": "sha256:be1f0dcf931414496eede16778a6ac85b58f1991a19ad16d9e06e900868890fa",
     "path": "Chris-iPhone/IMG_9687.HEIC",
     "kind": "photo",
@@ -23775,6 +25209,56 @@
     }
   },
   {
+    "hash": "sha256:e94c5427b32bc73be39e76b48e871a0abcea438e91bbdc07fa1ffec8c5fc155d",
+    "path": "Christina-iPhone/IMG_2904.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T13:43:19+00:00",
+    "gps": {
+      "lat": 60.92528055555555,
+      "lon": 7.211422222222223,
+      "elevation_m": 389.4
+    },
+    "probe": {
+      "captured_at": "2026-07-24T13:43:19+00:00",
+      "gps": {
+        "lat": 60.92528055555555,
+        "lon": 7.211422222222223,
+        "elevation_m": 389.4
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.072,
+      "exposure": 0.903,
+      "score": 0.487
+    },
+    "id": "20260724-phone-e94c54",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2904_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weiter Blick auf einen nebelverhangenen Fjord mit steilen Berghaengen unter dichter Wolkendecke.",
+      "tags": [
+        "fjord",
+        "berge",
+        "nebel",
+        "wolken",
+        "panorama",
+        "regenwetter"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:e9bffbc2f0fef921d4b23b83dd92ba7edec769a444fe9f32f822b91a0e3b2b5e",
     "path": "Chris-iPhone/IMG_9633.HEIC",
     "kind": "photo",
@@ -23965,6 +25449,104 @@
         "landschaft"
       ],
       "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f1b49e4ecf7e05ce3b5876108dceaaa5a9b6577e7cda5362848b2922dec7dae2",
+    "path": "Christina-iPhone/IMG_2914.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T14:31:53+00:00",
+    "gps": {
+      "lat": 60.92091388888888,
+      "lon": 7.2032138888888895,
+      "elevation_m": 138.2
+    },
+    "probe": {
+      "captured_at": "2026-07-24T14:31:53+00:00",
+      "gps": {
+        "lat": 60.92091388888888,
+        "lon": 7.2032138888888895,
+        "elevation_m": 138.2
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.034,
+      "exposure": 0.961,
+      "score": 0.498
+    },
+    "id": "20260724-phone-f1b49e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2914_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Symmetrischer Blick den engen Fjord entlang zwischen zwei steilen Berghaengen unter dichter Wolkendecke.",
+      "tags": [
+        "fjord",
+        "berge",
+        "panorama",
+        "wolken",
+        "symmetrie",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f902b0ecc1ee18e3b91d9f119416a856a3ba8aefaff384f70ff5d111380d6005",
+    "path": "Christina-iPhone/IMG_2900.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T13:36:35+00:00",
+    "gps": {
+      "lat": 60.91983333333333,
+      "lon": 7.210008333333334,
+      "elevation_m": 329.3
+    },
+    "probe": {
+      "captured_at": "2026-07-24T13:36:35+00:00",
+      "gps": {
+        "lat": 60.91983333333333,
+        "lon": 7.210008333333334,
+        "elevation_m": 329.3
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.624,
+      "exposure": 0.98,
+      "score": 0.802
+    },
+    "id": "20260724-phone-f902b0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2900_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Familien-Selfie im Auto, Mutter und Vater lachend im Vordergrund, Kind auf dem Ruecksitz laechelt.",
+      "tags": [
+        "familie",
+        "auto",
+        "selfie",
+        "portraet",
+        "unterwegs",
+        "lachen"
+      ],
+      "people": true,
       "usable_as": [
         "b-roll"
       ]
