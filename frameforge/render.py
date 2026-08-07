@@ -469,8 +469,9 @@ def build_filtergraph(
         if audio.fade_out_s > 0:
             fade_start = max(0.0, dur - audio.fade_out_s)
             fades += f",afade=t=out:st={fade_start:.3f}:d={audio.fade_out_s:.3f}"
+        src_end = audio.src_in + dur
         filters.append(
-            f"[{idx}:a]atrim=start=0:end={dur},asetpts=PTS-STARTPTS{fades},"
+            f"[{idx}:a]atrim=start={audio.src_in}:end={src_end},asetpts=PTS-STARTPTS{fades},"
             f"adelay={delay_ms}|{delay_ms},volume={gain}[{label}]"
         )
         audio_labels.append(label)

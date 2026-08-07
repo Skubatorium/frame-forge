@@ -172,15 +172,29 @@ def _check_overlay_readability(timeline: Timeline) -> list[str]:
 
 
 def _check_clip_repetition(timeline: Timeline) -> list[str]:
-    counts: dict[str, int] = {}
+    """Mehr als `MAX_ASSET_REPEATS` Verwendungen desselben Assets sind meist ein Versehen —
+    ausser der Timeline-Builder markiert jede Verwendung explizit als beabsichtigt (z.B. ein
+    einzelner langer Quellclip, der fuer einen Klimax-Beat in mehrere Sub-Segmente zerlegt
+    wird). Dafuer traegt jeder betroffene `VideoClip` das Zusatzfeld `intentional_repeat: true`
+    (erlaubt durch `extra="allow"` im Schema) plus idealerweise eine `note` mit Begruendung.
+    Nur wenn *alle* Verwendungen eines Assets so markiert sind, wird die Wiederholung nicht als
+    Fehler gemeldet.
+    """
+    clips_by_asset: dict[str, list] = {}
     for clip in timeline.tracks.video:
-        counts[clip.asset] = counts.get(clip.asset, 0) + 1
-    return [
-        f"Asset '{asset_id}' wird {count}x in der Timeline verwendet (> {MAX_ASSET_REPEATS}) "
-        f"— ggf. unbeabsichtigte Wiederholung"
-        for asset_id, count in counts.items()
-        if count > MAX_ASSET_REPEATS
-    ]
+        clips_by_asset.setdefault(clip.asset, []).append(clip)
+
+    issues = []
+    for asset_id, clips in clips_by_asset.items():
+        if len(clips) <= MAX_ASSET_REPEATS:
+            continue
+        if all(getattr(clip, "intentional_repeat", False) for clip in clips):
+            continue
+        issues.append(
+            f"Asset '{asset_id}' wird {len(clips)}x in der Timeline verwendet "
+            f"(> {MAX_ASSET_REPEATS}) — ggf. unbeabsichtigte Wiederholung"
+        )
+    return issues
 
 
 def _check_against_brief(timeline: Timeline, brief: dict) -> list[str]:

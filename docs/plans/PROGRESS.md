@@ -2017,3 +2017,38 @@ Nachtrag waere ein kleiner CLI-Befehl `frameforge analyze-music <projekt> <datei
 
 **Naechster Schritt:** `/ff-brief norwegen-2026 drone-edit` mit obigen Vorgaben, danach
 Beat-Sheet + Timeline bauen.
+
+### Beat-Sheet + Timeline fuer `drone-edit` gebaut (2026-08-07)
+
+`/ff-build norwegen-2026 drone-edit` durchlaufen. Export ist jetzt **TIMELINE** (Gate
+`frameforge build` gruen).
+
+- **Beat-Sheet** (`story-architect`, Opus): 10 Kapitel K0–K9, 720 s Ziellaenge, chronologisch,
+  reiner Drohnen-Pool (`source=drone`, `rating>=3`, 280 Clips verfuegbar).
+  - 25.07. und 27.07. ohne Drohnenmaterial (Regen bzw. reines iPhone-Doku in Geiranger) — ueber
+    Nachbartage erzaehlt.
+  - `exclude: true`-Clips respektiert (u. a. 31.07.-Clip "Drohne in Ast").
+  - `original_audio_policy: ambience_only` aus dem Preset fuer diesen Export unbrauchbar
+    (Drohnen-Rotorgeraeusch) — bewusst auf reine Musik umgestellt.
+  - Intro-Grafik: Template deckt Titel/Unterzeile/Einblenden ab, aber nicht "versetzte
+    Unterzeile" oder Flaggen-Motiv. Nutzer hat sich fuer **Fallback** (Template pur, keine
+    Flagge) entschieden statt Grafik-Prompt zu beauftragen.
+- **Timeline** (`timeline-builder`, Sonnet): 719,76 s, 97 Video-Clips (95 Assets), 3 Audio-Clips,
+  1 Titel-Overlay. K8 (01.08., "letzte Passstrasse") entfallen — indiziertes Material war
+  Motorradtreffen statt der vorgesehenen Solo-Szene; Budget auf K7/K9 verteilt (Beat-Sheet-eigene
+  Fallback-Regel). K5 (Trollstigen-Klimax) nutzt denselben 152s-Clip 3x als Sub-Segmente
+  (slow-mo/ramp/slow-mo) — einziges taugliches Material fuer den Moment, jetzt per
+  `intentional_repeat: true`-Marker dokumentiert statt als QC-Fehler markiert.
+- **Schema-Erweiterung:** `AudioClip.src_in` in `frameforge/timeline.py` ergaenzt (Source-Offset
+  in Sekunden, analog `VideoClip.src_in`), `render.py` entsprechend angepasst
+  (`atrim=start={src_in}`). Grund: Beat-Sheet brauchte zwei verschiedene Ausschnitte desselben
+  Tracks (Naturaleza Mose Edit, Anfang + spaeterer ruhigerer Abschnitt fuer den Ausklang) — das
+  Schema kannte bislang nur Trackanfang. Rueckwaertskompatibel (Default 0). Tests: 135 passed.
+- **QC-Nacharbeit:** `qc.validate()` fand 4 Probleme (Rundungs-Overlap K0/K1, zwei
+  Mikro-Luecken im K5-Klimax-Segment, Asset-3-fach-Nutzung) — alle vor dem Gate-Build gefixt.
+  `frameforge/qc.py` um Ausnahme fuer `intentional_repeat: true` erweitert (generischer
+  Mechanismus, kein Einzelfall-Hack).
+
+**Naechster Schritt:** `/ff-preview norwegen-2026 drone-edit` — Proxy-Render pruefen, danach
+Freigabe. Danach vlog-data, vlog-pur (~20 Min, identischer Schnitt, nur Map-Layer
+unterschiedlich), dann teaser.

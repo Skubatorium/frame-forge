@@ -113,6 +113,9 @@ class AudioClip(BaseModel):
     type: str | None = None
     tl_in: float = Field(ge=0)
     dur: float | None = None
+    # Source-Offset: wo im Quelltrack der Clip beginnt (analog zu VideoClip.src_in).
+    # Default 0 = Trackanfang, wie bisher — bestehende Timelines rendern unveraendert.
+    src_in: float = Field(default=0.0, ge=0)
     gain_db: float | None = None
     duck_music_db: float | None = None
     # Ein-/Ausblendung dieses Clips (Plan 0003 §F). Default 0 = harter Einsatz wie bisher.
