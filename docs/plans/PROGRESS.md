@@ -1823,19 +1823,45 @@ automatisch.
 
 ---
 
-## Fundus-Erweiterung „Christina-iPhone" (Fotos) (2026-08-07) — **fertig (Fotos), Videos offen**
+## Fundus-Erweiterung „Christina-iPhone" (2026-08-07) — **fertig (Fotos + Videos)**
 
 Neuer Ordner `Christina-iPhone/` im `media_root`, vom Nutzer vorsortiert: **127 HEIC + 30 JPG
 = 157 Fotos** bereits vorbereitet (Keyframes + CV-Analyse per Skript unter Umgehung von
-`ingest`, damit die noch nicht fertig vorbereiteten **65 MOV/MP4-Videos** nicht mitlaufen).
-Die Videos sind explizit **nicht** angefasst worden — weder ingested noch prepared noch
-indiziert — und bleiben offen, bis der Nutzer sie freigibt.
+`ingest`). Die **65 MOV/MP4-Videos** waren zunächst vom Nutzer zurückgehalten (noch nicht
+selbst gesichtet/geschnitten); nach Freigabe am 2026-08-07 waren es beim tatsächlichen
+`ingest`-Lauf **47 Videos** (Nutzer hatte zwischenzeitlich selbst vorsortiert/geschnitten,
+u. a. `IMG_2889` in zwei Cuts geteilt).
 
 | Schritt | Status |
 |---|---|
-| `prepare-index` (per Skript, nur Fotos) — Keyframes, CV, `captured_at`, GPS | ✅ 157/157 |
-| Inhaltliche Sichtung (Beschreibung/Tags/Rating/Source) | ✅ **157 von 157** |
-| Videos (65 MOV/MP4) | 🔲 offen — vom Nutzer zurückgehalten, nicht vorbereitet |
+| `prepare-index` (Fotos, per Skript) — Keyframes, CV, `captured_at`, GPS | ✅ 157/157 |
+| Inhaltliche Sichtung Fotos (Beschreibung/Tags/Rating/Source) | ✅ **157 von 157** |
+| `ingest` Videos (47 MOV/MP4, Proxies) | ✅ 47/47 |
+| `prepare-index` Videos — Keyframes, CV | ✅ 47/47 |
+| Inhaltliche Sichtung Videos (Beschreibung/Tags/Rating/Source) | ✅ **47 von 47** (2 parallele media-indexer-Batches) |
+
+**Datumslücke bei geschnittenen Videos:** 37 der 47 Videos hatten `captured_at_source:
+container` (aus dem MOV-Container gelesen, nicht EXIF) — beim Schneiden/Trimmen gehen bei
+manchen Tools die iPhone-Metadaten verloren, `captured_at` fiel dann auf das Kopierdatum
+(heute) zurück. Bei 24 davon lag das Datum nachweislich außerhalb des Reisezeitraums
+(20.07.–04.08.). Nutzer-Entscheidung: **manuell zuordnen statt automatisch/ignorieren.**
+10 eindeutig zum Cluster Aurlandsfjord/Flaamsbana (24.–25.07.) passende Clips (Fjordblick,
+Regenbogen, Wasserfall+Ruine, Kreuzfahrtschiff×2, Fähre, Schafherde, Passstraße,
+Bogenschießen) wurden per Skript auf `captured_at_source: manual` gesetzt, Uhrzeit geschätzt
+(Reihenfolge plausibel, keine Sekundengenauigkeit). **14 Videos bleiben mit unplausiblem
+Datum offen** — IMG_3587, 3590, 3304, 3610, 3260, 3104, 3061, 3434, 3270, 3462, 2864, 2867,
+2889_Cut-2, 2824 — Zuordnung zu Etappen-Cluster vom Nutzer noch zu klären.
+
+**Ratingverteilung Videos grob:** einige starke Establisher (Fjord mit Fähre/Nebel,
+Regenbogen über Fjord, Wasserfall mit Ruine, Berggipfel über See) mit 4–5, viel Autofahrt-/
+Passstraßen-B-Roll mit 2–3, zwei lange monotone Tunneldurchfahrten (`IMG_2886`, ~4 Min;
+`IMG_2889_Cut-2`, ~67s) markiert als Timelapse/Speed-Ramp-Kandidaten (Tag `lang-monoton`,
+siehe Editing-Präferenz unten).
+
+**Neue Nutzer-Vorgabe für den Schnitt:** lange, inhaltlich monotone Clips (Tunnelfahrten,
+lange Autofahrten) nicht einfach kürzen, sondern per Timelapse/Speed-Ramp (Verzögerung →
+Beschleunigung, Wechsel in Slow-Mo bei epischen Momenten) filmisch verdichten. Relevant für
+`story-architect`/`timeline-builder`, noch nicht in Style-Katalog nachgezogen.
 
 **Zeitraum:** 2026-07-20 bis 2026-08-04, deckt sich mit dem bestehenden Reisezeitraum
 (Chris-iPhone-Fundus 17.07.–04.08.). Aufnahmeort-Cluster grob: Waldsee-Huette (20.–23.07.),

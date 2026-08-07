@@ -18524,6 +18524,77 @@
     }
   },
   {
+    "hash": "sha256:4c6ded448c60f708673aa898eaa899ca6b4f135ca94b9df1be69ff79901bcdf5",
+    "path": "Christina-iPhone/IMG_2870.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T09:53:00+00:00",
+    "captured_at_source": "container",
+    "duration": 45.88,
+    "probe": {
+      "captured_at": "2026-07-24T09:53:00+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 45.88,
+      "bitrate": 53334533,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.151,
+      "stability": 0.459,
+      "exposure": 0.674,
+      "score": 0.428
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.541
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 3.25
+      },
+      {
+        "start": 3.25,
+        "end": 3.97
+      },
+      {
+        "start": 3.97,
+        "end": 45.9
+      }
+    ],
+    "id": "20260724-camera-4c6ded",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2870_f8c1d5c1_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2870_f8c1d5c1_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2870_f8c1d5c1_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2870_f8c1d5c1_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2870_f8c1d5c1_kf04.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2870_f8c1d5c1_kf05.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Fahrt an Passstrasse entlang eines Sees mit Bergpanorama, Huetten am Wegesrand.",
+      "tags": [
+        "passstrasse",
+        "see",
+        "berge",
+        "huetten",
+        "fahrt",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
     "hash": "sha256:4fbe9ee41d85d95abbffe3559a16497900d76d64f317a73206f56e7ca6ac3d5f",
     "path": "Chris-iPhone/IMG_9680.MOV",
     "kind": "video",
@@ -19365,6 +19436,84 @@
       "people": false,
       "usable_as": [
         "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d48b2bf844d77a143bd26d6e946828ce1086ec0a56dfeed8bcada5dd6ecbc902",
+    "path": "Christina-iPhone/IMG_2886.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T10:18:11+00:00",
+    "captured_at_source": "container",
+    "duration": 242.938333,
+    "probe": {
+      "captured_at": "2026-07-24T10:18:11+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 242.938333,
+      "bitrate": 91012034,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.154,
+      "stability": 0.0,
+      "exposure": 0.595,
+      "score": 0.249
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 236.35
+      },
+      {
+        "start": 236.35,
+        "end": 237.4
+      },
+      {
+        "start": 237.4,
+        "end": 240.84
+      },
+      {
+        "start": 240.84,
+        "end": 241.89
+      },
+      {
+        "start": 241.89,
+        "end": 242.96
+      }
+    ],
+    "id": "20260724-camera-d48b2b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2886_6acd213f_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2886_6acd213f_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2886_6acd213f_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2886_6acd213f_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2886_6acd213f_kf04.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2886_6acd213f_kf05.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Autofahrt durch einen langen, dunklen Tunnel mit rauem Fels, ca. 4 Minuten langer, inhaltlich monotoner Clip.",
+      "tags": [
+        "tunnel",
+        "autofahrt",
+        "dunkel",
+        "lang-monoton",
+        "unterwegs",
+        "zeitraffer-kandidat"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
       ]
     }
   },
@@ -26368,6 +26517,66 @@
     }
   },
   {
+    "hash": "sha256:4ab117618a2a373183d1b5796e0633914b2857ca7e95802a0e49cb9ebcac1914",
+    "path": "Christina-iPhone/IMG_2962.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T09:09:03+00:00",
+    "captured_at_source": "container",
+    "duration": 9.023333,
+    "probe": {
+      "captured_at": "2026-07-25T09:09:03+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 9.023333,
+      "bitrate": 53260067,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.808,
+      "stability": 0.638,
+      "exposure": 0.763,
+      "score": 0.736
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.362
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 9.03
+      }
+    ],
+    "id": "20260725-camera-4ab117",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2962_40976c4b_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2962_40976c4b_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2962_40976c4b_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weiter Blick auf ruhigen Fjord zwischen bewaldeten Bergflanken bei bedecktem Himmel, vom Boot aus.",
+      "tags": [
+        "fjord",
+        "berge",
+        "wasser",
+        "bewoelkt",
+        "weite",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:4e8191598f8b7595fa90b8a36a4f9067f79588d45f92038347696f8d8be2f9bb",
     "path": "Chris-iPhone/IMG_9858.MOV",
     "kind": "video",
@@ -26729,6 +26938,66 @@
       "people": false,
       "usable_as": [
         "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:67ef3553015b404bd33ba279ee568e66e389c24e5ff70028e68fbc7047007179",
+    "path": "Christina-iPhone/IMG_3025.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T15:56:03+00:00",
+    "captured_at_source": "container",
+    "duration": 16.9767,
+    "probe": {
+      "captured_at": "2026-07-25T15:56:03+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 16.9767,
+      "bitrate": 53922446,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.244,
+      "stability": 0.788,
+      "exposure": 0.73,
+      "score": 0.587
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.212
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 16.98
+      }
+    ],
+    "id": "20260725-camera-67ef35",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3025_5b3f2af9_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3025_5b3f2af9_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3025_5b3f2af9_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Doppelter Regenbogen ueber engem Fjord bei Regen und Nebel zwischen steilen bewaldeten Bergen.",
+      "tags": [
+        "regenbogen",
+        "fjord",
+        "regen",
+        "nebel",
+        "berge",
+        "wasser"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "highlight"
       ]
     }
   },
@@ -32344,6 +32613,66 @@
     }
   },
   {
+    "hash": "sha256:02a9d4d30088bc9d4de180e12f31ca480103bed25b2d7b085536ab8ea63b2805",
+    "path": "Christina-iPhone/IMG_3042.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-26T07:39:13+00:00",
+    "captured_at_source": "container",
+    "duration": 14.658333,
+    "probe": {
+      "captured_at": "2026-07-26T07:39:13+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 29.97002997002997,
+      "dur": 14.658333,
+      "bitrate": 46375041,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.027,
+      "stability": 0.0,
+      "exposure": 0.557,
+      "score": 0.195
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 14.65
+      }
+    ],
+    "id": "20260726-camera-02a9d4",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3042_e63fb4f7_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3042_e63fb4f7_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3042_e63fb4f7_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Fahrt aus dem Auto durch beleuchteten Tunnel mit blau-gruener Beleuchtung und Entgegenkommer.",
+      "tags": [
+        "tunnel",
+        "autofahrt",
+        "nachtlicht",
+        "blau",
+        "norwegen",
+        "strasse"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "transition"
+      ]
+    }
+  },
+  {
     "hash": "sha256:117e4a7684a19eeca079a32545bd4349e53160526690f66fdb6578ec13653364",
     "path": "Chris-iPhone/IMG_9936.MOV",
     "kind": "video",
@@ -32460,6 +32789,65 @@
       "people": false,
       "usable_as": [
         "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:44ea822e9c7b9095cf806b0fb4699a32e8c9a91794bb291caecf29b279d40195",
+    "path": "Christina-iPhone/IMG_3062.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-26T10:25:54+00:00",
+    "captured_at_source": "container",
+    "duration": 7.621667,
+    "probe": {
+      "captured_at": "2026-07-26T10:25:54+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 7.621667,
+      "bitrate": 55187713,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.855,
+      "stability": 0.092,
+      "exposure": 0.676,
+      "score": 0.541
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.908
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 7.62
+      }
+    ],
+    "id": "20260726-camera-44ea82",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3062_c51fcd64_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3062_c51fcd64_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3062_c51fcd64_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Fahrt entlang gruener Huegelweide mit weidenden Kuehen, Kamera leicht verwackelt aus dem Auto.",
+      "tags": [
+        "kuehe",
+        "weide",
+        "huegel",
+        "gruen",
+        "autofahrt",
+        "tiere"
+      ],
+      "people": false,
+      "usable_as": [
         "b-roll"
       ]
     }
@@ -32808,6 +33196,67 @@
         "tal",
         "strasse",
         "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:86fe91b7572be7843cb18afd4cf4cf95f024ff00be28ae3957502416bd4152dc",
+    "path": "Christina-iPhone/IMG_3107.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-26T13:58:18+00:00",
+    "captured_at_source": "container",
+    "duration": 52.418333,
+    "probe": {
+      "captured_at": "2026-07-26T13:58:18+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 52.418333,
+      "bitrate": 58364967,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.969,
+      "stability": 0.231,
+      "exposure": 0.813,
+      "score": 0.671
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.769
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 52.44
+      }
+    ],
+    "id": "20260726-camera-86fe91",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3107_e14d50bf_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3107_e14d50bf_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3107_e14d50bf_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3107_e14d50bf_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Bewoelkter Bergrücken mit vereinzelten alten Berghuetten am Hang, diesig-graues Licht.",
+      "tags": [
+        "berge",
+        "huetten",
+        "natur",
+        "bewoelkt",
+        "landschaft",
+        "establisher"
       ],
       "people": false,
       "usable_as": [
@@ -42615,6 +43064,160 @@
     }
   },
   {
+    "hash": "sha256:79f4a9d97cce51a77cd5ffdcf6da3f795a125d4671aa08d1e0556491a7b0d6d4",
+    "path": "Christina-iPhone/IMG_3313.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-28T14:21:18+00:00",
+    "captured_at_source": "container",
+    "duration": 103.036667,
+    "probe": {
+      "captured_at": "2026-07-28T14:21:18+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 103.036667,
+      "bitrate": 53191768,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.644,
+      "stability": 0.411,
+      "exposure": 0.664,
+      "score": 0.573
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.589
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 103.05
+      }
+    ],
+    "id": "20260728-camera-79f4a9",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3313_16779f84_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3313_16779f84_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3313_16779f84_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Fahrt auf unbefestigter Schotterpiste durch weite Hochebene mit Strommasten am Horizont.",
+      "tags": [
+        "schotterpiste",
+        "hochebene",
+        "fahrt",
+        "strommasten",
+        "weite",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:93a36986a3f6c563fe284c7d079e2232b3c6fdfa0d4528117cca191348d3023b",
+    "path": "Christina-iPhone/IMG_3317.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-28T14:56:29+00:00",
+    "captured_at_source": "container",
+    "duration": 27.318333,
+    "probe": {
+      "captured_at": "2026-07-28T14:56:29+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 27.318333,
+      "bitrate": 70321863,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.715,
+      "stability": 0.354,
+      "exposure": 0.806,
+      "score": 0.625
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.646
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 3.14
+      },
+      {
+        "start": 3.14,
+        "end": 7.07
+      },
+      {
+        "start": 7.07,
+        "end": 7.77
+      },
+      {
+        "start": 7.77,
+        "end": 8.09
+      },
+      {
+        "start": 8.09,
+        "end": 8.88
+      },
+      {
+        "start": 8.88,
+        "end": 9.16
+      },
+      {
+        "start": 9.16,
+        "end": 9.94
+      },
+      {
+        "start": 9.94,
+        "end": 10.24
+      },
+      {
+        "start": 10.24,
+        "end": 27.33
+      }
+    ],
+    "id": "20260728-camera-93a369",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3317_aaa23877_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3317_aaa23877_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3317_aaa23877_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3317_aaa23877_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3317_aaa23877_kf04.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3317_aaa23877_kf05.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weiter Blick ueber einen Fjord auf bewaldete Huegel mit vereinzelten Gehoeften am gruenen Ufer.",
+      "tags": [
+        "fjord",
+        "huegel",
+        "gehoeft",
+        "wasser",
+        "natur",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:b5d2e187663caafb35c037d2a09e27dad237c56fed370e665a9264b303e0159b",
     "path": "Chris-iPhone/IMG_0252.MOV",
     "kind": "video",
@@ -42668,6 +43271,67 @@
       ],
       "people": true,
       "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d75564e2b6caa6147019f1c642f35a4994faf8ccb3d21e476d9bf1d87cc1fd8a",
+    "path": "Christina-iPhone/IMG_3262.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-28T08:10:42+00:00",
+    "captured_at_source": "container",
+    "duration": 382.796667,
+    "probe": {
+      "captured_at": "2026-07-28T08:10:42+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 382.796667,
+      "bitrate": 53128846,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.33,
+      "stability": 0.077,
+      "exposure": 0.744,
+      "score": 0.384
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.923
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 382.82
+      }
+    ],
+    "id": "20260728-camera-d75564",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3262_2364af65_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3262_2364af65_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3262_2364af65_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3262_2364af65_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Fahrt durch kurvige Waldstrasse mit Leitplanke, dichte Naturkulisse, dann Uebergang zu bewaldetem Bergpanorama im Nebel.",
+      "tags": [
+        "waldstrasse",
+        "autofahrt",
+        "berge",
+        "nebel",
+        "natur",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
         "b-roll"
       ]
     }
@@ -54182,6 +54846,67 @@
     }
   },
   {
+    "hash": "sha256:09499113e4c34c459bb6fed9c7e1682acf874e6964d455f7342a0b6264d27928",
+    "path": "Christina-iPhone/IMG_3484.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-30T12:56:27+00:00",
+    "captured_at_source": "container",
+    "duration": 27.501667,
+    "probe": {
+      "captured_at": "2026-07-30T12:56:27+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 27.501667,
+      "bitrate": 54129532,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.03,
+      "exposure": 0.854,
+      "score": 0.628
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.97
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 27.51
+      }
+    ],
+    "id": "20260730-camera-094991",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3484_6e84af44_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3484_6e84af44_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3484_6e84af44_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3484_6e84af44_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Zwei Personen paddeln im Kanu auf ruhigem Fluss vor Ferienhaus und Waldkulisse.",
+      "tags": [
+        "kanu",
+        "fluss",
+        "paddeln",
+        "ferienhaus",
+        "wald",
+        "sommer"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
     "hash": "sha256:212d07166f5a71bb95f96f41597ec7eb89b99e8344c7f7030ec69883262e4a45",
     "path": "Chris-iPhone/IMG_0315.MOV",
     "kind": "video",
@@ -54470,6 +55195,67 @@
       "people": true,
       "usable_as": [
         "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:75d894bb7bd53475331a6a6384651cba693c96cf1d8ca323d7a2e5f4b2f9d858",
+    "path": "Christina-iPhone/IMG_3490.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-30T13:00:30+00:00",
+    "captured_at_source": "container",
+    "duration": 20.063333,
+    "probe": {
+      "captured_at": "2026-07-30T13:00:30+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 20.063333,
+      "bitrate": 54621068,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.035,
+      "exposure": 0.897,
+      "score": 0.644
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.965
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 20.07
+      }
+    ],
+    "id": "20260730-camera-75d894",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3490_54e0eef3_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3490_54e0eef3_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3490_54e0eef3_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3490_54e0eef3_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kajak und Kanu mit Personen auf ruhigem Fluss vor Campingplatz-Kulisse mit Wohnwagen und Wald.",
+      "tags": [
+        "kanu",
+        "kajak",
+        "fluss",
+        "campingplatz",
+        "paddeln",
+        "sommer"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll",
+        "establisher"
       ]
     }
   },
@@ -57458,6 +58244,80 @@
     }
   },
   {
+    "hash": "sha256:116e9eac3cccdfe91c111c6d693dd698bd8ec590dc367402e3b0c18ad2dea915",
+    "path": "Christina-iPhone/ec3bfc0e-2f3b-46f5-b494-979e7a59c25a.MP4",
+    "kind": "video",
+    "source_guess": "unknown",
+    "captured_at": "2026-07-30T18:56:58+00:00",
+    "captured_at_source": "mtime",
+    "duration": 13.533333,
+    "probe": {
+      "captured_at": "2026-07-30T18:56:58+00:00",
+      "captured_at_source": "mtime",
+      "w": 1024,
+      "h": 576,
+      "fps": 30.0,
+      "dur": 13.533333,
+      "bitrate": 1756935,
+      "codec": "h264",
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.324,
+      "stability": 0.0,
+      "exposure": 0.889,
+      "score": 0.405
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 11.37
+      },
+      {
+        "start": 11.37,
+        "end": 12.1
+      },
+      {
+        "start": 12.1,
+        "end": 13.13
+      },
+      {
+        "start": 13.13,
+        "end": 13.53
+      }
+    ],
+    "id": "20260730-unknown-116e9e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/ec3bfc0e-2f3b-46f5-b494-979e7a59c25a_2bb6e374_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/ec3bfc0e-2f3b-46f5-b494-979e7a59c25a_2bb6e374_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/ec3bfc0e-2f3b-46f5-b494-979e7a59c25a_2bb6e374_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/ec3bfc0e-2f3b-46f5-b494-979e7a59c25a_2bb6e374_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/ec3bfc0e-2f3b-46f5-b494-979e7a59c25a_2bb6e374_kf04.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/ec3bfc0e-2f3b-46f5-b494-979e7a59c25a_2bb6e374_kf05.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kind im Kanu mit Rettungsweste paddelt auf Fluss zwischen Waldufern, Blick aus dem Boot nach vorn.",
+      "tags": [
+        "kanu",
+        "kind",
+        "fluss",
+        "paddeln",
+        "rettungsweste",
+        "wald"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:464c5c47f929edaa9a3767370ce90f556ae5713a7ae316618d8ffa83d60163e3",
     "path": "Christina-iPhone/bb011db9-58ef-413c-8ea9-31c0f3f92645.JPG",
     "kind": "photo",
@@ -57582,6 +58442,250 @@
     }
   },
   {
+    "hash": "sha256:68ccaa7737b08c6c0c8c6bfe97650c2f905bb1f400e5f1a41f2d827286038e99",
+    "path": "Christina-iPhone/d46036f0-78ca-492f-8475-952a9578bbc2.MP4",
+    "kind": "video",
+    "source_guess": "unknown",
+    "captured_at": "2026-07-30T18:56:38+00:00",
+    "captured_at_source": "mtime",
+    "duration": 41.2,
+    "probe": {
+      "captured_at": "2026-07-30T18:56:38+00:00",
+      "captured_at_source": "mtime",
+      "w": 1024,
+      "h": 576,
+      "fps": 30.0,
+      "dur": 41.2,
+      "bitrate": 1703904,
+      "codec": "h264",
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.831,
+      "stability": 0.358,
+      "exposure": 0.975,
+      "score": 0.721
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.642
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 28.87
+      },
+      {
+        "start": 28.87,
+        "end": 41.2
+      }
+    ],
+    "id": "20260730-unknown-68ccaa",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/d46036f0-78ca-492f-8475-952a9578bbc2_60fa18c9_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/d46036f0-78ca-492f-8475-952a9578bbc2_60fa18c9_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/d46036f0-78ca-492f-8475-952a9578bbc2_60fa18c9_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/d46036f0-78ca-492f-8475-952a9578bbc2_60fa18c9_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/d46036f0-78ca-492f-8475-952a9578bbc2_60fa18c9_kf04.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Zwei Kinder angeln am Ufer eines ruhigen Flusses mit Kieselbank, Wald im Hintergrund.",
+      "tags": [
+        "angeln",
+        "kinder",
+        "fluss",
+        "ufer",
+        "sommer",
+        "norwegen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:6b15c50d0b41f1eb9a129bb318caab31f0cba2cc285bfc2856a850484d81d3eb",
+    "path": "Christina-iPhone/5bfd57d8-1d5c-4514-ab7b-72b1499d45a7.MP4",
+    "kind": "video",
+    "source_guess": "unknown",
+    "captured_at": "2026-07-30T18:57:12+00:00",
+    "captured_at_source": "mtime",
+    "duration": 28.733333,
+    "probe": {
+      "captured_at": "2026-07-30T18:57:12+00:00",
+      "captured_at_source": "mtime",
+      "w": 1024,
+      "h": 576,
+      "fps": 30.0,
+      "dur": 28.733333,
+      "bitrate": 1681471,
+      "codec": "h264",
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.516,
+      "stability": 0.0,
+      "exposure": 0.831,
+      "score": 0.449
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 28.73
+      }
+    ],
+    "id": "20260730-unknown-6b15c5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/5bfd57d8-1d5c-4514-ab7b-72b1499d45a7_89e1f1f7_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/5bfd57d8-1d5c-4514-ab7b-72b1499d45a7_89e1f1f7_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/5bfd57d8-1d5c-4514-ab7b-72b1499d45a7_89e1f1f7_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kind mit Helm und Rettungsweste paddelt Kanu auf ruhigem Fluss, Blick aus dem Boot nach vorn.",
+      "tags": [
+        "kanu",
+        "kind",
+        "fluss",
+        "paddeln",
+        "helm",
+        "rettungsweste"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:820b351d182386c4a88b69067dccf9b1a036a668a20f230cf58633fefadb56fb",
+    "path": "Christina-iPhone/2ea9f1ed-f017-4f30-ad1c-ba7351a93ff4.MP4",
+    "kind": "video",
+    "source_guess": "unknown",
+    "captured_at": "2026-07-30T18:57:24+00:00",
+    "captured_at_source": "mtime",
+    "duration": 24.466667,
+    "probe": {
+      "captured_at": "2026-07-30T18:57:24+00:00",
+      "captured_at_source": "mtime",
+      "w": 1024,
+      "h": 576,
+      "fps": 30.0,
+      "dur": 24.466667,
+      "bitrate": 1685926,
+      "codec": "h264",
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.455,
+      "stability": 0.011,
+      "exposure": 0.835,
+      "score": 0.434
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.989
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 24.47
+      }
+    ],
+    "id": "20260730-unknown-820b35",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/2ea9f1ed-f017-4f30-ad1c-ba7351a93ff4_fd29132c_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/2ea9f1ed-f017-4f30-ad1c-ba7351a93ff4_fd29132c_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/2ea9f1ed-f017-4f30-ad1c-ba7351a93ff4_fd29132c_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kind im Kanu mit Rettungsweste paddelt unter historischer Holzbruecke auf ruhigem Fluss hindurch.",
+      "tags": [
+        "kanu",
+        "kind",
+        "fluss",
+        "bruecke",
+        "paddeln",
+        "sommer"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:8e7103e1fb0c9a9d72416f98419978adff2e004656a9f8395a5beb6aeda7ef91",
+    "path": "Christina-iPhone/83c9feec-75ed-4a67-9e31-ef0939f5f57d.MP4",
+    "kind": "video",
+    "source_guess": "unknown",
+    "captured_at": "2026-07-30T18:57:17+00:00",
+    "captured_at_source": "mtime",
+    "duration": 17.066667,
+    "probe": {
+      "captured_at": "2026-07-30T18:57:17+00:00",
+      "captured_at_source": "mtime",
+      "w": 1024,
+      "h": 576,
+      "fps": 30.0,
+      "dur": 17.066667,
+      "bitrate": 1704066,
+      "codec": "h264",
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.482,
+      "stability": 0.0,
+      "exposure": 0.826,
+      "score": 0.436
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 17.07
+      }
+    ],
+    "id": "20260730-unknown-8e7103",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/83c9feec-75ed-4a67-9e31-ef0939f5f57d_15370876_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/83c9feec-75ed-4a67-9e31-ef0939f5f57d_15370876_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/83c9feec-75ed-4a67-9e31-ef0939f5f57d_15370876_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/83c9feec-75ed-4a67-9e31-ef0939f5f57d_15370876_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kanufahrt auf ruhigem Fluss unter einer alten Holzbruecke hindurch, Kind mit Schwimmweste paddelt, Waldkulisse im Hintergrund.",
+      "tags": [
+        "kanu",
+        "fluss",
+        "bruecke",
+        "kind",
+        "paddeln",
+        "sommer",
+        "aktivitaet"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:9c9bab2210432bcdb93a0599f9c75608bd2c0b04f2d53746e4fac6a49d42cf8e",
     "path": "Christina-iPhone/c3a5c5ff-5dae-4dd3-9d5b-ba42c00a5245.JPG",
     "kind": "photo",
@@ -57658,6 +58762,67 @@
         "natur"
       ],
       "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a4d0b072ff06074266ff112e5c8ea508fdf9b22f92b8047bc1e5a4598d3770ab",
+    "path": "Christina-iPhone/3408a5a3-0612-4d11-a7a5-55c728576234.MP4",
+    "kind": "video",
+    "source_guess": "unknown",
+    "captured_at": "2026-07-30T18:57:33+00:00",
+    "captured_at_source": "mtime",
+    "duration": 44.933333,
+    "probe": {
+      "captured_at": "2026-07-30T18:57:33+00:00",
+      "captured_at_source": "mtime",
+      "w": 1024,
+      "h": 576,
+      "fps": 30.0,
+      "dur": 44.933333,
+      "bitrate": 1679008,
+      "codec": "h264",
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.837,
+      "stability": 0.0,
+      "exposure": 0.856,
+      "score": 0.564
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 44.93
+      }
+    ],
+    "id": "20260730-unknown-a4d0b0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/3408a5a3-0612-4d11-a7a5-55c728576234_928bd8e2_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/3408a5a3-0612-4d11-a7a5-55c728576234_928bd8e2_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/3408a5a3-0612-4d11-a7a5-55c728576234_928bd8e2_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/3408a5a3-0612-4d11-a7a5-55c728576234_928bd8e2_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kind angelt am flachen, steinigen Flussufer in der Sommersonne, ruhiges Wasser mit Kiesbaenken.",
+      "tags": [
+        "angeln",
+        "fluss",
+        "kind",
+        "sommer",
+        "sonne",
+        "kiesbank",
+        "aktivitaet"
+      ],
+      "people": true,
       "usable_as": [
         "b-roll"
       ]
@@ -57746,6 +58911,66 @@
     }
   },
   {
+    "hash": "sha256:cd9012d0779a4b1838f0b056131dae40f8aca5ad0e3173bc956ab1c845fdccc2",
+    "path": "Christina-iPhone/2803eab3-694b-417e-83bd-5fed18750a69.MP4",
+    "kind": "video",
+    "source_guess": "unknown",
+    "captured_at": "2026-07-30T18:56:06+00:00",
+    "captured_at_source": "mtime",
+    "duration": 117.166667,
+    "probe": {
+      "captured_at": "2026-07-30T18:56:06+00:00",
+      "captured_at_source": "mtime",
+      "w": 1024,
+      "h": 576,
+      "fps": 30.0,
+      "dur": 117.166667,
+      "bitrate": 1350713,
+      "codec": "h264",
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.512,
+      "stability": 0.071,
+      "exposure": 0.978,
+      "score": 0.52
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.929
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 117.17
+      }
+    ],
+    "id": "20260730-unknown-cd9012",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/2803eab3-694b-417e-83bd-5fed18750a69_8130eab4_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/2803eab3-694b-417e-83bd-5fed18750a69_8130eab4_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/2803eab3-694b-417e-83bd-5fed18750a69_8130eab4_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/2803eab3-694b-417e-83bd-5fed18750a69_8130eab4_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Zwei Kinder werfen Steine in einen ruhigen Fluss mit kiesigem Ufer, ca. 2 Minuten langer Clip.",
+      "tags": [
+        "kinder",
+        "fluss",
+        "steinewerfen",
+        "spielen",
+        "sommer",
+        "aktivitaet"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:d5bffd85e9754a44b2db3e8b3359d91e03b75808d34b9481a9615c56caca86b4",
     "path": "Christina-iPhone/b1e8c50d-17e2-4b43-8670-42ff11a9f8d0.JPG",
     "kind": "photo",
@@ -57783,6 +59008,189 @@
       "people": false,
       "usable_as": [
         "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e4dbc053db990433bbf1e6b679aec52b47a258e392b79012fa5925f9dd34998b",
+    "path": "Christina-iPhone/1d1670ca-c3a9-4f55-b472-32254d738d2a.MP4",
+    "kind": "video",
+    "source_guess": "unknown",
+    "captured_at": "2026-07-30T18:56:49+00:00",
+    "captured_at_source": "mtime",
+    "duration": 12.4,
+    "probe": {
+      "captured_at": "2026-07-30T18:56:49+00:00",
+      "captured_at_source": "mtime",
+      "w": 1024,
+      "h": 576,
+      "fps": 30.0,
+      "dur": 12.4,
+      "bitrate": 1738996,
+      "codec": "h264",
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.962,
+      "stability": 0.474,
+      "exposure": 0.915,
+      "score": 0.783
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.526
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 12.4
+      }
+    ],
+    "id": "20260730-unknown-e4dbc0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/1d1670ca-c3a9-4f55-b472-32254d738d2a_a9a50e2d_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/1d1670ca-c3a9-4f55-b472-32254d738d2a_a9a50e2d_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/1d1670ca-c3a9-4f55-b472-32254d738d2a_a9a50e2d_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kind schiesst mit Pfeil und Bogen auf eine Zielscheibe an einer Waldlichtung im Sonnenlicht.",
+      "tags": [
+        "bogenschiessen",
+        "kind",
+        "camp",
+        "sommer",
+        "aktivitaet",
+        "sonne"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f623e66161f413d871e44abbfe939a5d0f7aac7db26fcbdb1b8d624f2222d306",
+    "path": "Christina-iPhone/c4bfd6e3-2cec-4028-8ab6-190d0963a17f.MP4",
+    "kind": "video",
+    "source_guess": "unknown",
+    "captured_at": "2026-07-30T18:34:06+00:00",
+    "captured_at_source": "mtime",
+    "duration": 13.733333,
+    "probe": {
+      "captured_at": "2026-07-30T18:34:06+00:00",
+      "captured_at_source": "mtime",
+      "w": 1024,
+      "h": 576,
+      "fps": 30.0,
+      "dur": 13.733333,
+      "bitrate": 1707527,
+      "codec": "h264",
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.986,
+      "stability": 0.317,
+      "exposure": 0.981,
+      "score": 0.761
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.683
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 13.73
+      }
+    ],
+    "id": "20260730-unknown-f623e6",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/c4bfd6e3-2cec-4028-8ab6-190d0963a17f_b8c2ead3_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/c4bfd6e3-2cec-4028-8ab6-190d0963a17f_b8c2ead3_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/c4bfd6e3-2cec-4028-8ab6-190d0963a17f_b8c2ead3_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Zwei Kinder stehen mit Keschern auf einer Kiesbank im Fluss und fangen kleine Fische.",
+      "tags": [
+        "kinder",
+        "fluss",
+        "kescher",
+        "fischen",
+        "sommer",
+        "aktivitaet"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:fa8ecdeb704667a7cbfec00436fb2a3354c7c665b0cda5d42a7c3365e6e57ef9",
+    "path": "Christina-iPhone/66244f11-cff2-4369-aa4d-432dd0a61f24.MP4",
+    "kind": "video",
+    "source_guess": "unknown",
+    "captured_at": "2026-07-30T18:56:54+00:00",
+    "captured_at_source": "mtime",
+    "duration": 19.033333,
+    "probe": {
+      "captured_at": "2026-07-30T18:56:54+00:00",
+      "captured_at_source": "mtime",
+      "w": 1024,
+      "h": 576,
+      "fps": 30.0,
+      "dur": 19.033333,
+      "bitrate": 1693384,
+      "codec": "h264",
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.359,
+      "stability": 0.0,
+      "exposure": 0.835,
+      "score": 0.398
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 19.0
+      },
+      {
+        "start": 19.0,
+        "end": 19.03
+      }
+    ],
+    "id": "20260730-unknown-fa8ecd",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/66244f11-cff2-4369-aa4d-432dd0a61f24_a8e7aedd_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/66244f11-cff2-4369-aa4d-432dd0a61f24_a8e7aedd_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/66244f11-cff2-4369-aa4d-432dd0a61f24_a8e7aedd_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/66244f11-cff2-4369-aa4d-432dd0a61f24_a8e7aedd_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kanufahrt auf ruhigem Fluss unter einer Bruecke hindurch, Kind mit Schwimmweste paddelt bei Sonnenschein.",
+      "tags": [
+        "kanu",
+        "fluss",
+        "bruecke",
+        "kind",
+        "paddeln",
+        "sommer",
+        "aktivitaet"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
       ]
     }
   },
@@ -59903,6 +61311,66 @@
         "steinmauer"
       ],
       "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1a9d20296134b988bd9f764a5d5787b1a148eadb86481a0ff4dd4b3aa73c0e61",
+    "path": "Christina-iPhone/IMG_3596.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-01T10:21:39+00:00",
+    "captured_at_source": "container",
+    "duration": 70.83,
+    "probe": {
+      "captured_at": "2026-08-01T10:21:39+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 70.83,
+      "bitrate": 53317647,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.476,
+      "stability": 0.0,
+      "exposure": 0.927,
+      "score": 0.468
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 70.85
+      }
+    ],
+    "id": "20260801-camera-1a9d20",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3596_ff13725b_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3596_ff13725b_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3596_ff13725b_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3596_ff13725b_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Rennradfahrer auf kurviger Landstrasse durch lichten Wald, Bergsilhouette im Hintergrund.",
+      "tags": [
+        "rennrad",
+        "strasse",
+        "wald",
+        "berge",
+        "sport",
+        "norwegen"
+      ],
+      "people": true,
       "usable_as": [
         "b-roll"
       ]
@@ -66570,6 +68038,1482 @@
         "froehlich"
       ],
       "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:0c1850c0e940b3546ec15cc0255457e76631d4d8662af1aa13f46f779cf77dc4",
+    "path": "Christina-iPhone/IMG_2824.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-07T13:48:41+00:00",
+    "captured_at_source": "container",
+    "duration": 7.165,
+    "probe": {
+      "captured_at": "2026-08-07T13:48:41+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 7.165,
+      "bitrate": 55343238,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.222,
+      "stability": 0.168,
+      "exposure": 0.645,
+      "score": 0.345
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.832
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 7.15
+      }
+    ],
+    "id": "20260807-camera-0c1850",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2824_c5264f91_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2824_c5264f91_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2824_c5264f91_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Blick aus dem fahrenden Auto auf eine Kuh, die neben der Strasse in Hochland-Landschaft steht.",
+      "tags": [
+        "kuh",
+        "tier",
+        "strasse",
+        "autofahrt",
+        "hochland",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1dc7350fb8fc1eb505b6bb7a8126213b3243175ebd28bf29a69998773027719c",
+    "path": "Christina-iPhone/IMG_3587.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-07T14:07:21+00:00",
+    "captured_at_source": "container",
+    "duration": 66.006667,
+    "probe": {
+      "captured_at": "2026-08-07T14:07:21+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 66.006667,
+      "bitrate": 53031147,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.184,
+      "stability": 0.069,
+      "exposure": 0.623,
+      "score": 0.292
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.931
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 66.02
+      }
+    ],
+    "id": "20260807-camera-1dc735",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3587_4ab8fb45_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3587_4ab8fb45_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3587_4ab8fb45_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3587_4ab8fb45_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Fahrt entlang einer Passstrasse an bewaldetem Hochland-Huegel mit Sendemast und vereinzelten Huetten.",
+      "tags": [
+        "passstrasse",
+        "huegel",
+        "sendemast",
+        "huetten",
+        "norwegen",
+        "fahrt"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2a8b75a41fc15a0dd1004ed70b154e748ce58d4f8494494d07b31e3df80840b5",
+    "path": "Christina-iPhone/IMG_3590.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-07T14:08:04+00:00",
+    "captured_at_source": "container",
+    "duration": 87.2817,
+    "probe": {
+      "captured_at": "2026-08-07T14:08:04+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 87.2817,
+      "bitrate": 72271924,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.646,
+      "stability": 0.037,
+      "exposure": 0.781,
+      "score": 0.488
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.963
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 44.38
+      },
+      {
+        "start": 44.38,
+        "end": 87.3
+      }
+    ],
+    "id": "20260807-camera-2a8b75",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3590_5b48497c_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3590_5b48497c_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3590_5b48497c_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3590_5b48497c_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3590_5b48497c_kf04.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Fahrt durch lichten Wald an Landstrasse, Radfahrer voraus in der Ferne sichtbar.",
+      "tags": [
+        "wald",
+        "strasse",
+        "radfahrer",
+        "fahrt",
+        "sommer",
+        "norwegen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:42c6603bab64da5dd6cb23dd03115dc1a4f306f1088f729e0d108c3135159136",
+    "path": "Christina-iPhone/IMG_2813.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T09:00:00+00:00",
+    "captured_at_source": "manual",
+    "duration": 18.818333,
+    "probe": {
+      "captured_at": "2026-07-24T09:00:00+00:00",
+      "captured_at_source": "manual",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 18.818333,
+      "bitrate": 53963228,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.761,
+      "stability": 0.229,
+      "exposure": 0.719,
+      "score": 0.57
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.771
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 18.84
+      }
+    ],
+    "id": "20260807-camera-42c660",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2813_bc25823d_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2813_bc25823d_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2813_bc25823d_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2813_bc25823d_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Einzelne Kiefer vor ruhigem Fjord mit umliegenden Bergen, bewoelkter Himmel.",
+      "tags": [
+        "fjord",
+        "kiefer",
+        "berge",
+        "natur",
+        "ruhig",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4e8b9319488e4ca0e6c813d082d4a6007ccb5efd17372320cd548a23127ef62b",
+    "path": "Christina-iPhone/IMG_3304.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-07T14:04:28+00:00",
+    "captured_at_source": "container",
+    "duration": 36.2767,
+    "probe": {
+      "captured_at": "2026-08-07T14:04:28+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 36.2767,
+      "bitrate": 53803598,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.748,
+      "stability": 0.333,
+      "exposure": 0.848,
+      "score": 0.643
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.667
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 36.28
+      }
+    ],
+    "id": "20260807-camera-4e8b93",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3304_c386be8b_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3304_c386be8b_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3304_c386be8b_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Weite Hochebene mit Moos und Flechten unter bewoelktem Himmel, sanfte Huegellinie.",
+      "tags": [
+        "hochebene",
+        "tundra",
+        "moos",
+        "huegel",
+        "weite",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:58a31fea2e18d4db943efc7937d74a3dd731fb61f78a9d39d820ea6eeec8b94c",
+    "path": "Christina-iPhone/IMG_2895.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T10:30:00+00:00",
+    "captured_at_source": "manual",
+    "duration": 24.135,
+    "probe": {
+      "captured_at": "2026-07-24T10:30:00+00:00",
+      "captured_at_source": "manual",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 24.135,
+      "bitrate": 66740508,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.883,
+      "stability": 0.0,
+      "exposure": 0.864,
+      "score": 0.582
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 24.13
+      }
+    ],
+    "id": "20260807-camera-58a31f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2895_487b7bf9_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2895_487b7bf9_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2895_487b7bf9_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2895_487b7bf9_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Blick vom Auto ueber Zaun auf schmalen Fjordarm zwischen steilen Bergwaenden.",
+      "tags": [
+        "fjord",
+        "berge",
+        "zaun",
+        "aussicht",
+        "strasse",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:6091a767d9469814bf8dbac5743de81a9cd2826c305c1b63e2ee11341502d80e",
+    "path": "Christina-iPhone/IMG_2821.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T09:15:00+00:00",
+    "captured_at_source": "manual",
+    "duration": 5.485,
+    "probe": {
+      "captured_at": "2026-07-24T09:15:00+00:00",
+      "captured_at_source": "manual",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 5.485,
+      "bitrate": 55157036,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.412,
+      "stability": 0.628,
+      "exposure": 0.67,
+      "score": 0.57
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.372
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 5.49
+      }
+    ],
+    "id": "20260807-camera-6091a7",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2821_7f2dc92e_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2821_7f2dc92e_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2821_7f2dc92e_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2821_7f2dc92e_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Fahrt auf leerer Passstrasse durch karge, mit Flechten bewachsene Hochebene bei bedecktem Wetter.",
+      "tags": [
+        "passstrasse",
+        "hochebene",
+        "karg",
+        "autofahrt",
+        "bewoelkt",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:652c0300f5952afcd59806caf0ab82368b6ad9e1e065181a0ad5298b0afe89f7",
+    "path": "Christina-iPhone/IMG_3043.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T15:00:00+00:00",
+    "captured_at_source": "manual",
+    "duration": 35.378333,
+    "probe": {
+      "captured_at": "2026-07-25T15:00:00+00:00",
+      "captured_at_source": "manual",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 35.378333,
+      "bitrate": 53018544,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.489,
+      "stability": 0.025,
+      "exposure": 0.724,
+      "score": 0.412
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.975
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 35.39
+      }
+    ],
+    "id": "20260807-camera-652c03",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3043_3bc11eb4_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3043_3bc11eb4_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3043_3bc11eb4_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3043_3bc11eb4_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Auffahrt aufs Auto-Faehrschiff, Faehrmann in Warnweste weist Fahrzeug ein, Bruecke des Schiffs im Hintergrund.",
+      "tags": [
+        "faehre",
+        "schiff",
+        "auto",
+        "fjord",
+        "ueberfahrt",
+        "norwegen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7330c4888bfccb05ed551c6bbc9b96b5f50fee93004913669ed3bbfe001de45e",
+    "path": "Christina-iPhone/IMG_2889_cut-1.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T12:00:00+00:00",
+    "captured_at_source": "manual",
+    "duration": 7.33,
+    "probe": {
+      "captured_at": "2026-07-25T12:00:00+00:00",
+      "captured_at_source": "manual",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 7.33,
+      "bitrate": 53826874,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.386,
+      "stability": 0.488,
+      "exposure": 0.729,
+      "score": 0.534
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.512
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 7.32
+      }
+    ],
+    "id": "20260807-camera-7330c4",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2889_cut-1_4ac64f5e_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2889_cut-1_4ac64f5e_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2889_cut-1_4ac64f5e_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2889_cut-1_4ac64f5e_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Schafherde ueberquert eine Landstrasse in bergiger Landschaft, Aufnahme aus dem fahrenden Auto.",
+      "tags": [
+        "schafe",
+        "strasse",
+        "tiere",
+        "berge",
+        "autofahrt",
+        "norwegen"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7666155e3311a675d2a0c761e4006278c38f48c5b20d0ca7a2c242c87d1e35fe",
+    "path": "Christina-iPhone/IMG_2988.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T10:00:00+00:00",
+    "captured_at_source": "manual",
+    "duration": 4.911667,
+    "probe": {
+      "captured_at": "2026-07-25T10:00:00+00:00",
+      "captured_at_source": "manual",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 4.911667,
+      "bitrate": 53863829,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.53,
+      "stability": 0.25,
+      "exposure": 0.929,
+      "score": 0.57
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.75
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 4.92
+      }
+    ],
+    "id": "20260807-camera-766615",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2988_5309f0e0_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2988_5309f0e0_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2988_5309f0e0_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Person spannt Pfeil und Bogen auf Bogenschiess-Stand mit Zielscheibe, im Hintergrund Zuschauer.",
+      "tags": [
+        "bogenschiessen",
+        "aktivitaet",
+        "zielscheibe",
+        "outdoor",
+        "sport"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7c5d12fad673cd62b7e1746493dc284cb3bc46f51b452820fd90de43f6700935",
+    "path": "Christina-iPhone/IMG_2926.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T13:00:00+00:00",
+    "captured_at_source": "manual",
+    "duration": 33.8667,
+    "probe": {
+      "captured_at": "2026-07-24T13:00:00+00:00",
+      "captured_at_source": "manual",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 33.8667,
+      "bitrate": 53376077,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.938,
+      "stability": 0.015,
+      "exposure": 0.873,
+      "score": 0.609
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.985
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 33.87
+      }
+    ],
+    "id": "20260807-camera-7c5d12",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2926_630bb6b0_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2926_630bb6b0_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2926_630bb6b0_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Hoher Wasserfall stuerzt ueber Felsstufen neben moosbewachsenem Hang mit alter Steinruine, Person in Rot am Rand.",
+      "tags": [
+        "wasserfall",
+        "felsen",
+        "natur",
+        "ruine",
+        "gruen",
+        "norwegen"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "highlight"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:8519a9228e82b79e1513d00e937c4006383e636a94c517a17ad90b3d70125e4d",
+    "path": "Christina-iPhone/IMG_3610.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-07T14:08:47+00:00",
+    "captured_at_source": "container",
+    "duration": 25.608333,
+    "probe": {
+      "captured_at": "2026-08-07T14:08:47+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 25.608333,
+      "bitrate": 70714620,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.079,
+      "stability": 0.276,
+      "exposure": 0.953,
+      "score": 0.436
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.724
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 25.59
+      }
+    ],
+    "id": "20260807-camera-8519a9",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3610_be305b5a_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3610_be305b5a_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3610_be305b5a_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3610_be305b5a_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Autofahrt: Blick auf Tacho/Bordcomputer, Tempo 70 km/h, Kilometerstand 199999, aus dem Auto gefilmt.",
+      "tags": [
+        "autofahrt",
+        "tacho",
+        "armaturenbrett",
+        "unterwegs",
+        "alltag",
+        "dokumentation"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:86a0ba09fcf46001ff3b34757c780d45a63983bf58f26f0c85725d4ace90f40d",
+    "path": "Christina-iPhone/IMG_3260.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-07T14:01:50+00:00",
+    "captured_at_source": "container",
+    "duration": 18.653333,
+    "probe": {
+      "captured_at": "2026-08-07T14:01:50+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 18.653333,
+      "bitrate": 80014686,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.189,
+      "exposure": 0.804,
+      "score": 0.664
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.811
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 12.96
+      },
+      {
+        "start": 12.96,
+        "end": 13.96
+      },
+      {
+        "start": 13.96,
+        "end": 18.65
+      }
+    ],
+    "id": "20260807-camera-86a0ba",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3260_5cc3cd3e_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3260_5cc3cd3e_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3260_5cc3cd3e_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3260_5cc3cd3e_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3260_5cc3cd3e_kf04.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3260_5cc3cd3e_kf05.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Fjordblick mit bewaldeten Steilhaengen im Nebel, eine Faehre durchquert das ruhige Wasser.",
+      "tags": [
+        "fjord",
+        "faehre",
+        "berge",
+        "nebel",
+        "wasser",
+        "natur",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Fjord"
+    }
+  },
+  {
+    "hash": "sha256:93085e4f451ed5fc45f49720e1903cf9fee72100526abd21b58f8175cbfb0143",
+    "path": "Christina-iPhone/IMG_2864.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-07T13:49:25+00:00",
+    "captured_at_source": "container",
+    "duration": 26.18,
+    "probe": {
+      "captured_at": "2026-08-07T13:49:25+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 26.18,
+      "bitrate": 53564297,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.661,
+      "stability": 0.349,
+      "exposure": 0.724,
+      "score": 0.578
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.651
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 26.19
+      }
+    ],
+    "id": "20260807-camera-93085e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2864_3f1948a4_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2864_3f1948a4_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2864_3f1948a4_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2864_3f1948a4_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Fahrt entlang eines Sees mit Leitplanke im Vordergrund, bewaldete Huegel gegenueber, bedeckter Himmel.",
+      "tags": [
+        "see",
+        "autofahrt",
+        "leitplanke",
+        "berge",
+        "bewoelkt",
+        "landstrasse"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:9b37d63e51c53b2e5425331dd1943916e6f6afb7ab19915e9c2bd734e5ab6811",
+    "path": "Christina-iPhone/IMG_3104.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-07T14:01:13+00:00",
+    "captured_at_source": "container",
+    "duration": 19.4967,
+    "probe": {
+      "captured_at": "2026-08-07T14:01:13+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 19.4967,
+      "bitrate": 52663267,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.098,
+      "stability": 0.286,
+      "exposure": 0.682,
+      "score": 0.355
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.714
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 0.88
+      },
+      {
+        "start": 0.88,
+        "end": 19.5
+      }
+    ],
+    "id": "20260807-camera-9b37d6",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3104_ae74c443_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3104_ae74c443_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3104_ae74c443_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3104_ae74c443_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3104_ae74c443_kf04.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Regenfahrt im Gebirge, Scheibenwischer im Bild, kurvige Strasse entlang eines Sees im Nebel.",
+      "tags": [
+        "regen",
+        "autofahrt",
+        "berge",
+        "scheibenwischer",
+        "nebel",
+        "see",
+        "stimmung"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b95f1407554fd3604604ab2efb74f5d82a526e601e6fb8dedb08faeb3fcce3a6",
+    "path": "Christina-iPhone/IMG_2919.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T11:00:00+00:00",
+    "captured_at_source": "manual",
+    "duration": 7.615,
+    "probe": {
+      "captured_at": "2026-07-24T11:00:00+00:00",
+      "captured_at_source": "manual",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 7.615,
+      "bitrate": 60530221,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.243,
+      "exposure": 0.827,
+      "score": 0.69
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.757
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 7.61
+      }
+    ],
+    "id": "20260807-camera-b95f14",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2919_852ee264_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2919_852ee264_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2919_852ee264_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Fjordblick von der Faehre auf ein grosses Kreuzfahrtschiff vor steilen, bewaldeten Felswaenden im Nebel.",
+      "tags": [
+        "fjord",
+        "kreuzfahrtschiff",
+        "berge",
+        "nebel",
+        "wasser",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d518ac68cbb36ff6b9edf5f9f18a6a440db2a654a9fbded3106d93733e307bf5",
+    "path": "Christina-iPhone/IMG_2889_Cut-2.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-07T13:55:07+00:00",
+    "captured_at_source": "container",
+    "duration": 67.265,
+    "probe": {
+      "captured_at": "2026-08-07T13:55:07+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 67.265,
+      "bitrate": 74619372,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.144,
+      "stability": 0.0,
+      "exposure": 0.57,
+      "score": 0.238
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 37.32
+      },
+      {
+        "start": 37.32,
+        "end": 43.69
+      },
+      {
+        "start": 43.69,
+        "end": 67.27
+      }
+    ],
+    "id": "20260807-camera-d518ac",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2889_Cut-2_aaebfac0_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2889_Cut-2_aaebfac0_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2889_Cut-2_aaebfac0_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2889_Cut-2_aaebfac0_kf03.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2889_Cut-2_aaebfac0_kf04.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2889_Cut-2_aaebfac0_kf05.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Weitere Tunneldurchfahrt, dunkel und unscharf, ca. 67 Sekunden lang.",
+      "tags": [
+        "tunnel",
+        "autofahrt",
+        "dunkel",
+        "unterwegs",
+        "unscharf"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d9390936e16657e6cd087386f88d977dac351014c09e69057c702f61bc6fcb72",
+    "path": "Christina-iPhone/IMG_3061.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-07T14:00:08+00:00",
+    "captured_at_source": "container",
+    "duration": 4.255,
+    "probe": {
+      "captured_at": "2026-08-07T14:00:08+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 4.255,
+      "bitrate": 52606447,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.115,
+      "stability": 0.641,
+      "exposure": 0.737,
+      "score": 0.498
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.359
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 4.27
+      }
+    ],
+    "id": "20260807-camera-d93909",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3061_4fd8ab75_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3061_4fd8ab75_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3061_4fd8ab75_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weite Hochebene mit Bergkette im Hintergrund, blauer Himmel mit Wolken, kurzer statischer Clip.",
+      "tags": [
+        "hochebene",
+        "berge",
+        "himmel",
+        "weite",
+        "landschaft",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:dda71ab9a23b7ce98022cd4c498c5b662463c31483ab3a4362ee58c4f01cd313",
+    "path": "Christina-iPhone/IMG_3434.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-07T14:05:52+00:00",
+    "captured_at_source": "container",
+    "duration": 16.765,
+    "probe": {
+      "captured_at": "2026-08-07T14:05:52+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 16.765,
+      "bitrate": 54667584,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.594,
+      "stability": 0.496,
+      "exposure": 0.771,
+      "score": 0.62
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.504
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 16.77
+      }
+    ],
+    "id": "20260807-camera-dda71a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3434_44de2618_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3434_44de2618_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3434_44de2618_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Markanter spitzer Berggipfel ueber einem See, Wolkenfetzen um den Gipfel.",
+      "tags": [
+        "berggipfel",
+        "see",
+        "wolken",
+        "gebirge",
+        "landschaft",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e0e4b7d1188941b1e473874c1cae39dd81ef7950f7bd82a172c622205e7e77a4",
+    "path": "Christina-iPhone/IMG_3270.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-07T14:03:41+00:00",
+    "captured_at_source": "container",
+    "duration": 5.1417,
+    "probe": {
+      "captured_at": "2026-08-07T14:03:41+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 5.1417,
+      "bitrate": 56731143,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.198,
+      "stability": 0.416,
+      "exposure": 0.728,
+      "score": 0.447
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.584
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 5.13
+      }
+    ],
+    "id": "20260807-camera-e0e4b7",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3270_e76c4f7c_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3270_e76c4f7c_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3270_e76c4f7c_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3270_e76c4f7c_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Bewaldeter Berghang, im Nebel treibende Wolken ziehen ueber den Gipfel.",
+      "tags": [
+        "berge",
+        "nebel",
+        "wald",
+        "wolken",
+        "landschaft",
+        "stimmung"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e6609728566f2e4d88ad39f682b558b2a6d5978d3dde30d54caf743ca4346d3f",
+    "path": "Christina-iPhone/IMG_3462.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-07T14:06:18+00:00",
+    "captured_at_source": "container",
+    "duration": 14.015,
+    "probe": {
+      "captured_at": "2026-08-07T14:06:18+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 14.015,
+      "bitrate": 55458787,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.455,
+      "exposure": 0.802,
+      "score": 0.753
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.545
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 14.03
+      }
+    ],
+    "id": "20260807-camera-e66097",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3462_ddc5802d_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3462_ddc5802d_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3462_ddc5802d_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kind steht am Kiesufer eines Teichs an einem Campingplatz mit Huetten, bedeckter Himmel.",
+      "tags": [
+        "camping",
+        "teich",
+        "kind",
+        "huetten",
+        "bewoelkt",
+        "alltag"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    },
+    "gps": {
+      "place": "Campingplatz"
+    }
+  },
+  {
+    "hash": "sha256:e75da055bdf8a185b93f25585a5ce9f4f29bbf3338c92ca094726e1635bdf899",
+    "path": "Christina-iPhone/IMG_3026.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-25T14:00:00+00:00",
+    "captured_at_source": "manual",
+    "duration": 11.09,
+    "probe": {
+      "captured_at": "2026-07-25T14:00:00+00:00",
+      "captured_at_source": "manual",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 11.09,
+      "bitrate": 54171886,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.233,
+      "stability": 0.698,
+      "exposure": 0.72,
+      "score": 0.55
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.302
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 11.08
+      }
+    ],
+    "id": "20260807-camera-e75da0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3026_1c7cd80a_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3026_1c7cd80a_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3026_1c7cd80a_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Fjordfahrt bei Regen mit deutlich sichtbarem Regenbogen ueber dem Wasser zwischen steilen Bergwaenden.",
+      "tags": [
+        "fjord",
+        "regenbogen",
+        "regen",
+        "berge",
+        "wasser",
+        "stimmung",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:eac66a05de6c86e5e5dc9b75eecc0a6f7c9c8126ef17e66362ffbf6c36ac2253",
+    "path": "Christina-iPhone/IMG_2920.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-24T11:05:00+00:00",
+    "captured_at_source": "manual",
+    "duration": 5.016667,
+    "probe": {
+      "captured_at": "2026-07-24T11:05:00+00:00",
+      "captured_at_source": "manual",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 5.016667,
+      "bitrate": 56612358,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.781,
+      "stability": 0.344,
+      "exposure": 0.79,
+      "score": 0.638
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.656
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 5.0
+      }
+    ],
+    "id": "20260807-camera-eac66a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2920_d79cb3d2_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2920_d79cb3d2_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2920_d79cb3d2_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2920_d79cb3d2_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Fjordblick auf ein grosses Kreuzfahrtschiff am Fusse steiler, bewaldeter Felswaende, diesiges Licht.",
+      "tags": [
+        "fjord",
+        "kreuzfahrtschiff",
+        "berge",
+        "nebel",
+        "wasser",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:eb8b5915b22558cc869c6831e9e43ffd3fb59348eec95f51973ce9f522268ac6",
+    "path": "Christina-iPhone/IMG_2867.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-08-07T13:50:21+00:00",
+    "captured_at_source": "container",
+    "duration": 10.848333,
+    "probe": {
+      "captured_at": "2026-08-07T13:50:21+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 10.848333,
+      "bitrate": 54168046,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.696,
+      "stability": 0.239,
+      "exposure": 0.695,
+      "score": 0.543
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.761
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 10.86
+      }
+    ],
+    "id": "20260807-camera-eb8b59",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2867_16860372_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2867_16860372_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2867_16860372_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2867_16860372_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Blick durch Baeume auf einen breiten See mit schneebedeckten Bergen im Hintergrund, bewoelkter Himmel.",
+      "tags": [
+        "see",
+        "berge",
+        "schnee",
+        "baeume",
+        "bewoelkt",
+        "landschaft"
+      ],
+      "people": false,
       "usable_as": [
         "b-roll"
       ]
