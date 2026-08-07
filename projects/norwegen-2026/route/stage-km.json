@@ -8,9 +8,9 @@
   },
   {
     "day": 2,
-    "km": 390.0,
+    "km": 552.5,
     "source": "stages.csv",
-    "km_user": 390.0,
+    "km_user": 552.5,
     "km_estimated": 561.0
   },
   {
@@ -120,9 +120,9 @@
   },
   {
     "day": 18,
-    "km": 890.0,
+    "km": 1052.5,
     "source": "stages.csv",
-    "km_user": 890.0,
+    "km_user": 1052.5,
     "km_estimated": 1136.2
   }
 ]

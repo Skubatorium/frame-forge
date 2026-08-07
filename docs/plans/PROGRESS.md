@@ -1878,14 +1878,19 @@ Google-Maps-Screenshot der Roadtrip-Schleife und die bereits erfassten `stages.c
   117.845 Punkte. Gut für die Kartenlinie. Fährtage (2, 18) treibt der Autorouter auf absurde
   Landumwege hoch — für die Gesamt-km unbrauchbar, dafür gilt `stages.csv`.
 
-**Kilometer-Korrektur nach Nutzer-Feedback:** Fährstrecken zählen **0 gefahrene km**
-(Schiffsweg ist keine Autostrecke). Tag 2 (Flensburg→Skien) und Tag 18 (Skien→Grevenbroich)
-in Fahrt-Etappen aufgeteilt (Anfahrt zum Fährhafen + Weiterfahrt nach der Überfahrt), Fähre
-selbst nur im `via`-Text vermerkt. Aktivitätstage (3, 4, 5, 10, 13) hatten fälschlich 0 km —
-Nutzer bestätigte reale Kurzstrecken (Hütten-/Küstenausflüge, Einkaufsfahrten), jetzt 10–40 km
-je Tag statt 0. Neue Summe: **3504 km gefahren** (vorher 3801 km bei falscher
-Fähr-/Aktivitätstag-Zählung), vom Nutzer als „knapp bei 4000, aber plausibel" eingeordnet —
-Restdifferenz sind die ~260 km Fährstrecke, die bewusst nicht mitgezählt werden.
+**Kilometer-Korrektur nach Nutzer-Feedback (zwei Runden):** Tag 2 (Flensburg→Skien) und Tag 18
+(Skien→Grevenbroich) in Fahrt-Etappen aufgeteilt (Anfahrt zum Fährhafen + Weiterfahrt nach der
+Überfahrt). Aktivitätstage (3, 4, 5, 10, 13) hatten fälschlich 0 km — Nutzer bestätigte reale
+Kurzstrecken (Hütten-/Küstenausflüge, Einkaufsfahrten), jetzt 10–40 km je Tag statt 0.
+
+Erste Runde: Fährstrecke zunächst mit 0 km angesetzt (keine gefahrene Strecke). **Zweite Runde,
+Nutzer-Korrektur:** doch mitzählen — „überwundene Kilometer", auch wenn nicht selbst gefahren,
+nur klar als Seeweg kennzeichnen. Fährdistanz Hirtshals–Larvik als Luftlinie ermittelt
+(`gpx.haversine_km`, 162,5 km), in Tag 2 und Tag 18 zum jeweiligen Auto-Anteil addiert statt
+als eigene Zeile (Schema kennt nur eine Etappe je Kalendertag), im `via`-Text und in der `note`
+explizit als „Auto" vs. „Fähre (Seeweg)" aufgeschlüsselt. Neue Summe: **3829 km** (390+162,5
+Tag 2, 890+162,5 Tag 18). Ursprünglicher Nutzer-Bauchgefühl „knapp bei 4000" damit näher
+getroffen als die reine Auto-Summe (3504 km).
 
 **Fehlende Koordinaten ergänzt** in `locations.csv`: `Valdresflye (Fv51)` mit **echter
 GPS-Koordinate** aus `Christina-iPhone/IMG_3437.HEIC` (61.42736, 8.80273, 1183 m — höchster

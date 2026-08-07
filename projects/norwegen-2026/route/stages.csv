@@ -1,6 +1,6 @@
 day,date,from,to,via,km,overnight,note
 1,2026-07-18,Grevenbroich,Flensburg,Hamburg Hafen,578.5,Flensburg,Aufbruch 07:00 · viel Stau · Hafen Hamburg 13:13 · Ankunft 17:00 · Möwe/Blumen am Hafen, Umpacken im Parkhaus
-2,2026-07-19,Flensburg,Skien,Hirtshals; Fähre Color Line Hirtshals–Larvik (0 gefahrene km · Seeweg); Larvik,390,Skien,Nur gefahrene km (Flensburg–Hirtshals + Larvik–Skien) · Faehre Hirtshals–Larvik separat mit 0 km Autostrecke · Mittag an Bord 13:00 · Oskar auf dem Deck im Wind · Ankunft Skien 18:15 · Pizza bei Freunden
+2,2026-07-19,Flensburg,Skien,Hirtshals; Fähre Color Line Hirtshals–Larvik (Seeweg ca. 162 km); Larvik,552.5,Skien,390 km Auto (Flensburg–Hirtshals + Larvik–Skien) + ca. 162.5 km Faehre Hirtshals–Larvik (Luftlinie · Seeweg, nicht selbst gefahren) · Mittag an Bord 13:00 · Oskar auf dem Deck im Wind · Ankunft Skien 18:15 · Pizza bei Freunden
 3,2026-07-20,Skien,Skien,Hütte am See,40,Skien,Aktivitätstag · Hütte 581 m, ca. 40 km Hin-/Ruecktour ab Skien (geschaetzt) · Wanderung zum See · Ruderboot · Beeren · Grillen · bestes Wetter
 4,2026-07-21,Skien,Skien,Küste bei Langesund,40,Skien,Aktivitätstag · Ausflug ans Meer, ca. 40 km Hin-/Ruecktour (geschaetzt) · Muscheln sammeln · Eis · Einkauf für den Roadtrip
 5,2026-07-22,Skien,Skien,,20,Skien,Ruhetag vor dem Roadtrip, kleinere Fahrten (geschaetzt ca. 20 km) · Kapla · Route besprochen · zweites Grillen
@@ -16,4 +16,4 @@ day,date,from,to,via,km,overnight,note
 15,2026-08-01,Uvdal,Skien,Fv40; E134 über Notodden,190.5,Skien,Roadtrip-Tag 10 · Hütte gereinigt · BEWUSST NICHT die schnellste Route über Kongsberg, sondern die westliche über Notodden · Brettspiele, Wäsche
 16,2026-08-02,Skien,Skien,,0,Skien,Ruhetag · Zocken · Boardgames · Ribbe
 17,2026-08-03,Skien,Skien,Angelplatz bei Langesund,71,Skien,Kleiner Ausflug ab Skien und zurück (ca. 3,5 h) · Angeln an der Schärenküste · viele Drohnenaufnahmen · Oskar fängt einen kleinen Fisch · danach packen
-18,2026-08-04,Skien,Grevenbroich,Larvik; Fähre Larvik–Hirtshals 08:00–11:45 (0 gefahrene km · Seeweg); Hamburg Hafen,890,Grevenbroich,Nur gefahrene km (Skien–Larvik + Hirtshals–Grevenbroich) · Faehre separat mit 0 km Autostrecke · KEIN Flensburg-Stopp diesmal · durchgefahren · 07:00 an der Fähre in Larvik · Ankunft abends · Ende der Reise
+18,2026-08-04,Skien,Grevenbroich,Larvik; Fähre Larvik–Hirtshals 08:00–11:45 (Seeweg ca. 162 km); Hamburg Hafen,1052.5,Grevenbroich,890 km Auto (Skien–Larvik + Hirtshals–Grevenbroich) + ca. 162.5 km Faehre Larvik–Hirtshals (Luftlinie · Seeweg, nicht selbst gefahren) · KEIN Flensburg-Stopp diesmal · durchgefahren · 07:00 an der Fähre in Larvik · Ankunft abends · Ende der Reise
