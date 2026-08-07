@@ -23986,6 +23986,56 @@
     }
   },
   {
+    "hash": "sha256:5df3fdecae003f949f1ed86ea00ef68ae43ca47116b4c7c8da99051cb73c9dbf",
+    "path": "Christina-iPhone/IMG_2929.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T17:20:57+00:00",
+    "gps": {
+      "lat": 60.74695833333333,
+      "lon": 7.135922222222223,
+      "elevation_m": 681.8
+    },
+    "probe": {
+      "captured_at": "2026-07-24T17:20:57+00:00",
+      "gps": {
+        "lat": 60.74695833333333,
+        "lon": 7.135922222222223,
+        "elevation_m": 681.8
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.972,
+      "exposure": 0.966,
+      "score": 0.969
+    },
+    "id": "20260724-phone-5df3fd",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2929_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Maechtiger Wasserfall (Kjosfossen) stuerzt in mehreren Kaskaden eine Felswand hinab in ein tuerkises Becken.",
+      "tags": [
+        "wasserfall",
+        "fels",
+        "natur",
+        "kjosfossen",
+        "flaamsbana",
+        "bewoelkt"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:5fa2fca746cc0d83de93260477405781f8fccaf777dd67092ae1dcee7744b343",
     "path": "Chris-iPhone/IMG_9678.HEIC",
     "kind": "photo",
@@ -24623,6 +24673,55 @@
     }
   },
   {
+    "hash": "sha256:93b4bf6ffceb25089f9dd6d6fa7bb8defcafe702ac03e17b0aa101add84ddd2c",
+    "path": "Christina-iPhone/IMG_2931.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T21:09:23+00:00",
+    "gps": {
+      "lat": 60.91178055555555,
+      "lon": 7.194027777777778,
+      "elevation_m": 69.1
+    },
+    "probe": {
+      "captured_at": "2026-07-24T21:09:23+00:00",
+      "gps": {
+        "lat": 60.91178055555555,
+        "lon": 7.194027777777778,
+        "elevation_m": 69.1
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.265,
+      "exposure": 0.868,
+      "score": 0.567
+    },
+    "id": "20260724-phone-93b4bf",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2931_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Selfie eines Paares auf der Huettenveranda mit Blick auf einen Fjord und bewaldete Berge im Hintergrund.",
+      "tags": [
+        "paar",
+        "selfie",
+        "huette",
+        "fjord",
+        "veranda",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:9a383cf36ea08ba1ea003efc53bd1826ed4691154191ac96a892ee008115e4ba",
     "path": "Christina-iPhone/IMG_2897.HEIC",
     "kind": "photo",
@@ -24913,6 +25012,56 @@
       "people": true,
       "usable_as": [
         "emotional"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b62713b6d92b538ed3aebf3f1f85fcc90facea9f2079ead8ddb7109f6f758e4d",
+    "path": "Christina-iPhone/IMG_2948.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T22:11:17+00:00",
+    "gps": {
+      "lat": 60.91181944444444,
+      "lon": 7.194080555555556,
+      "elevation_m": 74.3
+    },
+    "probe": {
+      "captured_at": "2026-07-24T22:11:17+00:00",
+      "gps": {
+        "lat": 60.91181944444444,
+        "lon": 7.194080555555556,
+        "elevation_m": 74.3
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.199,
+      "exposure": 0.899,
+      "score": 0.549
+    },
+    "id": "20260724-phone-b62713",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2948_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Grosses Kreuzfahrtschiff faehrt bei Abenddaemmerung durch einen engen Fjord, im Vordergrund Huetten mit dunklen Daechern.",
+      "tags": [
+        "kreuzfahrtschiff",
+        "fjord",
+        "daemmerung",
+        "berge",
+        "huetten",
+        "abend"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
       ]
     }
   },
@@ -25209,6 +25358,55 @@
     }
   },
   {
+    "hash": "sha256:e7857797baa85531ae53e84b5818c6a1c5524ef28e92245bda25b14755089961",
+    "path": "Christina-iPhone/IMG_2922.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T15:53:34+00:00",
+    "gps": {
+      "lat": 60.862944444444445,
+      "lon": 7.113494444444444,
+      "elevation_m": 9.4
+    },
+    "probe": {
+      "captured_at": "2026-07-24T15:53:34+00:00",
+      "gps": {
+        "lat": 60.862944444444445,
+        "lon": 7.113494444444444,
+        "elevation_m": 9.4
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.151,
+      "exposure": 0.802,
+      "score": 0.476
+    },
+    "id": "20260724-phone-e78577",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2922_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Vater und Sohn laecheln im Innenraum eines historischen Zugwaggons, Sohn zeigt Peace-Zeichen, vermutlich Flaamsbana.",
+      "tags": [
+        "zug",
+        "vater",
+        "sohn",
+        "portraet",
+        "flaamsbana",
+        "drinnen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:e94c5427b32bc73be39e76b48e871a0abcea438e91bbdc07fa1ffec8c5fc155d",
     "path": "Christina-iPhone/IMG_2904.HEIC",
     "kind": "photo",
@@ -25353,6 +25551,56 @@
       "people": false,
       "usable_as": [
         "detail"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:eb6524c3408b296985f2eb6f4ccaacfd62dd0a3a2dc31231dbbb62824f60b6c6",
+    "path": "Christina-iPhone/IMG_2949.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-24T22:12:17+00:00",
+    "gps": {
+      "lat": 60.91181666666667,
+      "lon": 7.194086111111111,
+      "elevation_m": 74.3
+    },
+    "probe": {
+      "captured_at": "2026-07-24T22:12:17+00:00",
+      "gps": {
+        "lat": 60.91181666666667,
+        "lon": 7.194086111111111,
+        "elevation_m": 74.3
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.069,
+      "exposure": 0.924,
+      "score": 0.496
+    },
+    "id": "20260724-phone-eb6524",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2949_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kreuzfahrtschiff im Fjord bei Abenddaemmerung, eine Person beobachtet die Szene von einer Strasse am Ufer aus.",
+      "tags": [
+        "kreuzfahrtschiff",
+        "fjord",
+        "daemmerung",
+        "person",
+        "berge",
+        "abend"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
       ]
     }
   },
@@ -27913,6 +28161,104 @@
     }
   },
   {
+    "hash": "sha256:07dae498646407e6af0e8ec609f0558811cc48d42d489cff3960469f73990466",
+    "path": "Christina-iPhone/IMG_2951.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T07:34:01+00:00",
+    "gps": {
+      "lat": 60.91180833333333,
+      "lon": 7.194058333333333,
+      "elevation_m": 74.6
+    },
+    "probe": {
+      "captured_at": "2026-07-25T07:34:01+00:00",
+      "gps": {
+        "lat": 60.91180833333333,
+        "lon": 7.194058333333333,
+        "elevation_m": 74.6
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.082,
+      "exposure": 0.957,
+      "score": 0.519
+    },
+    "id": "20260725-phone-07dae4",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2951_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "POV mit Kaffeebecher in der Hand, Blick von einer Huettenterrasse auf Fjord und Berge bei bewoelktem Morgen.",
+      "tags": [
+        "pov",
+        "kaffee",
+        "fjord",
+        "huette",
+        "morgen",
+        "aussicht"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:0b13332eafb118140c93cd566f59206376c2a11b17d532300f30c21c858a34e6",
+    "path": "Christina-iPhone/IMG_2987.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T15:54:07+00:00",
+    "gps": {
+      "lat": 60.87942777777778,
+      "lon": 6.842180555555555,
+      "elevation_m": 1.2
+    },
+    "probe": {
+      "captured_at": "2026-07-25T15:54:07+00:00",
+      "gps": {
+        "lat": 60.87942777777778,
+        "lon": 6.842180555555555,
+        "elevation_m": 1.2
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.271,
+      "exposure": 0.907,
+      "score": 0.589
+    },
+    "id": "20260725-phone-0b1333",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2987_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Weiterer Moment beim Rucksack-Anziehen des Kindes vor der Huette, im Hintergrund weitere Personen mit Regenkleidung.",
+      "tags": [
+        "wandern",
+        "kind",
+        "rucksack",
+        "huette",
+        "regen",
+        "familie"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:0cef1decbabf0982d74bab9abea7b4e0dc737a91f8f518d82a43f1a7bcf343a9",
     "path": "Chris-iPhone/IMG_9744.HEIC",
     "kind": "photo",
@@ -28064,6 +28410,55 @@
     }
   },
   {
+    "hash": "sha256:195c7949827a275b97581bff6c773cef160d7aa5e43951f1c2e640772943e650",
+    "path": "Christina-iPhone/IMG_2967.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T11:13:25+00:00",
+    "gps": {
+      "lat": 60.97889444444445,
+      "lon": 7.021586111111111,
+      "elevation_m": -4.2
+    },
+    "probe": {
+      "captured_at": "2026-07-25T11:13:25+00:00",
+      "gps": {
+        "lat": 60.97889444444445,
+        "lon": 7.021586111111111,
+        "elevation_m": -4.2
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.887,
+      "score": 0.944
+    },
+    "id": "20260725-phone-195c79",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2967_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Selfie von Mutter und Sohn auf dem Faehrdeck mit Fjordlandschaft und schneebedeckten Berggipfeln im Hintergrund.",
+      "tags": [
+        "mutter",
+        "sohn",
+        "selfie",
+        "faehre",
+        "fjord",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:240ea4e5ef994f54e29d9a7ea142128d57ed80389ec157c2a88c4e2aba43c1a7",
     "path": "Chris-iPhone/IMG_9805.HEIC",
     "kind": "photo",
@@ -28108,6 +28503,55 @@
         "blumen"
       ],
       "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:270dd5b66c060b349c6470ca5882959a9dd0841cfe9b6ec25dc460499cc5a95e",
+    "path": "Christina-iPhone/IMG_2982.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T12:05:13+00:00",
+    "gps": {
+      "lat": 60.89141111111111,
+      "lon": 6.846716666666667,
+      "elevation_m": 216.8
+    },
+    "probe": {
+      "captured_at": "2026-07-25T12:05:13+00:00",
+      "gps": {
+        "lat": 60.89141111111111,
+        "lon": 6.846716666666667,
+        "elevation_m": 216.8
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.77,
+      "exposure": 0.881,
+      "score": 0.825
+    },
+    "id": "20260725-phone-270dd5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2982_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Duenner Wasserfall stuerzt eine steile Felswand am Fjordufer hinab, umgeben von gruener Vegetation.",
+      "tags": [
+        "wasserfall",
+        "fjord",
+        "fels",
+        "natur",
+        "gruen",
+        "berge"
+      ],
+      "people": false,
       "usable_as": [
         "b-roll"
       ]
@@ -28315,6 +28759,56 @@
     }
   },
   {
+    "hash": "sha256:33feac7842370ab490d98b69069de4c8923b4cb9e08a3ebc1d9d3e00e5f36a99",
+    "path": "Christina-iPhone/IMG_3032.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T18:05:49+00:00",
+    "gps": {
+      "lat": 60.94993888888889,
+      "lon": 6.944530555555556,
+      "elevation_m": 17.9
+    },
+    "probe": {
+      "captured_at": "2026-07-25T18:05:49+00:00",
+      "gps": {
+        "lat": 60.94993888888889,
+        "lon": 6.944530555555556,
+        "elevation_m": 17.9
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.314,
+      "exposure": 0.87,
+      "score": 0.592
+    },
+    "id": "20260725-phone-33feac",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3032_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Blick vom Faehr-Heck zurueck auf den Fjord mit norwegischer Flagge im Vordergrund und dramatischem Wolkenhimmel.",
+      "tags": [
+        "fjord",
+        "faehre",
+        "flagge",
+        "berge",
+        "wolken",
+        "kielwasser"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:36ddf3e27edeacd6da4c01830624cd40608442aa929dc6baccd3991855f08764",
     "path": "Chris-iPhone/IMG_9787.HEIC",
     "kind": "photo",
@@ -28359,6 +28853,55 @@
         "norwegen"
       ],
       "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:3bcbc023ae56e698aae5538083841df62c61e2da41c4f1f4b81b10b93f0be1d0",
+    "path": "Christina-iPhone/IMG_2958.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T10:28:03+00:00",
+    "gps": {
+      "lat": 60.86966388888889,
+      "lon": 7.131374999999999,
+      "elevation_m": 11.7
+    },
+    "probe": {
+      "captured_at": "2026-07-25T10:28:03+00:00",
+      "gps": {
+        "lat": 60.86966388888889,
+        "lon": 7.131374999999999,
+        "elevation_m": 11.7
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.083,
+      "exposure": 0.883,
+      "score": 0.483
+    },
+    "id": "20260725-phone-3bcbc0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2958_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Junge in gruener Jacke und Muetze steht auf einem Faehrdeck vor gruenen Berghaengen und Fjordwasser.",
+      "tags": [
+        "kind",
+        "faehre",
+        "fjord",
+        "berge",
+        "portraet",
+        "jacke"
+      ],
+      "people": true,
       "usable_as": [
         "b-roll"
       ]
@@ -30723,6 +31266,55 @@
     }
   },
   {
+    "hash": "sha256:c7a3622744ca8a00b5da6030acb737769266dfbd20dbbb736e7601e8a8622c6e",
+    "path": "Christina-iPhone/IMG_2965.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T11:11:43+00:00",
+    "gps": {
+      "lat": 60.982058333333335,
+      "lon": 7.031875,
+      "elevation_m": 10.0
+    },
+    "probe": {
+      "captured_at": "2026-07-25T11:11:43+00:00",
+      "gps": {
+        "lat": 60.982058333333335,
+        "lon": 7.031875,
+        "elevation_m": 10.0
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.798,
+      "score": 0.899
+    },
+    "id": "20260725-phone-c7a362",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2965_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Symmetrischer Blick von der Faehre den Fjord entlang zwischen engen Felswaenden unter dichter Bewoelkung.",
+      "tags": [
+        "fjord",
+        "faehre",
+        "wolken",
+        "berge",
+        "symmetrie",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
     "hash": "sha256:cce497c12bffc2e8ad280295ffabef48eb7e46dc67401ec8aa6db57a127d18de",
     "path": "Chris-iPhone/IMG_9823.HEIC",
     "kind": "photo",
@@ -30823,6 +31415,105 @@
     }
   },
   {
+    "hash": "sha256:d08255a01261f2629ea0b7bc98f34a663ab6fea817e68b7dae896dab1d0a6676",
+    "path": "Christina-iPhone/IMG_3024.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T17:55:52+00:00",
+    "gps": {
+      "lat": 60.93798333333333,
+      "lon": 6.903063888888889,
+      "elevation_m": 10.3
+    },
+    "probe": {
+      "captured_at": "2026-07-25T17:55:52+00:00",
+      "gps": {
+        "lat": 60.93798333333333,
+        "lon": 6.903063888888889,
+        "elevation_m": 10.3
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.259,
+      "exposure": 0.96,
+      "score": 0.609
+    },
+    "id": "20260725-phone-d08255",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3024_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Doppelter Regenbogen spannt sich ueber einen engen, regenverhangenen Fjord zwischen steilen Berghaengen.",
+      "tags": [
+        "regenbogen",
+        "fjord",
+        "regen",
+        "berge",
+        "natur",
+        "wetter"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d4a656d92512ad9d6f730e1f4407cdf6d5bfcb4c606deca3efe9d41d7a0ae5df",
+    "path": "Christina-iPhone/IMG_2961.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T11:08:51+00:00",
+    "gps": {
+      "lat": 60.98679444444444,
+      "lon": 7.050636111111111,
+      "elevation_m": -3.1
+    },
+    "probe": {
+      "captured_at": "2026-07-25T11:08:51+00:00",
+      "gps": {
+        "lat": 60.98679444444444,
+        "lon": 7.050636111111111,
+        "elevation_m": -3.1
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.897,
+      "score": 0.949
+    },
+    "id": "20260725-phone-d4a656",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2961_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Blick von einer Faehre in einen weiten Fjord mit dramatischem Wolkenhimmel und steilen Berghaengen beidseitig.",
+      "tags": [
+        "fjord",
+        "faehre",
+        "wolken",
+        "berge",
+        "panorama",
+        "sognefjord"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:d56ddbcce775b999e6902c48105e46185fd421d550a5ee87c16ca1e1babaec6e",
     "path": "Chris-iPhone/IMG_9856.HEIC",
     "kind": "photo",
@@ -30865,6 +31556,55 @@
         "kind",
         "interaktion",
         "mittelalter"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d73e461906b5f4a4344979c8d94c364e4854d39a0aeccedef80c0781a3c6860e",
+    "path": "Christina-iPhone/IMG_2985.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T15:53:32+00:00",
+    "gps": {
+      "lat": 60.879783333333336,
+      "lon": 6.8417055555555555,
+      "elevation_m": 14.0
+    },
+    "probe": {
+      "captured_at": "2026-07-25T15:53:32+00:00",
+      "gps": {
+        "lat": 60.879783333333336,
+        "lon": 6.8417055555555555,
+        "elevation_m": 14.0
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.376,
+      "exposure": 0.907,
+      "score": 0.641
+    },
+    "id": "20260725-phone-d73e46",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2985_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mann hilft einem Kind beim Anziehen des Rucksacks vor einer Holzhuette, vermutlich Wanderstart.",
+      "tags": [
+        "wandern",
+        "kind",
+        "rucksack",
+        "huette",
+        "vorbereitung",
+        "familie"
       ],
       "people": true,
       "usable_as": [
@@ -31223,6 +31963,55 @@
     }
   },
   {
+    "hash": "sha256:f0a3fefe271792a7ebb48668646ae1c27a40716736967f477983e3b588bc6e55",
+    "path": "Christina-iPhone/IMG_2956.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T10:02:10+00:00",
+    "gps": {
+      "lat": 60.86291111111111,
+      "lon": 7.116091666666667,
+      "elevation_m": 5.4
+    },
+    "probe": {
+      "captured_at": "2026-07-25T10:02:10+00:00",
+      "gps": {
+        "lat": 60.86291111111111,
+        "lon": 7.116091666666667,
+        "elevation_m": 5.4
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.16,
+      "exposure": 0.944,
+      "score": 0.552
+    },
+    "id": "20260725-phone-f0a3fe",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2956_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Vater und Sohn sitzen an einem Fensterplatz in einem modernen Faehrterminal, im Hintergrund ein Kreuzfahrtschiff am Kai.",
+      "tags": [
+        "vater",
+        "sohn",
+        "faehre",
+        "terminal",
+        "kreuzfahrtschiff",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:f19e4549523625185167a974d748d00de95fb33cc38d3f6ecd70212a8d72bdcd",
     "path": "Chris-iPhone/IMG_9917.HEIC",
     "kind": "photo",
@@ -31324,6 +32113,56 @@
     }
   },
   {
+    "hash": "sha256:f5995aef407c9db43155c2c26b2fc86684c57cfa759ab482549cb615d3ff1e32",
+    "path": "Christina-iPhone/IMG_2980.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T11:48:45+00:00",
+    "gps": {
+      "lat": 60.918530555555556,
+      "lon": 6.873594444444445,
+      "elevation_m": 9.3
+    },
+    "probe": {
+      "captured_at": "2026-07-25T11:48:45+00:00",
+      "gps": {
+        "lat": 60.918530555555556,
+        "lon": 6.873594444444445,
+        "elevation_m": 9.3
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.498,
+      "exposure": 0.934,
+      "score": 0.716
+    },
+    "id": "20260725-phone-f5995a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_2980_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Blick von der Faehre auf ein kleines Fjorddorf am Fuss eines markanten, wolkenverhangenen Gipfels.",
+      "tags": [
+        "fjord",
+        "dorf",
+        "berge",
+        "faehre",
+        "wolken",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:f64740bc56d949600363f972272e937319b274167fff9be0d0525c9a07ac70da",
     "path": "Chris-iPhone/IMG_9820.HEIC",
     "kind": "photo",
@@ -31370,6 +32209,55 @@
       "people": false,
       "usable_as": [
         "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f6a88a858e9b96f53573e37d754fe427452df7db248411261bb49dc47d69c800",
+    "path": "Christina-iPhone/IMG_3036.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-25T18:23:22+00:00",
+    "gps": {
+      "lat": 60.97779722222222,
+      "lon": 7.0174666666666665,
+      "elevation_m": 30.2
+    },
+    "probe": {
+      "captured_at": "2026-07-25T18:23:22+00:00",
+      "gps": {
+        "lat": 60.97779722222222,
+        "lon": 7.0174666666666665,
+        "elevation_m": 30.2
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.691,
+      "exposure": 0.899,
+      "score": 0.795
+    },
+    "id": "20260725-phone-f6a88a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3036_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Vater und Sohn stehen am Bug der Faehre und fotografieren den Fjord, Blick von oben auf das Deck.",
+      "tags": [
+        "faehre",
+        "fjord",
+        "vater",
+        "sohn",
+        "deck",
+        "vogelperspektive"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
       ]
     }
   },
@@ -34884,6 +35772,55 @@
     "place_source": "index"
   },
   {
+    "hash": "sha256:0397860127af0a26b6ce517a5690b921dedeb99b14927f647dd9a4c0cc7f8699",
+    "path": "Christina-iPhone/IMG_3082.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-26T14:52:11+00:00",
+    "gps": {
+      "lat": 61.902425,
+      "lon": 7.075255555555556,
+      "elevation_m": 33.1
+    },
+    "probe": {
+      "captured_at": "2026-07-26T14:52:11+00:00",
+      "gps": {
+        "lat": 61.902425,
+        "lon": 7.075255555555556,
+        "elevation_m": 33.1
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.043,
+      "exposure": 0.971,
+      "score": 0.507
+    },
+    "id": "20260726-phone-039786",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3082_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Fahraufnahme auf eine wolkenverhangene Bergkette an einer regennassen Landstrasse im Tal.",
+      "tags": [
+        "autofahrt",
+        "berge",
+        "wolken",
+        "regen",
+        "strasse",
+        "tal"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:0738b3454486cd4d79867d3fc7c7b02735c034cb77aa82866b1dce7cbbc1c933",
     "path": "Chris-iPhone/IMG_9958.HEIC",
     "kind": "photo",
@@ -34928,6 +35865,56 @@
       "people": false,
       "usable_as": [
         "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:088a1b8f1eedff3399a0b2f1acb4dc064595d1f600a5d49cb5db16907dc6976d",
+    "path": "Christina-iPhone/IMG_3106.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-26T15:58:15+00:00",
+    "gps": {
+      "lat": 62.058658333333334,
+      "lon": 7.270475,
+      "elevation_m": 651.0
+    },
+    "probe": {
+      "captured_at": "2026-07-26T15:58:15+00:00",
+      "gps": {
+        "lat": 62.058658333333334,
+        "lon": 7.270475,
+        "elevation_m": 651.0
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.604,
+      "exposure": 0.935,
+      "score": 0.77
+    },
+    "id": "20260726-phone-088a1b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3106_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Regennasse Passstrasse mit Steinmarkierungen fuehrt durch ein weites, gruenes Bergtal unter dichten Wolken.",
+      "tags": [
+        "passstrasse",
+        "berge",
+        "tal",
+        "regen",
+        "wolken",
+        "serpentinen"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
       ]
     }
   },
@@ -35223,6 +36210,55 @@
     }
   },
   {
+    "hash": "sha256:278703ef84656d48cf1683300edb5ee407dc257dcd3ae16d4369286422356d26",
+    "path": "Christina-iPhone/IMG_3109.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-26T16:43:39+00:00",
+    "gps": {
+      "lat": 62.09459722222223,
+      "lon": 7.223222222222223,
+      "elevation_m": 202.3
+    },
+    "probe": {
+      "captured_at": "2026-07-26T16:43:39+00:00",
+      "gps": {
+        "lat": 62.09459722222223,
+        "lon": 7.223222222222223,
+        "elevation_m": 202.3
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.177,
+      "exposure": 0.888,
+      "score": 0.533
+    },
+    "id": "20260726-phone-278703",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3109_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Kind blickt von einer Huettenveranda auf den Geirangerfjord mit Kreuzfahrtschiff und umliegendem Ort zwischen steilen Berggipfeln.",
+      "tags": [
+        "geirangerfjord",
+        "kind",
+        "aussicht",
+        "fjord",
+        "kreuzfahrtschiff",
+        "veranda"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
     "hash": "sha256:2b8144186d7d601bdd1d684c5038051ade2ad7c6dbdc71c986d9e1cf571502ce",
     "path": "Chris-iPhone/IMG_9942.HEIC",
     "kind": "photo",
@@ -35508,6 +36544,55 @@
         "wanderung"
       ],
       "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:3e9a18d6a16dfadd7c32ba811b9127bdee9911cfa8c97984b9b5893e03f1a1e8",
+    "path": "Christina-iPhone/IMG_3040.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-26T08:51:05+00:00",
+    "gps": {
+      "lat": 60.911811111111106,
+      "lon": 7.193897222222223,
+      "elevation_m": 77.9
+    },
+    "probe": {
+      "captured_at": "2026-07-26T08:51:05+00:00",
+      "gps": {
+        "lat": 60.911811111111106,
+        "lon": 7.193897222222223,
+        "elevation_m": 77.9
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.153,
+      "exposure": 0.828,
+      "score": 0.491
+    },
+    "id": "20260726-phone-3e9a18",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3040_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kind wischt Geschirr an einer Aussenkueche mit Blick auf Fjord und Berge, Blumenampel und Boote im Hintergrund.",
+      "tags": [
+        "kind",
+        "huette",
+        "fjord",
+        "aussenkueche",
+        "alltag",
+        "ferienhaus"
+      ],
+      "people": true,
       "usable_as": [
         "b-roll"
       ]
@@ -35891,6 +36976,55 @@
     }
   },
   {
+    "hash": "sha256:6fbc8bf4af71f17df824c0c77c32c3589b00a48063b0a3f78e526822fc18b341",
+    "path": "Christina-iPhone/IMG_3037.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-26T08:25:52+00:00",
+    "gps": {
+      "lat": 60.911830555555554,
+      "lon": 7.1940333333333335,
+      "elevation_m": 79.0
+    },
+    "probe": {
+      "captured_at": "2026-07-26T08:25:52+00:00",
+      "gps": {
+        "lat": 60.911830555555554,
+        "lon": 7.1940333333333335,
+        "elevation_m": 79.0
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.241,
+      "exposure": 0.947,
+      "score": 0.594
+    },
+    "id": "20260726-phone-6fbc8b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3037_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Vater und Sohn beim Fruehstueck in einer kompakten Huettenkueche mit Stockbett im Hintergrund.",
+      "tags": [
+        "fruehstueck",
+        "huette",
+        "vater",
+        "sohn",
+        "kueche",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:79121c2505267c4a716072c1c4067e0800342aafac36db8abbab918064926e5a",
     "path": "Chris-iPhone/IMG_9919.HEIC",
     "kind": "photo",
@@ -36080,6 +37214,56 @@
       ],
       "people": true,
       "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:8ab5e67e2816e36767df39f93ec03a2c21186a409e9d6ec91c803b128502e894",
+    "path": "Christina-iPhone/IMG_3076.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-26T13:58:38+00:00",
+    "gps": {
+      "lat": 61.855219444444444,
+      "lon": 6.815727777777777,
+      "elevation_m": 4.1
+    },
+    "probe": {
+      "captured_at": "2026-07-26T13:58:38+00:00",
+      "gps": {
+        "lat": 61.855219444444444,
+        "lon": 6.815727777777777,
+        "elevation_m": 4.1
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.31,
+      "exposure": 0.978,
+      "score": 0.644
+    },
+    "id": "20260726-phone-8ab5e6",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3076_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Blick von der Strasse ueber einen tuerkisgruenen Fjord auf gruene Huegel unter tiefhaengenden Wolken.",
+      "tags": [
+        "fjord",
+        "strasse",
+        "berge",
+        "wolken",
+        "gruen",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
         "b-roll"
       ]
     }
@@ -36754,6 +37938,55 @@
     }
   },
   {
+    "hash": "sha256:cd0b5055f1914092f92c68d377d3f4bc099a0ad1c2a201bb4d78a09e0745d5cd",
+    "path": "Christina-iPhone/IMG_3094.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-26T15:03:54+00:00",
+    "gps": {
+      "lat": 61.93501388888888,
+      "lon": 7.248783333333334,
+      "elevation_m": 317.3
+    },
+    "probe": {
+      "captured_at": "2026-07-26T15:03:54+00:00",
+      "gps": {
+        "lat": 61.93501388888888,
+        "lon": 7.248783333333334,
+        "elevation_m": 317.3
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.266,
+      "exposure": 0.674,
+      "score": 0.47
+    },
+    "id": "20260726-phone-cd0b50",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3094_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 1,
+    "content": {
+      "summary": "Nahaufnahme des Auto-Navigationsdisplays mit Serpentinenstrasse und Geschwindigkeitsbegrenzung, keine Landschaft sichtbar.",
+      "tags": [
+        "navigation",
+        "auto",
+        "strasse",
+        "serpentinen",
+        "display",
+        "unterwegs"
+      ],
+      "people": false,
+      "usable_as": [
+        "cutaway"
+      ]
+    }
+  },
+  {
     "hash": "sha256:cde3c7f23364816df8512578dabb24f50a8718dc1476eadd09ca06ce0b8b9331",
     "path": "Chris-iPhone/IMG_9959.HEIC",
     "kind": "photo",
@@ -36803,6 +38036,56 @@
     }
   },
   {
+    "hash": "sha256:d1fb7575193eba3399c0c92a4fbae9f6f50ec3bfcff2f26e6842425b5ee9d289",
+    "path": "Christina-iPhone/IMG_3059.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-26T11:56:45+00:00",
+    "gps": {
+      "lat": 61.465316666666666,
+      "lon": 6.740652777777778,
+      "elevation_m": 100.0
+    },
+    "probe": {
+      "captured_at": "2026-07-26T11:56:45+00:00",
+      "gps": {
+        "lat": 61.465316666666666,
+        "lon": 6.740652777777778,
+        "elevation_m": 100.0
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.281,
+      "exposure": 0.931,
+      "score": 0.606
+    },
+    "id": "20260726-phone-d1fb75",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3059_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Fahraufnahme auf regennasser Bergstrasse mit Blick auf einen Gletscherzungenrest zwischen den Gipfeln.",
+      "tags": [
+        "autofahrt",
+        "gletscher",
+        "berge",
+        "regen",
+        "strasse",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
     "hash": "sha256:d8752a927be0d6002e8508aab2522adaff4ff6b4c371dfef79bb4b08be56d42d",
     "path": "Chris-iPhone/IMG_0032.HEIC",
     "kind": "photo",
@@ -36847,6 +38130,55 @@
       "people": false,
       "usable_as": [
         "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e27b6f9f6bfd8c216864d48475e6e3e49a25df8f9467220cb7c12db27d818bee",
+    "path": "Christina-iPhone/IMG_3053.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-26T11:53:51+00:00",
+    "gps": {
+      "lat": 61.43814722222222,
+      "lon": 6.761030555555555,
+      "elevation_m": 16.2
+    },
+    "probe": {
+      "captured_at": "2026-07-26T11:53:51+00:00",
+      "gps": {
+        "lat": 61.43814722222222,
+        "lon": 6.761030555555555,
+        "elevation_m": 16.2
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.088,
+      "exposure": 0.974,
+      "score": 0.531
+    },
+    "id": "20260726-phone-e27b6f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3053_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Regennasse Fahraufnahme durch die Windschutzscheibe auf ein Bergtal mit Wolken zwischen den Gipfeln.",
+      "tags": [
+        "autofahrt",
+        "regen",
+        "berge",
+        "tal",
+        "strasse",
+        "wetter"
+      ],
+      "people": false,
+      "usable_as": [
         "b-roll"
       ]
     }
@@ -39501,6 +40833,56 @@
     }
   },
   {
+    "hash": "sha256:6b9f53d51efd129c31a990d2941b90d7f0a477261ae4c065845771d1fc8d7dd2",
+    "path": "Christina-iPhone/IMG_3188.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T11:58:15+00:00",
+    "gps": {
+      "lat": 62.09710277777778,
+      "lon": 7.208316666666667,
+      "elevation_m": 71.3
+    },
+    "probe": {
+      "captured_at": "2026-07-27T11:58:15+00:00",
+      "gps": {
+        "lat": 62.09710277777778,
+        "lon": 7.208316666666667,
+        "elevation_m": 71.3
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.337,
+      "exposure": 0.883,
+      "score": 0.61
+    },
+    "id": "20260727-phone-6b9f53",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3188_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Vater und Sohn stehen an einer Aussichtsplattform und blicken auf den Geirangerfjord mit Kreuzfahrtschiff.",
+      "tags": [
+        "geirangerfjord",
+        "vater",
+        "sohn",
+        "aussicht",
+        "kreuzfahrtschiff",
+        "plattform"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:6f2658a6d88f67c08c934df7b852779ee6f0704f104b63a73f3752da80ce1253",
     "path": "Chris-iPhone/IMG_0041.HEIC",
     "kind": "photo",
@@ -39983,6 +41365,56 @@
     }
   },
   {
+    "hash": "sha256:ba6c3dd4d811643199d003f11a44948e0db6b74ed9136fc0bd96a51c5f0ea57c",
+    "path": "Christina-iPhone/IMG_3190.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T11:58:19+00:00",
+    "gps": {
+      "lat": 62.097072222222224,
+      "lon": 7.208205555555556,
+      "elevation_m": 69.0
+    },
+    "probe": {
+      "captured_at": "2026-07-27T11:58:19+00:00",
+      "gps": {
+        "lat": 62.097072222222224,
+        "lon": 7.208205555555556,
+        "elevation_m": 69.0
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.822,
+      "score": 0.911
+    },
+    "id": "20260727-phone-ba6c3d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3190_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weiterer Blick von der runden Aussichtsplattform ueber den Geirangerfjord mit Kreuzfahrtschiff, Vater und Sohn von hinten.",
+      "tags": [
+        "geirangerfjord",
+        "vater",
+        "sohn",
+        "aussichtsplattform",
+        "kreuzfahrtschiff",
+        "panorama"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:c25c1593952d25f91289ae8a2d8afc982cc6d2b99e4d2570f146b39a8df6bac6",
     "path": "Chris-iPhone/IMG_0129.HEIC",
     "kind": "photo",
@@ -40224,6 +41656,55 @@
     }
   },
   {
+    "hash": "sha256:d12936ce10b5225dff5f792d1c4df0970408fb2cbdf86c36722b5d2306225b73",
+    "path": "Christina-iPhone/IMG_3196.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T13:33:45+00:00",
+    "gps": {
+      "lat": 62.100975,
+      "lon": 7.2044805555555556,
+      "elevation_m": 5.2
+    },
+    "probe": {
+      "captured_at": "2026-07-27T13:33:45+00:00",
+      "gps": {
+        "lat": 62.100975,
+        "lon": 7.2044805555555556,
+        "elevation_m": 5.2
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.921,
+      "score": 0.961
+    },
+    "id": "20260727-phone-d12936",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3196_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Vater und Sohn posieren am Hafen von Geiranger, Vater haelt einen Becher, Felswand und Huetten im Hintergrund.",
+      "tags": [
+        "vater",
+        "sohn",
+        "geiranger",
+        "hafen",
+        "portraet",
+        "felswand"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:d42ed6afc1d436ba332d83988994922a07678f2eddc1bf61baab8be345740749",
     "path": "Chris-iPhone/IMG_0090.HEIC",
     "kind": "photo",
@@ -40264,6 +41745,104 @@
         "fjord",
         "ausflug",
         "steg"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d8734e0f324089181819c5215e605c123cc5847388818b67fb7a31b582a505ba",
+    "path": "Christina-iPhone/IMG_3194.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T13:33:28+00:00",
+    "gps": {
+      "lat": 62.10098333333333,
+      "lon": 7.2044500000000005,
+      "elevation_m": 4.9
+    },
+    "probe": {
+      "captured_at": "2026-07-27T13:33:28+00:00",
+      "gps": {
+        "lat": 62.10098333333333,
+        "lon": 7.2044500000000005,
+        "elevation_m": 4.9
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.992,
+      "score": 0.996
+    },
+    "id": "20260727-phone-d8734e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3194_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Vater umarmt Sohn auf einer Bank am Hafen von Geiranger, im Hintergrund weisses Hotelgebaeude und Felswand.",
+      "tags": [
+        "vater",
+        "sohn",
+        "umarmung",
+        "hafen",
+        "geiranger",
+        "portraet"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e6a4001633f947d30aa8c116a90b45e05913a1388020f39c5c72192c807f325c",
+    "path": "Christina-iPhone/IMG_3201.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T21:02:28+00:00",
+    "gps": {
+      "lat": 62.0946,
+      "lon": 7.2232972222222225,
+      "elevation_m": 205.5
+    },
+    "probe": {
+      "captured_at": "2026-07-27T21:02:28+00:00",
+      "gps": {
+        "lat": 62.0946,
+        "lon": 7.2232972222222225,
+        "elevation_m": 205.5
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.363,
+      "exposure": 0.959,
+      "score": 0.661
+    },
+    "id": "20260727-phone-e6a400",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3201_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Vater und Sohn spielen ein Fantasy-Rollenspiel mit Charakterboegen und Wuerfeln am Kuechentisch der Huette.",
+      "tags": [
+        "brettspiel",
+        "vater",
+        "sohn",
+        "huette",
+        "drinnen",
+        "abend"
       ],
       "people": true,
       "usable_as": [
@@ -40316,6 +41895,55 @@
       "people": false,
       "usable_as": [
         "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ea63a8d931be073391ba1a9af3bc8e770444ad41c6edd8cd7ebb696113225422",
+    "path": "Christina-iPhone/IMG_3183.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T11:50:47+00:00",
+    "gps": {
+      "lat": 62.09749722222222,
+      "lon": 7.207061111111111,
+      "elevation_m": 48.5
+    },
+    "probe": {
+      "captured_at": "2026-07-27T11:50:47+00:00",
+      "gps": {
+        "lat": 62.09749722222222,
+        "lon": 7.207061111111111,
+        "elevation_m": 48.5
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.789,
+      "score": 0.895
+    },
+    "id": "20260727-phone-ea63a8",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3183_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Mann steigt eine moderne Gitterrost-Treppe an einem Wasserfall hinab, Blick auf den Geirangerfjord im Hintergrund.",
+      "tags": [
+        "treppe",
+        "wasserfall",
+        "geiranger",
+        "wanderung",
+        "fjord",
+        "gruen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
       ]
     }
   },
@@ -40408,6 +42036,138 @@
         "fruehstueck",
         "mann",
         "huette"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:fb10e962427473230289009ad5609a36d02a63b4c3f40449d0075e1b854b8655",
+    "path": "Christina-iPhone/IMG_3187.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-27T11:55:10+00:00",
+    "gps": {
+      "lat": 62.09722222222222,
+      "lon": 7.207777777777778,
+      "elevation_m": 61.8
+    },
+    "probe": {
+      "captured_at": "2026-07-27T11:55:10+00:00",
+      "gps": {
+        "lat": 62.09722222222222,
+        "lon": 7.207777777777778,
+        "elevation_m": 61.8
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.927,
+      "score": 0.964
+    },
+    "id": "20260727-phone-fb10e9",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3187_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Blick von der Aussichtstreppe ueber einen tosenden Gebirgsbach auf den Geirangerfjord mit Kreuzfahrtschiff.",
+      "tags": [
+        "geirangerfjord",
+        "wasserfall",
+        "treppe",
+        "fluss",
+        "kreuzfahrtschiff",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:0871f80e441224e0e58ae2fc444066f1f363f1544d97913b75f47ea3ef24a38a",
+    "path": "Christina-iPhone/dbe51349-b9e5-4ac6-a045-7cd1d86496bc.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": "2026-07-27T21:20:54+00:00",
+    "gps": null,
+    "probe": {
+      "captured_at": "2026-07-27T21:20:54+00:00",
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.977,
+      "score": 0.989
+    },
+    "id": "20260727-unknown-0871f8",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/dbe51349-b9e5-4ac6-a045-7cd1d86496bc_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Schmaler Wasserfall stuerzt eine bemooste Felswand ins Fjordwasser, Aufnahme vom Boot aus, vermutlich Geirangerfjord.",
+      "tags": [
+        "wasserfall",
+        "geirangerfjord",
+        "fels",
+        "natur",
+        "boot",
+        "gruen"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ba8b1d14b6b117bda572d139dae4c1693a2b37caa688f9e4a97aceb2ee0ada66",
+    "path": "Christina-iPhone/e726f804-89e2-4acc-b18b-e6ce201b3f65.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": "2026-07-27T21:20:54+00:00",
+    "gps": null,
+    "probe": {
+      "captured_at": "2026-07-27T21:20:54+00:00",
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.998,
+      "score": 0.999
+    },
+    "id": "20260727-unknown-ba8b1d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/e726f804-89e2-4acc-b18b-e6ce201b3f65_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Familie in gelben Rettungsanzuegen posiert am Bootssteg vor einem Fjorddorf mit Rorbuer und kleinen Booten, RIB-Bootstour.",
+      "tags": [
+        "familie",
+        "rettungsanzug",
+        "fjord",
+        "rib-boot",
+        "steg",
+        "gruppenfoto"
       ],
       "people": true,
       "usable_as": [
@@ -44706,6 +46466,55 @@
     }
   },
   {
+    "hash": "sha256:48ee8d41d7d5353ca2dfbc4ea3ef5ea481505d744c5780eb64d9ac0d1fa557a1",
+    "path": "Christina-iPhone/IMG_3259.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T10:09:11+00:00",
+    "gps": {
+      "lat": 62.117019444444445,
+      "lon": 7.183266666666667,
+      "elevation_m": 43.9
+    },
+    "probe": {
+      "captured_at": "2026-07-28T10:09:11+00:00",
+      "gps": {
+        "lat": 62.117019444444445,
+        "lon": 7.183266666666667,
+        "elevation_m": 43.9
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.281,
+      "exposure": 0.693,
+      "score": 0.487
+    },
+    "id": "20260728-phone-48ee8d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3259_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 1,
+    "content": {
+      "summary": "Nahaufnahme des Navigationsdisplays mit der Serpentinenstrasse Ørnevegen (Adlerstrasse) bei Geiranger, keine Landschaft sichtbar.",
+      "tags": [
+        "navigation",
+        "serpentinen",
+        "oernevegen",
+        "geiranger",
+        "auto",
+        "display"
+      ],
+      "people": false,
+      "usable_as": [
+        "cutaway"
+      ]
+    }
+  },
+  {
     "hash": "sha256:4cbed23d315ad64518d1fd78d34621ae6f76827eaa5ebdb73fa6ab814591df71",
     "path": "Chris-iPhone/IMG_0255.HEIC",
     "kind": "photo",
@@ -44748,6 +46557,55 @@
         "establisher"
       ],
       "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4e795c64e717cd1541f6048493fa3850fa85330d0be74a585859914cc8e1c046",
+    "path": "Christina-iPhone/IMG_3272.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:13:24+00:00",
+    "gps": {
+      "lat": 62.44334166666666,
+      "lon": 7.660627777777778,
+      "elevation_m": 769.6
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:13:24+00:00",
+      "gps": {
+        "lat": 62.44334166666666,
+        "lon": 7.660627777777778,
+        "elevation_m": 769.6
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.926,
+      "score": 0.963
+    },
+    "id": "20260728-phone-4e795c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3272_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Karge Hochgebirgslandschaft mit markantem Gipfel, kleinem Bergsee und Wanderern in der Ferne unter bewoelktem Himmel.",
+      "tags": [
+        "hochgebirge",
+        "bergsee",
+        "wanderung",
+        "gipfel",
+        "karg",
+        "natur"
+      ],
+      "people": true,
       "usable_as": [
         "establisher"
       ]
@@ -45668,6 +47526,56 @@
     }
   },
   {
+    "hash": "sha256:9fd76f49a3be98f1072782c2b96bcabcbe5624b9f16a7e2fef283b76f37ba2b3",
+    "path": "Christina-iPhone/IMG_3265.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T10:41:23+00:00",
+    "gps": {
+      "lat": 62.26348055555555,
+      "lon": 7.170791666666667,
+      "elevation_m": -6.6
+    },
+    "probe": {
+      "captured_at": "2026-07-28T10:41:23+00:00",
+      "gps": {
+        "lat": 62.26348055555555,
+        "lon": 7.170791666666667,
+        "elevation_m": -6.6
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 1.0,
+      "score": 1.0
+    },
+    "id": "20260728-phone-9fd76f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3265_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Weiter Blick von der Faehre auf einen bewoelkten Fjord mit fernen Bergen im Dunst, keine Personen im Bild.",
+      "tags": [
+        "fjord",
+        "faehre",
+        "berge",
+        "wolken",
+        "panorama",
+        "dunst"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
     "hash": "sha256:a090783dae7e1c56f6f064920f625c177fbebf059c2701fa149885f2cd658e53",
     "path": "Chris-iPhone/IMG_0206.HEIC",
     "kind": "photo",
@@ -45712,6 +47620,55 @@
       "people": false,
       "usable_as": [
         "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a130b8610ba664ddb566597768b61419b3920cd3f2b77cfac645c18516b35ff0",
+    "path": "Christina-iPhone/IMG_3266.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T10:41:36+00:00",
+    "gps": {
+      "lat": 62.26349722222222,
+      "lon": 7.170616666666667,
+      "elevation_m": -12.4
+    },
+    "probe": {
+      "captured_at": "2026-07-28T10:41:36+00:00",
+      "gps": {
+        "lat": 62.26349722222222,
+        "lon": 7.170616666666667,
+        "elevation_m": -12.4
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.602,
+      "exposure": 0.92,
+      "score": 0.761
+    },
+    "id": "20260728-phone-a130b8",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3266_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Autodeck einer Fjordfaehre mit Wohnmobil und mehreren PKW, Blick auf gruene Berghaenge am Fjord.",
+      "tags": [
+        "faehre",
+        "autodeck",
+        "wohnmobil",
+        "fjord",
+        "transport",
+        "unterwegs"
+      ],
+      "people": false,
+      "usable_as": [
+        "cutaway"
       ]
     }
   },
