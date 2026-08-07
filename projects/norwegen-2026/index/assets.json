@@ -48745,6 +48745,592 @@
     }
   },
   {
+    "hash": "sha256:212d07166f5a71bb95f96f41597ec7eb89b99e8344c7f7030ec69883262e4a45",
+    "path": "Chris-iPhone/IMG_0315.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-30T13:04:49+00:00",
+    "captured_at_source": "container",
+    "duration": 17.05,
+    "probe": {
+      "captured_at": "2026-07-30T13:04:49+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 17.05,
+      "bitrate": 54652418,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.99,
+      "score": 0.663
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 17.05
+      }
+    ],
+    "id": "20260730-camera-212d07",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0315_78e0cc02_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0315_78e0cc02_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0315_78e0cc02_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kind paddelt im Kanu direkt auf die Holzbruecke zu, Berge im Hintergrund, sonniges Wetter.",
+      "tags": [
+        "kanu",
+        "fluss",
+        "kind",
+        "bruecke",
+        "establisher"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2371e87afa674c7679f2607df914464656f3dbdd32ac4b5d4b973a9241989aeb",
+    "path": "Chris-iPhone/IMG_0311.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-30T12:54:24+00:00",
+    "captured_at_source": "container",
+    "duration": 13.528333,
+    "probe": {
+      "captured_at": "2026-07-30T12:54:24+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 13.528333,
+      "bitrate": 55216183,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.751,
+      "stability": 0.0,
+      "exposure": 0.895,
+      "score": 0.549
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 13.53
+      }
+    ],
+    "id": "20260730-camera-2371e8",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0311_9bdab4b8_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0311_9bdab4b8_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0311_9bdab4b8_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kind paddelt im Kanu auf dem ruhigen Fluss, Blick von hinten, bewaldete Ufer.",
+      "tags": [
+        "kanu",
+        "fluss",
+        "kind",
+        "natur",
+        "paddeln"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4c80ea92ae8db7c04f344f38dae73ae02e16951d83a3425ded1c798828456792",
+    "path": "Chris-iPhone/IMG_0298.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-30T11:15:37+00:00",
+    "captured_at_source": "container",
+    "duration": 41.17,
+    "probe": {
+      "captured_at": "2026-07-30T11:15:37+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 41.17,
+      "bitrate": 58770951,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.919,
+      "stability": 0.138,
+      "exposure": 0.759,
+      "score": 0.605
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.862
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 41.17
+      }
+    ],
+    "id": "20260730-camera-4c80ea",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0298_cf009550_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0298_cf009550_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0298_cf009550_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Zwei Jungen angeln am Ufer des ruhigen Flusses, dichter Wald gegenueber.",
+      "tags": [
+        "kinder",
+        "angeln",
+        "fluss",
+        "natur",
+        "freundschaft"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:5303173d39ce6a38b977759f41a81063bf1001ad878c9bcaefa35d373d09929c",
+    "path": "Chris-iPhone/IMG_0322.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-30T15:10:35+00:00",
+    "captured_at_source": "container",
+    "duration": 44.908333,
+    "probe": {
+      "captured_at": "2026-07-30T15:10:35+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 44.908333,
+      "bitrate": 70891106,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.975,
+      "score": 0.658
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 44.91
+      }
+    ],
+    "id": "20260730-camera-530317",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0322_e883696a_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0322_e883696a_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0322_e883696a_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Junge angelt allein an einer Kiesbank im Fluss, Weitwinkel-Establisher.",
+      "tags": [
+        "kind",
+        "angeln",
+        "fluss",
+        "natur",
+        "establisher"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7ff746257747ff7caba5f917ac8ceac5f41b89ae7ac39eaff48073e26e7c20df",
+    "path": "Chris-iPhone/IMG_0314.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-30T12:58:24+00:00",
+    "captured_at_source": "container",
+    "duration": 28.7267,
+    "probe": {
+      "captured_at": "2026-07-30T12:58:24+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 28.7267,
+      "bitrate": 64589605,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.0,
+      "exposure": 0.929,
+      "score": 0.643
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 28.73
+      }
+    ],
+    "id": "20260730-camera-7ff746",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0314_e3a8e99a_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0314_e3a8e99a_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0314_e3a8e99a_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0314_e3a8e99a_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kind paddelt im Kanu weiter fluss-abwaerts, sonniger Tag, dichte Waelder am Ufer.",
+      "tags": [
+        "kanu",
+        "fluss",
+        "kind",
+        "natur",
+        "paddeln"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ab1486ec7df8d3c12c43de14bd4a57f5d9aae472eeb173981d0bc029988fae20",
+    "path": "Chris-iPhone/IMG_0293.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-30T10:30:32+00:00",
+    "captured_at_source": "container",
+    "duration": 117.16,
+    "probe": {
+      "captured_at": "2026-07-30T10:30:32+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 117.16,
+      "bitrate": 83574473,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.949,
+      "stability": 0.0,
+      "exposure": 0.825,
+      "score": 0.591
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 117.17
+      }
+    ],
+    "id": "20260730-camera-ab1486",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0293_e1082261_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0293_e1082261_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0293_e1082261_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0293_e1082261_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Zwei Jungen erkunden gemeinsam den flachen Fluss, ruhiges Wasser spiegelt Baeume.",
+      "tags": [
+        "kinder",
+        "fluss",
+        "spiel",
+        "natur",
+        "spiegelung"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b1b603fa2928a36a4d868f8582dc904b3fdb0d42c8c5ff5d8a432beecd27bce5",
+    "path": "Chris-iPhone/IMG_0310.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-30T12:52:16+00:00",
+    "captured_at_source": "container",
+    "duration": 19.0017,
+    "probe": {
+      "captured_at": "2026-07-30T12:52:16+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 60.0,
+      "dur": 19.0017,
+      "bitrate": 57462822,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.76,
+      "stability": 0.0,
+      "exposure": 0.88,
+      "score": 0.547
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 19.02
+      }
+    ],
+    "id": "20260730-camera-b1b603",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0310_70ee2ae7_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0310_70ee2ae7_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0310_70ee2ae7_kf02.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0310_70ee2ae7_kf03.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kind paddelt im Kanu auf ruhigem Fluss auf die beleuchtete Holzbruecke zu, Sonnenschein.",
+      "tags": [
+        "kanu",
+        "fluss",
+        "kind",
+        "bruecke",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:be184553ac9a20bb3118fb7c85a45e6ba4038eaf809b27014cb732fe787bdd9d",
+    "path": "Chris-iPhone/IMG_0320.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-30T13:09:26+00:00",
+    "captured_at_source": "container",
+    "duration": 24.453333,
+    "probe": {
+      "captured_at": "2026-07-30T13:09:26+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 24.453333,
+      "bitrate": 53085264,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 0.8,
+      "stability": 0.0,
+      "exposure": 0.975,
+      "score": 0.592
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 1.0
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 24.46
+      }
+    ],
+    "id": "20260730-camera-be1845",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0320_7a5a0f23_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0320_7a5a0f23_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0320_7a5a0f23_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kind sitzt entspannt im Kanu vor der Holzbruecke, Berge und Wolken im Hintergrund.",
+      "tags": [
+        "kanu",
+        "fluss",
+        "kind",
+        "bruecke",
+        "entspannung"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:edf220e84bb3847b34187ad51d8cfc0e205fd2a6a07e8f4688d5ca96b8f31ba0",
+    "path": "Chris-iPhone/IMG_0292.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-30T10:23:48+00:00",
+    "captured_at_source": "container",
+    "duration": 13.713333,
+    "probe": {
+      "captured_at": "2026-07-30T10:23:48+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 13.713333,
+      "bitrate": 83302701,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.037,
+      "exposure": 0.836,
+      "score": 0.624
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.963
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 13.71
+      }
+    ],
+    "id": "20260730-camera-edf220",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0292_56849287_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0292_56849287_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0292_56849287_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Zwei Jungen stehen auf Steinen im flachen Fluss und angeln mit Netz.",
+      "tags": [
+        "kinder",
+        "fluss",
+        "angeln",
+        "spiel",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:febcd6b63a8946829428f1b495b6051819b072c8c93a6942656449a1fbb65c3b",
+    "path": "Chris-iPhone/IMG_0306.MOV",
+    "kind": "video",
+    "source_guess": "camera",
+    "captured_at": "2026-07-30T12:33:49+00:00",
+    "captured_at_source": "container",
+    "duration": 12.3767,
+    "probe": {
+      "captured_at": "2026-07-30T12:33:49+00:00",
+      "captured_at_source": "container",
+      "w": 3840,
+      "h": 2160,
+      "fps": 59.94005994005994,
+      "dur": 12.3767,
+      "bitrate": 63052165,
+      "codec": "hevc",
+      "source_guess": "camera"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "stability": 0.181,
+      "exposure": 0.889,
+      "score": 0.69
+    },
+    "motion": {
+      "type": "handheld",
+      "speed": 0.819
+    },
+    "scenes": [
+      {
+        "start": 0.0,
+        "end": 12.38
+      }
+    ],
+    "id": "20260730-camera-febcd6",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0306_bd7af9c5_kf00.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0306_bd7af9c5_kf01.jpg",
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0306_bd7af9c5_kf02.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Junge zielt mit Pfeil und Bogen auf eine Zielscheibe im Wald, Bogenschiessen-Aktivitaet.",
+      "tags": [
+        "bogenschiessen",
+        "kind",
+        "wald",
+        "spiel",
+        "aktivitaet"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:0cf76b09a105cb8cd2b9d934929207768b5cf55f1233fad68460684d440cfdfa",
     "path": "2026-07-30_Uvdal_Fishing-SoccerGolf/Vorauwahl/DJI_20260730142343_0044_D-00.05.17.758-00.05.24.663-seg7.MP4",
     "kind": "video",
@@ -49980,6 +50566,679 @@
     "day": 13,
     "stage": "Uvdal",
     "place_source": "index"
+  },
+  {
+    "hash": "sha256:0b27a5fe1ebd933712cc84294a8c61925638f59759aa66d38832e2ca4f97f7f0",
+    "path": "Chris-iPhone/IMG_0291.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-30T12:20:48+00:00",
+    "gps": {
+      "lat": 60.264858333333336,
+      "lon": 8.7874,
+      "elevation_m": 471.0
+    },
+    "probe": {
+      "captured_at": "2026-07-30T12:20:48+00:00",
+      "gps": {
+        "lat": 60.264858333333336,
+        "lon": 8.7874,
+        "elevation_m": 471.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.158,
+      "exposure": 0.978,
+      "score": 0.568
+    },
+    "id": "20260730-phone-0b27a5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0291_cb7292e3_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Zwei Jungen begutachten gemeinsam die Angelrute mitten im Fluss.",
+      "tags": [
+        "kinder",
+        "angeln",
+        "fluss",
+        "natur",
+        "freundschaft"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1ef161dbf2b67982100521fc1477ca43977872868d3f9632c4764774864756aa",
+    "path": "Chris-iPhone/IMG_0318.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-30T15:05:31+00:00",
+    "gps": {
+      "lat": 60.26486666666667,
+      "lon": 8.788097222222222,
+      "elevation_m": 472.5
+    },
+    "probe": {
+      "captured_at": "2026-07-30T15:05:31+00:00",
+      "gps": {
+        "lat": 60.26486666666667,
+        "lon": 8.788097222222222,
+        "elevation_m": 472.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.019,
+      "exposure": 0.976,
+      "score": 0.498
+    },
+    "id": "20260730-phone-1ef161",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0318_40e027a4_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Nahportraet des laechelnden Sohns mit Schwimmweste und Cap im Kanu, Bruecke im Hintergrund.",
+      "tags": [
+        "portraet",
+        "kind",
+        "kanu",
+        "fluss",
+        "laecheln"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2443d98dc271c808c9e2aabf47588000906fe0bf80f9578434698627d7b76eb8",
+    "path": "Chris-iPhone/IMG_0283.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-30T00:17:44+00:00",
+    "gps": {
+      "lat": 60.264633333333336,
+      "lon": 8.788561111111111,
+      "elevation_m": 477.5
+    },
+    "probe": {
+      "captured_at": "2026-07-30T00:17:44+00:00",
+      "gps": {
+        "lat": 60.264633333333336,
+        "lon": 8.788561111111111,
+        "elevation_m": 477.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.109,
+      "exposure": 0.443,
+      "score": 0.276
+    },
+    "id": "20260730-phone-2443d9",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0283_bcd00618_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Beleuchtete Holzbruecke bei Nacht spiegelt sich im ruhigen Fluss, dunkelblauer Nachthimmel.",
+      "tags": [
+        "bruecke",
+        "nacht",
+        "fluss",
+        "spiegelung",
+        "establisher"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2825aec88bcce1995350383d737c7aeadc699f5be171bde25ecf886c58abc365",
+    "path": "Chris-iPhone/IMG_0296.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-30T12:53:19+00:00",
+    "gps": {
+      "lat": 60.264855555555556,
+      "lon": 8.787366666666667,
+      "elevation_m": 471.6
+    },
+    "probe": {
+      "captured_at": "2026-07-30T12:53:19+00:00",
+      "gps": {
+        "lat": 60.264855555555556,
+        "lon": 8.787366666666667,
+        "elevation_m": 471.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.366,
+      "exposure": 0.845,
+      "score": 0.605
+    },
+    "id": "20260730-phone-2825ae",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0296_7f2642a7_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Die geschwungene Holzbruecke bei Sonnenschein ueber den ruhigen Fluss, Berge im Hintergrund.",
+      "tags": [
+        "bruecke",
+        "fluss",
+        "sonnenschein",
+        "establisher",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:3260af2b1976e73279f68495e44663e9b9f0c6630a54cc4efa95c6f5bbb85edc",
+    "path": "Chris-iPhone/IMG_0290.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-30T12:20:39+00:00",
+    "gps": {
+      "lat": 60.26495277777778,
+      "lon": 8.78763611111111,
+      "elevation_m": 458.8
+    },
+    "probe": {
+      "captured_at": "2026-07-30T12:20:39+00:00",
+      "gps": {
+        "lat": 60.26495277777778,
+        "lon": 8.78763611111111,
+        "elevation_m": 458.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.419,
+      "exposure": 0.97,
+      "score": 0.694
+    },
+    "id": "20260730-phone-3260af",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0290_08742608_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Zwei Jungen angeln gemeinsam mit gruener Angelrute mitten im Fluss.",
+      "tags": [
+        "kinder",
+        "angeln",
+        "fluss",
+        "natur",
+        "freundschaft"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:406b2272d3708d38b1beeb9daccf1af9e110280f0031d02e38bdc4c91000bd67",
+    "path": "Chris-iPhone/IMG_0297.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-30T12:53:44+00:00",
+    "gps": {
+      "lat": 60.26495833333333,
+      "lon": 8.787102777777777,
+      "elevation_m": 474.8
+    },
+    "probe": {
+      "captured_at": "2026-07-30T12:53:44+00:00",
+      "gps": {
+        "lat": 60.26495833333333,
+        "lon": 8.787102777777777,
+        "elevation_m": 474.8
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.516,
+      "exposure": 0.921,
+      "score": 0.718
+    },
+    "id": "20260730-phone-406b22",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0297_ae2e3e2d_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Ruhiger Fluss maeandriert durch bewaldete Landschaft bei blauem Himmel.",
+      "tags": [
+        "fluss",
+        "natur",
+        "panorama",
+        "sonnenschein",
+        "landschaft"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7dbfa6deacf76a327966747ce8da303c7f65b6ce2c88590768e3e623e75c5ae0",
+    "path": "Chris-iPhone/IMG_0287.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-30T11:59:44+00:00",
+    "gps": {
+      "lat": 60.26493055555556,
+      "lon": 8.787583333333334,
+      "elevation_m": 473.6
+    },
+    "probe": {
+      "captured_at": "2026-07-30T11:59:44+00:00",
+      "gps": {
+        "lat": 60.26493055555556,
+        "lon": 8.787583333333334,
+        "elevation_m": 473.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.644,
+      "exposure": 0.973,
+      "score": 0.808
+    },
+    "id": "20260730-phone-7dbfa6",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0287_8341126b_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Zwei Jungen mit Angelrute stehen auf Steinen mitten im Fluss, Blick von hinten.",
+      "tags": [
+        "kinder",
+        "angeln",
+        "fluss",
+        "natur",
+        "freundschaft"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7f6abc458ed1703e277dac7ef2756045417b1aeeb10aa4ec6779b88264689ce2",
+    "path": "Chris-iPhone/IMG_0305.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-30T14:33:44+00:00",
+    "gps": {
+      "lat": 60.26382777777778,
+      "lon": 8.7882,
+      "elevation_m": 471.0
+    },
+    "probe": {
+      "captured_at": "2026-07-30T14:33:44+00:00",
+      "gps": {
+        "lat": 60.26382777777778,
+        "lon": 8.7882,
+        "elevation_m": 471.0
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.932,
+      "score": 0.966
+    },
+    "id": "20260730-phone-7f6abc",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0305_e2962a20_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Junge zielt mit Pfeil und Bogen auf eine Zielscheibe mit alten Skiern im Wald.",
+      "tags": [
+        "bogenschiessen",
+        "kind",
+        "wald",
+        "spiel",
+        "aktivitaet"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:93202f150fb86b1e36564aca778656a69ac4254e1f7acb9070ce85d282a9d143",
+    "path": "Chris-iPhone/IMG_0286.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-30T09:57:38+00:00",
+    "gps": {
+      "lat": 60.26466388888889,
+      "lon": 8.788625,
+      "elevation_m": 474.2
+    },
+    "probe": {
+      "captured_at": "2026-07-30T09:57:38+00:00",
+      "gps": {
+        "lat": 60.26466388888889,
+        "lon": 8.788625,
+        "elevation_m": 474.2
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.158,
+      "exposure": 0.892,
+      "score": 0.525
+    },
+    "id": "20260730-phone-93202f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0286_e448f770_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Reichhaltiges norwegisches Fruehstueck mit Broetchen, Spiegeleiern in der Pfanne, Aufschnitt und Kaffee auf dem Tisch.",
+      "tags": [
+        "fruehstueck",
+        "huette",
+        "essen",
+        "detail",
+        "indoor"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:9da58d1d728eea86a7b9b87b0034b17fb9de0c7793eb18c6fab853329ad6014e",
+    "path": "Chris-iPhone/IMG_0289.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-30T12:18:27+00:00",
+    "gps": {
+      "lat": 60.26497222222222,
+      "lon": 8.787688888888889,
+      "elevation_m": 472.6
+    },
+    "probe": {
+      "captured_at": "2026-07-30T12:18:27+00:00",
+      "gps": {
+        "lat": 60.26497222222222,
+        "lon": 8.787688888888889,
+        "elevation_m": 472.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.388,
+      "exposure": 0.978,
+      "score": 0.683
+    },
+    "id": "20260730-phone-9da58d",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0289_cabb7f7c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Zwei Jungen buecken sich neugierig ueber Steine mitten im Fluss.",
+      "tags": [
+        "kinder",
+        "fluss",
+        "natur",
+        "spiel",
+        "freundschaft"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c7dfcb04ff7ec13062010cdd59d4d2eb6aa3a5209638df9c0d3960c7488be75d",
+    "path": "Chris-iPhone/IMG_0303.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-30T14:07:55+00:00",
+    "gps": {
+      "lat": 60.263958333333335,
+      "lon": 8.7866,
+      "elevation_m": 467.7
+    },
+    "probe": {
+      "captured_at": "2026-07-30T14:07:55+00:00",
+      "gps": {
+        "lat": 60.263958333333335,
+        "lon": 8.7866,
+        "elevation_m": 467.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.888,
+      "score": 0.944
+    },
+    "id": "20260730-phone-c7dfcb",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0303_97a22f94_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kinder spielen Fussball auf einer Wiese, Mutter laeuft hinterher, Berge im Hintergrund.",
+      "tags": [
+        "kinder",
+        "fussball",
+        "wiese",
+        "spiel",
+        "mutter"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c8fcc1c736158097eecff472fbb2435150ca2f168f2fe87c21d47d89ce3c82c0",
+    "path": "Chris-iPhone/IMG_0295.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-30T12:42:29+00:00",
+    "gps": {
+      "lat": 60.26486111111111,
+      "lon": 8.787288888888888,
+      "elevation_m": 470.7
+    },
+    "probe": {
+      "captured_at": "2026-07-30T12:42:29+00:00",
+      "gps": {
+        "lat": 60.26486111111111,
+        "lon": 8.787288888888888,
+        "elevation_m": 470.7
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.955,
+      "score": 0.978
+    },
+    "id": "20260730-phone-c8fcc1",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0295_23418e34_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Junge angelt allein am Flussufer, weiter Blick auf den Fluss und bewaldete Berge.",
+      "tags": [
+        "kind",
+        "angeln",
+        "fluss",
+        "natur",
+        "establisher"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f753e0ac31051999272fdd858dce84169ae9ea4332b29091b655071f4f44a4ed",
+    "path": "Chris-iPhone/IMG_0285.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-30T00:22:30+00:00",
+    "gps": {
+      "lat": 60.264697222222225,
+      "lon": 8.788766666666666,
+      "elevation_m": 472.6
+    },
+    "probe": {
+      "captured_at": "2026-07-30T00:22:30+00:00",
+      "gps": {
+        "lat": 60.264697222222225,
+        "lon": 8.788766666666666,
+        "elevation_m": 472.6
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.163,
+      "exposure": 0.319,
+      "score": 0.241
+    },
+    "id": "20260730-phone-f753e0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0285_b0b4992a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Blick von der Huettenveranda auf die beleuchtete Holzbruecke bei Nacht ueber den Fluss.",
+      "tags": [
+        "bruecke",
+        "nacht",
+        "fluss",
+        "huette",
+        "veranda"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f91cee5329d0d68f4f4bcc74b5eb7226b544a93209bcc707b93e3025474043b5",
+    "path": "Chris-iPhone/IMG_0312.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-30T14:58:14+00:00",
+    "gps": {
+      "lat": 60.26486666666667,
+      "lon": 8.788141666666666,
+      "elevation_m": 472.5
+    },
+    "probe": {
+      "captured_at": "2026-07-30T14:58:14+00:00",
+      "gps": {
+        "lat": 60.26486666666667,
+        "lon": 8.788141666666666,
+        "elevation_m": 472.5
+      },
+      "make": "Apple",
+      "model": "iPhone 17 Pro",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.329,
+      "exposure": 0.908,
+      "score": 0.619
+    },
+    "id": "20260730-phone-f91cee",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_0312_ada658cb_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kanu naehert sich der Holzbruecke, weiter Blick den Fluss hinunter zu bewaldeten Bergen.",
+      "tags": [
+        "kanu",
+        "fluss",
+        "bruecke",
+        "berge",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
   },
   {
     "hash": "sha256:123000737017360677d689aa7c841ef908ab07233a91d5fece333b19f0f7ccab",
