@@ -25850,6 +25850,88 @@
     }
   },
   {
+    "hash": "sha256:c0cc12c7cc208041c490ac48d1457dd0e54b8a169002b66a8722ddb31ccd433c",
+    "path": "Christina-iPhone/76e22978-4e3b-4b2e-886d-0a51136e4db5.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": null,
+    "gps": null,
+    "probe": {
+      "captured_at": null,
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.959,
+      "score": 0.979
+    },
+    "id": "20260724-unknown-c0cc12",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/76e22978-4e3b-4b2e-886d-0a51136e4db5_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Riesiges Kreuzfahrtschiff am Kai, Passanten laufen auf dem Weg davor, bewoelkter Himmel.",
+      "tags": [
+        "kreuzfahrtschiff",
+        "hafen",
+        "schiff",
+        "passanten",
+        "bewoelkt",
+        "transport"
+      ],
+      "people": true,
+      "usable_as": [
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:dd3bec57ea7887a191f4c75531e598acc23e96ee6eb4016bfaf8f35f8f6f9eeb",
+    "path": "Christina-iPhone/b066c132-1566-4a6a-b1f5-f3c5d600b55a.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": null,
+    "gps": null,
+    "probe": {
+      "captured_at": null,
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.228,
+      "exposure": 0.939,
+      "score": 0.583
+    },
+    "id": "20260724-unknown-dd3bec",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/b066c132-1566-4a6a-b1f5-f3c5d600b55a_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Spektakulaerer Blick von einem hohen Aussichtspunkt in einen tiefen, engen Fjord mit steilen Felswaenden und Nebelschwaden.",
+      "tags": [
+        "fjord",
+        "aussicht",
+        "berge",
+        "nebel",
+        "panorama",
+        "sognefjord"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
     "hash": "sha256:05d54225411e0b9b93f77605184a60c79f357a860628f9e370d99dd01bcdaeed",
     "path": "Chris-iPhone/IMG_9783.MOV",
     "kind": "video",
@@ -38517,6 +38599,130 @@
       "people": false,
       "usable_as": [
         "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:2af5fa29c9ac6b20a33e562f3a652b0e2602964eda279f51ef08abb0dda303a3",
+    "path": "Christina-iPhone/14fe4967-c664-4046-9edf-77d0532746a8.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": null,
+    "gps": null,
+    "probe": {
+      "captured_at": null,
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.069,
+      "exposure": 0.528,
+      "score": 0.298
+    },
+    "id": "20260726-unknown-2af5fa",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/14fe4967-c664-4046-9edf-77d0532746a8_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Familien-Selfie im Auto bei Daemmerung durch einen Tunnel, Kind schlaeft auf dem Ruecksitz.",
+      "tags": [
+        "familie",
+        "auto",
+        "selfie",
+        "daemmerung",
+        "tunnel",
+        "unterwegs"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4f4705c7c93dd4cf0c5a82eb42f3a83f377e74294038a72d8a01fb9465ffb381",
+    "path": "Christina-iPhone/1b0794f4-30a4-4eb5-b3d4-6648dec1be81.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": null,
+    "gps": null,
+    "probe": {
+      "captured_at": null,
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.93,
+      "score": 0.965
+    },
+    "id": "20260726-unknown-4f4705",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/1b0794f4-30a4-4eb5-b3d4-6648dec1be81_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Person auf einer Huettenveranda mit Blick auf den Geirangerfjord, Auto im Vordergrund geparkt.",
+      "tags": [
+        "huette",
+        "geirangerfjord",
+        "veranda",
+        "aussicht",
+        "berge",
+        "auto"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:b30a2ba2c8f9db03af8916839fbf7da67a6f55130abc83776534cdfcb54ff755",
+    "path": "Christina-iPhone/40a9d420-719d-42ff-ad67-c2ea6fececd7.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": null,
+    "gps": null,
+    "probe": {
+      "captured_at": null,
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.906,
+      "score": 0.953
+    },
+    "id": "20260726-unknown-b30a2b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/40a9d420-719d-42ff-ad67-c2ea6fececd7_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Familien-Selfie an einer Bruecke ueber einen tosenden Gletscherfluss, Berge und Fjord im Hintergrund (Geiranger).",
+      "tags": [
+        "familie",
+        "selfie",
+        "gletscherfluss",
+        "geiranger",
+        "portraet",
+        "bruecke"
+      ],
+      "people": true,
+      "usable_as": [
         "b-roll"
       ]
     }
@@ -53487,6 +53693,55 @@
     }
   },
   {
+    "hash": "sha256:5fad1b5eebb0a66587ab67eb3a9f480fe7e166688018bb607cf92ce163162265",
+    "path": "Christina-iPhone/IMG_3463.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-29T19:39:29+00:00",
+    "gps": {
+      "lat": 60.26486666666667,
+      "lon": 8.787897222222222,
+      "elevation_m": 441.0
+    },
+    "probe": {
+      "captured_at": "2026-07-29T19:39:29+00:00",
+      "gps": {
+        "lat": 60.26486666666667,
+        "lon": 8.787897222222222,
+        "elevation_m": 441.0
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.691,
+      "exposure": 0.701,
+      "score": 0.696
+    },
+    "id": "20260729-phone-5fad1b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3463_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Fluss bei Sonnenuntergang mit Gegenlicht, glitzerndes Wasser fliesst zwischen bewaldeten Ufern zu Berghuegeln.",
+      "tags": [
+        "fluss",
+        "sonnenuntergang",
+        "gegenlicht",
+        "wald",
+        "berge",
+        "stimmung"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
     "hash": "sha256:842cc16b17a04bdbc2b52a0bd7994bc3fce7f9cd669c85b677cad75fcf5eddc0",
     "path": "Chris-iPhone/IMG_0270.HEIC",
     "kind": "photo",
@@ -53679,6 +53934,55 @@
     }
   },
   {
+    "hash": "sha256:bb557ffd7c0e13fc6a9d319c0c450c762d80d08f9361a7edca0da5aa0d676e63",
+    "path": "Christina-iPhone/IMG_3458.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-29T19:27:16+00:00",
+    "gps": {
+      "lat": 60.26403888888889,
+      "lon": 8.788886111111111,
+      "elevation_m": 469.5
+    },
+    "probe": {
+      "captured_at": "2026-07-29T19:27:16+00:00",
+      "gps": {
+        "lat": 60.26403888888889,
+        "lon": 8.788886111111111,
+        "elevation_m": 469.5
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.76,
+      "exposure": 0.998,
+      "score": 0.879
+    },
+    "id": "20260729-phone-bb557f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3458_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kind wirft Steine in einen ruhigen Fluss am Campingplatz, Wohnwagen und Huetten am gegenueberliegenden Ufer, bewaldete Huegel im Hintergrund.",
+      "tags": [
+        "kind",
+        "fluss",
+        "campingplatz",
+        "steine",
+        "abend",
+        "spielen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:cb64bf948b1230f2e9dd27a703be391a0d34380678412d4bea6f95615fceab26",
     "path": "Christina-iPhone/IMG_3416.HEIC",
     "kind": "photo",
@@ -53773,6 +54077,56 @@
       ],
       "people": false,
       "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e5dd04a3d5e0f92f91b170f37f21d790c4f68a86651d249ba48afbfc52551924",
+    "path": "Christina-iPhone/IMG_3466.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-29T19:42:51+00:00",
+    "gps": {
+      "lat": 60.26462222222222,
+      "lon": 8.788483333333334,
+      "elevation_m": 475.8
+    },
+    "probe": {
+      "captured_at": "2026-07-29T19:42:51+00:00",
+      "gps": {
+        "lat": 60.26462222222222,
+        "lon": 8.788483333333334,
+        "elevation_m": 475.8
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.113,
+      "exposure": 0.643,
+      "score": 0.378
+    },
+    "id": "20260729-phone-e5dd04",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3466_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Blick von einer Huettenveranda auf die Fussgaengerbruecke am Fluss im Abendlicht mit tiefstehender Sonne hinter Wolken.",
+      "tags": [
+        "huette",
+        "veranda",
+        "bruecke",
+        "fluss",
+        "abend",
+        "sonnenuntergang"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
         "b-roll"
       ]
     }
@@ -55709,6 +56063,104 @@
     "place_source": "index"
   },
   {
+    "hash": "sha256:041df7e05eb34fbf4495a629699822ce11a90f8ba2a02cd6c370e3bd24632814",
+    "path": "Christina-iPhone/IMG_3482.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-30T14:54:06+00:00",
+    "gps": {
+      "lat": 60.264827777777775,
+      "lon": 8.788155555555555,
+      "elevation_m": 472.6
+    },
+    "probe": {
+      "captured_at": "2026-07-30T14:54:06+00:00",
+      "gps": {
+        "lat": 60.264827777777775,
+        "lon": 8.788155555555555,
+        "elevation_m": 472.6
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.595,
+      "exposure": 0.986,
+      "score": 0.79
+    },
+    "id": "20260730-phone-041df7",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3482_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Vater und Sohn paddeln in einem gruenen Kanu ueber einen ruhigen Fluss am Campingplatz mit Wohnwagen am Ufer.",
+      "tags": [
+        "kanu",
+        "fluss",
+        "vater",
+        "sohn",
+        "campingplatz",
+        "paddeln"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:05e72bca8fe6d617a0d3a65f520e1eca7fc895c577f3b35a2316d04270bbee14",
+    "path": "Christina-iPhone/IMG_3474.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-30T13:54:43+00:00",
+    "gps": {
+      "lat": 60.26443888888889,
+      "lon": 8.786708333333333,
+      "elevation_m": 460.0
+    },
+    "probe": {
+      "captured_at": "2026-07-30T13:54:43+00:00",
+      "gps": {
+        "lat": 60.26443888888889,
+        "lon": 8.786708333333333,
+        "elevation_m": 460.0
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.873,
+      "score": 0.936
+    },
+    "id": "20260730-phone-05e72b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3474_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Vater spielt mit zwei Jungen Fussball auf einer Wiese vor bewaldeten Huegeln, mehrere Baelle liegen verstreut.",
+      "tags": [
+        "fussball",
+        "vater",
+        "kinder",
+        "wiese",
+        "spielen",
+        "sommer"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:0b27a5fe1ebd933712cc84294a8c61925638f59759aa66d38832e2ca4f97f7f0",
     "path": "Chris-iPhone/IMG_0291.HEIC",
     "kind": "photo",
@@ -56088,6 +56540,55 @@
         "landschaft"
       ],
       "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:552cd8f430328ff607a129f36848e8e11b34067f6ebc28dc4f7264aca76d9d1d",
+    "path": "Christina-iPhone/IMG_3469.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-30T11:24:42+00:00",
+    "gps": {
+      "lat": 60.264858333333336,
+      "lon": 8.787419444444444,
+      "elevation_m": 470.8
+    },
+    "probe": {
+      "captured_at": "2026-07-30T11:24:42+00:00",
+      "gps": {
+        "lat": 60.264858333333336,
+        "lon": 8.787419444444444,
+        "elevation_m": 470.8
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.775,
+      "score": 0.887
+    },
+    "id": "20260730-phone-552cd8",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3469_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Zwei Kinder waten Hand in Hand durch einen flachen Fluss, umgeben von Wald, Kette am Zaunpfosten im Vordergrund.",
+      "tags": [
+        "kinder",
+        "fluss",
+        "waten",
+        "wald",
+        "sommer",
+        "geschwister"
+      ],
+      "people": true,
       "usable_as": [
         "b-roll"
       ]
@@ -56479,6 +56980,55 @@
     }
   },
   {
+    "hash": "sha256:b9676ff7c2c9d297e5906c50493d6b6d5c1d4052443e74bb5678ecc5b6198ad8",
+    "path": "Christina-iPhone/IMG_3476.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-30T14:07:30+00:00",
+    "gps": {
+      "lat": 60.26381388888889,
+      "lon": 8.786594444444445,
+      "elevation_m": 442.9
+    },
+    "probe": {
+      "captured_at": "2026-07-30T14:07:30+00:00",
+      "gps": {
+        "lat": 60.26381388888889,
+        "lon": 8.786594444444445,
+        "elevation_m": 442.9
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.96,
+      "score": 0.98
+    },
+    "id": "20260730-phone-b9676f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3476_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Vater und Sohn spielen Fussball auf einer weiten Wiese unter Wolkenhimmel, Wald und ferne Bruecke im Hintergrund.",
+      "tags": [
+        "fussball",
+        "vater",
+        "sohn",
+        "wiese",
+        "spielen",
+        "sommer"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:c7dfcb04ff7ec13062010cdd59d4d2eb6aa3a5209638df9c0d3960c7488be75d",
     "path": "Chris-iPhone/IMG_0303.HEIC",
     "kind": "photo",
@@ -56616,6 +57166,55 @@
         "spaziergang",
         "wald",
         "nachmittag"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e38030b61b24941053d204e5624da66a6d741417ffdaffd4a8d8d4b1808a24e3",
+    "path": "Christina-iPhone/IMG_3491.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-30T15:27:44+00:00",
+    "gps": {
+      "lat": 60.264605555555555,
+      "lon": 8.788591666666667,
+      "elevation_m": 473.4
+    },
+    "probe": {
+      "captured_at": "2026-07-30T15:27:44+00:00",
+      "gps": {
+        "lat": 60.264605555555555,
+        "lon": 8.788591666666667,
+        "elevation_m": 473.4
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.112,
+      "exposure": 0.879,
+      "score": 0.496
+    },
+    "id": "20260730-phone-e38030",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3491_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mann sitzt entspannt auf der Huettenveranda mit Blick auf Fluss und die historische Fussgaengerbruecke.",
+      "tags": [
+        "huette",
+        "veranda",
+        "entspannen",
+        "bruecke",
+        "fluss",
+        "portraet"
       ],
       "people": true,
       "usable_as": [
@@ -56811,6 +57410,377 @@
         "natur"
       ],
       "people": true,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:01e1e0f416ed434e4ee44b2e34beddfa65201c55cb79f7830545cb979f693664",
+    "path": "Christina-iPhone/f5e31804-04b7-43f9-969a-9934d1393a86.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": null,
+    "gps": null,
+    "probe": {
+      "captured_at": null,
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.868,
+      "score": 0.934
+    },
+    "id": "20260730-unknown-01e1e0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/f5e31804-04b7-43f9-969a-9934d1393a86_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kind angelt allein an einem ruhigen Flussufer mit Kiesbank unter einer Bruecke, sonniger Tag.",
+      "tags": [
+        "kind",
+        "angeln",
+        "fluss",
+        "kiesbank",
+        "sommer",
+        "ruhig"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:464c5c47f929edaa9a3767370ce90f556ae5713a7ae316618d8ffa83d60163e3",
+    "path": "Christina-iPhone/bb011db9-58ef-413c-8ea9-31c0f3f92645.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": null,
+    "gps": null,
+    "probe": {
+      "captured_at": null,
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.908,
+      "score": 0.954
+    },
+    "id": "20260730-unknown-464c5c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/bb011db9-58ef-413c-8ea9-31c0f3f92645_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Weitere Ansicht der historischen Fussgaengerbruecke ueber einen ruhigen Fluss, Wolkenhimmel und bewaldete Huegel.",
+      "tags": [
+        "bruecke",
+        "fluss",
+        "wolken",
+        "wald",
+        "architektur",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:4b3207325807af2c687721b8851a105102f9bf1f19bf1ffbb53e753237eee61b",
+    "path": "Christina-iPhone/734c7faf-ac6e-4fa3-99ab-a1d780d90290.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": null,
+    "gps": null,
+    "probe": {
+      "captured_at": null,
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.091,
+      "exposure": 0.953,
+      "score": 0.522
+    },
+    "id": "20260730-unknown-4b3207",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/734c7faf-ac6e-4fa3-99ab-a1d780d90290_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Nahaufnahme eines laechelnden Jungen mit roter Schwimmweste und Cap im Kanu, Bruecke und Fluss im Hintergrund unscharf.",
+      "tags": [
+        "kind",
+        "kanu",
+        "schwimmweste",
+        "portraet",
+        "fluss",
+        "sommer"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:61590ed066f6935437a5093c17e8e1004ec025908da7e05ba2423db5c451e2f9",
+    "path": "Christina-iPhone/b1b3361e-937b-4920-853b-7f23bc77ee60.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": null,
+    "gps": null,
+    "probe": {
+      "captured_at": null,
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.763,
+      "score": 0.882
+    },
+    "id": "20260730-unknown-61590e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/b1b3361e-937b-4920-853b-7f23bc77ee60_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Ruhiger Fluss bei Abenddaemmerung mit tiefstehender Sonne, die sich im Wasser spiegelt, Berge im Hintergrund.",
+      "tags": [
+        "fluss",
+        "abenddaemmerung",
+        "sonnenuntergang",
+        "spiegelung",
+        "berge",
+        "ruhig"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:9c9bab2210432bcdb93a0599f9c75608bd2c0b04f2d53746e4fac6a49d42cf8e",
+    "path": "Christina-iPhone/c3a5c5ff-5dae-4dd3-9d5b-ba42c00a5245.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": null,
+    "gps": null,
+    "probe": {
+      "captured_at": null,
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.922,
+      "exposure": 0.439,
+      "score": 0.68
+    },
+    "id": "20260730-unknown-9c9bab",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/c3a5c5ff-5dae-4dd3-9d5b-ba42c00a5245_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Historische Fussgaengerbruecke leuchtend beleuchtet bei Nacht vor dramatischem dunkelblauem Wolkenhimmel, spiegelt sich im Fluss.",
+      "tags": [
+        "bruecke",
+        "nacht",
+        "beleuchtung",
+        "spiegelung",
+        "fluss",
+        "stimmung"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:9f88f878ef749344b999432b43abacb55c1b5b7a16f43e760608ffeecb86a9d0",
+    "path": "Christina-iPhone/d75d1677-dc86-4d32-ad41-58d20cc263d5.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": null,
+    "gps": null,
+    "probe": {
+      "captured_at": null,
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.83,
+      "score": 0.915
+    },
+    "id": "20260730-unknown-9f88f8",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/d75d1677-dc86-4d32-ad41-58d20cc263d5_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Blick auf die Fussgaengerbruecke im Gegenlicht der tiefstehenden Sonne, Fluss und Wiese im Vordergrund.",
+      "tags": [
+        "bruecke",
+        "fluss",
+        "gegenlicht",
+        "sonne",
+        "wiese",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a7b435d374305d5033254f9ac8019c851eebe1f96e31dd1fe26add0e72e67bf2",
+    "path": "Christina-iPhone/3ab49ca2-f879-4504-8ce6-679457a17261.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": null,
+    "gps": null,
+    "probe": {
+      "captured_at": null,
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.994,
+      "score": 0.997
+    },
+    "id": "20260730-unknown-a7b435",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/3ab49ca2-f879-4504-8ce6-679457a17261_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Kleine braune Ferienhuette mit rotem Eingang und Veranda zwischen Birken, im Hintergrund weiteres Haus und Wasser.",
+      "tags": [
+        "huette",
+        "ferienhaus",
+        "veranda",
+        "birken",
+        "unterkunft",
+        "drinnen"
+      ],
+      "people": false,
+      "usable_as": [
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a8b48f3a83a5fce41e8571ed4d2ed87b0555f0ca1039873bbc243a2be09f59cf",
+    "path": "Christina-iPhone/6665f83b-a993-4ba0-ad9e-e33f9ea0735e.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": null,
+    "gps": null,
+    "probe": {
+      "captured_at": null,
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.979,
+      "score": 0.989
+    },
+    "id": "20260730-unknown-a8b48f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/6665f83b-a993-4ba0-ad9e-e33f9ea0735e_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Zwei Kinder angeln gemeinsam auf einer Kiesbank mitten in einem flachen Fluss.",
+      "tags": [
+        "kinder",
+        "angeln",
+        "fluss",
+        "kiesbank",
+        "sommer",
+        "geschwister"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:d5bffd85e9754a44b2db3e8b3359d91e03b75808d34b9481a9615c56caca86b4",
+    "path": "Christina-iPhone/b1e8c50d-17e2-4b43-8670-42ff11a9f8d0.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": null,
+    "gps": null,
+    "probe": {
+      "captured_at": null,
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.593,
+      "exposure": 0.815,
+      "score": 0.704
+    },
+    "id": "20260730-unknown-d5bffd",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/b1e8c50d-17e2-4b43-8670-42ff11a9f8d0_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Dramatischer Sonnenuntergang mit Wolkenstrahlen ueber der Fussgaengerbruecke und dem Fluss, Auto im Vordergrund.",
+      "tags": [
+        "sonnenuntergang",
+        "bruecke",
+        "fluss",
+        "wolken",
+        "stimmung",
+        "abend"
+      ],
+      "people": false,
       "usable_as": [
         "establisher"
       ]
@@ -59406,6 +60376,55 @@
     "place_source": "leg"
   },
   {
+    "hash": "sha256:2e2d1e50017401886277801435e2e10af22a37e11567be9374289db19bfc2af7",
+    "path": "Christina-iPhone/IMG_3609.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-01T14:02:44+00:00",
+    "gps": {
+      "lat": 59.4938,
+      "lon": 9.329669444444445,
+      "elevation_m": 107.9
+    },
+    "probe": {
+      "captured_at": "2026-08-01T14:02:44+00:00",
+      "gps": {
+        "lat": 59.4938,
+        "lon": 9.329669444444445,
+        "elevation_m": 107.9
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.16,
+      "exposure": 0.634,
+      "score": 0.397
+    },
+    "id": "20260801-phone-2e2d1e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3609_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 1,
+    "content": {
+      "summary": "Nahaufnahme des Auto-Tachos kurz vor dem 200.000-km-Meilenstein bei 199999 km.",
+      "tags": [
+        "auto",
+        "tacho",
+        "meilenstein",
+        "kilometerstand",
+        "detail",
+        "unterwegs"
+      ],
+      "people": false,
+      "usable_as": [
+        "cutaway"
+      ]
+    }
+  },
+  {
     "hash": "sha256:40fac82a884e317cef0b6c9d2b31909b77ceb653d2b312dbca3cf55af52694aa",
     "path": "Chris-iPhone/IMG_0390.HEIC",
     "kind": "photo",
@@ -59600,6 +60619,154 @@
       "usable_as": [
         "b-roll",
         "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:83694effdaf3a7de4fdcfec2ee067dc328898ee3f81822a100c3f9ea8ea1d485",
+    "path": "Christina-iPhone/IMG_3602.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-01T12:28:37+00:00",
+    "gps": {
+      "lat": 59.98816388888889,
+      "lon": 8.782652777777779,
+      "elevation_m": 198.3
+    },
+    "probe": {
+      "captured_at": "2026-08-01T12:28:37+00:00",
+      "gps": {
+        "lat": 59.98816388888889,
+        "lon": 8.782652777777779,
+        "elevation_m": 198.3
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.569,
+      "exposure": 0.86,
+      "score": 0.715
+    },
+    "id": "20260801-phone-83694e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3602_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Zwei Laeufer/Triathleten auf einer Fjordstrasse vor dramatischer Bergkulisse, vermutlich Norseman-Rennen.",
+      "tags": [
+        "triathlon",
+        "laufen",
+        "strasse",
+        "fjord",
+        "berge",
+        "sport"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:8950ff7410d09d2685906d0ababc6b1d740143658750fb3d2e332a31e5577105",
+    "path": "Christina-iPhone/IMG_3600.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-01T12:28:16+00:00",
+    "gps": {
+      "lat": 59.98759166666667,
+      "lon": 8.788408333333333,
+      "elevation_m": 200.4
+    },
+    "probe": {
+      "captured_at": "2026-08-01T12:28:16+00:00",
+      "gps": {
+        "lat": 59.98759166666667,
+        "lon": 8.788408333333333,
+        "elevation_m": 200.4
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.932,
+      "exposure": 0.974,
+      "score": 0.953
+    },
+    "id": "20260801-phone-8950ff",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3600_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Triathlet laeuft auf einer Landstrasse am Fjordufer entlang vor bewaldeten Berghaengen, vermutlich Norseman-Rennen.",
+      "tags": [
+        "triathlon",
+        "laufen",
+        "strasse",
+        "fjord",
+        "berge",
+        "sport"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f67a9c83a1273ef9380ca796003a19ea755b2daa977501f42a041a5e97152aa5",
+    "path": "Christina-iPhone/IMG_3594.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-01T12:13:35+00:00",
+    "gps": {
+      "lat": 60.06459722222222,
+      "lon": 8.781119444444446,
+      "elevation_m": 474.8
+    },
+    "probe": {
+      "captured_at": "2026-08-01T12:13:35+00:00",
+      "gps": {
+        "lat": 60.06459722222222,
+        "lon": 8.781119444444446,
+        "elevation_m": 474.8
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.715,
+      "exposure": 0.975,
+      "score": 0.845
+    },
+    "id": "20260801-phone-f67a9c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3594_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Rennradfahrer mit Startnummer faehrt eine kurvige Landstrasse durch bewaldetes Tal, vermutlich Radrennen.",
+      "tags": [
+        "radrennen",
+        "rennrad",
+        "strasse",
+        "wald",
+        "sport",
+        "unterwegs"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
       ]
     }
   },
@@ -62863,6 +64030,55 @@
     }
   },
   {
+    "hash": "sha256:18fb6c547c3f0db5b65226ee1b2c57dd0cb8b4075f3c22f60ad3976213ee1dee",
+    "path": "Christina-iPhone/IMG_3677.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T15:34:09+00:00",
+    "gps": {
+      "lat": 58.971608333333336,
+      "lon": 9.675719444444443,
+      "elevation_m": -3.0
+    },
+    "probe": {
+      "captured_at": "2026-08-03T15:34:09+00:00",
+      "gps": {
+        "lat": 58.971608333333336,
+        "lon": 9.675719444444443,
+        "elevation_m": -3.0
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.911,
+      "score": 0.955
+    },
+    "id": "20260803-phone-18fb6c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3677_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Kiefer rahmt eine tuerkise Badebucht mit Sandstrand, Wald und blauem Himmel, keine Personen im Bild.",
+      "tags": [
+        "bucht",
+        "kiefer",
+        "strand",
+        "tuerkis",
+        "sommer",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
     "hash": "sha256:238760771bcbbe31ea4e28b3af3abf5b1c022a8c736990b919b5e442591cd639",
     "path": "Christina-iPhone/IMG_3639.HEIC",
     "kind": "photo",
@@ -63155,6 +64371,55 @@
     }
   },
   {
+    "hash": "sha256:4d7069dd9edbf59bdda6545c8085925e5c8373b1a8eaf9e7f8d9db8c9b516f92",
+    "path": "Christina-iPhone/IMG_3674.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T15:13:40+00:00",
+    "gps": {
+      "lat": 58.97125277777778,
+      "lon": 9.676080555555554,
+      "elevation_m": -1.1
+    },
+    "probe": {
+      "captured_at": "2026-08-03T15:13:40+00:00",
+      "gps": {
+        "lat": 58.97125277777778,
+        "lon": 9.676080555555554,
+        "elevation_m": -1.1
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.34,
+      "exposure": 0.985,
+      "score": 0.662
+    },
+    "id": "20260803-phone-4d7069",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3674_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Vater zeigt stolz einen Fang an der Angel, Sohn gibt Daumen hoch, Kuestenfelsen und Meer im Hintergrund.",
+      "tags": [
+        "angeln",
+        "vater",
+        "sohn",
+        "fang",
+        "portraet",
+        "kueste"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:4f45f3dc31262e36048f91ce756579942bcee9655e2a03200ed14b7040ab1093",
     "path": "Chris-iPhone/IMG_0425.HEIC",
     "kind": "photo",
@@ -63246,6 +64511,56 @@
       ],
       "people": true,
       "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:56acc69e3fb2d5bdfe59da44b11ed472a54d7875accc9969b4dd965a7e126494",
+    "path": "Christina-iPhone/IMG_3665.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T15:06:44+00:00",
+    "gps": {
+      "lat": 58.97115,
+      "lon": 9.675455555555555,
+      "elevation_m": 7.7
+    },
+    "probe": {
+      "captured_at": "2026-08-03T15:06:44+00:00",
+      "gps": {
+        "lat": 58.97115,
+        "lon": 9.675455555555555,
+        "elevation_m": 7.7
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.454,
+      "exposure": 0.889,
+      "score": 0.671
+    },
+    "id": "20260803-phone-56acc6",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3665_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Vater und Kind angeln als Silhouette gegen das glitzernde Meer bei Sonnenschein auf Kuestenfelsen.",
+      "tags": [
+        "angeln",
+        "vater",
+        "kind",
+        "silhouette",
+        "meer",
+        "kueste"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
         "b-roll"
       ]
     }
@@ -63546,6 +64861,55 @@
     }
   },
   {
+    "hash": "sha256:7ddaed6bf8928b1ad89fd4c88332262a285781c42b5ec4ddbb72d323c869681c",
+    "path": "Christina-iPhone/IMG_3671.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T15:10:07+00:00",
+    "gps": {
+      "lat": 58.971161111111115,
+      "lon": 9.675497222222221,
+      "elevation_m": 1.0
+    },
+    "probe": {
+      "captured_at": "2026-08-03T15:10:07+00:00",
+      "gps": {
+        "lat": 58.971161111111115,
+        "lon": 9.675497222222221,
+        "elevation_m": 1.0
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.979,
+      "score": 0.989
+    },
+    "id": "20260803-phone-7ddaed",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3671_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Vater und Sohn angeln am Kuestenufer, im Hintergrund Huetten zwischen Baeumen an der Bucht.",
+      "tags": [
+        "angeln",
+        "vater",
+        "sohn",
+        "kueste",
+        "huetten",
+        "meer"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:86186eb5ae9fce08995b99cfa11352d33a182af3dc1c0ca274a39af66504cde8",
     "path": "Christina-iPhone/IMG_3654.HEIC",
     "kind": "photo",
@@ -63738,6 +65102,55 @@
       "people": true,
       "usable_as": [
         "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ccbeb59de33b99746ac025337d7f77efcb994e4a457d54d34a53166eff6e5d17",
+    "path": "Christina-iPhone/IMG_3679.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T15:34:52+00:00",
+    "gps": {
+      "lat": 58.97171111111111,
+      "lon": 9.67558611111111,
+      "elevation_m": 3.1
+    },
+    "probe": {
+      "captured_at": "2026-08-03T15:34:52+00:00",
+      "gps": {
+        "lat": 58.97171111111111,
+        "lon": 9.67558611111111,
+        "elevation_m": 3.1
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.851,
+      "score": 0.926
+    },
+    "id": "20260803-phone-ccbeb5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3679_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Blick durch Kiefernaeste auf entfernte Angler auf Kuestenfelsen an einer ruhigen Bucht.",
+      "tags": [
+        "angeln",
+        "bucht",
+        "felsen",
+        "kiefer",
+        "kueste",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
         "b-roll"
       ]
     }
@@ -63936,6 +65349,55 @@
       "people": true,
       "usable_as": [
         "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:f2a0e0835a4890a7dae6d487cc81fe837923d8fe5712e5ed606d9cb270493619",
+    "path": "Christina-iPhone/IMG_3678.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T15:34:36+00:00",
+    "gps": {
+      "lat": 58.97174444444445,
+      "lon": 9.675641666666666,
+      "elevation_m": 2.1
+    },
+    "probe": {
+      "captured_at": "2026-08-03T15:34:36+00:00",
+      "gps": {
+        "lat": 58.97174444444445,
+        "lon": 9.675641666666666,
+        "elevation_m": 2.1
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.869,
+      "score": 0.934
+    },
+    "id": "20260803-phone-f2a0e0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3678_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weiter Blick auf eine tuerkise Bucht mit Sandstrand, Boot am Ufer und bewaldeter Kueste.",
+      "tags": [
+        "bucht",
+        "strand",
+        "boot",
+        "tuerkis",
+        "kueste",
+        "sommer"
+      ],
+      "people": false,
+      "usable_as": [
         "establisher"
       ]
     }
@@ -64806,6 +66268,53 @@
     }
   },
   {
+    "hash": "sha256:b4fa15ea0b82caabea236646a14bcfa0204607db039854b040019c30cff7b961",
+    "path": "Christina-iPhone/IMG_3688.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-04T10:15:59+00:00",
+    "gps": {
+      "lat": 57.40768333333333,
+      "lon": 10.176086111111111
+    },
+    "probe": {
+      "captured_at": "2026-08-04T10:15:59+00:00",
+      "gps": {
+        "lat": 57.40768333333333,
+        "lon": 10.176086111111111
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.086,
+      "exposure": 0.84,
+      "score": 0.463
+    },
+    "id": "20260804-phone-b4fa15",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3688_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Vater und Sohn bauen konzentriert ein Lego-Set an einem Tisch im Faehrrestaurant.",
+      "tags": [
+        "lego",
+        "vater",
+        "sohn",
+        "faehre",
+        "drinnen",
+        "basteln"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:ccbc5d7a1dbe88b8d994e2bb6a95e52a48b2635a7bb25736cbfc9cf0c7f55395",
     "path": "Chris-iPhone/IMG_0461.HEIC",
     "kind": "photo",
@@ -64895,6 +66404,170 @@
         "gegenlicht",
         "strasse",
         "abreise"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:3d4162fd2d8dcf9b38273e3804ef0165955d717f4007a9177993027e33d7b022",
+    "path": "Christina-iPhone/b76a2f40-1839-4967-8ee1-1f8dd96c0040.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": null,
+    "gps": null,
+    "probe": {
+      "captured_at": null,
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.199,
+      "exposure": 0.982,
+      "score": 0.59
+    },
+    "id": "20260804-unknown-3d4162",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/b76a2f40-1839-4967-8ee1-1f8dd96c0040_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Frau am Steuer im Gegenlicht der tiefstehenden Abendsonne mit starkem Lens-Flare, Strasse und Baeume durchs Fenster.",
+      "tags": [
+        "auto",
+        "fahren",
+        "sonnenuntergang",
+        "gegenlicht",
+        "portraet",
+        "unterwegs"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:e44c9ffa8188d23f6418be4dd3bbb0c5d64e22e2541982430fd80316ad7e7b2c",
+    "path": "Christina-iPhone/1109847e-8da4-4977-9dc8-c161c415ca32.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": null,
+    "gps": null,
+    "probe": {
+      "captured_at": null,
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.344,
+      "exposure": 0.733,
+      "score": 0.538
+    },
+    "id": "20260804-unknown-e44c9f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/1109847e-8da4-4977-9dc8-c161c415ca32_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Frau sitzt beim Dessert am Fensterplatz eines Faehrrestaurants mit Blick aufs offene Meer.",
+      "tags": [
+        "faehre",
+        "restaurant",
+        "frau",
+        "dessert",
+        "meer",
+        "drinnen"
+      ],
+      "people": true,
+      "usable_as": [
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ea7ff5f2b82e535f1fb4e7cbfa4f2a6f12b6692c80bdeeaef61b41e2d8460c4b",
+    "path": "Christina-iPhone/e05779e2-c3d7-47e7-8710-0f1d7c4be7bb.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": null,
+    "gps": null,
+    "probe": {
+      "captured_at": null,
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.815,
+      "exposure": 0.886,
+      "score": 0.85
+    },
+    "id": "20260804-unknown-ea7ff5",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/e05779e2-c3d7-47e7-8710-0f1d7c4be7bb_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Familien-Selfie im Auto, Vater und Mutter laecheln, Sohn mit Pokemon-Spielzeug im Kindersitz dahinter.",
+      "tags": [
+        "familie",
+        "auto",
+        "selfie",
+        "portraet",
+        "kind",
+        "unterwegs"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:ff3f29a5706cdc7ed2161ed53227578e5c72d961d1bc2bc86c8d2b1feee3d30a",
+    "path": "Christina-iPhone/d0c33639-1eea-421b-8000-7f83c7c012c7.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": null,
+    "gps": null,
+    "probe": {
+      "captured_at": null,
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.201,
+      "exposure": 0.862,
+      "score": 0.531
+    },
+    "id": "20260804-unknown-ff3f29",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/d0c33639-1eea-421b-8000-7f83c7c012c7_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Ausgelassener Junge mit Pudding-Loeffel und begeistertem Gesichtsausdruck am Tisch im Faehrrestaurant.",
+      "tags": [
+        "kind",
+        "essen",
+        "dessert",
+        "faehre",
+        "portraet",
+        "froehlich"
       ],
       "people": true,
       "usable_as": [

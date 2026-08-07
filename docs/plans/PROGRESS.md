@@ -1820,3 +1820,53 @@ anstoßen — beides ist idempotent/inkrementell (übersprungene Proxies, nur un
 gehen an den `media-indexer`-Agenten), aber es passiert nicht von selbst, und ein bereits über
 `INDEXED` hinaus fortgeschrittenes Projekt merkt eine neue unindizierte Datei nicht
 automatisch.
+
+---
+
+## Fundus-Erweiterung „Christina-iPhone" (Fotos) (2026-08-07) — **fertig (Fotos), Videos offen**
+
+Neuer Ordner `Christina-iPhone/` im `media_root`, vom Nutzer vorsortiert: **127 HEIC + 30 JPG
+= 157 Fotos** bereits vorbereitet (Keyframes + CV-Analyse per Skript unter Umgehung von
+`ingest`, damit die noch nicht fertig vorbereiteten **65 MOV/MP4-Videos** nicht mitlaufen).
+Die Videos sind explizit **nicht** angefasst worden — weder ingested noch prepared noch
+indiziert — und bleiben offen, bis der Nutzer sie freigibt.
+
+| Schritt | Status |
+|---|---|
+| `prepare-index` (per Skript, nur Fotos) — Keyframes, CV, `captured_at`, GPS | ✅ 157/157 |
+| Inhaltliche Sichtung (Beschreibung/Tags/Rating/Source) | ✅ **157 von 157** |
+| Videos (65 MOV/MP4) | 🔲 offen — vom Nutzer zurückgehalten, nicht vorbereitet |
+
+**Zeitraum:** 2026-07-20 bis 2026-08-04, deckt sich mit dem bestehenden Reisezeitraum
+(Chris-iPhone-Fundus 17.07.–04.08.). Aufnahmeort-Cluster grob: Waldsee-Huette (20.–23.07.),
+Aurlandsfjord/Flaamsbana (24.–25.07.), Geirangerfjord/Trollstigen (26.–28.07.), Lom/Stabkirche
+(28.–30.07.), Huette am Fluss mit historischer Bruecke (29.07.–02.08.), Kuestenbucht mit
+Angeln/Baden (03.–04.08.), Ruecktransfer/Faehre (04.08.).
+
+**Quellenzuordnung (`source`):** 127 Fotos hatten `source_guess: phone` (IMG_*.HEIC/JPG mit
+Apple-EXIF), 30 zeigten `source_guess: unknown` (UUID-Dateinamen ohne verwertbare EXIF —
+vermutlich über Messenger/AirDrop geteilte Fotos ohne Metadaten-Erhalt). Da die Motive
+inhaltlich klar zum selben Fundus gehören (gleiche Reise, gleiche Personen, gleiche
+Bildsprache wie die benannten IMG_*-Dateien), wurde bei allen 30 `unknown`-Faellen manuell
+auf `phone` gesetzt — keiner zeigte Anzeichen einer anderen Aufnahmequelle (keine
+Drohnen-Vogelperspektive, keine Action-Cam-Weitwinkel-Verzerrung).
+
+**Ratingverteilung grob:** viele starke Establisher (Fjord-Panoramen, Regenbogen ueber dem
+Fjord, Geirangerfjord-Aussichtspunkte, Trollstigen-Vogelperspektive, beleuchtete Bruecke bei
+Nacht, tuerkise Kuestenbucht) mit 4–5, dazwischen viel Familien-B-Roll (Angeln, Wandern,
+Faehrfahrten) mit 3–4, sowie einige reine Cutaways/Meilensteine (Navi-Display,
+Kilometerstand-Fotos) mit 1–2.
+
+**Zwei Auffaelligkeiten waehrend der Sichtung:**
+1. Die anfaengliche Worklist-Momentaufnahme enthielt zunaechst nur 145 der 157 Fotos; 12
+   weitere (IMG_3458–IMG_3609, luecke zwischen 29.07. und 01.08.) tauchten erst bei einer
+   spaeteren `index-todo`-Abfrage auf und wurden nachtraeglich einzeln gesichtet und
+   indiziert. Alle 157 sind bestaetigt in `assets.json` (`grep -c Christina-iPhone` = 157).
+2. **Keine Video-Datei aus `Christina-iPhone/` erschien in `index-todo`** — die Erwartung im
+   Auftrag ("falls doch eine MOV/MP4-Prep-Datei erscheint, waere das ein Bug") ist nicht
+   eingetreten. Die Vorbereitung war sauber auf die 157 Fotos beschraenkt.
+
+**Naechster Schritt:** Sobald der Nutzer die 65 Christina-iPhone-Videos vorbereitet
+(`ingest` + `prepare-index`), erscheinen sie ueber `index-todo norwegen-2026` und koennen wie
+gewohnt an den `media-indexer` gegeben werden — bis dahin bleibt der Christina-iPhone-Fundus
+bei 157/222 (Fotos komplett, Videos offen).
