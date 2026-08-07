@@ -2,8 +2,8 @@ primary_color: '#12222f'
 secondary_color: '#2c4a5a'
 accent_color: '#e0a458'
 text_color: '#ffffff'
-font_display: Helvetica Neue
-font_text: Helvetica Neue
+font_display: Avenir Next
+font_text: Avenir Next
 motion:
   fade_in_s: 0.5
   fade_out_s: 0.6

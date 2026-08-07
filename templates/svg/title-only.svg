@@ -1,0 +1,8 @@
+<svg width="{{width}}" height="{{height}}" xmlns="http://www.w3.org/2000/svg">
+  <!-- Nur der Titel-Text, transparenter Rest. Fuer Slide-in-Animation als eigener Overlay-Layer
+       gedacht (siehe frameforge/render.py `_overlay_x_expr`) - horizontale Bewegung passiert
+       per Zeit-Expression im Render, nicht hier im SVG. -->
+  <text x="50%" y="46%" font-family="{{font_display}}" font-weight="900" font-style="normal"
+        font-size="{{title_size}}" fill="{{text_color}}" text-anchor="middle"
+        dominant-baseline="middle">{{title}}</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg width="{{width}}" height="{{height}}" xmlns="http://www.w3.org/2000/svg">
+  <!-- Nur der Unterzeilen-Text, transparenter Rest. Gegenstueck zu title-only.svg fuer den
+       zweiten Slide-in-Layer (kommt typischerweise von der Gegenrichtung). -->
+  <text x="50%" y="58%" font-family="{{font_text}}" font-weight="700" font-style="normal"
+        font-size="{{subtitle_size}}" fill="{{accent_color}}" text-anchor="middle"
+        dominant-baseline="middle">{{subtitle}}</text>
+</svg>

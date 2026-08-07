@@ -87,6 +87,11 @@ class OverlayClip(BaseModel):
     png: str
     tl_in: float = Field(ge=0)
     dur: float = Field(gt=0)
+    # Freies String-Dict (kein eigenes Feld je Animationsart) -- `frameforge.render` interpretiert
+    # die Schluessel, unbekannte werden ignoriert. Bekannt: `fade_in_s`/`fade_out_s` (Alpha-Fade,
+    # bestehend) sowie `slide_from_px`/`slide_in_s`/`drift_px`/`drift_period_s` (horizontale
+    # Slide-in-/Drift-Bewegung, siehe `render._overlay_x_expr`). Fehlen alle Slide/Drift-Schluessel
+    # (0/None), bleibt die Overlay-Position exakt beim bisherigen statischen `x=0`.
     anim: dict[str, str] | None = None
 
 

@@ -98,6 +98,68 @@ def test_build_filtergraph_overlay_adds_input_and_enable_window():
     )
 
 
+def test_build_filtergraph_overlay_slide_defaults_to_static_x():
+    """Ohne slide_from_px/drift_px bleibt es beim alten festen x=0 (Rueckwaertskompatibilitaet)."""
+    timeline = _timeline(
+        video=[{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0}],
+        overlay=[{"id": "o1", "png": "overlays/title.png", "tl_in": 0.5, "dur": 1.0}],
+    )
+    graph = build_filtergraph(
+        timeline,
+        resolve_asset=lambda aid: Path(f"/media/{aid}.mp4"),
+        export_root=Path("/export"),
+        project_root=Path("/project"),
+    )
+    assert "overlay=x='0':y=0" in graph.filter_complex
+
+
+def test_build_filtergraph_overlay_slide_from_px_builds_time_expression():
+    timeline = _timeline(
+        video=[{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0}],
+        overlay=[
+            {
+                "id": "o1",
+                "png": "overlays/title.png",
+                "tl_in": 0.5,
+                "dur": 1.0,
+                "anim": {"slide_from_px": "-600", "slide_in_s": "0.4"},
+            }
+        ],
+    )
+    graph = build_filtergraph(
+        timeline,
+        resolve_asset=lambda aid: Path(f"/media/{aid}.mp4"),
+        export_root=Path("/export"),
+        project_root=Path("/project"),
+    )
+    # Linear von -600px (bei tl_in) auf 0 (bei tl_in+slide_in_s=0.9), dann konstant 0.
+    assert "-600.00*max(0,min(1,(0.900-t)/0.400000))" in graph.filter_complex
+    assert "overlay=x='-600.00*max(0,min(1,(0.900-t)/0.400000))':y=0" in graph.filter_complex
+
+
+def test_build_filtergraph_overlay_drift_only_after_slide_in():
+    timeline = _timeline(
+        video=[{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0}],
+        overlay=[
+            {
+                "id": "o1",
+                "png": "overlays/title.png",
+                "tl_in": 0.0,
+                "dur": 2.0,
+                "anim": {"drift_px": "15", "drift_period_s": "4.0"},
+            }
+        ],
+    )
+    graph = build_filtergraph(
+        timeline,
+        resolve_asset=lambda aid: Path(f"/media/{aid}.mp4"),
+        export_root=Path("/export"),
+        project_root=Path("/project"),
+    )
+    # Ohne slide_from_px startet slide_in_s trotzdem beim Default (1.5s) -- Drift setzt danach ein.
+    assert "if(gte(t,1.500),15.00*sin(2*PI*(t-1.500)/4.000)," in graph.filter_complex
+
+
 def test_build_filtergraph_map_clip_shifts_by_tl_in():
     timeline = _timeline(
         video=[{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0}],

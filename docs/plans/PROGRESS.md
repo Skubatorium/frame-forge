@@ -2052,3 +2052,63 @@ Beat-Sheet + Timeline bauen.
 **Naechster Schritt:** `/ff-preview norwegen-2026 drone-edit` — Proxy-Render pruefen, danach
 Freigabe. Danach vlog-data, vlog-pur (~20 Min, identischer Schnitt, nur Map-Layer
 unterschiedlich), dann teaser.
+
+### Preview v1 gesichtet, Timeline Revision 2 (2026-08-08)
+
+Erster Proxy-Preview gerendert und vom Nutzer gesichtet. Feedback fuehrte zu einer kompletten
+Timeline-Revision (Beat-Sheet + timeline.json neu gebaut), danach zweiter Preview-Render
+erfolgreich (`exports/drone-edit/preview/drone-edit_preview.mp4`, 568,0 s, 80 Video-Clips,
+2,02 GB, `qc.validate()` leer, `validate_semantics()` ok). Export steht bei **PREVIEWED**,
+wartet auf Nutzer-Freigabe (`approve`) vor dem Final-Render.
+
+**Aenderungen gegenueber Revision 1** (alle aus Nutzer-Feedback nach dem ersten Preview):
+
+- **Keine Fotos/Ken-Burns mehr** — reiner Drohnen-Video-Reel, wie im Brief eigentlich schon
+  gefordert; Revision 1 hatte faelschlich 2 Foto-Assets mit Ken-Burns in K4 eingebaut.
+- **Nur noch 2 Audio-Abschnitte statt 3** (Naturaleza Mose Edit + Cuatro Vientos, kein
+  Naturaleza-Reprise-Abschnitt mehr) — der dritte Abschnitt/zweite Crossfade klang hallig/
+  "schallend". Ziellaenge dadurch von 720 s auf 568 s reduziert (`brief.yaml`
+  `target_duration_s`/`structure_hint` angepasst).
+- **Kein `speed > 1.0` mehr im ganzen Film** — Nutzer mochte die Hyperlapse-/Timelapse-Ramps im
+  Preview nicht (`transition_vocabulary` in `brief.yaml` um `speed_ramp` gekuerzt). Slow-Mo
+  (`speed < 1.0`) an einzelnen epischen Momenten bleibt erlaubt. **Widerspricht der bisherigen
+  Editing-Praeferenz** (Timelapse/Ramps statt Kuerzen bei langen Clips, siehe
+  Session-Memory `project_norwegen_editing_prefs`) — die ist nach dieser Sichtung entsprechend
+  revidiert.
+- **Generelles Qualitaetskriterium ergaenzt:** Clips nicht nur nach Gesamt-Stabilitaets-Score im
+  Index auswaehlen, sondern auf unruhige Schwenks *mitten im Take* pruefen (Beispiel:
+  `20260730-drone-4abe2d`, Bruecke/Kinder, Stabilitaet 0.0) — bei Verdacht `src_in`/`src_out`
+  enger um den ruhigen Teil legen statt ganzen Clip verwerfen. Als Session-Memory
+  `feedback_shaky_clips` festgehalten, da laufendes Kriterium fuer kuenftige Timeline-Bauten.
+  Der Index liefert bislang nur einen Stabilitaets-Wert pro Clip, keine Segment-Aufloesung —
+  offener Verbesserungspunkt fuer spaeter.
+- **Mehr Top-Down/Vogelperspektive-Shots** eingebaut (6 Slots definiert, alle gefunden, u. a.
+  der vom Nutzer explizit gelobte senkrechte Fluss-Shot in Lom).
+- **Neuer Clip:** `20260803-drone-574c7c` (Moewe an Felseninsel, Angelplatz Langesund) als
+  eigener Beat in K9 eingebaut, `src_in≈26.5-34.2`.
+- **K8 (01.08., Motorrad-Rastplatz Uvdal→Skien) entfernt** — der `timeline-builder` hatte es
+  zunaechst wieder eingebaut (Rating/Exclude-Kriterien erfuellt), aber Sichtpruefung zeigte
+  eindeutig Menschen-/Fahrzeug-lastiges Material (Dutzende Motorraeder/Fahrer), das den
+  fast-menschenfreien Stil ausserhalb K7/K9 gebrochen haette. Manuell entfernt, Zeit an
+  K7-Schlussclip angehaengt (Timeline-Laenge/Audio-Sync-Punkte unveraendert).
+- **Crossfade-Timing gestrafft** — Default-Dissolve innerhalb von Kapiteln von 1,2 s auf
+  0,5-0,7 s verkuerzt (verhindert den "Schlier"-Effekt bei Bewegung-auf-Bewegung-Ueberblendung),
+  mehrere Kapitieluebergaenge auf harten Schnitt umgestellt. Der gelobte Wind-Uebergang
+  K2→K3 (1,2 s) blieb unangetastet.
+- **Neues Render-Feature: animierte Overlays.** `OverlayClip.anim` unterstuetzt jetzt
+  `slide_from_px`/`slide_in_s`/`drift_px`/`drift_period_s` (generischer Mechanismus, nicht
+  Einzelfall-Hack) — Intro-Titel "Norwegen 2026" kommt von links, Unterzeile "Drone Edit" von
+  rechts eingeflogen, konvergieren zur Mitte, driften leicht gegenlaeufig waehrend der
+  Hold-Phase, blenden gemeinsam aus. Zwei neue SVG-Templates (`title-only.svg`,
+  `subtitle-only.svg`) statt einem kombinierten Titel-Card-Template fuer diesen Export.
+  `frameforge/render.py`: `build_filtergraph` baut jetzt eine Zeitausdruck-Expression fuer
+  `overlay`s `x`-Parameter statt fest `x=0`; ohne die neuen `anim`-Felder unveraendertes
+  Verhalten (getestet gegen bestehende `test-timelapse-journey`-Overlays). 3 neue Regressionstests
+  in `tests/test_render.py`.
+- **Font geaendert:** `design/tokens.yaml` `font_display`/`font_text` von "Helvetica Neue" auf
+  "Avenir Next", `title-card.svg`/die neuen Only-Templates mit `font-weight` 900 (Titel) bzw.
+  700 (Unterzeile) — Nutzer fand die vorherige Schrift zu zart, wollte kraeftiger/moderner,
+  nicht kursiv. Farben (helles Blau/Orange) unveraendert, waren schon passend.
+
+**Naechster Schritt:** Nutzer sichtet `drone-edit_preview.mp4`, gibt frei oder gibt weiteres
+Feedback. Bei Freigabe: `/ff-render norwegen-2026 drone-edit` fuer den 4K-Final.

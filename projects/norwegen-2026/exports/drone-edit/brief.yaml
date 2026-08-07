@@ -1,10 +1,10 @@
 # Reiner Drohnen-Export. Ruhig, episch, Ramps/Slow-Mo statt harter Cuts, keine Karte.
 preset: nordic-cinematic
-target_duration_s: 720  # ~12 Min. Zielwert, flexibel 600–840 s (10–14 Min.) je nach Material
+target_duration_s: 568  # revidiert nach Preview (2026-08-08): nur noch 2 Musikabschnitte statt 3, flexibel
 language: de
 
 # --- Overrides ---
-transition_vocabulary: [fade, slow_dissolve, speed_ramp, slow_mo]
+transition_vocabulary: [fade, slow_dissolve, slow_mo]  # speed_ramp entfernt (2026-08-08): Nutzer mochte Hyperlapse-Ramps im Preview nicht, speed>1.0 filmweit vermieden
 map_usage: none
 text_density: minimal  # nur Intro-Titel, sonst textfrei
 
@@ -17,7 +17,7 @@ selection:
 audio:
   tracks: [naturaleza-mose-edit, cuatro-vientos]  # beide Pflicht, keiner komplett durchlaufen
   transition: fluid_crossfade  # fliessender Uebergang zwischen den Titeln, kein harter Schnitt
-  structure_hint: three_parts_approx_4min  # optional: 3 Abschnitte a ca. 4 Min.
+  structure_hint: two_parts  # revidiert nach Preview: 3. Abschnitt gestrichen (halliger Crossfade), nur noch 2 Teile
   fade_in_s: 3
   fade_out_s: 3
 

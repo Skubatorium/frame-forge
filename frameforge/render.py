@@ -293,6 +293,53 @@ def grade_filter(color_grade: dict | None) -> str | None:
     return chain
 
 
+# Defaults fuer die Overlay-Bewegungsanimation (Plan 0003-Feature "Slide-in-Titel"):
+# `slide_in_s` ohne explizite Angabe, sobald `slide_from_px` != 0 ist; `drift_period_s` ohne
+# explizite Angabe, sobald `drift_px` != 0 ist. Beide Werte sind bei "kein Slide/kein Drift"
+# (0/None) bedeutungslos, damit bestehende Overlays ohne diese `anim`-Schluessel exakt das alte
+# statische `x=0` reproduzieren.
+_DEFAULT_SLIDE_IN_S = 1.5
+_DEFAULT_DRIFT_PERIOD_S = 4.0
+
+
+def _overlay_x_expr(anim: dict, tl_in: float, dur: float) -> str:
+    """FFmpeg-`overlay`-x-Ausdruck (Funktion von `t`) fuer Slide-in + Drift eines Overlays.
+
+    `anim` kennt (alle optional, Strings wie der Rest von `OverlayClip.anim`):
+    - `slide_from_px`: X-Versatz bei `tl_in` in Pixeln (negativ = von links einlaufend,
+      positiv = von rechts, 0/fehlend = keine Slide-Bewegung -- wie bisher).
+    - `slide_in_s`: Dauer der Einlaufbewegung (Default 1.5s, gedeckelt auf `dur`).
+    - `drift_px`: Amplitude einer sinusfoermigen Restbewegung waehrend der Hold-Phase, nach
+      Abschluss des Slide-ins (0/fehlend = keine Drift).
+    - `drift_period_s`: Periodendauer der Drift (Default 4.0s).
+
+    Ohne `slide_from_px` und `drift_px` liefert das exakt `"0"` -- identisch zum bisherigen
+    festen `x=0`, damit sich an bestehenden Overlays (z.B. `label-*.png`) nichts aendert.
+    """
+    slide_from = float(anim.get("slide_from_px", 0) or 0)
+    drift_px = float(anim.get("drift_px", 0) or 0)
+    if slide_from == 0 and drift_px == 0:
+        return "0"
+
+    slide_in_s = float(anim.get("slide_in_s", _DEFAULT_SLIDE_IN_S) or _DEFAULT_SLIDE_IN_S)
+    slide_in_s = max(0.001, min(slide_in_s, dur))
+    t0 = tl_in
+    t1 = tl_in + slide_in_s
+
+    terms = []
+    if slide_from:
+        # Linear von `slide_from_px` (bei t0) auf 0 (bei t1), danach konstant 0.
+        terms.append(f"{slide_from:.2f}*max(0,min(1,({t1:.3f}-t)/{slide_in_s:.6f}))")
+    if drift_px:
+        drift_period_s = float(anim.get("drift_period_s", _DEFAULT_DRIFT_PERIOD_S) or _DEFAULT_DRIFT_PERIOD_S)
+        drift_period_s = max(0.001, drift_period_s)
+        # Drift erst NACH dem Slide-in, sonst ueberlagert sie die Einlaufbewegung.
+        terms.append(
+            f"if(gte(t,{t1:.3f}),{drift_px:.2f}*sin(2*PI*(t-{t1:.3f})/{drift_period_s:.3f}),0)"
+        )
+    return "+".join(terms)
+
+
 def build_filtergraph(
     timeline: Timeline,
     *,
@@ -354,8 +401,15 @@ def build_filtergraph(
         match = match_filter(clip.color_match)
         if match:
             chain.append(match)
-        # Konstante fps sichern, damit concat/xfade sauber zusammenpassen.
+        # Konstante fps sichern, damit concat/xfade sauber zusammenpassen. `fps` allein
+        # normalisiert aber nicht die Timebase: `zoompan` (Ken-Burns-Fotos) liefert
+        # AV_TIME_BASE (1/1000000), `fps` laesst das unangetastet, wenn sich an der
+        # Framerate nichts aendert. Ohne `settb=AVTB` bricht `xfade` dann mit
+        # "timebase do not match", sobald ein Foto-Clip direkt vor/nach einem
+        # Crossfade liegt. Explizit auf jedem Segment erzwingen, nicht nur beim Foto-Zweig
+        # -- normale Video-Clips laufen schon auf AVTB, der Filter ist fuer sie ein No-op.
         chain.append(f"fps={fps:g}")
+        chain.append("settb=AVTB")
         filters.append(f"[{idx}:v]{','.join(chain)}[{label}]")
         video_labels.append(label)
 
@@ -382,6 +436,7 @@ def build_filtergraph(
         anim = overlay.anim or {}
         fi = float(anim.get("fade_in_s", 0) or 0)
         fo = float(anim.get("fade_out_s", 0) or 0)
+        x_expr = _overlay_x_expr(anim, overlay.tl_in, overlay.dur)
         ov_label = f"ov{j}"
         next_video = f"vov{j}"
         if fi > 0 or fo > 0:
@@ -399,7 +454,7 @@ def build_filtergraph(
             chain += f",setpts=PTS+{overlay.tl_in}/TB"
             filters.append(f"[{idx}:v]{chain}[{ov_label}]")
             filters.append(
-                f"[{cur_video}][{ov_label}]overlay=x=0:y=0:"
+                f"[{cur_video}][{ov_label}]overlay=x='{x_expr}':y=0:"
                 f"enable='between(t,{overlay.tl_in},{overlay.tl_in + overlay.dur})'[{next_video}]"
             )
         else:
@@ -408,7 +463,7 @@ def build_filtergraph(
             )
             filters.append(f"[{idx}:v]format=rgba[{ov_label}]")
             filters.append(
-                f"[{cur_video}][{ov_label}]overlay=x=0:y=0:shortest=1:"
+                f"[{cur_video}][{ov_label}]overlay=x='{x_expr}':y=0:shortest=1:"
                 f"enable='between(t,{overlay.tl_in},{overlay.tl_in + overlay.dur})'[{next_video}]"
             )
         cur_video = next_video
