@@ -59455,6 +59455,55 @@
     }
   },
   {
+    "hash": "sha256:5f422e8f1ab2e7c6a566ec84efd602ddeac6cf7227d06d032af3338a8a99fea2",
+    "path": "Christina-iPhone/IMG_3611.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-01T14:03:39+00:00",
+    "gps": {
+      "lat": 59.48484722222222,
+      "lon": 9.329455555555555,
+      "elevation_m": 119.6
+    },
+    "probe": {
+      "captured_at": "2026-08-01T14:03:39+00:00",
+      "gps": {
+        "lat": 59.48484722222222,
+        "lon": 9.329455555555555,
+        "elevation_m": 119.6
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.145,
+      "exposure": 0.654,
+      "score": 0.4
+    },
+    "id": "20260801-phone-5f422e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3611_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Nahaufnahme des Auto-Tachos beim Erreichen von 200.000 km Kilometerstand.",
+      "tags": [
+        "auto",
+        "tacho",
+        "meilenstein",
+        "kilometerstand",
+        "detail",
+        "unterwegs"
+      ],
+      "people": false,
+      "usable_as": [
+        "cutaway"
+      ]
+    }
+  },
+  {
     "hash": "sha256:698a183b230e9f4f17614846970473ac2a8e0f22b7ceda48fb7b52c002b993ee",
     "path": "Chris-iPhone/IMG_0393.HEIC",
     "kind": "photo",
@@ -59702,6 +59751,104 @@
     }
   },
   {
+    "hash": "sha256:3f97d302d3d4c7f39df5f39e9eab48a6546ddb8c1e547ba3de50f2c00c2525f4",
+    "path": "Christina-iPhone/IMG_3624.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-02T18:31:43+00:00",
+    "gps": {
+      "lat": 59.382397222222224,
+      "lon": 9.41403611111111,
+      "elevation_m": 580.5
+    },
+    "probe": {
+      "captured_at": "2026-08-02T18:31:43+00:00",
+      "gps": {
+        "lat": 59.382397222222224,
+        "lon": 9.41403611111111,
+        "elevation_m": 580.5
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.887,
+      "exposure": 0.82,
+      "score": 0.854
+    },
+    "id": "20260802-phone-3f97d3",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3624_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Frau pflueckt Beeren oder Kraeuter zwischen Nadelbaeumen und lila bluehenden Weidenroeschen im Sonnenlicht.",
+      "tags": [
+        "beeren",
+        "sammeln",
+        "wald",
+        "frau",
+        "sonnenlicht",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:61e608ab696b819a8c64353eae8cd5d5ebc718f1bb48d8b0dd532a60356560e0",
+    "path": "Christina-iPhone/IMG_3615.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-02T11:51:15+00:00",
+    "gps": {
+      "lat": 59.21019722222223,
+      "lon": 9.564041666666668,
+      "elevation_m": 99.0
+    },
+    "probe": {
+      "captured_at": "2026-08-02T11:51:15+00:00",
+      "gps": {
+        "lat": 59.21019722222223,
+        "lon": 9.564041666666668,
+        "elevation_m": 99.0
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.02,
+      "exposure": 0.862,
+      "score": 0.441
+    },
+    "id": "20260802-phone-61e608",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3615_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Junge zeigt stolz laechelnd seinen ausgefallenen Milchzahn in der Hand, drinnen in heller Umgebung.",
+      "tags": [
+        "kind",
+        "zahn",
+        "portraet",
+        "meilenstein",
+        "drinnen",
+        "lachen"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:720a7c7f1724f0765f6980961000e8c00136f4a6ff2a24d90c06e054e4c3c483",
     "path": "Chris-iPhone/IMG_0399.HEIC",
     "kind": "photo",
@@ -59748,6 +59895,55 @@
       "usable_as": [
         "b-roll",
         "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7a3e282cf32db6344a08cf99e0be5fa8663b8f8a53dcae0c02af84ef04240806",
+    "path": "Christina-iPhone/IMG_3626.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-02T18:31:50+00:00",
+    "gps": {
+      "lat": 59.38240555555556,
+      "lon": 9.413961111111112,
+      "elevation_m": 579.8
+    },
+    "probe": {
+      "captured_at": "2026-08-02T18:31:50+00:00",
+      "gps": {
+        "lat": 59.38240555555556,
+        "lon": 9.413961111111112,
+        "elevation_m": 579.8
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.92,
+      "exposure": 0.709,
+      "score": 0.815
+    },
+    "id": "20260802-phone-7a3e28",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3626_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Mann sucht Beeren im dichten gruenen Waldunterholz mit rosa bluehendem Weidenroeschen im Sonnenlicht.",
+      "tags": [
+        "beeren",
+        "wald",
+        "mann",
+        "sammeln",
+        "sonnenlicht",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
       ]
     }
   },
@@ -59945,6 +60141,55 @@
       "usable_as": [
         "b-roll",
         "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:bfd7a6ec820b2cb6cb0d2949af943b55e1c04d53c017ffbfaeec64596da05e6a",
+    "path": "Christina-iPhone/IMG_3627.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-02T18:31:56+00:00",
+    "gps": {
+      "lat": 59.382377777777776,
+      "lon": 9.413944444444445,
+      "elevation_m": 577.8
+    },
+    "probe": {
+      "captured_at": "2026-08-02T18:31:56+00:00",
+      "gps": {
+        "lat": 59.382377777777776,
+        "lon": 9.413944444444445,
+        "elevation_m": 577.8
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.804,
+      "score": 0.902
+    },
+    "id": "20260802-phone-bfd7a6",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3627_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kind erkundet ein Blumenfeld am Waldrand bei Sonnenschein, Berge in der Ferne sichtbar.",
+      "tags": [
+        "kind",
+        "blumen",
+        "wald",
+        "sonne",
+        "natur",
+        "erkunden"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
       ]
     }
   },
@@ -62569,6 +62814,153 @@
     }
   },
   {
+    "hash": "sha256:134db4dfcbbcb6bb004c5f5ce03251143858bd592721c3419a589c00a45b255a",
+    "path": "Christina-iPhone/IMG_3652.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T14:53:43+00:00",
+    "gps": {
+      "lat": 58.971244444444444,
+      "lon": 9.67558611111111,
+      "elevation_m": 2.2
+    },
+    "probe": {
+      "captured_at": "2026-08-03T14:53:43+00:00",
+      "gps": {
+        "lat": 58.971244444444444,
+        "lon": 9.67558611111111,
+        "elevation_m": 2.2
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.898,
+      "score": 0.949
+    },
+    "id": "20260803-phone-134db4",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3652_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Selfie einer Frau vor einer Felsbucht, im Hintergrund die Familie mit Angelruten auf den Felsen winkend.",
+      "tags": [
+        "selfie",
+        "familie",
+        "angeln",
+        "felsen",
+        "kueste",
+        "gruppenfoto"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:238760771bcbbe31ea4e28b3af3abf5b1c022a8c736990b919b5e442591cd639",
+    "path": "Christina-iPhone/IMG_3639.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T14:47:13+00:00",
+    "gps": {
+      "lat": 58.972636111111115,
+      "lon": 9.675197222222222,
+      "elevation_m": 0.7
+    },
+    "probe": {
+      "captured_at": "2026-08-03T14:47:13+00:00",
+      "gps": {
+        "lat": 58.972636111111115,
+        "lon": 9.675197222222222,
+        "elevation_m": 0.7
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.9,
+      "score": 0.95
+    },
+    "id": "20260803-phone-238760",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3639_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kinder stehen am Wasser eines Kuestenstrands, im Hintergrund schwimmen zwei Personen im Meer.",
+      "tags": [
+        "strand",
+        "kinder",
+        "meer",
+        "schwimmen",
+        "sommer",
+        "kueste"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:28a41ceaf0e8db22e90d4d2ae1ee4c78ea43d5e63ca50499c87fe6c714fc583e",
+    "path": "Christina-iPhone/IMG_3634.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T14:38:58+00:00",
+    "gps": {
+      "lat": 58.974780555555554,
+      "lon": 9.671516666666665,
+      "elevation_m": 27.2
+    },
+    "probe": {
+      "captured_at": "2026-08-03T14:38:58+00:00",
+      "gps": {
+        "lat": 58.974780555555554,
+        "lon": 9.671516666666665,
+        "elevation_m": 27.2
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.761,
+      "score": 0.881
+    },
+    "id": "20260803-phone-28a41c",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3634_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Familie mit Kindern und Angelausruestung wandert gemeinsam einen asphaltierten Waldweg entlang bei Sonnenschein.",
+      "tags": [
+        "familie",
+        "wandern",
+        "angeln",
+        "wald",
+        "kinder",
+        "sonnenschein"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:2bfef9b032f90b9b8553a0c5876f6152dab0278fd479e547b64dc4a6039889f3",
     "path": "Chris-iPhone/IMG_0418.HEIC",
     "kind": "photo",
@@ -62708,6 +63100,53 @@
         "entspannen",
         "drinnen",
         "sonnig"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:45ea28b455d73fc88bb9b31f592ec6ac9d47b29dd3732939bdb3703bf4f0b3bd",
+    "path": "Christina-iPhone/IMG_3658.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T14:57:37+00:00",
+    "gps": {
+      "lat": 58.97159444444445,
+      "lon": 9.682805555555555
+    },
+    "probe": {
+      "captured_at": "2026-08-03T14:57:37+00:00",
+      "gps": {
+        "lat": 58.97159444444445,
+        "lon": 9.682805555555555
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.957,
+      "exposure": 0.969,
+      "score": 0.963
+    },
+    "id": "20260803-phone-45ea28",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3658_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Zwei Maenner richten Angelruten auf Kuestenfelsen vor glitzerndem Meer ein.",
+      "tags": [
+        "angeln",
+        "felsen",
+        "meer",
+        "maenner",
+        "kueste",
+        "sommer"
       ],
       "people": true,
       "usable_as": [
@@ -63008,6 +63447,252 @@
     }
   },
   {
+    "hash": "sha256:678eadff9b285880d88365c253b5461c8977e2a2f710676d2a4f09619ecd83d1",
+    "path": "Christina-iPhone/IMG_3638.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T14:46:34+00:00",
+    "gps": {
+      "lat": 58.972744444444444,
+      "lon": 9.67498611111111,
+      "elevation_m": 2.1
+    },
+    "probe": {
+      "captured_at": "2026-08-03T14:46:34+00:00",
+      "gps": {
+        "lat": 58.972744444444444,
+        "lon": 9.67498611111111,
+        "elevation_m": 2.1
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.56,
+      "exposure": 0.946,
+      "score": 0.753
+    },
+    "id": "20260803-phone-678ead",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3638_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kinder spielen an einem felsigen Kuestenstrand mit klarem Meerwasser und bewaldeter Kueste im Hintergrund, sonniger Tag.",
+      "tags": [
+        "strand",
+        "kinder",
+        "meer",
+        "felsen",
+        "sommer",
+        "kueste"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:7ab9407b7e37e23ec9a29486ee45ba66a8844d2c6fe65db3042d892c9e2c7fa9",
+    "path": "Christina-iPhone/IMG_3661.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T15:01:01+00:00",
+    "gps": {
+      "lat": 58.971175,
+      "lon": 9.675563888888888,
+      "elevation_m": 1.1
+    },
+    "probe": {
+      "captured_at": "2026-08-03T15:01:01+00:00",
+      "gps": {
+        "lat": 58.971175,
+        "lon": 9.675563888888888,
+        "elevation_m": 1.1
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.271,
+      "exposure": 0.971,
+      "score": 0.621
+    },
+    "id": "20260803-phone-7ab940",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3661_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Zwei Maenner bereiten Angelruten auf Kuestenfelsen vor, glitzerndes Meer und ferne Insel im Hintergrund.",
+      "tags": [
+        "angeln",
+        "felsen",
+        "maenner",
+        "meer",
+        "insel",
+        "kueste"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:86186eb5ae9fce08995b99cfa11352d33a182af3dc1c0ca274a39af66504cde8",
+    "path": "Christina-iPhone/IMG_3654.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T14:55:13+00:00",
+    "gps": {
+      "lat": 58.971244444444444,
+      "lon": 9.675469444444444,
+      "elevation_m": 2.4
+    },
+    "probe": {
+      "captured_at": "2026-08-03T14:55:13+00:00",
+      "gps": {
+        "lat": 58.971244444444444,
+        "lon": 9.675469444444444,
+        "elevation_m": 2.4
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.852,
+      "score": 0.926
+    },
+    "id": "20260803-phone-86186e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3654_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Selfie eines Paares vor einer felsigen Kuestenbucht mit glitzerndem Meer und Huegeln im Hintergrund.",
+      "tags": [
+        "paar",
+        "selfie",
+        "kueste",
+        "meer",
+        "portraet",
+        "sommer"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:99d28ab251958a611b1f844bf1ceda15fd7b33219c9d9ca48708dfdc9e0ddde9",
+    "path": "Christina-iPhone/IMG_3660.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T15:00:56+00:00",
+    "gps": {
+      "lat": 58.971175,
+      "lon": 9.675563888888888,
+      "elevation_m": 0.7
+    },
+    "probe": {
+      "captured_at": "2026-08-03T15:00:56+00:00",
+      "gps": {
+        "lat": 58.971175,
+        "lon": 9.675563888888888,
+        "elevation_m": 0.7
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.405,
+      "exposure": 0.943,
+      "score": 0.674
+    },
+    "id": "20260803-phone-99d28a",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3660_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Mann macht eine Pause beim Angeln auf Kuestenfelsen, laechelt in die Sonne, Angelruten im Vordergrund.",
+      "tags": [
+        "angeln",
+        "felsen",
+        "mann",
+        "portraet",
+        "sonnenschein",
+        "kueste"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:c1f01281f1aa141ec4e6918f785e1f7128b4fd429dad2562334ce2fd8a80ceac",
+    "path": "Christina-iPhone/IMG_3644.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T14:51:00+00:00",
+    "gps": {
+      "lat": 58.97185555555556,
+      "lon": 9.674925,
+      "elevation_m": 4.9
+    },
+    "probe": {
+      "captured_at": "2026-08-03T14:51:00+00:00",
+      "gps": {
+        "lat": 58.97185555555556,
+        "lon": 9.674925,
+        "elevation_m": 4.9
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.711,
+      "score": 0.855
+    },
+    "id": "20260803-phone-c1f012",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3644_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Familie mit Angelausruestung und Eimer wandert einen Kuestenpfad zwischen Baeumen entlang zu einer felsigen Bucht.",
+      "tags": [
+        "familie",
+        "angeln",
+        "kueste",
+        "wandern",
+        "felsen",
+        "sommer"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:ca683762c1aee995b0189e914f259246db54b53a0375efe87a8db6f87ebc32e3",
     "path": "Chris-iPhone/IMG_0435.HEIC",
     "kind": "photo",
@@ -63107,6 +63792,56 @@
     }
   },
   {
+    "hash": "sha256:d6baff197fd68da5ac8d29b3b9d583133c5663acc6f7431044c1128caad0efb0",
+    "path": "Christina-iPhone/IMG_3664.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T15:03:18+00:00",
+    "gps": {
+      "lat": 58.97117222222222,
+      "lon": 9.675577777777777,
+      "elevation_m": 0.3
+    },
+    "probe": {
+      "captured_at": "2026-08-03T15:03:18+00:00",
+      "gps": {
+        "lat": 58.97117222222222,
+        "lon": 9.675577777777777,
+        "elevation_m": 0.3
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.488,
+      "exposure": 0.883,
+      "score": 0.685
+    },
+    "id": "20260803-phone-d6baff",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3664_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Zwei Kinder stehen umarmt auf einem Felsen am Meer, ferne bewaldete Insel und blauer Himmel.",
+      "tags": [
+        "kinder",
+        "felsen",
+        "meer",
+        "portraet",
+        "geschwister",
+        "sommer"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll",
+        "establisher"
+      ]
+    }
+  },
+  {
     "hash": "sha256:da71b1cc5299daed95dd2dcba987260002b1e718718776a7f1de23fcbce0adea",
     "path": "Chris-iPhone/IMG_0420.HEIC",
     "kind": "photo",
@@ -63202,6 +63937,56 @@
       "usable_as": [
         "b-roll",
         "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:fa3989c1958392b46cc2a2af40316c5efa13c4bf9724cadc2ae3d1d8e24ca02e",
+    "path": "Christina-iPhone/IMG_3645.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-08-03T14:51:18+00:00",
+    "gps": {
+      "lat": 58.97184444444444,
+      "lon": 9.675075,
+      "elevation_m": 2.7
+    },
+    "probe": {
+      "captured_at": "2026-08-03T14:51:18+00:00",
+      "gps": {
+        "lat": 58.97184444444444,
+        "lon": 9.675075,
+        "elevation_m": 2.7
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.785,
+      "exposure": 0.828,
+      "score": 0.806
+    },
+    "id": "20260803-phone-fa3989",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3645_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Zwei Kinder sitzen an einem Steg in einer glasklaren, tuerkisen Bucht mit Felsen, sonniger Sommertag.",
+      "tags": [
+        "bucht",
+        "kinder",
+        "steg",
+        "tuerkis",
+        "kueste",
+        "sommer"
+      ],
+      "people": true,
+      "usable_as": [
+        "establisher",
+        "b-roll"
       ]
     }
   },
