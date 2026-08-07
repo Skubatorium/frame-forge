@@ -1939,3 +1939,81 @@ Kilometerstand-Fotos) mit 1–2.
 (`ingest` + `prepare-index`), erscheinen sie ueber `index-todo norwegen-2026` und koennen wie
 gewohnt an den `media-indexer` gegeben werden — bis dahin bleibt der Christina-iPhone-Fundus
 bei 157/222 (Fotos komplett, Videos offen).
+
+---
+
+## Export-Vorbereitung Norwegen-2026 (2026-08-07) — Status fuer Session-Uebergabe
+
+Fundus ist vollstaendig indiziert (975 Assets). Vier Exporte geplant, mit dem Nutzer
+besprochen und Namen/Laengen festgelegt:
+
+| Export | Laenge | Inhalt |
+|---|---|---|
+| `drone-edit` | 10–14 Min. (flexibel, Material entscheidet) | nur Drohnenmaterial, keine Karte, Schwarzblende Anfang+Ende |
+| `vlog-data` | ~20 Min. | Vollversion mit Karten-HUD, Etappen-/Kilometerdetails |
+| `vlog-pur` | ~20 Min. | gleicher Schnitt wie `vlog-data`, ohne Karte/Detail-Layer (nur Ortsnamen) |
+| `teaser` | offen, straff, nicht hart auf 5 Min. | Highlight-Mix, 80/20 Landschaft/Personen, **keine** inhaltlich redundanten Cutaways (Lehre aus einem frueheren Testschnitt: 5 Szenen vom selben Kreuzfahrtschiff an einem Tag wirkte repetitiv) |
+
+**Reihenfolge:** mit `drone-edit` anfangen (kleinster Scope, kein Kartenbau/Ortszuordnung
+noetig, testet den vollen Pfad Brief→Beatsheet→Timeline→Preview zuerst am billigsten Fall).
+
+### Route nachgezogen
+
+`route/stages.csv` deckte den 2026-07-17 (Verladen zuhause, 6 Assets) nicht ab — per
+`route-planner`-Agent ergaenzt (neue Zeile Tag 1, alle Folgetage day-Nummer +1,
+`locations.csv`-Day-Referenzen mitgezogen). Dry-Run von `assign-places` bestaetigt: 07-17
+nicht mehr in der "Tag fehlt"-Liste. **Noch nicht committet.**
+
+### Bekannter Datenfehler: 14 Christina-iPhone-Videos mit falschem Aufnahmedatum
+
+Beim Schneiden/Export auf dem iPhone hat Apple beim Re-Encode ein neues Container-Datum
+geschrieben (Schnitt- statt Aufnahmedatum) — betrifft laut Nutzer-Erinnerung ca. 46 Videos,
+32 davon wurden in einer frueheren Sitzung bereits manuell auf das richtige Datum korrigiert
+(`captured_at_source: manual`). **14 sind noch offen**, alle mit `captured_at` faelschlich auf
+"heute" (Datum des jeweiligen Chat-Tages, hier 2026-08-07) statt des echten Aufnahmetags:
+`IMG_2824, IMG_2864, IMG_2867, IMG_2889_Cut-2, IMG_3061, IMG_3104, IMG_3260, IMG_3270,
+IMG_3304, IMG_3434, IMG_3462, IMG_3587, IMG_3590, IMG_3610` (alle `Christina-iPhone/`).
+Kein automatisches Matching moeglich (keine ungeschnittenen Geschwister-Dateien mit gleicher
+IMG-Nummer im Index gefunden). Inhalte laut Sichtung streuen ueber mehrere Tage (Tunnel+Faehre
++Fjord passt zu 07-26, Hochebenen koennten 07-24 oder 07-29 sein, Campingplatz-Teich mit Kind
+eher 07-30/31) — **muss einzeln mit dem Nutzer per Keyframe geklaert werden**, keine Prioritaet
+fuer `drone-edit` (nutzt kein iPhone-Material).
+
+### Musik
+
+`music/` enthaelt Originals (Interpret/Album/Titel-Unterordner) + KI-Generated:
+
+| Track | Ordner | BPM | Laenge | Status |
+|---|---|---|---|---|
+| Naturaleza (Mose Edit) | Originals/Mose & Danit | 68,9 | 7:25 | Pflicht |
+| Cuatro Vientos | Originals/Danit | 147,7 | 7:27 | Pflicht, **schnell** — Kandidat fuer `teaser` |
+| Aguila de Oro (Ecstatic Mix) | Originals/Little Whale, Sariel Orenda & UAK | 82,0 | 6:15 | Kandidat |
+| Tejedora Cósmica | Originals/Little Whale | 143,6 | 6:52 | Kandidat, **schnell** |
+| Nordlichter im Sturm (Suno) | KI Generated | 125,0 | 3:52 | KI-generiert, Referenz-Stil fuer weitere KI-Prompts |
+
+Alle 5 analysiert (BPM/Beat-Grid/Energiekurve, `frameforge.audio.analyze_and_cache`), Cache
+liegt unter `music/analysis/`. M4A liest `librosa` problemlos ueber den `audioread`/ffmpeg-Pfad,
+keine Konvertierung noetig.
+
+**Gefundene Luecke:** kein CLI-Kommando fuer Musik-Analyse — der `audio-designer`-Agent
+(`.claude/agents/audio-designer.md`) geht davon aus, dass er sie "ueber die CLI ausloest",
+es existiert aber keine `frameforge`-Subcommand dafuer. Analyse wurde stattdessen direkt per
+Python (`frameforge.audio.analyze_and_cache`) angestossen. Kein Blocker fuer den ersten Export
+(Cache ist jetzt gefuellt), aber fuer neue Tracks spaeter faellt die Luecke wieder auf —
+Nachtrag waere ein kleiner CLI-Befehl `frameforge analyze-music <projekt> <datei>`.
+
+### Brief-Vorgaben fuer `drone-edit` (vom Nutzer, 2026-08-07)
+
+- Keine Karte, Schwarzblende am Anfang und am Ende.
+- Ramps/Slow-Motion erwuenscht, nicht zu viele harte Cuts, Drohnenbilder duerfen atmen (nicht
+  zu schnell geschnitten).
+- Laenge flexibel 10–14 Min., je nach Material.
+- Audio nicht hart abschneiden: Ein-/Ausblenden (~3 s), erster Track startet ruhig.
+- Musik: die zwei Pflicht-Tracks (Naturaleza Mose Edit, Cuatro Vientos), keiner davon komplett
+  durchlaufen lassen, fliessender Uebergang dazwischen — evtl. 3 Abschnitte à ca. 4 Min.
+- Intro-Grafik: "Norwegen 2026" (oder "Norwegen"), darunter kleiner/versetzt "Drone Edit",
+  eventuell norwegische Flagge, langsames ruhiges Einblenden. Falls das bestehende
+  Titel-Template das nicht hergibt, Grafik-Prompt an den Nutzer statt selbst zu improvisieren.
+
+**Naechster Schritt:** `/ff-brief norwegen-2026 drone-edit` mit obigen Vorgaben, danach
+Beat-Sheet + Timeline bauen.
