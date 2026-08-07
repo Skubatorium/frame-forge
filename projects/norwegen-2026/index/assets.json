@@ -45025,6 +45025,55 @@
     }
   },
   {
+    "hash": "sha256:01180fe3e606dac415494266980a66654d4ed2836db99bfe80eb5ed21636a666",
+    "path": "Christina-iPhone/IMG_3285.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:51:11+00:00",
+    "gps": {
+      "lat": 62.45466666666667,
+      "lon": 7.671758333333334,
+      "elevation_m": 704.7
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:51:11+00:00",
+      "gps": {
+        "lat": 62.45466666666667,
+        "lon": 7.671758333333334,
+        "elevation_m": 704.7
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.978,
+      "score": 0.989
+    },
+    "id": "20260728-phone-01180f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3285_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kind steht neben einem Steinmaennchen an einem Bergpfad mit Farnen und Felswand im Hintergrund.",
+      "tags": [
+        "kind",
+        "steinmaennchen",
+        "wandern",
+        "felsen",
+        "farn",
+        "bergpfad"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:0141b0b0bd7a0a90dfe16a6b1c85afc070829b8d3020f56a567728d88a0895dd",
     "path": "Chris-iPhone/IMG_0170.HEIC",
     "kind": "photo",
@@ -45115,6 +45164,55 @@
         "natur"
       ],
       "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:06f8af7505ad09505758660e47e71fcd336c8dcd43f3b988c49b0ebb0622294d",
+    "path": "Christina-iPhone/IMG_3288.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:52:23+00:00",
+    "gps": {
+      "lat": 62.454675,
+      "lon": 7.671786111111111,
+      "elevation_m": 704.7
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:52:23+00:00",
+      "gps": {
+        "lat": 62.454675,
+        "lon": 7.671786111111111,
+        "elevation_m": 704.7
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.006,
+      "exposure": 0.819,
+      "score": 0.413
+    },
+    "id": "20260728-phone-06f8af",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3288_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Kurzer Blick durch aufreissende Nebelwolken auf ein gruenes Tal mit Feldern tief unten.",
+      "tags": [
+        "nebel",
+        "tal",
+        "wolken",
+        "berge",
+        "natur",
+        "stimmung"
+      ],
+      "people": false,
       "usable_as": [
         "b-roll"
       ]
@@ -45213,6 +45311,55 @@
       "people": false,
       "usable_as": [
         "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:11575efdbde0f112275456654a6e1f98e75ec5dd450dcb14a4be02059731db0b",
+    "path": "Christina-iPhone/IMG_3308.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T16:19:02+00:00",
+    "gps": {
+      "lat": 62.00075277777778,
+      "lon": 8.966436111111111,
+      "elevation_m": 1073.2
+    },
+    "probe": {
+      "captured_at": "2026-07-28T16:19:02+00:00",
+      "gps": {
+        "lat": 62.00075277777778,
+        "lon": 8.966436111111111,
+        "elevation_m": 1073.2
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.149,
+      "exposure": 0.95,
+      "score": 0.55
+    },
+    "id": "20260728-phone-11575e",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3308_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Schaf laeuft mitten auf einer Schotterstrasse durch die Hochebene mit weitem Wolkenhimmel und Huegeln.",
+      "tags": [
+        "schaf",
+        "hochebene",
+        "strasse",
+        "wolken",
+        "tier",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
         "b-roll"
       ]
     }
@@ -45548,6 +45695,55 @@
         "detail"
       ],
       "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:29d4dc26f23bbc2cf80958b94e9f0662a67abf6ef1937431e89025d8601df710",
+    "path": "Christina-iPhone/IMG_3280.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:46:53+00:00",
+    "gps": {
+      "lat": 62.45468888888889,
+      "lon": 7.671769444444445,
+      "elevation_m": 706.6
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:46:53+00:00",
+      "gps": {
+        "lat": 62.45468888888889,
+        "lon": 7.671769444444445,
+        "elevation_m": 706.6
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.96,
+      "score": 0.98
+    },
+    "id": "20260728-phone-29d4dc",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3280_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Familien-Selfie beim Wandern vor einer Felswand im Nebel, alle drei laecheln in die Kamera.",
+      "tags": [
+        "familie",
+        "selfie",
+        "wandern",
+        "felsen",
+        "nebel",
+        "portraet"
+      ],
+      "people": true,
       "usable_as": [
         "b-roll"
       ]
@@ -46270,6 +46466,55 @@
       "people": false,
       "usable_as": [
         "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:3d83d09d6e459218e066d9745b17bd8e7b40bd7543f0e09117ff1589a45018d2",
+    "path": "Christina-iPhone/IMG_3296.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T14:51:18+00:00",
+    "gps": {
+      "lat": 62.27001944444444,
+      "lon": 8.163247222222223,
+      "elevation_m": 549.4
+    },
+    "probe": {
+      "captured_at": "2026-07-28T14:51:18+00:00",
+      "gps": {
+        "lat": 62.27001944444444,
+        "lon": 8.163247222222223,
+        "elevation_m": 549.4
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.452,
+      "exposure": 0.982,
+      "score": 0.717
+    },
+    "id": "20260728-phone-3d83d0",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3296_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "POV mit hochgelegtem Fuss auf Felsen an einem Wildbach, umgeben von Wald und fernem Berggipfel.",
+      "tags": [
+        "pov",
+        "wildbach",
+        "felsen",
+        "wald",
+        "entspannen",
+        "natur"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
       ]
     }
   },
@@ -47093,6 +47338,55 @@
     }
   },
   {
+    "hash": "sha256:6cc7641df02c610a92e29b716c655424651857a52bfc4a89ec047bfaf77422c9",
+    "path": "Christina-iPhone/IMG_3309.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T16:19:06+00:00",
+    "gps": {
+      "lat": 62.00075277777778,
+      "lon": 8.966436111111111,
+      "elevation_m": 1073.2
+    },
+    "probe": {
+      "captured_at": "2026-07-28T16:19:06+00:00",
+      "gps": {
+        "lat": 62.00075277777778,
+        "lon": 8.966436111111111,
+        "elevation_m": 1073.2
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.123,
+      "exposure": 0.903,
+      "score": 0.513
+    },
+    "id": "20260728-phone-6cc764",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3309_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Schaf ueberquert die Schotterstrasse in der weiten Hochebenen-Landschaft mit Strommasten am Horizont.",
+      "tags": [
+        "schaf",
+        "hochebene",
+        "strasse",
+        "tier",
+        "natur",
+        "huegel"
+      ],
+      "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:73ba6b20ad06368b5e8a547ab27b1e51ec657c01dd8e30f06f290340119070b9",
     "path": "Chris-iPhone/IMG_0193.HEIC",
     "kind": "photo",
@@ -47526,6 +47820,55 @@
     }
   },
   {
+    "hash": "sha256:9900997e84ddb2c6b07ec88a4a62b3af57b3bc91e33b5769740244823f5bd170",
+    "path": "Christina-iPhone/IMG_3311.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T16:20:19+00:00",
+    "gps": {
+      "lat": 61.994975000000004,
+      "lon": 8.9735,
+      "elevation_m": 1061.9
+    },
+    "probe": {
+      "captured_at": "2026-07-28T16:20:19+00:00",
+      "gps": {
+        "lat": 61.994975000000004,
+        "lon": 8.9735,
+        "elevation_m": 1061.9
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.902,
+      "score": 0.951
+    },
+    "id": "20260728-phone-990099",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3311_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Weite Hochebenen-Landschaft mit niedrigem Buschwerk, sanften Huegeln und grossem Wolkenhimmel, keine Personen.",
+      "tags": [
+        "hochebene",
+        "huegel",
+        "wolken",
+        "natur",
+        "weite",
+        "vidda"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
     "hash": "sha256:9fd76f49a3be98f1072782c2b96bcabcbe5624b9f16a7e2fef283b76f37ba2b3",
     "path": "Christina-iPhone/IMG_3265.HEIC",
     "kind": "photo",
@@ -47673,6 +48016,55 @@
     }
   },
   {
+    "hash": "sha256:a4bedab905b5e328037925b4fd193bef0fe53c9c198d628cf6269bd5bfc6d790",
+    "path": "Christina-iPhone/IMG_3300.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T14:59:20+00:00",
+    "gps": {
+      "lat": 62.27025555555556,
+      "lon": 8.163183333333334,
+      "elevation_m": 565.0
+    },
+    "probe": {
+      "captured_at": "2026-07-28T14:59:20+00:00",
+      "gps": {
+        "lat": 62.27025555555556,
+        "lon": 8.163183333333334,
+        "elevation_m": 565.0
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.449,
+      "exposure": 0.973,
+      "score": 0.711
+    },
+    "id": "20260728-phone-a4beda",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3300_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Ausgelassener Junge streckt beide Haende hoch und lacht vor einem Fluss mit Waldkulisse.",
+      "tags": [
+        "kind",
+        "lachen",
+        "fluss",
+        "wald",
+        "portraet",
+        "fröhlich"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:a8ae0a32d45bf6f0868674e10f012725bf95db060f698840f63986aa92ed1b22",
     "path": "Chris-iPhone/IMG_0237.HEIC",
     "kind": "photo",
@@ -47715,6 +48107,55 @@
         "panorama"
       ],
       "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:a91e064ec16df66a8f06b5f4c1ec6ea2cbf57bee22a07c327d1760f1db33affb",
+    "path": "Christina-iPhone/IMG_3293.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T13:02:58+00:00",
+    "gps": {
+      "lat": 62.45465555555556,
+      "lon": 7.671722222222223,
+      "elevation_m": 701.5
+    },
+    "probe": {
+      "captured_at": "2026-07-28T13:02:58+00:00",
+      "gps": {
+        "lat": 62.45465555555556,
+        "lon": 7.671722222222223,
+        "elevation_m": 701.5
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.661,
+      "exposure": 0.875,
+      "score": 0.768
+    },
+    "id": "20260728-phone-a91e06",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3293_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kind baut konzentriert ein Steinmaennchen auf einem Felsen, norwegische Flagge am Aermel.",
+      "tags": [
+        "kind",
+        "steinmaennchen",
+        "felsen",
+        "konzentration",
+        "portraet",
+        "nahaufnahme"
+      ],
+      "people": true,
       "usable_as": [
         "b-roll"
       ]
@@ -48347,6 +48788,56 @@
     }
   },
   {
+    "hash": "sha256:d44924aec6e107f2be3a1629d7b972d9d0d2db01836c98850c953bfd2654c8ac",
+    "path": "Christina-iPhone/IMG_3320.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T19:44:08+00:00",
+    "gps": {
+      "lat": 61.83891388888889,
+      "lon": 8.569369444444444,
+      "elevation_m": 366.2
+    },
+    "probe": {
+      "captured_at": "2026-07-28T19:44:08+00:00",
+      "gps": {
+        "lat": 61.83891388888889,
+        "lon": 8.569369444444444,
+        "elevation_m": 366.2
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.497,
+      "exposure": 0.967,
+      "score": 0.732
+    },
+    "id": "20260728-phone-d44924",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3320_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Historische Holzbruecke mit markanter Fachwerk-Konstruktion ueber einen tuerkisen Gletscherfluss vor bewaldetem Berg.",
+      "tags": [
+        "bruecke",
+        "fluss",
+        "gletscherfluss",
+        "holz",
+        "architektur",
+        "natur"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:d60a1d6042340364c130465c3d832b5bc71c46978f0ccd3ae594599c9b2d4d09",
     "path": "Chris-iPhone/IMG_0207.HEIC",
     "kind": "photo",
@@ -48636,6 +49127,56 @@
     }
   },
   {
+    "hash": "sha256:e8730baf224bbe09cb4a6ef4ce4f53206b0933d84cea5e19f1c69fbd6100e106",
+    "path": "Christina-iPhone/IMG_3278.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T12:46:26+00:00",
+    "gps": {
+      "lat": 62.45466666666667,
+      "lon": 7.671797222222223,
+      "elevation_m": 704.9
+    },
+    "probe": {
+      "captured_at": "2026-07-28T12:46:26+00:00",
+      "gps": {
+        "lat": 62.45466666666667,
+        "lon": 7.671797222222223,
+        "elevation_m": 704.9
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 0.43,
+      "exposure": 0.941,
+      "score": 0.686
+    },
+    "id": "20260728-phone-e8730b",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3278_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Nebelverhangener Bergpfad mit Steinmaennchen und schroffer Felswand, dichter Nebel verhuellt das Tal.",
+      "tags": [
+        "wanderung",
+        "nebel",
+        "felsen",
+        "steinmaennchen",
+        "bergpfad",
+        "stimmung"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
     "hash": "sha256:ea46353742276b18c4da6b68a4808c888976fc29b6ae947285feb9571550fa87",
     "path": "Chris-iPhone/IMG_0196.HEIC",
     "kind": "photo",
@@ -48678,6 +49219,55 @@
         "panorama"
       ],
       "people": false,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:eb3d988876788112efbba3b15480c9daa02ed41619c172af33c3a785972674fc",
+    "path": "Christina-iPhone/IMG_3299.HEIC",
+    "kind": "photo",
+    "source_guess": "phone",
+    "captured_at": "2026-07-28T14:53:37+00:00",
+    "gps": {
+      "lat": 62.27001666666666,
+      "lon": 8.162925,
+      "elevation_m": 554.9
+    },
+    "probe": {
+      "captured_at": "2026-07-28T14:53:37+00:00",
+      "gps": {
+        "lat": 62.27001666666666,
+        "lon": 8.162925,
+        "elevation_m": 554.9
+      },
+      "make": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "source_guess": "phone"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.98,
+      "score": 0.99
+    },
+    "id": "20260728-phone-eb3d98",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/IMG_3299_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 3,
+    "content": {
+      "summary": "Selfie einer laechelnden Frau vor einem breiten Wildbach mit Steinbett und Wald im Hintergrund.",
+      "tags": [
+        "selfie",
+        "portraet",
+        "wildbach",
+        "steine",
+        "wald",
+        "frau"
+      ],
+      "people": true,
       "usable_as": [
         "b-roll"
       ]
@@ -49013,6 +49603,171 @@
         "serpentine",
         "aussichtsplattform",
         "kind"
+      ],
+      "people": true,
+      "usable_as": [
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:1f07059e18881faaa2968a83c1ca70bb7e5da43ae35e64e2cd3009de99e0bd23",
+    "path": "Christina-iPhone/c7dd24db-c211-48e3-ab35-7ea298c169a6.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": "2026-07-28T20:52:06+00:00",
+    "gps": null,
+    "probe": {
+      "captured_at": "2026-07-28T20:52:06+00:00",
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.193,
+      "exposure": 0.989,
+      "score": 0.591
+    },
+    "id": "20260728-unknown-1f0705",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/c7dd24db-c211-48e3-ab35-7ea298c169a6_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 5,
+    "content": {
+      "summary": "Vogelperspektive auf die Serpentinenstrasse Trollstigen, die sich durch ein steiles, wolkenverhangenes Bergtal windet.",
+      "tags": [
+        "trollstigen",
+        "serpentinen",
+        "strasse",
+        "berge",
+        "nebel",
+        "panorama"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:325185f0e4a1ccf841b099a1cc6cc714cfbef1536d87e7a1aa0aefed27aee704",
+    "path": "Christina-iPhone/4f290d5f-fc3d-45d6-8536-acaa3cf9a60c.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": "2026-07-28T20:51:58+00:00",
+    "gps": null,
+    "probe": {
+      "captured_at": "2026-07-28T20:51:58+00:00",
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.101,
+      "exposure": 0.974,
+      "score": 0.538
+    },
+    "id": "20260728-unknown-325185",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/4f290d5f-fc3d-45d6-8536-acaa3cf9a60c_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 2,
+    "content": {
+      "summary": "Nahaufnahme von Zimtschnecke und Schokoladenkuchen auf einem Cafetisch, im Hintergrund unscharf ein Fluss.",
+      "tags": [
+        "essen",
+        "kuchen",
+        "zimtschnecke",
+        "cafe",
+        "nahaufnahme",
+        "genuss"
+      ],
+      "people": false,
+      "usable_as": [
+        "cutaway"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:6eb68fd0859857f693f243b0d6feec7adf0b5dceb6d8cb09f4d69e83d5960704",
+    "path": "Christina-iPhone/bbdbdf13-f6a1-4f40-95ec-d7ddb0b3dc76.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": "2026-07-28T20:51:58+00:00",
+    "gps": null,
+    "probe": {
+      "captured_at": "2026-07-28T20:51:58+00:00",
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.942,
+      "score": 0.971
+    },
+    "id": "20260728-unknown-6eb68f",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/bbdbdf13-f6a1-4f40-95ec-d7ddb0b3dc76_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Kaffeetisch mit Zimtschnecke und Kuchen vor malerischer Aussicht auf Wasserfall, Fluss und Berggipfel im Nebel.",
+      "tags": [
+        "cafe",
+        "kuchen",
+        "wasserfall",
+        "fluss",
+        "berge",
+        "aussicht"
+      ],
+      "people": false,
+      "usable_as": [
+        "establisher",
+        "b-roll"
+      ]
+    }
+  },
+  {
+    "hash": "sha256:cef945251a35955a647557cf13c079547f76e51718c1c4c8abceeccb4bd69373",
+    "path": "Christina-iPhone/0c5d0588-7058-4ead-9918-371515bc011f.JPG",
+    "kind": "photo",
+    "source_guess": "unknown",
+    "captured_at": "2026-07-28T20:52:05+00:00",
+    "gps": null,
+    "probe": {
+      "captured_at": "2026-07-28T20:52:05+00:00",
+      "gps": null,
+      "make": null,
+      "model": null,
+      "source_guess": "unknown"
+    },
+    "quality": {
+      "sharpness": 0.484,
+      "exposure": 0.844,
+      "score": 0.664
+    },
+    "id": "20260728-unknown-cef945",
+    "keyframes": [
+      "/Users/christianskubatz/.cache/frameforge/7bb3c57172eec419/keyframes/0c5d0588-7058-4ead-9918-371515bc011f_kf00.jpg"
+    ],
+    "source": "phone",
+    "rating": 4,
+    "content": {
+      "summary": "Familien-Gruppenfoto auf einer Aussichtsplattform im Nebel, Berghaenge und Tal im Hintergrund.",
+      "tags": [
+        "familie",
+        "gruppenfoto",
+        "aussichtsplattform",
+        "nebel",
+        "berge",
+        "portraet"
       ],
       "people": true,
       "usable_as": [
