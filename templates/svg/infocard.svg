@@ -1,0 +1,24 @@
+<svg width="{{width}}" height="{{height}}" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ruhige Info-Karte (Reisedaten/Route), textbasiert und ohne Panel — bewusst dieselbe
+       Buehnenmitte wie title-card.svg (46/58 %), damit sie sich anfuehlt wie eine zweite
+       Seite derselben Titelkarte statt ein neues Element. Fuer moderate Textdichte:
+       Hauptzeile (subtitle_size) + kleinere Nebenzeile (caption_size), keine dritte Ebene.
+       Anders als title-card.svg traegt die Nebenzeile hier echte Information (Faehrstrecke),
+       kein dekorativer Zusatz wie "Roadtrip" — deshalb ein dezenter Text-Schatten fuer
+       Kontrast auch auf hellem Untergrund (Safe-Area-Regel: lesbar auf hell wie dunkel). -->
+  {{background_layer}}
+  <defs>
+    <filter id="ff-info-shadow" x="-20%" y="-40%" width="140%" height="220%">
+      <feDropShadow dx="0" dy="{{shadow_dy}}" stdDeviation="{{shadow_blur}}"
+                    flood-color="#000000" flood-opacity="{{shadow_opacity}}"/>
+    </filter>
+  </defs>
+  <g filter="url(#ff-info-shadow)">
+    <text x="50%" y="48%" font-family="{{font_text}}" font-weight="700" font-style="normal"
+          font-size="{{subtitle_size}}" fill="{{text_color}}" text-anchor="middle"
+          dominant-baseline="middle">{{info_main}}</text>
+    <text x="50%" y="58%" font-family="{{font_text}}" font-weight="400" font-style="normal"
+          font-size="{{caption_size}}" fill="{{accent_color}}" text-anchor="middle"
+          dominant-baseline="middle">{{info_sub}}</text>
+  </g>
+</svg>

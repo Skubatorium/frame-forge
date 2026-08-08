@@ -69518,5 +69518,29 @@
         "b-roll"
       ]
     }
+  },
+  {
+    "id": "generated-map-k0-cold-open",
+    "path": "_generated/map-k0-cold-open.mp4",
+    "kind": "video",
+    "source_guess": "generated",
+    "source": "generated",
+    "content": {
+      "summary": "Generierte Kartenanimation: Route Deutschland-Daenemark-Norwegen waechst formatfuellend (Cold-Open-Overview, map-animator).",
+      "tags": [
+        "karte",
+        "cold-open",
+        "generiert"
+      ],
+      "people": false,
+      "usable_as": [
+        "cold-open"
+      ]
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 1.0,
+      "score": 1.0
+    }
   }
 ]
