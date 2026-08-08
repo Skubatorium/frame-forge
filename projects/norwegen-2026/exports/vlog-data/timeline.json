@@ -193,7 +193,7 @@
       },
       {
         "id": "c009",
-        "asset": "20260718-phone-5439f6",
+        "asset": "20260718-phone-fa0f82",
         "src_in": 0.0,
         "src_out": 8.6,
         "tl_in": 115.8,
@@ -795,7 +795,7 @@
       },
       {
         "id": "c036",
-        "asset": "20260721-phone-523931",
+        "asset": "20260721-phone-ca46c2",
         "src_in": 0.0,
         "src_out": 8.1,
         "tl_in": 316.0,
@@ -921,7 +921,7 @@
       },
       {
         "id": "c041",
-        "asset": "20260722-phone-06068a",
+        "asset": "20260722-phone-d9b55c",
         "src_in": 0.0,
         "src_out": 7.9,
         "tl_in": 351.7,
@@ -1035,12 +1035,12 @@
         "id": "c046",
         "asset": "20260722-drone-a31495",
         "src_in": 9.03,
-        "src_out": 17.23,
-        "tl_in": 386.8,
+        "src_out": 18.03,
+        "tl_in": 387.2,
         "speed": 1.0,
         "transition_in": {
-          "type": "crossfade",
-          "dur": 1.2,
+          "type": "dissolve",
+          "dur": 0.8,
           "hold": 0.0
         },
         "effects": []
@@ -1052,6 +1052,11 @@
         "src_out": 14.928,
         "tl_in": 395.0,
         "speed": 1.0,
+        "transition_in": {
+          "type": "crossfade",
+          "dur": 1.2,
+          "hold": 0.0
+        },
         "effects": []
       },
       {
@@ -1154,7 +1159,7 @@
       },
       {
         "id": "c053",
-        "asset": "20260723-phone-230674",
+        "asset": "20260723-phone-c42193",
         "src_in": 0.0,
         "src_out": 7.6,
         "tl_in": 436.4,
@@ -1319,14 +1324,9 @@
         "id": "c062",
         "asset": "20260724-drone-0be02d",
         "src_in": 11.491,
-        "src_out": 19.491,
-        "tl_in": 499.2,
+        "src_out": 18.691,
+        "tl_in": 500.0,
         "speed": 1.0,
-        "transition_in": {
-          "type": "dissolve",
-          "dur": 0.8,
-          "hold": 0.0
-        },
         "effects": []
       },
       {
@@ -1403,7 +1403,7 @@
         "id": "c068",
         "asset": "20260724-drone-242fdd",
         "src_in": 5.418,
-        "src_out": 12.617,
+        "src_out": 12.618,
         "tl_in": 543.2,
         "speed": 1.0,
         "effects": []
@@ -1526,9 +1526,9 @@
       },
       {
         "id": "c076",
-        "asset": "20260724-drone-c1c0e4",
-        "src_in": 64.677,
-        "src_out": 72.477,
+        "asset": "20260724-drone-7523dd",
+        "src_in": 0.0,
+        "src_out": 7.8,
         "tl_in": 600.2,
         "speed": 1.0,
         "transition_in": {
@@ -1892,16 +1892,16 @@
         "id": "c095",
         "asset": "20260726-drone-4a48a2",
         "src_in": 1.496,
-        "src_out": 7.697,
+        "src_out": 7.696,
         "tl_in": 723.8,
         "speed": 1.0,
         "effects": []
       },
       {
         "id": "c096",
-        "asset": "20260726-drone-3ec0ca",
-        "src_in": 5.725,
-        "src_out": 11.625,
+        "asset": "20260726-camera-02a9d4",
+        "src_in": 8.758,
+        "src_out": 14.658,
         "tl_in": 730.0,
         "speed": 1.0,
         "effects": []
@@ -2057,9 +2057,9 @@
       },
       {
         "id": "c108",
-        "asset": "20260726-drone-289830",
-        "src_in": 29.116,
-        "src_out": 35.516,
+        "asset": "20260726-drone-993daf",
+        "src_in": 0.0,
+        "src_out": 6.4,
         "tl_in": 800.3,
         "speed": 1.0,
         "transition_in": {
@@ -2141,9 +2141,9 @@
       },
       {
         "id": "c112",
-        "asset": "20260726-drone-c8e39c",
-        "src_in": 7.694,
-        "src_out": 13.794,
+        "asset": "20260726-drone-a1945f",
+        "src_in": 0.0,
+        "src_out": 6.1,
         "tl_in": 823.9,
         "speed": 1.0,
         "transition_in": {
@@ -2365,9 +2365,9 @@
       },
       {
         "id": "c122",
-        "asset": "20260727-drone-3cd337",
-        "src_in": 148.185,
-        "src_out": 154.385,
+        "asset": "20260727-drone-50a966",
+        "src_in": 5.0,
+        "src_out": 11.2,
         "tl_in": 880.8,
         "speed": 1.0,
         "transition_in": {
@@ -2431,13 +2431,14 @@
               1.12
             ]
           }
-        ]
+        ],
+        "note": "Kein sicherer Ken-Burns-Crop moeglich (Gesicht/Kopf zu nah am kurzen Bildrand, Familienselfie vor RIB-Ausruestung). Alternativen mit gleichem Motiv (27.07., 'ausruestung'/'familienselfie') prowfen: keine mit sichererem Rand gefunden. Bewusst behalten -- Kopf faellt im Ken-Burns-Verlauf ggf. anteilig aus dem Bild, laut Nutzer akzeptabel ('Auge halb ab' waere es nicht). Entscheidung timeline-builder 2026-08-08."
       },
       {
         "id": "c125",
-        "asset": "20260727-camera-1107d2",
-        "src_in": 8.239,
-        "src_out": 14.439,
+        "asset": "20260727-drone-50a966",
+        "src_in": 90.0,
+        "src_out": 96.2,
         "tl_in": 897.9,
         "speed": 1.0,
         "transition_in": {
@@ -2559,9 +2560,9 @@
       },
       {
         "id": "c134",
-        "asset": "20260728-drone-c91b2a",
-        "src_in": 7.86,
-        "src_out": 12.61,
+        "asset": "20260728-drone-17c8a4",
+        "src_in": 0.0,
+        "src_out": 4.75,
         "tl_in": 948.5,
         "speed": 1.0,
         "effects": []
@@ -2600,26 +2601,12 @@
       },
       {
         "id": "c137",
-        "asset": "20260728-phone-36902b",
+        "asset": "20260728-drone-eb4ff3",
         "src_in": 0.0,
         "src_out": 4.75,
         "tl_in": 962.75,
         "speed": 1.0,
-        "effects": [
-          {
-            "type": "kenburns",
-            "from": [
-              0.06,
-              0.06,
-              1.0
-            ],
-            "to": [
-              -0.02,
-              -0.02,
-              1.12
-            ]
-          }
-        ]
+        "effects": []
       },
       {
         "id": "c138",
@@ -2677,18 +2664,18 @@
       },
       {
         "id": "c144",
-        "asset": "20260728-drone-51fecd",
-        "src_in": 39.163,
-        "src_out": 53.163,
+        "asset": "20260728-drone-c91b2a",
+        "src_in": 5.0,
+        "src_out": 19.0,
         "tl_in": 996.0,
         "speed": 1.0,
         "effects": []
       },
       {
         "id": "c145",
-        "asset": "20260729-drone-92f6d7",
-        "src_in": 37.208,
-        "src_out": 45.708,
+        "asset": "20260728-phone-4cbed2",
+        "src_in": 0.0,
+        "src_out": 8.5,
         "tl_in": 1008.5,
         "speed": 1.0,
         "transition_in": {
@@ -2696,13 +2683,27 @@
           "dur": 1.5,
           "hold": 0.0
         },
-        "effects": []
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.06,
+              0.06,
+              1.0
+            ],
+            "to": [
+              -0.02,
+              -0.02,
+              1.12
+            ]
+          }
+        ]
       },
       {
         "id": "c146",
-        "asset": "20260728-drone-2be63d",
-        "src_in": 25.713,
-        "src_out": 33.513,
+        "asset": "20260728-drone-c3df87",
+        "src_in": 28.0,
+        "src_out": 35.8,
         "tl_in": 1016.2,
         "speed": 1.0,
         "transition_in": {
@@ -2714,9 +2715,9 @@
       },
       {
         "id": "c147",
-        "asset": "20260728-drone-b550d2",
-        "src_in": 0.888,
-        "src_out": 8.688,
+        "asset": "20260728-drone-4cae48",
+        "src_in": 0.0,
+        "src_out": 7.8,
         "tl_in": 1023.2,
         "speed": 1.0,
         "transition_in": {
@@ -2882,9 +2883,9 @@
       },
       {
         "id": "c155",
-        "asset": "20260803-drone-54294b",
-        "src_in": 1.146,
-        "src_out": 6.045,
+        "asset": "20260803-camera-1d32ef",
+        "src_in": 0.0,
+        "src_out": 4.9,
         "tl_in": 1077.0,
         "speed": 0.7,
         "transition_in": {
@@ -2910,16 +2911,11 @@
       },
       {
         "id": "c157",
-        "asset": "20260803-drone-6eedae",
-        "src_in": 18.788,
-        "src_out": 28.175,
-        "tl_in": 1089.5,
+        "asset": "20260803-drone-d1eb17",
+        "src_in": 0.0,
+        "src_out": 9.387,
+        "tl_in": 1091.0,
         "speed": 1.0,
-        "transition_in": {
-          "type": "slow_dissolve",
-          "dur": 1.5,
-          "hold": 0.0
-        },
         "effects": []
       },
       {
@@ -2929,6 +2925,11 @@
         "src_out": 11.461,
         "tl_in": 1098.887,
         "speed": 1.0,
+        "transition_in": {
+          "type": "slow_dissolve",
+          "dur": 1.5,
+          "hold": 0.0
+        },
         "transition_out": {
           "type": "fade",
           "dur": 3.0,
@@ -3095,7 +3096,7 @@
         "asset": "20260719-camera-21e343",
         "tl_in": 163.0,
         "dur": 7.5,
-        "src_in": 0.0,
+        "src_in": 3.381,
         "gain_db": -18.0,
         "duck_music_db": -12.0,
         "fade_in_s": 0.0,
@@ -3103,10 +3104,10 @@
       },
       {
         "id": "atmo-k7-flaamsbana",
-        "asset": "20260724-phone-e78577",
-        "tl_in": 585.8,
+        "asset": "20260807-camera-7c5d12",
+        "tl_in": 571.4,
         "dur": 7.2,
-        "src_in": 0.0,
+        "src_in": 13.033,
         "gain_db": -18.0,
         "duck_music_db": -12.0,
         "fade_in_s": 0.0,
@@ -3117,7 +3118,7 @@
         "asset": "20260727-camera-e61b92",
         "tl_in": 875.1,
         "dur": 6.0,
-        "src_in": 0.0,
+        "src_in": 8.046,
         "gain_db": -18.0,
         "duck_music_db": -12.0,
         "fade_in_s": 0.0,
@@ -3128,7 +3129,7 @@
         "asset": "20260730-unknown-cd9012",
         "tl_in": 1053.0,
         "dur": 6.0,
-        "src_in": 0.0,
+        "src_in": 55.933,
         "gain_db": -18.0,
         "duck_music_db": -12.0,
         "fade_in_s": 0.0,
