@@ -183,6 +183,17 @@ def overlay_tokens(tokens: dict, *, width: int, height: int, **extra) -> dict:
         "box_y_pct": 40,
         "box_w_pct": 80,
         "box_h_pct": 20,
+        # stage-caption.svg: zweizeilige Etappen-Bauchbinde unten links. Defaults ergeben ein
+        # fertiges Layout in der linken unteren Ecke, alle Werte relativ zur Zielgroesse -- der
+        # Aufrufer (`stage-caption-recipe.py`) setzt die exakte Geometrie passend zur Box.
+        "stage_day_size": round(caption * 1.15, 1),
+        "stage_route_size": round(caption * 0.82, 1),
+        "stage_day_x_pct": 2.8,
+        "stage_day_y_pct": 88.0,
+        "stage_route_x_pct": 2.8,
+        "stage_route_y_pct": 94.0,
+        "stage_day_fill": tokens.get("accent_color", "#e0a458"),
+        "stage_route_fill": tokens.get("text_color", "#ffffff"),
         "margin": margin,
         "corner_radius": round(height * 0.008),
         "shadow_dy": round(height * 0.004, 1),

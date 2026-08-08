@@ -75,6 +75,43 @@ def _scale_crop(width: int, height: int, cx: float = 0.5, cy: float = 0.5) -> st
     )
 
 
+def _blur_fill_statements(src: str, dst: str, width: int, height: int) -> list[str]:
+    """Bild vollstaendig sichtbar auf `width`x`height`, Rest mit einer unscharfen Kopie gefuellt.
+
+    Der dritte Weg zwischen `_scale_pad` (schwarze Balken) und `_scale_crop` (schneidet ab):
+    eine formatfuellend vergroesserte, stark weichgezeichnete Kopie liegt als Hintergrund, das
+    ungeschnittene Motiv sitzt zentriert darauf.
+
+    Nutzer-Feedback (2026-08-08, Runde 2) an beiden Enden dieses Kompromisses:
+    - `_scale_crop` schnitt bei Hochkant-Fotos Personen an ("das Gesicht von Christina halb
+      zerschnitten", "man sieht nur seine Kaeppi", "der halbe Oberkoerper"). Der face-aware Crop
+      (`_face_crop_center`) hilft nur, wenn die Gesichtserkennung ALLE Personen gefunden hat --
+      bei Kindern mit Kappe/Sonnenbrille findet sie eine zu wenig und der Ausschnitt schneidet
+      genau die Person weg, die das Bild traegt.
+    - `_scale_pad` erzeugte bei Hochkant-VIDEOS "dicke schwarze Balken" links und rechts
+      ("genau das wollen wir nicht").
+
+    Bei stark abweichendem Seitenverhaeltnis ist das hier die einzige Variante, die weder
+    Bildinhalt verliert noch schwarze Flaechen zeigt. Ueber `VideoClip.fit = "blur"` pro Clip
+    aus der Timeline gewaehlt, nicht heimlich im Renderer entschieden.
+
+    Braucht `split` und `overlay` und ist damit kein linearer Filter-Abschnitt wie `_scale_pad`/
+    `_scale_crop`, sondern mehrere `filter_complex`-Statements -- daher die explizite
+    `src`/`dst`-Label-Signatur. Die Zwischenlabels werden aus `dst` abgeleitet und sind so pro
+    Clip eindeutig.
+    """
+    return [
+        f"[{src}]split=2[{dst}bg][{dst}fg]",
+        f"[{dst}bg]scale={width}:{height}:force_original_aspect_ratio=increase,"
+        f"crop={width}:{height},gblur=sigma=42:steps=3,eq=brightness=-0.12[{dst}bgb]",
+        f"[{dst}fg]scale={width}:{height}:force_original_aspect_ratio=decrease[{dst}fgs]",
+        # Kein `shortest=1`: beide Zweige kommen aus demselben `split` und sind exakt gleich
+        # lang -- der Schalter waere wirkungslos, koennte aber (wie beim Karten-Overlay, Runde 2)
+        # bei kuenftigen Aenderungen still den ganzen Video-Pfad kappen.
+        f"[{dst}bgb][{dst}fgs]overlay=x=(W-w)/2:y=(H-h)/2,setsar=1[{dst}]",
+    ]
+
+
 def _face_crop_center(
     faces: list[dict],
     src_w: int,
@@ -196,13 +233,21 @@ def _kenburns_expr(clip, dur: float, fps: float, res: tuple[int, int]) -> str | 
     x_to, y_to, z_to = xyz("to", (0.0, 0.0, 1.10))
     z_from = max(1.0, z_from)
     z_to = max(z_from + 0.001, z_to)
-    z_step = (z_to - z_from) / frames
-    x_step = (x_to - x_from) / frames
-    y_step = (y_to - y_from) / frames
     w, h = res
-    zoom_expr = f"min({z_from:.4f}+on*{z_step:.6f},{z_to:.4f})"
-    x_pan = f"({x_from:.4f}+on*{x_step:.6f})*iw"
-    y_pan = f"({y_from:.4f}+on*{y_step:.6f})*ih"
+    # Fortschritt 0..1 ueber die Clipdauer. `ease: "smooth"` legt eine Smoothstep-Kurve
+    # (3n²-2n³) darueber: die Bewegung startet und endet weich, statt hart mit konstanter
+    # Geschwindigkeit einzusetzen und abzureissen. Nutzer-Feedback (2026-08-08, Runde 2): der
+    # lineare Schwenk wirkte mechanisch und war ueber alle Fotos hinweg als immer gleiche
+    # Bewegung wiedererkennbar. Default bleibt "linear" -- bestehende Timelines rendern
+    # unveraendert, nur wer `ease` setzt, bekommt die neue Kurve.
+    n = f"min(1,on/{frames})"
+    if str(data.get("ease", "linear")).lower() in {"smooth", "smoothstep", "ease"}:
+        p = f"({n})*({n})*(3-2*({n}))"
+    else:
+        p = n
+    zoom_expr = f"{z_from:.4f}+({p})*{z_to - z_from:.6f}"
+    x_pan = f"({x_from:.4f}+({p})*{x_to - x_from:.6f})*iw"
+    y_pan = f"({y_from:.4f}+({p})*{y_to - y_from:.6f})*ih"
     x_expr = f"max(0,min(iw-iw/zoom,iw/2-(iw/zoom/2)+{x_pan}))"
     y_expr = f"max(0,min(ih-ih/zoom,ih/2-(ih/zoom/2)+{y_pan}))"
     # Auf höherer Auflösung samplen (zoompan-Ruckel-Vermeidung), dann auf Zielgröße zurück.
@@ -421,9 +466,16 @@ def _overlay_axis_expr(anim: dict, tl_in: float, dur: float, *, from_key: str, d
     - `slide_from_p{x,y}`: Versatz bei `tl_in` in Pixeln (negativ = von links/oben einlaufend,
       positiv = von rechts/unten, 0/fehlend = keine Slide-Bewegung auf dieser Achse).
     - `slide_in_s`: Dauer der Einlaufbewegung (Default 1.5s, gedeckelt auf `dur`).
-    - `drift_p{x,y}`: Amplitude einer sinusfoermigen Restbewegung waehrend der Hold-Phase, nach
-      Abschluss des Slide-ins (0/fehlend = keine Drift).
-    - `drift_period_s`: Periodendauer der Drift (Default 4.0s).
+    - `drift_p{x,y}`: Amplitude der Restbewegung waehrend der Hold-Phase, nach Abschluss des
+      Slide-ins (0/fehlend = keine Drift).
+    - `drift_mode`: `"sine"` (Default) laesst die Drift um die Endposition pendeln,
+      `"linear"` laesst sie bis zum Clipende gleichmaessig in EINE Richtung weiterlaufen.
+      Nutzer-Feedback (2026-08-08, Runde 2): das Pendeln des Titels wirkte als sichtbares
+      Hin-und-Her, und weil `overlay` die Position auf ganze Pixel rundet, sieht die Umkehr
+      an den Sinus-Extrema (wo die Bewegung fast stillsteht) wie Ruckeln/Pixeln aus. Linear
+      heisst: die Bewegung laeuft in Slide-in-Richtung weiter, gleiche Schrittweite, kein
+      Stillstand, keine Umkehr.
+    - `drift_period_s`: Periodendauer der Drift (nur `drift_mode="sine"`, Default 4.0s).
 
     Ohne Slide/Drift auf dieser Achse liefert das exakt `"0"` -- identisch zum bisherigen
     festen `x=0`/`y=0`, damit sich an bestehenden Overlays (z.B. `label-*.png`) nichts aendert.
@@ -442,12 +494,20 @@ def _overlay_axis_expr(anim: dict, tl_in: float, dur: float, *, from_key: str, d
         # Linear von `slide_from` (bei t0) auf 0 (bei t1), danach konstant 0.
         terms.append(f"{slide_from:.2f}*max(0,min(1,({t1:.3f}-t)/{slide_in_s:.6f}))")
     if drift:
-        drift_period_s = float(anim.get("drift_period_s", _DEFAULT_DRIFT_PERIOD_S) or _DEFAULT_DRIFT_PERIOD_S)
-        drift_period_s = max(0.001, drift_period_s)
         # Drift erst NACH dem Slide-in, sonst ueberlagert sie die Einlaufbewegung.
-        terms.append(
-            f"if(gte(t,{t1:.3f}),{drift:.2f}*sin(2*PI*(t-{t1:.3f})/{drift_period_s:.3f}),0)"
-        )
+        if str(anim.get("drift_mode", "sine")).lower() == "linear":
+            hold_s = max(0.001, dur - slide_in_s)
+            terms.append(
+                f"{drift:.2f}*max(0,min(1,(t-{t1:.3f})/{hold_s:.6f}))"
+            )
+        else:
+            drift_period_s = float(
+                anim.get("drift_period_s", _DEFAULT_DRIFT_PERIOD_S) or _DEFAULT_DRIFT_PERIOD_S
+            )
+            drift_period_s = max(0.001, drift_period_s)
+            terms.append(
+                f"if(gte(t,{t1:.3f}),{drift:.2f}*sin(2*PI*(t-{t1:.3f})/{drift_period_s:.3f}),0)"
+            )
     return "+".join(terms)
 
 
@@ -507,7 +567,11 @@ def build_filtergraph(
     for i, clip in enumerate(clips):
         source = resolve_asset(clip.asset)
         label = f"v{i}"
-        chain: list[str] = []
+        chain: list[str] = []  # bis einschliesslich Fit-Schritt
+        post: list[str] = []  # alles danach (Ken-Burns, Farbe, fps/timebase)
+        # `fit="blur"` ist kein linearer Filter, sondern eigene Statements (split/overlay) --
+        # der Rest der Kette laeuft darum in `post` hinter dem Fit-Schritt weiter.
+        blur_fit = clip.fit == "blur"
         if source.suffix.lower() in PHOTO_EXTENSIONS:
             idx = add_input(["-loop", "1", "-framerate", str(fps), "-i", str(source)])
             chain.append(f"trim=duration={clip.duration:.3f}")
@@ -527,21 +591,28 @@ def build_filtergraph(
                         graph.unsafe_face_crops.append(clip.asset)
                     else:
                         cx, cy = center
-            chain.append(_scale_crop(*target_res, cx, cy))
+            if not blur_fit:
+                chain.append(
+                    _scale_pad(*target_res) if clip.fit == "pad"
+                    else _scale_crop(*target_res, cx, cy)
+                )
             kb = _kenburns_expr(clip, clip.duration, fps, target_res)
             if kb:
-                chain.append(kb)
+                post.append(kb)
         else:
             idx = add_input(["-i", str(source)])
             chain.append(f"trim=start={clip.src_in}:end={clip.src_out}")
             chain.append(f"setpts=(PTS-STARTPTS)/{clip.speed}")
-            chain.append(_scale_pad(*target_res))
+            if not blur_fit:
+                chain.append(
+                    _scale_crop(*target_res) if clip.fit == "crop" else _scale_pad(*target_res)
+                )
         # Farbangleichung **pro Clip** und VOR dem Stil-Grade (Plan 0003 §H2): erst die
         # Kameras auf einen Nenner bringen, dann den Look darüber. Andersherum wäre "kühl"
         # eine Aussage über die zufällige Kameramischung statt über den Film.
         match = match_filter(clip.color_match)
         if match:
-            chain.append(match)
+            post.append(match)
         # Konstante fps sichern, damit concat/xfade sauber zusammenpassen. `fps` allein
         # normalisiert aber nicht die Timebase: `zoompan` (Ken-Burns-Fotos) liefert
         # AV_TIME_BASE (1/1000000), `fps` laesst das unangetastet, wenn sich an der
@@ -549,9 +620,14 @@ def build_filtergraph(
         # "timebase do not match", sobald ein Foto-Clip direkt vor/nach einem
         # Crossfade liegt. Explizit auf jedem Segment erzwingen, nicht nur beim Foto-Zweig
         # -- normale Video-Clips laufen schon auf AVTB, der Filter ist fuer sie ein No-op.
-        chain.append(f"fps={fps:g}")
-        chain.append("settb=AVTB")
-        filters.append(f"[{idx}:v]{','.join(chain)}[{label}]")
+        post.append(f"fps={fps:g}")
+        post.append("settb=AVTB")
+        if blur_fit:
+            filters.append(f"[{idx}:v]{','.join(chain)}[{label}pre]")
+            filters.extend(_blur_fill_statements(f"{label}pre", f"{label}fit", *target_res))
+            filters.append(f"[{label}fit]{','.join(post)}[{label}]")
+        else:
+            filters.append(f"[{idx}:v]{','.join(chain + post)}[{label}]")
         video_labels.append(label)
 
     cur_video = _join_video_segments(clips, video_labels, filters)
@@ -615,13 +691,20 @@ def build_filtergraph(
         idx = add_input(["-i", str(export_root / map_clip.clip)])
         shifted = f"map{k}shift"
         next_video = f"vmap{k}"
-        filters.append(f"[{idx}:v]setpts=PTS+{map_clip.tl_in}/TB[{shifted}]")
-        # Kein `shortest=1` hier: der Karten-Clip ist ein endliches `-i`-Input (kein `-loop 1`
-        # ohne `-t` wie beim Text-Overlay oben), sein eigenes Dateiende faellt schon mit dem
-        # Ende seines `enable`-Fensters zusammen. Mit `shortest=1` haette **jeder** Karten-Clip
-        # in dieser Schleife das gesamte bis dahin aufgebaute `cur_video` auf seine eigene Laenge
-        # gekappt -- der erste Karten-Clip (K2) hat den kompletten Film auf ~132s abgeschnitten,
-        # Ton lief unbeeinflusst weiter (gefundener Bug, Video "friert ein" bei Minute 2).
+        # `trim=duration=` VOR dem Shift: die Kartendatei ist oft laenger als ihr Zeitfenster
+        # in der Timeline (Rezept rendert auf volle Etappen-/Dwell-Laenge, gebraucht wird nur
+        # `map_clip.dur`). Ohne den Trim haengt `overlay` (ohne `shortest=1`, siehe unten) den
+        # kompletten Dateirest ans Filmende (gefundener Bug: K15-Datei 50s vs. 32,887s Fenster
+        # verlaengerte den Gesamtfilm um exakt die Differenz, 1073,887s -> 1091,033s).
+        filters.append(
+            f"[{idx}:v]trim=duration={map_clip.dur:.3f},setpts=PTS-STARTPTS+{map_clip.tl_in}/TB"
+            f"[{shifted}]"
+        )
+        # Kein `shortest=1` hier: der Karten-Clip ist jetzt (nach dem Trim oben) auf sein eigenes
+        # `enable`-Fenster begrenzt. Mit `shortest=1` haette **jeder** Karten-Clip in dieser
+        # Schleife das gesamte bis dahin aufgebaute `cur_video` auf seine eigene Laenge gekappt --
+        # der erste Karten-Clip (K2) hat den kompletten Film auf ~132s abgeschnitten, Ton lief
+        # unbeeinflusst weiter (gefundener Bug, Video "friert ein" bei Minute 2).
         filters.append(
             f"[{cur_video}][{shifted}]overlay=x=W-w-60:y=H-h-60:"
             f"enable='between(t,{map_clip.tl_in},{map_clip.tl_in + map_clip.dur})'[{next_video}]"
@@ -682,17 +765,35 @@ def build_filtergraph(
         if audio.src is not None:
             music_labels.append(label)
         if audio.asset is not None and audio.duck_music_db is not None:
-            duck_windows.append((audio.tl_in, audio.tl_in + dur, audio.duck_music_db))
+            fade = float(getattr(audio, "duck_fade_s", 0.0) or 0.0)
+            duck_windows.append((audio.tl_in, audio.tl_in + dur, audio.duck_music_db, fade))
 
     # Jede Musik-Spur bekommt die gesamte Duck-Kette (nicht nur die erste — Audit K5).
     for m, music_label in enumerate(music_labels):
         current = music_label
-        for w, (start, end, duck_db) in enumerate(duck_windows):
+        for w, (start, end, duck_db, fade) in enumerate(duck_windows):
             duck_gain = 10 ** (duck_db / 20)
             ducked = f"m{m}_duck{w}"
-            filters.append(
-                f"[{current}]volume=volume={duck_gain}:enable='between(t,{start},{end})'[{ducked}]"
-            )
+            if fade > 0:
+                # Weiche Rampe statt Hartschalter: Musik faehrt ueber `duck_fade_s` runter,
+                # haelt ueber dem O-Ton-Fenster und faehrt genauso weich wieder hoch.
+                # Nutzer-Feedback (2026-08-08, Runde 2): "das Absacken vom Sound muss smooth
+                # passieren, es muss einen kleinen Mini-Fade geben" -- das harte
+                # `enable=between(...)` schaltete den Pegel in einem Frame um und knackte.
+                # Aufbau: 1 ausserhalb, `duck_gain` innerhalb, linear dazwischen. Die Rampe
+                # liegt VOR `start` bzw. NACH `end`, damit der O-Ton ueber seine ganze Laenge
+                # den vollen Platz hat und nicht erst waehrend des Absenkens einsetzt.
+                down = f"clip((t-{start - fade:.3f})/{fade:.3f},0,1)"
+                up = f"clip(({end + fade:.3f}-t)/{fade:.3f},0,1)"
+                filters.append(
+                    f"[{current}]volume=eval=frame:"
+                    f"volume='1-{1 - duck_gain:.6f}*{down}*{up}'[{ducked}]"
+                )
+            else:
+                filters.append(
+                    f"[{current}]volume=volume={duck_gain}:"
+                    f"enable='between(t,{start},{end})'[{ducked}]"
+                )
             current = ducked
         if current != music_label:
             audio_labels[audio_labels.index(music_label)] = current

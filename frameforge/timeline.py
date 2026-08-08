@@ -66,6 +66,20 @@ class VideoClip(BaseModel):
     transition_out: Transition | None = None
     effects: list[Effect] = Field(default_factory=list)
     color_match: ColorMatch | None = None  # None = keine Angleichung (Default, wie bisher)
+    # Wie der Clip auf die Zielauflaesung gebracht wird, wenn sein Seitenverhaeltnis abweicht:
+    # None (Default) = bisheriges Verhalten (Fotos crop-to-fill motivbewusst, Videos Letterbox),
+    # "crop" = crop-to-fill erzwingen, "pad" = Letterbox/Pillarbox erzwingen,
+    # "blur" = ungeschnitten zentriert auf unscharfem Hintergrund (siehe `render`). "blur" ist
+    # die Wahl fuer Hochkant-Material: keine schwarzen Balken UND keine angeschnittenen Personen.
+    fit: str | None = None
+
+    @model_validator(mode="after")
+    def _check_fit(self) -> VideoClip:
+        if self.fit is not None and self.fit not in {"crop", "pad", "blur"}:
+            raise ValueError(
+                f"Clip '{self.id}': fit muss 'crop', 'pad' oder 'blur' sein (ist {self.fit!r})"
+            )
+        return self
 
     @model_validator(mode="after")
     def _check_in_out(self) -> VideoClip:
@@ -123,6 +137,10 @@ class AudioClip(BaseModel):
     src_in: float = Field(default=0.0, ge=0)
     gain_db: float | None = None
     duck_music_db: float | None = None
+    # Rampendauer der Musik-Absenkung (`duck_music_db`) am Anfang UND Ende des Fensters.
+    # Default 0 = Hartschalter wie bisher; > 0 faehrt die Musik weich runter und wieder hoch
+    # (siehe `render.build_filtergraph`). Die Rampen liegen ausserhalb des O-Ton-Fensters.
+    duck_fade_s: float = Field(default=0.0, ge=0)
     # Ein-/Ausblendung dieses Clips (Plan 0003 §F). Default 0 = harter Einsatz wie bisher.
     fade_in_s: float = Field(default=0.0, ge=0)
     fade_out_s: float = Field(default=0.0, ge=0)

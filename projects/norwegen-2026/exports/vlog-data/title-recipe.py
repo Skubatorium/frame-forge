@@ -28,8 +28,13 @@ def main() -> None:
     out_dir = ROOT / "exports" / "vlog-data" / "overlays"
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    title_size = round(overlay_tokens(tokens, width=RES[0], height=RES[1])["title_size"] * 1.15, 1)
-    year_size = round(title_size * 0.75, 1)
+    # Runde 3: "Ich finde das Wort Norwegen muesste auf jeden Fall noch groesser, also bestimmt
+    # doppelt so gross fast." 1.15 (Runde 2) -> 2.2 vom Basis-`title_size`. "2026" und
+    # "Roadtrip Edition" bleiben bei ihren relativen Groessen, wachsen also nicht mit -- sonst
+    # sprengt die Zeile die Box, und der Groessenkontrast war ausdruecklich gewollt.
+    base_title = overlay_tokens(tokens, width=RES[0], height=RES[1])["title_size"]
+    title_size = round(base_title * 2.2, 1)
+    year_size = round(base_title * 1.15 * 0.75, 1)
     caption_size = round(year_size * 0.75, 1)
 
     box_svg = build_svg_from_tokens(

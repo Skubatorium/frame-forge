@@ -1,0 +1,18 @@
+<svg width="{{width}}" height="{{height}}" xmlns="http://www.w3.org/2000/svg">
+  <!-- Zweizeilige Etappen-Bauchbinde: `day_label` oben (Akzentfarbe), darunter `stage_label`
+       mit Etappe bzw. Aktivitaet des Tages. Beide Zeilen liegen in EINEM Layer, weil sie sich
+       nie gegeneinander bewegen sollen, sondern nur gemeinsam ein- und ausblenden, also ein
+       Overlay pro Kapitel statt zwei. Ersetzt die Kombination aus subtitle-only.svg und
+       Karten-Inset, nachdem der Karten-Track entfallen ist.
+       Alle Positionen und Groessen kommen als Prozent bzw. Pixel aus `overlay_tokens`
+       (`stage_*`-Defaults, vom Aufrufer ueberschreibbar), damit dasselbe Template auch fuer
+       eine andere Ecke taugt. Achtung: kein doppelter Bindestrich in SVG-Kommentaren,
+       cairosvgs XML-Parser bricht daran ab. -->
+  <text x="{{stage_day_x_pct}}%" y="{{stage_day_y_pct}}%" font-family="{{font_display}}"
+        font-weight="800" font-size="{{stage_day_size}}" fill="{{stage_day_fill}}"
+        letter-spacing="{{subtitle_tracking}}"
+        text-anchor="start" dominant-baseline="middle">{{day_label}}</text>
+  <text x="{{stage_route_x_pct}}%" y="{{stage_route_y_pct}}%" font-family="{{font_text}}"
+        font-weight="600" font-size="{{stage_route_size}}" fill="{{stage_route_fill}}"
+        text-anchor="start" dominant-baseline="middle">{{stage_label}}</text>
+</svg>

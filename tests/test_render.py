@@ -183,6 +183,57 @@ def test_build_filtergraph_overlay_drift_only_after_slide_in():
     assert "if(gte(t,1.500),15.00*sin(2*PI*(t-1.500)/4.000)," in graph.filter_complex
 
 
+def test_build_filtergraph_overlay_drift_mode_linear_does_not_reverse():
+    """`drift_mode: "linear"` laesst die Drift in EINE Richtung bis zum Clipende weiterlaufen.
+    Nutzer-Feedback: der Sinus wirkte als Hin-und-Her und ruckelte an den Umkehrpunkten."""
+    timeline = _timeline(
+        video=[{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0}],
+        overlay=[
+            {
+                "id": "o1",
+                "png": "overlays/title.png",
+                "tl_in": 0.0,
+                "dur": 5.5,
+                "anim": {"slide_from_px": "-100", "slide_in_s": "1.5",
+                         "drift_px": "20", "drift_mode": "linear"},
+            }
+        ],
+    )
+    graph = build_filtergraph(
+        timeline,
+        resolve_asset=lambda aid: Path(f"/media/{aid}.mp4"),
+        export_root=Path("/export"),
+        project_root=Path("/project"),
+    )
+    # Rampe ueber die Hold-Phase (dur - slide_in_s = 4.0s), monoton, kein sin().
+    assert "20.00*max(0,min(1,(t-1.500)/4.000000))" in graph.filter_complex
+    assert "sin(" not in graph.filter_complex
+
+
+def test_build_filtergraph_duck_fade_ramps_music_instead_of_switching():
+    """`duck_fade_s` faehrt die Musik weich runter/hoch statt sie per `enable` hart zu schalten
+    (Nutzer-Feedback: "das Absacken muss smooth passieren, ein kleiner Mini-Fade")."""
+    timeline = _timeline(
+        video=[{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 20, "tl_in": 0}],
+        audio=[
+            {"id": "music", "src": "music/track.m4a", "tl_in": 0.0, "dur": 20.0},
+            {"id": "otone", "asset": "a1", "tl_in": 5.0, "dur": 4.0,
+             "duck_music_db": -6.0, "duck_fade_s": 0.6},
+        ],
+    )
+    graph = build_filtergraph(
+        timeline,
+        resolve_asset=lambda aid: Path(f"/media/{aid}.mp4"),
+        export_root=Path("/export"),
+        project_root=Path("/project"),
+    )
+    assert "volume=eval=frame" in graph.filter_complex
+    # Rampe startet `duck_fade_s` VOR dem O-Ton-Fenster und endet genauso danach.
+    assert "clip((t-4.400)/0.600,0,1)" in graph.filter_complex
+    assert "clip((9.600-t)/0.600,0,1)" in graph.filter_complex
+    assert "enable='between(t,5.0,9.0)'" not in graph.filter_complex
+
+
 def test_build_filtergraph_map_clip_shifts_by_tl_in():
     timeline = _timeline(
         video=[{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0}],
@@ -194,8 +245,12 @@ def test_build_filtergraph_map_clip_shifts_by_tl_in():
         export_root=Path("/export"),
         project_root=Path("/project"),
     )
-    assert "setpts=PTS+1.0/TB" in graph.filter_complex
+    assert "setpts=PTS-STARTPTS+1.0/TB" in graph.filter_complex
     assert "between(t,1.0,1.5)" in graph.filter_complex
+    # Regression: die Karten-Datei ist oft laenger als ihr Timeline-Fenster; ohne `trim` haengt
+    # `overlay` (ohne `shortest=1`, siehe unten) den Dateirest ans Filmende und verlaengert den
+    # Gesamtfilm (gefundener Bug: K15-Datei 50s vs. 32,887s Fenster, +17s Schwarzbild am Ende).
+    assert "trim=duration=0.500" in graph.filter_complex
     # Regression: `shortest=1` auf dem Karten-Overlay kappt den GESAMTEN bis dahin
     # aufgebauten Video-Pfad auf die Laenge des Karten-Clips, sobald dieser (endliches
     # `-i`-Input, kein `-loop 1`) sein eigenes Dateiende erreicht -- gefundener Bug: Bild fror
@@ -1058,8 +1113,8 @@ def test_kenburns_pan_offset_reaches_zoompan_x_y():
         project_root=Path("/p"),
     )
     assert "0.0600" in graph.filter_complex  # x_from/y_from literal im Ausdruck
-    # step = (x_to - x_from) / frames = (-0.02 - 0.06) / 50 = -0.0016 (frames = dur*fps = 2*25)
-    assert "-0.001600" in graph.filter_complex
+    # Spannweite x_to - x_from = -0.02 - 0.06 = -0.08, als Faktor auf den Fortschritt
+    assert "-0.080000" in graph.filter_complex
 
 
 def test_kenburns_zero_pan_matches_old_centered_behaviour():
@@ -1083,7 +1138,28 @@ def test_kenburns_zero_pan_matches_old_centered_behaviour():
         export_root=Path("/e"),
         project_root=Path("/p"),
     )
-    assert "iw/2-(iw/zoom/2)+(0.0000+on*0.000000)*iw" in graph.filter_complex
+    assert "iw/2-(iw/zoom/2)+(0.0000+(min(1,on/50))*0.000000)*iw" in graph.filter_complex
+
+
+def test_kenburns_ease_smooth_uses_smoothstep_curve():
+    """`ease: "smooth"` legt eine Smoothstep-Kurve auf den Fortschritt (Nutzer-Feedback: der
+    lineare Schwenk wirkte mechanisch). Ohne `ease` bleibt es linear."""
+    def graph_for(effect):
+        tl = _timeline(
+            video=[{"id": "c1", "asset": "photo1", "src_in": 0, "src_out": 2, "tl_in": 0,
+                    "effects": [effect]}]
+        )
+        return build_filtergraph(
+            tl,
+            resolve_asset=lambda a: Path(f"/m/{a}.jpg"),
+            export_root=Path("/e"),
+            project_root=Path("/p"),
+        ).filter_complex
+
+    smooth = graph_for({"type": "kenburns", "from": [0, 0, 1.0], "to": [0, 0, 1.1], "ease": "smooth"})
+    assert "(3-2*(min(1,on/50)))" in smooth
+    linear = graph_for({"type": "kenburns", "from": [0, 0, 1.0], "to": [0, 0, 1.1]})
+    assert "3-2*" not in linear
 
 
 def test_face_crop_center_defaults_to_image_center_without_faces():
