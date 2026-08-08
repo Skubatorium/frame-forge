@@ -1,0 +1,84 @@
+# Vollversion mit Karten-HUD (unten rechts, durchgehend), Etappen-/Ortsdetails. ~20 Min.
+preset: nordic-cinematic
+target_duration_s: 1200  # ~20 Min., flexibel wie drone-edit — Material/Musiklaenge entscheidet
+language: de
+
+# --- Overrides ---
+transition_vocabulary: [fade, slow_dissolve, cut]
+map_usage: leitmotif  # Karte unten rechts durchgehend sichtbar, nicht nur zwischen Kapiteln
+photo_treatment: { ken_burns: subtle }
+text_density: moderate  # Intro-Infocard (Reisedaten/Route) zusaetzlich zum Titel, sonst wie drone-edit sparsam
+
+# --- Inhaltliche Vorgaben ---
+chronological: true
+selection:
+  prefer_source: [drone, phone]
+  min_rating: 3
+  avoid_redundant_angles: true  # s. Notizen: gleiche Szene aus mehreren Perspektiven nur sparsam
+
+map:
+  position: bottom_right
+  show_elevation: false  # kein Hoehenprofil/keine Hoehenmeter-Anzeige
+  show_km: true           # gesamt gefahrene Strecke bis zur aktuellen Position (cumulative_km)
+  show_place: true        # aktueller Ort/Etappe (stage_label)
+
+audio:
+  tracks: [cuatro-vientos, naturaleza-mose-edit, aguila-de-oro-ecstatic-mix]  # feste Reihenfolge
+  transition: crossfade
+  transition_duration_s: 10  # zuegiger Uebergang, keine lange Ueberlagerung (kein 30s+ Doppel-Layer)
+  fade_in_s: 3
+  fade_out_s: 3
+  structure_hint: three_parts
+
+intro:
+  transition_in: black
+  cold_open_s: 30  # erste 30 s nur Wind/Cuatro-Vientos-Intro, noch kein Schnitt-Tempo
+  cold_open_content: map_overview_reveal  # Deutschland -> Daenemark -> Norwegen, Route waechst waehrend Wind-Sound
+  cold_open_visual: light_dissolve_to_norway  # leichte Blende von der Karten-Overview ins erste Norwegen-Bild
+  info_card: true  # zusaetzliche Karte mit Reisedaten (Zeitraum/Strecke), vor oder nach Titel
+  title: "Norwegen 2026"
+  subtitle: "Roadtrip"
+  energy_ramp: with_audio  # Bild-Tempo/Schnittfrequenz zieht an, sobald Cuatro Vientos schneller/hoeher wird
+  fade: slow
+
+outro:
+  transition_out: black
+
+notes: >-
+  Cold Open (Task fuer story-architect/map-animator, ggf. neuer Beat statt neuer Agent — s.
+  Ruecksprache mit Nutzer): 30 s reiner Wind-/Ambient-Teil von "Cuatro Vientos", dazu eine
+  Karten-Overview-Animation (Route Deutschland->Daenemark->Norwegen waechst), danach leichte
+  Blende ins erste echte Norwegen-Bild. Bild-Schnittfrequenz zieht erst an, sobald das Audio
+  lauter/hoeher wird (Sync-Punkt aus der Audiodatei, kein festes Timecode-Raten). Zusaetzlich
+  eine ruhige Infokarte mit Reisedaten (Zeitraum, Gesamtstrecke) - Text/Position analog
+  bestehender SVG-Templates, kein neues Layout-System.
+
+  Musik: drei Pflicht-Tracks in fester Reihenfolge (Cuatro Vientos -> Naturaleza Mose Edit ->
+  Aguila de Oro Ecstatic Mix), fliessend ineinander ueberblendet. Uebergaenge zuegig (~10 s),
+  keine lange Doppel-Ueberlagerung von mehr als ~15 s. Guter, sauberer Uebergang besonders am
+  zweiten Wechsel (Naturaleza Mose Edit -> Aguila de Oro).
+
+  Karte (unten rechts, `render_inset_frames`): keine Hoehenmeter/kein Hoehenprofil -
+  `heights=None` beim Aufruf (bestehender Mechanismus, kein neuer Code noetig), nur
+  Ortsname/Etappe + gesamt gefahrene Strecke bis zur aktuellen Position. Kann spaeter bei
+  Bedarf wieder aktiviert werden, aktuell erster Ansatz zum Anschauen/Optimieren.
+
+  Ken Burns: nie schwarzen Hintergrund zeigen, Bild muss die Flaeche immer vollstaendig
+  fuellen (Crop/Scale pruefen, kein Letterboxing durch zu kleinen Ken-Burns-Ausschnitt).
+
+  Redundanz: dieselbe Szene nicht aus zu vielen Perspektiven hintereinander zeigen (Beispiel
+  aus Sichtung: Bruecke ueber/unter/davor mehrfach hintereinander in der Drohnen-Sichtung -
+  das war zu viel). Verschiedene Perspektiven derselben Sache sind grundsaetzlich okay
+  (Schiff nah + fern), aber sparsam und nicht als Serie.
+
+  Reihenfolge/Chronologie bei fehlenden Metadaten: viele iPhone-Videos (v. a. Chris-iPhone,
+  Christina-iPhone) haben keine `captured_at`-EXIF-Daten mehr. Laut Nutzer liegen die Dateien
+  innerhalb ihrer jeweiligen Ordner (Chris-iPhone, Christina-iPhone) in der tatsaechlichen
+  Erlebnis-Reihenfolge - Dateisystem-/Namensreihenfolge als Fallback-Sortierung nutzen, wo
+  `captured_at` fehlt, statt zu raten oder EXIF zu erzwingen.
+
+  O-Ton: wird in dieser Version voraussichtlich nicht genutzt (`original_audio_policy` bleibt
+  wie im Preset `ambience_only`).
+
+must_shots: []
+forbidden_shots: []
