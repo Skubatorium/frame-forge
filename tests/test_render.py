@@ -1196,6 +1196,31 @@ def test_kenburns_zero_pan_matches_old_centered_behaviour():
     assert "iw/2-(iw/zoom/2)+(0.0000+(min(1,on/50))*0.000000)*iw" in graph.filter_complex
 
 
+def test_photo_inputs_are_time_limited():
+    """`-loop 1` ohne `-t` ist ein UNENDLICHER Input. Das `trim=duration=` in der Filterkette
+    schneidet nur ab, was schon dekodiert wurde -- der Input produziert weiter. Bei vielen
+    Foto-Clips laeuft ffmpeg dadurch leer: hohe CPU-Last, aber die Ausgabedatei waechst nicht
+    mehr (gefundene Ursache der "unerklaerlich" abgebrochenen Renders)."""
+    tl = _timeline(
+        video=[
+            {"id": "c1", "asset": "photo1", "src_in": 0, "src_out": 3, "tl_in": 0},
+            {"id": "c2", "asset": "vid1", "src_in": 0, "src_out": 2, "tl_in": 3},
+        ]
+    )
+    graph = build_filtergraph(
+        tl,
+        resolve_asset=lambda a: Path(f"/m/{a}.jpg" if a.startswith("photo") else f"/m/{a}.mp4"),
+        export_root=Path("/e"),
+        project_root=Path("/p"),
+    )
+    photo_input = next(args for args in graph.input_args if "-loop" in args)
+    assert "-t" in photo_input, photo_input
+    assert photo_input[photo_input.index("-t") + 1] == "3.000"
+    # Video-Inputs bleiben ohne -t (sie sind von sich aus endlich).
+    video_input = next(args for args in graph.input_args if "-loop" not in args)
+    assert "-t" not in video_input
+
+
 def test_kenburns_zoom_out_is_not_clamped_to_zoom_in():
     """`z_to < z_from` ist ein Zoom HERAUS und muss erhalten bleiben. Vorher wurde `z_to` auf
     `z_from + 0.001` hochgeklemmt, womit jeder Zoom-out ein Standbild war."""
