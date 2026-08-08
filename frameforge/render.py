@@ -410,42 +410,53 @@ _DEFAULT_SLIDE_IN_S = 1.5
 _DEFAULT_DRIFT_PERIOD_S = 4.0
 
 
-def _overlay_x_expr(anim: dict, tl_in: float, dur: float) -> str:
-    """FFmpeg-`overlay`-x-Ausdruck (Funktion von `t`) fuer Slide-in + Drift eines Overlays.
+def _overlay_axis_expr(anim: dict, tl_in: float, dur: float, *, from_key: str, drift_key: str) -> str:
+    """FFmpeg-`overlay`-Achsen-Ausdruck (Funktion von `t`) fuer Slide-in + Drift eines Overlays.
+
+    Achsenneutral: `from_key`/`drift_key` waehlen `slide_from_px`/`drift_px` (X) oder
+    `slide_from_py`/`drift_py` (Y) aus `anim` -- `slide_in_s`/`drift_period_s` gelten fuer
+    beide Achsen gemeinsam (ein Overlay hat eine Einlaufdauer, nicht zwei).
 
     `anim` kennt (alle optional, Strings wie der Rest von `OverlayClip.anim`):
-    - `slide_from_px`: X-Versatz bei `tl_in` in Pixeln (negativ = von links einlaufend,
-      positiv = von rechts, 0/fehlend = keine Slide-Bewegung -- wie bisher).
+    - `slide_from_p{x,y}`: Versatz bei `tl_in` in Pixeln (negativ = von links/oben einlaufend,
+      positiv = von rechts/unten, 0/fehlend = keine Slide-Bewegung auf dieser Achse).
     - `slide_in_s`: Dauer der Einlaufbewegung (Default 1.5s, gedeckelt auf `dur`).
-    - `drift_px`: Amplitude einer sinusfoermigen Restbewegung waehrend der Hold-Phase, nach
+    - `drift_p{x,y}`: Amplitude einer sinusfoermigen Restbewegung waehrend der Hold-Phase, nach
       Abschluss des Slide-ins (0/fehlend = keine Drift).
     - `drift_period_s`: Periodendauer der Drift (Default 4.0s).
 
-    Ohne `slide_from_px` und `drift_px` liefert das exakt `"0"` -- identisch zum bisherigen
-    festen `x=0`, damit sich an bestehenden Overlays (z.B. `label-*.png`) nichts aendert.
+    Ohne Slide/Drift auf dieser Achse liefert das exakt `"0"` -- identisch zum bisherigen
+    festen `x=0`/`y=0`, damit sich an bestehenden Overlays (z.B. `label-*.png`) nichts aendert.
     """
-    slide_from = float(anim.get("slide_from_px", 0) or 0)
-    drift_px = float(anim.get("drift_px", 0) or 0)
-    if slide_from == 0 and drift_px == 0:
+    slide_from = float(anim.get(from_key, 0) or 0)
+    drift = float(anim.get(drift_key, 0) or 0)
+    if slide_from == 0 and drift == 0:
         return "0"
 
     slide_in_s = float(anim.get("slide_in_s", _DEFAULT_SLIDE_IN_S) or _DEFAULT_SLIDE_IN_S)
     slide_in_s = max(0.001, min(slide_in_s, dur))
-    t0 = tl_in
     t1 = tl_in + slide_in_s
 
     terms = []
     if slide_from:
-        # Linear von `slide_from_px` (bei t0) auf 0 (bei t1), danach konstant 0.
+        # Linear von `slide_from` (bei t0) auf 0 (bei t1), danach konstant 0.
         terms.append(f"{slide_from:.2f}*max(0,min(1,({t1:.3f}-t)/{slide_in_s:.6f}))")
-    if drift_px:
+    if drift:
         drift_period_s = float(anim.get("drift_period_s", _DEFAULT_DRIFT_PERIOD_S) or _DEFAULT_DRIFT_PERIOD_S)
         drift_period_s = max(0.001, drift_period_s)
         # Drift erst NACH dem Slide-in, sonst ueberlagert sie die Einlaufbewegung.
         terms.append(
-            f"if(gte(t,{t1:.3f}),{drift_px:.2f}*sin(2*PI*(t-{t1:.3f})/{drift_period_s:.3f}),0)"
+            f"if(gte(t,{t1:.3f}),{drift:.2f}*sin(2*PI*(t-{t1:.3f})/{drift_period_s:.3f}),0)"
         )
     return "+".join(terms)
+
+
+def _overlay_x_expr(anim: dict, tl_in: float, dur: float) -> str:
+    return _overlay_axis_expr(anim, tl_in, dur, from_key="slide_from_px", drift_key="drift_px")
+
+
+def _overlay_y_expr(anim: dict, tl_in: float, dur: float) -> str:
+    return _overlay_axis_expr(anim, tl_in, dur, from_key="slide_from_py", drift_key="drift_py")
 
 
 def build_filtergraph(
@@ -567,6 +578,7 @@ def build_filtergraph(
         fi = float(anim.get("fade_in_s", 0) or 0)
         fo = float(anim.get("fade_out_s", 0) or 0)
         x_expr = _overlay_x_expr(anim, overlay.tl_in, overlay.dur)
+        y_expr = _overlay_y_expr(anim, overlay.tl_in, overlay.dur)
         ov_label = f"ov{j}"
         next_video = f"vov{j}"
         if fi > 0 or fo > 0:
@@ -584,7 +596,7 @@ def build_filtergraph(
             chain += f",setpts=PTS+{overlay.tl_in}/TB"
             filters.append(f"[{idx}:v]{chain}[{ov_label}]")
             filters.append(
-                f"[{cur_video}][{ov_label}]overlay=x='{x_expr}':y=0:"
+                f"[{cur_video}][{ov_label}]overlay=x='{x_expr}':y='{y_expr}':"
                 f"enable='between(t,{overlay.tl_in},{overlay.tl_in + overlay.dur})'[{next_video}]"
             )
         else:
@@ -593,7 +605,7 @@ def build_filtergraph(
             )
             filters.append(f"[{idx}:v]format=rgba[{ov_label}]")
             filters.append(
-                f"[{cur_video}][{ov_label}]overlay=x='{x_expr}':y=0:shortest=1:"
+                f"[{cur_video}][{ov_label}]overlay=x='{x_expr}':y='{y_expr}':shortest=1:"
                 f"enable='between(t,{overlay.tl_in},{overlay.tl_in + overlay.dur})'[{next_video}]"
             )
         cur_video = next_video

@@ -603,7 +603,11 @@ def render_inset_frames(
             gefahren = km_offset + km_at[min(index, len(km_at) - 1)]
             content = {
                 "km_label": f"{gefahren:,.0f} km".replace(",", "."),
-                "elevation_label": f"{elevation:.0f} m" if elevation is not None else "—",
+                # Ohne `heights` (z.B. `heights=None` beim Aufruf) gibt es keine Hoehenspalte —
+                # leeres Label + leere Caption statt Platzhalter ("—"/"HÖHE" ohne Wert), sonst
+                # haengt eine Beschriftung ohne Inhalt sichtbar im Bild.
+                "elevation_label": f"{elevation:.0f} m" if elevation is not None else "",
+                "elevation_caption": tokens.get("elevation_caption", "") if heights else "",
                 "profile_points": polyline,
                 "marker_x": marker_x,
                 "marker_y": marker_y,

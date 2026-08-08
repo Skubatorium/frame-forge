@@ -110,7 +110,7 @@ def test_build_filtergraph_overlay_slide_defaults_to_static_x():
         export_root=Path("/export"),
         project_root=Path("/project"),
     )
-    assert "overlay=x='0':y=0" in graph.filter_complex
+    assert "overlay=x='0':y='0'" in graph.filter_complex
 
 
 def test_build_filtergraph_overlay_slide_from_px_builds_time_expression():
@@ -134,7 +134,30 @@ def test_build_filtergraph_overlay_slide_from_px_builds_time_expression():
     )
     # Linear von -600px (bei tl_in) auf 0 (bei tl_in+slide_in_s=0.9), dann konstant 0.
     assert "-600.00*max(0,min(1,(0.900-t)/0.400000))" in graph.filter_complex
-    assert "overlay=x='-600.00*max(0,min(1,(0.900-t)/0.400000))':y=0" in graph.filter_complex
+    assert "overlay=x='-600.00*max(0,min(1,(0.900-t)/0.400000))':y='0'" in graph.filter_complex
+
+
+def test_build_filtergraph_overlay_slide_from_py_builds_time_expression():
+    """Y-Achse spiegelt dieselbe Slide-in-Mechanik wie X (z.B. Titel kommt von oben)."""
+    timeline = _timeline(
+        video=[{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0}],
+        overlay=[
+            {
+                "id": "o1",
+                "png": "overlays/title.png",
+                "tl_in": 0.5,
+                "dur": 1.0,
+                "anim": {"slide_from_py": "-400", "slide_in_s": "0.4"},
+            }
+        ],
+    )
+    graph = build_filtergraph(
+        timeline,
+        resolve_asset=lambda aid: Path(f"/media/{aid}.mp4"),
+        export_root=Path("/export"),
+        project_root=Path("/project"),
+    )
+    assert "overlay=x='0':y='-400.00*max(0,min(1,(0.900-t)/0.400000))'" in graph.filter_complex
 
 
 def test_build_filtergraph_overlay_drift_only_after_slide_in():

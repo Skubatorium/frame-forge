@@ -172,6 +172,12 @@ def overlay_tokens(tokens: dict, *, width: int, height: int, **extra) -> dict:
         "line_size": round(subtitle, 1),  # credits.svg
         "title_tracking": round(title * 0.01, 2),
         "subtitle_tracking": round(subtitle * 0.06, 2),
+        # title-only/subtitle-only: Lesbarkeits-Panel hinter dem Text (Prozent der Layer-Hoehe,
+        # zentriert um die Text-Baseline bei y=46%/58%).
+        "title_panel_y": 39,
+        "title_panel_h": 15,
+        "subtitle_panel_y": 52,
+        "subtitle_panel_h": 12,
         "margin": margin,
         "corner_radius": round(height * 0.008),
         "shadow_dy": round(height * 0.004, 1),

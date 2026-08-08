@@ -496,6 +496,39 @@ def test_inset_splits_map_and_value_bar(tmp_path):
     assert pixels[10, 10, 3] == 255  # Karte selbst ist deckend, kein Video scheint durch
 
 
+def test_inset_hides_elevation_column_without_heights(tmp_path):
+    """`heights=None` blendet Label UND Caption der Hoehenspalte komplett aus, kein
+    Platzhalter ("—"/"HÖHE") ohne Wert."""
+    track = [{"lat": 60.0 + i * 0.02, "lon": 8.0 + i * 0.01} for i in range(12)]
+    size = (400, 240)
+    mit_hoehe = render_inset_frames(
+        tmp_path / "mit", template_path=Path("templates/svg/map-inset.svg"),
+        tokens=_tokens(), fps=1, dur=1, size=size, track=track, zoom=9,
+        tile_cache_dir=tmp_path / "tiles", fetcher=_fake_tiles(),
+        heights=[100.0 + i * 40 for i in range(12)],
+    )
+    ohne_hoehe = render_inset_frames(
+        tmp_path / "ohne", template_path=Path("templates/svg/map-inset.svg"),
+        tokens=_tokens(), fps=1, dur=1, size=size, track=track, zoom=9,
+        tile_cache_dir=tmp_path / "tiles", fetcher=_fake_tiles(), heights=None,
+    )
+    # Nur die Wert-/Caption-Zeilen abtasten (nicht Hoehenprofil oder Rahmen, die auch ohne
+    # Hoehendaten Pixel im rechten Bereich setzen koennten). Panel-Farbe ist ein vertikaler
+    # Verlauf (ff-inset-bar), darum direkt Zeile-fuer-Zeile mit/ohne vergleichen statt gegen
+    # eine einzelne "Panel-Farbe" zu pruefen.
+    bar_height = round(size[1] * 0.34)
+    map_height = size[1] - bar_height
+    km_y = map_height + round(bar_height * 0.33)
+    caption_y = map_height + round(bar_height * 0.52)
+    right_col = slice(size[0] - 90, size[0] - 15)
+    rows = [km_y, caption_y]
+    mit_px = np.array(Image.open(mit_hoehe[-1]).convert("RGBA"))[rows][:, right_col, :3]
+    ohne_px = np.array(Image.open(ohne_hoehe[-1]).convert("RGBA"))[rows][:, right_col, :3]
+    # Mit Hoehendaten steht dort sichtbarer Text (Wert + "HÖHE"-Caption) -- ohne ist die
+    # Spalte leer, beide Renderings unterscheiden sich also in genau diesem Bereich.
+    assert not (mit_px == ohne_px).all()
+
+
 def test_inset_km_counter_continues_across_stages(tmp_path):
     """Der Zaehler laeuft ueber die ganze Reise weiter, nicht ab null je Etappe."""
     track = [{"lat": 60.0 + i * 0.05, "lon": 8.0} for i in range(10)]

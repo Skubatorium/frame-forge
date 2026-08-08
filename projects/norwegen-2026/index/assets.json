@@ -69542,5 +69542,29 @@
       "exposure": 1.0,
       "score": 1.0
     }
+  },
+  {
+    "id": "generated-cold-open-black",
+    "path": "_generated/cold-open-black.jpg",
+    "kind": "photo",
+    "source_guess": "generated",
+    "source": "generated",
+    "content": {
+      "summary": "Reines Schwarzbild fuer den Cold-Open (Wind-Audio-Intro ohne Kartenbild).",
+      "tags": [
+        "cold-open",
+        "schwarz",
+        "generiert"
+      ],
+      "people": false,
+      "usable_as": [
+        "cold-open"
+      ]
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 1.0,
+      "score": 1.0
+    }
   }
 ]

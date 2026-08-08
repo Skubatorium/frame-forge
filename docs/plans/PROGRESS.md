@@ -2196,3 +2196,58 @@ Video-Clips, 14 Map-Clip-Referenzen, 7 Audio-Clips, 2 Overlays, 1103,887 s. Fixp
 **Naechster Schritt:** Nutzer sichtet `vlog-data_preview.mp4`, gibt frei oder gibt Feedback. Bei
 Freigabe: `/ff-render norwegen-2026 vlog-data` fuer den 4K-Final. Danach `vlog-pur` (identischer
 Schnitt, nur Map-Layer anders), dann teaser.
+
+### `vlog-data` Preview-Feedback Runde 1: Karten-HUD, Cold-Open, Titel (2026-08-08)
+
+Nutzer sichtete den PREVIEWED-Stand (Screenshot) und meldete drei Befunde zurueck.
+
+- **Leeres `HÖHE`-Label im Karten-HUD:** `render_inset_frames` zeigte trotz `heights=None`
+  (Brief verbietet Hoehenmeter) weiterhin Caption+Platzhalter ("HÖHE"/"—") rechts im
+  Werteband, weil `frameforge/design.py` den Token `elevation_caption` immer setzt.
+  `frameforge/map.py`: `elevation_label`/`elevation_caption` sind jetzt leer, wenn `heights`
+  fehlt — die ganze Spalte verschwindet, kein Platzhalter mehr. Neuer Test
+  `test_inset_hides_elevation_column_without_heights` (`tests/test_map.py`). Alle 14
+  Karten-Insets (K2-K15) ueber `projects/norwegen-2026/route/map-animator-recipe.py` neu
+  gerendert.
+- **"Hochkant"/falsche Rotation im ersten Preview:** Nachrecherchiert (Output-Datei direkt
+  per `ffprobe`/Frame-Extraktion geprueft) — die gerenderte Datei war durchgehend korrekt
+  3840×2160, 16:9, ohne Rotationsmetadaten, Karten-Inset korrekt unten rechts. Kein
+  Pipeline-Bug gefunden; vermutlich ein QuickTime/macOS-Anzeigeglitch direkt nach dem
+  Systemcrash aus der vorherigen Session. Zweiter Preview-Render zeigte dasselbe (korrekte)
+  Bild.
+- **Cold-Open-Kartenanimation (K0) raus, komplett** (Nutzerentscheidung, nicht nur Stilwechsel):
+  Strassenkarten-Look der OSM-Tiles bei Laendermassstab wirkte "verzerrt"/unlesbar. Ersetzt
+  durch ein reines Schwarzbild (neues generiertes Asset `generated-cold-open-black`,
+  `_generated/cold-open-black.jpg`) bei unveraenderten Timing-Fixpunkten (0-40 s, Dissolve
+  38-40 s in K1) — Wind-Intro von "Cuatro Vientos" laeuft weiter unveraendert. Karten-Cold-Open
+  als Konzept (3D/topografische/isometrische Kartenanimation) bewusst zurueckgestellt, kein
+  Ersatzstil sofort gebaut.
+- **Titelkarte komplett neu:** "Roadtrip" aus dem Titel raus (nur noch "Norwegen"), "2026" als
+  eigene Zeile, "Roadtrip Edition" als kleine Caption nachgeschoben. Infocard
+  (Reisedaten/km) komplett entfernt — Nutzer fand die Zusatzinfo unnoetig und schlecht lesbar.
+  Lesbarkeit generell gefixt: `title-only.svg`/`subtitle-only.svg` bekommen ein
+  halbtransparentes Panel hinter dem Text (dieselbe Panel-Farbe/-Deckkraft wie die
+  Bauchbinden), neue Layout-Tokens `title_panel_y/h`, `subtitle_panel_y/h` in
+  `frameforge/design.py`.
+- **Render-Engine erweitert, generisch:** `frameforge/render.py` konnte Overlay-Slide-in bisher
+  nur horizontal (`_overlay_x_expr`). Auf `_overlay_axis_expr(from_key, drift_key)`
+  refaktoriert, `_overlay_x_expr`/neue `_overlay_y_expr` sind duenne Wrapper darueber —
+  Overlays koennen jetzt auch von oben/unten einlaufen (`slide_from_py`/`drift_py` in
+  `OverlayClip.anim`), ohne Sonderfall-Code. "Norwegen" kommt jetzt von oben, "2026" von
+  rechts, beide konvergieren zur Mitte (wie beim `drone-edit`-Titel, nur mit vertikaler statt
+  zwei-horizontalen Bewegungen). 4 neue/angepasste Tests in `tests/test_render.py`.
+- **Pre-existing, nicht angefasst:** `tests/test_design.py` hat 6 vorbestehende Fehlschlaege um
+  `infocard.svg` (fehlende `info_main`/`info_sub`-Default-Tokens), verifiziert auch auf dem
+  Stand vor dieser Session (`git stash` + Testlauf). Nicht Teil dieser Aenderung, da `infocard`
+  fuer `vlog-data` ohnehin entfernt wurde — Fix bei Bedarf spaeter, wenn `infocard.svg` wieder
+  gebraucht wird.
+- **Preview neu gerendert**, alle drei Befunde visuell verifiziert (Frame-Checks bei Cold-Open,
+  Titel, Karten-HUD). Export bleibt PREVIEWED, wartet auf Freigabe.
+- **Disk-Space-Warnung:** Beim Neu-Rendern der 14 Karten-Insets blieben 13 GB PNG-Frames im
+  Scratchpad liegen (Platte fiel auf 538 MB frei) — sofort geloescht. Nutzer arbeitet mit sehr
+  wenig freiem Plattenplatz (~12-13 GB) nach dem Notebook-Crash aus der vorherigen Session;
+  `test-timelapse-journey`-Export (RENDERED, 2,5 GB) als Loeschkandidat identifiziert, Nutzer
+  hat noch nicht entschieden.
+
+**Naechster Schritt:** Nutzer sichtet den ueberarbeiteten Preview, gibt frei oder gibt weiteres
+Feedback (offen: ob/wie ein neues Cold-Open-Konzept mit Karte kommen soll).

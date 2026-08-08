@@ -1,7 +1,12 @@
 <svg width="{{width}}" height="{{height}}" xmlns="http://www.w3.org/2000/svg">
-  <!-- Nur der Titel-Text, transparenter Rest. Fuer Slide-in-Animation als eigener Overlay-Layer
-       gedacht (siehe frameforge/render.py `_overlay_x_expr`) - horizontale Bewegung passiert
-       per Zeit-Expression im Render, nicht hier im SVG. -->
+  <!-- Titel-Text + halbtransparentes Panel dahinter (Lesbarkeit auf hellem/unruhigem
+       Hintergrund, dieselbe Panel-Farbe/-Deckkraft wie die Bauchbinden). Fuer Slide-in-Animation
+       als eigener Overlay-Layer gedacht (siehe frameforge/render.py `_overlay_x_expr`/
+       `_overlay_y_expr`) - die Bewegung selbst passiert per Zeit-Expression im Render, nicht
+       hier im SVG; Panel und Text laufen deshalb gemeinsam als ein Layer. -->
+  <rect x="10%" y="{{title_panel_y}}%" width="80%" height="{{title_panel_h}}%"
+        rx="{{corner_radius}}" ry="{{corner_radius}}"
+        fill="{{primary_color}}" fill-opacity="{{panel_opacity}}"/>
   <text x="50%" y="46%" font-family="{{font_display}}" font-weight="900" font-style="normal"
         font-size="{{title_size}}" fill="{{text_color}}" text-anchor="middle"
         dominant-baseline="middle">{{title}}</text>
