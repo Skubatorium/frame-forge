@@ -1196,29 +1196,32 @@ def test_kenburns_zero_pan_matches_old_centered_behaviour():
     assert "iw/2-(iw/zoom/2)+(0.0000+(min(1,on/50))*0.000000)*iw" in graph.filter_complex
 
 
-def test_photo_inputs_are_time_limited():
-    """`-loop 1` ohne `-t` ist ein UNENDLICHER Input. Das `trim=duration=` in der Filterkette
-    schneidet nur ab, was schon dekodiert wurde -- der Input produziert weiter. Bei vielen
-    Foto-Clips laeuft ffmpeg dadurch leer: hohe CPU-Last, aber die Ausgabedatei waechst nicht
-    mehr (gefundene Ursache der "unerklaerlich" abgebrochenen Renders)."""
+def test_photo_inputs_must_not_be_time_limited():
+    """Regression: `-t` an den Foto-Inputs friert den Film ab dem ersten Foto-Clip ein.
+
+    Naheliegend waere `-loop 1 -t <dur>` (so macht es der Overlay-Zweig), aber gemessen bleibt
+    das Bild dann bis zum Schluss stehen -- Frame-zu-Frame-Differenz exakt 0.0 ueber 100+
+    Sekunden, Bitrate 168 kbit/s. Die `xfade`-Kette zieht Frames nach `offset`-Fahrplan; ein
+    Input, der vorher EOF meldet, laesst den nachfolgenden `xfade` den letzten Frame endlos
+    wiederholen. Die Laufzeit begrenzt `trim=duration=` in der Filterkette.
+    """
     tl = _timeline(
         video=[
             {"id": "c1", "asset": "photo1", "src_in": 0, "src_out": 3, "tl_in": 0},
-            {"id": "c2", "asset": "vid1", "src_in": 0, "src_out": 2, "tl_in": 3},
+            {"id": "c2", "asset": "photo2", "src_in": 0, "src_out": 2, "tl_in": 3,
+             "transition_in": {"type": "dissolve", "dur": 0.5}},
         ]
     )
     graph = build_filtergraph(
         tl,
-        resolve_asset=lambda a: Path(f"/m/{a}.jpg" if a.startswith("photo") else f"/m/{a}.mp4"),
+        resolve_asset=lambda a: Path(f"/m/{a}.jpg"),
         export_root=Path("/e"),
         project_root=Path("/p"),
     )
-    photo_input = next(args for args in graph.input_args if "-loop" in args)
-    assert "-t" in photo_input, photo_input
-    assert photo_input[photo_input.index("-t") + 1] == "3.000"
-    # Video-Inputs bleiben ohne -t (sie sind von sich aus endlich).
-    video_input = next(args for args in graph.input_args if "-loop" not in args)
-    assert "-t" not in video_input
+    for args in graph.input_args:
+        if "-loop" in args:
+            assert "-t" not in args, f"Foto-Input darf kein -t tragen: {args}"
+    assert "trim=duration=3.000" in graph.filter_complex
 
 
 def test_kenburns_zoom_out_is_not_clamped_to_zoom_in():

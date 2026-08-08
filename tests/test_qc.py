@@ -365,3 +365,29 @@ def test_music_tail_after_the_last_clip_is_allowed():
 def test_length_check_ignores_empty_video_track():
     timeline = Timeline(export="e", fps=25, resolution=(320, 240), duration=5.0, tracks={})
     assert _check_video_length_consistency(timeline) == []
+
+
+def test_validate_reports_source_window_longer_than_the_clip():
+    """Laeuft ein Clip mitten im Film aus, endet der GESAMTE Video-Pfad dort — ohne Fehler im
+    Render. Gefunden 2026-08-09: ein Titelbett verlangte 24s aus einer 18,7s-Datei, der fertige
+    Preview war 26,7s lang statt 18 Minuten, die Datei formal gueltig."""
+    tl = Timeline(
+        export="teaser", fps=25, resolution=(1920, 1080), duration=29.0,
+        tracks={"video": [
+            {"id": "c001", "asset": "clip-lang", "src_in": 0, "src_out": 24, "tl_in": 0},
+            {"id": "c002", "asset": "clip-ok", "src_in": 0, "src_out": 5, "tl_in": 24},
+        ]},
+    )
+    issues = validate(tl, asset_durations={"clip-lang": 18.7, "clip-ok": 30.0})
+    assert any("c001" in i and "18.70" in i for i in issues), issues
+    assert not any("c002" in i for i in issues)
+
+
+def test_validate_ignores_source_windows_without_known_duration():
+    """Ohne bekannte Laufzeit (z.B. Fotos, `-loop 1`) darf die Pruefung nicht anschlagen."""
+    tl = Timeline(
+        export="teaser", fps=25, resolution=(1920, 1080), duration=24.0,
+        tracks={"video": [{"id": "c001", "asset": "foto", "src_in": 0, "src_out": 24, "tl_in": 0}]},
+    )
+    assert validate(tl, asset_durations={}) == []
+    assert validate(tl) == []

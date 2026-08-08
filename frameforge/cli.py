@@ -1037,8 +1037,18 @@ def preview(project: str, export: str) -> None:
         brief = brief_module.Brief.load(exp.brief_path).merged() if exp.brief_path.exists() else None
     except brief_module.BriefError as exc:
         raise _fail(str(exc)) from exc
-    known_ids = {a["id"] for a in index_module.load_assets(proj)}
-    issues = qc.validate(timeline, brief=brief, known_asset_ids=known_ids)
+    assets = index_module.load_assets(proj)
+    known_ids = {a["id"] for a in assets}
+    # Quell-Laufzeiten mitgeben: ein `src_out` ueber die Cliplaenge hinaus kappt sonst still den
+    # gesamten Film (gefunden 2026-08-09, Preview war 26,7s statt 18 Minuten lang).
+    durations = {
+        a["id"]: (a.get("probe") or {}).get("dur")
+        for a in assets
+        if a.get("kind") != "photo" and (a.get("probe") or {}).get("dur")
+    }
+    issues = qc.validate(
+        timeline, brief=brief, known_asset_ids=known_ids, asset_durations=durations
+    )
     if issues:
         for issue in issues:
             console.print(f"[red]QC:[/red] {issue}")
@@ -1104,8 +1114,18 @@ def render(
         brief = brief_module.Brief.load(exp.brief_path).merged() if exp.brief_path.exists() else None
     except brief_module.BriefError as exc:
         raise _fail(str(exc)) from exc
-    known_ids = {a["id"] for a in index_module.load_assets(proj)}
-    issues = qc.validate(timeline, brief=brief, known_asset_ids=known_ids)
+    assets = index_module.load_assets(proj)
+    known_ids = {a["id"] for a in assets}
+    # Quell-Laufzeiten mitgeben: ein `src_out` ueber die Cliplaenge hinaus kappt sonst still den
+    # gesamten Film (gefunden 2026-08-09, Preview war 26,7s statt 18 Minuten lang).
+    durations = {
+        a["id"]: (a.get("probe") or {}).get("dur")
+        for a in assets
+        if a.get("kind") != "photo" and (a.get("probe") or {}).get("dur")
+    }
+    issues = qc.validate(
+        timeline, brief=brief, known_asset_ids=known_ids, asset_durations=durations
+    )
     if issues:
         for issue in issues:
             console.print(f"[red]QC:[/red] {issue}")

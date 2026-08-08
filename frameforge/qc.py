@@ -234,17 +234,48 @@ def _check_known_assets(timeline: Timeline, known_asset_ids: set[str]) -> list[s
     ]
 
 
+def _check_source_windows(timeline: Timeline, durations: dict[str, float]) -> list[str]:
+    """`src_out` darf die Laufzeit des Quellclips nicht ueberschreiten.
+
+    Das ist keine Kosmetik: laeuft ein Clip mitten im Film aus, endet der **gesamte** Video-Pfad
+    dort. Gefunden 2026-08-09 — ein Titelbett verlangte 24s aus einer 18,7s-Datei, und der
+    fertige Preview war 26,7s lang statt 18 Minuten. Ohne Ton- oder Fehlermeldung: die
+    Ausgabedatei war formal gueltig, nur der Film fehlte. Genau die Klasse Fehler, die eine
+    QC-Stufe abfangen muss, weil sie im Render nicht auffaellt.
+
+    Fotos sind ausgenommen (`-loop 1` liefert beliebig lange). Assets ohne bekannte Laufzeit
+    werden uebersprungen, nicht gemeldet.
+    """
+    issues = []
+    for clip in timeline.tracks.video:
+        src_dur = durations.get(clip.asset)
+        if src_dur is None:
+            continue
+        # Toleranz von einem halben Frame gegen Rundungsdifferenzen.
+        if clip.src_out > src_dur + 0.05:
+            issues.append(
+                f"Clip '{clip.id}' ({clip.asset}) verlangt Quelle bis {clip.src_out:.2f}s, "
+                f"der Clip ist aber nur {src_dur:.2f}s lang — der Video-Pfad endet dort und "
+                f"der Rest des Films fehlt"
+            )
+    return issues
+
+
 def validate(
     timeline: Timeline,
     *,
     brief: dict | None = None,
     known_asset_ids: set[str] | None = None,
+    asset_durations: dict[str, float] | None = None,
 ) -> list[str]:
     """Liste gefundener Probleme; leer heisst "besteht die Pruefung".
 
     `brief` ist optional (z.B. aus `yaml.safe_load(export.brief_path.read_text())`) —
     ohne Brief werden nur die timeline-internen Regeln geprüft. `known_asset_ids` (z.B. die
     IDs aus `assets.json`) aktiviert die Pruefung, dass alle referenzierten Assets existieren.
+    `asset_durations` (`{asset_id: Laufzeit in s}`, z.B. aus `probe.dur` in `assets.json`)
+    aktiviert die Pruefung der Quell-Fenster — ohne die kann ein zu langes `src_out` den ganzen
+    Film abschneiden, ohne dass der Render meckert.
     """
     try:
         timeline.validate_semantics()
@@ -260,6 +291,8 @@ def validate(
     ]
     if known_asset_ids is not None:
         issues.extend(_check_known_assets(timeline, known_asset_ids))
+    if asset_durations is not None:
+        issues.extend(_check_source_windows(timeline, asset_durations))
     if brief is not None:
         issues.extend(_check_against_brief(timeline, brief))
     return issues

@@ -597,18 +597,17 @@ def build_filtergraph(
         # der Rest der Kette laeuft darum in `post` hinter dem Fit-Schritt weiter.
         blur_fit = clip.fit == "blur"
         if source.suffix.lower() in PHOTO_EXTENSIONS:
-            # `-t` ist Pflicht, nicht Kosmetik: `-loop 1` OHNE Laufzeitgrenze ist ein
-            # **unendlicher** Input. Das `trim=duration=` unten schneidet nur ab, was schon
-            # dekodiert wurde -- der Input selbst produziert weiter Frames, solange ffmpeg laeuft.
-            # Bei 62 Foto-Clips hat das den Scheduler leerlaufen lassen: ffmpeg verbrannte 43
-            # Minuten CPU-Zeit bei 441%, ohne nach der ersten 2-MB-Bloecke noch ein Byte zu
-            # schreiben (Ausgabedatei 12 Minuten unveraendert, Prozess aber "beschaeftigt").
-            # Genau das sah in frueheren Sitzungen wie ein "unerklaerlicher Absturz" aus.
-            # Der Overlay-Zweig weiter unten macht es seit immer richtig (`-loop 1 -t ...`).
-            idx = add_input(
-                ["-loop", "1", "-t", f"{clip.duration:.3f}", "-framerate", str(fps),
-                 "-i", str(source)]
-            )
+            # **KEIN `-t` hier.** Naheliegend waere es (der Overlay-Zweig unten nutzt es), aber
+            # gemessen macht es den Render kaputt: mit `-t` friert das Bild ab dem ERSTEN
+            # Foto-Clip ein und bleibt es bis zum Schluss -- Frame-zu-Frame-Differenz exakt 0.0
+            # ueber 100+ Sekunden, Bitrate faellt auf 168 kbit/s. Grund ist die
+            # `xfade`-Kette in `_join_video_segments`: sie zieht Frames nach dem
+            # `offset`-Fahrplan, und ein Input, der vorher EOF meldet, laesst den nachfolgenden
+            # `xfade` den letzten Frame endlos wiederholen.
+            # Die Laufzeit begrenzt stattdessen `trim=duration=` in der Kette (naechste Zeile).
+            # An einem 30-Clip-Ausschnitt beide Varianten gegengemessen (siehe PROGRESS.md,
+            # Abschnitt zu Runde 3).
+            idx = add_input(["-loop", "1", "-framerate", str(fps), "-i", str(source)])
             chain.append(f"trim=duration={clip.duration:.3f}")
             chain.append("setpts=PTS-STARTPTS")
             cx, cy = 0.5, 0.5

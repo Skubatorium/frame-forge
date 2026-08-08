@@ -43,9 +43,9 @@
         "id": "c001",
         "asset": "20260722-drone-e0e4c2",
         "src_in": 0.0,
-        "src_out": 24.0,
+        "src_out": 18.669,
         "tl_in": 8.0,
-        "speed": 1.0,
+        "speed": 0.7779,
         "effects": [],
         "transition_in": {
           "type": "slow_dissolve",
@@ -59,7 +59,7 @@
         "asset": "20260717-phone-0247f0",
         "src_in": 0.0,
         "src_out": 8.8,
-        "tl_in": 31.0,
+        "tl_in": 30.999228692634013,
         "speed": 1.0,
         "effects": [
           {
@@ -90,7 +90,7 @@
         "asset": "20260717-phone-822c50",
         "src_in": 0.0,
         "src_out": 8.8,
-        "tl_in": 38.8,
+        "tl_in": 38.79922869263402,
         "speed": 1.0,
         "effects": [
           {
@@ -120,7 +120,7 @@
         "asset": "20260718-phone-a788c9",
         "src_in": 0.0,
         "src_out": 7.9,
-        "tl_in": 46.8,
+        "tl_in": 46.79922869263402,
         "speed": 1.0,
         "effects": [
           {
@@ -151,7 +151,7 @@
         "asset": "20260718-phone-aed4c0",
         "src_in": 0.0,
         "src_out": 7.9,
-        "tl_in": 53.9,
+        "tl_in": 53.89922869263402,
         "speed": 1.0,
         "effects": [
           {
@@ -182,7 +182,7 @@
         "asset": "20260718-phone-78974b",
         "src_in": 0.0,
         "src_out": 7.9,
-        "tl_in": 61.0,
+        "tl_in": 60.99922869263402,
         "speed": 1.0,
         "effects": [
           {
@@ -212,7 +212,7 @@
         "asset": "20260718-camera-d81da5",
         "src_in": 0.0,
         "src_out": 7.9,
-        "tl_in": 68.10000000000001,
+        "tl_in": 68.09922869263403,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -227,7 +227,7 @@
         "asset": "20260718-camera-b903eb",
         "src_in": 0.426,
         "src_out": 8.326,
-        "tl_in": 75.20000000000002,
+        "tl_in": 75.19922869263404,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -242,7 +242,7 @@
         "asset": "20260718-camera-4a336b",
         "src_in": 4.971,
         "src_out": 12.871,
-        "tl_in": 82.30000000000003,
+        "tl_in": 82.29922869263405,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -257,7 +257,7 @@
         "asset": "20260718-phone-0ad093",
         "src_in": 0.0,
         "src_out": 7.9,
-        "tl_in": 89.40000000000003,
+        "tl_in": 89.39922869263405,
         "speed": 1.0,
         "effects": [
           {
@@ -287,7 +287,7 @@
         "asset": "20260718-camera-bacc27",
         "src_in": 28.156,
         "src_out": 36.056,
-        "tl_in": 96.50000000000004,
+        "tl_in": 96.49922869263406,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -302,7 +302,7 @@
         "asset": "20260718-phone-83859a",
         "src_in": 0.0,
         "src_out": 7.9,
-        "tl_in": 103.60000000000004,
+        "tl_in": 103.59922869263407,
         "speed": 1.0,
         "effects": [
           {
@@ -332,7 +332,7 @@
         "asset": "20260718-phone-b0d0be",
         "src_in": 0.0,
         "src_out": 7.9,
-        "tl_in": 110.70000000000005,
+        "tl_in": 110.69922869263408,
         "speed": 1.0,
         "effects": [
           {
@@ -362,7 +362,7 @@
         "asset": "20260719-phone-0d87b4",
         "src_in": 0.0,
         "src_out": 7.9,
-        "tl_in": 117.80000000000005,
+        "tl_in": 117.79922869263409,
         "speed": 1.0,
         "effects": [
           {
@@ -392,7 +392,7 @@
         "asset": "20260719-camera-a37b5f",
         "src_in": 0.935,
         "src_out": 8.835,
-        "tl_in": 124.90000000000006,
+        "tl_in": 124.8992286926341,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -407,7 +407,7 @@
         "asset": "20260719-phone-6f7371",
         "src_in": 0.0,
         "src_out": 7.9,
-        "tl_in": 132.00000000000006,
+        "tl_in": 131.9992286926341,
         "speed": 1.0,
         "effects": [
           {
@@ -438,7 +438,7 @@
         "asset": "20260719-phone-4a0970",
         "src_in": 0.0,
         "src_out": 7.9,
-        "tl_in": 139.10000000000005,
+        "tl_in": 139.09922869263409,
         "speed": 1.0,
         "effects": [
           {
@@ -468,7 +468,7 @@
         "asset": "20260719-camera-21e343",
         "src_in": 2.381,
         "src_out": 10.281,
-        "tl_in": 146.20000000000005,
+        "tl_in": 146.19922869263408,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -483,7 +483,7 @@
         "asset": "20260719-camera-3333c0",
         "src_in": 14.75,
         "src_out": 22.65,
-        "tl_in": 153.30000000000004,
+        "tl_in": 153.29922869263407,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -498,7 +498,7 @@
         "asset": "20260719-phone-b5868d",
         "src_in": 0.0,
         "src_out": 7.9,
-        "tl_in": 160.40000000000003,
+        "tl_in": 160.39922869263407,
         "speed": 1.0,
         "effects": [
           {
@@ -528,7 +528,7 @@
         "asset": "20260719-phone-06c1ed",
         "src_in": 0.0,
         "src_out": 7.9,
-        "tl_in": 167.50000000000003,
+        "tl_in": 167.49922869263406,
         "speed": 1.0,
         "effects": [
           {
@@ -558,7 +558,7 @@
         "asset": "20260719-phone-16d7f7",
         "src_in": 0.0,
         "src_out": 7.9,
-        "tl_in": 174.60000000000002,
+        "tl_in": 174.59922869263406,
         "speed": 1.0,
         "effects": [
           {
@@ -589,7 +589,7 @@
         "asset": "20260720-camera-669f06",
         "src_in": 2.223,
         "src_out": 9.623,
-        "tl_in": 181.70000000000002,
+        "tl_in": 181.69922869263405,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -604,7 +604,7 @@
         "asset": "20260720-camera-427a02",
         "src_in": 8.504,
         "src_out": 15.904,
-        "tl_in": 188.3,
+        "tl_in": 188.29922869263405,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -619,7 +619,7 @@
         "asset": "20260720-camera-01f68b",
         "src_in": 25.463,
         "src_out": 32.863,
-        "tl_in": 194.9,
+        "tl_in": 194.89922869263404,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -634,7 +634,7 @@
         "asset": "20260720-phone-7c3e31",
         "src_in": 0.0,
         "src_out": 7.4,
-        "tl_in": 201.5,
+        "tl_in": 201.49922869263403,
         "speed": 1.0,
         "effects": [
           {
@@ -664,7 +664,7 @@
         "asset": "20260720-phone-01214e",
         "src_in": 0.0,
         "src_out": 7.4,
-        "tl_in": 208.1,
+        "tl_in": 208.09922869263403,
         "speed": 1.0,
         "effects": [
           {
@@ -695,7 +695,7 @@
         "asset": "20260720-camera-622c38",
         "src_in": 3.199,
         "src_out": 10.599,
-        "tl_in": 214.7,
+        "tl_in": 214.69922869263402,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -710,7 +710,7 @@
         "asset": "20260720-camera-1058a9",
         "src_in": 11.123,
         "src_out": 18.523,
-        "tl_in": 221.29999999999998,
+        "tl_in": 221.29922869263402,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -725,7 +725,7 @@
         "asset": "20260720-camera-0ec48c",
         "src_in": 0.421,
         "src_out": 7.821,
-        "tl_in": 227.89999999999998,
+        "tl_in": 227.899228692634,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -740,7 +740,7 @@
         "asset": "20260720-phone-0bd153",
         "src_in": 0.0,
         "src_out": 7.4,
-        "tl_in": 234.49999999999997,
+        "tl_in": 234.499228692634,
         "speed": 1.0,
         "effects": [
           {
@@ -770,7 +770,7 @@
         "asset": "20260720-camera-3de2ef",
         "src_in": 26.047,
         "src_out": 33.447,
-        "tl_in": 241.09999999999997,
+        "tl_in": 241.099228692634,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -785,7 +785,7 @@
         "asset": "20260720-phone-2308e5",
         "src_in": 0.0,
         "src_out": 7.4,
-        "tl_in": 247.69999999999996,
+        "tl_in": 247.699228692634,
         "speed": 1.0,
         "effects": [
           {
@@ -815,7 +815,7 @@
         "asset": "20260721-phone-873dfd",
         "src_in": 0.0,
         "src_out": 7.7,
-        "tl_in": 254.29999999999995,
+        "tl_in": 254.299228692634,
         "speed": 1.0,
         "effects": [
           {
@@ -845,7 +845,7 @@
         "asset": "20260721-phone-ca46c2",
         "src_in": 0.0,
         "src_out": 7.7,
-        "tl_in": 261.19999999999993,
+        "tl_in": 261.199228692634,
         "speed": 1.0,
         "effects": [
           {
@@ -875,7 +875,7 @@
         "asset": "20260721-phone-33e8c5",
         "src_in": 0.0,
         "src_out": 7.7,
-        "tl_in": 268.0999999999999,
+        "tl_in": 268.099228692634,
         "speed": 1.0,
         "effects": [
           {
@@ -905,7 +905,7 @@
         "asset": "20260721-camera-cc5bd6",
         "src_in": 4.9,
         "src_out": 10.2,
-        "tl_in": 274.9999999999999,
+        "tl_in": 274.99922869263395,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -920,7 +920,7 @@
         "asset": "20260722-phone-fdc96c",
         "src_in": 0.0,
         "src_out": 7.6,
-        "tl_in": 279.4999999999999,
+        "tl_in": 279.49922869263395,
         "speed": 1.0,
         "effects": [
           {
@@ -950,7 +950,7 @@
         "asset": "20260722-camera-7545fc",
         "src_in": 5.954,
         "src_out": 13.554,
-        "tl_in": 286.2999999999999,
+        "tl_in": 286.29922869263396,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -965,7 +965,7 @@
         "asset": "20260722-phone-074074",
         "src_in": 0.0,
         "src_out": 7.6,
-        "tl_in": 293.0999999999999,
+        "tl_in": 293.099228692634,
         "speed": 1.0,
         "effects": [
           {
@@ -995,7 +995,7 @@
         "asset": "20260722-drone-71e612",
         "src_in": 1.805,
         "src_out": 9.405,
-        "tl_in": 299.8999999999999,
+        "tl_in": 299.899228692634,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1010,7 +1010,7 @@
         "asset": "20260722-drone-a31495",
         "src_in": 9.03,
         "src_out": 16.63,
-        "tl_in": 306.69999999999993,
+        "tl_in": 306.699228692634,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1025,7 +1025,7 @@
         "asset": "20260723-camera-0df50b",
         "src_in": 2.397,
         "src_out": 9.697,
-        "tl_in": 313.69999999999993,
+        "tl_in": 313.699228692634,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1040,7 +1040,7 @@
         "asset": "20260723-camera-49948e",
         "src_in": 0.329,
         "src_out": 7.629,
-        "tl_in": 320.3999999999999,
+        "tl_in": 320.399228692634,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1055,7 +1055,7 @@
         "asset": "20260723-phone-3a599b",
         "src_in": 0.0,
         "src_out": 7.3,
-        "tl_in": 327.0999999999999,
+        "tl_in": 327.099228692634,
         "speed": 1.0,
         "effects": [
           {
@@ -1086,7 +1086,7 @@
         "asset": "20260723-phone-c42193",
         "src_in": 0.0,
         "src_out": 7.3,
-        "tl_in": 333.7999999999999,
+        "tl_in": 333.79922869263396,
         "speed": 1.0,
         "effects": [
           {
@@ -1117,7 +1117,7 @@
         "asset": "20260723-drone-92fb1e",
         "src_in": 5.092,
         "src_out": 12.392,
-        "tl_in": 340.4999999999999,
+        "tl_in": 340.49922869263395,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1132,7 +1132,7 @@
         "asset": "20260723-drone-3db9c1",
         "src_in": 2.657,
         "src_out": 9.957,
-        "tl_in": 347.1999999999999,
+        "tl_in": 347.19922869263394,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1147,7 +1147,7 @@
         "asset": "20260723-drone-61a62c",
         "src_in": 13.0,
         "src_out": 20.3,
-        "tl_in": 353.89999999999986,
+        "tl_in": 353.8992286926339,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1162,7 +1162,7 @@
         "asset": "20260723-drone-c0be40",
         "src_in": 9.121,
         "src_out": 16.421,
-        "tl_in": 360.59999999999985,
+        "tl_in": 360.5992286926339,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1177,7 +1177,7 @@
         "asset": "20260723-phone-013f67",
         "src_in": 0.0,
         "src_out": 7.3,
-        "tl_in": 367.29999999999984,
+        "tl_in": 367.2992286926339,
         "speed": 1.0,
         "effects": [
           {
@@ -1207,7 +1207,7 @@
         "asset": "20260723-phone-0fff0f",
         "src_in": 0.0,
         "src_out": 7.3,
-        "tl_in": 373.99999999999983,
+        "tl_in": 373.9992286926339,
         "speed": 1.0,
         "effects": [
           {
@@ -1237,7 +1237,7 @@
         "asset": "20260723-drone-34c28f",
         "src_in": 6.035,
         "src_out": 13.335,
-        "tl_in": 380.6999999999998,
+        "tl_in": 380.6992286926339,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1252,7 +1252,7 @@
         "asset": "20260723-drone-07b1ef",
         "src_in": 7.928,
         "src_out": 15.228,
-        "tl_in": 387.3999999999998,
+        "tl_in": 387.39922869263387,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1267,7 +1267,7 @@
         "asset": "20260723-drone-40d97d",
         "src_in": 4.4,
         "src_out": 11.7,
-        "tl_in": 394.0999999999998,
+        "tl_in": 394.09922869263386,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1282,7 +1282,7 @@
         "asset": "20260723-drone-f9365c",
         "src_in": 6.035,
         "src_out": 13.335,
-        "tl_in": 400.7999999999998,
+        "tl_in": 400.79922869263385,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1297,7 +1297,7 @@
         "asset": "20260724-camera-4c6ded",
         "src_in": 19.04,
         "src_out": 26.14,
-        "tl_in": 407.4999999999998,
+        "tl_in": 407.49922869263384,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1312,7 +1312,7 @@
         "asset": "20260724-drone-0be02d",
         "src_in": 11.491,
         "src_out": 18.591,
-        "tl_in": 413.9999999999998,
+        "tl_in": 413.99922869263384,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1327,7 +1327,7 @@
         "asset": "20260724-phone-84ed90",
         "src_in": 0.0,
         "src_out": 7.1,
-        "tl_in": 420.4999999999998,
+        "tl_in": 420.49922869263384,
         "speed": 1.0,
         "effects": [
           {
@@ -1358,7 +1358,7 @@
         "asset": "20260724-drone-094825",
         "src_in": 3.374,
         "src_out": 10.474,
-        "tl_in": 426.9999999999998,
+        "tl_in": 426.99922869263384,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1373,7 +1373,7 @@
         "asset": "20260724-camera-a690e2",
         "src_in": 4.82,
         "src_out": 11.92,
-        "tl_in": 433.4999999999998,
+        "tl_in": 433.49922869263384,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1388,7 +1388,7 @@
         "asset": "20260724-drone-2f2cf4",
         "src_in": 7.753,
         "src_out": 14.853,
-        "tl_in": 439.9999999999998,
+        "tl_in": 439.99922869263384,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1403,7 +1403,7 @@
         "asset": "20260724-phone-e78577",
         "src_in": 0.0,
         "src_out": 7.1,
-        "tl_in": 446.4999999999998,
+        "tl_in": 446.49922869263384,
         "speed": 1.0,
         "effects": [
           {
@@ -1433,7 +1433,7 @@
         "asset": "20260724-camera-45e18d",
         "src_in": 0.0,
         "src_out": 7.1,
-        "tl_in": 452.9999999999998,
+        "tl_in": 452.99922869263384,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1448,7 +1448,7 @@
         "asset": "20260724-camera-e1e3ae",
         "src_in": 32.376,
         "src_out": 39.476,
-        "tl_in": 459.4999999999998,
+        "tl_in": 459.49922869263384,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1463,7 +1463,7 @@
         "asset": "20260807-camera-7c5d12",
         "src_in": 13.033,
         "src_out": 20.133,
-        "tl_in": 465.9999999999998,
+        "tl_in": 465.99922869263384,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1478,7 +1478,7 @@
         "asset": "20260724-phone-5df3fd",
         "src_in": 0.0,
         "src_out": 7.1,
-        "tl_in": 472.4999999999998,
+        "tl_in": 472.49922869263384,
         "speed": 1.0,
         "effects": [
           {
@@ -1509,7 +1509,7 @@
         "asset": "20260724-camera-cc5cbc",
         "src_in": 24.409,
         "src_out": 31.509,
-        "tl_in": 478.9999999999998,
+        "tl_in": 478.99922869263384,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1524,7 +1524,7 @@
         "asset": "20260724-drone-c794de",
         "src_in": 6.002,
         "src_out": 13.102,
-        "tl_in": 485.4999999999998,
+        "tl_in": 485.49922869263384,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1539,7 +1539,7 @@
         "asset": "20260724-drone-0c5020",
         "src_in": 1.522,
         "src_out": 8.622,
-        "tl_in": 491.9999999999998,
+        "tl_in": 491.99922869263384,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1554,7 +1554,7 @@
         "asset": "20260724-drone-7523dd",
         "src_in": 0.0,
         "src_out": 7.1,
-        "tl_in": 498.4999999999998,
+        "tl_in": 498.49922869263384,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1569,7 +1569,7 @@
         "asset": "20260724-drone-37d1f5",
         "src_in": 92.788,
         "src_out": 99.888,
-        "tl_in": 504.9999999999998,
+        "tl_in": 504.99922869263384,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1584,7 +1584,7 @@
         "asset": "20260724-drone-242fdd",
         "src_in": 5.418,
         "src_out": 12.518,
-        "tl_in": 511.4999999999998,
+        "tl_in": 511.4992286926338,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1599,7 +1599,7 @@
         "asset": "20260724-drone-3f1f99",
         "src_in": 9.438,
         "src_out": 16.538,
-        "tl_in": 517.9999999999998,
+        "tl_in": 517.9992286926338,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1614,7 +1614,7 @@
         "asset": "20260725-phone-9c1fcd",
         "src_in": 0.0,
         "src_out": 6.8,
-        "tl_in": 524.4999999999998,
+        "tl_in": 524.4992286926338,
         "speed": 1.0,
         "effects": [
           {
@@ -1644,7 +1644,7 @@
         "asset": "20260725-camera-5a21c7",
         "src_in": 4.311,
         "src_out": 11.111,
-        "tl_in": 530.6999999999997,
+        "tl_in": 530.6992286926337,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1659,7 +1659,7 @@
         "asset": "20260725-camera-4ab117",
         "src_in": 1.011,
         "src_out": 7.811,
-        "tl_in": 536.8999999999996,
+        "tl_in": 536.8992286926336,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1674,7 +1674,7 @@
         "asset": "20260725-camera-ca97b0",
         "src_in": 7.274,
         "src_out": 14.074,
-        "tl_in": 543.0999999999996,
+        "tl_in": 543.0992286926336,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1689,7 +1689,7 @@
         "asset": "20260725-phone-4f6759",
         "src_in": 0.0,
         "src_out": 6.8,
-        "tl_in": 549.2999999999995,
+        "tl_in": 549.2992286926335,
         "speed": 1.0,
         "effects": [
           {
@@ -1719,7 +1719,7 @@
         "asset": "20260725-phone-c04b91",
         "src_in": 0.0,
         "src_out": 6.8,
-        "tl_in": 555.4999999999994,
+        "tl_in": 555.4992286926334,
         "speed": 1.0,
         "effects": [
           {
@@ -1749,7 +1749,7 @@
         "asset": "20260725-phone-1625fd",
         "src_in": 0.0,
         "src_out": 6.8,
-        "tl_in": 561.6999999999994,
+        "tl_in": 561.6992286926334,
         "speed": 1.0,
         "effects": [
           {
@@ -1779,7 +1779,7 @@
         "asset": "20260725-phone-cce497",
         "src_in": 0.0,
         "src_out": 6.8,
-        "tl_in": 567.8999999999993,
+        "tl_in": 567.8992286926333,
         "speed": 1.0,
         "effects": [
           {
@@ -1810,7 +1810,7 @@
         "asset": "20260725-camera-bbb451",
         "src_in": 13.508,
         "src_out": 20.308,
-        "tl_in": 574.0999999999992,
+        "tl_in": 574.0992286926332,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1825,7 +1825,7 @@
         "asset": "20260725-camera-91a441",
         "src_in": 18.252,
         "src_out": 25.052,
-        "tl_in": 580.2999999999992,
+        "tl_in": 580.2992286926332,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1839,9 +1839,9 @@
         "id": "c085",
         "asset": "20260725-camera-b98ead",
         "src_in": 0.0,
-        "src_out": 6.8,
-        "tl_in": 586.4999999999991,
-        "speed": 1.0,
+        "src_out": 4.955,
+        "tl_in": 586.4992286926331,
+        "speed": 0.7287,
         "effects": [],
         "transition_in": {
           "type": "dissolve",
@@ -1855,7 +1855,7 @@
         "asset": "20260807-camera-e75da0",
         "src_in": 2.045,
         "src_out": 8.845,
-        "tl_in": 592.699999999999,
+        "tl_in": 592.6990091235374,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1870,7 +1870,7 @@
         "asset": "20260725-camera-67ef35",
         "src_in": 4.989,
         "src_out": 11.789,
-        "tl_in": 598.899999999999,
+        "tl_in": 598.8990091235373,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1885,7 +1885,7 @@
         "asset": "20260725-camera-83f3bb",
         "src_in": 14.799,
         "src_out": 21.599,
-        "tl_in": 605.0999999999989,
+        "tl_in": 605.0990091235373,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1900,7 +1900,7 @@
         "asset": "20260725-phone-f19e45",
         "src_in": 0.0,
         "src_out": 6.8,
-        "tl_in": 611.2999999999988,
+        "tl_in": 611.2990091235372,
         "speed": 1.0,
         "effects": [
           {
@@ -1928,9 +1928,9 @@
       {
         "id": "c090",
         "asset": "20260726-camera-02a9d4",
-        "src_in": 8.758,
-        "src_out": 14.958,
-        "tl_in": 617.5999999999988,
+        "src_in": 8.408,
+        "src_out": 14.608,
+        "tl_in": 617.5990091235371,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1945,7 +1945,7 @@
         "asset": "20260726-camera-36033e",
         "src_in": 6.884,
         "src_out": 13.084,
-        "tl_in": 623.2999999999988,
+        "tl_in": 623.2990091235372,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1960,7 +1960,7 @@
         "asset": "20260726-camera-60238c",
         "src_in": 2.997,
         "src_out": 9.197,
-        "tl_in": 628.9999999999989,
+        "tl_in": 628.9990091235372,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1975,7 +1975,7 @@
         "asset": "20260726-camera-117e4a",
         "src_in": 4.59,
         "src_out": 10.79,
-        "tl_in": 634.6999999999989,
+        "tl_in": 634.6990091235373,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -1990,7 +1990,7 @@
         "asset": "20260726-camera-780f72",
         "src_in": 12.787,
         "src_out": 18.987,
-        "tl_in": 640.399999999999,
+        "tl_in": 640.3990091235373,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2004,9 +2004,9 @@
       {
         "id": "c095",
         "asset": "20260726-drone-993daf",
-        "src_in": 1.756,
-        "src_out": 7.956,
-        "tl_in": 646.099999999999,
+        "src_in": 0.507,
+        "src_out": 6.707,
+        "tl_in": 646.0990091235374,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2021,7 +2021,7 @@
         "asset": "20260726-drone-7206fd",
         "src_in": 6.685,
         "src_out": 12.885,
-        "tl_in": 651.799999999999,
+        "tl_in": 651.7990091235374,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2036,7 +2036,7 @@
         "asset": "20260726-drone-e9f050",
         "src_in": 8.328,
         "src_out": 14.528,
-        "tl_in": 657.4999999999991,
+        "tl_in": 657.4990091235375,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2051,7 +2051,7 @@
         "asset": "20260726-drone-a1945f",
         "src_in": 0.0,
         "src_out": 6.2,
-        "tl_in": 663.1999999999991,
+        "tl_in": 663.1990091235375,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2066,7 +2066,7 @@
         "asset": "20260726-drone-688dda",
         "src_in": 10.072,
         "src_out": 16.272,
-        "tl_in": 668.8999999999992,
+        "tl_in": 668.8990091235376,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2081,7 +2081,7 @@
         "asset": "20260726-drone-44f27e",
         "src_in": 14.943,
         "src_out": 21.143,
-        "tl_in": 674.5999999999992,
+        "tl_in": 674.5990091235376,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2096,7 +2096,7 @@
         "asset": "20260726-drone-8d6634",
         "src_in": 24.035,
         "src_out": 30.235,
-        "tl_in": 680.2999999999993,
+        "tl_in": 680.2990091235376,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2111,7 +2111,7 @@
         "asset": "20260726-drone-cee8da",
         "src_in": 10.0,
         "src_out": 16.2,
-        "tl_in": 685.9999999999993,
+        "tl_in": 685.9990091235377,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2126,7 +2126,7 @@
         "asset": "20260726-drone-4a48a2",
         "src_in": 1.496,
         "src_out": 7.696,
-        "tl_in": 691.6999999999994,
+        "tl_in": 691.6990091235377,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2141,7 +2141,7 @@
         "asset": "20260726-drone-de30ac",
         "src_in": 10.769,
         "src_out": 16.969,
-        "tl_in": 697.3999999999994,
+        "tl_in": 697.3990091235378,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2154,9 +2154,9 @@
       {
         "id": "c105",
         "asset": "20260726-camera-7be0c1",
-        "src_in": 2.018,
-        "src_out": 8.218,
-        "tl_in": 703.0999999999995,
+        "src_in": 1.307,
+        "src_out": 7.507,
+        "tl_in": 703.0990091235378,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2171,7 +2171,7 @@
         "asset": "20260726-phone-0738b3",
         "src_in": 0.0,
         "src_out": 6.2,
-        "tl_in": 708.7999999999995,
+        "tl_in": 708.7990091235379,
         "speed": 1.0,
         "effects": [
           {
@@ -2201,7 +2201,7 @@
         "asset": "20260726-drone-289830",
         "src_in": 0.0,
         "src_out": 6.2,
-        "tl_in": 714.4999999999995,
+        "tl_in": 714.4990091235379,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2216,7 +2216,7 @@
         "asset": "20260726-phone-9d91fc",
         "src_in": 0.0,
         "src_out": 6.2,
-        "tl_in": 720.1999999999996,
+        "tl_in": 720.199009123538,
         "speed": 1.0,
         "effects": [
           {
@@ -2246,7 +2246,7 @@
         "asset": "20260726-phone-0bd3b1",
         "src_in": 0.0,
         "src_out": 6.2,
-        "tl_in": 725.8999999999996,
+        "tl_in": 725.899009123538,
         "speed": 1.0,
         "effects": [
           {
@@ -2276,7 +2276,7 @@
         "asset": "20260727-phone-2ed4af",
         "src_in": 0.0,
         "src_out": 6.1,
-        "tl_in": 731.5999999999997,
+        "tl_in": 731.599009123538,
         "speed": 1.0,
         "effects": [
           {
@@ -2307,7 +2307,7 @@
         "asset": "20260727-phone-42aeaa",
         "src_in": 0.0,
         "src_out": 6.1,
-        "tl_in": 737.1999999999997,
+        "tl_in": 737.1990091235381,
         "speed": 1.0,
         "effects": [
           {
@@ -2338,7 +2338,7 @@
         "asset": "20260727-phone-6f2658",
         "src_in": 0.0,
         "src_out": 6.1,
-        "tl_in": 742.7999999999997,
+        "tl_in": 742.7990091235381,
         "speed": 1.0,
         "effects": [
           {
@@ -2369,7 +2369,7 @@
         "asset": "20260727-drone-50a966",
         "src_in": 5.0,
         "src_out": 11.1,
-        "tl_in": 748.3999999999997,
+        "tl_in": 748.3990091235381,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2384,7 +2384,7 @@
         "asset": "20260727-camera-448a45",
         "src_in": 2.594,
         "src_out": 8.694,
-        "tl_in": 753.9999999999998,
+        "tl_in": 753.9990091235381,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2399,7 +2399,7 @@
         "asset": "20260727-camera-e61b92",
         "src_in": 8.046,
         "src_out": 14.146,
-        "tl_in": 759.5999999999998,
+        "tl_in": 759.5990091235382,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2414,7 +2414,7 @@
         "asset": "20260727-phone-270b29",
         "src_in": 0.0,
         "src_out": 6.1,
-        "tl_in": 765.1999999999998,
+        "tl_in": 765.1990091235382,
         "speed": 1.0,
         "effects": [
           {
@@ -2444,7 +2444,7 @@
         "asset": "20260727-phone-1d6624",
         "src_in": 0.0,
         "src_out": 6.1,
-        "tl_in": 770.7999999999998,
+        "tl_in": 770.7990091235382,
         "speed": 1.0,
         "effects": [
           {
@@ -2475,7 +2475,7 @@
         "asset": "20260727-camera-1b14b3",
         "src_in": 10.806,
         "src_out": 16.906,
-        "tl_in": 776.3999999999999,
+        "tl_in": 776.3990091235382,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2490,7 +2490,7 @@
         "asset": "20260727-phone-151c49",
         "src_in": 0.0,
         "src_out": 6.1,
-        "tl_in": 781.9999999999999,
+        "tl_in": 781.9990091235383,
         "speed": 1.0,
         "effects": [
           {
@@ -2521,7 +2521,7 @@
         "asset": "20260727-phone-276d06",
         "src_in": 0.0,
         "src_out": 6.1,
-        "tl_in": 787.5999999999999,
+        "tl_in": 787.5990091235383,
         "speed": 1.0,
         "effects": [
           {
@@ -2551,7 +2551,7 @@
         "asset": "20260727-phone-27bf87",
         "src_in": 0.0,
         "src_out": 6.1,
-        "tl_in": 793.1999999999999,
+        "tl_in": 793.1990091235383,
         "speed": 1.0,
         "effects": [
           {
@@ -2582,7 +2582,7 @@
         "asset": "20260727-camera-847bd7",
         "src_in": 1.426,
         "src_out": 7.526,
-        "tl_in": 798.8,
+        "tl_in": 798.7990091235383,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2598,7 +2598,7 @@
         "asset": "20260727-camera-a7e386",
         "src_in": 4.482,
         "src_out": 10.582,
-        "tl_in": 804.4,
+        "tl_in": 804.3990091235383,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2613,7 +2613,7 @@
         "asset": "20260728-phone-1d62e5",
         "src_in": 0.0,
         "src_out": 5.8,
-        "tl_in": 810.0,
+        "tl_in": 809.9990091235384,
         "speed": 1.0,
         "effects": [
           {
@@ -2643,7 +2643,7 @@
         "asset": "20260728-phone-058a38",
         "src_in": 0.0,
         "src_out": 5.8,
-        "tl_in": 815.3,
+        "tl_in": 815.2990091235383,
         "speed": 1.0,
         "effects": [
           {
@@ -2674,7 +2674,7 @@
         "asset": "20260728-drone-b307d9",
         "src_in": 11.297,
         "src_out": 17.097,
-        "tl_in": 820.5999999999999,
+        "tl_in": 820.5990091235383,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2689,7 +2689,7 @@
         "asset": "20260728-drone-eb4ff3",
         "src_in": 0.0,
         "src_out": 5.8,
-        "tl_in": 825.8999999999999,
+        "tl_in": 825.8990091235382,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2704,7 +2704,7 @@
         "asset": "20260728-drone-eab4d9",
         "src_in": 1.729,
         "src_out": 7.529,
-        "tl_in": 831.1999999999998,
+        "tl_in": 831.1990091235382,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2719,7 +2719,7 @@
         "asset": "20260728-drone-9f54f7",
         "src_in": 2.914,
         "src_out": 8.714,
-        "tl_in": 836.4999999999998,
+        "tl_in": 836.4990091235381,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2734,7 +2734,7 @@
         "asset": "20260728-drone-79c521",
         "src_in": 10.621,
         "src_out": 16.421,
-        "tl_in": 841.7999999999997,
+        "tl_in": 841.7990091235381,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2749,7 +2749,7 @@
         "asset": "20260728-phone-17a594",
         "src_in": 0.0,
         "src_out": 5.8,
-        "tl_in": 847.0999999999997,
+        "tl_in": 847.099009123538,
         "speed": 1.0,
         "effects": [
           {
@@ -2779,7 +2779,7 @@
         "asset": "20260728-phone-0b4712",
         "src_in": 0.0,
         "src_out": 5.8,
-        "tl_in": 852.3999999999996,
+        "tl_in": 852.399009123538,
         "speed": 1.0,
         "effects": [
           {
@@ -2810,7 +2810,7 @@
         "asset": "20260728-drone-c91b2a",
         "src_in": 5.0,
         "src_out": 19.0,
-        "tl_in": 857.6999999999996,
+        "tl_in": 857.699009123538,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2825,7 +2825,7 @@
         "asset": "20260728-drone-e42c63",
         "src_in": 17.27,
         "src_out": 23.07,
-        "tl_in": 871.1999999999996,
+        "tl_in": 871.199009123538,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2839,9 +2839,9 @@
         "id": "c135",
         "asset": "20260728-drone-17c8a4",
         "src_in": 0.0,
-        "src_out": 5.8,
-        "tl_in": 876.4999999999995,
-        "speed": 1.0,
+        "src_out": 5.439,
+        "tl_in": 876.4990091235379,
+        "speed": 0.9377,
         "effects": [],
         "transition_in": {
           "type": "dissolve",
@@ -2855,7 +2855,7 @@
         "asset": "20260728-drone-1cc835",
         "src_in": 0.1,
         "src_out": 4.3,
-        "tl_in": 881.7999999999995,
+        "tl_in": 881.7993717128522,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2870,7 +2870,7 @@
         "asset": "20260728-phone-454596",
         "src_in": 0.0,
         "src_out": 5.8,
-        "tl_in": 885.4999999999995,
+        "tl_in": 885.4993717128523,
         "speed": 1.0,
         "effects": [
           {
@@ -2901,7 +2901,7 @@
         "asset": "20260728-drone-c4f817",
         "src_in": 30.358,
         "src_out": 36.158,
-        "tl_in": 890.7999999999995,
+        "tl_in": 890.7993717128522,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2916,7 +2916,7 @@
         "asset": "20260728-drone-e13194",
         "src_in": 15.518,
         "src_out": 21.318,
-        "tl_in": 896.0999999999995,
+        "tl_in": 896.0993717128522,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2931,7 +2931,7 @@
         "asset": "20260728-drone-b550d2",
         "src_in": 0.9,
         "src_out": 6.7,
-        "tl_in": 901.3999999999994,
+        "tl_in": 901.3993717128521,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2946,7 +2946,7 @@
         "asset": "20260728-drone-5d3cd7",
         "src_in": 19.305,
         "src_out": 25.105,
-        "tl_in": 906.6999999999994,
+        "tl_in": 906.6993717128521,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2961,7 +2961,7 @@
         "asset": "20260728-drone-3feda7",
         "src_in": 73.043,
         "src_out": 78.843,
-        "tl_in": 911.9999999999993,
+        "tl_in": 911.999371712852,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2976,7 +2976,7 @@
         "asset": "20260728-drone-51fecd",
         "src_in": 0.0,
         "src_out": 5.8,
-        "tl_in": 917.2999999999993,
+        "tl_in": 917.299371712852,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -2991,7 +2991,7 @@
         "asset": "20260728-drone-4cae48",
         "src_in": 0.0,
         "src_out": 5.8,
-        "tl_in": 922.5999999999992,
+        "tl_in": 922.599371712852,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -3006,7 +3006,7 @@
         "asset": "20260728-phone-4cbed2",
         "src_in": 0.0,
         "src_out": 5.8,
-        "tl_in": 927.8999999999992,
+        "tl_in": 927.8993717128519,
         "speed": 1.0,
         "effects": [
           {
@@ -3037,7 +3037,7 @@
         "asset": "20260728-phone-7c5346",
         "src_in": 0.0,
         "src_out": 5.8,
-        "tl_in": 933.1999999999991,
+        "tl_in": 933.1993717128519,
         "speed": 1.0,
         "effects": [
           {
@@ -3068,7 +3068,7 @@
         "asset": "20260729-drone-282819",
         "src_in": 11.258,
         "src_out": 20.258,
-        "tl_in": 937.9999999999991,
+        "tl_in": 937.9993717128518,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -3083,7 +3083,7 @@
         "asset": "20260729-phone-992a22",
         "src_in": 0.0,
         "src_out": 9.0,
-        "tl_in": 945.9999999999991,
+        "tl_in": 945.9993717128518,
         "speed": 1.0,
         "effects": [
           {
@@ -3113,7 +3113,7 @@
         "asset": "20260730-phone-552cd8",
         "src_in": 0.0,
         "src_out": 6.6,
-        "tl_in": 954.299999999999,
+        "tl_in": 954.2993717128518,
         "speed": 1.0,
         "effects": [
           {
@@ -3144,7 +3144,7 @@
         "asset": "20260730-drone-b7bed7",
         "src_in": 0.0,
         "src_out": 6.6,
-        "tl_in": 960.199999999999,
+        "tl_in": 960.1993717128518,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -3159,7 +3159,7 @@
         "asset": "20260730-phone-e85889",
         "src_in": 0.0,
         "src_out": 6.6,
-        "tl_in": 966.099999999999,
+        "tl_in": 966.0993717128517,
         "speed": 1.0,
         "effects": [
           {
@@ -3189,7 +3189,7 @@
         "asset": "20260730-unknown-e4dbc0",
         "src_in": 0.0,
         "src_out": 6.6,
-        "tl_in": 971.999999999999,
+        "tl_in": 971.9993717128517,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -3204,7 +3204,7 @@
         "asset": "20260730-unknown-cd9012",
         "src_in": 55.233,
         "src_out": 61.833,
-        "tl_in": 977.899999999999,
+        "tl_in": 977.8993717128517,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -3219,7 +3219,7 @@
         "asset": "20260730-phone-98df48",
         "src_in": 0.0,
         "src_out": 6.6,
-        "tl_in": 983.7999999999989,
+        "tl_in": 983.7993717128517,
         "speed": 1.0,
         "effects": [
           {
@@ -3249,7 +3249,7 @@
         "asset": "20260801-phone-83694e",
         "src_in": 0.0,
         "src_out": 7.4,
-        "tl_in": 989.599999999999,
+        "tl_in": 989.5993717128517,
         "speed": 1.0,
         "effects": [
           {
@@ -3280,7 +3280,7 @@
         "asset": "20260801-drone-914211",
         "src_in": 0.0,
         "src_out": 7.4,
-        "tl_in": 996.199999999999,
+        "tl_in": 996.1993717128518,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -3295,7 +3295,7 @@
         "asset": "20260803-camera-1d32ef",
         "src_in": 0.0,
         "src_out": 7.6,
-        "tl_in": 1002.599999999999,
+        "tl_in": 1002.5993717128517,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -3310,7 +3310,7 @@
         "asset": "20260803-phone-18fb6c",
         "src_in": 0.0,
         "src_out": 7.6,
-        "tl_in": 1009.199999999999,
+        "tl_in": 1009.1993717128518,
         "speed": 1.0,
         "effects": [
           {
@@ -3340,7 +3340,7 @@
         "asset": "20260803-drone-b015cc",
         "src_in": 0.0,
         "src_out": 7.6,
-        "tl_in": 1015.799999999999,
+        "tl_in": 1015.7993717128518,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -3355,7 +3355,7 @@
         "asset": "20260803-drone-574c7c",
         "src_in": 26.0,
         "src_out": 33.6,
-        "tl_in": 1022.3999999999991,
+        "tl_in": 1022.3993717128518,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -3371,7 +3371,7 @@
         "asset": "20260803-drone-08166f",
         "src_in": 0.0,
         "src_out": 7.6,
-        "tl_in": 1028.999999999999,
+        "tl_in": 1028.9993717128518,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -3386,7 +3386,7 @@
         "asset": "20260803-drone-574c7c",
         "src_in": 53.4,
         "src_out": 62.0,
-        "tl_in": 1035.599999999999,
+        "tl_in": 1035.5993717128517,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -3400,9 +3400,9 @@
       {
         "id": "c163",
         "asset": "20260803-drone-574c7c",
-        "src_in": 71.6,
-        "src_out": 75.25,
-        "tl_in": 1043.7999999999988,
+        "src_in": 71.575,
+        "src_out": 75.225,
+        "tl_in": 1043.7993717128516,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -3418,7 +3418,7 @@
         "asset": "20260803-drone-c51c2b",
         "src_in": 0.0,
         "src_out": 7.6,
-        "tl_in": 1047.449999999999,
+        "tl_in": 1047.4493717128516,
         "speed": 1.0,
         "effects": [],
         "note": "2026-08-03"
@@ -3428,7 +3428,7 @@
         "asset": "20260803-drone-d1eb17",
         "src_in": 0.0,
         "src_out": 7.6,
-        "tl_in": 1054.0499999999988,
+        "tl_in": 1054.0493717128516,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -3443,7 +3443,7 @@
         "asset": "20260804-camera-0fc698",
         "src_in": 0.0,
         "src_out": 8.4,
-        "tl_in": 1060.6499999999987,
+        "tl_in": 1060.6493717128515,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -3458,7 +3458,7 @@
         "asset": "20260804-camera-59ef0c",
         "src_in": 6.162,
         "src_out": 14.562,
-        "tl_in": 1068.0499999999988,
+        "tl_in": 1068.0493717128516,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -3473,7 +3473,7 @@
         "asset": "20260804-camera-80b8d0",
         "src_in": 6.461,
         "src_out": 14.861,
-        "tl_in": 1075.449999999999,
+        "tl_in": 1075.4493717128516,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -3488,7 +3488,7 @@
         "asset": "generated-cold-open-black",
         "src_in": 0.0,
         "src_out": 3.0,
-        "tl_in": 1082.349999999999,
+        "tl_in": 1082.3493717128517,
         "speed": 1.0,
         "effects": [
           {
@@ -3570,7 +3570,7 @@
       {
         "id": "ov-stage-box-2026-07-17",
         "png": "overlays/stage-caption-box.png",
-        "tl_in": 32.5,
+        "tl_in": 32.499,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3580,7 +3580,7 @@
       {
         "id": "ov-stage-text-2026-07-17",
         "png": "overlays/stage-caption-2026-07-17.png",
-        "tl_in": 32.5,
+        "tl_in": 32.499,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3590,7 +3590,7 @@
       {
         "id": "ov-stage-box-2026-07-18",
         "png": "overlays/stage-caption-box.png",
-        "tl_in": 48.3,
+        "tl_in": 48.299,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3600,7 +3600,7 @@
       {
         "id": "ov-stage-text-2026-07-18",
         "png": "overlays/stage-caption-2026-07-18.png",
-        "tl_in": 48.3,
+        "tl_in": 48.299,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3610,7 +3610,7 @@
       {
         "id": "ov-stage-box-2026-07-19",
         "png": "overlays/stage-caption-box.png",
-        "tl_in": 119.3,
+        "tl_in": 119.299,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3620,7 +3620,7 @@
       {
         "id": "ov-stage-text-2026-07-19",
         "png": "overlays/stage-caption-2026-07-19.png",
-        "tl_in": 119.3,
+        "tl_in": 119.299,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3630,7 +3630,7 @@
       {
         "id": "ov-stage-box-2026-07-20",
         "png": "overlays/stage-caption-box.png",
-        "tl_in": 183.2,
+        "tl_in": 183.199,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3640,7 +3640,7 @@
       {
         "id": "ov-stage-text-2026-07-20",
         "png": "overlays/stage-caption-2026-07-20.png",
-        "tl_in": 183.2,
+        "tl_in": 183.199,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3650,7 +3650,7 @@
       {
         "id": "ov-stage-box-2026-07-21",
         "png": "overlays/stage-caption-box.png",
-        "tl_in": 255.8,
+        "tl_in": 255.799,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3660,7 +3660,7 @@
       {
         "id": "ov-stage-text-2026-07-21",
         "png": "overlays/stage-caption-2026-07-21.png",
-        "tl_in": 255.8,
+        "tl_in": 255.799,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3670,7 +3670,7 @@
       {
         "id": "ov-stage-box-2026-07-22",
         "png": "overlays/stage-caption-box.png",
-        "tl_in": 281.0,
+        "tl_in": 280.999,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3680,7 +3680,7 @@
       {
         "id": "ov-stage-text-2026-07-22",
         "png": "overlays/stage-caption-2026-07-22.png",
-        "tl_in": 281.0,
+        "tl_in": 280.999,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3690,7 +3690,7 @@
       {
         "id": "ov-stage-box-2026-07-23",
         "png": "overlays/stage-caption-box.png",
-        "tl_in": 315.2,
+        "tl_in": 315.199,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3700,7 +3700,7 @@
       {
         "id": "ov-stage-text-2026-07-23",
         "png": "overlays/stage-caption-2026-07-23.png",
-        "tl_in": 315.2,
+        "tl_in": 315.199,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3710,7 +3710,7 @@
       {
         "id": "ov-stage-box-2026-07-24",
         "png": "overlays/stage-caption-box.png",
-        "tl_in": 409.0,
+        "tl_in": 408.999,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3720,7 +3720,7 @@
       {
         "id": "ov-stage-text-2026-07-24",
         "png": "overlays/stage-caption-2026-07-24.png",
-        "tl_in": 409.0,
+        "tl_in": 408.999,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3730,7 +3730,7 @@
       {
         "id": "ov-stage-box-2026-07-25",
         "png": "overlays/stage-caption-box.png",
-        "tl_in": 526.0,
+        "tl_in": 525.999,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3740,7 +3740,7 @@
       {
         "id": "ov-stage-text-2026-07-25",
         "png": "overlays/stage-caption-2026-07-25.png",
-        "tl_in": 526.0,
+        "tl_in": 525.999,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3750,7 +3750,7 @@
       {
         "id": "ov-stage-box-2026-07-26",
         "png": "overlays/stage-caption-box.png",
-        "tl_in": 619.1,
+        "tl_in": 619.099,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3760,7 +3760,7 @@
       {
         "id": "ov-stage-text-2026-07-26",
         "png": "overlays/stage-caption-2026-07-26.png",
-        "tl_in": 619.1,
+        "tl_in": 619.099,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3770,7 +3770,7 @@
       {
         "id": "ov-stage-box-2026-07-27",
         "png": "overlays/stage-caption-box.png",
-        "tl_in": 733.1,
+        "tl_in": 733.099,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3780,7 +3780,7 @@
       {
         "id": "ov-stage-text-2026-07-27",
         "png": "overlays/stage-caption-2026-07-27.png",
-        "tl_in": 733.1,
+        "tl_in": 733.099,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3790,7 +3790,7 @@
       {
         "id": "ov-stage-box-2026-07-28",
         "png": "overlays/stage-caption-box.png",
-        "tl_in": 811.5,
+        "tl_in": 811.499,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3800,7 +3800,7 @@
       {
         "id": "ov-stage-text-2026-07-28",
         "png": "overlays/stage-caption-2026-07-28.png",
-        "tl_in": 811.5,
+        "tl_in": 811.499,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3810,7 +3810,7 @@
       {
         "id": "ov-stage-box-2026-07-29",
         "png": "overlays/stage-caption-box.png",
-        "tl_in": 939.5,
+        "tl_in": 939.499,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3820,7 +3820,7 @@
       {
         "id": "ov-stage-text-2026-07-29",
         "png": "overlays/stage-caption-2026-07-29.png",
-        "tl_in": 939.5,
+        "tl_in": 939.499,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3830,7 +3830,7 @@
       {
         "id": "ov-stage-box-2026-07-30",
         "png": "overlays/stage-caption-box.png",
-        "tl_in": 955.8,
+        "tl_in": 955.799,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3840,7 +3840,7 @@
       {
         "id": "ov-stage-text-2026-07-30",
         "png": "overlays/stage-caption-2026-07-30.png",
-        "tl_in": 955.8,
+        "tl_in": 955.799,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3850,7 +3850,7 @@
       {
         "id": "ov-stage-box-2026-08-01",
         "png": "overlays/stage-caption-box.png",
-        "tl_in": 991.1,
+        "tl_in": 991.099,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3860,7 +3860,7 @@
       {
         "id": "ov-stage-text-2026-08-01",
         "png": "overlays/stage-caption-2026-08-01.png",
-        "tl_in": 991.1,
+        "tl_in": 991.099,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3870,7 +3870,7 @@
       {
         "id": "ov-stage-box-2026-08-03",
         "png": "overlays/stage-caption-box.png",
-        "tl_in": 1004.1,
+        "tl_in": 1004.099,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3880,7 +3880,7 @@
       {
         "id": "ov-stage-text-2026-08-03",
         "png": "overlays/stage-caption-2026-08-03.png",
-        "tl_in": 1004.1,
+        "tl_in": 1004.099,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3890,7 +3890,7 @@
       {
         "id": "ov-stage-box-2026-08-04",
         "png": "overlays/stage-caption-box.png",
-        "tl_in": 1062.15,
+        "tl_in": 1062.149,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3900,7 +3900,7 @@
       {
         "id": "ov-stage-text-2026-08-04",
         "png": "overlays/stage-caption-2026-08-04.png",
-        "tl_in": 1062.15,
+        "tl_in": 1062.149,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3943,7 +3943,7 @@
       {
         "id": "atmo-faehre-wind",
         "asset": "20260719-camera-21e343",
-        "tl_in": 146.2,
+        "tl_in": 146.199,
         "dur": 7.9,
         "src_in": 2.381,
         "gain_db": -6.0,
@@ -3955,7 +3955,7 @@
       {
         "id": "atmo-gitarre-kitzeln",
         "asset": "20260722-camera-7545fc",
-        "tl_in": 286.3,
+        "tl_in": 286.299,
         "dur": 7.6,
         "src_in": 5.954,
         "gain_db": -6.0,

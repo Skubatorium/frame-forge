@@ -46,6 +46,7 @@ from __future__ import annotations
 
 import csv
 import json
+import math
 from pathlib import Path
 
 ROOT = Path("projects/norwegen-2026")
@@ -58,6 +59,12 @@ CAMERA_UTC_OFFSET_H = 2
 
 # Ab hier gilt ein Clip als Hochkant/quadratisch und bekommt `fit: "blur"` statt crop/pad.
 PORTRAIT_MAX_ASPECT = 1.05
+
+# Untergrenze fuer die Verlangsamung, wenn ein Quellclip kuerzer ist als die gewuenschte
+# Standzeit. Darunter waere die Zeitlupe sichtbar, dann wird der Clip lieber gekuerzt.
+# 0.7 entspricht dem, was der urspruengliche Schnitt beim Titelbett gemacht hat (18,7s auf 24s
+# gestreckt = 0.78) und was der Nutzer dort nie beanstandet hat.
+MIN_SPEED = 0.7
 
 # -- Schnittfassung je Reisetag -------------------------------------------------------------
 # Reihenfolge = Zielreihenfolge im Film. Standard ist die korrigierte Aufnahmezeit; wo davon
@@ -569,8 +576,37 @@ def build() -> None:
                 if trim:
                     src_in = trim[0]
                     dur = min(dur, trim[1] - trim[0])
+            # Quell-Fenster gegen die echte Cliplaenge begrenzen. **Kein Detail:** laeuft ein
+            # Video-Clip mitten im Film aus, endet der GESAMTE Video-Pfad dort. Genau das ist
+            # passiert -- das Titelbett verlangte 24s aus einer 18,7s-Datei, und der fertige
+            # Preview war 26,7s lang statt 18 Minuten, ohne jede Fehlermeldung. `qc.validate`
+            # prueft das jetzt zusaetzlich (`asset_durations`).
+            src_dur = (asset.get("probe") or {}).get("dur")
+            if src_dur:
+                head = 0.05  # Sicherheitsabstand zum Dateiende
+                if src_in + dur > src_dur - head:
+                    src_in = max(0.0, src_dur - dur - head)  # Fenster nach vorne schieben
+                usable = max(0.1, src_dur - src_in - head)
+                if usable < dur:
+                    # Quelle reicht trotzdem nicht. Lieber leicht verlangsamen als kuerzen: eine
+                    # kuerzere Timeline-Dauer wuerde alle Folgeclips verschieben. Unter
+                    # `MIN_SPEED` waere die Zeitlupe sichtbar -- dann doch kuerzen.
+                    speed = usable / dur
+                    if speed >= MIN_SPEED:
+                        clip["speed"] = round(speed, 4)
+                    else:
+                        dur = usable
+                    src_span = usable
+                    warnings.append(
+                        f"{asset_id}: Quelle {src_dur:.1f}s reicht nicht fuer {dur:.1f}s "
+                        f"-> speed {clip.get('speed', 1.0)}, src_in {src_in:.1f}"
+                    )
+                else:
+                    src_span = dur
+            else:
+                src_span = dur
             clip["src_in"] = round(src_in, 3)
-            clip["src_out"] = round(src_in + dur, 3)
+            clip["src_out"] = round(src_in + src_span, 3)
 
         aspect = aspect_of(asset)
         if aspect is None:
@@ -602,7 +638,9 @@ def build() -> None:
         if note:
             clip["note"] = note
         video.append(clip)
-        tl = clip["tl_in"] + (clip["src_out"] - clip["src_in"])
+        # Durch `speed` teilen: bei verlangsamten Clips ist die Timeline-Dauer laenger als das
+        # Quell-Fenster. Ohne das wuerden alle Folgeclips zu frueh anfangen.
+        tl = clip["tl_in"] + (clip["src_out"] - clip["src_in"]) / clip["speed"]
         return clip
 
     # -- Cold-Open + Titelbett -------------------------------------------------------------
@@ -660,7 +698,13 @@ def build() -> None:
     # kurzes, gewolltes Schwarzbild als Abschluss bleibt.
     add("generated-cold-open-black", 3.0, 1.5, xfade_type="fade", note="Ausfaden, Schluss")
 
-    duration = round(video[-1]["tl_in"] + (video[-1]["src_out"] - video[-1]["src_in"]), 3)
+    # Aufrunden, nicht runden: `qc._check_video_length_consistency` meldet jeden Clip, der ueber
+    # `duration` hinausragt, und bei kaufmaennischem Runden kann der letzte Clip um ein
+    # Tausendstel zu lang werden.
+    last = video[-1]
+    duration = math.ceil(
+        (last["tl_in"] + (last["src_out"] - last["src_in"]) / last["speed"]) * 1000
+    ) / 1000
 
     # -- Bauchbinden (Overlays) ------------------------------------------------------------
     overlay = [o for o in old["tracks"]["overlay"] if o["id"].startswith("ov-title-")]
