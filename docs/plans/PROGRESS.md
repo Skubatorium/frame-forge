@@ -2251,3 +2251,87 @@ Nutzer sichtete den PREVIEWED-Stand (Screenshot) und meldete drei Befunde zuruec
 
 **Naechster Schritt:** Nutzer sichtet den ueberarbeiteten Preview, gibt frei oder gibt weiteres
 Feedback (offen: ob/wie ein neues Cold-Open-Konzept mit Karte kommen soll).
+
+### `vlog-data` Preview-Feedback Runde 2: Render-Bug, Cold-Open kuerzer, Titel-Choreo, Karten-Stil, Bauchbinden (2026-08-08)
+
+**Session per Nutzerwunsch hier abgebrochen (Token/Kontext sparen) — siehe "Offener Punkt beim
+Abbruch" unten.** Alles bis dahin ist committet und funktioniert einzeln (Tests gruen), nur der
+**finale Voll-Preview mit allen Aenderungen zusammen wurde noch nie erfolgreich durchgerendert.**
+
+**Gefundener Bug (kritisch, betraf vermutlich auch Runde 1 im Hintergrund):** Der Karten-Clip-
+Layer in `build_filtergraph` (`frameforge/render.py`) nutzte `shortest=1` auf dem `overlay`-
+Filter. Der Karten-Clip ist aber ein endliches `-i`-Input (kein `-loop 1` ohne `-t` wie das
+Text-Overlay, wo `shortest=1` tatsaechlich noetig ist) — `shortest=1` kappt den KOMPLETTEN
+bisher aufgebauten Video-Pfad, sobald eines der beiden Inputs sein Ende erreicht. Der erste
+Karten-Clip (K2, endete bei 132s) schnitt so den gesamten restlichen Film ab; Audio lief
+unbeeinflusst weiter. Ergebnis: Preview-Datei mit korrektem Audio (voller Laenge) aber Video-
+Track nur ~132-142s lang — QuickTime zeigt sowas als eingefrorenes Bild/verzerrtes
+Player-Fenster an, **das war sehr wahrscheinlich auch die Ursache des "Hochkant"-Befunds aus
+Runde 1**, nicht ein Anzeige-Glitch wie dort vermutet (mein Frame-Check damals lag zufaellig vor
+der Kapp-Stelle bei ~90s). Fix: `shortest=1` bei der Karten-Overlay-Zeile entfernt, Regressions-
+test ergaenzt (`tests/test_render.py`). **Folge:** die tatsaechliche Preview-Datei ist jetzt
+~7x groesser als vorher gedacht (voller Frame-Count statt ~140s) — ca. 1,6-2 GB statt 200 MB,
+das hat die Platte beim ersten Vollrender-Versuch dieser Runde gesprengt (`No space left on
+device`, Datei korrupt, geloescht).
+
+**Weiteres Nutzerfeedback umgesetzt** (Timeline, Templates, Recipes — alles committet):
+
+- **Cold-Open halbiert:** 40s -> 10s reines Schwarzbild, alles danach um 30s nach vorne
+  verschoben (`c000.src_out`, alle spaeteren `tl_in` in `video`/`map`/`audio` minus 30,
+  `brief.yaml` `target_duration_s` von 1104 auf 1074 korrigiert). Neue Gesamtlaenge 1073,887s.
+- **Titel komplett neu choreografiert** (Nutzer wollte diagonal-dynamisch statt zentriert-
+  gestapelt): EINE schmale Box (nur "2026"-Breite) unten rechts, "Norwegen" (weiss, gross, noch
+  15% groesser als vorher) fliegt von links ein und ragt oben drueber hinaus, "2026" (weiss,
+  75% von Norwegens Groesse) und "Roadtrip Edition" (Akzentfarbe/gelb, 75% von 2026, verzoegert)
+  sitzen als zwei Zeilen in/auf der Box, alles mit leichtem Drift waehrend der Hold-Phase.
+  Templates `title-only.svg`/`subtitle-only.svg` generisch auf frei positionierbare Texte
+  umgebaut (`text_x_pct`/`text_y_pct`/`text_anchor`, `subtitle_fill`) statt fest zentriert;
+  neues `box-only.svg` fuer ein eigenstaendiges Panel, unabhaengig vom Text positionierbar.
+  Reproduzierbares Rezept: `exports/vlog-data/title-recipe.py`. Vor dem Einbau in die echte
+  Timeline mit einer synthetischen Mini-Timeline (nur 12s) probegerendert, um nicht wieder einen
+  vollen 18-Minuten-Render zu verschwenden — Methode fuer kuenftige Overlay-Iterationen merken.
+- **XML-Kommentar-Falle gefunden:** `--` (doppelter Bindestrich) in SVG-Kommentaren bricht
+  cairosvgs strikten XML-Parser ("not well-formed"). In den drei neuen/geaenderten Templates
+  durch Kommas ersetzt. Gilt fuer alle kuenftigen Template-Kommentare in diesem Projekt.
+- **Karten-Insets ueberarbeitet:** Zoom je Kapitel um +2 erhoeht (naeher dran, Strassen-
+  /Ortsnamen lesbar), Box-Groesse 640x360 -> 768x432 (+20%), Route/Positionsmarker von Orange
+  auf Blau (`INSET_ROUTE_COLOR`/`INSET_MARKER_COLOR` in `route/map-animator-recipe.py`),
+  Ortsnamen-Labels von Weiss auf Schwarz (`INSET_LABEL_COLOR`) — `frameforge/map.py` bekam dafuer
+  neue Parameter `marker_color`/`label_color` (vorher hart auf `MARKER_COLOR` verdrahtet, Route
+  und Beschriftung liessen sich nicht unabhaengig einfaerben). Karten-Positions-Rand in
+  `render.py` von 20px auf 60px vergroessert (Nutzer wollte mehr Abstand). Alle 14 Insets neu
+  gerendert (`rebuild_map_insets.py`-Muster, nicht committet, siehe unten).
+  **Bekannte Grenze, keine Fehlkonfiguration:** Strassenfarben etc. AUF der Kachelkarte selbst
+  (z.B. der orange Fernstrassen-Belag) kommen aus dem OSM-Rasterkachel-Stil und sind nicht
+  einfaerbbar, ohne den Tile-Server/-Stil zu wechseln — nur unsere EIGENE gezeichnete
+  Fortschritts-Route + Marker + Labels sind parametrisiert.
+- **Neue Bauchbinden bei der Karte:** "Tag N · Ort" blendet kurz (4s) ein, wenn ein neues
+  Karten-Kapitel beginnt, dann wieder aus (Kilometerstand bleibt der einzige Dauer-Text).
+  Tag-Zaehlung ist die des Nutzers (Tag 0 = Beladen 17.07., nicht `stages.csv`-Tag 1) —
+  `last_day - 1`. K12 ausgelassen (reine Wiederholung von K11/Lom). Reproduzierbares Rezept:
+  `exports/vlog-data/stage-caption-recipe.py`.
+
+**Commits dieser Runde:** `6e67be7` (shortest=1-Fix + Regressionstest), Rest (Templates,
+map.py-Parameter, render.py-Margin, Timeline-Umbau, Recipes, brief.yaml) **noch NICHT
+committet** — siehe naechster Abschnitt.
+
+**Offener Punkt beim Abbruch:** Preview mit ALLEN Aenderungen dieser Runde zusammen wurde noch
+nie erfolgreich durchgerendert (erster Versuch lief in den Platz-Fehler wegen des frisch
+gefixten shortest=1-Bugs, danach hat der Nutzer die Session zum Tokensparen abgebrochen, bevor
+der zweite Versuch fertig war — laufender ffmpeg-Prozess wurde sauber gekillt, keine Daten-
+verluste). **Naechster Schritt fuer die Folgesession:**
+1. `git status` pruefen — falls die Aenderungen unten noch nicht committet sind, zuerst
+   `.venv/bin/python -m pytest tests/ -q --ignore=tests/test_design.py` (muss 501 gruen sein,
+   die 6 `infocard.svg`-Fehlschlaege in `test_design.py` sind vorbestehend, siehe oben) und dann
+   committen.
+2. Vor dem Render: `df -h /` pruefen. Erwartete Preview-Groesse jetzt **~1,6-2 GB** (nicht mehr
+   200 MB wie vor dem shortest=1-Fix!) — bei < 4 GB frei erst Platz schaffen (z.B. mit dem
+   Nutzer klaeren, ob weitere fertige Exporte wie `drone-edit`s Preview-Zwischendateien weg
+   koennen), sonst droht wieder "No space left on device".
+3. `.venv/bin/frameforge preview norwegen-2026 vlog-data` — laeuft laut bisherigen Versuchen
+   >2 Minuten (Timeout), also mit `run_in_background` planen.
+4. Nach Erfolg: Frame-Checks bei Cold-Open (sollte jetzt bei ~10s in K1 uebergehen), Titel-
+   Sequenz (~t=12-24s: Box, dann Norwegen/2026 diagonal, dann Roadtrip Edition), Karten-Insets
+   (blaue Route/Marker, schwarze Ortsnamen, kein HÖHE-Label, 60px Rand) und Bauchbinden (kurz
+   nach jedem Kapitel-Start).
+5. Dem Nutzer den fertigen Preview zur Sichtung geben.

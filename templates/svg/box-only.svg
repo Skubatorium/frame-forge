@@ -1,0 +1,10 @@
+<svg width="{{width}}" height="{{height}}" xmlns="http://www.w3.org/2000/svg">
+  <!-- Nur ein halbtransparentes Rechteck, transparenter Rest, eigener Layer, damit ein
+       Panel unabhaengig von Text-Layern positioniert/animiert werden kann (z.B. Text ragt
+       oben ueber das Panel hinaus, wie bei title-only.svg/subtitle-only.svg diagonal versetzt
+       darueber gelegt). Position/Groesse frei ueber `box_x_pct`/`box_y_pct`/`box_w_pct`/
+       `box_h_pct` (Prozent von Breite/Hoehe). -->
+  <rect x="{{box_x_pct}}%" y="{{box_y_pct}}%" width="{{box_w_pct}}%" height="{{box_h_pct}}%"
+        rx="{{corner_radius}}" ry="{{corner_radius}}"
+        fill="{{primary_color}}" fill-opacity="{{panel_opacity}}"/>
+</svg>

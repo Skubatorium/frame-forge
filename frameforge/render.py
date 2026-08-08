@@ -623,7 +623,7 @@ def build_filtergraph(
         # gekappt -- der erste Karten-Clip (K2) hat den kompletten Film auf ~132s abgeschnitten,
         # Ton lief unbeeinflusst weiter (gefundener Bug, Video "friert ein" bei Minute 2).
         filters.append(
-            f"[{cur_video}][{shifted}]overlay=x=W-w-20:y=H-h-20:"
+            f"[{cur_video}][{shifted}]overlay=x=W-w-60:y=H-h-60:"
             f"enable='between(t,{map_clip.tl_in},{map_clip.tl_in + map_clip.dur})'[{next_video}]"
         )
         cur_video = next_video

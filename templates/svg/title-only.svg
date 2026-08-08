@@ -1,13 +1,12 @@
 <svg width="{{width}}" height="{{height}}" xmlns="http://www.w3.org/2000/svg">
-  <!-- Titel-Text + halbtransparentes Panel dahinter (Lesbarkeit auf hellem/unruhigem
-       Hintergrund, dieselbe Panel-Farbe/-Deckkraft wie die Bauchbinden). Fuer Slide-in-Animation
-       als eigener Overlay-Layer gedacht (siehe frameforge/render.py `_overlay_x_expr`/
-       `_overlay_y_expr`) - die Bewegung selbst passiert per Zeit-Expression im Render, nicht
-       hier im SVG; Panel und Text laufen deshalb gemeinsam als ein Layer. -->
-  <rect x="10%" y="{{title_panel_y}}%" width="80%" height="{{title_panel_h}}%"
-        rx="{{corner_radius}}" ry="{{corner_radius}}"
-        fill="{{primary_color}}" fill-opacity="{{panel_opacity}}"/>
-  <text x="50%" y="46%" font-family="{{font_display}}" font-weight="900" font-style="normal"
-        font-size="{{title_size}}" fill="{{text_color}}" text-anchor="middle"
-        dominant-baseline="middle">{{title}}</text>
+  <!-- Nur der Titel-Text, transparenter Rest, frei positionierbar (`text_x_pct`/`text_y_pct`/
+       `text_anchor`, Default 50%/46%/middle, bestehende Verwender ohne diese Tokens sehen
+       exakt das bisherige zentrierte Layout). Fuer Slide-in-Animation als eigener Overlay-Layer
+       gedacht (siehe frameforge/render.py `_overlay_x_expr`/`_overlay_y_expr`) - die Bewegung
+       selbst passiert per Zeit-Expression im Render, nicht hier im SVG. Ein Hintergrund-Panel
+       (falls gewuenscht) ist ein eigener Layer (`box-only.svg`), nicht Teil dieses Templates,
+       Text und Panel laufen dann unabhaengig, koennen z.B. versetzt zueinander sitzen. -->
+  <text x="{{text_x_pct}}%" y="{{text_y_pct}}%" font-family="{{font_display}}" font-weight="900"
+        font-style="normal" font-size="{{title_size}}" fill="{{text_color}}"
+        text-anchor="{{text_anchor}}" dominant-baseline="middle">{{title}}</text>
 </svg>

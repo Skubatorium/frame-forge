@@ -1,11 +1,11 @@
 <svg width="{{width}}" height="{{height}}" xmlns="http://www.w3.org/2000/svg">
-  <!-- Unterzeilen-Text + halbtransparentes Panel dahinter, analog title-only.svg. Gegenstueck
-       zu title-only.svg fuer den zweiten Slide-in-Layer (kommt typischerweise von der
-       Gegenrichtung). -->
-  <rect x="25%" y="{{subtitle_panel_y}}%" width="50%" height="{{subtitle_panel_h}}%"
-        rx="{{corner_radius}}" ry="{{corner_radius}}"
-        fill="{{primary_color}}" fill-opacity="{{panel_opacity}}"/>
-  <text x="50%" y="58%" font-family="{{font_text}}" font-weight="700" font-style="normal"
-        font-size="{{subtitle_size}}" fill="{{accent_color}}" text-anchor="middle"
-        dominant-baseline="middle">{{subtitle}}</text>
+  <!-- Unterzeilen-Text, transparenter Rest, frei positionierbar (`text_x_pct`/`text_y_pct`/
+       `text_anchor`, Default 50%/58%/middle) und frei einfärbbar (`subtitle_fill`, Default
+       `accent_color`, bestehende Verwender ohne diese Tokens sehen exakt das bisherige
+       zentrierte Layout in der Akzentfarbe). Gegenstueck zu title-only.svg fuer einen zweiten
+       Slide-in-Layer; wird auch fuer eine dritte, kleinere Zeile wiederverwendet (eigene
+       `subtitle_size`-Ueberschreibung durch den Aufrufer statt eines eigenen Templates). -->
+  <text x="{{text_x_pct}}%" y="{{text_y_pct}}%" font-family="{{font_text}}" font-weight="700"
+        font-style="normal" font-size="{{subtitle_size}}" fill="{{subtitle_fill}}"
+        text-anchor="{{text_anchor}}" dominant-baseline="middle">{{subtitle}}</text>
 </svg>

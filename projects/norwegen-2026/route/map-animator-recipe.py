@@ -55,7 +55,13 @@ ROUTE = ROOT / "route"
 
 FPS = 30.0
 RESOLUTION = (3840, 2160)          # wie `exports/test-timelapse-journey/timeline.json`
-INSET_SIZE = (640, 360)            # 1/6 der Zielaufloesung, `map.py`-Default (DEFAULT_WIDTH/HEIGHT)
+INSET_SIZE = (768, 432)             # 20% groesser als der `map.py`-Default (Nutzerfeedback:
+                                     # Karte darf ruhig etwas mehr Platz einnehmen)
+INSET_ROUTE_COLOR = (74, 133, 209, 255)    # blau statt Standard-Orange (Nutzerfeedback: Route
+                                             # wirkte wie "gelb" markiert, soll blau sein)
+INSET_MARKER_COLOR = (74, 133, 209, 255)   # Positionsmarker dieselbe Blautoene
+INSET_LABEL_COLOR = (20, 20, 24, 255)      # Ortsnamen schwarz statt weiss (Lesbarkeit auf
+                                             # hellen Kartenflaechen)
 
 # -- Rohdaten einmal laden (alle Indizes unten beziehen sich auf DIESEN unveraenderten Track) --
 
@@ -177,23 +183,25 @@ def _pois_for_days(days: list[int]) -> list[dict]:
 # `stages.csv` (`km`-Spalte) bis Kapitelbeginn -- NICHT aus `cumulative_km(TRACK)`, weil die
 # dichte GPX-Distanz durch den Faehr-Umweg (s.o.) systematisch zu hoch waere, wenn man sie
 # roh aufsummiert.
+# Zoom-Werte gegenueber der ersten Fassung durchgehend +2 (Nutzerfeedback nach der ersten
+# Preview-Sichtung: naeher ranzoomen, damit Strassen-/Ortsnamen lesbar sind).
 CHAPTERS = [
     # id     tl_in   dur    tage               idx_from  idx_to   km_offset  zoom  dwell_s
-    ("K2",   52.0,   80.0,  [1, 2],            0,        6797,    0.0,       6,    2.0),
-    ("K3",  132.0,   85.0,  [3],               6797,     26254,   578.5,     7,    2.0),
-    ("K4",  217.0,  100.0,  [4],               26254,    26254,   1131.0,    10,   0.0),
-    ("K5",  317.0,   78.0,  [5, 6],            26254,    26254,   1171.0,    10,   0.0),
-    ("K6",  395.0,  105.0,  [7],               26254,    40725,   1231.0,    8,    2.5),
-    ("K7",  500.0,  115.0,  [8],               40725,    46829,   1451.0,    9,    2.5),
-    ("K8",  615.0,  115.0,  [9],               46829,    46829,   1641.0,    10,   0.0),
-    ("K9",  730.0,  100.0,  [10],              46829,    59375,   1651.0,    8,    2.0),
-    ("K10", 830.0,   85.0,  [11],              59375,    59375,   1929.0,    10,   0.0),
-    ("K11", 915.0,   95.0,  [12],              59375,    70947,   1939.0,    8,    2.5),
+    ("K2",   52.0,   80.0,  [1, 2],            0,        6797,    0.0,       8,    2.0),
+    ("K3",  132.0,   85.0,  [3],               6797,     26254,   578.5,     9,    2.0),
+    ("K4",  217.0,  100.0,  [4],               26254,    26254,   1131.0,    12,   0.0),
+    ("K5",  317.0,   78.0,  [5, 6],            26254,    26254,   1171.0,    12,   0.0),
+    ("K6",  395.0,  105.0,  [7],               26254,    40725,   1231.0,    10,   2.5),
+    ("K7",  500.0,  115.0,  [8],               40725,    46829,   1451.0,    11,   2.5),
+    ("K8",  615.0,  115.0,  [9],               46829,    46829,   1641.0,    12,   0.0),
+    ("K9",  730.0,  100.0,  [10],              46829,    59375,   1651.0,    10,   2.0),
+    ("K10", 830.0,   85.0,  [11],              59375,    59375,   1929.0,    12,   0.0),
+    ("K11", 915.0,   95.0,  [12],              59375,    70947,   1939.0,    10,   2.5),
     # K12 -- Sonderfall, siehe Absatz unten. Kein Track-Fortschritt, Kamera haelt auf Lom.
-    ("K12", 1010.0,   55.0, [12],              70947,    70947,   2205.0,    11,   0.0),
-    ("K13", 1065.0,   40.0, [13],              70947,    81601,   2205.0,    9,    2.0),
-    ("K14", 1105.0,   45.0, [14, 15],          81601,    81601,   2505.0,    10,   0.0),
-    ("K15", 1150.0,   50.0, [16, 17, 18, 19],  81601,    117844,  2515.0,    6,    1.5),
+    ("K12", 1010.0,   55.0, [12],              70947,    70947,   2205.0,    13,   0.0),
+    ("K13", 1065.0,   40.0, [13],              70947,    81601,   2205.0,    11,   2.0),
+    ("K14", 1105.0,   45.0, [14, 15],          81601,    81601,   2505.0,    12,   0.0),
+    ("K15", 1150.0,   50.0, [16, 17, 18, 19],  81601,    117844,  2515.0,    8,    1.5),
 ]
 
 # -- K12-Sonderfall: Etappengrenze bei Filmzeit 1065 s -------------------------------------
@@ -243,6 +251,10 @@ def render_inset_chapter(entry: tuple, out_dir: Path, tile_cache_dir: Path):
         dwell_s=dwell_s,
         ease_s=1.2,
         step_s=0.5,
+        route_color=INSET_ROUTE_COLOR,
+        marker_color=INSET_MARKER_COLOR,
+        label_color=INSET_LABEL_COLOR,
+        route_outline_color=(255, 255, 255, 220),  # bleibt lesbar, auch bei dunkler Route
     )
     return frames
 

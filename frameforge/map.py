@@ -200,6 +200,8 @@ def render_route_frames(
     pois: list[dict] | None = None,
     route_outline_color: tuple[int, int, int, int] | None = None,
     marker_outline_color: tuple[int, int, int, int] | None = None,
+    marker_color: tuple[int, int, int, int] = MARKER_COLOR,
+    label_color: tuple[int, int, int, int] = MARKER_COLOR,
     poi_labels: bool = True,
     viewport: str = "fit",
     zoom: int | None = None,
@@ -293,9 +295,9 @@ def render_route_frames(
         for (px, py), name in frame_pois:
             if not (-MARGIN_PX <= px <= width + MARGIN_PX and -MARGIN_PX <= py <= height + MARGIN_PX):
                 continue  # ausserhalb des Ausschnitts (nur im Follow-Modus moeglich)
-            draw.ellipse((px - 4, py - 4, px + 4, py + 4), fill=MARKER_COLOR)
+            draw.ellipse((px - 4, py - 4, px + 4, py + 4), fill=marker_color)
             if name and poi_labels:
-                draw.text((px + 6, py - 6), name, fill=MARKER_COLOR)
+                draw.text((px + 6, py - 6), name, fill=label_color)
         # Auf einer hellen Kachelkarte verschwindet eine duenne Linie; ein dunkler Rand
         # darunter macht sie lesbar, ohne die Routenfarbe des Projekts zu aendern.
         if route_outline_color is not None:
@@ -309,7 +311,7 @@ def render_route_frames(
             if marker_outline_color is not None:
                 draw.ellipse((cx - r - 3, cy - r - 3, cx + r + 3, cy + r + 3),
                              fill=marker_outline_color)
-            draw.ellipse((cx - r, cy - r, cx + r, cy + r), fill=MARKER_COLOR)
+            draw.ellipse((cx - r, cy - r, cx + r, cy + r), fill=marker_color)
 
         target = out_dir / f"frame_{i:04d}.png"
         image.save(target)
@@ -535,6 +537,8 @@ def render_inset_frames(
     route_width_px: int = ROUTE_WIDTH_PX,
     route_outline_color: tuple[int, int, int, int] | None = None,
     marker_outline_color: tuple[int, int, int, int] | None = None,
+    marker_color: tuple[int, int, int, int] = MARKER_COLOR,
+    label_color: tuple[int, int, int, int] = MARKER_COLOR,
     poi_labels: bool = False,
     bar_ratio: float = 0.34,
 ) -> list[Path]:
@@ -574,7 +578,7 @@ def render_inset_frames(
         tile_cache_dir=tile_cache_dir, tile_server_url=tile_server_url, fetcher=fetcher,
         marker_icon=marker_icon, route_color=route_color, route_width_px=route_width_px,
         route_outline_color=route_outline_color, marker_outline_color=marker_outline_color,
-        poi_labels=poi_labels,
+        marker_color=marker_color, label_color=label_color, poi_labels=poi_labels,
     )
 
     frame_count = max(1, round(fps * dur))

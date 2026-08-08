@@ -6,7 +6,10 @@ preset: nordic-cinematic
 # umgekehrt — Kapitel werden an die echten Tracklaengen angepasst, nicht die Musik gedehnt/
 # geloopt. Neue Laenge = 730 s (Wechselpunkt Naturaleza->Aguila de Oro) + 373,887 s
 # (gemessene Restlaenge Aguila de Oro ab src_in 0,743 s) = 1103,887 s.
-target_duration_s: 1104
+# Nochmal korrigiert 2026-08-08 (Preview-Feedback Runde 1): Cold-Open von 40 s auf 10 s
+# halbiert (Nutzer fand die reine Schwarzbild-Strecke zu lang), alles danach um 30 s nach
+# vorne verschoben. Neue Laenge 1073,887 s.
+target_duration_s: 1074
 language: de
 
 # --- Overrides ---
