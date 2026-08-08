@@ -1,6 +1,12 @@
-# Vollversion mit Karten-HUD (unten rechts, durchgehend), Etappen-/Ortsdetails. ~20 Min.
+# Vollversion mit Karten-HUD (unten rechts, durchgehend), Etappen-/Ortsdetails. ~18:24 Min.
 preset: nordic-cinematic
-target_duration_s: 1200  # ~20 Min., flexibel wie drone-edit — Material/Musiklaenge entscheidet
+# Korrigiert 2026-08-08 (war 1200 = 20 Min): audio-designer hat die drei Pflicht-Tracks
+# gemessen, Aguila de Oro (Ecstatic Mix) ist real nur 374,63 s statt der urspruenglich
+# angenommenen 480 s fuer Abschnitt C. Regel: Musik-Gesamtlaenge bestimmt Filmlaenge, nicht
+# umgekehrt — Kapitel werden an die echten Tracklaengen angepasst, nicht die Musik gedehnt/
+# geloopt. Neue Laenge = 730 s (Wechselpunkt Naturaleza->Aguila de Oro) + 373,887 s
+# (gemessene Restlaenge Aguila de Oro ab src_in 0,743 s) = 1103,887 s.
+target_duration_s: 1104
 language: de
 
 # --- Overrides ---
