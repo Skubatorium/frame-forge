@@ -616,8 +616,14 @@ def build_filtergraph(
         shifted = f"map{k}shift"
         next_video = f"vmap{k}"
         filters.append(f"[{idx}:v]setpts=PTS+{map_clip.tl_in}/TB[{shifted}]")
+        # Kein `shortest=1` hier: der Karten-Clip ist ein endliches `-i`-Input (kein `-loop 1`
+        # ohne `-t` wie beim Text-Overlay oben), sein eigenes Dateiende faellt schon mit dem
+        # Ende seines `enable`-Fensters zusammen. Mit `shortest=1` haette **jeder** Karten-Clip
+        # in dieser Schleife das gesamte bis dahin aufgebaute `cur_video` auf seine eigene Laenge
+        # gekappt -- der erste Karten-Clip (K2) hat den kompletten Film auf ~132s abgeschnitten,
+        # Ton lief unbeeinflusst weiter (gefundener Bug, Video "friert ein" bei Minute 2).
         filters.append(
-            f"[{cur_video}][{shifted}]overlay=x=W-w-20:y=H-h-20:shortest=1:"
+            f"[{cur_video}][{shifted}]overlay=x=W-w-20:y=H-h-20:"
             f"enable='between(t,{map_clip.tl_in},{map_clip.tl_in + map_clip.dur})'[{next_video}]"
         )
         cur_video = next_video

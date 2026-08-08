@@ -196,6 +196,14 @@ def test_build_filtergraph_map_clip_shifts_by_tl_in():
     )
     assert "setpts=PTS+1.0/TB" in graph.filter_complex
     assert "between(t,1.0,1.5)" in graph.filter_complex
+    # Regression: `shortest=1` auf dem Karten-Overlay kappt den GESAMTEN bis dahin
+    # aufgebauten Video-Pfad auf die Laenge des Karten-Clips, sobald dieser (endliches
+    # `-i`-Input, kein `-loop 1`) sein eigenes Dateiende erreicht -- gefundener Bug: Bild fror
+    # ein, sobald der erste Karten-Clip zu Ende war, Ton lief unbeeinflusst weiter.
+    map_overlay_line = next(
+        line for line in graph.filter_complex.split(";") if "map0shift" in line and "overlay=" in line
+    )
+    assert "shortest=1" not in map_overlay_line
 
 
 def test_build_filtergraph_audio_mixes_and_applies_gain():
