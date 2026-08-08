@@ -184,6 +184,60 @@ def test_build_filtergraph_overlay_drift_only_after_slide_in():
     assert "if(gte(t,1.500),15.00*sin(2*PI*(t-1.500)/4.000)," in graph.filter_complex
 
 
+def test_overlays_scale_with_a_smaller_target_resolution():
+    """Overlay-PNGs entstehen in Timeline-Auflaesung. Rendert man kleiner (1080p-Preview aus
+    einer 4K-Timeline), muessen PNG UND die Pixelwerte in `anim` mitskaliert werden -- sonst
+    liegt ein 4K-Titel in Originalgroesse auf einem 1080p-Bild und schiebt viermal zu weit."""
+    timeline = Timeline(
+        export="teaser", fps=25, resolution=(3840, 2160), duration=2.0,
+        tracks={
+            "video": [{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0}],
+            "overlay": [
+                {"id": "o1", "png": "overlays/title.png", "tl_in": 0.0, "dur": 2.0,
+                 "anim": {"fade_in_s": "0.5", "slide_from_px": "-800", "slide_in_s": "1.0"}}
+            ],
+        },
+    )
+    graph = build_filtergraph(
+        timeline,
+        resolve_asset=lambda aid: Path(f"/media/{aid}.mp4"),
+        export_root=Path("/export"),
+        project_root=Path("/project"),
+        resolution=(1920, 1080),
+    )
+    assert "scale=1920:1080" in graph.filter_complex  # das PNG wird mitskaliert
+    assert "-400.00*" in graph.filter_complex  # halber Slide-Weg bei halber Breite
+    assert "-800.00*" not in graph.filter_complex
+
+
+def test_overlays_untouched_when_rendering_at_timeline_resolution():
+    """Ohne Auflaesungswechsel darf sich an bestehenden Overlays nichts aendern."""
+    timeline = _timeline(
+        video=[{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0}],
+        overlay=[
+            {"id": "o1", "png": "overlays/title.png", "tl_in": 0.0, "dur": 2.0,
+             "anim": {"slide_from_px": "-800", "slide_in_s": "1.0"}}
+        ],
+    )
+    graph = build_filtergraph(
+        timeline,
+        resolve_asset=lambda aid: Path(f"/media/{aid}.mp4"),
+        export_root=Path("/export"),
+        project_root=Path("/project"),
+    )
+    assert "-800.00*" in graph.filter_complex
+
+
+def test_preview_resolution_caps_height_and_keeps_aspect():
+    from frameforge.render import _preview_resolution
+
+    assert _preview_resolution((3840, 2160)) == (1920, 1080)
+    assert _preview_resolution((1920, 1080)) == (1920, 1080)  # nicht hochskalieren
+    assert _preview_resolution((1280, 720)) == (1280, 720)
+    w, h = _preview_resolution((4096, 2160))  # DCI-4K, ungerade Rechnung
+    assert h == 1080 and w % 2 == 0
+
+
 def test_build_filtergraph_overlay_drift_mode_linear_does_not_reverse():
     """`drift_mode: "linear"` laesst die Drift in EINE Richtung bis zum Clipende weiterlaufen.
     Nutzer-Feedback: der Sinus wirkte als Hin-und-Her und ruckelte an den Umkehrpunkten."""

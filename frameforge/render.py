@@ -682,8 +682,25 @@ def build_filtergraph(
 
     # -- Overlay: PNGs mit Alpha, Zeitfenster ueber `enable` -------------------------
     # Optional sanftes Ein-/Ausblenden ueber `anim.fade_in_s`/`anim.fade_out_s` (Alpha-Fade).
+    #
+    # Die Overlay-PNGs entstehen formatfuellend in der Timeline-Auflaesung (`design.overlay_
+    # tokens` rechnet alles relativ zu Breite/Hoehe). Rendert man auf eine ANDERE Auflaesung --
+    # z.B. den 1080p-Preview aus einer 4K-Timeline -- muessen sie mitskaliert werden, sonst liegt
+    # ein 4K-Titel in Originalgroesse auf einem 1080p-Bild. Genauso die Pixelwerte in `anim`
+    # (`slide_from_px`, `drift_px`, ...), die sonst viermal zu weit schieben.
+    overlay_scale = target_res[0] / timeline.resolution[0] if timeline.resolution[0] else 1.0
+
+    def scaled_anim(anim: dict) -> dict:
+        if overlay_scale == 1.0:
+            return anim
+        out = dict(anim)
+        for key in ("slide_from_px", "slide_from_py", "drift_px", "drift_py"):
+            if out.get(key):
+                out[key] = str(float(out[key]) * overlay_scale)
+        return out
+
     for j, overlay in enumerate(timeline.tracks.overlay):
-        anim = overlay.anim or {}
+        anim = scaled_anim(overlay.anim or {})
         fi = float(anim.get("fade_in_s", 0) or 0)
         fo = float(anim.get("fade_out_s", 0) or 0)
         x_expr = _overlay_x_expr(anim, overlay.tl_in, overlay.dur)
@@ -697,6 +714,8 @@ def build_filtergraph(
                  "-i", str(export_root / overlay.png)]
             )
             chain = "format=rgba"
+            if overlay_scale != 1.0:
+                chain += f",scale={target_res[0]}:{target_res[1]}"
             if fi > 0:
                 chain += f",fade=t=in:st=0:d={min(fi, overlay.dur):.3f}:alpha=1"
             if fo > 0:
@@ -712,7 +731,10 @@ def build_filtergraph(
             idx = add_input(
                 ["-loop", "1", "-framerate", str(timeline.fps), "-i", str(export_root / overlay.png)]
             )
-            filters.append(f"[{idx}:v]format=rgba[{ov_label}]")
+            scale_part = (
+                f",scale={target_res[0]}:{target_res[1]}" if overlay_scale != 1.0 else ""
+            )
+            filters.append(f"[{idx}:v]format=rgba{scale_part}[{ov_label}]")
             filters.append(
                 f"[{cur_video}][{ov_label}]overlay=x='{x_expr}':y='{y_expr}':shortest=1:"
                 f"enable='between(t,{overlay.tl_in},{overlay.tl_in + overlay.dur})'[{next_video}]"
@@ -738,8 +760,11 @@ def build_filtergraph(
         # Schleife das gesamte bis dahin aufgebaute `cur_video` auf seine eigene Laenge gekappt --
         # der erste Karten-Clip (K2) hat den kompletten Film auf ~132s abgeschnitten, Ton lief
         # unbeeinflusst weiter (gefundener Bug, Video "friert ein" bei Minute 2).
+        # Rand ebenfalls mit der Zielauflaesung skalieren, sonst sitzt das Inset im 1080p-Preview
+        # viermal so weit vom Bildrand weg wie im 4K-Final.
+        margin = max(1, round(60 * overlay_scale))
         filters.append(
-            f"[{cur_video}][{shifted}]overlay=x=W-w-60:y=H-h-60:"
+            f"[{cur_video}][{shifted}]overlay=x=W-w-{margin}:y=H-h-{margin}:"
             f"enable='between(t,{map_clip.tl_in},{map_clip.tl_in + map_clip.dur})'[{next_video}]"
         )
         cur_video = next_video
@@ -907,6 +932,23 @@ def _load_faces_by_asset(project: Project) -> dict[str, list[dict]] | None:
     }
 
 
+PREVIEW_MAX_HEIGHT = 1080
+
+
+def _preview_resolution(timeline_res: tuple[int, int]) -> tuple[int, int]:
+    """Preview-Auflaesung: auf `PREVIEW_MAX_HEIGHT` herunter, Seitenverhaeltnis erhalten.
+
+    Timelines, die schon 1080p oder kleiner sind, bleiben unangetastet. Kantenlaengen werden auf
+    gerade Werte gebracht (`libx264`/`yuv420p`).
+    """
+    w, h = timeline_res
+    if h <= PREVIEW_MAX_HEIGHT:
+        return w, h
+    scale = PREVIEW_MAX_HEIGHT / h
+    pw, ph = round(w * scale), PREVIEW_MAX_HEIGHT
+    return pw + pw % 2, ph + ph % 2
+
+
 def render_proxy(
     project: Project, export: Export, timeline: Timeline, *, color_grade: dict | None = None
 ) -> Path:
@@ -931,11 +973,21 @@ def render_proxy(
             raise RenderError(f"Kein Proxy fuer Asset '{asset_id}' unter {proxy}")
         return proxy
 
+    # 1080p, wie der Name `render_proxy` und `ff-preview` es versprechen -- vorher gab der
+    # Preview stillschweigend in `timeline.resolution` aus, beim Norwegen-Projekt also 4K.
+    # Das war nicht nur langsam und ~2,5 GB gross, es war der Hauptgrund, warum der Render den
+    # Arbeitsspeicher sprengte: jeder Frame in jeder Stufe (Decode, Ken-Burns-Oversampling,
+    # Blur-Fill, die Kette aus verschachtelten `xfade`, Encoder) ist in 4K viermal so gross wie
+    # in 1080p. Bei 170 Segmenten und 213 gleichzeitig offenen Inputs entscheidet genau das.
+    # Damit das stimmt, skaliert `build_filtergraph` die Overlay-PNGs und die Pixelwerte in
+    # `anim` mit (die PNGs entstehen in Timeline-Auflaesung).
+    preview_res = _preview_resolution(timeline.resolution)
     graph = build_filtergraph(
         timeline,
         resolve_asset=resolve,
         export_root=export.root,
         project_root=project.root,
+        resolution=preview_res,
         color_grade=color_grade,
         faces_by_asset=_load_faces_by_asset(project),
     )

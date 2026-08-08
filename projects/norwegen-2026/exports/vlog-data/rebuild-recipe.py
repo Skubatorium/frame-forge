@@ -362,6 +362,17 @@ DAY_XFADE_S: dict[str, float] = {
     "2026-08-03": 1.0,
 }
 
+# Rest-Drift der Titel-Layer nach dem Slide-in, in Pixeln der TIMELINE-Auflaesung (4K).
+# Vorzeichen = Weiterlaufrichtung, also dieselbe wie beim Einlaufen ("die sollen schon in ihre
+# Richtung weitergehen"). Betrag bewusst deutlich groesser als die 8px aus Runde 2 -- der Nutzer
+# wollte MEHR Restbewegung, und unter ~30px (4K) rundet `overlay` die Position so grob, dass die
+# Bewegung als Ruckeln statt als Drift gelesen wird.
+TITLE_DRIFT_PX: dict[str, int] = {
+    "ov-title-main": 56,  # "Norwegen" laeuft von links ein, driftet weiter nach rechts
+    "ov-title-sub": -56,  # "2026" kommt von rechts, driftet weiter nach links
+    "ov-title-caption": 42,  # "Roadtrip Edition" von links, etwas weniger Weg
+}
+
 # Abweichende Uebergangsdauer fuer einzelne Clips (Schluessel = Eintrag aus `DAYS`).
 # 0 = harter Schnitt.
 XFADE_OVERRIDE: dict[str, float] = {
@@ -655,10 +666,23 @@ def build() -> None:
     overlay = [o for o in old["tracks"]["overlay"] if o["id"].startswith("ov-title-")]
     for o in overlay:
         anim = dict(o.get("anim") or {})
-        # Nutzer: die Drift soll "in ihre Richtung weitergehen", nicht pendeln.
-        if anim.get("drift_px"):
+        # Nutzer: die Drift soll "in ihre Richtung weitergehen", nicht pendeln, und deutlicher
+        # sichtbar sein als bisher. Richtung = Slide-in-Richtung, Betrag ABSOLUT aus
+        # `TITLE_DRIFT_PX`.
+        #
+        # Absolut und nicht als Faktor auf den Altwert, weil dieses Skript die vorhandene
+        # `timeline.json` liest -- ein `* 7` haette bei jedem Lauf erneut multipliziert. Genau das
+        # ist passiert: nach acht Laeufen stand `drift_px` bei 8 * 7^8 = 46.118.408 px, der Titel
+        # schoss nach 1,5s aus dem Bild. Alles, was dieses Skript aus der alten Datei uebernimmt,
+        # muss idempotent sein oder absolut gesetzt werden.
+        drift = TITLE_DRIFT_PX.get(o["id"])
+        if drift is not None:
             anim["drift_mode"] = "linear"
-            anim["drift_px"] = str(int(float(anim["drift_px"]) * 7))
+            anim["drift_px"] = str(drift)
+        else:
+            anim.pop("drift_px", None)
+            anim.pop("drift_mode", None)
+        anim.pop("drift_period_s", None)
         o["anim"] = anim
     for day, tl_in in captions:
         for kind in ("box", "text"):
