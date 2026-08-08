@@ -231,8 +231,13 @@ def _kenburns_expr(clip, dur: float, fps: float, res: tuple[int, int]) -> str | 
 
     x_from, y_from, z_from = xyz("from", (0.0, 0.0, 1.0))
     x_to, y_to, z_to = xyz("to", (0.0, 0.0, 1.10))
+    # Beide Richtungen erlaubt: `z_to < z_from` ist ein Zoom HERAUS und ein legitimer Stil.
+    # Vorher wurde `z_to` auf `z_from + 0.001` hochgeklemmt -- damit war jeder Zoom-out still
+    # ein Standbild (fiel bei den neuen Ken-Burns-Varianten aus Runde 3 auf).
     z_from = max(1.0, z_from)
-    z_to = max(z_from + 0.001, z_to)
+    z_to = max(1.0, z_to)
+    if abs(z_to - z_from) < 0.001:
+        z_to = z_from + 0.001
     w, h = res
     # Fortschritt 0..1 ueber die Clipdauer. `ease: "smooth"` legt eine Smoothstep-Kurve
     # (3n²-2n³) darueber: die Bewegung startet und endet weich, statt hart mit konstanter
@@ -250,10 +255,29 @@ def _kenburns_expr(clip, dur: float, fps: float, res: tuple[int, int]) -> str | 
     y_pan = f"({y_from:.4f}+({p})*{y_to - y_from:.6f})*ih"
     x_expr = f"max(0,min(iw-iw/zoom,iw/2-(iw/zoom/2)+{x_pan}))"
     y_expr = f"max(0,min(ih-ih/zoom,ih/2-(ih/zoom/2)+{y_pan}))"
-    # Auf höherer Auflösung samplen (zoompan-Ruckel-Vermeidung), dann auf Zielgröße zurück.
+    # Ueber der Zielgroesse samplen, damit `zoompan` nicht auf ganze Quellpixel rasten muss
+    # (sonst ruckelt der Zoom). Der Faktor richtet sich nach dem **groessten vorkommenden Zoom**
+    # plus etwas Reserve, nicht mehr pauschal 2x.
+    #
+    # Warum das wichtig ist: 2x bedeutet bei 4K-Ziel ein 7680x4320-Zwischenbild, also ~100 MB je
+    # Frame. Bei 62 Foto-Clips, die alle gleichzeitig als Input offen sind und deren Frames die
+    # nachgelagerte `xfade`-Kette puffert, hat der Preview-Render dadurch den Arbeitsspeicher
+    # gesprengt: macOS legte 11 GB Swap an, die Platte lief voll, der Prozess starb. Das war die
+    # Ursache der wiederholt "unerklaerlich" abgebrochenen Renders (2026-08-08/09).
+    # `zoompan` schneidet `iw/zoom` heraus -- ein Oversampling um `max_zoom` reicht also exakt
+    # aus, damit dieser Ausschnitt noch mindestens die Zielgroesse hat; 1.15 ist die Reserve.
+    # Bei typischem Zoom 1.13 sind das 1.30x statt 2x, also ~2,4x weniger Speicher je Frame.
+    sample = max(1.05, max(z_from, z_to)) * 1.15
+    sw, sh = round(w * sample), round(h * sample)
+    sw += sw % 2
+    sh += sh % 2
+    # `setsar=1` ist Pflicht: die Rundung von `sw`/`sh` auf gerade Werte verschiebt das
+    # Seitenverhaeltnis minimal, `zoompan` gibt das als SAR weiter (z.B. 304:303) und `concat`
+    # bricht dann mit "parameters do not match" ab.
     return (
-        f"scale={w * 2}:{h * 2},"
-        f"zoompan=z='{zoom_expr}':x='{x_expr}':y='{y_expr}':d=1:s={w}x{h}:fps={fps:g}"
+        f"scale={sw}:{sh},"
+        f"zoompan=z='{zoom_expr}':x='{x_expr}':y='{y_expr}':d=1:s={w}x{h}:fps={fps:g},"
+        f"setsar=1"
     )
 
 
@@ -916,7 +940,12 @@ def render_proxy(
         faces_by_asset=_load_faces_by_asset(project),
     )
     out_path = export.preview_dir / f"{export.name}_preview.mp4"
-    _run_ffmpeg(graph, timeline, out_path)
+    # Preview ist zum Sichten, nicht zum Ausliefern: `veryfast` + hoeheres CRF kosten sichtbar
+    # nichts fuer die Beurteilung von Schnitt, Reihenfolge und Overlays, sparen aber Laufzeit und
+    # Encoder-Speicher. Letzteres zaehlt hier wirklich -- der Render lief in den Swap und starb
+    # (siehe `_kenburns_expr` zum Oversampling). Der Final-Render (`render_final`) bleibt
+    # unangetastet.
+    _run_ffmpeg(graph, timeline, out_path, crf=26, preset="veryfast")
     return out_path
 
 

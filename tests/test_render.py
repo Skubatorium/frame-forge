@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 import shutil
 import subprocess
 from pathlib import Path
@@ -1139,6 +1140,56 @@ def test_kenburns_zero_pan_matches_old_centered_behaviour():
         project_root=Path("/p"),
     )
     assert "iw/2-(iw/zoom/2)+(0.0000+(min(1,on/50))*0.000000)*iw" in graph.filter_complex
+
+
+def test_kenburns_zoom_out_is_not_clamped_to_zoom_in():
+    """`z_to < z_from` ist ein Zoom HERAUS und muss erhalten bleiben. Vorher wurde `z_to` auf
+    `z_from + 0.001` hochgeklemmt, womit jeder Zoom-out ein Standbild war."""
+    tl = _timeline(
+        video=[{"id": "c1", "asset": "photo1", "src_in": 0, "src_out": 2, "tl_in": 0,
+                "effects": [{"type": "kenburns", "from": [0, 0, 1.13], "to": [0, 0, 1.0]}]}]
+    )
+    graph = build_filtergraph(
+        tl,
+        resolve_asset=lambda a: Path(f"/m/{a}.jpg"),
+        export_root=Path("/e"),
+        project_root=Path("/p"),
+    )
+    # Zoom startet bei 1.13 und die Spannweite ist negativ (heraus), nicht ~0.
+    assert "1.1300+(" in graph.filter_complex
+    assert "-0.130000" in graph.filter_complex
+
+
+def test_kenburns_oversampling_follows_max_zoom_not_a_fixed_factor():
+    """Das Zwischenbild wird nur so weit hochskaliert, wie der groesste Zoom es braucht.
+
+    Pauschale 2x bedeuteten bei 4K-Ziel 7680x4320 je Frame (~100 MB) -- der Preview-Render hat
+    damit den Arbeitsspeicher gesprengt (11 GB Swap, Platte voll, Prozess tot).
+    """
+    def sample_dims(zoom_to):
+        tl = _timeline(
+            video=[{"id": "c1", "asset": "photo1", "src_in": 0, "src_out": 2, "tl_in": 0,
+                    "effects": [{"type": "kenburns", "from": [0, 0, 1.0], "to": [0, 0, zoom_to]}]}]
+        )
+        graph = build_filtergraph(
+            tl,
+            resolve_asset=lambda a: Path(f"/m/{a}.jpg"),
+            export_root=Path("/e"),
+            project_root=Path("/p"),
+        )
+        match = re.search(r"scale=(\d+):(\d+),zoompan=", graph.filter_complex)
+        assert match, graph.filter_complex
+        return int(match.group(1)), int(match.group(2))
+
+    # Zielgroesse in `_timeline` ist 320x240.
+    modest_w, _ = sample_dims(1.13)
+    assert modest_w < 320 * 2, "kein pauschales 2x mehr"
+    assert modest_w >= 320 * 1.13, "muss den Zoom noch voll abdecken"
+    # Groesserer Zoom => groesseres Zwischenbild.
+    big_w, _ = sample_dims(1.6)
+    assert big_w > modest_w
+    # Ungerade Kantenlaengen wuerden libx264/yuv420p aergern.
+    assert big_w % 2 == 0
 
 
 def test_kenburns_ease_smooth_uses_smoothstep_curve():
