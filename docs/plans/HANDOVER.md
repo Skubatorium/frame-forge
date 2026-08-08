@@ -139,9 +139,28 @@ in Timeline-Auflaesung), Ken-Burns-Oversampling richtet sich nach dem groessten 
 pauschal 2x (bei 4K waren das 7680x4320 je Frame), Encoder auf `veryfast`/`crf=26`.
 
 Trotzdem gilt: vor jedem Vollrender `df -h /` und `sysctl -n vm.swapusage` pruefen, mindestens
-~4 GB frei. Waehrend des Renders Swap beobachten, nicht die Dateigroesse — die steht wegen der
-Puffer in der `xfade`-Kette minutenlang still, obwohl ffmpeg mit >400% CPU rechnet. Ein
-Stillstand der Datei ist also KEIN Absturzindiz.
+~4 GB frei.
+
+### Fortschritt eines laufenden Renders NICHT an der Ausgabedatei messen
+
+Das hat in dieser Sitzung drei vermutlich gesunde Renders gekostet. Der mp4-Muxer schreibt in
+grossen Bloecken und den `moov`-Atom erst am Schluss: die Datei springt auf 2.097.200 Bytes
+(2 MiB) und bleibt dann **zehn Minuten und laenger unveraendert**, `mtime` eingefroren, waehrend
+ffmpeg mit >400% CPU voll arbeitet. Ein 30-Clip-Testlauf, der nachweislich sauber durchlief, zeigte
+exakt dasselbe Bild und schrieb seine 13,5 MB praktisch komplett beim Schliessen.
+
+Also: **stehende Dateigroesse und stehende `mtime` sind KEIN Absturz- oder Haengeindiz.** Wer
+darauf hin abbricht, killt funktionierende Renders. Brauchbare Signale stattdessen:
+
+- laeuft der Prozess ueberhaupt (`pgrep -f 'ffmpeg -y'`),
+- verbrennt er CPU (`ps -o time=,%cpu=`) — steigende CPU-Zeit heisst Arbeit,
+- geht der Speicher weg (`sysctl -n vm.swapusage`) — DAS ist das Abbruchrisiko,
+- und vor allem: vorher an einem Ausschnitt messen, wie lange der ganze Lauf dauert
+  (30 Clips der echten Timeline durch `build_filtergraph` + `_run_ffmpeg`, dann hochrechnen;
+  gemessen 0,80x Echtzeit, also ~23 Minuten fuer 1085s).
+
+Wer echten Fortschritt sehen will, muss `_run_ffmpeg` um `-progress` erweitern; mit
+`-loglevel error` und `capture_output` ist von aussen nichts zu holen.
 
 ### Overlay-Iterationen nie am Vollrender pruefen
 

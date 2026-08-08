@@ -2518,6 +2518,24 @@ ueber die vollen 11s zu stehen. Amplitude jetzt absolut in `TITLE_DRIFT_PX`.
 absolut gesetzt werden.** Betrifft ausser der Drift auch die `src_in`-Uebernahme (die ist
 idempotent, weil sie nur liest und unveraendert zurueckschreibt).
 
+**Wichtige Einschraenkung zu diesem Abschnitt (nachtraeglich, gleiche Sitzung):** Die oben
+beschriebene Diagnose "Render haengt" stuetzte sich auf eine stehende Ausgabedatei (2.097.200
+Bytes, `mtime` zehn Minuten eingefroren) bei gleichzeitig 441% CPU. **Dieses Kriterium ist
+falsch.** Ein anschliessender 30-Clip-Testlauf, der sauber durchlief, zeigte genau dasselbe
+Verhalten und schrieb seine 13,5 MB praktisch komplett erst beim Schliessen der Datei — der
+mp4-Muxer puffert in grossen Bloecken und setzt den `moov`-Atom am Ende.
+
+Folge: die drei abgebrochenen Renders waren mit hoher Wahrscheinlichkeit **gesund** und wurden
+unnoetig gekillt (43 Minuten CPU-Zeit bei 441% entsprechen ~10 Minuten Laufzeit, bei 0,80x
+Echtzeit also etwa der Haelfte des Films). Der Speicherdruck war real und messbar, aber ob er
+je zum Abbruch gefuehrt haette, ist offen.
+
+Der `-t`-Fix an den Foto-Inputs ist **sachlich richtig** (ein unbegrenzter `-loop 1`-Input ist
+ein Fehler, der Overlay-Zweig macht es seit immer anders), aber es wurde **nie A/B gemessen**,
+ob er den Durchsatz veraendert. Die Behauptung "das war die Ursache" im zugehoerigen Commit ist
+nicht belegt. Wer das klaeren will: denselben 30-Clip-Chunk einmal mit und einmal ohne `-t`
+rendern und die Laufzeit vergleichen.
+
 **Arbeitsweise, die sich bewaehrt hat:** Overlay- und Fit-Aenderungen an einer synthetischen
 Mini-Timeline (2-5 Clips) durch `build_filtergraph` + `_run_ffmpeg` pruefen und die Frames mit
 `cv2` als Kontaktbogen ansehen — nie am Vollrender. So wurden der Titel-Drift-Fehler, die
