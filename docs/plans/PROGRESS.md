@@ -2122,3 +2122,34 @@ unter `.../final/drone-edit_v1.report.md`.
 
 **Naechster Schritt:** vlog-data, vlog-pur (~20 Min, identischer Schnitt, nur Map-Layer
 unterschiedlich), dann teaser — kein Re-Ingest/Index/Design noetig, gleiche Materialbasis.
+
+### `vlog-data` gebrieft (2026-08-08)
+
+`exports/vlog-data/brief.yaml` geschrieben, Export auf **BRIEFED**. Preset `nordic-cinematic`
+mit Overrides: `map_usage: leitmotif` (Karte unten rechts durchgehend), Ziellaenge 1200 s
+(~20 Min). Wichtigste Vorgaben aus dem Nutzer-Briefing:
+
+- **Cold Open, 30 s:** reiner Wind-/Ambient-Teil von "Cuatro Vientos" (erster von drei
+  Pflicht-Tracks), dazu eine Karten-Overview-Animation (Route Deutschland→Daenemark→Norwegen
+  waechst), danach leichte Blende ins erste Norwegen-Bild. Bild-Schnittfrequenz zieht erst an,
+  wenn das Audio lauter/hoeher wird. Zusaetzlich eine Infokarte mit Reisedaten. **Kein neuer
+  Sub-Agent dafuer** — bleibt ein Beat im Beat-Sheet, gebaut von story-architect +
+  timeline-builder + map-animator wie jeder andere Abschnitt auch; ein eigener
+  "Intro-Editor"-Agent haette keinen Zustaendigkeitsbereich, den diese drei nicht schon
+  abdecken.
+- **Musik:** feste Reihenfolge Cuatro Vientos → Naturaleza (Mose Edit) → Aguila de Oro
+  (Ecstatic Mix), fliessende Crossfades, aber zuegig (~10 s, keine 30-s-Doppel-Ueberlagerung).
+- **Karte:** unten rechts (`render_inset_frames`), **keine Hoehenmeter** — `heights=None` beim
+  Aufruf reicht, bestehender Mechanismus, kein neuer Code noetig. Nur Ortsname/Etappe +
+  gesamt gefahrene Strecke bis zur aktuellen Position (`cumulative_km`, das liefert das
+  Template ohnehin schon als `km_label`).
+- **Ken Burns:** darf nie schwarzen Hintergrund zeigen — Bildflaeche muss immer voll gefuellt
+  sein.
+- **Redundanz:** dieselbe Szene nicht aus zu vielen Perspektiven hintereinander (Beispiel aus
+  der Sichtung: Bruecke mehrfach aus verschiedenen Winkeln direkt hintereinander).
+- **Fehlende Video-Timestamps:** viele iPhone-Videos (Chris-iPhone, Christina-iPhone) ohne
+  `captured_at`-EXIF. Laut Nutzer sind die Dateien innerhalb ihres jeweiligen Ordners in
+  echter Erlebnis-Reihenfolge — Dateisystem-/Namensreihenfolge als Fallback-Sortierung nutzen.
+
+**Naechster Schritt:** `/ff-build norwegen-2026 vlog-data` (story-architect → timeline-builder,
+plus map-animator fuer die Cold-Open-Kartenanimation und die durchgehende Karte).
