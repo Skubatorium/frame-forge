@@ -2153,3 +2153,46 @@ mit Overrides: `map_usage: leitmotif` (Karte unten rechts durchgehend), Ziellaen
 
 **Naechster Schritt:** `/ff-build norwegen-2026 vlog-data` (story-architect → timeline-builder,
 plus map-animator fuer die Cold-Open-Kartenanimation und die durchgehende Karte).
+
+### `vlog-data` Timeline gebaut, QC gefixt, Preview gerendert (2026-08-08)
+
+`/ff-build norwegen-2026 vlog-data` durchlaufen, Export auf **TIMELINE** (`09115087a`): 159
+Video-Clips, 14 Map-Clip-Referenzen, 7 Audio-Clips, 2 Overlays, 1103,887 s. Fixpunkte
+(Cold-Open 40 s, Crossfade 395 s, harter Schnitt 730 s, Klimax 996 s, Filmende) sitzen.
+
+- **Karten-/Grafik-Render** (`a87299a2`): Cold-Open-Overview (K0, `generated-map-k0-cold-open`)
+  als neues Asset indiziert, 14 Karten-Insets (K2-K15, `heights=None`) + Titel-/Infokarte
+  gerendert. Neues Template `templates/svg/infocard.svg`.
+- **Render-Fix, projektuebergreifend** (`6212b8af`): Foto-Ken-Burns padden bisher mit schwarzen
+  Balken bei Nicht-16:9-Fotos (37 % der Clips in diesem Export betroffen) —
+  `_scale_pad` durch `_scale_crop` (increase+crop) ersetzt. Neue `_face_crop_center()` legt das
+  Crop-Fenster auf erkannte Gesichter (`index/people.json`, `frameforge faces` — **die
+  Gesichtserkennung war zu diesem Zeitpunkt bereits fertig**, wird hier erstmals im Render
+  genutzt), 15 %-Sicherheitsrand fuer Ken-Burns-Pan, faellt ohne Gesichter auf zentrierten Crop
+  zurueck. Bonus-Fix: `_kenburns_expr` interpolierte x/y-Pan-Offsets bisher nicht, jetzt schon.
+- **QC-Runde 1** (`b13aef7c`): 7 blockierende Befunde gefixt — Rundungsfehler an zwei
+  Fixpunkten (550,4 s/730,0 s), falsches Klimax-Motiv (Trollstigen statt Lom-Nacht), fehlende
+  Tunnelausfahrt bei 730 s, Renderabbruch durch tonlosen Atmo-Clip, K12 komplett falsch belegt,
+  Kreuzfahrtschiff-Redundanz mehrfach ueber Deckel, fehlender Fischfang-Beat in K15.
+  Photoserien-/Selfie-/Wasserfall-Deckel fuer K2-K5/K9/K10/K14 bewusst zurueckgestellt
+  (dokumentiert, nicht blockierend).
+- **QC-Runde 2** (`3ea2e39d`): 3 Clip-Swaps — 730 s-Fixpunkt war invertiert (hell→dunkel statt
+  dunkel→hell), Wasserfall- und Bruecken-Aufnahme je einmal doppelt verwendet. Alle drei
+  getauscht, Timing/Fixpunkte unveraendert.
+- **Preview:** `/ff-preview norwegen-2026 vlog-data` gerendert,
+  `exports/vlog-data/preview/vlog-data_preview.mp4` (186 MB). Export steht bei **PREVIEWED**,
+  wartet auf Nutzer-Freigabe.
+- **Notiz zur Session:** Notebook-Speicher lief waehrend eines vorherigen Preview-Versuchs voll
+  (24 GB durch VS Code + andere Apps + Claude), System abgestuerzt, `.state.json`/Commits blieben
+  konsistent, nur `PROGRESS.md` und der Preview-Render selbst (0-Byte-Datei) hingen nach. Zweiter
+  Preview-Versuch nach Neustart erfolgreich (Plattenplatz zwischenzeitlich knapp bei 4 GB frei,
+  danach wieder auf 10 GB erholt). Kein Hinweis auf Datenverlust bei Timeline/Assets/Commits.
+- **Hinweis, nicht blockierend:** `frameforge status` meldet, dass sich das Asset-Inventar seit
+  dem Storyboard von `drone-edit` und `vlog-data` geaendert hat (neues Asset
+  `map-k0-cold-open.mp4` seither indiziert). Fuer `vlog-data` ist das erwartet — Cold-Open-Karte
+  wurde bewusst nachtraeglich generiert und ist bereits Teil der Timeline. Fuer `drone-edit`
+  (bereits gerendert) irrelevant.
+
+**Naechster Schritt:** Nutzer sichtet `vlog-data_preview.mp4`, gibt frei oder gibt Feedback. Bei
+Freigabe: `/ff-render norwegen-2026 vlog-data` fuer den 4K-Final. Danach `vlog-pur` (identischer
+Schnitt, nur Map-Layer anders), dann teaser.
