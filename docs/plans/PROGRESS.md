@@ -2460,3 +2460,65 @@ rendern, `→` nicht. Verwendet wird jetzt `›`.
 Schluss laenger sehen wollte, ist im Index nicht auffindbar — eine Volltextsuche ueber alle 1181
 Assets nach Moewe/Vogel/Verfolgung liefert am Reiseende (03./04.08.) keinen Treffer. Muss er
 zeigen bzw. benennen.
+
+### Warum die `vlog-data`-Preview-Renders abgebrochen sind (2026-08-09) — Ursache gefunden
+
+Mehrere Renders waren "ohne Erklaerung" gestorben (Nutzer: vier bis fuenf Mal im Hintergrund,
+einmal im Vordergrund durchgelaufen). Statt weiter zu raten, gemessen — und die Vermutung
+"Hintergrund-Ausfuehrungspfad" war **falsch**:
+
+| Zeitpunkt | Swap benutzt | frei auf / | ffmpeg |
+|---|---|---|---|
+| vor dem Start | 3,0 GB | 15 GB | — |
+| +1 min | 9,8 GB | 8,3 GB | 428% CPU, RSS 1,8 GB |
+| +4 min | 11,2 GB | 7,3 GB | laeuft |
+| nach `kill -9` | 3,2 GB | 15 GB | — |
+
+macOS legte beim Renderstart sieben neue Swapfiles an; nach dem Kill fiel alles sofort zurueck.
+Es ist reiner Speicherdruck: der Render fuellt den RAM, das System swappt, die Platte laeuft
+voll, dann stirbt der Prozess (oder das System — genau das hatte der Nutzer in einer frueheren
+Sitzung schon einmal). Ob ein Lauf durchkommt, ist damit Zufall der uebrigen Systemlast, nicht
+eine Frage von Vordergrund oder Hintergrund.
+
+**Drei Ursachen, alle behoben:**
+
+1. **`render_proxy` gab in 4K aus**, obwohl Name und Doku "1080p-Proxy-Render" sagen —
+   `resolution` wurde nie an `build_filtergraph` uebergeben, also galt `timeline.resolution`
+   (3840x2160). Jeder Frame ist damit in JEDER Stufe viermal so gross: Decode,
+   Ken-Burns-Oversampling, Blur-Fill, die Kette aus 169 verschachtelten `xfade`, Encoder. Bei
+   170 Segmenten und 213 gleichzeitig offenen Inputs ist das der dominante Posten. Der Preview
+   war deshalb auch ~2,5 GB gross und entsprechend langsam.
+   Damit ein kleinerer Render richtig aussieht, skaliert `build_filtergraph` jetzt mit: die
+   Overlay-PNGs (die entstehen formatfuellend in Timeline-Auflaesung) und die Pixelwerte in
+   `anim` (`slide_from_px`/`slide_from_py`/`drift_px`/`drift_py`) sowie den Karten-Rand. Ohne das
+   liegt ein 4K-Titel in Originalgroesse auf einem 1080p-Bild und schiebt viermal zu weit.
+   `_preview_resolution` deckelt auf 1080p Hoehe, skaliert nie hoch, haelt gerade Kantenlaengen.
+   `render_final` bleibt unangetastet 4K.
+2. **`_kenburns_expr` skalierte pauschal auf die doppelte Zielgroesse** — bei 4K also 7680x4320,
+   ~100 MB je Frame, fuer 62 Foto-Clips. `zoompan` schneidet `iw/zoom` heraus, ein Oversampling
+   um `max_zoom` (+15% Reserve) genuegt also exakt; mehr bringt keine Schaerfe. Bei Zoom 1.13
+   sind das 1.30x statt 2x.
+3. **Preview-Encoder** laeuft jetzt auf `preset=veryfast`/`crf=26` statt Default `medium`.
+
+**Zwei Folgefunde beim Nachmessen:**
+
+- `_kenburns_expr` klemmte `z_to` auf `z_from + 0.001` hoch. **Jeder Zoom-heraus war damit ein
+  Standbild** — zwei der sechs neuen Ken-Burns-Varianten aus Runde 3 haetten stillschweigend
+  nicht funktioniert. Beide Richtungen sind jetzt erlaubt.
+- Die Rundung der Ken-Burns-Zwischengroesse auf gerade Kantenlaengen verschiebt das
+  Seitenverhaeltnis minimal; `zoompan` gibt das als SAR weiter (304:303) und `concat` bricht mit
+  "parameters do not match" ab. Deshalb `setsar=1` hinter `zoompan`.
+
+**Und ein Fehler im eigenen Rezept:** `rebuild-recipe.py` rechnete die Titel-Drift als `* 7` auf
+den vorhandenen Wert. Das Skript liest aber die bestehende `timeline.json` — es multiplizierte
+also bei jedem Lauf erneut. Nach acht Laeufen stand `drift_px` bei 8 * 7^8 = 46.118.408 px; im
+Kontaktbogen war "Norwegen" nur von 13,0 bis 14,5s zu sehen und schoss dann aus dem Bild, statt
+ueber die vollen 11s zu stehen. Amplitude jetzt absolut in `TITLE_DRIFT_PX`.
+**Regel fuer das Rezept: alles, was es aus der alten Datei uebernimmt, muss idempotent sein oder
+absolut gesetzt werden.** Betrifft ausser der Drift auch die `src_in`-Uebernahme (die ist
+idempotent, weil sie nur liest und unveraendert zurueckschreibt).
+
+**Arbeitsweise, die sich bewaehrt hat:** Overlay- und Fit-Aenderungen an einer synthetischen
+Mini-Timeline (2-5 Clips) durch `build_filtergraph` + `_run_ffmpeg` pruefen und die Frames mit
+`cv2` als Kontaktbogen ansehen — nie am Vollrender. So wurden der Titel-Drift-Fehler, die
+1080p-Overlay-Skalierung und das Blur-Fill jeweils in unter einer Minute verifiziert.

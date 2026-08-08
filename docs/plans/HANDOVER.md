@@ -125,13 +125,23 @@ Sekunden erzeugt sichtbare Spruenge, und ein `sin()` ist am schlimmsten, weil er
 fast stillsteht. Fuer ruhige Restbewegung: `drift_mode: "linear"` und Amplitude gross genug
 waehlen (Faustwert ~50-60 px bei 4K ueber ~9s).
 
-### Preview rendert in 4K, nicht 1080p
+### Renders sterben an Speicherdruck, nicht am Ausfuehrungspfad (behoben)
 
-`render_proxy` mappt zwar auf die **Proxy-Quellen**, gibt aber in `timeline.resolution` aus —
-beim Norwegen-Projekt 3840x2160, daher ~2,5 GB je Preview und entsprechend lange Laufzeit.
-**Nicht einfach auf 1080p umstellen:** die Overlay-PNGs sind 4K und werden im Filtergraph nicht
-mitskaliert, ein 1080p-Output wuerde sie in Originalgroesse ins Bild legen. Vor jedem
-Vollrender `df -h /` pruefen, mindestens ~4 GB frei.
+Historie, damit die Diagnose nicht neu gemacht wird: der `vlog-data`-Preview starb mehrfach
+"unerklaerlich". Ursache war **Speicherdruck** — beim Renderstart sprang die Swap-Nutzung von
+3 GB auf 11 GB, macOS legte sieben Swapfiles an, der freie Plattenplatz fiel von 15 auf 7 GB,
+dann starb der Prozess. Nach `kill -9` fiel alles sofort zurueck. Ob ein Lauf durchkommt, war
+damit Zufall der uebrigen Systemlast; Vordergrund vs. Hintergrund war ein Scheinzusammenhang.
+
+Behoben durch: Preview rendert jetzt wirklich in 1080p (`_preview_resolution`, dazu skaliert
+`build_filtergraph` Overlay-PNGs, `anim`-Pixelwerte und den Karten-Rand mit — die PNGs entstehen
+in Timeline-Auflaesung), Ken-Burns-Oversampling richtet sich nach dem groessten Zoom statt
+pauschal 2x (bei 4K waren das 7680x4320 je Frame), Encoder auf `veryfast`/`crf=26`.
+
+Trotzdem gilt: vor jedem Vollrender `df -h /` und `sysctl -n vm.swapusage` pruefen, mindestens
+~4 GB frei. Waehrend des Renders Swap beobachten, nicht die Dateigroesse — die steht wegen der
+Puffer in der `xfade`-Kette minutenlang still, obwohl ffmpeg mit >400% CPU rechnet. Ein
+Stillstand der Datei ist also KEIN Absturzindiz.
 
 ### Overlay-Iterationen nie am Vollrender pruefen
 
