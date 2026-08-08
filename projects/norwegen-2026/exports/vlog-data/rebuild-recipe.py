@@ -312,12 +312,25 @@ DAYS: dict[str, list[str]] = {
     ],
     # Tag 17 -- Angeln an der Schaerenkueste. Schlussszene des Tages ist bewusst NICHT
     # chronologisch: der Nutzer wollte die weite Schaerenaufnahme mit der Gruppe als Endbild.
+    #
+    # Die Moewe, die der Nutzer laenger sehen wollte, steckt in `20260803-drone-574c7c` (seg16,
+    # 75s) -- der Index kannte sie nicht, weil bei drei Keyframes je Clip keiner in die
+    # Moewen-Passage fiel. Ganzen Clip in Kontaktbogen gesichtet, zwei brauchbare Passagen:
+    #   53,4-62,0s  Moewe gleitet ueber das glitzernde Wasser, Drohne folgt -- die
+    #               "Verfolgungsjagd", laengstes ruhiges Stueck (8,6s)
+    #   72,2-75,2s  zweiter Anflug ganz am Ende: die Moewe kreuzt von oben rechts diagonal
+    #               durchs Bild und kommt sehr nah heran ("die eine schoene gegen Ende ... da
+    #               war ich sehr nahe"), laeuft bis zum Clipende
+    # Beide bewusst direkt hintereinander: sie sind in der Quelle auch aufeinanderfolgend, und
+    # zusammen ergeben sie einen Bogen von der ruhigen Verfolgung zum nahen Vorbeiflug.
     "2026-08-03": [
         "20260803-camera-1d32ef",  # 15:12L Oskar jubelt ueber den gefangenen Fisch
         "20260803-phone-18fb6c",  # 15:34 Kiefer rahmt die tuerkise Badebucht -- NEU
         "20260803-drone-b015cc",  # 15:54 Drohne umkreist die Felszunge -- NEU
-        "20260803-drone-574c7c",  # 16:02 Anflug auf die Felseninsel mit der Kiefer
+        "20260803-drone-574c7c@26.0-33.6",  # Anflug auf die Felseninsel mit der Kiefer
         "20260803-drone-08166f",  # 16:09 Badebucht mit Steg und rotem Bootshaus -- NEU
+        "20260803-drone-574c7c@53.4-62.0",  # Moewen-Verfolgung -- NEU
+        "20260803-drone-574c7c@71.6-75.25",  # naher Vorbeiflug am Ende -- NEU
         "20260803-drone-c51c2b",  # 17:05 Aufstieg ueber den Kiefernwald zur Schaerenkueste -- NEU
         "20260803-drone-d1eb17",  # 15:51 Gruppe auf den Felsen, Gegenlicht -- als Endbild
     ],
@@ -349,6 +362,16 @@ DAY_XFADE_S: dict[str, float] = {
     "2026-08-03": 1.0,
 }
 
+# Abweichende Uebergangsdauer fuer einzelne Clips (Schluessel = Eintrag aus `DAYS`).
+# 0 = harter Schnitt.
+XFADE_OVERRIDE: dict[str, float] = {
+    # Der nahe Moewen-Vorbeiflug wird ganz am Clipende am groessten. Eine 1s-Blende AUF dem
+    # naechsten Clip wuerde genau diesen Moment wegblenden, also hart schneiden.
+    "20260803-drone-c51c2b": 0.0,
+    # Und rein kurz, damit der Vorbeiflug nicht halb im Uebergang liegt.
+    "20260803-drone-574c7c@71.6-75.25": 0.4,
+}
+
 # Feste Dauern, die nicht aus dem Tagesbudget kommen (Nutzerwunsch bzw. Dramaturgie).
 FIXED_DUR: dict[str, float] = {
     # "Auch schoen lange die Zeit. Die ist super. Die geht auch einige Zeit. Die muss drin
@@ -365,8 +388,13 @@ TRIMS: dict[str, tuple[float, float]] = {
     "20260728-drone-1cc835": (0.1, 4.3),
 }
 
-# Startpunkte im Quellclip fuer alles, was nicht bei 0 anfangen soll (uebernommen aus dem alten
-# Schnitt, wo der timeline-builder schon eine gute Stelle gefunden hatte).
+# Startpunkte im Quellclip, die von der bestehenden `timeline.json` abweichen sollen.
+# Fuer alles, was hier NICHT steht und kein `@`-Fenster in `DAYS` hat, uebernimmt das Skript den
+# `src_in` aus der vorhandenen `timeline.json` -- dort hatte der timeline-builder pro Clip schon
+# eine brauchbare Stelle gefunden, und die soll ein Umbau der Reihenfolge nicht wegwerfen.
+# Das macht das Skript bewusst idempotent (es liest Werte, die es selbst geschrieben hat).
+# Folge, die man kennen muss: ein NEU in `DAYS` aufgenommenes Video startet bei 0, solange es
+# kein `@`-Fenster bekommt.
 SRC_IN_HINTS: dict[str, float] = {}
 
 # -- Ken-Burns-Varianten --------------------------------------------------------------------
@@ -393,6 +421,22 @@ KENBURNS_STYLES_BLUR: list[tuple[str, list[float], list[float]]] = [
 ]
 
 PHOTO_KINDS = {"photo"}
+
+
+def parse_entry(entry: str) -> tuple[str, tuple[float, float] | None]:
+    """`"asset-id"` oder `"asset-id@<in>-<out>"` (Sekunden im Quellclip).
+
+    Die `@`-Form erlaubt MEHRERE Ausschnitte aus derselben Datei in einem Tag -- gebraucht fuer
+    lange Drohnen-Segmente, in denen mehr als eine brauchbare Szene steckt (der 75s-Shot
+    `20260803-drone-574c7c` liefert die Felseninsel, den Moewenflug und den nahen Vorbeiflug
+    am Ende). Ohne explizites Fenster gilt der `src_in` aus dem alten Schnitt und die
+    Tagesdauer.
+    """
+    if "@" not in entry:
+        return entry, None
+    asset_id, window = entry.split("@", 1)
+    start, end = window.split("-", 1)
+    return asset_id, (float(start), float(end))
 
 
 def load_assets() -> dict[str, dict]:
@@ -475,7 +519,7 @@ def build() -> None:
     prev_style: str | None = None
 
     def add(
-        asset_id: str,
+        entry: str,
         dur: float,
         xfade: float,
         *,
@@ -483,6 +527,9 @@ def build() -> None:
         note: str = "",
     ) -> dict:
         nonlocal counter, tl, kb_index, prev_style
+        asset_id, window = parse_entry(entry)
+        if window is not None:
+            dur = window[1] - window[0]
         asset = assets.get(asset_id)
         if asset is None:
             raise SystemExit(f"Asset '{asset_id}' steht nicht in assets.json")
@@ -501,14 +548,16 @@ def build() -> None:
 
         is_photo = asset.get("kind") in PHOTO_KINDS
         if not is_photo:
-            src_in = SRC_IN_HINTS.get(asset_id)
-            if src_in is None:
-                src_in = float((old_by_asset.get(asset_id) or {}).get("src_in", 0.0))
-            trim = TRIMS.get(asset_id)
-            if trim:
-                src_in = trim[0]
-                dur = min(dur, trim[1] - trim[0])
-                clip["src_out"] = 0.0  # unten neu gesetzt
+            if window is not None:
+                src_in = window[0]
+            else:
+                src_in = SRC_IN_HINTS.get(asset_id)
+                if src_in is None:
+                    src_in = float((old_by_asset.get(asset_id) or {}).get("src_in", 0.0))
+                trim = TRIMS.get(asset_id)
+                if trim:
+                    src_in = trim[0]
+                    dur = min(dur, trim[1] - trim[0])
             clip["src_in"] = round(src_in, 3)
             clip["src_out"] = round(src_in + dur, 3)
 
@@ -532,6 +581,13 @@ def build() -> None:
         else:
             prev_style = None
 
+        if window is not None:
+            # `qc._check_clip_repetition` meldet mehr als zwei Verwendungen desselben Assets als
+            # moegliches Versehen. Ein explizites `@`-Fenster ist genau der vorgesehene
+            # Ausnahmefall (ein langer Quellclip, in mehrere eigenstaendige Szenen zerlegt), und
+            # das Schema hat dafuer dieses Feld.
+            clip["intentional_repeat"] = True
+            note = f"{note} · Quellfenster {window[0]:.1f}-{window[1]:.1f}s".strip(" ·")
         if note:
             clip["note"] = note
         video.append(clip)
@@ -550,7 +606,7 @@ def build() -> None:
         xfade = DAY_XFADE_S[day]
         avg = DAY_AVG_S[day]
         fixed_total = sum(FIXED_DUR[i] for i in ids if i in FIXED_DUR)
-        flexible = [i for i in ids if i not in FIXED_DUR]
+        flexible = [i for i in ids if i not in FIXED_DUR and "@" not in i]
         # Tagesbudget aus der Pacing-Kurve; die festen Dauern gehen extra dazu, damit der
         # Hoehepunkt-Shot nicht auf Kosten des restlichen Tages laenger wird.
         per_clip = avg if not flexible else max(4.2, avg)
@@ -559,7 +615,7 @@ def build() -> None:
         # Zaehlt echte Inversionen (Paare, die gegen die Aufnahmezeit stehen), nicht
         # Positionsunterschiede -- ein einzelner verschobener Clip wuerde sonst als halber Tag
         # gemeldet und die Ausgabe waere als Kontrolle nutzlos.
-        times = [sort_key(assets[i]) for i in ids]
+        times = [sort_key(assets[parse_entry(i)[0]]) for i in ids]
         inversions = sum(
             1
             for a in range(len(times))
@@ -577,7 +633,7 @@ def build() -> None:
             add(
                 asset_id,
                 dur,
-                xfade,
+                XFADE_OVERRIDE.get(asset_id, xfade),
                 xfade_type="slow_dissolve" if first_of_day else "dissolve",
                 note=f"{day}",
             )

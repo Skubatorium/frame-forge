@@ -589,6 +589,15 @@ def build_filtergraph(
                     center = _face_crop_center(faces, src_w, src_h, *target_res)
                     if center is None:
                         graph.unsafe_face_crops.append(clip.asset)
+                        # Es existiert KEIN Ausschnitt, der alle erkannten Gesichter ganz
+                        # enthaelt. Fallback ist deshalb Blur-Fill (Bild ungeschnitten, unscharf
+                        # gefuellter Rand) statt eines Crops auf die Bildmitte, der garantiert
+                        # jemanden anschneidet. Nutzer-Regel aus Runde 3: "die Personen auf einem
+                        # Bild muessen immer sichtbar sein ... es darf keine Person ausgelassen
+                        # werden." Ein explizit gesetztes `fit` bleibt unangetastet -- wer
+                        # bewusst croppt oder padded, wird nicht ueberstimmt.
+                        if clip.fit is None:
+                            blur_fit = True
                     else:
                         cx, cy = center
             if not blur_fit:

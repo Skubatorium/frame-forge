@@ -6,7 +6,7 @@
     3840,
     2160
   ],
-  "duration": 1073.5,
+  "duration": 1085.35,
   "tracks": {
     "video": [
       {
@@ -3363,7 +3363,8 @@
           "dur": 1.0,
           "hold": 0.0
         },
-        "note": "2026-08-03"
+        "intentional_repeat": true,
+        "note": "2026-08-03 · Quellfenster 26.0-33.6s"
       },
       {
         "id": "c161",
@@ -3382,9 +3383,9 @@
       },
       {
         "id": "c162",
-        "asset": "20260803-drone-c51c2b",
-        "src_in": 0.0,
-        "src_out": 7.6,
+        "asset": "20260803-drone-574c7c",
+        "src_in": 53.4,
+        "src_out": 62.0,
         "tl_in": 1035.599999999999,
         "speed": 1.0,
         "effects": [],
@@ -3393,14 +3394,41 @@
           "dur": 1.0,
           "hold": 0.0
         },
-        "note": "2026-08-03"
+        "intentional_repeat": true,
+        "note": "2026-08-03 · Quellfenster 53.4-62.0s"
       },
       {
         "id": "c163",
+        "asset": "20260803-drone-574c7c",
+        "src_in": 71.6,
+        "src_out": 75.25,
+        "tl_in": 1043.7999999999988,
+        "speed": 1.0,
+        "effects": [],
+        "transition_in": {
+          "type": "dissolve",
+          "dur": 0.4,
+          "hold": 0.0
+        },
+        "intentional_repeat": true,
+        "note": "2026-08-03 · Quellfenster 71.6-75.2s"
+      },
+      {
+        "id": "c164",
+        "asset": "20260803-drone-c51c2b",
+        "src_in": 0.0,
+        "src_out": 7.6,
+        "tl_in": 1047.449999999999,
+        "speed": 1.0,
+        "effects": [],
+        "note": "2026-08-03"
+      },
+      {
+        "id": "c165",
         "asset": "20260803-drone-d1eb17",
         "src_in": 0.0,
         "src_out": 7.6,
-        "tl_in": 1042.199999999999,
+        "tl_in": 1054.0499999999988,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -3411,11 +3439,11 @@
         "note": "2026-08-03"
       },
       {
-        "id": "c164",
+        "id": "c166",
         "asset": "20260804-camera-0fc698",
         "src_in": 0.0,
         "src_out": 8.4,
-        "tl_in": 1048.7999999999988,
+        "tl_in": 1060.6499999999987,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -3426,11 +3454,11 @@
         "note": "2026-08-04"
       },
       {
-        "id": "c165",
+        "id": "c167",
         "asset": "20260804-camera-59ef0c",
         "src_in": 6.162,
         "src_out": 14.562,
-        "tl_in": 1056.199999999999,
+        "tl_in": 1068.0499999999988,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -3441,11 +3469,11 @@
         "note": "2026-08-04"
       },
       {
-        "id": "c166",
+        "id": "c168",
         "asset": "20260804-camera-80b8d0",
         "src_in": 6.461,
         "src_out": 14.861,
-        "tl_in": 1063.599999999999,
+        "tl_in": 1075.449999999999,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -3456,11 +3484,11 @@
         "note": "2026-08-04"
       },
       {
-        "id": "c167",
+        "id": "c169",
         "asset": "generated-cold-open-black",
         "src_in": 0.0,
         "src_out": 3.0,
-        "tl_in": 1070.499999999999,
+        "tl_in": 1082.349999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -3507,7 +3535,7 @@
           "fade_out_s": "2.0",
           "slide_from_px": "-700",
           "slide_in_s": "1.3",
-          "drift_px": "134456",
+          "drift_px": "46118408",
           "drift_period_s": "5.0",
           "drift_mode": "linear"
         }
@@ -3522,7 +3550,7 @@
           "fade_out_s": "2.0",
           "slide_from_px": "700",
           "slide_in_s": "1.3",
-          "drift_px": "-134456",
+          "drift_px": "-46118408",
           "drift_period_s": "5.0",
           "drift_mode": "linear"
         }
@@ -3537,7 +3565,7 @@
           "fade_out_s": "2.0",
           "slide_from_px": "-300",
           "slide_in_s": "1.0",
-          "drift_px": "100842",
+          "drift_px": "34588806",
           "drift_period_s": "4.5",
           "drift_mode": "linear"
         }
@@ -3865,7 +3893,7 @@
       {
         "id": "ov-stage-box-2026-08-04",
         "png": "overlays/stage-caption-box.png",
-        "tl_in": 1050.3,
+        "tl_in": 1062.15,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3875,7 +3903,7 @@
       {
         "id": "ov-stage-text-2026-08-04",
         "png": "overlays/stage-caption-2026-08-04.png",
-        "tl_in": 1050.3,
+        "tl_in": 1062.15,
         "dur": 5.0,
         "anim": {
           "fade_in_s": "0.6",
@@ -3909,7 +3937,7 @@
         "id": "music-03",
         "src": "music/Originals/Little Whale, Sariel Orenda & UAK/Aguila de Oro (Ecstatic Mix) - Single/01 Aguila de Oro (Ecstatic Mix).m4a",
         "tl_in": 700.0,
-        "dur": 373.5,
+        "dur": 385.35,
         "src_in": 0.743,
         "gain_db": 0.0,
         "fade_in_s": 0.0,

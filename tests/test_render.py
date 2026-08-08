@@ -1162,6 +1162,59 @@ def test_kenburns_ease_smooth_uses_smoothstep_curve():
     assert "3-2*" not in linear
 
 
+def test_unsafe_face_crop_falls_back_to_blur_fill(monkeypatch):
+    """Wenn kein Ausschnitt alle Gesichter ganz enthaelt, darf NICHT auf die Bildmitte gecroppt
+    werden (das schneidet garantiert jemanden an) -- dann Blur-Fill. Nutzer-Regel Runde 3:
+    "es darf keine Person ausgelassen werden"."""
+    from types import SimpleNamespace
+
+    from frameforge import imageio as imageio_module
+    from frameforge import render as render_module
+
+    monkeypatch.setattr(render_module, "_face_crop_center", lambda *a, **k: None)
+    # Die Bildgroesse wird aus der Datei gelesen; die Testpfade existieren nicht.
+    monkeypatch.setattr(imageio_module, "open_image", lambda p: SimpleNamespace(size=(4000, 3000)))
+    tl = _timeline(
+        video=[{"id": "c1", "asset": "photo1", "src_in": 0, "src_out": 2, "tl_in": 0}]
+    )
+    graph = build_filtergraph(
+        tl,
+        resolve_asset=lambda a: Path(f"/m/{a}.jpg"),
+        export_root=Path("/e"),
+        project_root=Path("/p"),
+        faces_by_asset={"photo1": [{"top": 0, "right": 10, "bottom": 10, "left": 0}]},
+    )
+    assert graph.unsafe_face_crops == ["photo1"]
+    assert "gblur" in graph.filter_complex
+    assert "crop=320:240:x=" not in graph.filter_complex
+
+
+def test_explicit_fit_wins_over_unsafe_face_crop_fallback(monkeypatch):
+    """Ein bewusst gesetztes `fit` wird vom Blur-Fallback nicht ueberstimmt."""
+    from types import SimpleNamespace
+
+    from frameforge import imageio as imageio_module
+    from frameforge import render as render_module
+
+    monkeypatch.setattr(render_module, "_face_crop_center", lambda *a, **k: None)
+    # Die Bildgroesse wird aus der Datei gelesen; die Testpfade existieren nicht.
+    monkeypatch.setattr(imageio_module, "open_image", lambda p: SimpleNamespace(size=(4000, 3000)))
+    tl = _timeline(
+        video=[
+            {"id": "c1", "asset": "photo1", "src_in": 0, "src_out": 2, "tl_in": 0, "fit": "crop"}
+        ]
+    )
+    graph = build_filtergraph(
+        tl,
+        resolve_asset=lambda a: Path(f"/m/{a}.jpg"),
+        export_root=Path("/e"),
+        project_root=Path("/p"),
+        faces_by_asset={"photo1": [{"top": 0, "right": 10, "bottom": 10, "left": 0}]},
+    )
+    assert graph.unsafe_face_crops == ["photo1"]
+    assert "gblur" not in graph.filter_complex
+
+
 def test_face_crop_center_defaults_to_image_center_without_faces():
     from frameforge.render import _face_crop_center
 

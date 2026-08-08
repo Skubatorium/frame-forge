@@ -9,7 +9,11 @@ preset: nordic-cinematic
 # Nochmal korrigiert 2026-08-08 (Preview-Feedback Runde 1): Cold-Open von 40 s auf 10 s
 # halbiert (Nutzer fand die reine Schwarzbild-Strecke zu lang), alles danach um 30 s nach
 # vorne verschoben. Neue Laenge 1073,887 s.
-target_duration_s: 1074
+# Runde 3: +11s gegenueber 1074. Der Nutzer wollte die Moewen-Passage aus dem 75s-Drohnenshot
+# `20260803-drone-574c7c` laenger im Film ("noch ein bisschen laenger reinnehmen, da gab es noch
+# tollere Szenen") -- daraus sind zwei eigene Szenen geworden (Verfolgung 8,6s + naher
+# Vorbeiflug 3,65s). Bewusste Verlaengerung, kein Ausrutscher.
+target_duration_s: 1085
 language: de
 
 # --- Overrides ---
