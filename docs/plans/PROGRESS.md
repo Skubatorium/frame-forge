@@ -2112,3 +2112,13 @@ wartet auf Nutzer-Freigabe (`approve`) vor dem Final-Render.
 
 **Naechster Schritt:** Nutzer sichtet `drone-edit_preview.mp4`, gibt frei oder gibt weiteres
 Feedback. Bei Freigabe: `/ff-render norwegen-2026 drone-edit` fuer den 4K-Final.
+
+### `drone-edit` fertig gerendert (2026-08-08)
+
+Preview v2 freigegeben, `frameforge approve` + `frameforge render` durchgelaufen. Export ist
+**RENDERED**, Pipeline fuer `drone-edit` komplett:
+`projects/norwegen-2026/exports/drone-edit/final/drone-edit_v1.mp4` (4K, 5,77 GB, 568 s), Report
+unter `.../final/drone-edit_v1.report.md`.
+
+**Naechster Schritt:** vlog-data, vlog-pur (~20 Min, identischer Schnitt, nur Map-Layer
+unterschiedlich), dann teaser — kein Re-Ingest/Index/Design noetig, gleiche Materialbasis.
