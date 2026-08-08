@@ -2335,3 +2335,128 @@ verluste). **Naechster Schritt fuer die Folgesession:**
    (blaue Route/Marker, schwarze Ortsnamen, kein HÖHE-Label, 60px Rand) und Bauchbinden (kurz
    nach jedem Kapitel-Start).
 5. Dem Nutzer den fertigen Preview zur Sichtung geben.
+
+### `vlog-data` Preview-Feedback Runde 3: Zeitstempel-Befund, Karte raus, Blur-Fill (2026-08-08)
+
+Sehr umfangreiches Nutzer-Feedback zur Preview-Runde 2 (Sichtung mit Pausen, ~60 Einzelpunkte
+mit Zeitmarken). Der Grossteil liess sich auf **drei Ursachen** zuruecktrainieren, statt auf 60
+Einzelfehler — das ist der eigentliche Ertrag dieser Runde.
+
+**Befund 1 (wichtig, gilt fuer das ganze Projekt): iPhone-VIDEOS tragen `captured_at` in UTC,
+iPhone-FOTOS und DJI-Dateien in Ortszeit (CEST, +2h).** QuickTime speichert `creation_time` in
+UTC, die HEIC-Fotos derselben Kamera dagegen `DateTimeOriginal` als Ortszeit. Verifiziert an drei
+unabhaengigen Tagen ueber Szenen, die beide Geraete aufgenommen haben:
+
+| Szene | iPhone-Video | iPhone-Foto / Quelle | Differenz |
+|---|---|---|---|
+| 18.07. Kartenhaus fertig | `camera-bacc27` 16:39 | `phone-5439f6` 18:39 | genau 2:00 |
+| 25.07. Bogenschiessen | `camera-4e8191` 12:25 | `phone-d56ddb` 14:24 | ~2:00 |
+| 27.07. RIB-Tour | `camera-847bd7` 13:06 | `stages.csv` "RIB-Safari 15:00" | ~2:00 |
+
+**Die Korrektur laesst sich NICHT am `source`- oder `source_guess`-Feld festmachen.**
+`source_guess == "camera"` umfasst hier zwei ganz verschiedene Gruppen: 187 `Chris-iPhone/*.MOV`
+bzw. `Christina-iPhone/*.MOV` (iPhone-Videos ohne EXIF-`make`, darum als "camera" geraten, +2h
+noetig) und 37 `DJI_*.MP4` aus den Drohnen-Ordnern, deren Dateiname die Ortszeit traegt
+(`DJI_20260720140953` zu `captured_at` 14:09, also KEINE Korrektur). Ausserdem stehen einige
+`Christina-iPhone/*.MP4` unter `source_guess == "unknown"`, brauchen die Korrektur aber genauso.
+Deshalb entscheidet in `rebuild-recipe.py` (`needs_utc_offset`) der **Pfad**: iPhone-Ordner +
+Video-Endung. Achtung: Christinas Geraet weicht zusaetzlich anders ab (`20260807-camera-7c5d12`
+passt auch mit +2h nicht zum Kjosfossen-Halt) — dort wurde der Clip von Hand einsortiert.
+
+**Befund 2: die Clips waren innerhalb der Reisetage praktisch unsortiert.** Beispiel 19.07.:
+13:16, 09:32, 15:04, 16:11, 13:04, 14:33, 18:58, 12:39, 18:14, 10:00, 06:40 — das Flensburg-
+Morgenbild stand als LETZTER Clip des Tages. Fast alle vom Nutzer gemeldeten "Spruenge" und
+"Logikfehler" gehen darauf zurueck (Wikingerdorf-Aktivitaeten vor der Ankunft ueber die Bruecke,
+Unterkunft vor der Anfahrt, Grillen mitten im Seeausflug, Treppen- und RIB-Block verschraenkt).
+Mit Befund 1 + chronologischer Sortierung ergibt sich die vom Nutzer gewuenschte Dramaturgie an
+den meisten Stellen von selbst; die bewussten Abweichungen stehen als Kommentar im Rezept und
+werden beim Lauf als "N Paar(e) bewusst gegen die Aufnahmezeit" gemeldet.
+
+**Befund 3: Hochkant-Material war die Ursache fuer BEIDE Bildbeschwerden.** Fotos liefen ueber
+`_scale_crop` (crop-to-fill) — das schnitt Personen an, sobald die Gesichtserkennung eine nicht
+gefunden hatte, was bei Kindern mit Kappe/Sonnenbrille die Regel ist (Beispiel
+`20260720-phone-01214e`: 3 Personen im Bild, 2 Gesichter in `people.json`, der Ausschnitt legt
+sich auf die Union der 2 und schneidet genau Oskar weg — "man sieht nur seine Kaeppi"). Videos
+liefen ueber `_scale_pad` (Letterbox) — die "dicken schwarzen Balken links und rechts".
+Neu: `VideoClip.fit = "blur"` legt das **ungeschnittene** Bild zentriert auf eine formatfuellend
+vergroesserte, weichgezeichnete Kopie. Kein Bildverlust, keine schwarzen Flaechen. 26 Clips
+nutzen es (alle mit Seitenverhaeltnis < 1.05). Mit einem Mini-Render (3 Clips, 12s) gegen die
+alte Variante geprueft, bevor es in die Timeline ging.
+
+**Weitere Renderer-Aenderungen:**
+
+- **Ken Burns hatte keine Varianz:** ALLE 59 Fotos trugen exakt dieselben Parameter
+  (`from [0.06,0.06,1.0]` → `to [-0.02,-0.02,1.12]`), linear. Jeder Schnitt setzte den Schwenk
+  auf denselben Startpunkt zurueck — genau das las der Nutzer als "geht nach rechts und dann
+  nach links wiederum". Jetzt sechs Varianten (Zoom rein/raus, sanftes Pan, zwei Diagonalen),
+  jede monoton in EINE Richtung, nie zweimal dieselbe hintereinander, plus `ease: "smooth"`
+  (Smoothstep 3n²-2n³ statt linear). Default bleibt linear, bestehende Timelines unveraendert.
+- **Overlay-Drift pendelte:** `drift_px` war ein `sin()` um die Endposition. Weil `overlay` die
+  Position auf ganze Pixel rundet, sieht die Umkehr an den Sinus-Extrema (wo die Bewegung fast
+  stillsteht) wie Ruckeln aus — der Nutzer: "das darf nicht so hin und her pixellig wirken, die
+  sollen schon in ihre Richtung weitergehen". Neu `drift_mode: "linear"`: gleichmaessige Rampe
+  in Slide-in-Richtung bis zum Clipende. Amplitude von 8 auf 56 px (4K) erhoeht, weil der Nutzer
+  ausdruecklich MEHR Restbewegung wollte.
+- **Ducking schaltete hart:** `volume=...:enable='between(t,a,b)'` wechselt den Pegel in einem
+  Frame. Neu `duck_fade_s` — Rampe VOR und NACH dem O-Ton-Fenster
+  (`volume=eval=frame:volume='1-G*clip(...)*clip(...)'`), damit der O-Ton ueber seine ganze
+  Laenge den vollen Platz hat und die Musik weich runter- und wieder hochfaehrt.
+- **Karten-Trim (war aus der Vorsession noch offen, jetzt committet):** die Kartendateien sind
+  laenger als ihr Zeitfenster; ohne `trim=duration=` hing `overlay` den Dateirest ans Filmende.
+  Das waren die ~17s Schwarzbild am Ende, die der Nutzer als "15 Sekunden Schwarzbild" gemeldet
+  hat (1091,0s Datei vs. 1073,9s Timeline). Moot, weil die Karte jetzt ganz weg ist, aber der
+  Fix bleibt drin.
+
+**Schnittfassung neu gebaut** — `exports/vlog-data/rebuild-recipe.py` (neu). Die Schnittfassung
+steht dort als Asset-Liste je Reisetag mit Begruendung pro Abweichung; Timing, Uebergaenge,
+Ken-Burns-Parameter, Bauchbinden-Timing und Audio rechnet das Skript daraus. Handarbeit an 168
+Clips waere nicht wiederholbar gewesen.
+
+- **Karte komplett ausgebaut** (Nutzer: "die ist nicht gross genug, sie lenkt ab — ich muss
+  leider die Entscheidung treffen, dass wir die Karte ausbauen"). `tracks.map` bleibt als leere
+  Liste im Schema, die 14 Insets unter `map/` bleiben liegen, werden aber nicht gerendert.
+- **Bauchbinde uebernimmt die Orientierung**, unten links statt unten rechts, zweizeilig:
+  "Tag N" (Akzentfarbe, Unterzeilen-Groesse) ueber "Von › Nach · XXX km" bzw. bei
+  Aktivitaetstagen "Ort · Aktivitaet" ("Skien · Tag am Meer"). Tagesnummer ist die des Nutzers
+  (`stages.csv`-Tag minus 1, Tag 0 = Beladen am 17.07.). Neues Template
+  `templates/svg/stage-caption.svg`, Defaults dafuer in `design.overlay_tokens` (`stage_*`).
+- **168 Clips** (vorher 159). 13 raus: angeschnittene Gesichter, Hochkant mit Balken, Doppelungen
+  "Video dann Standbild derselben Szene" (Kartenhaus, Deck, Moewe), ein statischer Drohnenshot,
+  der misslungene Bogenschuss, das Tablet-Foto, die Beeren-Nahaufnahme, die "hilflose"
+  Bootsfahrt, ein doppelt verwendetes Asset (`20260727-drone-50a966` lief zweimal). 22 dazu:
+  Kaffee + Hamburger Hafen auf der Strecke Tag 1, Blumenbeet vor Flensburg, Flaamsbahn-
+  Establisher, Wikingerdorf-Ankunft, Geiranger-Ankunftsshot, Lom-Stabkirche aus der Luft +
+  Angler mit Fisch, zwei Trollstigen-Talblicke, der gute Bogenschuss, vier Schaerenkuesten-
+  Shots, Auffahrt aufs Faehrdeck, und ein **neues Kapitel 01.08. Uvdal › Skien** fuer den
+  Uebergang, den der Nutzer vermisst hat.
+- **Trollstigen umgebaut** (der Kern des Feedbacks): Aussichtsplattform vorgezogen, danach die
+  Ausblicke, dann der Blick durchs Wolkenfenster ins Tal (`20260728-drone-c91b2a`) als Hoehepunkt
+  an der richtigen Stelle und mit 14s Standzeit — vorher stand er als Nachklapp am Kapitelende.
+- **Ducking nur noch an zwei Stellen** (Faehre/Oskar im Wind, Gitarre/Kitzeln). Raus bei
+  Zugfahrt, Treppenaufstieg und Uvdal — alle drei hatte der Nutzer explizit abgelehnt. O-Ton von
+  -18 auf **-6 dB** hoch, Musikabsenkung von -12 auf **-7 dB** ("nicht das eine leiser machen,
+  sondern das andere ein bisschen hochziehen"), 0,7s-Rampen.
+- **Titel:** "Norwegen" von 1.15x auf **2.2x** der Basisgroesse ("bestimmt doppelt so gross
+  fast"). "2026"/"Roadtrip Edition" bleiben, der Groessenkontrast war gewollt.
+- **Schlussschwarzbild 3s** mit Ausfaden.
+
+Dauer **1073,500s** (Ziel aus `brief.yaml`: 1074) — die Pacing-Kurve des alten Schnitts
+(vorne ruhig ~8s/Clip, im Roadtrip bis ~5,8s) ist absichtlich beibehalten, das Tempo hatte der
+Nutzer nicht kritisiert.
+
+**Tests:** 504 gruen. Die 6 `infocard.svg`-Fehlschlaege in `test_design.py` sind vorbestehend
+(siehe oben). Neu abgedeckt: Blur-Fill-Statements, Ken-Burns-Easing, linearer Drift,
+Duck-Rampen, Karten-Trim.
+
+**Zwei Template-Fallen wieder zugeschlagen** (beide kosten sonst je einen Fehlversuch, siehe
+auch `HANDOVER.md`): `--` in SVG-Kommentaren bricht cairosvgs XML-Parser; ein `&` in einem
+Label (hier "Fjord & Wikingerdorf") ebenso, weil `build_svg_from_tokens` roh substituiert —
+deshalb `xml.sax.saxutils.escape` im Rezept. Zusaetzlich neu: **Avenir Next hat keinen
+`→`-Glyph**, cairosvg setzt ein Ersatzkaestchen (im ersten Bauchbinden-Render als Tofu-Box
+sichtbar geworden). Geprueft, welche Trennzeichen die Schrift hat: `–`, `—`, `›`, `»`, `•`, `·`
+rendern, `→` nicht. Verwendet wird jetzt `›`.
+
+**Offener Punkt fuer die Rueckfrage an den Nutzer:** die "Moewen-Verfolgungsjagd", die er am
+Schluss laenger sehen wollte, ist im Index nicht auffindbar — eine Volltextsuche ueber alle 1181
+Assets nach Moewe/Vogel/Verfolgung liefert am Reiseende (03./04.08.) keinen Treffer. Muss er
+zeigen bzw. benennen.

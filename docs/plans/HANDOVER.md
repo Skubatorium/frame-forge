@@ -77,3 +77,65 @@ Der Plan enthält Datenmodelle (`assets.json`, `timeline.json`), die State-Machi
 ## Nach M0
 
 Der Rest folgt dem Plan: M1 (Mini-Prototyp end-to-end mit 3–5 Clips → 60–90 s Video) ist die erste echte Bewährungsprobe. Vorher lohnt kein volles Norwegen-Material.
+
+## Fallstricke im Material und in den Templates (2026-08-08, Feedback-Runde 3)
+
+Alles hier hat schon einmal Zeit oder einen Fehlversuch gekostet.
+
+### Aufnahmezeiten: iPhone-Videos sind UTC, iPhone-Fotos sind Ortszeit
+
+`captured_at` in `assets.json` traegt zwar durchgaengig `+00:00`, ist aber **nicht** durchgaengig
+dieselbe Zeitzone:
+
+- `Chris-iPhone/*.MOV`, `Christina-iPhone/*.MOV|MP4` → QuickTime-`creation_time`, **UTC**,
+  also **+2h** fuer die Ortszeit (CEST).
+- `*-iPhone/*.HEIC|JPG` → EXIF-`DateTimeOriginal`, schon **Ortszeit**.
+- `DJI_*.MP4` aus den Drohnen-Ordnern → **Ortszeit** (der Dateiname bestaetigt es:
+  `DJI_20260720140953` zu `captured_at` 14:09).
+
+**Nicht am `source`/`source_guess`-Feld festmachen.** `source_guess == "camera"` mischt die
+iPhone-Videos (Korrektur noetig) mit 37 DJI-Dateien (keine Korrektur), und ein Teil der
+`Christina-iPhone/*.MP4` steht unter `source_guess == "unknown"`, braucht die Korrektur aber.
+Fertige Implementierung: `needs_utc_offset` in
+`projects/norwegen-2026/exports/vlog-data/rebuild-recipe.py` (Pfad: iPhone-Ordner +
+Video-Endung). Christinas Geraet weicht zusaetzlich anders ab als Chris' — Clips von dort im
+Zweifel von Hand einsortieren.
+
+Wer das ignoriert, sortiert jeden gemischten Reisetag um bis zu zwei Stunden falsch. Genau das
+war die Ursache der meisten "Logikfehler"-Meldungen in Preview-Runde 2.
+
+### SVG-Templates: drei Dinge brechen cairosvg bzw. sehen falsch aus
+
+1. **`--` in einem SVG-Kommentar** → `not well-formed (invalid token)`. Kommas nehmen.
+2. **`&` (oder `<`, `>`) in einem Text-Token** → dasselbe, weil `build_svg_from_tokens` roh
+   substituiert. Im Rezept `xml.sax.saxutils.escape` um jeden Inhalts-String legen.
+3. **Avenir Next hat keinen `→`-Glyph.** cairosvg setzt still ein Ersatzkaestchen (Tofu-Box).
+   Geprueft und vorhanden: `–`, `—`, `›`, `»`, `•`, `·`. Fuer Richtungsangaben `›` nehmen.
+
+Neue Templates brauchen ausserdem Defaults fuer alle Nicht-Inhalts-Tokens in
+`design.overlay_tokens` und muessen ihre Inhalts-Platzhalter aus `_TEMPLATE_CONTENT` in
+`tests/test_design.py` bedienen — sonst schlagen die generischen Template-Tests fuer JEDES
+Template fehl, nicht nur fuer das neue. Bestehende Namen wiederverwenden (`day_label`,
+`stage_label`), statt neue zu erfinden.
+
+### Overlay-Bewegung ruckelt bei kleinen Amplituden
+
+`overlay=x=...` rundet auf ganze Pixel. Eine Restbewegung von wenigen Pixeln ueber mehrere
+Sekunden erzeugt sichtbare Spruenge, und ein `sin()` ist am schlimmsten, weil er an den Extrema
+fast stillsteht. Fuer ruhige Restbewegung: `drift_mode: "linear"` und Amplitude gross genug
+waehlen (Faustwert ~50-60 px bei 4K ueber ~9s).
+
+### Preview rendert in 4K, nicht 1080p
+
+`render_proxy` mappt zwar auf die **Proxy-Quellen**, gibt aber in `timeline.resolution` aus —
+beim Norwegen-Projekt 3840x2160, daher ~2,5 GB je Preview und entsprechend lange Laufzeit.
+**Nicht einfach auf 1080p umstellen:** die Overlay-PNGs sind 4K und werden im Filtergraph nicht
+mitskaliert, ein 1080p-Output wuerde sie in Originalgroesse ins Bild legen. Vor jedem
+Vollrender `df -h /` pruefen, mindestens ~4 GB frei.
+
+### Overlay-Iterationen nie am Vollrender pruefen
+
+Ein Vollrender von `vlog-data` dauert deutlich mehr als zwei Minuten. Fuer Titel-, Bauchbinden-
+und Fit-Experimente eine synthetische Mini-Timeline mit 2-3 Clips durch `build_filtergraph` +
+`_run_ffmpeg` schicken (Muster: der Mini-Render aus Runde 3, mit dem `fit: "blur"` gegen
+crop-to-fill gegengeprueft wurde) oder die PNG-Layer mit PIL uebereinanderlegen und anschauen.
