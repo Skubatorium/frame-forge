@@ -13,6 +13,7 @@ mit Ducking (statische `volume`-Fenster) und optionaler EBU-R128-Loudnorm im Fin
 
 from __future__ import annotations
 
+import json
 import subprocess
 from collections.abc import Callable
 from dataclasses import dataclass, field
@@ -37,6 +38,11 @@ class FilterGraph:
     filter_complex: str = ""
     video_label: str = ""
     audio_label: str | None = None
+    # Foto-Clips mit erkannten Gesichtern, fuer die selbst mit Sicherheits-Margin kein Crop
+    # existiert, der alle Gesichter vollstaendig enthaelt (siehe `_face_crop_center`). Diese
+    # Clips wurden auf Bildmitte zentriert gecroppt (Fallback) -- Kandidaten fuer den
+    # `timeline-builder`, den Clip durch eine Querformat-Alternative zu ersetzen.
+    unsafe_face_crops: list[str] = field(default_factory=list)
 
 
 def _scale_pad(width: int, height: int) -> str:
@@ -44,6 +50,90 @@ def _scale_pad(width: int, height: int) -> str:
         f"scale={width}:{height}:force_original_aspect_ratio=decrease,"
         f"pad={width}:{height}:(ow-iw)/2:(oh-ih)/2,setsar=1"
     )
+
+
+def _scale_crop(width: int, height: int, cx: float = 0.5, cy: float = 0.5) -> str:
+    """`scale`(increase)+`crop` auf exakt `width`x`height` — Crop-to-Fill statt Letterbox/Pillarbox.
+
+    Ersetzt `_scale_pad` fuer Foto-Ken-Burns-Clips (Audit 2026-08-08, QC-Befund render-engineer):
+    `_scale_pad` (force_original_aspect_ratio=decrease + pad) erzeugt bei jedem Nicht-16:9-Foto
+    schwarze Balken, die der nachfolgende Ken-Burns-Zoom nur mitvergroessert -- bei Hochkantfotos
+    (3:4) bleiben ueber die gesamte Bewegung ca. 58% der Flaeche schwarz. `force_original_aspect_
+    ratio=increase` + `crop` skaliert stattdessen so, dass das Bild die Zielflaeche IMMER
+    vollstaendig deckt, und schneidet den Ueberschuss ab -- kein schwarzer Rand, dafuer echter
+    Bildverlust an den Raendern (siehe `_face_crop_center` fuer die motivbewusste Positionierung).
+
+    `cx`/`cy` in `[0, 1]`: Position des Crop-Fensters im gueltigen Versatzbereich (0=links/oben,
+    0.5=zentriert=altes Zentrierungsverhalten, 1=rechts/unten). `max(0,min(...))` faengt
+    Rundungsdifferenzen zwischen `scale`s Ganzzahl-Output und der exakten Zielgroesse ab.
+    """
+    return (
+        f"scale={width}:{height}:force_original_aspect_ratio=increase,"
+        f"crop={width}:{height}:"
+        f"x='max(0,min(iw-{width},(iw-{width})*{cx:.4f}))':"
+        f"y='max(0,min(ih-{height},(ih-{height})*{cy:.4f}))',setsar=1"
+    )
+
+
+def _face_crop_center(
+    faces: list[dict],
+    src_w: int,
+    src_h: int,
+    target_w: int,
+    target_h: int,
+    *,
+    margin: float = 0.15,
+) -> tuple[float, float] | None:
+    """Normalisiertes Crop-Zentrum (`cx`, `cy` fuer `_scale_crop`) aus erkannten Gesichtern.
+
+    Legt das Crop-Fenster auf die vereinigte Bounding-Box aller `faces` (Format wie
+    `people.detect_faces`: `{"top", "right", "bottom", "left"}` in Quellpixeln), mit einem
+    Sicherheits-Rand (`margin`, Bruchteil der Face-Box-Groesse -- analog `people.crop_face`)
+    an allen vier Seiten, damit noch "Fleisch" fuer den Ken-Burns-Zoom/-Pan bleibt.
+
+    Ohne `faces`: Bildmitte (`(0.5, 0.5)`, identisch zum alten zentrierten Verhalten).
+
+    Gibt `None` zurueck, wenn selbst mit Margin kein Crop-Fenster existiert, das die Gesichter
+    vollstaendig enthaelt (Gesicht sitzt zu nah am kurzen Bildrand eines extremen Formats) --
+    der Aufrufer faellt dann auf Bildmitte zurueck, der Clip gehoert aber auf die Liste der
+    Ersetzungskandidaten (kein Crop, der das Motiv sicher erhaelt).
+
+    Da der Ken-Burns-Zoom in `_kenburns_expr` danach nur noch **in die Mitte dieses bereits
+    motivsicheren Ausschnitts hineinzoomt** (nicht in die Bildmitte des Originalfotos), bleiben
+    die Gesichter ueber die gesamte Zoom-Range sichtbar, wenn sie hier schon sicher im
+    Ausschnitt liegen -- nicht nur im ersten Frame.
+    """
+    if not faces:
+        return (0.5, 0.5)
+    scale = max(target_w / src_w, target_h / src_h)
+    max_ox = src_w * scale - target_w
+    max_oy = src_h * scale - target_h
+
+    ux0 = min(f["left"] for f in faces) * scale
+    uy0 = min(f["top"] for f in faces) * scale
+    ux1 = max(f["right"] for f in faces) * scale
+    uy1 = max(f["bottom"] for f in faces) * scale
+    mx = (ux1 - ux0) * margin
+    my = (uy1 - uy0) * margin
+    rx0, rx1 = ux0 - mx, ux1 + mx
+    ry0, ry1 = uy0 - my, uy1 + my
+
+    def clamp(value: float, lo: float, hi: float) -> float:
+        return max(lo, min(hi, value)) if hi > lo else lo
+
+    crop_x0 = clamp((rx0 + rx1) / 2 - target_w / 2, 0.0, max_ox)
+    crop_y0 = clamp((ry0 + ry1) / 2 - target_h / 2, 0.0, max_oy)
+    safe = (
+        rx0 >= crop_x0 - 0.5
+        and rx1 <= crop_x0 + target_w + 0.5
+        and ry0 >= crop_y0 - 0.5
+        and ry1 <= crop_y0 + target_h + 0.5
+    )
+    if not safe:
+        return None
+    cx = crop_x0 / max_ox if max_ox > 1e-6 else 0.5
+    cy = crop_y0 / max_oy if max_oy > 1e-6 else 0.5
+    return (cx, cy)
 
 
 # Grobe, bewusst dezente Übersetzung der Preset-`color_grade`-Stimmung in FFmpeg-Filter.
@@ -70,10 +160,19 @@ _CROSSFADE_TYPES = {"fade", "dissolve", "slow_dissolve", "crossfade"}
 
 
 def _kenburns_expr(clip, dur: float, fps: float, res: tuple[int, int]) -> str | None:
-    """`zoompan`-Ausdruck für Ken-Burns (langsamer Zoom) auf einem Foto-Clip.
+    """`zoompan`-Ausdruck für Ken-Burns (Zoom + Pan) auf einem Foto-Clip.
 
     Aktiv nur, wenn der Clip einen Effekt vom Typ `kenburns` trägt (Timeline = Single Source of
-    Truth). Zoomrichtung/-stärke aus `from`/`to` (falls gesetzt), sonst dezenter Default-Zoom.
+    Truth). Zoom aus `from[2]`/`to[2]` (falls gesetzt), sonst dezenter Default-Zoom. Pan aus
+    `from[0:2]`/`to[0:2]` — Bruchteil der (skalierten) Bildbreite/-höhe, `0.0` = zentriert
+    (Default, identisch zum bisherigen Verhalten ohne Pan).
+
+    **Bugfix (Audit 2026-08-08, render-engineer):** `from`/`to` tragen `[x, y, z]`, aber diese
+    Funktion las bislang nur Index `[2]` (Zoom) — die x/y-Pan-Offsets aus der Timeline waren
+    komplett wirkungslos, jeder Ken-Burns war ein zentrierter Zoom ohne echten Schwenk. Jetzt
+    fließen `x`/`y` linear über die Clipdauer in den `zoompan`-x/y-Ausdruck ein, geclamped auf
+    den gültigen Bereich `[0, iw-iw/zoom]` (ein zu großer Pan-Wert darf `zoompan` nicht mit
+    einem ungültigen Fenster crashen lassen).
 
     **`d=1` ist Pflicht, nicht Geschmackssache.** `zoompan` hält *jeden Eingabeframe* `d`
     Ausgabeframes lang. Der Foto-Zweig erzeugt über `trim=duration=…` bereits `dur*fps` Frames;
@@ -86,21 +185,30 @@ def _kenburns_expr(clip, dur: float, fps: float, res: tuple[int, int]) -> str | 
         return None
     frames = max(1, round(dur * fps))
     data = kb.model_dump()
-    z_from = 1.0
-    z_to = 1.10
-    if isinstance(data.get("from"), (list, tuple)) and len(data["from"]) >= 3:
-        z_from = float(data["from"][2])
-    if isinstance(data.get("to"), (list, tuple)) and len(data["to"]) >= 3:
-        z_to = float(data["to"][2])
+
+    def xyz(key: str, default: tuple[float, float, float]) -> tuple[float, float, float]:
+        val = data.get(key)
+        if isinstance(val, (list, tuple)) and len(val) >= 3:
+            return float(val[0]), float(val[1]), float(val[2])
+        return default
+
+    x_from, y_from, z_from = xyz("from", (0.0, 0.0, 1.0))
+    x_to, y_to, z_to = xyz("to", (0.0, 0.0, 1.10))
     z_from = max(1.0, z_from)
     z_to = max(z_from + 0.001, z_to)
-    step = (z_to - z_from) / frames
+    z_step = (z_to - z_from) / frames
+    x_step = (x_to - x_from) / frames
+    y_step = (y_to - y_from) / frames
     w, h = res
+    zoom_expr = f"min({z_from:.4f}+on*{z_step:.6f},{z_to:.4f})"
+    x_pan = f"({x_from:.4f}+on*{x_step:.6f})*iw"
+    y_pan = f"({y_from:.4f}+on*{y_step:.6f})*ih"
+    x_expr = f"max(0,min(iw-iw/zoom,iw/2-(iw/zoom/2)+{x_pan}))"
+    y_expr = f"max(0,min(ih-ih/zoom,ih/2-(ih/zoom/2)+{y_pan}))"
     # Auf höherer Auflösung samplen (zoompan-Ruckel-Vermeidung), dann auf Zielgröße zurück.
     return (
         f"scale={w * 2}:{h * 2},"
-        f"zoompan=z='min({z_from:.4f}+on*{step:.6f},{z_to:.4f})'"
-        f":x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s={w}x{h}:fps={fps:g}"
+        f"zoompan=z='{zoom_expr}':x='{x_expr}':y='{y_expr}':d=1:s={w}x{h}:fps={fps:g}"
     )
 
 
@@ -350,6 +458,7 @@ def build_filtergraph(
     loudness_normalize: bool = False,
     resolution: tuple[int, int] | None = None,
     color_grade: dict | None = None,
+    faces_by_asset: dict[str, list[dict]] | None = None,
 ) -> FilterGraph:
     """Baut Input-Liste und `filter_complex`-String aus einer validierten Timeline.
 
@@ -362,6 +471,12 @@ def build_filtergraph(
     1080p-Deliverable aus einer 4K-Timeline). `lut_path`: optionale 3D-LUT (`.cube`) fuer
     Farbkorrektur. `loudness_normalize`: EBU-R128-Loudness-Normalisierung (`loudnorm`,
     Ziel -16 LUFS/-1.5 dBTP) auf den gemischten Audio-Output.
+
+    `faces_by_asset`: optional, `{asset_id: [{"top","right","bottom","left"}, ...]}` (Format wie
+    `people.detect_faces`, ohne `encoding` -- nur die Location wird gebraucht). Steuert das
+    Crop-Zentrum von Foto-Ken-Burns-Clips (`_face_crop_center`); ohne diese Angabe (Default,
+    z.B. wenn `frameforge faces` fuer das Projekt nie lief) wird jedes Foto crop-to-fill auf die
+    Bildmitte zentriert -- kein Pillarbox/Letterbox mehr, aber auch kein motivbewusster Crop.
     """
     target_res = resolution or timeline.resolution
     graph = FilterGraph()
@@ -386,7 +501,22 @@ def build_filtergraph(
             idx = add_input(["-loop", "1", "-framerate", str(fps), "-i", str(source)])
             chain.append(f"trim=duration={clip.duration:.3f}")
             chain.append("setpts=PTS-STARTPTS")
-            chain.append(_scale_pad(*target_res))
+            cx, cy = 0.5, 0.5
+            faces = (faces_by_asset or {}).get(clip.asset)
+            if faces:
+                try:
+                    from frameforge.imageio import open_image
+
+                    src_w, src_h = open_image(source).size
+                except Exception:  # noqa: BLE001 — Bildgroesse nicht lesbar => Bildmitte, kein Render-Abbruch
+                    src_w = src_h = None
+                if src_w and src_h:
+                    center = _face_crop_center(faces, src_w, src_h, *target_res)
+                    if center is None:
+                        graph.unsafe_face_crops.append(clip.asset)
+                    else:
+                        cx, cy = center
+            chain.append(_scale_crop(*target_res, cx, cy))
             kb = _kenburns_expr(clip, clip.duration, fps, target_res)
             if kb:
                 chain.append(kb)
@@ -605,6 +735,26 @@ def _run_ffmpeg(
         raise RenderError(f"ffmpeg fehlgeschlagen: {result.stderr.strip()}")
 
 
+def _load_faces_by_asset(project: Project) -> dict[str, list[dict]] | None:
+    """Laedt `index/people.json` (Ergebnis von `frameforge faces <projekt>`), falls vorhanden.
+
+    `None`, wenn die Datei fehlt (Gesichtserkennung ist expliziter Opt-in, siehe
+    `frameforge.people`-Datenschutzhinweis) — der Foto-Ken-Burns-Zweig faellt dann auf
+    zentrierten Crop-to-Fill zurueck, ganz ohne die Datei anzufassen.
+    """
+    people_path = project.index_dir / "people.json"
+    if not people_path.exists():
+        return None
+    try:
+        raw = json.loads(people_path.read_text())
+    except (OSError, ValueError):
+        return None
+    return {
+        asset_id: [face["location"] for face in faces if "location" in face]
+        for asset_id, faces in raw.items()
+    }
+
+
 def render_proxy(
     project: Project, export: Export, timeline: Timeline, *, color_grade: dict | None = None
 ) -> Path:
@@ -635,6 +785,7 @@ def render_proxy(
         export_root=export.root,
         project_root=project.root,
         color_grade=color_grade,
+        faces_by_asset=_load_faces_by_asset(project),
     )
     out_path = export.preview_dir / f"{export.name}_preview.mp4"
     _run_ffmpeg(graph, timeline, out_path)
@@ -713,6 +864,7 @@ def render_final(
         loudness_normalize=True,
         resolution=resolution,
         color_grade=color_grade,
+        faces_by_asset=_load_faces_by_asset(project),
     )
     out_path = _next_version_path(export.final_dir, export.name, ".mp4")
     _run_ffmpeg(graph, timeline, out_path, crf=crf, preset=preset)

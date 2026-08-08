@@ -971,3 +971,143 @@ def test_kenburns_photo_renders_the_declared_duration(proj):
     )
     out_path = render_proxy(proj, export, timeline)
     assert probe_video(out_path)["dur"] == pytest.approx(2.0, abs=0.2)
+
+
+# -- render-engineer QC-Fix (2026-08-08): Foto-Ken-Burns crop-to-fill statt Letterbox,
+# Pan-Offset-Bug in _kenburns_expr, face-aware Crop-Zentrum -------------------------------
+
+
+def test_photo_clip_uses_crop_to_fill_not_pad():
+    """`_scale_pad` (Letterbox/Pillarbox) ist fuer Foto-Clips Geschichte -- crop-to-fill statt
+    schwarzer Balken (QC-Befund: 59/159 vlog-data-Clips hatten bis zu 58% schwarze Flaeche)."""
+    tl = _timeline(
+        video=[
+            {
+                "id": "c1",
+                "asset": "photo1",
+                "src_in": 0,
+                "src_out": 2,
+                "tl_in": 0,
+                "effects": [{"type": "kenburns", "from": [0, 0, 1.0], "to": [0, 0, 1.1]}],
+            }
+        ]
+    )
+    graph = build_filtergraph(
+        tl,
+        resolve_asset=lambda a: Path(f"/m/{a}.jpg"),
+        export_root=Path("/e"),
+        project_root=Path("/p"),
+    )
+    assert "force_original_aspect_ratio=increase" in graph.filter_complex
+    assert "crop=" in graph.filter_complex
+    assert "force_original_aspect_ratio=decrease" not in graph.filter_complex
+    assert "pad=" not in graph.filter_complex
+
+
+def test_kenburns_pan_offset_reaches_zoompan_x_y():
+    """Bugfix: `from`/`to` tragen `[x, y, z]`, aber nur `z` (Index 2) landete im Zoompan-Ausdruck
+    -- x/y-Pan-Offsets waren wirkungslos. Jetzt muessen die konkreten Pan-Werte im x/y-Ausdruck
+    auftauchen, nicht nur im generischen `iw/2-(iw/zoom/2)`-Zentrierungsterm."""
+    tl = _timeline(
+        video=[
+            {
+                "id": "c1",
+                "asset": "photo1",
+                "src_in": 0,
+                "src_out": 2,
+                "tl_in": 0,
+                "effects": [{"type": "kenburns", "from": [0.06, 0.06, 1.0], "to": [-0.02, -0.02, 1.1]}],
+            }
+        ]
+    )
+    graph = build_filtergraph(
+        tl,
+        resolve_asset=lambda a: Path(f"/m/{a}.jpg"),
+        export_root=Path("/e"),
+        project_root=Path("/p"),
+    )
+    assert "0.0600" in graph.filter_complex  # x_from/y_from literal im Ausdruck
+    # step = (x_to - x_from) / frames = (-0.02 - 0.06) / 50 = -0.0016 (frames = dur*fps = 2*25)
+    assert "-0.001600" in graph.filter_complex
+
+
+def test_kenburns_zero_pan_matches_old_centered_behaviour():
+    """Ohne x/y in `from`/`to` (oder x=y=0, wie in allen bisherigen Timelines) bleibt der Zoom
+    exakt zentriert -- keine Verhaltensaenderung fuer bestehende Timelines."""
+    tl = _timeline(
+        video=[
+            {
+                "id": "c1",
+                "asset": "photo1",
+                "src_in": 0,
+                "src_out": 2,
+                "tl_in": 0,
+                "effects": [{"type": "kenburns"}],
+            }
+        ]
+    )
+    graph = build_filtergraph(
+        tl,
+        resolve_asset=lambda a: Path(f"/m/{a}.jpg"),
+        export_root=Path("/e"),
+        project_root=Path("/p"),
+    )
+    assert "iw/2-(iw/zoom/2)+(0.0000+on*0.000000)*iw" in graph.filter_complex
+
+
+def test_face_crop_center_defaults_to_image_center_without_faces():
+    from frameforge.render import _face_crop_center
+
+    assert _face_crop_center([], 4000, 3000, 1920, 1080) == (0.5, 0.5)
+
+
+def test_face_crop_center_shifts_toward_face_bbox():
+    from frameforge.render import _face_crop_center
+
+    # Gesicht oben links im Bild -> Crop-Fenster muss dorthin verschoben werden (nicht 0.5/0.5).
+    faces = [{"top": 100, "right": 800, "bottom": 700, "left": 300}]
+    center = _face_crop_center(faces, 3024, 4032, 1920, 1080)
+    assert center is not None
+    _cx, cy = center
+    assert cy < 0.5  # Gesicht liegt im oberen Bildbereich
+
+
+def test_face_crop_center_returns_none_when_unsafe():
+    from frameforge.render import _face_crop_center
+
+    # Zwei Gesichter, weit auseinander in der Achse, die durch den Crop am staerksten
+    # beschnitten wird (Hochkant 3:4 -> 16:9 behaelt nur ~42% der Bildhoehe) -> unsicher.
+    faces = [
+        {"top": 50, "right": 900, "bottom": 500, "left": 500},
+        {"top": 3400, "right": 900, "bottom": 3950, "left": 500},
+    ]
+    assert _face_crop_center(faces, 3024, 4032, 1920, 1080) is None
+
+
+def test_build_filtergraph_reports_unsafe_face_crops():
+    tl = _timeline(
+        video=[
+            {
+                "id": "c1",
+                "asset": "photo1",
+                "src_in": 0,
+                "src_out": 2,
+                "tl_in": 0,
+                "effects": [{"type": "kenburns"}],
+            }
+        ]
+    )
+    faces_by_asset = {
+        "photo1": [
+            {"top": 1, "right": 60, "bottom": 20, "left": 5},
+            {"top": 44, "right": 60, "bottom": 47, "left": 5},
+        ]
+    }
+    graph = build_filtergraph(
+        tl,
+        resolve_asset=lambda a: Path(__file__).parent / "fixtures" / "photo.jpg",
+        export_root=Path("/e"),
+        project_root=Path("/p"),
+        faces_by_asset=faces_by_asset,
+    )
+    assert "photo1" in graph.unsafe_face_crops
