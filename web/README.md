@@ -6,6 +6,10 @@ Website pro Reise**, auf der die fertigen Filme angeschaut werden können.
 Kein Teil der Video-Pipeline. Kein Python, kein Build-Schritt, keine State-Machine — nur
 statische Dateien, die auf einen VPS kopiert werden.
 
+**Bauplan je Site (bewusst klein):** Landing · eine Seite pro Film · Zahlen & Fakten ·
+Impressum. Jede Reise bekommt ein eigenes, thematisch passendes Theme; System-Tokens und
+Komponenten bleiben gleich.
+
 ## Struktur
 
 ```

@@ -16,15 +16,27 @@ damit sie bei Korrekturen an einer Stelle nachgezogen werden können.
 | Dramaturgie / Kapitel | `exports/*/beatsheet.md` |
 | Titelgrafiken 4K (Norwegen 2026 / Roadtrip bzw. Drone Edit) | `exports/*/overlays/title.png`, `title-card.png` |
 | Farb- und Schrift-Tokens der Filme | `projects/norwegen-2026/design/tokens.yaml` |
+| Kartenbild des Rundkurses | `projects/norwegen-2026/index/final-route.png` |
+
+## Abgeleitete Zahlen
+
+- **26.900 Höhenmeter** kumulierter Aufstieg — Summe der positiven Differenzen über die
+  1.089 Stützpunkte in `route/elevation.json`. Grober Richtwert, kein Tachowert.
+- **3.829 km** Gesamtstrecke — Summe der `km`-Spalte aus `stages.csv` (inkl. ca. 325 km
+  Fährstrecke).
+- **1.319 km / 22 h 31 min** Roadtrip-Rundkurs — Angabe aus dem Google-Maps-Screenshot.
 
 ## Kartenbild
 
-Der Google-Maps-Screenshot zeigt **nur den Roadtrip-Rundkurs** ab/bis Skien
-(22 h 42 min, 1.332 km). Die Gesamtstrecke enthält zusätzlich Grevenbroich → Hamburg →
-Flensburg → Hirtshals, die Fähre nach Larvik und den identischen Rückweg — insgesamt
-ca. 3.829 km.
+Liegt vor: `media/route-map-source.png` (2276 × 1844, Quelle:
+`projects/norwegen-2026/index/final-route.png`).
 
-Screenshot bitte ablegen als `media/route-map-source.png`.
+Zeigt **nur den Roadtrip-Rundkurs** ab/bis Skien — 1.319 km, 22 h 31 min. Google Maps
+erlaubt maximal zehn Wegpunkte, mehr Stationen hätten die Strecke verzerrt. Die Gesamtstrecke
+enthält zusätzlich Grevenbroich → Hamburg → Flensburg → Hirtshals, die Fähre nach Larvik und
+den identischen Rückweg — insgesamt ca. 3.829 km.
+
+Für die Website als `public/assets/img/route-map.jpg` aufbereiten (JPEG, ~1600 px breit).
 
 Maps-Link des Rundkurses (für den optionalen „in Google Maps öffnen"-Link):
 

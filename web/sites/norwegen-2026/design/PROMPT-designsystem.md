@@ -1,266 +1,318 @@
-# Prompt für das Design-System — „Reise-Mini-Site" (Pilot: Norwegen 2026)
+# Prompt für das Design-System — Reise-Website „Norwegen 2026"
 
 > **Verwendung:** Diesen Text vollständig in ein neues Claude-Design-System-Projekt geben.
-> Der Empfänger hat **keinen Zugriff auf dieses Repo** — alles Nötige steht hier drin.
-> Erwarteter Rückfluss: siehe Abschnitt „Was ich zurückbekommen möchte".
+> Der Empfänger hat **keinen Zugriff auf das Quell-Repo** — alles Nötige steht hier drin.
+> Rückfluss: siehe „Was ich zurückbekommen möchte" am Ende.
 
 ---
 
-## Rolle und Auftrag
+## Auftrag in einem Satz
 
-Du baust ein **kleines, in sich geschlossenes Design-System für private Reise-Mini-Websites**.
-Der Pilot ist eine Norwegen-Roadtrip-Seite für Familie und Freunde. Es sollen später weitere
-Seiten desselben Bautyps entstehen (eine pro Reise), deshalb: **Design-System zuerst,
-Norwegen als erste Ausprägung** — nicht umgekehrt. Reise-spezifische Farben und Bilder müssen
-über Tokens austauschbar sein, ohne dass die Komponenten angefasst werden.
+Bau ein eigenständiges, thematisch norwegisches Design-System und daraus eine
+**fünfseitige, private Familien-Website**, auf der zwei fertige Reisefilme geschaut und
+heruntergeladen werden können.
 
-Kein Framework, kein Build-Schritt, keine externen Requests: **statisches HTML + CSS**, ein
-paar Zeilen Vanilla-JS wo unvermeidbar. Die Seite liegt später auf einem kleinen VPS hinter
-nginx Basic Auth. Fonts, Bilder, Videos, Icons — alles lokal. Kein CDN, kein Google Fonts,
-kein Analytics, kein Tracking. Das ist eine harte Anforderung, keine Präferenz.
+## Kontext
 
-## Zielgruppe und Ton
+Eine Familie (2 Erwachsene + Sohn, 6 Jahre) war 18 Tage in Norwegen. Daraus sind zwei Filme
+entstanden: ein 18-minütiger Roadtrip-Vlog und ein 9,5-minütiger reiner Drohnenfilm. Die
+Seite ist die kleine Premierenbühne dafür — Link plus Passwort gehen an ~10–15 Menschen aus
+Familie und Freundeskreis.
 
-Zuschauer sind ~5–15 Menschen: Familie, Freunde, die Freunde in Norwegen. Sie bekommen Link
-und Passwort per Nachricht. Der Ton ist **persönlich, aber nicht kitschig** — es ist eine
-kleine Filmpremieren-Seite, keine Reise-Influencer-Landingpage. Kein Marketing-Sprech, keine
-Buttons namens „Jetzt entdecken", keine Social-Icons, keine Newsletter-Box, keine
-Cookie-Banner-Optik.
+**Umfang bewusst klein halten.** Das soll kein Portfolio-Stück werden. Fünf Seiten, ein
+sauberes Farbsystem, gute Typografie, ein paar gut gemachte Komponenten — fertig. Lieber
+wenige Dinge richtig als viele Ideen halb.
+
+Die Energie gehört ins **Aussehen**, nicht in Technik: es soll beim Öffnen kurz „oh, schön"
+machen und dann aus dem Weg gehen.
 
 ## Gestalterische Richtung
 
-Modern, ruhig, **cineastisch-dunkel**. Das Material (4K-Drohnenaufnahmen von Fjorden,
-Hochebenen, Gletscherflüssen) soll die Farbe liefern, das Interface tritt zurück. Denk an das
-Umfeld eines guten Videoplayers: dunkler Grund, großzügige Weißräume, wenige, präzise
-gesetzte Akzente, viel Typografie-Disziplin.
+**Norwegen als Thema, nicht als Klischee.** Was passt: die Farbwelt des Landes — tiefes
+Fjordblau, Gletschertürkis, Granitgrau, Moos- und Kieferngrün, dazu das warme Licht der
+Mitternachtssonne als Akzent. Die norwegische Flagge (Rot / Weiß / Marineblau) darf
+vorkommen, aber als präzises kleines Element (Favicon, Trenner, Akzentmarke) — nicht als
+wehendes Banner über die halbe Seite.
 
-Ausdrücklich **nicht** erwünscht: generisches Bootstrap-/Tailwind-Default-Aussehen, Karten mit
-Schlagschatten überall, Emoji als Icons, Verläufe über die ganze Seite, wabernde
-Parallax-Effekte, animierte Zähler, Glassmorphism als Selbstzweck.
+Was nicht passt: Trolle, Wikingerhelme, Runenschriften, Elch-Silhouetten, verschnörkelte
+„nordische" Deko-Schriften.
 
-Die Filme selbst sind bereits nach einem Video-Designsystem gebaut. Übernimm dessen Tokens als
-Ausgangspunkt, damit Seite und Film als eine Sache wirken:
+**Grundstimmung dunkel und cineastisch.** Das Material sind 4K-Aufnahmen von Fjorden,
+Hochebenen und Gletscherflüssen — die liefern die Farbe, das Interface tritt zurück. Denk an
+die Umgebung eines guten Videoplayers: dunkler Grund, viel Luft, wenige präzise Akzente.
 
-```
-primary   #12222f   (sehr dunkles Blaugrün-Blau — Grundfläche)
-secondary #2c4a5a   (gedecktes Petrol — Flächen zweiter Ordnung, Ränder)
-accent    #e0a458   (warmes Sandgold — Akzent, sparsam)
-text      #ffffff
-Schrift im Film: Avenir Next (Display und Text)
-```
+Ausdrücklich unerwünscht: Bootstrap-/Tailwind-Default-Look, Schlagschatten auf allem, Emoji
+als Icons, Ganzseiten-Verläufe, Parallax-Gewaber, animierte Zähler, Cookie-Banner-Ästhetik.
 
-Avenir Next ist eine System-/Lizenz-Schrift von Apple und darf nicht mit auf den Server. Such
-eine **frei lizenzierte, selbst hostbare Alternative** (Empfehlung willkommen, z. B. aus der
-Inter-/Söhne-/Grotesk-Ecke für Text und etwas mit mehr Charakter für Display) und begründe
-die Wahl kurz. Ich lade die Dateien selbst herunter — nenn mir Familie, Schnitte, Formate
-(woff2) und die Lizenz.
+Zur Orientierung, **nicht als Vorgabe**: Die Filme selbst verwenden ein sehr dunkles Blaugrün
+(`#12222f`), gedecktes Petrol (`#2c4a5a`) und warmes Sandgold (`#e0a458`) für ihre wenigen
+Bauchbinden. Wenn die Seite daran anknüpft, entsteht ein Zusammenhang — aber die Website
+braucht ein **eigenes, reichhaltigeres System**. Die Filme haben faktisch kein Design, nur
+Textfarben. Du hast hier freie Hand und sollst sie nutzen.
 
-Die Akzentfarbe darf pro Reise wechseln (Norwegen = Sandgold). Bau das so, dass eine künftige
-Seite nur einen Token-Block tauscht.
+## Die fünf Seiten
 
-## Aufbau: zwei Seiten
+### 1. `index.html` — Landing
 
-### Seite 1 — Start / „Der Vlog"
+- **Hero-Banner mit rotierenden Szenen.** Das Kernstück: 4–6 großformatige Standbilder aus
+  den Filmen (Fjord, Trollstigen, Hochebene, Schärenküste …), die langsam ineinander
+  überblenden — ruhig, ca. 6–8 s pro Bild, weiche Blende, gern mit sehr langsamem Ken-Burns.
+  Darüber der Titel **„Norwegen 2026"**, darunter „18 Tage · 3.829 km · zwei Filme". Reines
+  CSS wenn möglich, sonst ein paar Zeilen Vanilla-JS. Muss `prefers-reduced-motion`
+  respektieren (dann Standbild statt Rotation).
+- **Kurzer Einführungstext**, 2–3 Absätze: worum es ging, wie die Reise aufgebaut war (Basis
+  bei Freunden in Skien, dazwischen ein zehntägiger Roadtrip), was die zwei Filme
+  unterscheidet.
+- **Zwei Teaser-Karten** für die Filme — großes Standbild, Titel, Länge, ein Satz, Button.
+  Das ist der wichtigste interaktive Moment der Seite, entsprechend gut gestalten.
+- **Kleine Kennzahlen-Leiste** (Zeitraum, Kilometer, höchster Punkt, Reisetage) mit Link
+  auf die Fakten-Seite.
+- Footer mit Weitergabe-Hinweis (siehe unten) und Link zum Impressum.
 
-1. **Header / Hero.** Ganzflächiges Standbild oder kurze Videoschleife, darüber der Titel
-   „Norwegen 2026". Dezente Abdunklung, damit Text lesbar bleibt. Darunter eine schmale
-   Faktenzeile: Zeitraum, Dauer, Strecke, Reisende.
-2. **Teaser / Intro.** Zwei bis drei Absätze: worum es ging, wie die Reise aufgebaut war
-   (Basis bei Freunden in Skien, dazwischen ein zehntägiger Roadtrip), was die zwei Filme
-   unterscheidet.
-3. **Streckenübersicht.** Ein Kartenbild (statisches Bild, kein eingebettetes Google Maps —
-   das würde externe Requests bedeuten) mit den Etappenpunkten, dazu die harten Zahlen und
-   optional ein Link „in Google Maps öffnen" für die, die es interaktiv wollen.
-4. **Der Film.** HTML5-`<video>`, 16:9, groß, mit Poster-Bild. Daneben/darunter ein
-   Info-Block: Länge, Auflösung, worum es im Film geht, wie er dramaturgisch aufgeteilt ist,
-   Musik. Zusätzlich ein dezenter Download-Hinweis (4K-Fassung).
-5. **Roadtrip-Log / Tagebuch.** Die 18 Reisetage als Liste. Pro Tag: Datum, Etappe
-   (von → nach), Kilometer, ein bis drei Sätze, was passiert ist, optional ein kleines Bild.
-   Das ist der längste Abschnitt der Seite — er braucht ein Muster, das 18-mal funktioniert,
-   ohne zu ermüden: Zeitstrahl, Tageskarten, aufklappbare Einträge o. ä. Schlag eine Lösung
-   vor und begründe sie. Wichtig: auf dem Handy muss das noch angenehm lesbar sein.
-6. **Verweis auf Seite 2** (Drone Edit) als eigener, bildstarker Block.
-7. **Footer** mit dem Hinweis zur Weitergabe (siehe unten).
+### 2. `film-vlog.html` — „Roadtrip"
 
-### Seite 2 — „Drone Edit"
+- Schmaler Kopfbereich (kein Vollbild-Hero), Titel + Kerndaten.
+- **Vorspann-Text:** worum es in diesem Film geht, wie er aufgebaut ist, was ihn ausmacht.
+- **Der Player**: HTML5-`<video controls preload="metadata" poster>` in 16:9, groß, zentriert.
+- **Darunter zwei Blöcke:** „Über den Film" (Dramaturgie, Musik, Kartenanimation) und
+  „Technisches" (Länge, Auflösung, verwendete Aufnahmen).
+- **Download-Bereich:** die 4K-Fassung als expliziter Download-Button mit Größenangabe und
+  einem Satz Warnung, dass das eine große Datei ist.
+- Navigation zum anderen Film und zurück.
+
+### 3. `film-drone.html` — „Drone Edit"
 
 Gleicher Bautyp, eigener Charakter: reduzierter, dunkler, mehr Luft — der Film ist textfrei
-und ruhig, die Seite sollte das spiegeln.
+und ruhig, die Seite spiegelt das.
 
-1. Hero mit dem Drone-Edit-Titelbild.
-2. Kurztext: reiner Drohnenfilm, keine Karte, keine Bauchbinden; Bildsprache ruhig und
-   episch. Erwähnt wird, dass es **die erste Reise mit der Drohne überhaupt** war — also
-   Erstflüge über Fjord, Hochebene und Schärenküste, mit allem, was dazugehört.
-3. Technik-Block: Drohne DJI Lito X1 mit RC2-Fernsteuerung und Fly-More-Paket, 4K.
-4. Der Film (gleiche Player-Komponente wie Seite 1).
-5. Rückverweis auf Seite 1, gleicher Footer.
+Inhaltliche Besonderheit: es war die **erste Reise mit der Drohne überhaupt** (DJI Lito X1
+mit RC2-Fernsteuerung und Fly-More-Paket). Erstflüge über Fjord, Hochebene, Schärenküste.
+Ein Tag fehlt bewusst: in Aurland hat es geregnet, die Drohne blieb unten.
 
-## Komponenten, die ich brauche
+### 4. `fakten.html` — „Zahlen & Fakten"
 
-Bitte als benannte, dokumentierte Bausteine — jeweils Markup + CSS + kurze Anwendungsnotiz:
+Die verspielteste Seite. Aufgebaut aus Blöcken:
 
-- `hero` — vollflächig, Bild oder Video-Loop, Titel, Untertitel, Overlay-Abdunklung
-- `fact-strip` — Zeile mit 3–5 Kennzahlen (Zahl groß, Label klein)
-- `prose` — Textabschnitt, angenehme Zeilenlänge (~65–75 Zeichen), klare Hierarchie
-- `video-player` — `<video controls preload="metadata" poster>` in 16:9, plus Info-Panel
-- `map-figure` — Kartenbild mit Bildunterschrift und optionalem externem Link
-- `day-log` — das Tagebuch-Muster (18 Einträge)
-- `gallery` — kleine Bildstrecke, 3–8 Bilder, klickvergrößerbar ohne Lightbox-Bibliothek
-- `cta-card` — der bildstarke Verweis zwischen den beiden Seiten
-- `nav` — minimale Navigation zwischen den zwei Seiten
-- `footer` — inklusive Weitergabe-Hinweis
-- `notice` — dezenter Hinweiskasten für ebendiesen Text
+- **Kennzahlen-Raster** (siehe Faktenteil unten) — groß gesetzte Zahlen, kleine Labels.
+- **Die Karte:** ein Kartenbild des Roadtrip-Rundkurses mit Bildunterschrift, die klarstellt,
+  dass nur der norwegische Rundkurs zu sehen ist (die Anreise durch Deutschland, Dänemark und
+  über die Fähre kommt dazu). Dazu ein Link „in Google Maps öffnen". **Kein eingebettetes
+  Maps-iframe** — das wäre ein externer Request, siehe technische Regeln.
+- **Die Route in Textform** — Anreise, Rundkurs, Rückreise als kompakte Stationsliste.
+- **Die Drohne** — kleiner Technik-Block.
+- **Kuriositäten** — die augenzwinkernden Zahlen. Eigene Optik, gern etwas lockerer als der
+  Rest der Seite.
 
-## Weitergabe-Hinweis (muss auf beide Seiten)
+### 5. `impressum.html`
 
-Sinngemäß, gerne in bessere Worte gefasst:
+Schlicht, textlastig, gleiche Grundgestaltung. Inhalt liefere ich selbst — bau die Seite mit
+Platzhaltern für: Verantwortlicher (Name, Anschrift, E-Mail), Hinweis auf den privaten,
+nicht-kommerziellen Charakter, Musiklizenzen der Filme, Kartenmaterial (Google Maps),
+Schriftlizenzen, kurzer Datenschutzabsatz (keine Cookies, kein Tracking, nur Server-Logs).
+
+## Weitergabe-Hinweis (in den Footer aller Seiten)
+
+Sinngemäß, gern besser formuliert:
 
 > Diese Seite ist privat. Bitte gib Link und Passwort nicht weiter — auf den Bildern sind
-> Menschen zu sehen, die nicht gefragt wurden, und jede Ansicht kostet Serverdaten. Wenn
-> jemand sie sehen soll: sag mir Bescheid, ich schicke den Zugang.
+> Menschen zu sehen, die nicht gefragt wurden, und jeder Abruf kostet Serverdaten. Soll
+> jemand sie sehen: sag Bescheid, ich schicke den Zugang.
 
-Gestalterisch: ruhig und beiläufig, kein rotes Warndreieck, keine Alarm-Optik. Es ist eine
-Bitte, kein Compliance-Banner.
+Ruhig und beiläufig gestalten. Kein rotes Warndreieck, keine Alarm-Optik — es ist eine Bitte,
+kein Compliance-Banner.
 
-## Technische Rahmenbedingungen
+## Komponenten
 
-- **Nur statische Dateien.** `index.html`, `drone.html`, `assets/css/`, `assets/img/`,
-  `assets/fonts/`, `video/`. Keine Buildpipeline, kein npm, kein Sass — plain CSS mit Custom
-  Properties.
-- **Keine externen Requests, ausnahmslos.** Der einzige erlaubte Link nach außen ist ein
-  anklickbarer Google-Maps-Link, den der Nutzer bewusst öffnet.
-- **Videos sind sehr groß** (mehrere hundert MB bis GB). Also: `preload="metadata"`,
-  Poster-Bild als JPEG/WebP, niemals Autoplay mit Ton, kein automatisches Laden beider Filme.
-- **Responsiv** von 360 px bis 2560 px. Auf dem Handy wird das Log gelesen, am großen Monitor
-  der Film geschaut — beide Fälle müssen gut sein.
-- **Dark ist die Grundstimmung**, nicht ein Modus. Ein Light-Theme ist nicht nötig; wenn du
-  eins vorsiehst, dann sauber über dieselben Tokens.
-- **Barrierefreiheit** im vernünftigen Rahmen: Kontraste ≥ 4.5:1 für Fließtext, sichtbarer
-  Fokus, `prefers-reduced-motion` respektiert, sinnvolle Alt-Texte, Untertitel-Spur optional
-  vorgesehen (`<track>`), semantisches Markup.
-- **Performance:** Ziel ist eine Seite unter ~1,5 MB ohne Videos. Bilder in passenden
-  Größen, `loading="lazy"` unterhalb des Folds.
+Als benannte, dokumentierte Bausteine, jeweils Markup + CSS + kurze Anwendungsnotiz:
 
-## Mehrfachverwendung für spätere Reisen
+| Komponente | Zweck |
+|---|---|
+| `hero-rotator` | Vollbild-Hero mit überblendenden Szenen, Titel-Overlay |
+| `page-header` | schmaler Kopf für die Unterseiten |
+| `stat-grid` | Kennzahlen-Raster (Zahl groß, Label klein) |
+| `film-card` | Teaser-Karte für einen Film |
+| `video-block` | Player + Info-Panel + Download-Button |
+| `prose` | Textabschnitt, ~65–75 Zeichen Zeilenlänge |
+| `map-figure` | Kartenbild, Bildunterschrift, externer Link |
+| `fact-list` | Stationsliste / Aufzählung mit Struktur |
+| `fun-facts` | die kuriosen Zahlen, lockerere Optik |
+| `button` | primär / sekundär / Download, inkl. Zuständen |
+| `nav` + `footer` | Navigation über fünf Seiten, Footer mit Hinweis |
+| `notice` | dezenter Hinweiskasten |
 
-Trenne sauber:
+## Technische Regeln (hart)
 
-- **System-Tokens** (Abstände, Typo-Skala, Radien, Motion, Grundstruktur der Palette) —
-  bleiben über alle Reisen gleich.
-- **Reise-Tokens** (Akzentfarbe, Hero-Bilder, Titel, ggf. eine zweite Akzentfarbe) — pro Reise
-  ausgetauscht, am besten ein einzelner `:root`-Block in einer eigenen Datei
-  `theme-<reise>.css`.
-- **Inhalte** stehen im HTML, nicht im CSS.
+- **Statische Dateien.** Plain HTML + CSS mit Custom Properties, minimal Vanilla-JS. Kein
+  Build, kein npm, kein Sass, kein Framework.
+- **Keine externen Requests, ausnahmslos.** Keine CDNs, keine Google Fonts, kein Maps-iframe,
+  kein Analytics. Einziger erlaubter Außenkontakt: ein anklickbarer Google-Maps-Link.
+  Die Seite läuft hinter nginx Basic Auth auf einem kleinen VPS.
+- **Schrift selbst gehostet.** Die Filme nutzen Avenir Next (Apple-Systemschrift, darf nicht
+  auf den Server). Empfiehl eine frei lizenzierte Alternative — Display mit Charakter, Text
+  ruhig und gut lesbar — mit Familie, Schnitten, woff2 und Lizenz. Dateien besorge ich.
+- **Videos sind sehr groß.** `preload="metadata"`, Poster-Bild, niemals Autoplay mit Ton,
+  nie beide Filme gleichzeitig laden. Gestreamt wird 1080p, die 4K-Fassung ist reiner
+  Download.
+- **Responsiv** 360–2560 px. Am Handy wird gelesen, am großen Monitor geschaut.
+- **Dark ist die Grundstimmung**, kein umschaltbarer Modus.
+- **Barrierefreiheit** im vernünftigen Rahmen: Kontrast ≥ 4.5:1 im Fließtext, sichtbarer
+  Fokus, `prefers-reduced-motion`, sinnvolle Alt-Texte, semantisches Markup,
+  `<track>`-Platzhalter für spätere Untertitel.
+- **Ziel: unter ~1,5 MB pro Seite** ohne Video. `loading="lazy"` unterhalb des Folds.
 
-Beschreib in einem kurzen Abschnitt, welche Dateien man für eine neue Reise anfasst und
-welche man nie anfasst.
+## Wiederverwendbarkeit
+
+Zu jedem Reiseprojekt soll später eine eigene Website gehören (Malediven, Schottland, …) —
+jeweils **thematisch eigenständig**, aber nach demselben Bauplan. Trenne deshalb sauber:
+
+- **System** (Abstände, Typo-Skala, Radien, Motion, Komponenten-Struktur, Seitenaufbau) —
+  bleibt über alle Reisen gleich.
+- **Thema** (Palette, Schriftwahl, Hero-Bilder, Akzentmotiv) — pro Reise ausgetauscht, in
+  einer eigenen Datei `theme-norwegen-2026.css`.
+- **Inhalt** steht im HTML.
+
+Beschreib knapp, welche Dateien man für eine neue Reise anfasst und welche nie.
 
 ---
 
-## Die Fakten für die Norwegen-Ausprägung
+# Die Inhalte
 
-Damit du echte Inhalte statt Lorem Ipsum einsetzen kannst.
-
-### Reise
+## Reise-Eckdaten
 
 | | |
 |---|---|
 | Zeitraum | Sa 18.07. – Di 04.08.2026 (Verladen am Vorabend, 17.07.) |
 | Dauer | 18 Tage |
-| Reisende | 2 Erwachsene + Sohn (6 Jahre) |
+| Reisende | 2 Erwachsene + Sohn (6) |
 | Fahrzeug | SEAT Leon ST mit Dachbox |
-| Gesamtstrecke | ca. 3.829 km inkl. zweier Fährüberfahrten |
-| Roadtrip-Teil | 23.07. – 01.08., ca. 1.332 km Rundkurs ab/bis Skien |
-| Basis | Freunde in Skien, Telemark |
+| Gesamtstrecke | ca. 3.829 km, davon ca. 325 km auf zwei Fährüberfahrten |
+| Roadtrip-Rundkurs | 23.07. – 01.08., 1.319 km ab/bis Skien (22 h 31 min reine Fahrzeit) |
+| Basis | bei Freunden in Skien, Telemark |
 | Höchster Punkt | Valdresflye, 1.183 m |
-| Route grob | Grevenbroich → Hamburg → Flensburg → Hirtshals → Fähre Color Line → Larvik → Skien → [Roadtrip: Geilo → Aurland → Geiranger → Lom → Uvdal] → Skien → Larvik → Fähre → Hirtshals → Grevenbroich |
+| Tiefster Punkt | Meereshöhe — Fjord- und Küstenetappen (Nærøyfjord, Schärenküste) |
+| Höhenunterschied | rund **1.180 m** zwischen tiefstem und höchstem Punkt der Reise; Start in Grevenbroich liegt auf ca. 40 m |
+| Längster Tag | 1.052 km am Rückreisetag |
 
-Roadtrip-Stationen des Rundkurses: Skien → Heddal Stabkirche → Geilo (Hakkesetstølen,
-1.041 m) → Aurlandsfjellet/Stegastein → Aurland/Flåm → Nærøyfjord/Gudvangen → Lærdalstunnel →
-Laukifossen/Loen → Geiranger → Trollstigen (702 m) → Lom → Valdresflye (1.183 m) → Uvdal →
-Notodden → Skien.
+Weitere Höhenmarken für die Fakten-Seite: Trollstigen 702 m · Aurlandsfjellet-Pass 506 m ·
+Stegastein 639 m · Hakkesetstølen (Unterkunft Geilo) 1.041 m · Valdresflye 1.183 m.
 
-### Höhepunkte fürs Teaser-Textmaterial
+Der **kumulierte Aufstieg (~26.900 m)** gehört *nicht* in diese Eckdaten, sondern in die
+Kuriositäten — er ist eine technische Rechengröße, keine anschauliche Reiseangabe.
 
-Fähre über das Skagerrak · Heddal Stabkirche · Panoramastraße Aurlandsfjellet und die
-Plattform Stegastein über dem Aurlandsfjord · Flåmsbana (20,2 km, 864 Höhenmeter, steilste
-Normalspurbahn Nordeuropas) · Nærøyfjord (UNESCO-Welterbe) mit dem Elektroboot · Wikingerdorf
-Viking Valley in Gudvangen · Lærdalstunnel, 20 km durch den Berg · Wasserfall Laukifossen ·
-Geburtstag in Geiranger mit RIB-Safari zu den „Sieben Schwestern" · Trollstigen mit elf
-Haarnadelkurven · Stabkirche Lom · Passstraße Valdresflye · Angeln an der Schärenküste, wo
-der Sohn seinen ersten Fisch fängt.
+## Die Route
 
-### Film 1 — „Norwegen 2026 · Roadtrip" (der Vlog)
+**Anreise:** Grevenbroich → Hamburg → Flensburg → Hirtshals (DK) → Fähre Color Line über das
+Skagerrak → Larvik (N) → Skien.
 
-- Länge **18:00 min**, 3840×2160 @ 30 fps
-- Chronologisch über alle 18 Tage, aus 167 ausgewählten Clips und Fotos (aus 1.181 Aufnahmen)
+**Roadtrip-Rundkurs ab Skien:** Heddal Stabkirche → Geilo (Hakkesetstølen, 1.041 m) →
+Aurlandsfjellet / Stegastein → Aurland & Flåm → Nærøyfjord & Gudvangen → Lærdalstunnel →
+Laukifossen & Loen → Geiranger → Gudbrandsjuvet → Trollstigen (702 m) → Lom → Valdresflye
+(1.183 m) → Uvdal → Notodden → zurück nach Skien.
+
+**Rückreise:** Skien → Larvik → Fähre nach Hirtshals → quer durch Dänemark → Hamburg →
+Grevenbroich, ohne Zwischenübernachtung durchgefahren.
+
+Maps-Link für den Rundkurs (nur dieser Teil, Google Maps erlaubt maximal zehn Wegpunkte):
+
+```
+https://www.google.com/maps/dir/Tiedemannsjordet+16,+3727+Skien,+Norwegen/Hakkesetvegen+73,+3580+Geilo,+Norwegen/Bj%C3%B8rgavegen+23,+5745+Aurland,+Norwegen/Laukifossen,+Oldeelva,+Stryn,+Norwegen/Geirangervegen+200+moh,+Fv63+14,+6216+Geiranger,+Norwegen/Trollstigen,+6300+%C3%85ndalsnes,+Norwegen/Nordal+tourist+center,+Riksvei+15+79,+2686+Fossbergom,+Norwegen/Uvdalsvegen+966,+3632+Uvdal,+Norwegen/Stabkirche+Heddal,+Heddalsvegen+412,+3676+Notodden,+Norwegen/Tiedemannsjordet+16,+3727+Skien,+Norwegen
+```
+
+Das Kartenbild liegt vor (Google-Maps-Screenshot des Rundkurses, quer, ca. 2276 × 1844 px) und
+kommt als `assets/img/route-map.jpg` in die Seite.
+
+## Höhepunkte (Textmaterial für Landing und Fakten)
+
+Fähre über das Skagerrak · Heddal Stabkirche, die größte Stabkirche Norwegens ·
+Panoramastraße Aurlandsfjellet und die Plattform **Stegastein**, 650 m über dem Aurlandsfjord ·
+**Flåmsbana**: 20,2 km, 864 Höhenmeter, 55 ‰ Steigung, 20 Tunnel — die steilste
+Normalspurbahn Nordeuropas · **Nærøyfjord**, UNESCO-Welterbe, mit dem Elektroboot ·
+Wikingerdorf Viking Valley in Gudvangen · **Lærdalstunnel**, 20 km durch den Berg ·
+Wasserfall Laukifossen · **Geirangerfjord**, ebenfalls UNESCO-Welterbe, per RIB-Safari zu den
+„Sieben Schwestern" · **Trollstigen**, elf Haarnadelkurven auf 702 m · Stabkirche Lom ·
+Passstraße Valdresflye über die Hochebene · Angeln an der Schärenküste bei Langesund.
+
+## Kuriositäten (für den `fun-facts`-Block)
+
+- **1 Fisch** — gefangen an der Schärenküste, vom Sechsjährigen, winzig. Der einzige der
+  ganzen Reise.
+- **1.181 Aufnahmen** gesichtet, knapp **4 Stunden** Rohvideo. In die Filme geschafft haben
+  es 167 bzw. 78 Einstellungen.
+- **20 km** am Stück unter einem Berg (Lærdalstunnel) — das einzige Foto der Reise ohne
+  GPS-Daten, weil es dort keinen Empfang gibt.
+- **1 Geburtstag** unterwegs gefeiert, in Geiranger, mit Schlauchboot statt Kuchen.
+- **1 Regentag ohne Drohne** — in Aurland blieb sie unten. Deshalb fehlt dieser Tag im
+  Drohnenfilm komplett.
+- **1 Freundschaft ohne gemeinsame Sprache** — der Sohn lernte in Uvdal einen norwegischen
+  Jungen kennen; verständigt wurde sich mit Händen und Füßen, gelehrt wurde Angeln.
+- **11 Haarnadelkurven** am Trollstigen.
+- **26.900 Höhenmeter** kumulierter Aufstieg über die Gesamtstrecke — dreimal auf den Mount
+  Everest, nur bequemer. (Rechengröße aus dem GPS-Höhenprofil, kein Tachowert.)
+- **2 Fährüberfahrten** über das Skagerrak, je etwa dreieinhalb Stunden.
+- **1 bewusst falsche Route** — der Rückweg von Uvdal ging nicht über die schnelle Strecke
+  bei Kongsberg, sondern eine Viertelstunde länger über Notodden. Weil schöner.
+
+## Film 1 — „Norwegen 2026 · Roadtrip" (`film-vlog.html`)
+
+- **18:00 min**, 3840 × 2160 bei 30 fps
+- Chronologisch über alle 18 Tage, 167 ausgewählte Einstellungen aus 1.181 Aufnahmen
 - Durchgehend eine mitlaufende Karte unten rechts: aktueller Ort, gefahrene Gesamtstrecke
 - Beginnt mit einem stillen Cold Open — nur Wind, während die Route auf der Karte wächst
-- Dreiteilig entlang von drei Musikstücken, die ineinander überblenden
-- Bauchbinden nur für Datum und Etappe, sonst textfrei
+- Dreiteilig entlang dreier Musikstücke, die ineinander überblenden
+- Text nur für Datum und Etappe, sonst textfrei
+- Streaming-Fassung 1080p (~1,3 GB), Download-Fassung 4K (6,8 GB)
 
-### Film 2 — „Norwegen 2026 · Drone Edit"
+## Film 2 — „Norwegen 2026 · Drone Edit" (`film-drone.html`)
 
-- Länge **9:28 min**, 3840×2160 @ 30 fps
-- 78 reine Drohnenaufnahmen, chronologisch, ohne Karte und ohne Text
+- **9:28 min**, 3840 × 2160 bei 30 fps
+- 78 reine Drohnenaufnahmen, chronologisch, ohne Karte, ohne Text
 - Ruhige, epische Bildsprache: lange Einstellungen, langsame Bewegungen, Schwarzblenden am
   Anfang und Ende
 - Zwei Musikstücke, fließend ineinander
-- Erste Reise überhaupt mit der Drohne (DJI Lito X1, RC2, Fly More)
-- An einem Tag fehlt bewusst Material: in Aurland hat es geregnet, die Drohne blieb unten
-
-### Roadtrip-Log — die 18 Tage in Kurzform
-
-Das ist der Rohstoff für den `day-log`. Endgültige Formulierungen mache ich selbst, du
-brauchst sie nur, um Länge und Rhythmus des Musters richtig zu treffen.
-
-| Tag | Datum | Etappe | km | Stichworte |
-|---|---|---|---|---|
-| 1 | Sa 18.07. | Grevenbroich → Flensburg | 578 | Aufbruch 07:00, viel Stau, Hamburger Hafen, Hafenspaziergang, Möwe |
-| 2 | So 19.07. | Flensburg → Skien | 552 | Durch Dänemark, Color-Line-Fähre ab Hirtshals, Wind auf dem Oberdeck, abends Pizza bei Freunden |
-| 3 | Mo 20.07. | Skien, Hütte am See | 40 | 581 m, Wanderung zum See, Beeren, Ruderboot, Grillen, erste Drohnenflüge |
-| 4 | Di 21.07. | Skien, Küste bei Langesund | 40 | Schärenküste, abgeschliffene Felsen, Muscheln, Eis |
-| 5 | Mi 22.07. | Skien, Ruhetag | 20 | Kapla, Route besprechen, zweites Grillen |
-| 6 | Do 23.07. | Skien → Geilo | 220 | Heddal Stabkirche, Rastplatz am See, Unterkunft auf 1.041 m |
-| 7 | Fr 24.07. | Geilo → Aurland | 190 | Hardangervidda, Aurlandsfjellet, Stegastein, Flåmsbana, abends Fjordblick |
-| 8 | Sa 25.07. | Aurland (Erlebnistag) | 10 | Regen, Elektroboot durch den Nærøyfjord, Viking Valley — keine Drohne |
-| 9 | So 26.07. | Aurland → Geiranger | 278 | Lærdalstunnel, Fähre über den Sognefjord, Laukifossen, Loen, Ankunft am Fjord |
-| 10 | Mo 27.07. | Geiranger | 10 | Geburtstag, Fossevandring am Wasserfall, RIB-Safari zu den Sieben Schwestern |
-| 11 | Di 28.07. | Geiranger → Lom | 266 | Gudbrandsjuvet, Trollstigen auf 702 m, Ankunft Lom, Stabkirche, Angler am Wasser |
-| 12 | Mi 29.07. | Lom → Uvdal | 300 | Valdresflye auf 1.183 m, Numedal, Camp Uvdal |
-| 13 | Do 30.07. | Uvdal | 10 | Freundschaft mit Emil ohne gemeinsame Sprache, Angeln, Soccergolf, Bogenschießen, Kanu |
-| 14 | Fr 31.07. | Uvdal | 0 | Kanu, Tischtennis, Bogenschießen, Steine ins Wasser |
-| 15 | Sa 01.08. | Uvdal → Skien | 190 | Bewusst die schönere Westroute über Notodden statt der schnellsten |
-| 16 | So 02.08. | Skien, Ruhetag | 0 | Hütte, Brettspiele, Ribbe |
-| 17 | Mo 03.08. | Skien, Angeln an der Küste | 71 | Schärenküste, viele Drohnenaufnahmen, der erste Fisch |
-| 18 | Di 04.08. | Skien → Grevenbroich | 1.052 | 07:00 an der Fähre in Larvik, danach durchgefahren, ~15 Stunden bis nach Hause |
-
-(Tag 0, 17.07.: Verladen am Abend vor der Abreise — Dachbox, voller Kofferraum. Passt als
-Auftakt, ist aber kein Reisetag.)
+- Drohne: **DJI Lito X1** mit RC2-Fernsteuerung und Fly-More-Paket — die erste Reise mit ihr
+- Streaming-Fassung 1080p (~0,7 GB), Download-Fassung 4K (5,4 GB)
 
 ---
 
+## Dateipfade, die ich brauche
+
+Bau die Seiten gegen genau diese Pfade — die Dateien liefere ich nach:
+
+```
+assets/css/tokens.css                 System-Tokens
+assets/css/theme-norwegen-2026.css    Reise-Tokens
+assets/css/base.css
+assets/css/components.css
+assets/fonts/…                        woff2
+assets/img/hero-01.jpg … hero-06.jpg  Hero-Rotation
+assets/img/route-map.jpg              Kartenbild
+assets/img/teaser-vlog.jpg            Teaser-Karte Landing
+assets/img/teaser-drone.jpg           Teaser-Karte Landing
+video/vlog-edit-1080p.mp4             Stream
+video/vlog-edit-4k.mp4                Download
+video/vlog-edit-poster.jpg
+video/drone-edit-1080p.mp4            Stream
+video/drone-edit-4k.mp4               Download
+video/drone-edit-poster.jpg
+```
+
 ## Was ich zurückbekommen möchte
 
-1. **`tokens.css`** — System-Tokens als CSS Custom Properties (Farbe, Typo-Skala, Abstände,
+1. **`tokens.css`** — System-Tokens als Custom Properties (Farbrollen, Typo-Skala, Abstände,
    Radien, Schatten, Motion, Breakpoints), kommentiert.
-2. **`theme-norwegen-2026.css`** — der reise-spezifische Token-Block.
-3. **`base.css` + `components.css`** — Reset/Grundlayout und die oben gelisteten Komponenten.
-4. **`index.html` und `drone.html`** — vollständige, funktionierende Seiten mit den echten
-   Inhalten von oben und Platzhaltern für Bilder/Videos an klar benannten Pfaden
-   (`assets/img/…`, `video/…`).
-5. **Eine Design-Dokumentation** (Markdown): Gestaltungsprinzipien, Typo-Skala, Farbrollen,
-   Komponentenübersicht mit Anwendungsregeln, und der Abschnitt „so legt man eine neue
-   Reise-Seite an".
-6. **Font-Empfehlung** mit Lizenz und Bezugsquelle — Dateien lade ich selbst.
-7. **Bildliste**: welche Bilder in welchen Maßen und Seitenverhältnissen gebraucht werden
-   (Hero, Poster, Log-Miniaturen, Karte, Galerie), mit den erwarteten Dateinamen. Ich
-   schneide sie aus dem Filmmaterial zu.
+2. **`theme-norwegen-2026.css`** — die norwegische Palette und Themen-Tokens.
+3. **`base.css` + `components.css`** — Reset/Grundlayout und die Komponenten von oben.
+4. **Die fünf HTML-Seiten**, fertig, mit den echten Inhalten aus diesem Dokument und
+   Platzhaltern an den genannten Pfaden.
+5. **Design-Dokumentation** (Markdown): Prinzipien, Farbrollen, Typo-Skala,
+   Komponentenübersicht mit Anwendungsregeln, Abschnitt „so entsteht die nächste Reise-Seite".
+6. **Font-Empfehlung** mit Lizenz und Bezugsquelle.
+7. **Bildliste**: welche Bilder in welchen Maßen und Seitenverhältnissen gebraucht werden,
+   mit den erwarteten Dateinamen. Ich schneide sie aus dem Filmmaterial zu.
 
-Bitte keine Screenshots-als-Design ohne Code — ich brauche die Dateien, sie gehen direkt auf
-den Server.
+Bitte Dateien, keine Screenshot-Mockups — das Ergebnis geht direkt auf den Server.
 
 ## Wenn dir etwas fehlt
 
-Frag lieber, als zu raten — insbesondere bei Inhalten, Bildmotiven oder wenn du eine
-gestalterische Entscheidung für begründungsbedürftig hältst.
+Frag, statt zu raten — besonders bei Inhalten, Bildmotiven oder gestalterischen
+Entscheidungen, die du für begründungsbedürftig hältst.
