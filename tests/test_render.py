@@ -545,7 +545,7 @@ def test_render_proxy_missing_asset_raises(proj):
         render_proxy(proj, export, timeline)
 
 
-# -- render_final: mappt auf Originale, Loudness-Normalisierung, Versionierung -------
+# -- render_final: mappt auf Originale, Loudness-Normalisierung, Ausgabename -------
 
 
 def test_render_final_maps_to_original_and_normalizes_audio(proj):
@@ -567,7 +567,7 @@ def test_render_final_maps_to_original_and_normalizes_audio(proj):
 
     out_path = render_final(proj, export, timeline)
 
-    assert out_path.name == "teaser_v1.mp4"
+    assert out_path.name == "teaser_240p.mp4"
     assert out_path.parent == export.final_dir
     result = probe_video(out_path)
     assert result["dur"] == pytest.approx(1.5, abs=0.3)
@@ -575,7 +575,7 @@ def test_render_final_maps_to_original_and_normalizes_audio(proj):
     assert result["h"] == 240
 
 
-def test_render_final_versions_instead_of_overwriting(proj):
+def test_render_final_names_output_by_resolution(proj):
     export = proj.export("teaser")
     timeline = Timeline(
         export="teaser",
@@ -586,12 +586,18 @@ def test_render_final_versions_instead_of_overwriting(proj):
     )
 
     first = render_final(proj, export, timeline)
-    second = render_final(proj, export, timeline)
+    downscaled = render_final(proj, export, timeline, resolution=(160, 120))
+    again = render_final(proj, export, timeline)
 
-    assert first.name == "teaser_v1.mp4"
-    assert second.name == "teaser_v2.mp4"
+    # Die Aufloesung steht im Namen, damit 4K-Download und Streaming-Fassung
+    # nebeneinander unterscheidbar sind.
+    assert first.name == "teaser_240p.mp4"
+    assert downscaled.name == "teaser_120p.mp4"
+    # Dieselbe Fassung ein zweites Mal: vorhandene Datei bleibt unangetastet.
+    assert again.name == "teaser_240p_v2.mp4"
     assert first.exists()
-    assert second.exists()
+    assert downscaled.exists()
+    assert again.exists()
 
 
 def _add_heic_asset(project) -> None:
@@ -1770,3 +1776,12 @@ def test_render_final_chunked_discards_chunks_from_other_settings(proj, monkeypa
     steps: list[str] = []
     render_final(proj, export, timeline, chunk_s=4.0, crf=18, on_progress=steps.append)
     assert any("passen nicht" in s for s in steps)
+
+
+def test_resolution_label_marks_4k_and_p_variants():
+    from frameforge.render import resolution_label
+
+    assert resolution_label((3840, 2160)) == "4k"
+    assert resolution_label((4096, 2160)) == "4k"
+    assert resolution_label((1920, 1080)) == "1080p"
+    assert resolution_label((1280, 720)) == "720p"

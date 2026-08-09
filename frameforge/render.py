@@ -931,6 +931,7 @@ def _run_ffmpeg(
     *,
     crf: int | None = None,
     preset: str | None = None,
+    faststart: bool = False,
 ) -> None:
     out_path.parent.mkdir(parents=True, exist_ok=True)
     cmd = ["ffmpeg", "-y"]
@@ -944,6 +945,8 @@ def _run_ffmpeg(
         cmd.extend(["-crf", str(crf)])
     if preset is not None:
         cmd.extend(["-preset", preset])
+    if faststart:
+        cmd.extend(["-movflags", "+faststart"])
     cmd.extend(["-c:a", "aac", "-loglevel", "error", str(out_path)])
     # Grosszuegiges, aber endliches Timeout als Sicherheitsnetz: ein Filtergraph-Fehler
     # (z.B. ein unbegrenzter `-loop 1`-Input ohne `shortest=1` an einem `overlay`) darf den
@@ -1055,16 +1058,30 @@ def render_proxy(
     return out_path
 
 
-def _next_version_path(directory: Path, stem: str, ext: str) -> Path:
-    """Naechster freier `<stem>_v<N><ext>`-Pfad — Render-Versionierung statt Overschreiben."""
+def resolution_label(resolution: tuple[int, int]) -> str:
+    """Kurzname einer Ausgabe-Aufloesung: `(3840, 2160)` -> `4k`, `(1920, 1080)` -> `1080p`."""
+    width, height = resolution
+    if width >= 3840 or height >= 2160:
+        return "4k"
+    return f"{height}p"
+
+
+def _final_output_path(directory: Path, stem: str, resolution: tuple[int, int]) -> Path:
+    """Ausgabepfad eines Final-Renders: `<stem>_<label>.mp4` (`vlog-edit_1080p.mp4`).
+
+    Die Aufloesung steht im Dateinamen, weil von einem Export mehrere Fassungen nebeneinander
+    existieren (4K zum Herunterladen, 1080p zum Streamen) und eine blosse Versionsnummer
+    nicht sagt, welche Datei man vor sich hat. Eine Nummer kommt nur dazu, wenn dieselbe
+    Fassung ein zweites Mal gerendert wird — dann bleibt die vorhandene Datei unangetastet.
+    """
     directory.mkdir(parents=True, exist_ok=True)
-    existing = sorted(directory.glob(f"{stem}_v*{ext}"))
-    max_version = 0
-    for path in existing:
-        suffix = path.stem.rsplit("_v", 1)[-1]
-        if suffix.isdigit():
-            max_version = max(max_version, int(suffix))
-    return directory / f"{stem}_v{max_version + 1}{ext}"
+    base = directory / f"{stem}_{resolution_label(resolution)}.mp4"
+    if not base.exists():
+        return base
+    n = 2
+    while (candidate := base.with_name(f"{base.stem}_v{n}.mp4")).exists():
+        n += 1
+    return candidate
 
 
 # -- Chunk-Render: den Film stueckweise rendern und ohne Neukodierung zusammensetzen ------
@@ -1301,7 +1318,9 @@ def _is_complete_chunk(path: Path, expected_s: float, *, tol_s: float = 0.5) -> 
         return False
 
 
-def _concat_chunks(chunks: list[Path], out_path: Path, *, total_duration: float) -> None:
+def _concat_chunks(
+    chunks: list[Path], out_path: Path, *, total_duration: float, faststart: bool = False
+) -> None:
     """Fuegt die Chunk-Dateien per concat-Demuxer zusammen — **ohne Neukodierung** (`-c copy`).
 
     Setzt voraus, dass alle Chunks mit identischen Encoder-Settings entstanden sind (tun sie,
@@ -1311,8 +1330,11 @@ def _concat_chunks(chunks: list[Path], out_path: Path, *, total_duration: float)
     list_path.write_text("".join(f"file '{c.resolve()}'\n" for c in chunks))
     cmd = [
         "ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(list_path),
-        "-c", "copy", "-loglevel", "error", str(out_path),
+        "-c", "copy",
     ]
+    if faststart:
+        cmd.extend(["-movflags", "+faststart"])
+    cmd.extend(["-loglevel", "error", str(out_path)])
     _run_ffmpeg_cmd(cmd, timeout_s=max(120.0, total_duration * 2))
 
 
@@ -1325,6 +1347,9 @@ def _mux(video_path: Path, audio_path: Path, out_path: Path, *, total_duration: 
     cmd = [
         "ffmpeg", "-y", "-i", str(video_path), "-i", str(audio_path),
         "-map", "0:v:0", "-map", "1:a:0", "-c", "copy",
+        # Web-Auslieferung: moov-Atom nach vorn, sonst muss ein Browser die komplette Datei
+        # laden, bevor er das erste Bild zeigt (bei mehreren GB heisst das: gar nichts).
+        "-movflags", "+faststart",
         "-loglevel", "error", str(out_path),
     ]
     _run_ffmpeg_cmd(cmd, timeout_s=max(120.0, total_duration * 2))
@@ -1390,7 +1415,7 @@ def render_final(
             return proxy
         return original
 
-    out_path = _next_version_path(export.final_dir, export.name, ".mp4")
+    out_path = _final_output_path(export.final_dir, export.name, resolution or timeline.resolution)
     faces = _load_faces_by_asset(project)
 
     if chunk_s is not None:
@@ -1413,7 +1438,7 @@ def render_final(
         color_grade=color_grade,
         faces_by_asset=faces,
     )
-    _run_ffmpeg(graph, timeline, out_path, crf=crf, preset=preset)
+    _run_ffmpeg(graph, timeline, out_path, crf=crf, preset=preset, faststart=True)
     return out_path
 
 
@@ -1505,7 +1530,7 @@ def _render_final_chunked(
 
     video_path = work_dir / "video.mp4"
     report(f"Fuege {len(chunk_paths)} Chunks zusammen (ohne Neukodierung)")
-    _concat_chunks(chunk_paths, video_path, total_duration=timeline.duration)
+    _concat_chunks(chunk_paths, video_path, total_duration=timeline.duration, faststart=True)
     # Chunks sofort weg: sonst liegen Chunks + zusammengesetztes Video + fertige Datei
     # gleichzeitig auf der Platte — beim Norwegen-Vlog dreimal ~9 GB, mehr als frei ist.
     for chunk in chunk_paths:
