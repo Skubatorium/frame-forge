@@ -2755,3 +2755,46 @@ Drei Dinge, die beim naechsten langen Render Zeit sparen:
 Plattenplatz bleibt die zweite Ressource neben RAM: Chunks + zusammengesetztes Video +
 Endfassung sind drei Kopien. Deshalb loescht der Lauf die Chunks direkt nach dem `concat`.
 Vor einem 4K-Lauf `df -h /` pruefen — beim Vlog waren ~7 GB in Bewegung.
+
+---
+
+## Reise-Website `web/` (2026-08-10)
+
+Zusatzbereich neben der Pipeline: pro Reiseprojekt eine kleine, passwortgeschuetzte Website
+mit den fertigen Filmen. Pilot: `web/sites/norwegen-2026/` fuer https://norwegen.skubus.de.
+
+| Schritt | Status |
+|---|---|
+| Struktur `web/` + Design-Prompt | ✅ `856d481` |
+| Designsystem-Export (5 Seiten, Tokens, Komponenten) | ✅ `f13d623`, `8a26491` |
+| `public/` mit echten Bildern aus dem Material | ✅ `16e5072`, `96b71bd` |
+| Schriften (Schibsted Grotesk, Source Serif 4) | ⬜ Netzzugriff gesperrt, Nutzer laedt sie |
+| Videos auf den Server | ⬜ Nutzer, 4 Dateien / ~14 GB |
+| Traefik Basic Auth | ⬜ Nutzer, Infrastruktur-Ebene |
+
+### Aenderungen an der Pipeline, die dafuer noetig waren
+
+1. **`faststart`** (`40990a1`): Die Finals hatten das moov-Atom am Dateiende — ein Browser
+   haette die komplette Datei laden muessen, bevor er das erste Bild zeigt. Jetzt bei
+   Ein-Pass-Render, Chunk-Concat und Mux gesetzt.
+2. **Aufloesung im Dateinamen** (`40990a1`): `vlog-edit_4k.mp4` / `vlog-edit_1080p.mp4` statt
+   `_v1`/`_v2`. Von einem Export existieren mehrere Fassungen nebeneinander; eine blosse
+   Versionsnummer sagt nicht, welche man vor sich hat. `_next_version_path` ist entfallen,
+   `resolution_label` ist neu. Eine Nummer kommt nur bei erneutem Render derselben Fassung
+   dazu, die vorhandene Datei bleibt unangetastet.
+3. **Gate: Zweitfassung ohne neues Preview** (`c83c675`): `gate_render_final` laesst Phase
+   RENDERED zu, wenn der Timeline-Fingerprint dem beim Approve gespeicherten entspricht — ein
+   zweites Deliverable derselben Freigabe, kein zweiter Schnitt. Geaenderte Timeline blockiert
+   weiterhin. `.claude/hooks/gate.py` gibt den Fingerprint mit.
+
+### Stolperstellen
+
+- **`_generated/` unter `media_root` war verschwunden.** Der 1080p-Lauf des Vlogs brach sofort
+  ab (`generated-cold-open-black` nicht gefunden). Beide Dateien lagen noch im Proxy-Cache und
+  wurden von dort zurueckgeholt. Wer `media_root` aufraeumt, trifft auch generierte Assets —
+  sie stehen in `assets.json` wie jedes andere Material.
+- **Netzzugriff ist aus der Arbeitsumgebung gesperrt.** Schriften und andere externe Dateien
+  muss der Nutzer selbst beschaffen.
+- **Bitraten der 1080p-Fassungen** liegen bei CRF 20 hoeher als erwartet: vlog 1,7 GB
+  (~12,6 Mbit/s), drone 1,4 GB (~20 Mbit/s). Bewusst so belassen — geschaut wird am grossen
+  Bildschirm, nicht unterwegs.
