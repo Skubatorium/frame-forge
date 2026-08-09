@@ -2636,3 +2636,54 @@ Pegelmessung je 2s-Fenster.
 **Nebenbefund:** `templates/svg/infocard.svg` (seit `a87299a` im Repo) verlangt `info_main` und
 `info_sub`. Beide fehlten im Token-Satz der Template-Tests, seitdem waren **6 Tests rot** —
 unbemerkt, weil in Runde 3 nur gezielt einzelne Testdateien liefen. Ergaenzt; 601 Tests gruen.
+
+### Der 4K-Final-Render von `vlog-edit` scheitert am Ein-Pass-Graphen (2026-08-09) — Messwerte
+
+Freigabe erteilt (`APPROVED`), `frameforge render norwegen-2026 vlog-edit --crf 18` gestartet,
+nach 42 Sekunden abgebrochen — **nicht** vom Watchdog, sondern von Hand, weil die Lage eindeutig
+war:
+
+| Zeitpunkt | frei auf / | Swap benutzt | ffmpeg |
+|---|---|---|---|
+| Start | 17,1 GB | 0,18 GB | — |
+| +33 s | 7,5 GB | — | RSS 1,8 GB, 38 % CPU, Ausgabedatei 0 Bytes |
+| +42 s | 6,2 GB | **12,1 GB** | RSS 1,4 GB, **3,1 % CPU** (Thrashing) |
+| nach `kill` | 13 GB | 4,2 GB | — |
+
+**Die Ursache ist die Zahl der gleichzeitig offenen Inputs, nicht die Dateigroesse.** Gegenprobe
+mit einem echten 4K-Chunk aus den Originalen (Filmzeit 600-700 s, Video + Overlays, ohne Ton):
+
+| | Inputs | RSS | Ergebnis |
+|---|---|---|---|
+| Chunk 103,6 s | 19 | **5,9 GB** | laeuft in ~4 min sauber durch, 840 MB, Swap waechst nicht |
+| ganzer Film | 213 | hochgerechnet ~50 GB | unmoeglich bei 17,2 GB RAM |
+
+Ein Rechnerneustart aendert daran nichts — 213 offene 4K-Decoder plus die Kette aus 169
+verschachtelten `xfade` passen nicht in 17 GB, egal was sonst laeuft.
+
+**Nebenbefund zur Dateigroesse (die Sorge war unbegruendet):** 840 MB / 103,6 s = 8,1 MB/s,
+hochgerechnet **~8,8 GB fuer 18:00** bei CRF 18. Der `drone-edit`-Final liegt bei 5,7 GB fuer
+8 Minuten (11,9 MB/s), also dieselbe Groessenordnung. 18 GB frei reichen dafuer.
+
+**Der Weg, der daraus folgt — Chunk-Render (noch NICHT umgesetzt):**
+
+1. Film in ~10 Stuecke à ~110 s zerlegen, jedes einzeln in 4K aus den Originalen rendern
+   (je ~19-25 Inputs, ~6 GB RSS), Video **ohne Ton**.
+2. Schnittpunkte **in der Mitte eines Clips** waehlen, nie an einem Uebergang und nie waehrend
+   eines Overlays — sonst geht die Blende verloren bzw. die Overlay-Animation startet neu.
+3. Chunks per `concat`-Demuxer **ohne Neukodierung** zusammenfuegen.
+4. Ton **in einem eigenen, einzigen Durchgang** rendern (nur 6 Inputs: 3 Musiktitel + 3
+   O-Ton-Assets, kostet praktisch nichts) und ans fertige Video muxen. Grund: `loudnorm` wuerde
+   je Chunk unterschiedlich normalisieren, das gaebe an jeder Nahtstelle einen hoerbaren
+   Pegelsprung. Nebeneffekt: die Chunk-Grenzen muessen auf der Tonspur gar nicht mehr passen.
+5. Sinnvoller Ort dafuer ist `frameforge.render` (`render_final(..., chunk_s=...)` +
+   CLI-Option), damit der Weg reproduzierbar bleibt und nicht als Einzelskript neben der
+   Pipeline liegt.
+
+**Stand:** `vlog-edit` ist `APPROVED`, `timeline.json` ist final (18:00,35), QC sauber,
+601 Tests gruen, alles committet. Offen ist ausschliesslich der Chunk-Render.
+`exports/vlog-edit/final/` ist leer (die 48-Byte-Ruine des Fehlversuchs wurde entfernt).
+
+**Ausserdem in dieser Runde korrigiert:** `brief.yaml` `target_duration_s` von 1085 auf 1080 —
+die QC-Regel "Ziellaenge" hatte den Render sonst zu Recht blockiert, weil die 5 Sekunden
+Kuerzung im Brief nicht nachgezogen waren.

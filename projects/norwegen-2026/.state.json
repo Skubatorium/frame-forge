@@ -17,9 +17,10 @@
       }
     },
     "vlog-edit": {
-      "phase": 8,
+      "phase": 9,
       "content_hashes": {
-        "assets": "51cce7bffd085b2b13c970ee09b2f0dde6430430db822eaed47c1e06cfd7e62e"
+        "assets": "51cce7bffd085b2b13c970ee09b2f0dde6430430db822eaed47c1e06cfd7e62e",
+        "timeline": "d89bdf8a4b617f8e3dbf2cc3f8a63c210a4354dfe2b06c520a5c8ad11e2ba5dc"
       }
     }
   }
