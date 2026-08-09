@@ -1685,3 +1685,88 @@ def test_render_final_chunked_without_audio_still_produces_video(proj):
     out_path = render_final(proj, export, timeline, chunk_s=4.0)
 
     assert probe_video(out_path)["dur"] == pytest.approx(8.0, abs=0.4)
+
+
+def test_render_final_chunked_reuses_finished_chunks(proj, monkeypatch):
+    """Ein abgebrochener Lauf darf fertige Chunks nicht wegwerfen (jeder kostet Minuten)."""
+    export = proj.export("teaser")
+    media_root = proj.config.media_root
+    shutil.copy(FIXTURES / "photo.jpg", media_root / "photo.jpg")
+    write_asset(
+        proj,
+        {"id": "photo1", "kind": "photo", "path": "photo.jpg",
+         "hash": hash_file(media_root / "photo.jpg")},
+    )
+    timeline = Timeline(
+        export="teaser",
+        fps=25,
+        resolution=(320, 240),
+        duration=8.0,
+        tracks={
+            "video": [
+                {"id": "c1", "asset": "photo1", "src_in": 0, "src_out": 4, "tl_in": 0},
+                {"id": "c2", "asset": "photo1", "src_in": 0, "src_out": 4, "tl_in": 4},
+            ]
+        },
+    )
+
+    # Erster Lauf: bricht nach dem zweiten Chunk ab (simuliert den abgewuergten Prozess).
+    real_run = render_module._run_ffmpeg
+    calls = {"n": 0}
+
+    def flaky(graph, tl, out_path, **kwargs):
+        calls["n"] += 1
+        real_run(graph, tl, out_path, **kwargs)
+        if calls["n"] == 2:
+            raise RenderError("abgebrochen")
+
+    monkeypatch.setattr(render_module, "_run_ffmpeg", flaky)
+    with pytest.raises(RenderError):
+        render_final(proj, export, timeline, chunk_s=4.0)
+    work_dir = export.final_dir / ".teaser_chunks"
+    assert sorted(p.name for p in work_dir.glob("chunk_*.mp4")) == [
+        "chunk_000.mp4", "chunk_001.mp4"
+    ]
+
+    # Zweiter Lauf: rendert keinen Chunk neu, setzt nur zusammen.
+    monkeypatch.setattr(render_module, "_run_ffmpeg", real_run)
+    steps: list[str] = []
+    out_path = render_final(proj, export, timeline, chunk_s=4.0, on_progress=steps.append)
+
+    assert sum("uebernommen" in s for s in steps) == 2
+    assert probe_video(out_path)["dur"] == pytest.approx(8.0, abs=0.4)
+    assert not work_dir.exists()
+
+
+def test_render_final_chunked_discards_chunks_from_other_settings(proj, monkeypatch):
+    """Andere Encoder-Parameter -> alte Chunks sind unbrauchbar und werden verworfen."""
+    export = proj.export("teaser")
+    media_root = proj.config.media_root
+    shutil.copy(FIXTURES / "photo.jpg", media_root / "photo.jpg")
+    write_asset(
+        proj,
+        {"id": "photo1", "kind": "photo", "path": "photo.jpg",
+         "hash": hash_file(media_root / "photo.jpg")},
+    )
+    timeline = Timeline(
+        export="teaser",
+        fps=25,
+        resolution=(320, 240),
+        duration=8.0,
+        tracks={
+            "video": [
+                {"id": "c1", "asset": "photo1", "src_in": 0, "src_out": 4, "tl_in": 0},
+                {"id": "c2", "asset": "photo1", "src_in": 0, "src_out": 4, "tl_in": 4},
+            ]
+        },
+    )
+    render_final(proj, export, timeline, chunk_s=4.0, crf=30)
+
+    work_dir = export.final_dir / ".teaser_chunks"
+    work_dir.mkdir(parents=True, exist_ok=True)
+    (work_dir / "params.json").write_text('{"crf": 30}')
+    (work_dir / "chunk_000.mp4").write_bytes(b"")
+
+    steps: list[str] = []
+    render_final(proj, export, timeline, chunk_s=4.0, crf=18, on_progress=steps.append)
+    assert any("passen nicht" in s for s in steps)

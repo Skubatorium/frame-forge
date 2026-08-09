@@ -1285,6 +1285,22 @@ def _render_audio_only(graph: FilterGraph, timeline: Timeline, out_path: Path) -
     _run_ffmpeg_cmd(cmd, timeout_s=max(120.0, timeline.duration * 10))
 
 
+def _is_complete_chunk(path: Path, expected_s: float, *, tol_s: float = 0.5) -> bool:
+    """Ist `path` ein fertig gerenderter Chunk der erwarteten Laenge?
+
+    Eine abgebrochene ffmpeg-Ausgabe ist entweder 0 Bytes gross oder zu kurz — beides faellt
+    hier durch, und der Chunk wird neu gerendert. Nicht lesbar = nicht brauchbar.
+    """
+    if not path.exists() or path.stat().st_size == 0:
+        return False
+    try:
+        from frameforge.probe import probe_duration
+
+        return abs(probe_duration(path) - expected_s) <= tol_s
+    except Exception:  # noqa: BLE001 — kaputte/halbe Datei: neu rendern, nicht abbrechen
+        return False
+
+
 def _concat_chunks(chunks: list[Path], out_path: Path, *, total_duration: float) -> None:
     """Fuegt die Chunk-Dateien per concat-Demuxer zusammen — **ohne Neukodierung** (`-c copy`).
 
@@ -1420,8 +1436,18 @@ def _render_final_chunked(
     """Video stueckweise rendern, ohne Neukodierung zusammensetzen, Ton in einem Pass dazu.
 
     Reihenfolge und Begruendung stehen in `render_final` bzw. am `CHUNK_EDGE_MARGIN_S`-Block.
-    Die Zwischendateien liegen in einem Arbeitsverzeichnis neben dem Ergebnis und werden nach
-    Erfolg geloescht; bleibt es liegen, ist der Lauf gescheitert und die Chunks sind noch da.
+
+    **Fortsetzbar:** Die Zwischendateien liegen in `final/.<export>_chunks/` (bewusst ohne
+    Versionsnummer im Namen, sonst faende ein zweiter Lauf sie nicht). Bricht der Lauf ab —
+    Absturz, Neustart, abgewuergter Hintergrundprozess —, uebernimmt der naechste Aufruf jeden
+    Chunk, der schon fertig **und** in der richtigen Laenge da ist. Beim Norwegen-Vlog haengen
+    an jedem Chunk ~8 Minuten Rechenzeit; die noch einmal zu zahlen, weil ein Prozess nach
+    50 Minuten gestoppt wurde, waere die teuerste Art von Sauberkeit. Nach Erfolg wird das
+    Verzeichnis geloescht — bleibt es liegen, ist der Lauf gescheitert.
+
+    Uebernommen wird nur bei **identischen Parametern**: `params.json` haelt Schnittpunkte,
+    CRF, Preset, Aufloesung, LUT und Grade fest. Weicht etwas ab, faengt der Lauf von vorn an,
+    damit nicht Stuecke unterschiedlicher Qualitaet aneinandergeklebt werden.
     """
     def report(msg: str) -> None:
         if on_progress is not None:
@@ -1429,13 +1455,35 @@ def _render_final_chunked(
 
     cuts = chunk_boundaries(timeline, chunk_s)
     edges = [0.0, *cuts, timeline.duration]
-    work_dir = out_path.parent / f".{out_path.stem}_chunks"
+    work_dir = out_path.parent / f".{export.name}_chunks"
+    params = {
+        "cuts": [round(c, 3) for c in cuts],
+        "duration": round(timeline.duration, 3),
+        "crf": crf,
+        "preset": preset,
+        "resolution": list(resolution) if resolution else None,
+        "lut": str(lut_path) if lut_path else None,
+        "color_grade": color_grade,
+    }
+    params_path = work_dir / "params.json"
     if work_dir.exists():
-        shutil.rmtree(work_dir)
-    work_dir.mkdir(parents=True)
+        try:
+            reusable = json.loads(params_path.read_text()) == params
+        except (OSError, ValueError):
+            reusable = False
+        if not reusable:
+            report("Vorhandene Chunks passen nicht zu diesen Parametern — wird neu gerendert")
+            shutil.rmtree(work_dir)
+    work_dir.mkdir(parents=True, exist_ok=True)
+    params_path.write_text(json.dumps(params, indent=2))
 
     chunk_paths: list[Path] = []
     for i, (start, end) in enumerate(itertools.pairwise(edges)):
+        chunk_path = work_dir / f"chunk_{i:03d}.mp4"
+        if _is_complete_chunk(chunk_path, end - start):
+            report(f"Chunk {i + 1}/{len(edges) - 1}: bereits gerendert, uebernommen")
+            chunk_paths.append(chunk_path)
+            continue
         sub = slice_timeline(timeline, start, end)
         graph = build_filtergraph(
             sub,
@@ -1448,7 +1496,6 @@ def _render_final_chunked(
             color_grade=color_grade,
             faces_by_asset=faces,
         )
-        chunk_path = work_dir / f"chunk_{i:03d}.mp4"
         report(
             f"Chunk {i + 1}/{len(edges) - 1}: {start:.1f}-{end:.1f}s, "
             f"{len(graph.input_args)} Inputs"
