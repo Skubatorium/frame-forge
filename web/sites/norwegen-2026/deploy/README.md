@@ -57,9 +57,9 @@ Die Renderpipeline schreibt die Fassungen mit der Auflösung im Namen:
 
 | Datei | Zweck | Größe |
 |---|---|---|
-| `vlog-edit_1080p.mp4` | Streaming | ~1,3 GB (in Arbeit) |
+| `vlog-edit_1080p.mp4` | Streaming | 1,7 GB |
 | `vlog-edit_4k.mp4` | Download | 6,8 GB |
-| `drone-edit_1080p.mp4` | Streaming | ~0,7 GB (in Arbeit) |
+| `drone-edit_1080p.mp4` | Streaming | 1,4 GB |
 | `drone-edit_4k.mp4` | Download | 5,4 GB |
 
 Auf dem Server dürfen sie umbenannt werden (z. B. Bindestrich statt Unterstrich) — dann die

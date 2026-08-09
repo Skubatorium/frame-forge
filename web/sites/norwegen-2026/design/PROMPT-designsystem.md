@@ -279,7 +279,7 @@ Passstraße Valdresflye über die Hochebene · Angeln an der Schärenküste bei 
 - Beginnt mit einem stillen Cold Open — nur Wind, während die Route auf der Karte wächst
 - Dreiteilig entlang dreier Musikstücke, die ineinander überblenden
 - Text nur für Datum und Etappe, sonst textfrei
-- Streaming-Fassung 1080p (Größe folgt, ~2,5 GB erwartet), Download-Fassung 4K (6,8 GB)
+- Streaming-Fassung 1080p (1,7 GB), Download-Fassung 4K (6,8 GB)
 
 ## Film 2 — „Norwegen 2026 · Drone Edit" (`film-drone.html`)
 
