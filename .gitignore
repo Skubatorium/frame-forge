@@ -42,8 +42,7 @@ tests/tmp/
 # Struktur und Quelltext werden getrackt, Medien nicht.
 web/sites/*/public/video/*
 !web/sites/*/public/video/README.md
-web/sites/*/public/assets/img/*
-!web/sites/*/public/assets/img/.gitkeep
-web/sites/*/public/assets/fonts/*
-!web/sites/*/public/assets/fonts/.gitkeep
+# Website-Bilder und -Schriften gehoeren zum Deliverable und werden versioniert
+# (wenige MB). Draussen bleiben nur die Videos und das Quellmaterial.
+web/sites/*/public/assets/fonts/*.woff2
 web/sites/*/content/media/
