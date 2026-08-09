@@ -168,3 +168,23 @@ Ein Vollrender von `vlog-edit` dauert deutlich mehr als zwei Minuten. Fuer Titel
 und Fit-Experimente eine synthetische Mini-Timeline mit 2-3 Clips durch `build_filtergraph` +
 `_run_ffmpeg` schicken (Muster: der Mini-Render aus Runde 3, mit dem `fit: "blur"` gegen
 crop-to-fill gegengeprueft wurde) oder die PNG-Layer mit PIL uebereinanderlegen und anschauen.
+
+## 4K-Final-Render braucht Chunks (2026-08-09)
+
+`frameforge render` baut **einen** Filtergraphen ueber die ganze Timeline. Bei `vlog-edit` sind
+das 213 gleichzeitig offene Inputs; gemessen ~5,9 GB RSS je 19 Inputs, hochgerechnet ~50 GB fuer
+den ganzen Film. Auf 17,2 GB RAM endet das im Swap-Thrashing (12 GB Swap nach 42 Sekunden,
+ffmpeg faellt auf 3 % CPU, Platte laeuft voll). Kein Bug, keine Frage der Systemlast — ein
+Rechnerneustart aendert nichts.
+
+Bis `render_final(..., chunk_s=...)` existiert (Plan in `PROGRESS.md`), gilt: **grosse
+4K-Timelines nicht in einem Durchgang rendern.** Ausschnitte pruefen geht dagegen problemlos —
+Fenster der echten Timeline auf t=0 schieben, `build_filtergraph` + `_run_ffmpeg`, Frames mit
+`cv2` sichten, Pegel mit `librosa` messen.
+
+Zwei Fallen dabei, die Zeit gekostet haben:
+
+- `qc.validate` prueft die **Ziellaenge aus dem Brief** (±2 s). Wer den Schnitt kuerzt, muss
+  `target_duration_s` in `brief.yaml` nachziehen, sonst bricht `render` vor dem ersten Frame ab.
+- `probe.probe_video` wirft bei reinen Audiodateien ("kein Video-Stream gefunden"). Fuer
+  Musiklaufzeiten gibt es `probe.probe_duration`.
