@@ -76,8 +76,24 @@ Textfarben. Du hast hier freie Hand und sollst sie nutzen.
 - **Der Player**: HTML5-`<video controls preload="metadata" poster>` in 16:9, groß, zentriert.
 - **Darunter zwei Blöcke:** „Über den Film" (Dramaturgie, Musik, Kartenanimation) und
   „Technisches" (Länge, Auflösung, verwendete Aufnahmen).
-- **Download-Bereich:** die 4K-Fassung als expliziter Download-Button mit Größenangabe und
-  einem Satz Warnung, dass das eine große Datei ist.
+- **Fassungs-Box** (eigene Komponente `quality-box`, steht direkt unter dem Player und
+  gehört auf beide Film-Seiten). Sie erklärt in einem Satz das Prinzip — *hier läuft die
+  1080p-Fassung zum Streamen; wer die volle Qualität will, lädt die 4K-Datei herunter* — und
+  stellt beide Fassungen als zwei klar unterscheidbare Zeilen dar:
+
+  | | Streaming | Download |
+  |---|---|---|
+  | Auflösung | 1920 × 1080 | 3840 × 2160 |
+  | Dateigröße | siehe Filmdaten unten | siehe Filmdaten unten |
+  | Aktion | läuft im Player oben | Download-Link |
+
+  Der Download bekommt ein farbiges Icon-Feld davor (Download-Pfeil, Akzentfarbe) und nennt
+  Dateiname, Größe und Auflösung direkt im Link — nicht nur „Download". Das ist der einzige
+  richtig auffällige Button der Seite.
+
+  Dazu ein sachlicher Hinweis in derselben Box, ruhig gesetzt, keine Warn-Optik: die
+  4K-Fassung hat eine sehr hohe Datenrate und will eine Leitung von **mindestens 20 Mbit/s** —
+  über Mobilfunk lieber nicht, und am besten erst herunterladen, dann schauen.
 - Navigation zum anderen Film und zurück.
 
 ### 3. `film-drone.html` — „Drone Edit"
@@ -131,7 +147,8 @@ Als benannte, dokumentierte Bausteine, jeweils Markup + CSS + kurze Anwendungsno
 | `page-header` | schmaler Kopf für die Unterseiten |
 | `stat-grid` | Kennzahlen-Raster (Zahl groß, Label klein) |
 | `film-card` | Teaser-Karte für einen Film |
-| `video-block` | Player + Info-Panel + Download-Button |
+| `video-block` | Player + Info-Panel |
+| `quality-box` | Streaming-/Download-Fassung gegenübergestellt, Leitungshinweis |
 | `prose` | Textabschnitt, ~65–75 Zeichen Zeilenlänge |
 | `map-figure` | Kartenbild, Bildunterschrift, externer Link |
 | `fact-list` | Stationsliste / Aufzählung mit Struktur |
@@ -262,7 +279,7 @@ Passstraße Valdresflye über die Hochebene · Angeln an der Schärenküste bei 
 - Beginnt mit einem stillen Cold Open — nur Wind, während die Route auf der Karte wächst
 - Dreiteilig entlang dreier Musikstücke, die ineinander überblenden
 - Text nur für Datum und Etappe, sonst textfrei
-- Streaming-Fassung 1080p (~1,3 GB), Download-Fassung 4K (6,8 GB)
+- Streaming-Fassung 1080p (Größe folgt, ~2,5 GB erwartet), Download-Fassung 4K (6,8 GB)
 
 ## Film 2 — „Norwegen 2026 · Drone Edit" (`film-drone.html`)
 
@@ -272,7 +289,7 @@ Passstraße Valdresflye über die Hochebene · Angeln an der Schärenküste bei 
   Anfang und Ende
 - Zwei Musikstücke, fließend ineinander
 - Drohne: **DJI Lito X1** mit RC2-Fernsteuerung und Fly-More-Paket — die erste Reise mit ihr
-- Streaming-Fassung 1080p (~0,7 GB), Download-Fassung 4K (5,4 GB)
+- Streaming-Fassung 1080p (1,4 GB), Download-Fassung 4K (5,4 GB)
 
 ---
 
