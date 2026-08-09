@@ -1,74 +1,67 @@
-# Deployment — norwegen.scoobus.de
+# Deployment — https://norwegen.skubus.de
 
-Ziel: statische Seite plus zwei MP4s auf dem VPS, hinter nginx Basic Auth.
+Plattform: skubus-VPS. Zwei getrennte Dinge, die nicht zusammen ausgeliefert werden.
 
-## 1. Verzeichnis auf dem Server
+## 1. Die Website
 
-```
-/var/www/norwegen.scoobus.de/
-  index.html
-  drone.html
-  assets/...
-  video/
-    vlog-edit.mp4
-    drone-edit.mp4
-```
-
-## 2. Passwortdatei anlegen
+Alles aus `../public/` kommt **1:1 in den Docroot** — `index.html` und `assets/` liegen flach
+im Wurzelverzeichnis, keine zusätzliche Verschachtelung.
 
 ```bash
-sudo apt install apache2-utils          # liefert htpasswd
-sudo htpasswd -c /etc/nginx/.htpasswd-norwegen norwegen
-# Passwort zweimal eingeben. -c nur beim ersten Mal (legt die Datei neu an)!
-sudo chown root:www-data /etc/nginx/.htpasswd-norwegen
-sudo chmod 640 /etc/nginx/.htpasswd-norwegen
+rsync -avz --delete web/sites/norwegen-2026/public/ user@vps:<docroot>/
 ```
 
-Verteilt wird dann: `https://norwegen.scoobus.de` · Benutzer `norwegen` · Passwort.
+## 2. Die Videos
 
-## 3. nginx-Site
-
-`nginx.conf.example` nach `/etc/nginx/sites-available/norwegen.scoobus.de` kopieren,
-Serverpfade prüfen, verlinken, testen, neu laden:
+Liegen **nicht** im Website-Build, sondern separat auf dem Server unter `/videos/` relativ zur
+Domain — erreichbar als `https://norwegen.skubus.de/videos/<dateiname>`.
 
 ```bash
-sudo ln -s /etc/nginx/sites-available/norwegen.scoobus.de /etc/nginx/sites-enabled/
-sudo nginx -t && sudo systemctl reload nginx
+rsync -avP projects/norwegen-2026/exports/vlog-edit/final/vlog-edit_1080p.mp4 \
+           projects/norwegen-2026/exports/vlog-edit/final/vlog-edit_4k.mp4 \
+           projects/norwegen-2026/exports/drone-edit/final/drone-edit_1080p.mp4 \
+           projects/norwegen-2026/exports/drone-edit/final/drone-edit_4k.mp4 \
+           user@vps:<video-verzeichnis>/
 ```
 
-## 4. TLS
+`-P` (= `--partial --progress`) ist wichtig: ~14 GB, ein Abbruch soll fortsetzbar sein.
+Kein `--delete`.
 
-```bash
-sudo certbot --nginx -d norwegen.scoobus.de
+Im HTML werden sie absolut referenziert:
+
+```html
+<video src="/videos/vlog-edit-1080p.mp4" poster="assets/img/vlog-poster.jpg"></video>
+<a href="/videos/vlog-edit-4k.mp4" download>4K-Fassung herunterladen</a>
 ```
 
-Vorher muss der DNS-A-Record der Subdomain auf die VPS-IP zeigen.
+## 3. Passwortschutz
 
-## 5. Dateien hochladen
+Läuft über **Traefik Basic Auth** auf Infrastruktur-Ebene. Die Website baut dafür nichts ein —
+kein Login-Formular, keine Auth-Logik im Code. Der Schutz greift damit auch für die Videos
+unter `/videos/`, solange die Middleware auf dem gesamten Router liegt.
 
-Website (klein, jederzeit wiederholbar):
+## 4. Was auf Serverseite geprüft sein sollte
 
-```bash
-rsync -avz --delete \
-  web/sites/norwegen-2026/public/ \
-  user@vps:/var/www/norwegen.scoobus.de/ \
-  --exclude video/
-```
+- **Range-Requests** müssen durchgereicht werden, sonst kann im Video nicht gesprungen werden
+  und der Player lädt bei jedem Klick von vorn.
+- **Kein gzip auf MP4** — bringt nichts und stört das Ausliefern in Teilstücken.
+- **Plattenplatz:** ~14 GB für alle vier Fassungen.
+- **Traffic:** jede vollständige Ansicht überträgt die volle Dateigröße der 1080p-Fassung
+  (~1,3 GB bzw. ~0,7 GB). Inklusivvolumen im Blick behalten.
+- **`Content-Disposition: attachment`** für die `*-4k.mp4`, damit sie heruntergeladen und
+  nicht im Tab abgespielt werden (optional, aber sinnvoll — 4K liegt bei 50–76 Mbit/s).
 
-Videos (groß, einmalig — `--partial --progress`, damit ein Abbruch fortsetzbar ist):
+## Dateinamen
 
-```bash
-rsync -avP web/sites/norwegen-2026/public/video/ \
-  user@vps:/var/www/norwegen.scoobus.de/video/
-```
+Die Renderpipeline schreibt die Fassungen mit der Auflösung im Namen:
 
-`--delete` ist bei den Videos absichtlich **nicht** gesetzt.
+| Datei | Zweck | Größe |
+|---|---|---|
+| `vlog-edit_1080p.mp4` | Streaming | ~1,3 GB (in Arbeit) |
+| `vlog-edit_4k.mp4` | Download | 6,8 GB |
+| `drone-edit_1080p.mp4` | Streaming | ~0,7 GB (in Arbeit) |
+| `drone-edit_4k.mp4` | Download | 5,4 GB |
 
-## Hinweise
-
-- **Basic Auth schützt auch die MP4s**, weil sie unter demselben `location /` liegen. Das ist
-  der Grund für diese Variante statt eines JS-Logins.
-- **Traffic im Auge behalten:** Jede vollständige Ansicht überträgt die volle Dateigröße.
-  Beim VPS-Tarif auf das Inklusivvolumen achten.
-- **Range-Requests** müssen funktionieren, sonst kann im Video nicht gesprungen werden —
-  nginx kann das ab Werk, solange kein Gzip auf MP4s läuft (siehe Beispielkonfiguration).
+Auf dem Server dürfen sie umbenannt werden (z. B. Bindestrich statt Unterstrich) — dann die
+vier Referenzen im HTML anpassen. Alle vier Dateien werden mit `faststart` gerendert, das
+moov-Atom liegt also vorn und die Wiedergabe startet sofort.

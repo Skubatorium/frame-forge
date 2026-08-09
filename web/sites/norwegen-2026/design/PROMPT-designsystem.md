@@ -57,7 +57,7 @@ Textfarben. Du hast hier freie Hand und sollst sie nutzen.
 - **Hero-Banner mit rotierenden Szenen.** Das Kernstück: 4–6 großformatige Standbilder aus
   den Filmen (Fjord, Trollstigen, Hochebene, Schärenküste …), die langsam ineinander
   überblenden — ruhig, ca. 6–8 s pro Bild, weiche Blende, gern mit sehr langsamem Ken-Burns.
-  Darüber der Titel **„Norwegen 2026"**, darunter „18 Tage · 3.829 km · zwei Filme". Reines
+  Darüber der Titel **„Norwegen 2026"**, darunter „18 Tage · knapp 4.000 km · zwei Filme". Reines
   CSS wenn möglich, sonst ein paar Zeilen Vanilla-JS. Muss `prefers-reduced-motion`
   respektieren (dann Standbild statt Rotation).
 - **Kurzer Einführungstext**, 2–3 Absätze: worum es ging, wie die Reise aufgebaut war (Basis
@@ -146,7 +146,9 @@ Als benannte, dokumentierte Bausteine, jeweils Markup + CSS + kurze Anwendungsno
   Build, kein npm, kein Sass, kein Framework.
 - **Keine externen Requests, ausnahmslos.** Keine CDNs, keine Google Fonts, kein Maps-iframe,
   kein Analytics. Einziger erlaubter Außenkontakt: ein anklickbarer Google-Maps-Link.
-  Die Seite läuft hinter nginx Basic Auth auf einem kleinen VPS.
+  Die Seite läuft unter **https://norwegen.skubus.de** hinter einer Basic Auth, die auf
+  Infrastruktur-Ebene (Traefik) sitzt — **die Website selbst baut dafür nichts ein**: kein
+  Login-Formular, keine Passwortabfrage, keine Auth-Logik.
 - **Schrift selbst gehostet.** Die Filme nutzen Avenir Next (Apple-Systemschrift, darf nicht
   auf den Server). Empfiehl eine frei lizenzierte Alternative — Display mit Charakter, Text
   ruhig und gut lesbar — mit Familie, Schnitten, woff2 und Lizenz. Dateien besorge ich.
@@ -185,7 +187,7 @@ Beschreib knapp, welche Dateien man für eine neue Reise anfasst und welche nie.
 | Dauer | 18 Tage |
 | Reisende | 2 Erwachsene + Sohn (6) |
 | Fahrzeug | SEAT Leon ST mit Dachbox |
-| Gesamtstrecke | ca. 3.829 km, davon ca. 325 km auf zwei Fährüberfahrten |
+| Gesamtstrecke | **knapp 4.000 km** — so auf der Seite formulieren. Erfasst sind 3.829 km aus den Etappendaten; kleinere Fahrten vor Ort (Einkäufe, Ausflüge) sind darin nicht überall enthalten. Keine exakte Zahl kommunizieren. Davon ca. 325 km auf zwei Fährüberfahrten. |
 | Roadtrip-Rundkurs | 23.07. – 01.08., 1.319 km ab/bis Skien (22 h 31 min reine Fahrzeit) |
 | Basis | bei Freunden in Skien, Telemark |
 | Höchster Punkt | Valdresflye, 1.183 m |
@@ -278,7 +280,11 @@ Passstraße Valdresflye über die Hochebene · Angeln an der Schärenküste bei 
 
 Bau die Seiten gegen genau diese Pfade — die Dateien liefere ich nach:
 
+Die HTML-Dateien liegen **flach im Docroot** (keine Unterordner-Verschachtelung), Assets
+relativ daneben:
+
 ```
+index.html  film-vlog.html  film-drone.html  fakten.html  impressum.html
 assets/css/tokens.css                 System-Tokens
 assets/css/theme-norwegen-2026.css    Reise-Tokens
 assets/css/base.css
@@ -288,12 +294,25 @@ assets/img/hero-01.jpg … hero-06.jpg  Hero-Rotation
 assets/img/route-map.jpg              Kartenbild
 assets/img/teaser-vlog.jpg            Teaser-Karte Landing
 assets/img/teaser-drone.jpg           Teaser-Karte Landing
-video/vlog-edit-1080p.mp4             Stream
-video/vlog-edit-4k.mp4                Download
-video/vlog-edit-poster.jpg
-video/drone-edit-1080p.mp4            Stream
-video/drone-edit-4k.mp4               Download
-video/drone-edit-poster.jpg
+assets/img/vlog-poster.jpg            Poster für den Player
+assets/img/drone-poster.jpg           Poster für den Player
+```
+
+**Die Videos liegen nicht im Website-Build**, sondern separat auf dem Server unter einem
+absoluten Pfad `/videos/`. Im Markup also:
+
+```html
+<video src="/videos/vlog-edit-1080p.mp4" poster="assets/img/vlog-poster.jpg" …></video>
+<a href="/videos/vlog-edit-4k.mp4" download>4K-Fassung herunterladen</a>
+```
+
+Die endgültigen Dateinamen stehen noch nicht fest (die 1080p-Fassungen rendern gerade).
+Arbeite mit genau diesen vier Platzhaltern — sie werden nachher an einer Stelle je Seite
+ausgetauscht:
+
+```
+/videos/vlog-edit-1080p.mp4    /videos/vlog-edit-4k.mp4
+/videos/drone-edit-1080p.mp4   /videos/drone-edit-4k.mp4
 ```
 
 ## Was ich zurückbekommen möchte

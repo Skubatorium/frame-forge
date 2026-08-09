@@ -23,12 +23,10 @@ web/
       content/                  Inhaltsdaten und Quellbilder (nicht deploybar)
         facts.md                alle Fakten der Reise, Quelle für die Texte
         media/                  Rohbilder, Kartenscreenshot, Stills (gitignored)
-      public/                   >>> genau das kommt auf den Server <<<
-        index.html
-        drone.html
+      public/                   >>> kommt 1:1 in den Docroot <<<
+        index.html film-vlog.html film-drone.html fakten.html impressum.html
         assets/{css,js,img,fonts}/
-        video/                  MP4s (gitignored, werden separat hochgeladen)
-      deploy/                   nginx-Konfiguration, Basic-Auth-Anleitung
+      deploy/                   Deployment-Anleitung (rsync, Videopfade, Auth)
 ```
 
 **Regel:** Alles unter `public/` wird 1:1 auf den Server kopiert. Alles außerhalb von
@@ -42,11 +40,12 @@ web/
 
 ## Videos
 
-Die 4K-Finals liegen in `projects/<projekt>/exports/<export>/final/` und sind mehrere GB
-groß. Sie gehören **nicht** ins Repo und **nicht** unverändert auf den Server:
+Videos liegen **weder im Repo noch im Website-Build**, sondern separat auf dem Server unter
+`/videos/` relativ zur Domain. Die Finals stehen in
+`projects/<projekt>/exports/<export>/final/` und sind mehrere GB groß:
 
 - Browser brauchen das `faststart`-Flag (moov-Atom vorn), sonst startet die Wiedergabe nicht,
-  bevor die Datei komplett geladen ist.
+  bevor die Datei komplett geladen ist. `frameforge render` setzt es seit 40990a1.
 - 4K-Originale liegen bei ~50–76 Mbit/s. Für flüssiges Streaming über normale Anschlüsse ist
   eine 1080p-Webfassung (~10 Mbit/s) nötig; das 4K-Original kann zusätzlich als Download
   angeboten werden.

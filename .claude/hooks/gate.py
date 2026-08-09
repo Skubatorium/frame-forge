@@ -27,6 +27,7 @@ sys.path.insert(0, str(REPO_ROOT))
 
 try:
     from frameforge.project import Project, ProjectNotFoundError, resolve_project
+    from frameforge import qc
     from frameforge.state import (
         GateError,
         ProjectState,
@@ -171,7 +172,14 @@ def _check_frameforge_gate(rest: list[str]) -> str | None:
                 timeline_exists = project.export(export_name).timeline_path.exists()
                 gate_preview(state, export_name, timeline_exists=timeline_exists)
             else:  # render
-                gate_render_final(state, export_name)
+                # Fingerprint mitgeben: erlaubt eine Zweitfassung (z.B. 1080p-Stream neben
+                # dem 4K-Download) aus Phase RENDERED heraus, solange die Timeline dieselbe
+                # ist wie bei der Freigabe. Siehe gate_render_final.
+                timeline_path = project.export(export_name).timeline_path
+                fingerprint = (
+                    qc.timeline_fingerprint(timeline_path) if timeline_path.exists() else None
+                )
+                gate_render_final(state, export_name, timeline_fingerprint=fingerprint)
         except (GateError, StateError) as exc:
             return str(exc)
         return None
