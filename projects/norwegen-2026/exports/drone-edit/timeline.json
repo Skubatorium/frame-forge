@@ -1058,31 +1058,58 @@
     ],
     "overlay": [
       {
+        "id": "ov-title-box",
+        "png": "overlays/title-box.png",
+        "tl_in": 4.0,
+        "dur": 12.0,
+        "anim": {
+          "fade_in_s": "1.0",
+          "fade_out_s": "2.0"
+        }
+      },
+      {
         "id": "ov-title-main",
         "png": "overlays/title.png",
-        "tl_in": 4.0,
-        "dur": 13.0,
+        "tl_in": 5.0,
+        "dur": 11.0,
         "anim": {
-          "fade_in_s": "2.5",
-          "fade_out_s": "2.5",
-          "slide_from_px": "-600",
-          "slide_in_s": "1.5",
-          "drift_px": "-15",
-          "drift_period_s": "4.5"
+          "fade_in_s": "1.0",
+          "fade_out_s": "2.0",
+          "slide_from_px": "-700",
+          "slide_in_s": "1.3",
+          "drift_px": "56",
+          "drift_mode": "linear",
+          "drift_dur_s": "1.5"
         }
       },
       {
         "id": "ov-title-sub",
         "png": "overlays/subtitle.png",
-        "tl_in": 4.0,
-        "dur": 13.0,
+        "tl_in": 5.0,
+        "dur": 11.0,
         "anim": {
-          "fade_in_s": "2.5",
-          "fade_out_s": "2.5",
-          "slide_from_px": "600",
-          "slide_in_s": "1.5",
-          "drift_px": "15",
-          "drift_period_s": "4.5"
+          "fade_in_s": "1.0",
+          "fade_out_s": "2.0",
+          "slide_from_px": "700",
+          "slide_in_s": "1.3",
+          "drift_px": "-56",
+          "drift_mode": "linear",
+          "drift_dur_s": "1.5"
+        }
+      },
+      {
+        "id": "ov-title-caption",
+        "png": "overlays/caption.png",
+        "tl_in": 7.5,
+        "dur": 8.5,
+        "anim": {
+          "fade_in_s": "1.0",
+          "fade_out_s": "2.0",
+          "slide_from_px": "-300",
+          "slide_in_s": "1.0",
+          "drift_px": "42",
+          "drift_mode": "linear",
+          "drift_dur_s": "1.5"
         }
       }
     ],

@@ -10,14 +10,14 @@
       }
     },
     "drone-edit": {
-      "phase": 10,
+      "phase": 9,
       "content_hashes": {
         "assets": "51cce7bffd085b2b13c970ee09b2f0dde6430430db822eaed47c1e06cfd7e62e",
-        "timeline": "766cf18a65b4f806df8c31c259e3807e67826ff3d8a501dc944c823e8617c644"
+        "timeline": "c7248fb12f63aeba0d076c10148da311bd17b9baaa1dbf03aa3868f960c511ce"
       }
     },
     "vlog-edit": {
-      "phase": 9,
+      "phase": 10,
       "content_hashes": {
         "assets": "51cce7bffd085b2b13c970ee09b2f0dde6430430db822eaed47c1e06cfd7e62e",
         "timeline": "d89bdf8a4b617f8e3dbf2cc3f8a63c210a4354dfe2b06c520a5c8ad11e2ba5dc"

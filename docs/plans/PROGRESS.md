@@ -2724,3 +2724,34 @@ Zeile (Chunknummer, Zeitfenster, Zahl der Inputs).
 
 14 neue Tests in `tests/test_render.py`, darunter zwei echte Chunk-Renders (mit und ohne Ton)
 gegen die Fixtures; 615 Tests gruen.
+
+### Der 4K-Final von `vlog-edit` steht (2026-08-09) — und was der Weg dahin gelehrt hat
+
+`exports/vlog-edit/final/vlog-edit_v1.mp4`, **6,78 GiB**, 3840x2160, 30 fps, **18:00,4**
+(Soll 18:00,35), h264 + AAC-Stereo ueber die volle Laenge. Phase `RENDERED`, Report daneben.
+
+**Gegengeprueft, nicht behauptet:** an jeder der 9 Chunk-Nahtstellen je ein Frame 0,15 s davor
+und danach aus der fertigen Datei gezogen (`cv2`): keine schwarzen oder fehlenden Frames, die
+Helligkeit laeuft stetig durch (z.B. 135,3 -> 133,7 bei 102,6 s), die Pixeldifferenzen
+entsprechen der Bewegung im Bild. Der Ton kommt aus **einem** Durchgang, an den Grenzen kann
+es deshalb per Konstruktion keinen `loudnorm`-Sprung geben.
+
+Drei Dinge, die beim naechsten langen Render Zeit sparen:
+
+1. **Lange Laeufe muessen fortsetzbar sein.** Der erste Lauf wurde nach 50 Minuten und
+   6 Chunks vom Harness abgeraeumt — ohne Wiederaufnahme waeren ~40 Minuten Rechenzeit
+   verloren gewesen. Jetzt liegen die Chunks in `final/.<export>_chunks/` (bewusst **ohne**
+   Versionsnummer im Namen, sonst findet der zweite Lauf sie nicht), `params.json` bindet sie
+   an Schnittpunkte/CRF/Preset/Aufloesung/LUT/Grade, und eine Laengenpruefung je Chunk sortiert
+   halbe Dateien aus. Der abgebrochene chunk_005 wurde genau so erkannt und neu gerendert.
+2. **Hintergrundlaeufe abkoppeln.** `nohup … & disown` statt eines vom Harness verwalteten
+   Hintergrund-Tasks; der Fortschritt wird per `Monitor` aus der Logdatei gelesen. Der erste
+   Lauf starb genau daran. (`setsid` gibt es auf macOS nicht.)
+3. **`python -m frameforge` funktionierte nie.** Die Form steht an ~10 Stellen in CLAUDE.md
+   und im Plan, es fehlte aber `frameforge/__main__.py` — nur das Konsolenskript
+   (`.venv/bin/frameforge`) und `python -m frameforge.cli` liefen. Nachgereicht und mit einem
+   Subprozess-Test abgesichert, damit es nicht wieder still kaputtgeht.
+
+Plattenplatz bleibt die zweite Ressource neben RAM: Chunks + zusammengesetztes Video +
+Endfassung sind drei Kopien. Deshalb loescht der Lauf die Chunks direkt nach dem `concat`.
+Vor einem 4K-Lauf `df -h /` pruefen — beim Vlog waren ~7 GB in Bewegung.
