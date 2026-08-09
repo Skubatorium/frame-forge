@@ -1,0 +1,93 @@
+/* ============================================================
+   theme-norwegen-2026.css — THEMEN-TOKENS für diese eine Reise
+   Palette: Fjordblau, Gletschertürkis, Granit, Kiefer/Moos,
+   Mitternachtssonnen-Gold. Flaggenfarben nur als Marke.
+   Für eine neue Reise wird NUR diese Datei ersetzt.
+   ============================================================ */
+
+:root {
+  /* ---------- Palette (Rohwerte, nicht direkt benutzen) ---------- */
+  --fjord-950: #070f16;   /* Nacht über dem Wasser */
+  --fjord-900: #0b1a24;   /* Seitengrund */
+  --fjord-850: #0f2029;
+  --fjord-800: #12222f;   /* Filmfarbe: tiefes Blaugrün */
+  --fjord-700: #17303f;
+  --fjord-600: #1e3d4d;
+
+  --petrol-600: #2c4a5a;  /* Filmfarbe: gedecktes Petrol */
+  --petrol-500: #3b6274;
+  --petrol-400: #517f92;
+
+  --glacier-400: #6fb2c0; /* Gletschertürkis */
+  --glacier-300: #93cad5;
+  --glacier-200: #bfe1e7;
+
+  --granite-600: #556169;
+  --granite-500: #6f7d85;
+  --granite-400: #8b9aa3;
+  --granite-300: #aebbc2;
+
+  --pine-700: #24382e;    /* Kiefer */
+  --pine-600: #33513f;
+  --moss-500: #587a5c;    /* Moos */
+
+  --sand-500: #c98c45;
+  --sand-400: #e0a458;    /* Filmfarbe: warmes Sandgold */
+  --sand-300: #eec089;
+  --sand-200: #f6ddb9;
+
+  --snow-100: #eaf1f4;    /* Schnee, kein reines Weiß */
+  --snow-000: #ffffff;
+
+  --flag-red: #ba0c2f;    /* Norwegen: Rot */
+  --flag-navy: #00205b;   /* Norwegen: Marine */
+
+  /* ---------- Rollen-Zuweisung ---------- */
+  --bg-page: var(--fjord-900);
+  --bg-sunken: var(--fjord-950);
+  --bg-raised: var(--fjord-850);
+  --bg-raised-hover: var(--fjord-700);
+  --bg-inset: #060d13;
+
+  --text-1: var(--snow-100);        /* auf --bg-page ≈ 15:1 */
+  --text-2: #b6c7d0;                /* Fließtext, ≈ 10:1     */
+  --text-3: #90a3ad;                /* Meta, ≈ 6.6:1         */
+  --text-on-accent: var(--fjord-950);
+
+  --line-1: #1b3140;
+  --line-2: #2b4757;
+
+  --accent: var(--sand-400);        /* Mitternachtssonne */
+  --accent-hover: var(--sand-300);
+  --accent-quiet: #5c4630;
+  --accent-2: var(--glacier-400);   /* Gletscher, für Zahlen/Links-Hover */
+
+  --mark: var(--flag-red);
+  --mark-2: var(--flag-navy);
+
+  --focus-color: var(--sand-300);
+  --selection-bg: var(--petrol-600);
+  --selection-fg: var(--snow-000);
+
+  /* ---------- Themen-Motive ---------- */
+  /* Schutzverlauf über Hero-Bildern: unten dunkel, oben Luft */
+  --scrim-hero: linear-gradient(to bottom,
+      rgb(7 15 22 / 0.62) 0%,
+      rgb(7 15 22 / 0.24) 34%,
+      rgb(7 15 22 / 0.58) 72%,
+      var(--bg-page) 100%);
+  /* Schutzverlauf auf Karten-Bildern */
+  --scrim-card: linear-gradient(to top,
+      rgb(7 15 22 / 0.92) 0%,
+      rgb(7 15 22 / 0.35) 52%,
+      rgb(7 15 22 / 0.05) 100%); /* @kind other */
+  /* Kalte Grundstimmung auf Bildmaterial (dezent) */
+  --img-filter: saturate(0.94) contrast(1.03); /* @kind other */
+  /* Flaggen-Akzentmarke: drei Striche Rot/Weiß/Marine */
+  --flag-stripe: linear-gradient(to right,
+      var(--flag-red) 0 34%,
+      var(--snow-000) 34% 44%,
+      var(--flag-navy) 44% 56%,
+      var(--snow-000) 56% 66%,
+      var(--flag-red) 66% 100%);
+}
