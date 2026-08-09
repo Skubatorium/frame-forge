@@ -44,5 +44,5 @@ web/sites/*/public/video/*
 !web/sites/*/public/video/README.md
 # Website-Bilder und -Schriften gehoeren zum Deliverable und werden versioniert
 # (wenige MB). Draussen bleiben nur die Videos und das Quellmaterial.
-web/sites/*/public/assets/fonts/*.woff2
+# Schriften liegen als TTF im Repo (OFL, ~2,3 MB) - die Seite darf keine externen Requests machen.
 web/sites/*/content/media/

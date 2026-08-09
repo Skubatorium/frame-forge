@@ -67,7 +67,7 @@ Zahlen immer tabellarisch (`font-variant-numeric: tabular-nums`).
 |---|---|---|
 | `HeroRotator` | `.hero` | Nur auf der Landing, genau einmal. 4–6 Bilder, 7 s Standzeit, 1,7 s Blende. Bilder ohne Alt-Text (dekorativ). `prefers-reduced-motion` → Standbild. |
 | `PageHeader` | `.page-header` | Kopf jeder Unterseite. Nie mit Bild, nie über 40 % Viewporthöhe. Eyebrow, Titel, ein Satz, Metaliste. |
-| `StatGrid` | `.stat-grid` | Vier Zahlen je Zeile, ab 720 px vierspaltig. Einheit klein und grau. Gerundete Zahlen als solche kennzeichnen. |
+| `StatGrid` | `.stat-grid` | Vier Zahlen je Zeile, ab 720 px vierspaltig. Einheit klein und grau. Zahlen exakt so, wie sie erfasst sind. |
 | `FilmCard` | `.film-card` | Immer paarweise. Genau ein Satz Text, genau ein Button. Bild + Verlauf + Hairline, nie Schatten. |
 | `VideoBlock` | `.video-block` | `preload="metadata"`, Poster, nie Autoplay, nie zwei Player auf einer Seite. 4K bleibt Download. |
 | `Prose` | `.prose` | Jeder Fließtext liegt darin. Zwei bis drei Absätze, dann ein anderer Baustein. |

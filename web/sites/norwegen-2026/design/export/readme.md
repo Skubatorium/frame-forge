@@ -2,7 +2,7 @@
 
 Ein kleines, eigenständiges Design-System für **private Reise-Websites** und die erste
 Anwendung darauf: die fünfseitige Familienseite zur Norwegenreise vom 18.07. bis 04.08.2026
-(zwei Erwachsene, ein sechsjähriger Sohn, 18 Tage, knapp 4.000 km, zwei fertige Filme).
+(zwei Erwachsene, ein sechsjähriger Sohn, 18 Tage, 3.829 km, zwei fertige Filme).
 
 Die Seite läuft unter `https://norwegen.skubus.de` hinter einer Basic Auth auf
 Infrastruktur-Ebene (Traefik). Die Website selbst enthält **keine** Auth-Logik, kein
@@ -68,9 +68,9 @@ Stabkirche Norwegens", „die steilste Normalspurbahn Nordeuropas".
 - „1 Fisch — gefangen an der Schärenküste, vom Sechsjährigen, winzig."
 - „Weil schöner." (zur bewusst längeren Rückfahrt über Notodden)
 
-**Zahlen.** Deutsches Format mit Punkt als Tausendertrennung (1.183 m, 3.829 km). Gerundete
-Werte werden als gerundet gekennzeichnet („knapp 4.000 km", „~4.000 km") und einmal pro Seite
-in einem `Notice` erklärt. Nie eine Scheingenauigkeit behaupten. Zeiten als `18:00 min`,
+**Zahlen.** Deutsches Format mit Punkt als Tausendertrennung (1.183 m, 3.829 km). Erfasste
+Werte stehen exakt da (3.829 km) und werden einmal pro Seite in einem `Notice` eingeordnet.
+Nie eine Scheingenauigkeit behaupten. Zeiten als `18:00 min`,
 Auflösung als `3840 × 2160` mit echtem Mal-Zeichen.
 
 **Kasus und Schreibweisen.** Normale deutsche Groß-/Kleinschreibung, keine Versalien außer in

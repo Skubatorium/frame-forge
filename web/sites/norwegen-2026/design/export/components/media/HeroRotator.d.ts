@@ -10,7 +10,7 @@ export interface HeroRotatorProps {
   scenes: string[];
   eyebrow?: string;
   title: string;
-  /** Zeile unter dem Titel, z. B. "18 Tage · knapp 4.000 km" */
+  /** Zeile unter dem Titel, z. B. "18 Tage · 3.829 km" */
   meta?: React.ReactNode;
   /** Buttons */
   children?: React.ReactNode;

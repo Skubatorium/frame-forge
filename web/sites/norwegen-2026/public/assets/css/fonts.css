@@ -1,25 +1,40 @@
 /* ============================================================
    fonts.css — selbst gehostete Schriften, keine externen Requests.
-   Beide Familien: SIL Open Font License 1.1.
-   Erwartete Dateien in assets/fonts/ (variable woff2):
-     SchibstedGrotesk-Variable.woff2        (wght 400–900)
-     SourceSerif4-Variable.woff2            (wght 300–700, opsz)
-   Kursive Schnitte werden synthetisch erzeugt; wer echte Kursive will,
-   legt die *-VariableItalic.woff2 ab und ergänzt zwei @font-face-Regeln.
-   Fehlen die Dateien, greift der System-Fallback aus tokens.css.
+   Beide Familien: SIL Open Font License 1.1 (Lizenztexte liegen
+   als *-OFL.txt daneben).
+
+   Aktuell liegen die variablen TTF-Dateien aus dem Google-Fonts-
+   Paket im Ordner. Für den Server einmal nach woff2 konvertieren
+   (ca. 60 % kleiner, z. B. transfonter.org oder woff2_compress)
+   und dann in den vier src-Zeilen .ttf → .woff2 sowie
+   "truetype-variations" → "woff2-variations" ändern.
    ============================================================ */
 
 @font-face {
   font-family: "Schibsted Grotesk";
-  src: url("../fonts/SchibstedGrotesk-Variable.woff2") format("woff2-variations");
+  src: url("../fonts/SchibstedGrotesk-Variable.ttf") format("truetype-variations");
   font-weight: 400 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
+  font-family: "Schibsted Grotesk";
+  src: url("../fonts/SchibstedGrotesk-VariableItalic.ttf") format("truetype-variations");
+  font-weight: 400 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
   font-family: "Source Serif 4";
-  src: url("../fonts/SourceSerif4-Variable.woff2") format("woff2-variations");
+  src: url("../fonts/SourceSerif4-Variable.ttf") format("truetype-variations");
   font-weight: 300 700;
   font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("../fonts/SourceSerif4-VariableItalic.ttf") format("truetype-variations");
+  font-weight: 300 700;
+  font-style: italic;
   font-display: swap;
 }

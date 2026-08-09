@@ -96,11 +96,11 @@
 /* --------------------------- stat-grid ---------------------------
    Zahl groß, Label klein. 2 Spalten mobil, bis 4 auf großem Schirm. */
 .stat-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--hairline); background: var(--line-1); border: var(--hairline) solid var(--line-1); border-radius: var(--radius-3); overflow: hidden }
-@media (min-width: 720px) { .stat-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) } }
+@media (min-width: 1000px) { .stat-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) } }
 .stat-grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)) }
-@media (min-width: 720px) { .stat-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)) } }
+@media (min-width: 780px) { .stat-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)) } }
 .stat { background: var(--bg-page); padding: var(--space-6) var(--space-5); display: flex; flex-direction: column; gap: var(--space-2) }
-.stat__value { font-family: var(--font-display); font-size: var(--step-4); font-weight: var(--weight-medium); color: var(--text-1); line-height: var(--leading-tight); letter-spacing: -0.02em; font-variant-numeric: tabular-nums }
+.stat__value { font-family: var(--font-display); font-size: clamp(1.62rem, 1.05rem + 1.75vw, 3rem); white-space: nowrap; font-weight: var(--weight-medium); color: var(--text-1); line-height: var(--leading-tight); letter-spacing: -0.02em; font-variant-numeric: lining-nums }
 .stat__value small { font-size: 0.5em; color: var(--text-3); font-weight: var(--weight-regular); letter-spacing: 0 }
 .stat__label { font-family: var(--font-display); font-size: var(--step--2); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--text-3) }
 .stat-grid--sunken .stat { background: var(--bg-sunken) }
