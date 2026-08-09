@@ -2665,7 +2665,7 @@ verschachtelten `xfade` passen nicht in 17 GB, egal was sonst laeuft.
 hochgerechnet **~8,8 GB fuer 18:00** bei CRF 18. Der `drone-edit`-Final liegt bei 5,7 GB fuer
 8 Minuten (11,9 MB/s), also dieselbe Groessenordnung. 18 GB frei reichen dafuer.
 
-**Der Weg, der daraus folgt — Chunk-Render (noch NICHT umgesetzt):**
+**Der Weg, der daraus folgt — Chunk-Render (umgesetzt 2026-08-09, siehe Abschnitt darunter):**
 
 1. Film in ~10 Stuecke à ~110 s zerlegen, jedes einzeln in 4K aus den Originalen rendern
    (je ~19-25 Inputs, ~6 GB RSS), Video **ohne Ton**.
@@ -2687,3 +2687,40 @@ hochgerechnet **~8,8 GB fuer 18:00** bei CRF 18. Der `drone-edit`-Final liegt be
 **Ausserdem in dieser Runde korrigiert:** `brief.yaml` `target_duration_s` von 1085 auf 1080 —
 die QC-Regel "Ziellaenge" hatte den Render sonst zu Recht blockiert, weil die 5 Sekunden
 Kuerzung im Brief nicht nachgezogen waren.
+
+### Chunk-Render in `frameforge.render` (2026-08-09)
+
+`render_final(..., chunk_s=...)` bzw. `frameforge render <projekt> <export> --chunk-s 110`.
+Ohne `--chunk-s` bleibt alles exakt wie bisher (Ein-Pass-Graph), der neue Weg ist ein Opt-in.
+
+Ablauf, genau nach dem Plan im Abschnitt darueber:
+
+1. `chunk_boundaries(timeline, chunk_s)` sucht die Schnittzeitpunkte. Zulaessig ist nur die
+   **Mitte eines Video-Clips** — `cut_windows()` baut die erlaubten Fenster und zieht ab:
+   Clipraender (`CHUNK_EDGE_MARGIN_S`, 1 s), Uebergaenge des Clips **und** der Nachbarn
+   (`xfade`/Schwarzblende inkl. `hold`), Clips mit Effekten (Ken-Burns wuerde in beiden
+   Haelften neu anfangen) sowie jedes Overlay- und Karten-Fenster (Animation startet sonst
+   neu). Die Zielmarken liegen gleichmaessig, jede wandert auf den naechstgelegenen erlaubten
+   Punkt; findet sich fuer eine keiner, waechst der Chunk (korrekt, nur speicherhungriger).
+2. `slice_timeline(timeline, start, end)` schneidet das Stueck als eigenstaendige Timeline auf
+   `tl_in = 0`: Randclips werden ueber `src_in`/`src_out` getrimmt (mit `speed` gerechnet) und
+   verlieren ihr `transition_in`/`transition_out` — ein angeschnittener Clip darf weder ein-
+   noch ausblenden, die Blende gehoert dem Nachbarchunk. Overlays/Karten muessen ganz im
+   Fenster liegen, sonst `RenderError` (Doppelsicherung zu Schritt 1). Ton bleibt weg.
+3. Jeder Chunk laeuft durch dasselbe `build_filtergraph` + `_run_ffmpeg` wie sonst, mit
+   denselben Encoder-Settings — Voraussetzung dafuer, dass Schritt 4 kopieren kann.
+4. `concat`-Demuxer, `-c copy`, keine Neukodierung. Die Chunk-Dateien werden **sofort danach**
+   geloescht: sonst liegen Chunks + zusammengesetztes Video + Endfassung gleichzeitig auf der
+   Platte, beim Vlog dreimal ~9 GB — mehr als frei ist (23 GB).
+5. Ton in einem einzigen Durchgang: `build_audio_filtergraph()` (aus `build_filtergraph`
+   herausgeloest, gemeinsamer `_build_audio_chain`) baut die Tonspur ohne jeden Video-Input,
+   `loudnorm` rechnet damit einmal ueber den ganzen Film. `_mux` legt sie per `-c copy` auf das
+   Video — **ohne `-shortest`**, sonst kappt ein Ton, der vor dem Schlussbild endet, das Bild
+   (im Test nachgestellt: 4 s Ton unter 8 s Film).
+
+Zwischendateien liegen in `final/.<name>_v<N>_chunks/` und werden nach Erfolg geloescht —
+bleibt das Verzeichnis liegen, ist der Lauf gescheitert. `--chunk-s` meldet je Schritt eine
+Zeile (Chunknummer, Zeitfenster, Zahl der Inputs).
+
+14 neue Tests in `tests/test_render.py`, darunter zwei echte Chunk-Renders (mit und ohne Ton)
+gegen die Fixtures; 615 Tests gruen.

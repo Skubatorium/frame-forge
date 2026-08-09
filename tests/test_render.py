@@ -9,6 +9,7 @@ from pathlib import Path
 
 import pytest
 
+from frameforge import probe as probe_module
 from frameforge import project as project_module
 from frameforge import render as render_module
 from frameforge.index import write_asset
@@ -1458,3 +1459,229 @@ def test_build_filtergraph_reports_unsafe_face_crops():
         faces_by_asset=faces_by_asset,
     )
     assert "photo1" in graph.unsafe_face_crops
+
+
+# -- Chunk-Render: Grenzen finden, Ausschnitt schneiden, Stuecke zusammensetzen ------
+
+
+def _chunk_timeline(duration: float = 30.0, n: int = 6, **tracks) -> Timeline:
+    """`n` gleich lange Video-Clips ohne Effekte, luecken- und ueberlappungsfrei.
+
+    `video_patch={index: {...}}` setzt Felder einzelner Clips (Transitions, Effekte);
+    weitere Keyword-Argumente landen als zusaetzliche Spuren in `tracks`.
+    """
+    per = duration / n
+    patch = tracks.pop("video_patch", {})
+    clips = []
+    for i in range(n):
+        clip = {"id": f"c{i}", "asset": "clip1", "src_in": 0, "src_out": per, "tl_in": i * per}
+        clip.update(patch.get(i, {}))
+        clips.append(clip)
+    return Timeline(
+        export="teaser",
+        fps=25,
+        resolution=(320, 240),
+        duration=duration,
+        tracks={"video": clips, **tracks},
+    )
+
+
+def test_cut_windows_keeps_margin_to_clip_edges():
+    tl = _chunk_timeline(duration=20.0, n=2)  # zwei Clips a 10s
+    windows = render_module.cut_windows(tl)
+    assert windows == [(1.0, 9.0), (11.0, 19.0)]
+
+
+def test_cut_windows_skips_clips_with_effects_and_transitions():
+    tl = _chunk_timeline(
+        duration=30.0,
+        n=3,
+        video_patch={
+            0: {"effects": [{"type": "kenburns"}]},
+            2: {"transition_in": {"type": "black", "dur": 1.0, "hold": 2.0}},
+        },
+    )
+    windows = render_module.cut_windows(tl)
+    # c0 faellt wegen Effekt weg; c1 verliert am Ende zusaetzlich die Schwarzblende von c2
+    # (dur + hold = 3s), c2 verliert sie am Anfang.
+    assert windows == [(11.0, 16.0), (24.0, 29.0)]
+
+
+def test_cut_windows_excludes_overlay_windows():
+    tl = _chunk_timeline(
+        duration=20.0, n=2, overlay=[{"id": "o1", "png": "overlays/t.png", "tl_in": 3.0, "dur": 2.0}]
+    )
+    windows = render_module.cut_windows(tl)
+    assert windows == [(1.0, 2.0), (6.0, 9.0), (11.0, 19.0)]
+
+
+def test_chunk_boundaries_land_inside_allowed_windows():
+    tl = _chunk_timeline(duration=30.0, n=6)  # Clips a 5s -> Fenster [x+1, x+4]
+    cuts = render_module.chunk_boundaries(tl, chunk_s=10.0)
+    windows = render_module.cut_windows(tl)
+    assert cuts == [9.0, 19.0]  # Ziel 10/20, jeweils auf das naechstgelegene Fenster gezogen
+    for cut in cuts:
+        assert any(lo <= cut <= hi for lo, hi in windows)
+
+
+def test_chunk_boundaries_short_timeline_has_no_cuts():
+    assert render_module.chunk_boundaries(_chunk_timeline(duration=30.0), chunk_s=60.0) == []
+
+
+def test_chunk_boundaries_without_any_window_raises():
+    tl = _chunk_timeline(
+        duration=30.0, n=6, video_patch={i: {"effects": [{"type": "kenburns"}]} for i in range(6)}
+    )
+    with pytest.raises(RenderError, match="Chunk-Schnittpunkt"):
+        render_module.chunk_boundaries(tl, chunk_s=10.0)
+
+
+def test_slice_timeline_trims_border_clips_and_shifts_to_zero():
+    tl = _chunk_timeline(duration=30.0, n=6)
+    sub = render_module.slice_timeline(tl, 9.0, 21.0)
+
+    assert sub.duration == 12.0
+    assert [c.id for c in sub.tracks.video] == ["c1", "c2", "c3", "c4"]
+    first, last = sub.tracks.video[0], sub.tracks.video[-1]
+    # c1 laeuft von 5-10s, angeschnitten bei 9s: 1s Rest, im Quellmaterial ab 4s.
+    assert first.tl_in == 0.0
+    assert (first.src_in, first.src_out) == (4.0, 5.0)
+    # c4 laeuft von 20-25s, gekappt bei 21s.
+    assert last.tl_in == 11.0
+    assert (last.src_in, last.src_out) == (0.0, 1.0)
+    assert sub.tracks.audio == []
+
+
+def test_slice_timeline_drops_transitions_of_cut_clips():
+    tl = _chunk_timeline(
+        duration=30.0,
+        n=6,
+        video_patch={
+            1: {
+                "transition_in": {"type": "fade", "dur": 0.5},
+                "transition_out": {"type": "fade", "dur": 0.5},
+            }
+        },
+    )
+    sub = render_module.slice_timeline(tl, 7.0, 21.0)
+    # c1 wird bei 7s angeschnitten -> keine Einblendung am Chunk-Anfang.
+    assert sub.tracks.video[0].transition_in is None
+
+
+def test_slice_timeline_keeps_whole_overlays_and_shifts_them():
+    tl = _chunk_timeline(
+        duration=30.0, n=6,
+        overlay=[{"id": "o1", "png": "overlays/t.png", "tl_in": 12.0, "dur": 3.0}],
+    )
+    sub = render_module.slice_timeline(tl, 9.0, 21.0)
+    assert len(sub.tracks.overlay) == 1
+    assert sub.tracks.overlay[0].tl_in == 3.0
+
+
+def test_slice_timeline_rejects_overlay_across_the_boundary():
+    tl = _chunk_timeline(
+        duration=30.0, n=6,
+        overlay=[{"id": "o1", "png": "overlays/t.png", "tl_in": 8.0, "dur": 4.0}],
+    )
+    with pytest.raises(RenderError, match="zerschnitten"):
+        render_module.slice_timeline(tl, 9.0, 21.0)
+
+
+def test_build_audio_filtergraph_has_no_video_inputs():
+    tl = _chunk_timeline(
+        duration=30.0, n=6,
+        audio=[{"id": "au1", "src": "music/theme.wav", "tl_in": 0, "dur": 30.0}],
+    )
+    graph = render_module.build_audio_filtergraph(
+        tl, resolve_asset=lambda a: Path("/x"), project_root=Path("/project")
+    )
+    assert len(graph.input_args) == 1
+    assert graph.input_args[0] == ["-i", "/project/music/theme.wav"]
+    assert graph.video_label == ""
+    assert graph.audio_label == "aout_norm"
+    assert "loudnorm" in graph.filter_complex
+
+
+def test_build_audio_filtergraph_without_audio_is_none():
+    graph = render_module.build_audio_filtergraph(
+        _chunk_timeline(), resolve_asset=lambda a: Path("/x"), project_root=Path("/p")
+    )
+    assert graph is None
+
+
+def test_render_final_chunked_matches_single_pass_length(proj):
+    """Echter Chunk-Render: gleiche Laenge wie der Ein-Pass-Render, Ton dran, Reste weg."""
+    export = proj.export("teaser")
+    proj.music_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copy(FIXTURES / "tone.wav", proj.music_dir / "theme.wav")
+    media_root = proj.config.media_root
+    shutil.copy(FIXTURES / "photo.jpg", media_root / "photo.jpg")
+    write_asset(
+        proj,
+        {
+            "id": "photo1",
+            "kind": "photo",
+            "path": "photo.jpg",
+            "hash": hash_file(media_root / "photo.jpg"),
+        },
+    )
+    timeline = Timeline(
+        export="teaser",
+        fps=25,
+        resolution=(320, 240),
+        duration=8.0,
+        tracks={
+            "video": [
+                {"id": "c1", "asset": "clip1", "src_in": 0, "src_out": 2, "tl_in": 0},
+                # Foto-Clip in der Mitte: lang genug, damit eine Chunk-Grenze hineinpasst.
+                {"id": "c2", "asset": "photo1", "src_in": 0, "src_out": 4, "tl_in": 2},
+                {"id": "c3", "asset": "clip1", "src_in": 0, "src_out": 2, "tl_in": 6},
+            ],
+            "audio": [{"id": "au1", "src": "music/theme.wav", "tl_in": 0, "dur": 8.0}],
+        },
+    )
+
+    steps: list[str] = []
+    out_path = render_final(proj, export, timeline, chunk_s=4.0, on_progress=steps.append)
+
+    assert out_path.exists()
+    result = probe_video(out_path)
+    assert result["dur"] == pytest.approx(8.0, abs=0.4)
+    assert result["w"] == 320
+    assert result["h"] == 240
+    # Der Ton (Fixture: 4s) ist kuerzer als der Film (8s) — er darf das Bild nicht kappen,
+    # muss aber als Spur im Ergebnis liegen.
+    streams = probe_module._run_json(
+        ["ffprobe", "-v", "error", "-show_streams", "-print_format", "json", str(out_path)]
+    )["streams"]
+    assert [s["codec_type"] for s in streams].count("audio") == 1
+    assert any("Chunk 1/2" in s for s in steps)
+    # Arbeitsverzeichnis ist nach Erfolg weg.
+    assert not list(export.final_dir.glob(".*_chunks"))
+
+
+def test_render_final_chunked_without_audio_still_produces_video(proj):
+    export = proj.export("teaser")
+    media_root = proj.config.media_root
+    shutil.copy(FIXTURES / "photo.jpg", media_root / "photo.jpg")
+    write_asset(
+        proj,
+        {"id": "photo1", "kind": "photo", "path": "photo.jpg",
+         "hash": hash_file(media_root / "photo.jpg")},
+    )
+    timeline = Timeline(
+        export="teaser",
+        fps=25,
+        resolution=(320, 240),
+        duration=8.0,
+        tracks={
+            "video": [
+                {"id": "c1", "asset": "photo1", "src_in": 0, "src_out": 4, "tl_in": 0},
+                {"id": "c2", "asset": "photo1", "src_in": 0, "src_out": 4, "tl_in": 4},
+            ]
+        },
+    )
+
+    out_path = render_final(proj, export, timeline, chunk_s=4.0)
+
+    assert probe_video(out_path)["dur"] == pytest.approx(8.0, abs=0.4)

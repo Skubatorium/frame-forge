@@ -1100,6 +1100,11 @@ def render(
     resolution: str = typer.Option(None, "--resolution", help="Ausgabe-Aufloesung, z.B. 1920x1080"),
     crf: int = typer.Option(18, "--crf", help="Qualitaet (kleiner = besser, groesser = kleinere Datei)"),
     preset: str = typer.Option("medium", "--preset", help="x264-Preset (fast/medium/slow)"),
+    chunk_s: float = typer.Option(
+        None, "--chunk-s",
+        help="Chunk-Render: Film in Stuecke von ~N Sekunden rendern und ohne Neukodierung "
+             "zusammensetzen (noetig, wenn zu viele gleichzeitig offene Inputs den RAM sprengen)",
+    ),
 ) -> None:
     """Final-Render. Erfordert Export-Phase == APPROVED (explizite Freigabe nach Preview)."""
     proj = _resolve_or_fail(project)
@@ -1162,6 +1167,8 @@ def render(
         out_path = render_module.render_final(
             proj, exp, timeline, lut_path=lut_path, resolution=res_tuple, crf=crf, preset=preset,
             color_grade=(brief or {}).get("color_grade"),
+            chunk_s=chunk_s,
+            on_progress=lambda msg: console.print(f"[dim]{msg}[/dim]"),
         )
     except render_module.RenderError as exc:
         raise _fail(str(exc)) from exc

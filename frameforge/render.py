@@ -13,7 +13,9 @@ mit Ducking (statische `volume`-Fenster) und optionaler EBU-R128-Loudnorm im Fin
 
 from __future__ import annotations
 
+import itertools
 import json
+import shutil
 import subprocess
 from collections.abc import Callable
 from dataclasses import dataclass, field
@@ -809,7 +811,35 @@ def build_filtergraph(
 
     graph.video_label = cur_video
 
-    # -- Audio: pro Clip trimmen/verzoegern/Pegel, Musik-Ducking, dann amix ----------
+    graph.audio_label = _build_audio_chain(
+        timeline,
+        add_input=add_input,
+        filters=filters,
+        resolve_asset=resolve_asset,
+        project_root=project_root,
+        loudness_normalize=loudness_normalize,
+    )
+
+    graph.filter_complex = ";".join(filters)
+    return graph
+
+
+def _build_audio_chain(
+    timeline: Timeline,
+    *,
+    add_input: Callable[[list[str]], int],
+    filters: list[str],
+    resolve_asset: Callable[[str], Path],
+    project_root: Path,
+    loudness_normalize: bool,
+) -> str | None:
+    """Audio-Spur der Timeline: pro Clip trimmen/verzoegern/Pegel, Musik-Ducking, dann amix.
+
+    Haengt Inputs und Filter-Statements an die uebergebenen Sammler und liefert das Label des
+    fertigen Mixes (`None`, wenn die Timeline keine Audio-Clips hat). Eigene Funktion, damit der
+    Chunk-Render (`render_final(..., chunk_s=...)`) den Ton in **einem** Durchgang ohne jeden
+    Video-Input bauen kann — `loudnorm` je Chunk gaebe an jeder Nahtstelle einen Pegelsprung.
+    """
     audio_labels: list[str] = []
     music_labels: list[str] = []  # alle src-basierten (Musik-)Spuren, alle werden geduckt
     duck_windows: list[tuple[float, float, float]] = []
@@ -876,22 +906,22 @@ def build_filtergraph(
         if current != music_label:
             audio_labels[audio_labels.index(music_label)] = current
 
-    if audio_labels:
-        mix_inputs = "".join(f"[{lbl}]" for lbl in audio_labels)
-        # normalize=0: amix skaliert sonst automatisch mit 1/n und macht die explizit
-        # gesetzten gain_db-/Ducking-Werte bedeutungslos (halbierter Pegel bei 2 Spuren).
-        # Die absoluten Pegel steuern wir ueber die volume-Gains + loudnorm (Final).
-        filters.append(
-            f"{mix_inputs}amix=inputs={len(audio_labels)}:normalize=0:"
-            f"duration=longest:dropout_transition=0[aout]"
-        )
-        graph.audio_label = "aout"
-        if loudness_normalize:
-            filters.append(f"[{graph.audio_label}]loudnorm=I=-16:TP=-1.5:LRA=11[aout_norm]")
-            graph.audio_label = "aout_norm"
+    if not audio_labels:
+        return None
 
-    graph.filter_complex = ";".join(filters)
-    return graph
+    mix_inputs = "".join(f"[{lbl}]" for lbl in audio_labels)
+    # normalize=0: amix skaliert sonst automatisch mit 1/n und macht die explizit
+    # gesetzten gain_db-/Ducking-Werte bedeutungslos (halbierter Pegel bei 2 Spuren).
+    # Die absoluten Pegel steuern wir ueber die volume-Gains + loudnorm (Final).
+    filters.append(
+        f"{mix_inputs}amix=inputs={len(audio_labels)}:normalize=0:"
+        f"duration=longest:dropout_transition=0[aout]"
+    )
+    label = "aout"
+    if loudness_normalize:
+        filters.append(f"[{label}]loudnorm=I=-16:TP=-1.5:LRA=11[aout_norm]")
+        label = "aout_norm"
+    return label
 
 
 def _run_ffmpeg(
@@ -918,7 +948,11 @@ def _run_ffmpeg(
     # Grosszuegiges, aber endliches Timeout als Sicherheitsnetz: ein Filtergraph-Fehler
     # (z.B. ein unbegrenzter `-loop 1`-Input ohne `shortest=1` an einem `overlay`) darf den
     # Prozess nicht auf unbestimmte Zeit haengen lassen.
-    timeout_s = max(120.0, timeline.duration * 30)
+    _run_ffmpeg_cmd(cmd, timeout_s=max(120.0, timeline.duration * 30))
+
+
+def _run_ffmpeg_cmd(cmd: list[str], *, timeout_s: float) -> None:
+    """Fuehrt einen fertig gebauten ffmpeg-Aufruf aus und uebersetzt Fehler in `RenderError`."""
     try:
         result = subprocess.run(
             cmd, capture_output=True, text=True, check=False, timeout=timeout_s
@@ -1033,6 +1067,253 @@ def _next_version_path(directory: Path, stem: str, ext: str) -> Path:
     return directory / f"{stem}_v{max_version + 1}{ext}"
 
 
+# -- Chunk-Render: den Film stueckweise rendern und ohne Neukodierung zusammensetzen ------
+#
+# Warum es das gibt (gemessen 2026-08-09, PROGRESS.md): der Ein-Pass-Graph des Norwegen-Vlogs
+# oeffnet 213 Inputs gleichzeitig, jeder ein 4K-Decoder, dazu 169 verschachtelte `xfade`.
+# Hochgerechnet ~50 GB RSS auf einer Maschine mit 17,2 GB — ffmpeg landet nach ~40s im Swap und
+# kommt nicht mehr voran. Ein echter 4K-Chunk von 103,6s mit 19 Inputs braucht 5,9 GB und laeuft
+# sauber durch. Die Zahl gleichzeitig offener Inputs ist also die Stellschraube, nicht die
+# Dateigroesse.
+
+CHUNK_EDGE_MARGIN_S = 1.0
+"""Sicherheitsabstand einer Chunk-Grenze zu Clipanfang/-ende, Uebergang und Overlay-Fenster."""
+
+_MIN_CUT_WINDOW_S = 0.5  # kuerzere Restfenster in einem Clip taugen nicht als Schnittstelle
+
+
+def _clip_end(clip) -> float:
+    return clip.tl_in + clip.duration
+
+
+def _transition_span(transition) -> float:
+    return 0.0 if transition is None else transition.dur + transition.hold
+
+
+def cut_windows(timeline: Timeline, *, margin_s: float | None = None) -> list[tuple[float, float]]:
+    """Zeitfenster, in denen eine Chunk-Grenze liegen darf — aufsteigend, ueberschneidungsfrei.
+
+    Erlaubt ist nur die **Mitte eines Video-Clips**: nie an einem Uebergang (die Blende ginge
+    verloren, weil `xfade`/`fade` je Chunk neu gerechnet werden), nie waehrend eines Overlay-
+    oder Karten-Fensters (deren Animation startet im naechsten Chunk sonst von vorn) und nie in
+    einem Clip mit Effekten (Ken-Burns wuerde in beiden Haelften neu anfangen).
+    """
+    margin_s = CHUNK_EDGE_MARGIN_S if margin_s is None else margin_s
+    windows: list[tuple[float, float]] = []
+    clips = timeline.tracks.video
+    for i, clip in enumerate(clips):
+        if clip.effects:
+            continue
+        prev_out = _transition_span(clips[i - 1].transition_out) if i > 0 else 0.0
+        next_in = _transition_span(clips[i + 1].transition_in) if i + 1 < len(clips) else 0.0
+        head = margin_s + max(_transition_span(clip.transition_in), prev_out)
+        tail = margin_s + max(_transition_span(clip.transition_out), next_in)
+        lo, hi = clip.tl_in + head, _clip_end(clip) - tail
+        if hi - lo >= _MIN_CUT_WINDOW_S:
+            windows.append((lo, hi))
+
+    blocked = [
+        (c.tl_in - margin_s, c.tl_in + c.dur + margin_s)
+        for c in (*timeline.tracks.overlay, *timeline.tracks.map)
+    ]
+    for b_lo, b_hi in blocked:
+        remaining: list[tuple[float, float]] = []
+        for lo, hi in windows:
+            if b_hi <= lo or b_lo >= hi:
+                remaining.append((lo, hi))
+                continue
+            if lo < b_lo and b_lo - lo >= _MIN_CUT_WINDOW_S:
+                remaining.append((lo, b_lo))
+            if hi > b_hi and hi - b_hi >= _MIN_CUT_WINDOW_S:
+                remaining.append((b_hi, hi))
+        windows = remaining
+    return sorted(windows)
+
+
+def chunk_boundaries(
+    timeline: Timeline, chunk_s: float, *, margin_s: float | None = None
+) -> list[float]:
+    """Innere Schnittzeitpunkte fuer den Chunk-Render (ohne 0 und ohne `timeline.duration`).
+
+    Zielt auf gleich lange Stuecke von ~`chunk_s` und verschiebt jede Grenze auf den naechsten
+    zulaessigen Punkt aus `cut_windows`. Findet sich fuer eine Zielmarke keiner, waechst der
+    Chunk — das kostet Speicher, ist aber immer noch korrekt. Ohne **jede** zulaessige Grenze
+    ist der Chunk-Render nicht moeglich: `RenderError`.
+    """
+    if chunk_s <= 0:
+        raise RenderError("chunk_s muss groesser als 0 sein")
+    if timeline.duration <= chunk_s:
+        return []
+    windows = cut_windows(timeline, margin_s=margin_s)
+    if not windows:
+        raise RenderError(
+            "Kein zulaessiger Chunk-Schnittpunkt gefunden (jeder Clip traegt Effekte, ist zu "
+            "kurz oder liegt unter einem Overlay) — Chunk-Render nicht moeglich"
+        )
+
+    n = max(2, round(timeline.duration / chunk_s))
+    step = timeline.duration / n
+    boundaries: list[float] = []
+    for k in range(1, n):
+        target = k * step
+        best = min(
+            (max(lo, min(hi, target)) for lo, hi in windows),
+            key=lambda t: abs(t - target),
+        )
+        # Streng monoton und keine Mini-Chunks: eine Grenze, die praktisch auf der vorigen
+        # liegt, bringt nichts ausser einer zusaetzlichen Nahtstelle.
+        if boundaries and best - boundaries[-1] < _MIN_CUT_WINDOW_S:
+            continue
+        if timeline.duration - best < _MIN_CUT_WINDOW_S:
+            continue
+        boundaries.append(best)
+    if not boundaries:
+        raise RenderError(
+            "Kein zulaessiger Chunk-Schnittpunkt gefunden (jeder Clip traegt Effekte, ist zu "
+            "kurz oder liegt unter einem Overlay) — Chunk-Render nicht moeglich"
+        )
+    return boundaries
+
+
+def slice_timeline(timeline: Timeline, start: float, end: float, *, with_audio: bool = False) -> Timeline:
+    """Schneidet `[start, end)` als eigenstaendige Timeline heraus, auf `tl_in = 0` geschoben.
+
+    Video-Clips an den Raendern werden ueber `src_in`/`src_out` getrimmt (mit `speed` gerechnet);
+    ihr `transition_in`/`transition_out` faellt dabei weg, weil ein angeschnittener Clip weder
+    ein- noch ausblenden darf — die Blende gehoert dem Nachbarchunk. Overlays und Karten muessen
+    **ganz** im Fenster liegen (`chunk_boundaries` sorgt dafuer), sonst `RenderError`.
+
+    `with_audio=False` (Default) laesst die Tonspur weg: sie wird im Chunk-Render in einem
+    einzigen eigenen Durchgang gebaut, damit `loudnorm` einmal ueber den ganzen Film rechnet.
+    """
+    eps = 1e-6
+    if end - start <= eps:
+        raise RenderError(f"Leerer Timeline-Ausschnitt [{start:.3f}, {end:.3f}]")
+
+    video = []
+    for clip in timeline.tracks.video:
+        if _clip_end(clip) <= start + eps or clip.tl_in >= end - eps:
+            continue
+        cut = clip.model_copy(deep=True)
+        if clip.tl_in < start - eps:
+            cut.src_in = clip.src_in + (start - clip.tl_in) * clip.speed
+            cut.tl_in = start
+            cut.transition_in = None
+        if _clip_end(clip) > end + eps:
+            cut.src_out = clip.src_out - (_clip_end(clip) - end) * clip.speed
+            cut.transition_out = None
+        cut.tl_in -= start
+        video.append(cut)
+    if not video:
+        raise RenderError(f"Timeline-Ausschnitt [{start:.3f}, {end:.3f}] enthaelt keine Video-Clips")
+
+    def shifted_windowed(items, kind: str):
+        out = []
+        for item in items:
+            item_end = item.tl_in + item.dur
+            if item_end <= start + eps or item.tl_in >= end - eps:
+                continue
+            if item.tl_in < start - eps or item_end > end + eps:
+                raise RenderError(
+                    f"{kind} '{item.id}' ({item.tl_in:.2f}-{item_end:.2f}s) wird von der "
+                    f"Chunk-Grenze [{start:.2f}, {end:.2f}] zerschnitten"
+                )
+            copy = item.model_copy(deep=True)
+            copy.tl_in -= start
+            out.append(copy)
+        return out
+
+    tracks = timeline.tracks.model_copy(deep=True)
+    tracks.video = video
+    tracks.overlay = shifted_windowed(timeline.tracks.overlay, "Overlay")
+    tracks.map = shifted_windowed(timeline.tracks.map, "Karten-Clip")
+    tracks.audio = shifted_windowed(timeline.tracks.audio, "Audio-Clip") if with_audio else []
+
+    sub = timeline.model_copy(deep=True)
+    sub.tracks = tracks
+    sub.duration = end - start
+    sub.validate_semantics()
+    return sub
+
+
+def build_audio_filtergraph(
+    timeline: Timeline,
+    *,
+    resolve_asset: Callable[[str], Path],
+    project_root: Path,
+    loudness_normalize: bool = True,
+) -> FilterGraph | None:
+    """Nur die Tonspur der Timeline als Filtergraph — `None`, wenn die Timeline keinen Ton hat.
+
+    Der Chunk-Render braucht den Ton in einem einzigen Durchgang (wenige Inputs, kostet fast
+    nichts), damit `loudnorm` einmal ueber den ganzen Film rechnet statt je Chunk anders.
+    """
+    graph = FilterGraph()
+    filters: list[str] = []
+
+    def add_input(args: list[str]) -> int:
+        graph.input_args.append(args)
+        return len(graph.input_args) - 1
+
+    label = _build_audio_chain(
+        timeline,
+        add_input=add_input,
+        filters=filters,
+        resolve_asset=resolve_asset,
+        project_root=project_root,
+        loudness_normalize=loudness_normalize,
+    )
+    if label is None:
+        return None
+    graph.audio_label = label
+    graph.filter_complex = ";".join(filters)
+    return graph
+
+
+def _render_audio_only(graph: FilterGraph, timeline: Timeline, out_path: Path) -> None:
+    cmd = ["ffmpeg", "-y"]
+    for args in graph.input_args:
+        cmd.extend(args)
+    cmd.extend(
+        [
+            "-filter_complex", graph.filter_complex,
+            "-map", f"[{graph.audio_label}]",
+            "-vn", "-c:a", "aac", "-b:a", "320k",
+            "-loglevel", "error", str(out_path),
+        ]
+    )
+    _run_ffmpeg_cmd(cmd, timeout_s=max(120.0, timeline.duration * 10))
+
+
+def _concat_chunks(chunks: list[Path], out_path: Path, *, total_duration: float) -> None:
+    """Fuegt die Chunk-Dateien per concat-Demuxer zusammen — **ohne Neukodierung** (`-c copy`).
+
+    Setzt voraus, dass alle Chunks mit identischen Encoder-Settings entstanden sind (tun sie,
+    sie kommen aus demselben `_run_ffmpeg`-Aufruf mit denselben Parametern).
+    """
+    list_path = out_path.parent / "chunks.txt"
+    list_path.write_text("".join(f"file '{c.resolve()}'\n" for c in chunks))
+    cmd = [
+        "ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(list_path),
+        "-c", "copy", "-loglevel", "error", str(out_path),
+    ]
+    _run_ffmpeg_cmd(cmd, timeout_s=max(120.0, total_duration * 2))
+
+
+def _mux(video_path: Path, audio_path: Path, out_path: Path, *, total_duration: float) -> None:
+    """Legt die fertige Tonspur auf das zusammengesetzte Video — beides `-c copy`.
+
+    **Kein `-shortest`:** ist der Ton kuerzer als der Film (Musik laeuft aus, letzter O-Ton
+    endet vor dem Schlussbild), wuerde er sonst das Bild kappen. Das Bild gibt die Laenge vor.
+    """
+    cmd = [
+        "ffmpeg", "-y", "-i", str(video_path), "-i", str(audio_path),
+        "-map", "0:v:0", "-map", "1:a:0", "-c", "copy",
+        "-loglevel", "error", str(out_path),
+    ]
+    _run_ffmpeg_cmd(cmd, timeout_s=max(120.0, total_duration * 2))
+
+
 def render_final(
     project: Project,
     export: Export,
@@ -1043,6 +1324,8 @@ def render_final(
     crf: int = 18,
     preset: str = "medium",
     color_grade: dict | None = None,
+    chunk_s: float | None = None,
+    on_progress: Callable[[str], None] | None = None,
 ) -> Path:
     """Final-Render: mappt auf die Original-Assets (kein Proxy-Downscale), EBU-R128-
 
@@ -1056,6 +1339,13 @@ def render_final(
     **Ausnahme HEIC/HEIF:** ffmpeg kann diese Dateien nicht in den Foto-Renderpfad geben
     (PROGRESS.md HEIC-1), deshalb wird für sie der JPEG-Proxy verwendet — eine verlustarme
     Umsetzung in voller Auflösung, kein Downscale.
+
+    `chunk_s`: Chunk-Render statt Ein-Pass-Graph — der Film wird in Stücke von ~`chunk_s`
+    Sekunden zerlegt, jedes einzeln gerendert (nur seine eigenen Inputs offen), die Stücke per
+    concat-Demuxer **ohne Neukodierung** zusammengefügt und der separat gerenderte Ton
+    dazugemuxt. Nötig ab dem Punkt, an dem die Zahl gleichzeitig offener Decoder den
+    Arbeitsspeicher sprengt (siehe Kommentar bei `CHUNK_EDGE_MARGIN_S`). `on_progress` bekommt
+    dabei je Schritt eine kurze Statuszeile.
     """
     assets_by_id = {a["id"]: a for a in load_assets(project)}
     proxies_dir = project.cache_dir / "proxies"
@@ -1084,6 +1374,18 @@ def render_final(
             return proxy
         return original
 
+    out_path = _next_version_path(export.final_dir, export.name, ".mp4")
+    faces = _load_faces_by_asset(project)
+
+    if chunk_s is not None:
+        _render_final_chunked(
+            project, export, timeline, out_path,
+            resolve=resolve, faces=faces, chunk_s=chunk_s, lut_path=lut_path,
+            resolution=resolution, crf=crf, preset=preset, color_grade=color_grade,
+            on_progress=on_progress,
+        )
+        return out_path
+
     graph = build_filtergraph(
         timeline,
         resolve_asset=resolve,
@@ -1093,8 +1395,84 @@ def render_final(
         loudness_normalize=True,
         resolution=resolution,
         color_grade=color_grade,
-        faces_by_asset=_load_faces_by_asset(project),
+        faces_by_asset=faces,
     )
-    out_path = _next_version_path(export.final_dir, export.name, ".mp4")
     _run_ffmpeg(graph, timeline, out_path, crf=crf, preset=preset)
     return out_path
+
+
+def _render_final_chunked(
+    project: Project,
+    export: Export,
+    timeline: Timeline,
+    out_path: Path,
+    *,
+    resolve: Callable[[str], Path],
+    faces: dict[str, list[dict]] | None,
+    chunk_s: float,
+    lut_path: Path | None,
+    resolution: tuple[int, int] | None,
+    crf: int,
+    preset: str,
+    color_grade: dict | None,
+    on_progress: Callable[[str], None] | None,
+) -> None:
+    """Video stueckweise rendern, ohne Neukodierung zusammensetzen, Ton in einem Pass dazu.
+
+    Reihenfolge und Begruendung stehen in `render_final` bzw. am `CHUNK_EDGE_MARGIN_S`-Block.
+    Die Zwischendateien liegen in einem Arbeitsverzeichnis neben dem Ergebnis und werden nach
+    Erfolg geloescht; bleibt es liegen, ist der Lauf gescheitert und die Chunks sind noch da.
+    """
+    def report(msg: str) -> None:
+        if on_progress is not None:
+            on_progress(msg)
+
+    cuts = chunk_boundaries(timeline, chunk_s)
+    edges = [0.0, *cuts, timeline.duration]
+    work_dir = out_path.parent / f".{out_path.stem}_chunks"
+    if work_dir.exists():
+        shutil.rmtree(work_dir)
+    work_dir.mkdir(parents=True)
+
+    chunk_paths: list[Path] = []
+    for i, (start, end) in enumerate(itertools.pairwise(edges)):
+        sub = slice_timeline(timeline, start, end)
+        graph = build_filtergraph(
+            sub,
+            resolve_asset=resolve,
+            export_root=export.root,
+            project_root=project.root,
+            lut_path=lut_path,
+            loudness_normalize=False,
+            resolution=resolution,
+            color_grade=color_grade,
+            faces_by_asset=faces,
+        )
+        chunk_path = work_dir / f"chunk_{i:03d}.mp4"
+        report(
+            f"Chunk {i + 1}/{len(edges) - 1}: {start:.1f}-{end:.1f}s, "
+            f"{len(graph.input_args)} Inputs"
+        )
+        _run_ffmpeg(graph, sub, chunk_path, crf=crf, preset=preset)
+        chunk_paths.append(chunk_path)
+
+    video_path = work_dir / "video.mp4"
+    report(f"Fuege {len(chunk_paths)} Chunks zusammen (ohne Neukodierung)")
+    _concat_chunks(chunk_paths, video_path, total_duration=timeline.duration)
+    # Chunks sofort weg: sonst liegen Chunks + zusammengesetztes Video + fertige Datei
+    # gleichzeitig auf der Platte — beim Norwegen-Vlog dreimal ~9 GB, mehr als frei ist.
+    for chunk in chunk_paths:
+        chunk.unlink(missing_ok=True)
+
+    audio_graph = build_audio_filtergraph(
+        timeline, resolve_asset=resolve, project_root=project.root, loudness_normalize=True
+    )
+    if audio_graph is None:
+        video_path.replace(out_path)
+    else:
+        audio_path = work_dir / "audio.m4a"
+        report(f"Ton in einem Durchgang ({len(audio_graph.input_args)} Inputs, loudnorm)")
+        _render_audio_only(audio_graph, timeline, audio_path)
+        _mux(video_path, audio_path, out_path, total_duration=timeline.duration)
+
+    shutil.rmtree(work_dir, ignore_errors=True)
