@@ -2540,3 +2540,37 @@ rendern und die Laufzeit vergleichen.
 Mini-Timeline (2-5 Clips) durch `build_filtergraph` + `_run_ffmpeg` pruefen und die Frames mit
 `cv2` als Kontaktbogen ansehen — nie am Vollrender. So wurden der Titel-Drift-Fehler, die
 1080p-Overlay-Skalierung und das Blur-Fill jeweils in unter einer Minute verifiziert.
+
+### `vlog-data` Runde-3-Preview erfolgreich gerendert und geprueft (2026-08-09, 02:17)
+
+**Datei:** `exports/vlog-data/preview/vlog-data_preview.mp4` — 582,8 MB, **1920x1080**,
+1085,366s (18:05), 30 fps, 4,5 Mbit/s. Laufzeit 25 Minuten (0,72x Echtzeit).
+Das ist der erste Preview, der die Runde-3-Aenderungen tatsaechlich enthaelt.
+
+**Achtung, geaendert gegenueber allen frueheren Previews:** die Datei ist jetzt **1080p**, nicht
+4K (siehe `_preview_resolution`). Deshalb auch 583 MB statt 2,5 GB.
+
+**Geprueft (nicht behauptet):**
+
+| Punkt | Ergebnis |
+|---|---|
+| Bewegung ueber den ganzen Film | 12 Stichproben, alle bewegt; Schwarz nur bei 5s (Cold-Open) und 1084s (Ausblende) |
+| Titelsequenz 12-24s | Einlauf, Halten mit langsamer Drift in EINE Richtung, Ausblenden bei 22,8s — vollstaendig |
+| Bauchbinden | alle 17 vorhanden, Text/Tag/Etappe/km korrekt, unten links |
+| Trollstigen-Hoehepunkt 14:17,7 | Wolkenfenster-Blick ins Tal, 14s Standzeit, laeuft durch |
+| Moewen-Verfolgung 17:15,6-17:24,2 | Moewe ueber dem glitzernden Wasser, Drohne folgt |
+| Naher Vorbeiflug 17:23,8-17:27,4 | Moewe kreuzt diagonal, am groessten bei 17:26,9-17:27,3, harter Schnitt danach |
+| Ducking (2 Stellen) | Musik faehrt weich von ~-17 dB auf ~-23 dB und zurueck, keine Sprungstelle |
+| Ken-Burns-Varianz | 8 verschiedene Parametersaetze (vorher 1), haeufigste nur 13x von 62 |
+| Blur-Fill | 29 Clips, in den Bauchbinden-Stichproben sichtbar korrekt (kein Balken, nichts angeschnitten) |
+
+**Neue QC-Regel greift:** `qc.validate(..., asset_durations=...)` ist in beiden CLI-Aufrufstellen
+verdrahtet. Waere sie vorher da gewesen, haette sie den 26,7s-Fehlrender sofort verhindert.
+
+**Offen fuer die naechste Runde (Nutzer-Sichtung):**
+- Ob der O-Ton an den zwei Ducking-Stellen jetzt laut genug ist (gemessen liegt er drin, die
+  Beurteilung "laut/klar genug" kann nur der Nutzer treffen).
+- Ob die Blur-Raender bei 29 Clips im Fluss stoeren oder ob einzelne davon lieber raus sollen.
+- Der `/ff-build`-Hinweis beim Render ("Beat-Sheet kennt das neue Material nicht") steht noch:
+  `beatsheet.md` ist der Stand vor Runde 3. Bewusst so gelassen — die Schnittfassung steht in
+  `rebuild-recipe.py`, das Beat-Sheet waere nur Doku. Bei Gelegenheit nachziehen.
