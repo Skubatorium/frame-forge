@@ -188,3 +188,22 @@ def test_transaction_does_not_write_on_exception(tmp_path):
         st.advance_project(Phase.INGESTED)
         raise RuntimeError("boom")
     assert ProjectState.load(path).project_phase == Phase.INIT
+
+
+def test_gate_render_final_allows_rerender_of_unchanged_timeline(tmp_path):
+    """Zweitfassung (z.B. 1080p neben 4K) darf aus RENDERED heraus laufen — solange die
+    Timeline dieselbe ist, auf die sich die Freigabe bezog."""
+    state = ProjectState.load(tmp_path / ".state.json")
+    state.advance_export("teaser", Phase.RENDERED)
+    state.set_export_hash("teaser", "timeline", "abc123")
+
+    # gleiche Timeline: erlaubt
+    gate_render_final(state, "teaser", timeline_fingerprint="abc123")
+
+    # geaenderte Timeline: blockiert, es braucht Preview + Freigabe
+    with pytest.raises(GateError):
+        gate_render_final(state, "teaser", timeline_fingerprint="deadbeef")
+
+    # ohne Fingerprint bleibt die strikte Regel
+    with pytest.raises(GateError):
+        gate_render_final(state, "teaser")

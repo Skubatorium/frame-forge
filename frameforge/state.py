@@ -276,14 +276,26 @@ def gate_preview(state: ProjectState, export: str, *, timeline_exists: bool) -> 
     state.require_export(export, Phase.TIMELINE)
 
 
-def gate_render_final(state: ProjectState, export: str) -> None:
-    """`ff-render` (final) erfordert Export-Phase == APPROVED (explizite Freigabe).
+def gate_render_final(state: ProjectState, export: str, *, timeline_fingerprint: str | None = None) -> None:
+    """`ff-render` (final) erfordert Export-Phase APPROVED — oder RENDERED bei gleicher Timeline.
 
-    Bewusst strikte Gleichheit, nicht `>=`: Plan Abschnitt 2 verlangt wortwoertlich
-    "Export-Phase = APPROVED". Ein bereits gerenderter Export (Phase RENDERED) braucht
-    fuer einen erneuten Final-Render wieder eine explizite Freigabe nach Preview — sonst
-    koennte ein veralteter Render ohne neue Kontrolle wiederholt werden.
+    Grundregel bleibt die strikte Gleichheit mit APPROVED (Plan Abschnitt 2: "Export-Phase =
+    APPROVED"): ein Export, dessen Timeline sich seit der Freigabe geaendert hat, muss erneut
+    durch Preview und Freigabe.
+
+    Ergaenzt 2026-08-09: Aus RENDERED heraus ist ein weiterer Final-Render zulaessig, **solange
+    die Timeline unveraendert ist** (`timeline_fingerprint` gleich dem beim Approve
+    gespeicherten Hash). Anlass sind Zweitfassungen desselben freigegebenen Films — eine
+    1080p-Streaming-Fassung neben dem 4K-Download. Das ist kein zweiter Schnitt, sondern ein
+    zweites Deliverable derselben Freigabe; ein erneutes Preview wuerde nur Rechenzeit kosten,
+    ohne dass es etwas Neues zu kontrollieren gaebe. Fehlt der Fingerprint oder weicht er ab,
+    gilt wieder die strikte Regel.
     """
     current = state.export_phase(export)
-    if current != Phase.APPROVED:
-        raise GateError(Phase.APPROVED, current, context=f"Export '{export}'")
+    if current == Phase.APPROVED:
+        return
+    if current == Phase.RENDERED and timeline_fingerprint is not None:
+        approved = state.get_export_hash(export, "timeline")
+        if approved is not None and approved == timeline_fingerprint:
+            return
+    raise GateError(Phase.APPROVED, current, context=f"Export '{export}'")

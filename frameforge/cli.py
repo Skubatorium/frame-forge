@@ -1121,7 +1121,9 @@ def render(
             raise _fail(f"--resolution '{resolution}' ungueltig — Format WxH, z.B. 1920x1080") from None
     state = proj.load_state()
     try:
-        gate_render_final(state, export)
+        gate_render_final(
+            state, export, timeline_fingerprint=qc.timeline_fingerprint(exp.timeline_path)
+        )
     except GateError as exc:
         raise _fail(str(exc)) from exc
 
