@@ -1,0 +1,82 @@
+/* ============================================================
+   base.css — Reset, Grundtypografie, Seitengerüst, Utilities
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box }
+* { margin: 0 }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto } }
+
+body {
+  background: var(--bg-page); color: var(--text-2);
+  font-family: var(--font-text); font-size: var(--step-0);
+  line-height: var(--leading-prose); font-weight: var(--weight-regular);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  min-height: 100%; overflow-x: hidden;
+}
+::selection { background: var(--selection-bg); color: var(--selection-fg) }
+
+img, video, svg { display: block; max-width: 100%; height: auto }
+img { background: var(--fjord-800); filter: var(--img-filter) }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display); color: var(--text-1);
+  font-weight: var(--weight-semibold); line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-display); text-wrap: balance;
+}
+h1 { font-size: var(--step-5); line-height: var(--leading-tight) }
+h2 { font-size: var(--step-3) }
+h3 { font-size: var(--step-1); font-weight: var(--weight-medium) }
+h4 { font-size: var(--step-0); font-weight: var(--weight-semibold) }
+p { text-wrap: pretty }
+strong { color: var(--text-1); font-weight: var(--weight-semibold) }
+small { font-size: var(--step--1) }
+
+a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.22em; text-decoration-color: var(--accent-quiet); transition: color var(--dur-1) var(--ease-out), text-decoration-color var(--dur-1) var(--ease-out) }
+a:hover { color: var(--accent-hover); text-decoration-color: currentColor }
+a:active { color: var(--accent) }
+
+:focus-visible { outline: var(--focus-width) solid var(--focus-color); outline-offset: var(--focus-offset); border-radius: var(--radius-1) }
+:focus:not(:focus-visible) { outline: none }
+
+/* --- Kleinversalien-Label: über der ganzen Seite dasselbe --- */
+.label, .eyebrow {
+  font-family: var(--font-display); font-size: var(--step--2);
+  font-weight: var(--weight-semibold); letter-spacing: var(--tracking-label);
+  text-transform: uppercase; color: var(--text-3); line-height: var(--leading-normal);
+}
+.eyebrow { color: var(--accent) }
+
+/* --- Zahlen: immer tabellarisch, Display-Schrift --- */
+.num { font-family: var(--font-display); font-variant-numeric: tabular-nums lining-nums; font-feature-settings: "tnum" 1 }
+
+/* ------------------------- Gerüst ------------------------- */
+.wrap { width: 100%; max-width: var(--page-max); margin-inline: auto; padding-inline: var(--page-gutter) }
+.wrap--content { max-width: calc(var(--content-max) + 2 * var(--page-gutter)) }
+.section { padding-block: var(--section-gap) }
+.section--tight { padding-block: calc(var(--section-gap) * 0.55) }
+.section + .section { padding-top: 0 }
+.stack > * + * { margin-top: var(--space-5) }
+.rule { border: 0; border-top: var(--hairline) solid var(--line-1); margin-block: var(--space-7) }
+
+.skip-link { position: absolute; left: var(--space-4); top: -6rem; z-index: var(--z-skip); background: var(--accent); color: var(--text-on-accent); font-family: var(--font-display); font-weight: var(--weight-semibold); padding: var(--space-3) var(--space-5); border-radius: var(--radius-2); transition: top var(--dur-2) var(--ease-out) }
+.skip-link:focus { top: var(--space-4) }
+
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap }
+
+/* ------------------------- Prose -------------------------- */
+.prose { max-width: var(--measure); color: var(--text-2) }
+.prose > * + * { margin-top: var(--space-5) }
+.prose h2 { margin-top: var(--space-8) }
+.prose h3 { margin-top: var(--space-7) }
+.prose .lead { font-size: var(--step-1); line-height: var(--leading-normal); color: var(--text-1) }
+.prose ul, .prose ol { padding-left: 1.2em; display: flex; flex-direction: column; gap: var(--space-2) }
+.prose li::marker { color: var(--accent-quiet) }
+.prose--wide { max-width: none }
+
+/* Kleine Flaggen-Marke als Trenner — 40px, mehr nicht. */
+.flagmark { width: 40px; height: 3px; background: var(--flag-stripe); border-radius: var(--radius-1) }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important }
+}

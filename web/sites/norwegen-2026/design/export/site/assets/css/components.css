@@ -1,0 +1,174 @@
+/* ============================================================
+   components.css — die benannten Bausteine.
+   Reihenfolge: nav · hero-rotator · page-header · prose-Ergänzung
+   · button · film-card · stat-grid · video-block · map-figure
+   · fact-list · fun-facts · notice · footer
+   ============================================================ */
+
+/* ------------------------------ nav ------------------------------
+   Schmale, ruhige Kopfzeile. Sticky, aber ohne Schlagschatten:
+   Trennung entsteht über Hairline + Blur.                          */
+.nav { position: sticky; top: 0; z-index: var(--z-nav); background: color-mix(in srgb, var(--bg-page) 82%, transparent); backdrop-filter: blur(14px) saturate(1.2); border-bottom: var(--hairline) solid var(--line-1) }
+.nav__inner { display: flex; align-items: center; gap: var(--space-5); min-height: var(--nav-height); flex-wrap: wrap }
+.nav__brand { display: flex; align-items: center; gap: var(--space-3); font-family: var(--font-display); font-weight: var(--weight-semibold); font-size: var(--step--1); letter-spacing: 0.02em; color: var(--text-1); text-decoration: none; margin-right: auto }
+.nav__brand:hover { color: var(--text-1) }
+.nav__brand .flagmark { width: 22px; height: 12px; border-radius: var(--radius-1) }
+.nav__list { display: flex; align-items: center; gap: var(--space-1); list-style: none; padding: 0; margin: 0; flex-wrap: wrap }
+.nav__link { display: block; font-family: var(--font-display); font-size: var(--step--1); font-weight: var(--weight-medium); color: var(--text-3); text-decoration: none; padding: var(--space-2) var(--space-3); border-radius: var(--radius-2); transition: color var(--dur-1) var(--ease-out), background var(--dur-1) var(--ease-out) }
+.nav__link:hover { color: var(--text-1); background: var(--bg-raised) }
+.nav__link[aria-current="page"] { color: var(--text-1) }
+.nav__link[aria-current="page"]::after { content: ""; display: block; height: 2px; margin-top: 5px; background: var(--accent); border-radius: var(--radius-1) }
+
+/* -------------------------- hero-rotator -------------------------
+   Vollbild-Hero mit 4–6 überblendenden Standbildern.
+   Reines CSS. Keyframes sind auf SECHS Szenen abgestimmt
+   (--dur-scene je Bild); bei anderer Anzahl --n setzen und die
+   Prozentwerte unten anpassen. prefers-reduced-motion → Standbild. */
+.hero { position: relative; min-height: min(88svh, 900px); display: grid; align-items: end; isolation: isolate; overflow: clip }
+/* Grundbild verhindert ein schwarzes Bild in der ersten Sekunde:
+   Szene 1 liegt als background-image (inline gesetzt) darunter. */
+.hero__scenes { position: absolute; inset: 0; z-index: -2; background: var(--fjord-800) center / cover no-repeat; filter: var(--img-filter) }
+.hero__scene { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; will-change: opacity, transform; animation: hero-scene calc(var(--n, 6) * var(--dur-scene)) var(--ease-in-out) infinite; animation-delay: calc(var(--i, 0) * var(--dur-scene)) }
+@keyframes hero-scene {
+  0%   { opacity: 0; transform: scale(1.06) }
+  4%   { opacity: 1 }
+  15%  { opacity: 1 }
+  19%  { opacity: 0; transform: scale(1.12) }
+  100% { opacity: 0; transform: scale(1.12) }
+}
+.hero__scrim { position: absolute; inset: 0; z-index: -1; background: var(--scrim-hero) }
+.hero__inner { padding-block: clamp(3rem, 8vh, 7rem) }
+.hero__eyebrow { margin-bottom: var(--space-4) }
+.hero__title { font-size: var(--step-7); font-weight: var(--weight-bold); color: var(--snow-100); letter-spacing: -0.03em }
+.hero__meta { margin-top: var(--space-4); font-family: var(--font-display); font-size: var(--step-1); color: var(--text-2); letter-spacing: 0.01em }
+.hero__meta b { color: var(--text-1); font-weight: var(--weight-medium) }
+.hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-6) }
+@media (prefers-reduced-motion: reduce) {
+  .hero__scene { animation: none; opacity: 0 }
+  .hero__scene:first-child { opacity: 1 }
+}
+
+/* -------------------------- page-header --------------------------
+   Schmaler Kopf der Unterseiten. Kein Bild, nur Typo + Hairline.  */
+.page-header { padding-block: clamp(3rem, 7vw, 6rem) var(--space-7); border-bottom: var(--hairline) solid var(--line-1); background: linear-gradient(to bottom, var(--fjord-850), var(--bg-page)) }
+.page-header__eyebrow { margin-bottom: var(--space-4) }
+.page-header__title { font-size: var(--step-5) }
+.page-header__sub { margin-top: var(--space-4); max-width: var(--measure); color: var(--text-2); font-size: var(--step-1); line-height: var(--leading-normal) }
+.page-header__meta { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); margin-top: var(--space-6); list-style: none; padding: 0 }
+.page-header__meta li { font-family: var(--font-display); font-size: var(--step--1); color: var(--text-3) }
+.page-header__meta b { color: var(--text-1); font-weight: var(--weight-medium) }
+.page-header--quiet { background: none }
+
+/* ---------------------------- button -----------------------------
+   Drei Varianten: primär · sekundär · download. Keine Schatten,
+   keine Verläufe. Zustände über Farbe und 1px-Rahmen.             */
+.btn { display: inline-flex; align-items: center; gap: var(--space-3); font-family: var(--font-display); font-size: var(--step--1); font-weight: var(--weight-semibold); letter-spacing: 0.01em; line-height: 1; text-decoration: none; padding: 0.95em 1.5em; min-height: 46px; border: var(--hairline) solid transparent; border-radius: var(--radius-2); cursor: pointer; transition: background var(--dur-1) var(--ease-out), color var(--dur-1) var(--ease-out), border-color var(--dur-1) var(--ease-out), transform var(--dur-1) var(--ease-out) }
+.btn:active { transform: translateY(1px) }
+.btn[aria-disabled="true"], .btn:disabled { opacity: 0.45; pointer-events: none }
+.btn--primary { background: var(--accent); color: var(--text-on-accent) }
+.btn--primary:hover { background: var(--accent-hover); color: var(--text-on-accent) }
+.btn--secondary { background: transparent; color: var(--text-1); border-color: var(--line-2) }
+.btn--secondary:hover { background: var(--bg-raised); border-color: var(--accent-quiet); color: var(--text-1) }
+.btn--download { background: var(--bg-raised); color: var(--text-1); border-color: var(--line-2) }
+.btn--download:hover { background: var(--bg-raised-hover); border-color: var(--accent-quiet) }
+.btn--download .btn__size { color: var(--text-3); font-weight: var(--weight-regular); font-variant-numeric: tabular-nums }
+.btn--ghost { background: none; color: var(--text-2); padding-inline: 0 }
+.btn--ghost:hover { color: var(--accent) }
+.btn__arrow { transition: transform var(--dur-2) var(--ease-out) }
+.btn:hover .btn__arrow { transform: translateX(3px) }
+
+/* --------------------------- film-card ---------------------------
+   Teaser für einen Film. Bild + Verlauf + Text im Bild-Fuß.       */
+.film-cards { display: grid; gap: var(--space-6); grid-template-columns: 1fr }
+@media (min-width: 860px) { .film-cards { grid-template-columns: 1fr 1fr; gap: var(--space-5) } }
+.film-card { position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-height: 420px; border: var(--hairline) solid var(--line-1); border-radius: var(--radius-3); overflow: hidden; background: var(--fjord-800); isolation: isolate; transition: border-color var(--dur-2) var(--ease-out) }
+.film-card:hover { border-color: var(--line-2) }
+.film-card__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform var(--dur-3) var(--ease-out), opacity var(--dur-3) var(--ease-out); opacity: 0.85 }
+.film-card:hover .film-card__img { transform: scale(1.03); opacity: 1 }
+.film-card::after { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--scrim-card) }
+.film-card__body { padding: var(--space-6) }
+.film-card__kicker { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-3) }
+.film-card__title { font-size: var(--step-3); color: var(--snow-100) }
+.film-card__text { margin-top: var(--space-3); max-width: 42ch; color: var(--text-2); font-size: var(--step-0) }
+.film-card__actions { margin-top: var(--space-5); display: flex; gap: var(--space-3); flex-wrap: wrap }
+.film-card__duration { font-family: var(--font-display); font-size: var(--step--2); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--accent) }
+
+/* --------------------------- stat-grid ---------------------------
+   Zahl groß, Label klein. 2 Spalten mobil, bis 4 auf großem Schirm. */
+.stat-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--hairline); background: var(--line-1); border: var(--hairline) solid var(--line-1); border-radius: var(--radius-3); overflow: hidden }
+@media (min-width: 720px) { .stat-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) } }
+.stat-grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+@media (min-width: 720px) { .stat-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)) } }
+.stat { background: var(--bg-page); padding: var(--space-6) var(--space-5); display: flex; flex-direction: column; gap: var(--space-2) }
+.stat__value { font-family: var(--font-display); font-size: var(--step-4); font-weight: var(--weight-medium); color: var(--text-1); line-height: var(--leading-tight); letter-spacing: -0.02em; font-variant-numeric: tabular-nums }
+.stat__value small { font-size: 0.5em; color: var(--text-3); font-weight: var(--weight-regular); letter-spacing: 0 }
+.stat__label { font-family: var(--font-display); font-size: var(--step--2); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--text-3) }
+.stat-grid--sunken .stat { background: var(--bg-sunken) }
+.stat-bar__foot { display: flex; justify-content: flex-end; margin-top: var(--space-4) }
+
+/* -------------------------- video-block --------------------------
+   Player 16:9 + Infopanel + Download. Nie Autoplay, nie zwei
+   Player auf einer Seite.                                          */
+.video-block { display: flex; flex-direction: column; gap: var(--space-6) }
+.video-block__frame { position: relative; aspect-ratio: 16 / 9; background: var(--bg-inset); border: var(--hairline) solid var(--line-1); border-radius: var(--radius-3); overflow: hidden; box-shadow: var(--shadow-media) }
+.video-block__frame video { width: 100%; height: 100%; object-fit: contain; background: #000 }
+.video-block__caption { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); font-family: var(--font-display); font-size: var(--step--1); color: var(--text-3) }
+.video-block__caption b { color: var(--text-2); font-weight: var(--weight-medium) }
+.video-panels { display: grid; gap: var(--space-6); grid-template-columns: 1fr }
+@media (min-width: 860px) { .video-panels { grid-template-columns: 1.15fr 1fr; gap: var(--space-7) } }
+.panel { border-top: var(--rule) solid var(--accent-quiet); padding-top: var(--space-5) }
+.panel__title { font-size: var(--step-1); margin-bottom: var(--space-4) }
+.panel dl { display: grid; grid-template-columns: auto 1fr; gap: var(--space-3) var(--space-5); margin: 0 }
+.panel dt { font-family: var(--font-display); font-size: var(--step--1); color: var(--text-3) }
+.panel dd { margin: 0; font-size: var(--step--1); font-family: var(--font-display); color: var(--text-1); font-variant-numeric: tabular-nums }
+.download { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-5); padding: var(--space-6); background: var(--bg-raised); border: var(--hairline) solid var(--line-1); border-radius: var(--radius-3) }
+.download__text { flex: 1 1 22rem; min-width: 0 }
+.download__text p { color: var(--text-3); font-size: var(--step--1); margin-top: var(--space-2) }
+
+/* --------------------------- map-figure --------------------------- */
+.map-figure { margin: 0; display: flex; flex-direction: column; gap: var(--space-4) }
+.map-figure__frame { border: var(--hairline) solid var(--line-1); border-radius: var(--radius-3); overflow: hidden; background: var(--fjord-800) }
+.map-figure img { width: 100%; filter: var(--img-filter) brightness(0.94) }
+.map-figure figcaption { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2) var(--space-5); color: var(--text-3); font-size: var(--step--1); max-width: var(--measure) }
+
+/* ---------------------------- fact-list ---------------------------
+   Stationsliste. Linie links, Marke am Punkt, tabellarische Meta. */
+.fact-list { list-style: none; padding: 0; margin: 0; border-left: var(--hairline) solid var(--line-1) }
+.fact-list__item { position: relative; padding: var(--space-4) 0 var(--space-4) var(--space-6) }
+.fact-list__item + .fact-list__item { border-top: var(--hairline) solid var(--line-1) }
+.fact-list__item::before { content: ""; position: absolute; left: -3px; top: calc(var(--space-4) + 0.62em); width: 5px; height: 5px; border-radius: var(--radius-pill); background: var(--accent-quiet) }
+.fact-list__item--mark::before { background: var(--accent); width: 7px; height: 7px; left: -4px }
+.fact-list__name { font-family: var(--font-display); font-weight: var(--weight-medium); color: var(--text-1); font-size: var(--step-0) }
+.fact-list__note { display: block; margin-top: var(--space-1); color: var(--text-3); font-size: var(--step--1) }
+.fact-list--columns { columns: 1 }
+@media (min-width: 900px) { .fact-list--columns { columns: 2; column-gap: var(--space-8) } .fact-list--columns .fact-list__item { break-inside: avoid } }
+
+/* ---------------------------- fun-facts ---------------------------
+   Lockerer als der Rest: große Zahl links, Satz rechts, leichte
+   Versätze. Trotzdem dasselbe Farbsystem.                          */
+.fun-facts { display: grid; gap: var(--space-2); grid-template-columns: 1fr }
+@media (min-width: 780px) { .fun-facts { grid-template-columns: 1fr 1fr; gap: var(--space-2) var(--space-6) } }
+.fun-fact { display: grid; grid-template-columns: minmax(3.6rem, auto) 1fr; align-items: baseline; gap: var(--space-4); padding: var(--space-4) var(--space-4) var(--space-4) 0; border-bottom: var(--hairline) solid var(--line-1) }
+.fun-fact__value { font-family: var(--font-display); font-size: var(--step-3); font-weight: var(--weight-bold); color: var(--accent); line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; text-align: right }
+.fun-fact__value small { display: block; font-size: 0.34em; font-weight: var(--weight-semibold); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--text-3); margin-top: var(--space-2) }
+.fun-fact__text { color: var(--text-2); font-size: var(--step--1); line-height: var(--leading-normal) }
+.fun-fact__text b { color: var(--text-1); font-weight: var(--weight-semibold) }
+.fun-fact--wide { grid-column: 1 / -1 }
+.fun-fact--cool .fun-fact__value { color: var(--accent-2) }
+
+/* ----------------------------- notice -----------------------------
+   Dezenter Hinweiskasten. Kein Rot, kein Warndreieck.             */
+.notice { border: var(--hairline) solid var(--line-1); border-left: var(--rule) solid var(--accent-quiet); border-radius: var(--radius-2); background: var(--bg-raised); padding: var(--space-5) var(--space-6); color: var(--text-2); font-size: var(--step--1); line-height: var(--leading-normal); max-width: var(--measure) }
+.notice__title { display: block; font-family: var(--font-display); font-size: var(--step--2); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--text-3); margin-bottom: var(--space-3) }
+.notice--quiet { background: none; border-left-color: var(--line-2) }
+
+/* ----------------------------- footer ----------------------------- */
+.footer { background: var(--bg-sunken); border-top: var(--hairline) solid var(--line-1); padding-block: var(--space-8) var(--space-7); margin-top: var(--section-gap) }
+.footer__grid { display: grid; gap: var(--space-7); grid-template-columns: 1fr }
+@media (min-width: 860px) { .footer__grid { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: var(--space-9) } }
+.footer__share { max-width: var(--measure); color: var(--text-3); font-size: var(--step--1); line-height: var(--leading-normal) }
+.footer__share b { color: var(--text-2); font-weight: var(--weight-semibold) }
+.footer__nav { display: flex; flex-direction: column; gap: var(--space-3) }
+.footer__nav a { color: var(--text-3); text-decoration: none; font-family: var(--font-display); font-size: var(--step--1) }
+.footer__nav a:hover { color: var(--accent) }
+.footer__base { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); margin-top: var(--space-8); padding-top: var(--space-5); border-top: var(--hairline) solid var(--line-1); color: var(--text-3); font-size: var(--step--2); font-family: var(--font-display) }

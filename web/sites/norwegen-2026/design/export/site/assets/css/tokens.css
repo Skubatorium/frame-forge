@@ -1,0 +1,147 @@
+/* ============================================================
+   tokens.css — SYSTEM-TOKENS (reisenübergreifend)
+   Hier stehen nur Dinge, die für JEDE Reise-Website gleich
+   bleiben: Typo-Skala, Abstände, Radien, Linien, Motion,
+   Breakpoints — plus die Namen der Farb-ROLLEN.
+   Die konkreten Farbwerte liefert die Theme-Datei
+   (z. B. theme-norwegen-2026.css). Diese Datei nie pro Reise
+   anfassen.
+   ============================================================ */
+
+:root {
+  /* --- Schriftfamilien (Dateien via fonts.css / @font-face) --- */
+  --font-display: "Schibsted Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif; /* @kind font */
+  --font-text: "Source Serif 4", Georgia, "Times New Roman", serif; /* @kind font */
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; /* @kind font */
+
+  /* --- Schriftschnitte --- */
+  --weight-regular: 400; /* @kind font */
+  --weight-medium: 500; /* @kind font */
+  --weight-semibold: 600; /* @kind font */
+  --weight-bold: 700; /* @kind font */
+
+  /* --- Typo-Skala, fluid zwischen 360px und 1600px Viewport ---
+     step-2 … step-7; Fließtext = --step-0 (18–19px)            */
+  --step--2: clamp(0.72rem, 0.70rem + 0.10vw, 0.79rem); /* @kind other */
+  --step--1: clamp(0.84rem, 0.81rem + 0.14vw, 0.94rem); /* @kind other */
+  --step-0:  clamp(1.06rem, 1.02rem + 0.18vw, 1.19rem); /* @kind other */
+  --step-1:  clamp(1.26rem, 1.18rem + 0.34vw, 1.51rem); /* @kind other */
+  --step-2:  clamp(1.50rem, 1.36rem + 0.60vw, 1.94rem); /* @kind other */
+  --step-3:  clamp(1.78rem, 1.55rem + 1.00vw, 2.49rem); /* @kind other */
+  --step-4:  clamp(2.12rem, 1.75rem + 1.60vw, 3.20rem); /* @kind other */
+  --step-5:  clamp(2.52rem, 1.95rem + 2.45vw, 4.11rem); /* @kind other */
+  --step-6:  clamp(3.00rem, 2.13rem + 3.72vw, 5.28rem); /* @kind other */
+  --step-7:  clamp(3.56rem, 2.24rem + 5.63vw, 6.78rem); /* @kind other */
+
+  /* --- Zeilenhöhen & Laufweiten --- */
+  --leading-tight: 1.04; /* @kind font */
+  --leading-snug: 1.22; /* @kind font */
+  --leading-normal: 1.45; /* @kind font */
+  --leading-prose: 1.68; /* @kind font */
+  --tracking-display: -0.022em; /* @kind font */
+  --tracking-normal: 0; /* @kind font */
+  --tracking-label: 0.14em; /* @kind font */   /* Kleinversalien-Labels */
+
+  /* --- Zeilenlänge --- */
+  --measure: 68ch; /* @kind spacing */            /* Fließtext ~65–75 Zeichen */
+  --measure-narrow: 46ch; /* @kind spacing */     /* Vorspann, Bildunterschrift */
+
+  /* --- Abstände (4px-Basis) --- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+
+  /* Vertikaler Seitenrhythmus zwischen Blöcken */
+  --section-gap: clamp(3.5rem, 2rem + 6vw, 7.5rem); /* @kind spacing */
+
+  /* --- Maße --- */
+  --page-max: 1360px; /* @kind spacing */         /* äußere Inhaltsbreite */
+  --page-gutter: clamp(1.25rem, 0.6rem + 2.8vw, 4rem); /* @kind spacing */
+  --content-max: 1080px; /* @kind spacing */      /* Textspalten-Container */
+  --nav-height: 4.25rem; /* @kind spacing */
+
+  /* --- Radien: sparsam, eckig-ruhig --- */
+  --radius-0: 0;
+  --radius-1: 2px;
+  --radius-2: 4px;
+  --radius-3: 8px;
+  --radius-4: 14px;
+  --radius-pill: 999px;
+
+  /* --- Linien --- */
+  --hairline: 1px; /* @kind other */
+  --rule: 2px; /* @kind other */
+
+  /* --- Schatten: nur zwei, beide zurückhaltend.
+         Keine Schatten auf Text, Buttons oder Flächen. --- */
+  --shadow-media: 0 24px 60px -28px rgb(0 0 0 / 0.75);
+  --shadow-lift: 0 10px 28px -18px rgb(0 0 0 / 0.7);
+
+  /* --- Motion --- */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1); /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --dur-1: 130ms; /* @kind other */   /* Fokus, Farbe */
+  --dur-2: 240ms; /* @kind other */   /* Hover, kleine Bewegung */
+  --dur-3: 480ms; /* @kind other */   /* Einblendungen */
+  --dur-cross: 2200ms; /* @kind other */  /* Hero-Überblendung */
+  --dur-scene: 7000ms; /* @kind other */  /* Standzeit je Hero-Bild */
+
+  /* --- Fokus --- */
+  --focus-width: 2px; /* @kind other */
+  --focus-offset: 3px; /* @kind other */
+
+  /* --- Z-Ebenen --- */
+  --z-base: 0; /* @kind other */
+  --z-media: 10; /* @kind other */
+  --z-overlay: 20; /* @kind other */
+  --z-nav: 30; /* @kind other */
+  --z-skip: 40; /* @kind other */
+
+  /* ==========================================================
+     FARB-ROLLEN — Namen, keine Werte.
+     Neutrale Notfall-Defaults; die Theme-Datei überschreibt
+     jede dieser Zeilen. Komponenten benutzen ausschließlich
+     diese Rollen, nie Palettenwerte direkt.
+     ========================================================== */
+  --bg-page: #101418;         /* Seitengrund */
+  --bg-sunken: #0b0e11;       /* tiefer gelegte Zonen, Footer */
+  --bg-raised: #171d22;       /* Karten, Panels */
+  --bg-raised-hover: #1e262c;
+  --bg-inset: #0d1114;        /* Player-Bett, Codeflächen */
+
+  --text-1: #eef2f4;          /* Überschriften, starke Aussagen */
+  --text-2: #b9c6cd;          /* Fließtext */
+  --text-3: #8b9aa3;          /* Labels, Meta, Bildunterschriften */
+  --text-on-accent: #101418;
+
+  --line-1: #232c33;          /* Trennlinien, Rahmen ruhig */
+  --line-2: #33414a;          /* Rahmen betont, Hover */
+
+  --accent: #d8a05c;          /* Primärakzent (Licht) */
+  --accent-hover: #ecb976;
+  --accent-quiet: #6b563a;    /* Akzent gedämpft, Linien */
+  --accent-2: #6fb2c0;        /* Zweitakzent (kühl) */
+
+  --mark: #ba0c2f;            /* Markenzeichen-Rot, nur winzig */
+  --mark-2: #00205b;          /* Markenzeichen-Marine */
+
+  --focus-color: #ecb976;
+  --selection-bg: #2c4a5a;
+  --selection-fg: #ffffff;
+}
+
+/* Breakpoints (Referenz — Custom Properties funktionieren in
+   @media nicht, die Werte stehen hier zur Dokumentation):
+   s  = 480px    Handy quer
+   m  = 720px    kleines Tablet
+   l  = 1024px   Laptop
+   xl = 1440px   großer Monitor
+   Layoutregeln greifen ab m und l; darüber wächst nur der
+   Weißraum, nicht die Schrift.                                */

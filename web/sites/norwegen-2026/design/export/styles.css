@@ -1,0 +1,9 @@
+/* Design-System-Einstieg. Nur @import-Zeilen.
+   Einzige Quelle für Tokens, Schriften und Komponenten ist der
+   Website-Ordner site/assets/css/ — so gibt es keine zweite,
+   abweichende Kopie des Systems. */
+@import "site/assets/css/tokens.css";
+@import "site/assets/css/theme-norwegen-2026.css";
+@import "site/assets/css/fonts.css";
+@import "site/assets/css/base.css";
+@import "site/assets/css/components.css";
