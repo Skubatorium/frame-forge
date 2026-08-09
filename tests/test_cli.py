@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import shutil
+import subprocess
+import sys
 from pathlib import Path
 
 import pytest
@@ -680,3 +682,17 @@ def test_build_refuses_to_advance_on_a_broken_timeline(env):
     _timeline_json(export_dir, assets=("a1",))
     assert runner.invoke(app, ["build", "proto", "teaser"]).exit_code == 0
     assert env.load_state().export_phase("teaser") == Phase.TIMELINE
+
+
+def test_module_entrypoint_exists():
+    """`python -m frameforge <cmd>` muss laufen — so steht es in CLAUDE.md und im Plan.
+
+    Ohne `frameforge/__main__.py` bricht der Aufruf mit "No module named frameforge.__main__"
+    ab, wovon nur der Nutzer etwas merkt (2026-08-09).
+    """
+    result = subprocess.run(
+        [sys.executable, "-m", "frameforge", "--help"],
+        capture_output=True, text=True, timeout=60, check=False,
+    )
+    assert result.returncode == 0, result.stderr
+    assert "render" in result.stdout
