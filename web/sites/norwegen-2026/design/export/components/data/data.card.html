@@ -1,0 +1,31 @@
+<!-- @dsCard group="Components" viewport="1280x560" name="Daten" subtitle="StatGrid · FactList · FunFacts · MapFigure" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{background:var(--bg-page);margin:0;padding:24px}</style></head><body><div id="root"></div>
+<script type="text/babel">
+const { StatGrid, FactList, FunFacts, MapFigure } = window.Norwegen2026DesignSystem_c6a03f;
+ReactDOM.createRoot(document.getElementById('root')).render(<>
+  <StatGrid items={[
+    {value:'18',unit:'Tage',label:'Dauer'},
+    {value:'~4.000',unit:'km',label:'Gesamtstrecke'},
+    {value:'1.183',unit:'m',label:'Höchster Punkt'},
+    {value:'1.052',unit:'km',label:'Längster Tag'}]} />
+  <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'var(--space-7)',marginTop:'var(--space-6)'}}>
+    <FactList items={[
+      {name:'Heddal', note:'Größte Stabkirche Norwegens'},
+      {name:'Aurlandsfjellet · Stegastein', note:'Plattform 639 m', mark:true},
+      {name:'Lærdalstunnel', note:'20 km durch den Berg'},
+      {name:'Trollstigen', note:'Elf Haarnadelkurven, 702 m', mark:true}]} />
+    <FunFacts items={[
+      {value:'1',unit:'Fisch',text:<>Gefangen an der Schärenküste, vom Sechsjährigen, <b>winzig</b>.</>,wide:true},
+      {value:'11',unit:'Kurven',text:<>Haarnadeln am <b>Trollstigen</b>.</>,wide:true,cool:true}]} />
+  </div>
+  <div style={{marginTop:'var(--space-7)',maxWidth:'620px'}}>
+    <MapFigure src="../../site/assets/img/route-map.jpg" alt="Karte des Rundkurses" caption="Zu sehen ist nur der norwegische Rundkurs — 1.319 km ab und bis Skien." href="https://www.google.com/maps" />
+  </div>
+</>);
+</script></body></html>
