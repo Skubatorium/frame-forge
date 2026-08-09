@@ -97,7 +97,7 @@ dieselbe Zeitzone:
 iPhone-Videos (Korrektur noetig) mit 37 DJI-Dateien (keine Korrektur), und ein Teil der
 `Christina-iPhone/*.MP4` steht unter `source_guess == "unknown"`, braucht die Korrektur aber.
 Fertige Implementierung: `needs_utc_offset` in
-`projects/norwegen-2026/exports/vlog-data/rebuild-recipe.py` (Pfad: iPhone-Ordner +
+`projects/norwegen-2026/exports/vlog-edit/rebuild-recipe.py` (Pfad: iPhone-Ordner +
 Video-Endung). Christinas Geraet weicht zusaetzlich anders ab als Chris' — Clips von dort im
 Zweifel von Hand einsortieren.
 
@@ -127,7 +127,7 @@ waehlen (Faustwert ~50-60 px bei 4K ueber ~9s).
 
 ### Renders sterben an Speicherdruck, nicht am Ausfuehrungspfad (behoben)
 
-Historie, damit die Diagnose nicht neu gemacht wird: der `vlog-data`-Preview starb mehrfach
+Historie, damit die Diagnose nicht neu gemacht wird: der `vlog-edit`-Preview starb mehrfach
 "unerklaerlich". Ursache war **Speicherdruck** — beim Renderstart sprang die Swap-Nutzung von
 3 GB auf 11 GB, macOS legte sieben Swapfiles an, der freie Plattenplatz fiel von 15 auf 7 GB,
 dann starb der Prozess. Nach `kill -9` fiel alles sofort zurueck. Ob ein Lauf durchkommt, war
@@ -164,7 +164,7 @@ Wer echten Fortschritt sehen will, muss `_run_ffmpeg` um `-progress` erweitern; 
 
 ### Overlay-Iterationen nie am Vollrender pruefen
 
-Ein Vollrender von `vlog-data` dauert deutlich mehr als zwei Minuten. Fuer Titel-, Bauchbinden-
+Ein Vollrender von `vlog-edit` dauert deutlich mehr als zwei Minuten. Fuer Titel-, Bauchbinden-
 und Fit-Experimente eine synthetische Mini-Timeline mit 2-3 Clips durch `build_filtergraph` +
 `_run_ffmpeg` schicken (Muster: der Mini-Render aus Runde 3, mit dem `fit: "blur"` gegen
 crop-to-fill gegengeprueft wurde) oder die PNG-Layer mit PIL uebereinanderlegen und anschauen.

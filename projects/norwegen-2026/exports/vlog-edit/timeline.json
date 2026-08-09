@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "export": "vlog-data",
+  "export": "vlog-edit",
   "fps": 30.0,
   "resolution": [
     3840,
     2160
   ],
-  "duration": 1085.35,
+  "duration": 1080.35,
   "tracks": {
     "video": [
       {
@@ -782,7 +782,7 @@
       },
       {
         "id": "c033",
-        "asset": "20260720-phone-2308e5",
+        "asset": "20260720-phone-9f4dbe",
         "src_in": 0.0,
         "src_out": 7.4,
         "tl_in": 247.699228692634,
@@ -798,7 +798,7 @@
             "to": [
               0.0,
               0.0,
-              1.13
+              1.07
             ],
             "ease": "smooth"
           }
@@ -808,6 +808,7 @@
           "dur": 0.8,
           "hold": 0.0
         },
+        "fit": "blur",
         "note": "2026-07-20"
       },
       {
@@ -3442,7 +3443,7 @@
         "id": "c166",
         "asset": "20260804-camera-0fc698",
         "src_in": 0.0,
-        "src_out": 8.4,
+        "src_out": 6.9,
         "tl_in": 1060.6493717128515,
         "speed": 1.0,
         "effects": [],
@@ -3457,8 +3458,8 @@
         "id": "c167",
         "asset": "20260804-camera-59ef0c",
         "src_in": 6.162,
-        "src_out": 14.562,
-        "tl_in": 1068.0493717128516,
+        "src_out": 13.062,
+        "tl_in": 1066.5493717128516,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -3472,8 +3473,8 @@
         "id": "c168",
         "asset": "20260804-camera-80b8d0",
         "src_in": 6.461,
-        "src_out": 14.861,
-        "tl_in": 1075.4493717128516,
+        "src_out": 13.361,
+        "tl_in": 1072.4493717128516,
         "speed": 1.0,
         "effects": [],
         "transition_in": {
@@ -3487,8 +3488,8 @@
         "id": "c169",
         "asset": "generated-cold-open-black",
         "src_in": 0.0,
-        "src_out": 3.0,
-        "tl_in": 1082.3493717128517,
+        "src_out": 2.5,
+        "tl_in": 1077.8493717128517,
         "speed": 1.0,
         "effects": [
           {
@@ -3536,7 +3537,8 @@
           "slide_from_px": "-700",
           "slide_in_s": "1.3",
           "drift_px": "56",
-          "drift_mode": "linear"
+          "drift_mode": "linear",
+          "drift_dur_s": "1.5"
         }
       },
       {
@@ -3550,7 +3552,8 @@
           "slide_from_px": "700",
           "slide_in_s": "1.3",
           "drift_px": "-56",
-          "drift_mode": "linear"
+          "drift_mode": "linear",
+          "drift_dur_s": "1.5"
         }
       },
       {
@@ -3564,21 +3567,12 @@
           "slide_from_px": "-300",
           "slide_in_s": "1.0",
           "drift_px": "42",
-          "drift_mode": "linear"
+          "drift_mode": "linear",
+          "drift_dur_s": "1.5"
         }
       },
       {
-        "id": "ov-stage-box-2026-07-17",
-        "png": "overlays/stage-caption-box.png",
-        "tl_in": 32.499,
-        "dur": 5.0,
-        "anim": {
-          "fade_in_s": "0.6",
-          "fade_out_s": "1.2"
-        }
-      },
-      {
-        "id": "ov-stage-text-2026-07-17",
+        "id": "ov-stage-2026-07-17",
         "png": "overlays/stage-caption-2026-07-17.png",
         "tl_in": 32.499,
         "dur": 5.0,
@@ -3588,17 +3582,7 @@
         }
       },
       {
-        "id": "ov-stage-box-2026-07-18",
-        "png": "overlays/stage-caption-box.png",
-        "tl_in": 48.299,
-        "dur": 5.0,
-        "anim": {
-          "fade_in_s": "0.6",
-          "fade_out_s": "1.2"
-        }
-      },
-      {
-        "id": "ov-stage-text-2026-07-18",
+        "id": "ov-stage-2026-07-18",
         "png": "overlays/stage-caption-2026-07-18.png",
         "tl_in": 48.299,
         "dur": 5.0,
@@ -3608,17 +3592,7 @@
         }
       },
       {
-        "id": "ov-stage-box-2026-07-19",
-        "png": "overlays/stage-caption-box.png",
-        "tl_in": 119.299,
-        "dur": 5.0,
-        "anim": {
-          "fade_in_s": "0.6",
-          "fade_out_s": "1.2"
-        }
-      },
-      {
-        "id": "ov-stage-text-2026-07-19",
+        "id": "ov-stage-2026-07-19",
         "png": "overlays/stage-caption-2026-07-19.png",
         "tl_in": 119.299,
         "dur": 5.0,
@@ -3628,17 +3602,7 @@
         }
       },
       {
-        "id": "ov-stage-box-2026-07-20",
-        "png": "overlays/stage-caption-box.png",
-        "tl_in": 183.199,
-        "dur": 5.0,
-        "anim": {
-          "fade_in_s": "0.6",
-          "fade_out_s": "1.2"
-        }
-      },
-      {
-        "id": "ov-stage-text-2026-07-20",
+        "id": "ov-stage-2026-07-20",
         "png": "overlays/stage-caption-2026-07-20.png",
         "tl_in": 183.199,
         "dur": 5.0,
@@ -3648,17 +3612,7 @@
         }
       },
       {
-        "id": "ov-stage-box-2026-07-21",
-        "png": "overlays/stage-caption-box.png",
-        "tl_in": 255.799,
-        "dur": 5.0,
-        "anim": {
-          "fade_in_s": "0.6",
-          "fade_out_s": "1.2"
-        }
-      },
-      {
-        "id": "ov-stage-text-2026-07-21",
+        "id": "ov-stage-2026-07-21",
         "png": "overlays/stage-caption-2026-07-21.png",
         "tl_in": 255.799,
         "dur": 5.0,
@@ -3668,17 +3622,7 @@
         }
       },
       {
-        "id": "ov-stage-box-2026-07-22",
-        "png": "overlays/stage-caption-box.png",
-        "tl_in": 280.999,
-        "dur": 5.0,
-        "anim": {
-          "fade_in_s": "0.6",
-          "fade_out_s": "1.2"
-        }
-      },
-      {
-        "id": "ov-stage-text-2026-07-22",
+        "id": "ov-stage-2026-07-22",
         "png": "overlays/stage-caption-2026-07-22.png",
         "tl_in": 280.999,
         "dur": 5.0,
@@ -3688,17 +3632,7 @@
         }
       },
       {
-        "id": "ov-stage-box-2026-07-23",
-        "png": "overlays/stage-caption-box.png",
-        "tl_in": 315.199,
-        "dur": 5.0,
-        "anim": {
-          "fade_in_s": "0.6",
-          "fade_out_s": "1.2"
-        }
-      },
-      {
-        "id": "ov-stage-text-2026-07-23",
+        "id": "ov-stage-2026-07-23",
         "png": "overlays/stage-caption-2026-07-23.png",
         "tl_in": 315.199,
         "dur": 5.0,
@@ -3708,17 +3642,7 @@
         }
       },
       {
-        "id": "ov-stage-box-2026-07-24",
-        "png": "overlays/stage-caption-box.png",
-        "tl_in": 408.999,
-        "dur": 5.0,
-        "anim": {
-          "fade_in_s": "0.6",
-          "fade_out_s": "1.2"
-        }
-      },
-      {
-        "id": "ov-stage-text-2026-07-24",
+        "id": "ov-stage-2026-07-24",
         "png": "overlays/stage-caption-2026-07-24.png",
         "tl_in": 408.999,
         "dur": 5.0,
@@ -3728,17 +3652,7 @@
         }
       },
       {
-        "id": "ov-stage-box-2026-07-25",
-        "png": "overlays/stage-caption-box.png",
-        "tl_in": 525.999,
-        "dur": 5.0,
-        "anim": {
-          "fade_in_s": "0.6",
-          "fade_out_s": "1.2"
-        }
-      },
-      {
-        "id": "ov-stage-text-2026-07-25",
+        "id": "ov-stage-2026-07-25",
         "png": "overlays/stage-caption-2026-07-25.png",
         "tl_in": 525.999,
         "dur": 5.0,
@@ -3748,17 +3662,7 @@
         }
       },
       {
-        "id": "ov-stage-box-2026-07-26",
-        "png": "overlays/stage-caption-box.png",
-        "tl_in": 619.099,
-        "dur": 5.0,
-        "anim": {
-          "fade_in_s": "0.6",
-          "fade_out_s": "1.2"
-        }
-      },
-      {
-        "id": "ov-stage-text-2026-07-26",
+        "id": "ov-stage-2026-07-26",
         "png": "overlays/stage-caption-2026-07-26.png",
         "tl_in": 619.099,
         "dur": 5.0,
@@ -3768,17 +3672,7 @@
         }
       },
       {
-        "id": "ov-stage-box-2026-07-27",
-        "png": "overlays/stage-caption-box.png",
-        "tl_in": 733.099,
-        "dur": 5.0,
-        "anim": {
-          "fade_in_s": "0.6",
-          "fade_out_s": "1.2"
-        }
-      },
-      {
-        "id": "ov-stage-text-2026-07-27",
+        "id": "ov-stage-2026-07-27",
         "png": "overlays/stage-caption-2026-07-27.png",
         "tl_in": 733.099,
         "dur": 5.0,
@@ -3788,17 +3682,7 @@
         }
       },
       {
-        "id": "ov-stage-box-2026-07-28",
-        "png": "overlays/stage-caption-box.png",
-        "tl_in": 811.499,
-        "dur": 5.0,
-        "anim": {
-          "fade_in_s": "0.6",
-          "fade_out_s": "1.2"
-        }
-      },
-      {
-        "id": "ov-stage-text-2026-07-28",
+        "id": "ov-stage-2026-07-28",
         "png": "overlays/stage-caption-2026-07-28.png",
         "tl_in": 811.499,
         "dur": 5.0,
@@ -3808,17 +3692,7 @@
         }
       },
       {
-        "id": "ov-stage-box-2026-07-29",
-        "png": "overlays/stage-caption-box.png",
-        "tl_in": 939.499,
-        "dur": 5.0,
-        "anim": {
-          "fade_in_s": "0.6",
-          "fade_out_s": "1.2"
-        }
-      },
-      {
-        "id": "ov-stage-text-2026-07-29",
+        "id": "ov-stage-2026-07-29",
         "png": "overlays/stage-caption-2026-07-29.png",
         "tl_in": 939.499,
         "dur": 5.0,
@@ -3828,17 +3702,7 @@
         }
       },
       {
-        "id": "ov-stage-box-2026-07-30",
-        "png": "overlays/stage-caption-box.png",
-        "tl_in": 955.799,
-        "dur": 5.0,
-        "anim": {
-          "fade_in_s": "0.6",
-          "fade_out_s": "1.2"
-        }
-      },
-      {
-        "id": "ov-stage-text-2026-07-30",
+        "id": "ov-stage-2026-07-30",
         "png": "overlays/stage-caption-2026-07-30.png",
         "tl_in": 955.799,
         "dur": 5.0,
@@ -3848,17 +3712,7 @@
         }
       },
       {
-        "id": "ov-stage-box-2026-08-01",
-        "png": "overlays/stage-caption-box.png",
-        "tl_in": 991.099,
-        "dur": 5.0,
-        "anim": {
-          "fade_in_s": "0.6",
-          "fade_out_s": "1.2"
-        }
-      },
-      {
-        "id": "ov-stage-text-2026-08-01",
+        "id": "ov-stage-2026-08-01",
         "png": "overlays/stage-caption-2026-08-01.png",
         "tl_in": 991.099,
         "dur": 5.0,
@@ -3868,17 +3722,7 @@
         }
       },
       {
-        "id": "ov-stage-box-2026-08-03",
-        "png": "overlays/stage-caption-box.png",
-        "tl_in": 1004.099,
-        "dur": 5.0,
-        "anim": {
-          "fade_in_s": "0.6",
-          "fade_out_s": "1.2"
-        }
-      },
-      {
-        "id": "ov-stage-text-2026-08-03",
+        "id": "ov-stage-2026-08-03",
         "png": "overlays/stage-caption-2026-08-03.png",
         "tl_in": 1004.099,
         "dur": 5.0,
@@ -3888,17 +3732,7 @@
         }
       },
       {
-        "id": "ov-stage-box-2026-08-04",
-        "png": "overlays/stage-caption-box.png",
-        "tl_in": 1062.149,
-        "dur": 5.0,
-        "anim": {
-          "fade_in_s": "0.6",
-          "fade_out_s": "1.2"
-        }
-      },
-      {
-        "id": "ov-stage-text-2026-08-04",
+        "id": "ov-stage-2026-08-04",
         "png": "overlays/stage-caption-2026-08-04.png",
         "tl_in": 1062.149,
         "dur": 5.0,
@@ -3924,7 +3758,7 @@
         "id": "music-02",
         "src": "music/Originals/Mose & Danit/Naturaleza (Mose Edit) - Single/01 Naturaleza (Mose Edit).m4a",
         "tl_in": 355.0,
-        "dur": 345.0,
+        "dur": 356.65,
         "src_in": 0.0,
         "gain_db": 0.0,
         "fade_in_s": 10.0,
@@ -3933,12 +3767,12 @@
       {
         "id": "music-03",
         "src": "music/Originals/Little Whale, Sariel Orenda & UAK/Aguila de Oro (Ecstatic Mix) - Single/01 Aguila de Oro (Ecstatic Mix).m4a",
-        "tl_in": 700.0,
-        "dur": 385.35,
-        "src_in": 0.743,
+        "tl_in": 705.65,
+        "dur": 374.7,
+        "src_in": 0.0,
         "gain_db": 0.0,
         "fade_in_s": 0.0,
-        "fade_out_s": 10.0
+        "fade_out_s": 6.0
       },
       {
         "id": "atmo-faehre-wind",
@@ -3963,6 +3797,20 @@
         "duck_fade_s": 0.7,
         "fade_in_s": 0.3,
         "fade_out_s": 0.5
+      },
+      {
+        "id": "atmo-meer-schluss",
+        "asset": "20260804-camera-59ef0c",
+        "tl_in": 1066.549,
+        "dur": 13.801,
+        "src_in": 6.162,
+        "gain_db": 6.0,
+        "duck_music_db": -3.0,
+        "duck_fade_s": 0.7,
+        "fade_in_s": 0.3,
+        "fade_out_s": 3.0,
+        "gain_verified": true,
+        "note": "O-Ton -34 dBFS RMS / Peak -12,3 -- +6 dB gemessen: Spitzenpegel im Schlussfenster -4,2 dBFS, Tonspur ~-28 dBFS RMS statt -40"
       }
     ]
   }

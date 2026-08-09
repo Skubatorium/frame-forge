@@ -196,6 +196,11 @@ _TEMPLATE_CONTENT = {
     "subtitle": "Tag 9",
     "chapter_number": "03",
     "chapter_title": "Über den Pass",
+    # infocard.svg (seit `a87299a` im Repo) verlangt diese beiden Inhalts-Tokens. Ohne sie
+    # scheitern alle sechs Template-Tests an genau dieser Datei -- das war seit dem Commit so
+    # und ist beim Umbau der Bauchbinde am 2026-08-09 aufgefallen.
+    "info_main": "1.041 m",
+    "info_sub": "Hakkesetstølen",
     "day_label": "TAG 9",
     "stage_label": "Geiranger — Lom",
     "date_label": "2026-07-28",

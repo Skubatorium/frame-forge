@@ -265,6 +265,60 @@ def test_build_filtergraph_overlay_drift_mode_linear_does_not_reverse():
     assert "sin(" not in graph.filter_complex
 
 
+def test_build_filtergraph_drift_dur_s_finishes_early_and_stays_put():
+    """`drift_dur_s` fährt die Drift-Strecke in kurzer Zeit ab und lässt das Overlay danach
+    stehen. Grund ist die ganzzahlige `overlay`-Position: dieselben 20px über 4,0s sind
+    5 px/s (ein Sprung alle 6 Frames, sichtbar gestuft), über 1,5s sind es 13 px/s."""
+    timeline = _timeline(
+        video=[{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0}],
+        overlay=[
+            {
+                "id": "o1",
+                "png": "overlays/title.png",
+                "tl_in": 0.0,
+                "dur": 5.5,
+                "anim": {"slide_from_px": "-100", "slide_in_s": "1.5",
+                         "drift_px": "20", "drift_mode": "linear", "drift_dur_s": "1.5"},
+            }
+        ],
+    )
+    graph = build_filtergraph(
+        timeline,
+        resolve_asset=lambda aid: Path(f"/media/{aid}.mp4"),
+        export_root=Path("/export"),
+        project_root=Path("/project"),
+    )
+    # Rampe ueber 1,5s statt ueber die volle Hold-Phase von 4,0s ...
+    assert "20.00*max(0,min(1,(t-1.500)/1.500000))" in graph.filter_complex
+    assert "/4.000000))" not in graph.filter_complex
+    # ... und `min(1,...)` haelt den Wert danach konstant, das Overlay steht.
+
+
+def test_build_filtergraph_drift_dur_s_is_capped_at_hold_phase():
+    """Ein zu grosses `drift_dur_s` darf nicht ueber das Clipende hinausdriften -- sonst
+    erreicht das Overlay seine Zielposition nie."""
+    timeline = _timeline(
+        video=[{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0}],
+        overlay=[
+            {
+                "id": "o1",
+                "png": "overlays/title.png",
+                "tl_in": 0.0,
+                "dur": 5.5,
+                "anim": {"slide_in_s": "1.5", "drift_px": "20",
+                         "drift_mode": "linear", "drift_dur_s": "99"},
+            }
+        ],
+    )
+    graph = build_filtergraph(
+        timeline,
+        resolve_asset=lambda aid: Path(f"/media/{aid}.mp4"),
+        export_root=Path("/export"),
+        project_root=Path("/project"),
+    )
+    assert "20.00*max(0,min(1,(t-1.500)/4.000000))" in graph.filter_complex
+
+
 def test_build_filtergraph_duck_fade_ramps_music_instead_of_switching():
     """`duck_fade_s` faehrt die Musik weich runter/hoch statt sie per `enable` hart zu schalten
     (Nutzer-Feedback: "das Absacken muss smooth passieren, ein kleiner Mini-Fade")."""
@@ -1120,7 +1174,7 @@ def test_kenburns_photo_renders_the_declared_duration(proj):
 
 def test_photo_clip_uses_crop_to_fill_not_pad():
     """`_scale_pad` (Letterbox/Pillarbox) ist fuer Foto-Clips Geschichte -- crop-to-fill statt
-    schwarzer Balken (QC-Befund: 59/159 vlog-data-Clips hatten bis zu 58% schwarze Flaeche)."""
+    schwarzer Balken (QC-Befund: 59/159 vlog-edit-Clips hatten bis zu 58% schwarze Flaeche)."""
     tl = _timeline(
         video=[
             {

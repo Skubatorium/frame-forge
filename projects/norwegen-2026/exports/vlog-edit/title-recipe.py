@@ -1,4 +1,4 @@
-"""Rezept fuer die Titel-Overlays von `vlog-data` (K1, "Norwegen 2026 / Roadtrip Edition").
+"""Rezept fuer die Titel-Overlays von `vlog-edit` (K1, "Norwegen 2026 / Roadtrip Edition").
 
 Erzeugt vier PNGs unter `overlays/`: `title-box.png` (das eine gemeinsame Panel), `title.png`
 ("Norwegen", kommt von links), `subtitle.png` ("2026", kommt von rechts, 75% der Norwegen-
@@ -25,7 +25,7 @@ RES = (3840, 2160)
 
 def main() -> None:
     tokens = yaml.safe_load((ROOT / "design" / "tokens.yaml").read_text())
-    out_dir = ROOT / "exports" / "vlog-data" / "overlays"
+    out_dir = ROOT / "exports" / "vlog-edit" / "overlays"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     # Runde 3: "Ich finde das Wort Norwegen muesste auf jeden Fall noch groesser, also bestimmt

@@ -1,4 +1,4 @@
-# Audio-Plan — `norwegen-2026` / `vlog-data`
+# Audio-Plan — `norwegen-2026` / `vlog-edit`
 
 Ergänzung zu `beatsheet.md` Abschnitt 2 ("Musikplan"). Alle Werte hier sind **gemessen**, nicht
 geraten — Quelle: `frameforge.audio.analyze_track` (librosa BPM/Beat-Grid/RMS-Energiekurve),

@@ -5,9 +5,9 @@ Bedingungen tatsächlich eintreten — siehe Kontext bei jedem Eintrag.
 
 ## Musik
 
-### Export `vlog-data` — Option "KI-Verlängerung Track C" (bedingt, nicht sofort auslösen)
+### Export `vlog-edit` — Option "KI-Verlängerung Track C" (bedingt, nicht sofort auslösen)
 
-**Kontext:** siehe `exports/vlog-data/audio-plan.md` Abschnitt 3. Der Pflicht-Track "Aguila de
+**Kontext:** siehe `exports/vlog-edit/audio-plan.md` Abschnitt 3. Der Pflicht-Track "Aguila de
 Oro (Ecstatic Mix)" ist mit gemessenen 374,63 s zu kurz für den ihm zugeteilten Abschnitt C
 (480 s, 720–1200 s) — Fehlbetrag 105,37 s. Das ist **eine von drei Optionen** (siehe audio-plan.md
 Abschnitt 3), keine getroffene Entscheidung. Diesen Prompt nur verwenden, wenn Nutzer/Orchestrator

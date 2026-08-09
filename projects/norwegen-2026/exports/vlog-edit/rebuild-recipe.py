@@ -1,4 +1,4 @@
-"""Rezept, das `timeline.json` fuer `vlog-data` neu aufbaut (Nutzer-Feedback Runde 3).
+"""Rezept, das `timeline.json` fuer `vlog-edit` neu aufbaut (Nutzer-Feedback Runde 3).
 
 Warum ein Rezept und keine Handarbeit an 160 Clips: das Feedback aus Runde 3 war fast
 vollstaendig **strukturell** (Reihenfolge, Doppelungen, Ausschnitt, Bauchbinden) statt punktuell.
@@ -6,7 +6,7 @@ Hier steht die Schnittentscheidung je Reisetag als Liste von Asset-IDs, alles an
 Uebergaenge, Ken-Burns-Parameter, Bauchbinden-Timing, Audio) rechnet das Skript daraus aus.
 Reproduzierbar und nachlesbar; `timeline.json` bleibt Single Source of Truth fuer den Render.
 
-Aufruf von Repo-Root: `.venv/bin/python projects/norwegen-2026/exports/vlog-data/rebuild-recipe.py`
+Aufruf von Repo-Root: `.venv/bin/python projects/norwegen-2026/exports/vlog-edit/rebuild-recipe.py`
 
 ## Die drei Befunde, die den Umbau tragen
 
@@ -49,8 +49,10 @@ import json
 import math
 from pathlib import Path
 
+from frameforge.probe import probe_duration
+
 ROOT = Path("projects/norwegen-2026")
-EXPORT = ROOT / "exports" / "vlog-data"
+EXPORT = ROOT / "exports" / "vlog-edit"
 RES = (3840, 2160)
 FPS = 30.0
 
@@ -122,7 +124,11 @@ DAYS: dict[str, list[str]] = {
         "20260720-camera-0ec48c",  # 15:38 Ruderboot mit Wolkenspiegelung
         "20260720-phone-0bd153",  # 16:01 Beeren pfluecken am Ufer
         "20260720-camera-3de2ef",  # 16:17 Paddleboards senkrecht von oben
-        "20260720-phone-2308e5",  # 18:11 Grillen/Abendessen -- bewusst als Tagesabschluss
+        # Runde 4: "es gibt ein Bild bei 4 Minuten 11, da sitzen so alle am Tisch und grillen,
+        # da muesste es noch ein zweites Bild geben, das sollte ausgetauscht werden." Das zweite
+        # Bild der Szene ist der Kugelgrill (17:27) -- zeigt das Grillen selbst statt nur den
+        # gedeckten Tisch. Ersetzt 20260720-phone-2308e5.
+        "20260720-phone-9f4dbe",  # 17:27 Vater am Kugelgrill, Rauch -- bewusst als Tagesabschluss
         # Raus: 20260720-camera-542e68 (erste Bootsfahrt, "die sieht so hilflos aus"),
         #       20260720-phone-ffc1ef (Hochkant, Gesicht + Beere weggeschnitten -- ersetzt durch
         #       den Beeren-pfluecken-Shot, den der Nutzer ausdruecklich mochte),
@@ -357,7 +363,12 @@ DAY_AVG_S: dict[str, float] = {
     "2026-07-21": 7.7, "2026-07-22": 7.6, "2026-07-23": 7.3, "2026-07-24": 7.1,
     "2026-07-25": 6.8, "2026-07-26": 6.2, "2026-07-27": 6.1, "2026-07-28": 5.8,
     "2026-07-29": 9.0, "2026-07-30": 6.6, "2026-08-01": 7.4, "2026-08-03": 7.6,
-    "2026-08-04": 8.4,
+    # Runde 4: "wir brauchen nur so 5 Sekunden, muessen wir irgendwo einsparen" -- gesagt im
+    # Zusammenhang mit dem Schluss ("das Ende finde ich gut ... 10 Sekunden, das ist zu lang").
+    # 3 Clips a 8,4s -> 6,9s = 4,5s, der Rest kommt aus dem Schlussschwarz. Die drei Bilder
+    # (Auffahrt aufs Faehrdeck, offenes Meer, Color Line am Kai) bleiben alle drin, sie sind
+    # nur straffer.
+    "2026-08-04": 6.9,
 }
 
 # Uebergangsdauer je Tag (dissolve). Kuerzer, wo schneller geschnitten wird.
@@ -369,6 +380,29 @@ DAY_XFADE_S: dict[str, float] = {
     "2026-08-03": 1.0,
 }
 
+# -- Musik/O-Ton am Filmende ----------------------------------------------------------------
+# Ueberlappung, mit der der vorletzte Titel in den letzten laeuft, wenn dessen Einsatz wegen
+# der Dateilaenge nach hinten rutscht.
+MUSIC_OVERLAP_S = 6.0
+# Ausblendung des letzten Titels. 10s (Runde 3) liessen die Musik schon vor dem letzten Bild
+# verschwinden; der Nutzer wollte den Ton laenger tragen.
+MUSIC_END_FADE_S = 6.0
+# O-Ton-Spuren, die ueber ihren Bildclip hinaus bis zum Filmende weiterlaufen.
+ATMO_RUNS_TO_END = {"atmo-meer-schluss"}
+ATMO_END_FADE_S = 3.0
+# Der letzte Titel klingt von sich aus aus (gemessen: ab 1065s faellt er von -17 auf -37 dBFS,
+# das ist das Songende, kein Fehler). Damit traegt am Schluss das Meeresrauschen die Tonspur --
+# mit den -6 dB der uebrigen O-Ton-Fenster waere es dafuer zu leise, und die Musik zusaetzlich
+# um 7 dB abzusenken macht es nur stiller. Deshalb lauter und mit schwacher Absenkung.
+# Gemessen: der Meeres-O-Ton liegt bei -34 dBFS RMS (Peak -12,3), er ist also von Haus aus
+# sehr leise -- mit den ueblichen -6 dB waere er unhoerbar. +6 dB bringt ihn auf ~-28 dBFS RMS
+# bei Peak -6,3. Gegengemessen am fertigen Ausschnitt: die Tonspur der letzten 15s liegt damit
+# bei ~-28 dBFS RMS statt der -40 dBFS, die sie ohne O-Ton haette, und der Spitzenpegel in
+# diesem Fenster bleibt bei -4,2 dBFS (der -0,7-dBFS-Peak des Films liegt frueher und kommt aus
+# der Musik, nicht aus dem O-Ton).
+ATMO_END_GAIN_DB = 6.0
+ATMO_END_DUCK_DB = -3.0
+
 # Rest-Drift der Titel-Layer nach dem Slide-in, in Pixeln der TIMELINE-Auflaesung (4K).
 # Vorzeichen = Weiterlaufrichtung, also dieselbe wie beim Einlaufen ("die sollen schon in ihre
 # Richtung weitergehen"). Betrag bewusst deutlich groesser als die 8px aus Runde 2 -- der Nutzer
@@ -379,6 +413,15 @@ TITLE_DRIFT_PX: dict[str, int] = {
     "ov-title-sub": -56,  # "2026" kommt von rechts, driftet weiter nach links
     "ov-title-caption": 42,  # "Roadtrip Edition" von links, etwas weniger Weg
 }
+
+# Runde 4: "von Sekunde 18, 19 bis 23 tickern die so, tack tack tack -- das ist wirklich nicht
+# wie eine ganz smoothe Bewegung." Ursache ist nicht die Aufloesung, sondern dass `overlay` nur
+# ganzzahlig positioniert: 56px ueber die volle Standzeit von 9,7s sind 5,8 px/s, also ein
+# Sprung alle 5 Frames. Im 4K-Final waere die Schrittweite halb so gross, aber immer noch
+# gestuft -- deshalb nicht auf die Aufloesung gewettet. Stattdessen laeuft dieselbe Strecke
+# direkt nach dem Einlaufen in 1,5s aus (56px/1,5s = 37 px/s, also >1 px je Frame bei 30 fps =
+# echte Bewegung) und der Titel steht danach fest, bis er ausblendet.
+TITLE_DRIFT_DUR_S = 1.5
 
 # Abweichende Uebergangsdauer fuer einzelne Clips (Schluessel = Eintrag aus `DAYS`).
 # 0 = harter Schnitt.
@@ -696,7 +739,7 @@ def build() -> None:
     # Nutzer: "die angesprochenen 15 Sekunden Schwarzbild braucht man nicht, da reichen drei
     # Sekunden." Die 17s im letzten Preview kamen aus dem Karten-Overhang (jetzt gefixt); ein
     # kurzes, gewolltes Schwarzbild als Abschluss bleibt.
-    add("generated-cold-open-black", 3.0, 1.5, xfade_type="fade", note="Ausfaden, Schluss")
+    add("generated-cold-open-black", 2.5, 1.5, xfade_type="fade", note="Ausfaden, Schluss")
 
     # Aufrunden, nicht runden: `qc._check_video_length_consistency` meldet jeden Clip, der ueber
     # `duration` hinausragt, und bei kaufmaennischem Runden kann der letzte Clip um ein
@@ -723,33 +766,68 @@ def build() -> None:
         if drift is not None:
             anim["drift_mode"] = "linear"
             anim["drift_px"] = str(drift)
+            anim["drift_dur_s"] = str(TITLE_DRIFT_DUR_S)
         else:
             anim.pop("drift_px", None)
             anim.pop("drift_mode", None)
+            anim.pop("drift_dur_s", None)
         anim.pop("drift_period_s", None)
         o["anim"] = anim
+    # Ein Overlay je Kapitel: Panel und Text stecken seit Runde 4 in EINEM PNG, weil die
+    # Panelbreite jetzt pro Bauchbinde auf den laengsten Text zugeschnitten wird
+    # (`stage-caption-recipe.py`). Eine gemeinsame Box gibt es deshalb nicht mehr.
     for day, tl_in in captions:
-        for kind in ("box", "text"):
-            png = "overlays/stage-caption-box.png" if kind == "box" else f"overlays/stage-caption-{day}.png"
-            overlay.append({
-                "id": f"ov-stage-{kind}-{day}",
-                "png": png,
-                "tl_in": tl_in,
-                "dur": 5.0,
-                "anim": {"fade_in_s": "0.6", "fade_out_s": "1.2"},
-            })
+        overlay.append({
+            "id": f"ov-stage-{day}",
+            "png": f"overlays/stage-caption-{day}.png",
+            "tl_in": tl_in,
+            "dur": 5.0,
+            "anim": {"fade_in_s": "0.6", "fade_out_s": "1.2"},
+        })
 
     # -- Audio -----------------------------------------------------------------------------
+    # Der letzte Titel muss GENAU mit dem Film enden. Bisher wurde seine Dauer einfach aus der
+    # Timelinelaenge gerechnet -- ohne zu pruefen, ob die Datei so lang ist. Sie war es nicht:
+    # `Aguila de Oro` ist 374,70s lang, verlangt waren ab `src_in` 0,743s aber 385,35s, also
+    # lief der Film 11,4s stumm zu Ende (Nutzer Runde 4: "jetzt ist es alle und jetzt laeuft es
+    # aber noch 10 Sekunden"). ffmpeg meldet so etwas nicht, der Ton hoert einfach auf.
+    # Deshalb: Laufzeit messen, den Einsatz danach ausrichten (spaeter beginnen, nicht laenger
+    # spielen -- die Datei gibt nicht mehr her) und den Vorgaengertitel bis dahin verlaengern.
+    # `qc._check_music_coverage` prueft beides jetzt zusaetzlich.
     music = [a for a in old["tracks"]["audio"] if a.get("src")]
-    music[-1]["dur"] = round(duration - music[-1]["tl_in"], 3)
+    last = music[-1]
+    last["src_in"] = 0.0  # jede Sekunde Vorlauf verschenkt Deckung am Filmende
+    available = probe_duration(ROOT / last["src"]) - last["src_in"]
+    if available < duration - last["tl_in"]:
+        # Datei zu kurz fuer den geplanten Einsatz: spaeter einsetzen, dafuer bis zum Schluss.
+        new_tl_in = round(duration - available, 3)
+        warnings.append(
+            f"{last['id']}: Datei liefert nur {available:.1f}s, Einsatz von "
+            f"{last['tl_in']:.1f}s auf {new_tl_in:.1f}s verschoben (sonst Stille am Schluss)"
+        )
+        last["tl_in"] = new_tl_in
+        # Vorgaenger muss die entstandene Luecke ueberbruecken und ueberlappen.
+        prev = music[-2]
+        prev_available = probe_duration(ROOT / prev["src"]) - prev.get("src_in", 0.0)
+        prev["dur"] = round(
+            min(prev_available, last["tl_in"] + MUSIC_OVERLAP_S - prev["tl_in"]), 3
+        )
+    last["dur"] = round(duration - last["tl_in"], 3)
+    # Der Schluss soll hoerbar ausklingen statt schon eine halbe Minute vorher zu verschwinden.
+    last["fade_out_s"] = MUSIC_END_FADE_S
     # Nutzer zum Ducking: "Wir sollten Ducking vielleicht nur auf ein, zwei Sachen beschraenken"
     # -- Faehre (Oskar im Wind) und die Gitarren-/Kitzelszene. Und: "Es muss lauter sein, es muss
     # klarer sein. Nicht das eine leiser machen, sondern das andere ein bisschen hochziehen."
     # Also O-Ton von -18 auf -6 dB, Musikabsenkung von -12 auf -7 dB, beides mit weichen Rampen
     # ("das Absacken vom Sound muss smooth passieren, es muss einen kleinen Mini-Fade geben").
+    # Runde 4: "Ich finde doch dieses Meeresrauschen gut ... wir sollten sowieso machen, dass da
+    # ein bisschen der Sound ein bisschen laenger geht." Der Blick von Bord aufs offene Meer ist
+    # der vorletzte Clip des Films und traegt echtes Meeres-/Fahrtgeraeusch -- damit endet der
+    # Film auf einem Ton statt auf reiner Musik.
     atmo_specs = [
         ("atmo-faehre-wind", "20260719-camera-21e343"),
         ("atmo-gitarre-kitzeln", "20260722-camera-7545fc"),
+        ("atmo-meer-schluss", "20260804-camera-59ef0c"),
     ]
     audio = list(music)
     for atmo_id, asset_id in atmo_specs:
@@ -758,22 +836,41 @@ def build() -> None:
             warnings.append(f"{atmo_id}: Clip {asset_id} nicht im Schnitt, O-Ton entfaellt")
             continue
         dur = clip["src_out"] - clip["src_in"]
+        fade_out = 0.5
+        gain_db, duck_db = -6.0, -7.0
+        if atmo_id in ATMO_RUNS_TO_END:
+            # Das Meeresrauschen soll ueber den Bildschnitt hinaus bis ins Schlussschwarz
+            # tragen, nicht mit seinem Clip abreissen -- gedeckelt von dem, was die Datei
+            # nach `src_in` noch hergibt.
+            src_dur = (assets[asset_id].get("probe") or {}).get("dur") or 0.0
+            usable = max(dur, src_dur - clip["src_in"] - 0.05)
+            dur = min(usable, duration - clip["tl_in"])
+            fade_out = min(ATMO_END_FADE_S, dur)
+            gain_db, duck_db = ATMO_END_GAIN_DB, ATMO_END_DUCK_DB
         audio.append({
             "id": atmo_id,
             "asset": asset_id,
             "tl_in": round(clip["tl_in"], 3),
             "dur": round(dur, 3),
             "src_in": round(clip["src_in"], 3),
-            "gain_db": -6.0,
-            "duck_music_db": -7.0,
+            "gain_db": gain_db,
+            "duck_music_db": duck_db,
             "duck_fade_s": 0.7,
             "fade_in_s": 0.3,
-            "fade_out_s": 0.5,
+            "fade_out_s": fade_out,
         })
+        if gain_db > 0:
+            # Nachweis fuer `qc._check_audio_clipping_risk`: die Anhebung ist am fertigen
+            # Ausschnitt gemessen, nicht geschaetzt.
+            audio[-1]["gain_verified"] = True
+            audio[-1]["note"] = (
+                "O-Ton -34 dBFS RMS / Peak -12,3 -- +6 dB gemessen: Spitzenpegel im "
+                "Schlussfenster -4,2 dBFS, Tonspur ~-28 dBFS RMS statt -40"
+            )
 
     timeline = {
         "version": 1,
-        "export": "vlog-data",
+        "export": "vlog-edit",
         "fps": FPS,
         "resolution": list(RES),
         "duration": duration,

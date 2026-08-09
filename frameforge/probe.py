@@ -222,6 +222,24 @@ def _parse_frame_rate(rate: str) -> float:
     return float(num) / den_f if den_f else 0.0
 
 
+def probe_duration(path: Path) -> float:
+    """Laufzeit einer beliebigen Mediendatei in Sekunden, auch ohne Video-Stream.
+
+    `probe_video` wirft bei reinen Audiodateien (`kein Video-Stream gefunden`), die Musiktracks
+    eines Projekts sind aber genau das. Gebraucht fuer die QC-Regel "Musikquelle deckt die
+    Timeline ab": ist ein Track kuerzer als die Timeline verlangt, endet die Musik mitten im
+    Film und der Rest laeuft stumm weiter -- im Rendervorgang faellt das nirgends auf
+    (gefunden 2026-08-09 am `vlog-edit`-Preview: 11,4s Stille am Schluss).
+    """
+    data = _run_json(
+        ["ffprobe", "-v", "error", "-print_format", "json", "-show_format", str(path)]
+    )
+    try:
+        return float(data["format"]["duration"])
+    except (KeyError, TypeError, ValueError) as exc:
+        raise ProbeError(f"{path}: keine Laufzeit ermittelbar") from exc
+
+
 def probe_video(path: Path) -> dict:
     """ffprobe-Wrapper: Codec, Aufloesung, fps, Dauer, Bitrate (Format `tech` aus Plan §4)."""
     data = _run_json(

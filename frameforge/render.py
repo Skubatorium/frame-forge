@@ -500,6 +500,14 @@ def _overlay_axis_expr(anim: dict, tl_in: float, dur: float, *, from_key: str, d
       heisst: die Bewegung laeuft in Slide-in-Richtung weiter, gleiche Schrittweite, kein
       Stillstand, keine Umkehr.
     - `drift_period_s`: Periodendauer der Drift (nur `drift_mode="sine"`, Default 4.0s).
+    - `drift_dur_s`: Dauer der linearen Drift (nur `drift_mode="linear"`, Default: bis zum
+      Clipende). Danach steht das Overlay fest. Nutzer-Feedback (2026-08-09, Runde 3-Preview):
+      "das tickert so, tack tack tack" -- `overlay` positioniert ganzzahlig, eine Drift von
+      56px ueber 9,7s ist 5,8 px/s, also ein Sprung alle 5 Frames (30 fps). Sichtbar gestuft,
+      und daran aendert auch 4K nichts, es halbiert nur die Schrittweite. Smooth wird es erst
+      ab ~1 px/Frame; deshalb dieselbe Strecke in kurzer Zeit abfahren (56px in 1.5s =
+      37 px/s > 30 px/s) und danach stehen bleiben, statt sie ueber die ganze Standzeit zu
+      strecken.
 
     Ohne Slide/Drift auf dieser Achse liefert das exakt `"0"` -- identisch zum bisherigen
     festen `x=0`/`y=0`, damit sich an bestehenden Overlays (z.B. `label-*.png`) nichts aendert.
@@ -521,8 +529,10 @@ def _overlay_axis_expr(anim: dict, tl_in: float, dur: float, *, from_key: str, d
         # Drift erst NACH dem Slide-in, sonst ueberlagert sie die Einlaufbewegung.
         if str(anim.get("drift_mode", "sine")).lower() == "linear":
             hold_s = max(0.001, dur - slide_in_s)
+            drift_dur_s = float(anim.get("drift_dur_s", 0) or 0) or hold_s
+            drift_dur_s = max(0.001, min(drift_dur_s, hold_s))
             terms.append(
-                f"{drift:.2f}*max(0,min(1,(t-{t1:.3f})/{hold_s:.6f}))"
+                f"{drift:.2f}*max(0,min(1,(t-{t1:.3f})/{drift_dur_s:.6f}))"
             )
         else:
             drift_period_s = float(

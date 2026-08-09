@@ -1,13 +1,22 @@
 <svg width="{{width}}" height="{{height}}" xmlns="http://www.w3.org/2000/svg">
-  <!-- Zweizeilige Etappen-Bauchbinde: `day_label` oben (Akzentfarbe), darunter `stage_label`
-       mit Etappe bzw. Aktivitaet des Tages. Beide Zeilen liegen in EINEM Layer, weil sie sich
-       nie gegeneinander bewegen sollen, sondern nur gemeinsam ein- und ausblenden, also ein
-       Overlay pro Kapitel statt zwei. Ersetzt die Kombination aus subtitle-only.svg und
-       Karten-Inset, nachdem der Karten-Track entfallen ist.
+  <!-- Dreizeilige Etappen-Bauchbinde mit eigenem Panel: `day_label` oben (Akzentfarbe,
+       "Tag 6 - 23.07.2026"), darunter `stage_label` (Fahrt bzw. Aktivitaet des Tages) und
+       darunter `km_label` (Tages- und Gesamtstrecke). Panel und Text liegen in EINEM Layer,
+       weil sie sich nie gegeneinander bewegen, sondern nur gemeinsam ein- und ausblenden:
+       ein Overlay pro Kapitel statt zwei, und die Panelbreite kann pro Bauchbinde auf den
+       laengsten Text zugeschnitten werden (Nutzer-Feedback 2026-08-09: "wir haben immer sehr
+       viel Platz in den blauen Boxen ... sieht ein bisschen verloren aus").
+       Ersetzt die Kombination aus subtitle-only.svg und Karten-Inset, nachdem der
+       Karten-Track entfallen ist.
        Alle Positionen und Groessen kommen als Prozent bzw. Pixel aus `overlay_tokens`
-       (`stage_*`-Defaults, vom Aufrufer ueberschreibbar), damit dasselbe Template auch fuer
-       eine andere Ecke taugt. Achtung: kein doppelter Bindestrich in SVG-Kommentaren,
-       cairosvgs XML-Parser bricht daran ab. -->
+       (`stage_*`/`box_*`-Defaults, vom Aufrufer ueberschreibbar), damit dasselbe Template
+       auch fuer eine andere Ecke taugt. `km_label` ist optional und standardmaessig leer,
+       damit aeltere Token-Saetze ohne diese Zeile weiter rendern (Audit-Befund F5).
+       Achtung: kein doppelter Bindestrich in SVG-Kommentaren, cairosvgs XML-Parser bricht
+       daran ab. -->
+  <rect x="{{box_x_pct}}%" y="{{box_y_pct}}%" width="{{box_w_pct}}%" height="{{box_h_pct}}%"
+        rx="{{corner_radius}}" ry="{{corner_radius}}"
+        fill="{{primary_color}}" fill-opacity="{{panel_opacity}}"/>
   <text x="{{stage_day_x_pct}}%" y="{{stage_day_y_pct}}%" font-family="{{font_display}}"
         font-weight="800" font-size="{{stage_day_size}}" fill="{{stage_day_fill}}"
         letter-spacing="{{subtitle_tracking}}"
@@ -15,4 +24,7 @@
   <text x="{{stage_route_x_pct}}%" y="{{stage_route_y_pct}}%" font-family="{{font_text}}"
         font-weight="600" font-size="{{stage_route_size}}" fill="{{stage_route_fill}}"
         text-anchor="start" dominant-baseline="middle">{{stage_label}}</text>
+  <text x="{{stage_km_x_pct}}%" y="{{stage_km_y_pct}}%" font-family="{{font_text}}"
+        font-weight="500" font-size="{{stage_km_size}}" fill="{{stage_km_fill}}"
+        text-anchor="start" dominant-baseline="middle">{{km_label}}</text>
 </svg>

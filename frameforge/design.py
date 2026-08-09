@@ -194,6 +194,13 @@ def overlay_tokens(tokens: dict, *, width: int, height: int, **extra) -> dict:
         "stage_route_y_pct": 94.0,
         "stage_day_fill": tokens.get("accent_color", "#e0a458"),
         "stage_route_fill": tokens.get("text_color", "#ffffff"),
+        # Dritte Zeile (Tages-/Gesamtstrecke). `km_label` ist bewusst leer vorbelegt: ein neues
+        # Element im Template darf bestehende Token-Saetze nicht ungueltig machen (Audit-F5/F7).
+        "km_label": "",
+        "stage_km_size": round(caption * 0.72, 1),
+        "stage_km_x_pct": 2.8,
+        "stage_km_y_pct": 97.0,
+        "stage_km_fill": tokens.get("text_color", "#ffffff"),
         "margin": margin,
         "corner_radius": round(height * 0.008),
         "shadow_dy": round(height * 0.004, 1),

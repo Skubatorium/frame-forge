@@ -1950,8 +1950,8 @@ besprochen und Namen/Laengen festgelegt:
 | Export | Laenge | Inhalt |
 |---|---|---|
 | `drone-edit` | 10–14 Min. (flexibel, Material entscheidet) | nur Drohnenmaterial, keine Karte, Schwarzblende Anfang+Ende |
-| `vlog-data` | ~20 Min. | Vollversion mit Karten-HUD, Etappen-/Kilometerdetails |
-| `vlog-pur` | ~20 Min. | gleicher Schnitt wie `vlog-data`, ohne Karte/Detail-Layer (nur Ortsnamen) |
+| `vlog-edit` | ~20 Min. | Vollversion mit Karten-HUD, Etappen-/Kilometerdetails |
+| `vlog-pur` | ~20 Min. | gleicher Schnitt wie `vlog-edit`, ohne Karte/Detail-Layer (nur Ortsnamen) |
 | `teaser` | offen, straff, nicht hart auf 5 Min. | Highlight-Mix, 80/20 Landschaft/Personen, **keine** inhaltlich redundanten Cutaways (Lehre aus einem frueheren Testschnitt: 5 Szenen vom selben Kreuzfahrtschiff an einem Tag wirkte repetitiv) |
 
 **Reihenfolge:** mit `drone-edit` anfangen (kleinster Scope, kein Kartenbau/Ortszuordnung
@@ -2050,7 +2050,7 @@ Beat-Sheet + Timeline bauen.
   Mechanismus, kein Einzelfall-Hack).
 
 **Naechster Schritt:** `/ff-preview norwegen-2026 drone-edit` — Proxy-Render pruefen, danach
-Freigabe. Danach vlog-data, vlog-pur (~20 Min, identischer Schnitt, nur Map-Layer
+Freigabe. Danach vlog-edit, vlog-pur (~20 Min, identischer Schnitt, nur Map-Layer
 unterschiedlich), dann teaser.
 
 ### Preview v1 gesichtet, Timeline Revision 2 (2026-08-08)
@@ -2120,12 +2120,12 @@ Preview v2 freigegeben, `frameforge approve` + `frameforge render` durchgelaufen
 `projects/norwegen-2026/exports/drone-edit/final/drone-edit_v1.mp4` (4K, 5,77 GB, 568 s), Report
 unter `.../final/drone-edit_v1.report.md`.
 
-**Naechster Schritt:** vlog-data, vlog-pur (~20 Min, identischer Schnitt, nur Map-Layer
+**Naechster Schritt:** vlog-edit, vlog-pur (~20 Min, identischer Schnitt, nur Map-Layer
 unterschiedlich), dann teaser — kein Re-Ingest/Index/Design noetig, gleiche Materialbasis.
 
-### `vlog-data` gebrieft (2026-08-08)
+### `vlog-edit` gebrieft (2026-08-08)
 
-`exports/vlog-data/brief.yaml` geschrieben, Export auf **BRIEFED**. Preset `nordic-cinematic`
+`exports/vlog-edit/brief.yaml` geschrieben, Export auf **BRIEFED**. Preset `nordic-cinematic`
 mit Overrides: `map_usage: leitmotif` (Karte unten rechts durchgehend), Ziellaenge 1200 s
 (~20 Min). Wichtigste Vorgaben aus dem Nutzer-Briefing:
 
@@ -2151,12 +2151,12 @@ mit Overrides: `map_usage: leitmotif` (Karte unten rechts durchgehend), Ziellaen
   `captured_at`-EXIF. Laut Nutzer sind die Dateien innerhalb ihres jeweiligen Ordners in
   echter Erlebnis-Reihenfolge — Dateisystem-/Namensreihenfolge als Fallback-Sortierung nutzen.
 
-**Naechster Schritt:** `/ff-build norwegen-2026 vlog-data` (story-architect → timeline-builder,
+**Naechster Schritt:** `/ff-build norwegen-2026 vlog-edit` (story-architect → timeline-builder,
 plus map-animator fuer die Cold-Open-Kartenanimation und die durchgehende Karte).
 
-### `vlog-data` Timeline gebaut, QC gefixt, Preview gerendert (2026-08-08)
+### `vlog-edit` Timeline gebaut, QC gefixt, Preview gerendert (2026-08-08)
 
-`/ff-build norwegen-2026 vlog-data` durchlaufen, Export auf **TIMELINE** (`09115087a`): 159
+`/ff-build norwegen-2026 vlog-edit` durchlaufen, Export auf **TIMELINE** (`09115087a`): 159
 Video-Clips, 14 Map-Clip-Referenzen, 7 Audio-Clips, 2 Overlays, 1103,887 s. Fixpunkte
 (Cold-Open 40 s, Crossfade 395 s, harter Schnitt 730 s, Klimax 996 s, Filmende) sitzen.
 
@@ -2179,8 +2179,8 @@ Video-Clips, 14 Map-Clip-Referenzen, 7 Audio-Clips, 2 Overlays, 1103,887 s. Fixp
 - **QC-Runde 2** (`3ea2e39d`): 3 Clip-Swaps — 730 s-Fixpunkt war invertiert (hell→dunkel statt
   dunkel→hell), Wasserfall- und Bruecken-Aufnahme je einmal doppelt verwendet. Alle drei
   getauscht, Timing/Fixpunkte unveraendert.
-- **Preview:** `/ff-preview norwegen-2026 vlog-data` gerendert,
-  `exports/vlog-data/preview/vlog-data_preview.mp4` (186 MB). Export steht bei **PREVIEWED**,
+- **Preview:** `/ff-preview norwegen-2026 vlog-edit` gerendert,
+  `exports/vlog-edit/preview/vlog-edit_preview.mp4` (186 MB). Export steht bei **PREVIEWED**,
   wartet auf Nutzer-Freigabe.
 - **Notiz zur Session:** Notebook-Speicher lief waehrend eines vorherigen Preview-Versuchs voll
   (24 GB durch VS Code + andere Apps + Claude), System abgestuerzt, `.state.json`/Commits blieben
@@ -2188,16 +2188,16 @@ Video-Clips, 14 Map-Clip-Referenzen, 7 Audio-Clips, 2 Overlays, 1103,887 s. Fixp
   Preview-Versuch nach Neustart erfolgreich (Plattenplatz zwischenzeitlich knapp bei 4 GB frei,
   danach wieder auf 10 GB erholt). Kein Hinweis auf Datenverlust bei Timeline/Assets/Commits.
 - **Hinweis, nicht blockierend:** `frameforge status` meldet, dass sich das Asset-Inventar seit
-  dem Storyboard von `drone-edit` und `vlog-data` geaendert hat (neues Asset
-  `map-k0-cold-open.mp4` seither indiziert). Fuer `vlog-data` ist das erwartet — Cold-Open-Karte
+  dem Storyboard von `drone-edit` und `vlog-edit` geaendert hat (neues Asset
+  `map-k0-cold-open.mp4` seither indiziert). Fuer `vlog-edit` ist das erwartet — Cold-Open-Karte
   wurde bewusst nachtraeglich generiert und ist bereits Teil der Timeline. Fuer `drone-edit`
   (bereits gerendert) irrelevant.
 
-**Naechster Schritt:** Nutzer sichtet `vlog-data_preview.mp4`, gibt frei oder gibt Feedback. Bei
-Freigabe: `/ff-render norwegen-2026 vlog-data` fuer den 4K-Final. Danach `vlog-pur` (identischer
+**Naechster Schritt:** Nutzer sichtet `vlog-edit_preview.mp4`, gibt frei oder gibt Feedback. Bei
+Freigabe: `/ff-render norwegen-2026 vlog-edit` fuer den 4K-Final. Danach `vlog-pur` (identischer
 Schnitt, nur Map-Layer anders), dann teaser.
 
-### `vlog-data` Preview-Feedback Runde 1: Karten-HUD, Cold-Open, Titel (2026-08-08)
+### `vlog-edit` Preview-Feedback Runde 1: Karten-HUD, Cold-Open, Titel (2026-08-08)
 
 Nutzer sichtete den PREVIEWED-Stand (Screenshot) und meldete drei Befunde zurueck.
 
@@ -2239,7 +2239,7 @@ Nutzer sichtete den PREVIEWED-Stand (Screenshot) und meldete drei Befunde zuruec
 - **Pre-existing, nicht angefasst:** `tests/test_design.py` hat 6 vorbestehende Fehlschlaege um
   `infocard.svg` (fehlende `info_main`/`info_sub`-Default-Tokens), verifiziert auch auf dem
   Stand vor dieser Session (`git stash` + Testlauf). Nicht Teil dieser Aenderung, da `infocard`
-  fuer `vlog-data` ohnehin entfernt wurde — Fix bei Bedarf spaeter, wenn `infocard.svg` wieder
+  fuer `vlog-edit` ohnehin entfernt wurde — Fix bei Bedarf spaeter, wenn `infocard.svg` wieder
   gebraucht wird.
 - **Preview neu gerendert**, alle drei Befunde visuell verifiziert (Frame-Checks bei Cold-Open,
   Titel, Karten-HUD). Export bleibt PREVIEWED, wartet auf Freigabe.
@@ -2252,7 +2252,7 @@ Nutzer sichtete den PREVIEWED-Stand (Screenshot) und meldete drei Befunde zuruec
 **Naechster Schritt:** Nutzer sichtet den ueberarbeiteten Preview, gibt frei oder gibt weiteres
 Feedback (offen: ob/wie ein neues Cold-Open-Konzept mit Karte kommen soll).
 
-### `vlog-data` Preview-Feedback Runde 2: Render-Bug, Cold-Open kuerzer, Titel-Choreo, Karten-Stil, Bauchbinden (2026-08-08)
+### `vlog-edit` Preview-Feedback Runde 2: Render-Bug, Cold-Open kuerzer, Titel-Choreo, Karten-Stil, Bauchbinden (2026-08-08)
 
 **Session per Nutzerwunsch hier abgebrochen (Token/Kontext sparen) — siehe "Offener Punkt beim
 Abbruch" unten.** Alles bis dahin ist committet und funktioniert einzeln (Tests gruen), nur der
@@ -2287,7 +2287,7 @@ device`, Datei korrupt, geloescht).
   Templates `title-only.svg`/`subtitle-only.svg` generisch auf frei positionierbare Texte
   umgebaut (`text_x_pct`/`text_y_pct`/`text_anchor`, `subtitle_fill`) statt fest zentriert;
   neues `box-only.svg` fuer ein eigenstaendiges Panel, unabhaengig vom Text positionierbar.
-  Reproduzierbares Rezept: `exports/vlog-data/title-recipe.py`. Vor dem Einbau in die echte
+  Reproduzierbares Rezept: `exports/vlog-edit/title-recipe.py`. Vor dem Einbau in die echte
   Timeline mit einer synthetischen Mini-Timeline (nur 12s) probegerendert, um nicht wieder einen
   vollen 18-Minuten-Render zu verschwenden — Methode fuer kuenftige Overlay-Iterationen merken.
 - **XML-Kommentar-Falle gefunden:** `--` (doppelter Bindestrich) in SVG-Kommentaren bricht
@@ -2309,7 +2309,7 @@ device`, Datei korrupt, geloescht).
   Karten-Kapitel beginnt, dann wieder aus (Kilometerstand bleibt der einzige Dauer-Text).
   Tag-Zaehlung ist die des Nutzers (Tag 0 = Beladen 17.07., nicht `stages.csv`-Tag 1) —
   `last_day - 1`. K12 ausgelassen (reine Wiederholung von K11/Lom). Reproduzierbares Rezept:
-  `exports/vlog-data/stage-caption-recipe.py`.
+  `exports/vlog-edit/stage-caption-recipe.py`.
 
 **Commits dieser Runde:** `6e67be7` (shortest=1-Fix + Regressionstest), Rest (Templates,
 map.py-Parameter, render.py-Margin, Timeline-Umbau, Recipes, brief.yaml) **noch NICHT
@@ -2328,7 +2328,7 @@ verluste). **Naechster Schritt fuer die Folgesession:**
    200 MB wie vor dem shortest=1-Fix!) — bei < 4 GB frei erst Platz schaffen (z.B. mit dem
    Nutzer klaeren, ob weitere fertige Exporte wie `drone-edit`s Preview-Zwischendateien weg
    koennen), sonst droht wieder "No space left on device".
-3. `.venv/bin/frameforge preview norwegen-2026 vlog-data` — laeuft laut bisherigen Versuchen
+3. `.venv/bin/frameforge preview norwegen-2026 vlog-edit` — laeuft laut bisherigen Versuchen
    >2 Minuten (Timeout), also mit `run_in_background` planen.
 4. Nach Erfolg: Frame-Checks bei Cold-Open (sollte jetzt bei ~10s in K1 uebergehen), Titel-
    Sequenz (~t=12-24s: Box, dann Norwegen/2026 diagonal, dann Roadtrip Edition), Karten-Insets
@@ -2336,7 +2336,7 @@ verluste). **Naechster Schritt fuer die Folgesession:**
    nach jedem Kapitel-Start).
 5. Dem Nutzer den fertigen Preview zur Sichtung geben.
 
-### `vlog-data` Preview-Feedback Runde 3: Zeitstempel-Befund, Karte raus, Blur-Fill (2026-08-08)
+### `vlog-edit` Preview-Feedback Runde 3: Zeitstempel-Befund, Karte raus, Blur-Fill (2026-08-08)
 
 Sehr umfangreiches Nutzer-Feedback zur Preview-Runde 2 (Sichtung mit Pausen, ~60 Einzelpunkte
 mit Zeitmarken). Der Grossteil liess sich auf **drei Ursachen** zuruecktrainieren, statt auf 60
@@ -2407,7 +2407,7 @@ alte Variante geprueft, bevor es in die Timeline ging.
   hat (1091,0s Datei vs. 1073,9s Timeline). Moot, weil die Karte jetzt ganz weg ist, aber der
   Fix bleibt drin.
 
-**Schnittfassung neu gebaut** — `exports/vlog-data/rebuild-recipe.py` (neu). Die Schnittfassung
+**Schnittfassung neu gebaut** — `exports/vlog-edit/rebuild-recipe.py` (neu). Die Schnittfassung
 steht dort als Asset-Liste je Reisetag mit Begruendung pro Abweichung; Timing, Uebergaenge,
 Ken-Burns-Parameter, Bauchbinden-Timing und Audio rechnet das Skript daraus. Handarbeit an 168
 Clips waere nicht wiederholbar gewesen.
@@ -2461,7 +2461,7 @@ Schluss laenger sehen wollte, ist im Index nicht auffindbar — eine Volltextsuc
 Assets nach Moewe/Vogel/Verfolgung liefert am Reiseende (03./04.08.) keinen Treffer. Muss er
 zeigen bzw. benennen.
 
-### Warum die `vlog-data`-Preview-Renders abgebrochen sind (2026-08-09) — Ursache gefunden
+### Warum die `vlog-edit`-Preview-Renders abgebrochen sind (2026-08-09) — Ursache gefunden
 
 Mehrere Renders waren "ohne Erklaerung" gestorben (Nutzer: vier bis fuenf Mal im Hintergrund,
 einmal im Vordergrund durchgelaufen). Statt weiter zu raten, gemessen — und die Vermutung
@@ -2541,9 +2541,9 @@ Mini-Timeline (2-5 Clips) durch `build_filtergraph` + `_run_ffmpeg` pruefen und 
 `cv2` als Kontaktbogen ansehen — nie am Vollrender. So wurden der Titel-Drift-Fehler, die
 1080p-Overlay-Skalierung und das Blur-Fill jeweils in unter einer Minute verifiziert.
 
-### `vlog-data` Runde-3-Preview erfolgreich gerendert und geprueft (2026-08-09, 02:17)
+### `vlog-edit` Runde-3-Preview erfolgreich gerendert und geprueft (2026-08-09, 02:17)
 
-**Datei:** `exports/vlog-data/preview/vlog-data_preview.mp4` — 582,8 MB, **1920x1080**,
+**Datei:** `exports/vlog-edit/preview/vlog-edit_preview.mp4` — 582,8 MB, **1920x1080**,
 1085,366s (18:05), 30 fps, 4,5 Mbit/s. Laufzeit 25 Minuten (0,72x Echtzeit).
 Das ist der erste Preview, der die Runde-3-Aenderungen tatsaechlich enthaelt.
 
@@ -2574,3 +2574,65 @@ verdrahtet. Waere sie vorher da gewesen, haette sie den 26,7s-Fehlrender sofort 
 - Der `/ff-build`-Hinweis beim Render ("Beat-Sheet kennt das neue Material nicht") steht noch:
   `beatsheet.md` ist der Stand vor Runde 3. Bewusst so gelassen — die Schnittfassung steht in
   `rebuild-recipe.py`, das Beat-Sheet waere nur Doku. Bei Gelegenheit nachziehen.
+
+### Runde 4 — Nutzer-Feedback zum 1080p-Preview (2026-08-09)
+
+**Export `vlog-data` heisst jetzt `vlog-edit`** (Nutzerwunsch, parallel zu `drone-edit`).
+Verzeichnis, Rezepte, `.state.json` und die Referenzen in diesen Dokumenten wurden mitgezogen;
+der Preview aus Runde 3 liegt als `preview/vlog-edit_preview.mp4`. Im Bild bleibt "Roadtrip
+Edition" unveraendert.
+
+Sieben Punkte, alle umgesetzt, Laufzeit jetzt **18:00,35** (vorher 18:05,37):
+
+| Punkt | Befund | Loesung |
+|---|---|---|
+| Titel "tickert" 18-23s | `overlay` positioniert **ganzzahlig**; 56px Drift ueber 9,7s = 5,8 px/s = ein Sprung alle 5 Frames | neues `anim.drift_dur_s`: dieselbe Strecke in 1,5s (37 px/s, >1 px je Frame), danach steht der Titel |
+| Bauchbinde 15:57 | "Uvdal · Angeln, **Bogen** & Kanu" | "… Bogenschießen & Kanu" |
+| Bauchbinde 4:51 | "Ruhetag vor dem Roadtrip" | "Lazy Day vor dem Roadtrip" |
+| Bild 4:11 | Familie am gedeckten Tisch | ersetzt durch `20260720-phone-9f4dbe` (17:27, Vater am Kugelgrill) |
+| Blaue Boxen zu leer | eine feste Boxbreite fuer alle | Breite **pro Bauchbinde** an der gemessenen Textbreite; drei Zeilen statt zwei |
+| Tag 13 → Tag 15 | kein Rechenfehler | 31.07. (Tag 14) und 02.08. (Tag 16) haben Material im Index, kamen aber nicht in den Schnitt. Nutzer: so gewollt. Das Datum steht jetzt in Zeile 1, damit der Sprung erklaerbar ist |
+| Ton endet zu frueh, ~5s zu lang | **echter Fehler**, siehe unten | Musikeinsatz nachgerechnet, Meeres-O-Ton am Schluss, 5s gekuerzt |
+
+**Der Tonfehler am Filmende — gemessen, nicht vermutet.** `Aguila de Oro` ist **374,70s** lang,
+die Timeline verlangte ab `src_in` 0,743s aber **385,35s**. Die Musik endete also bei 1073,96s,
+der Film lief bis 1085,35s: **11,4 Sekunden Stille**, ohne Fehlermeldung, ohne dass die
+geplante 10s-Ausblendung je stattfand. Genau derselbe Fehlermodus wie beim zu langen `src_out`
+(Runde 3), nur auf der Tonspur.
+
+- `rebuild-recipe.py` misst die Datei jetzt (`probe.probe_duration`, neu — `probe_video` wirft
+  bei reinen Audiodateien) und richtet den **Einsatz** danach aus, statt die Dauer aus der
+  Timelinelaenge zu rechnen: `music-03` startet 705,65s statt 700s und endet exakt bei 1080,35s.
+  Der Vorgaengertitel wird passend verlaengert (Deckung geprueft: 445,27s Quelle reichen).
+- Neue QC-Regel `_check_music_coverage` (+ `music_durations` in `qc.validate`, in beiden
+  CLI-Aufrufstellen verdrahtet): meldet sowohl "Track kuerzer als verlangt" als auch "Musik
+  endet mehr als 1s vor dem Film". Waere sie vorher da gewesen, haette der Nutzer den Fehler
+  nicht selbst hoeren muessen.
+- Der Song klingt zusaetzlich **von sich aus** aus (gemessen: ab 1065s faellt er von -17 auf
+  -37 dBFS). Deshalb traegt am Schluss neu der O-Ton `atmo-meer-schluss` (Blick von Bord aufs
+  offene Meer, `20260804-camera-59ef0c`), 13,8s bis ins Schlussschwarz. Der ist mit -34 dBFS RMS
+  sehr leise aufgenommen und braucht **+6 dB** — die Anhebung ist am gerenderten Ausschnitt
+  gegengemessen (Spitzenpegel im Schlussfenster -4,2 dBFS, Summe ~-28 statt -40 dBFS RMS) und
+  traegt dafuer `gain_verified: true` in der Timeline. `qc._check_audio_clipping_risk` kennt
+  diese Ausnahme jetzt, gleiche Bauart wie `intentional_repeat` bei den Videoclips.
+- Die 5 Sekunden kommen aus dem Schluss: 04.08. von 8,4s auf 6,9s je Clip (alle drei Bilder
+  bleiben drin) und das Schlussschwarz von 3,0s auf 2,5s.
+
+**Bauchbinden neu, drei Zeilen** (Aufbau vom Nutzer vorgegeben):
+`Tag 13 - 30.07.2026` / `Uvdal · Angeln, Bogenschießen & Kanu` bzw. `Fahrt von X nach Y ueber Z`
+/ `Tagesstrecke: 266 km  |  Gesamtstrecke: 2.205 km`. Die Panelbreite entsteht in **zwei
+Durchgaengen**: erst rendert `stage-caption-recipe.py` die Binde mit unsichtbarem Panel und
+misst die Textbreite an der Alpha-Maske, dann mit Panel in genau dieser Breite (900-1374px statt
+einheitlich 1560px). Panel und Text stecken damit in EINEM PNG, `timeline.json` hat ein Overlay
+je Kapitel statt zwei. Gesamtstrecke ist die Summe aus `stages.csv` bis einschliesslich des
+Tages, Faehrstrecken inklusive (3.829 km am Reiseende).
+
+**Gegengeprueft am Bild, nicht behauptet** — drei 1080p-Mini-Render aus der echten Timeline
+(Ausschnitt auf t=0 geschoben, `build_filtergraph` + `_run_ffmpeg`, Kontaktbogen mit `cv2`):
+Titel laeuft ein, rollt bis 15,8s aus und steht danach pixelgleich (16/18/20/22s identisch);
+Bauchbinde dreizeilig, Text vollstaendig im Panel; Grillbild getauscht; Schlussblock mit
+Pegelmessung je 2s-Fenster.
+
+**Nebenbefund:** `templates/svg/infocard.svg` (seit `a87299a` im Repo) verlangt `info_main` und
+`info_sub`. Beide fehlten im Token-Satz der Template-Tests, seitdem waren **6 Tests rot** —
+unbemerkt, weil in Runde 3 nur gezielt einzelne Testdateien liefen. Ergaenzt; 601 Tests gruen.

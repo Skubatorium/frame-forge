@@ -154,11 +154,22 @@ def _check_video_length_consistency(timeline: Timeline) -> list[str]:
 
 
 def _check_audio_clipping_risk(timeline: Timeline) -> list[str]:
-    """Positiver Gain ist ein Clipping-Risiko — die Pipeline soll nur abschwächen, nie verstärken."""
+    """Positiver Gain ist ein Clipping-Risiko — die Pipeline soll nur abschwächen, nie verstärken.
+
+    Ausnahme mit Nachweis: traegt der Clip `gain_verified: true` (erlaubt durch `extra="allow"`
+    im Schema, gleiche Bauart wie `intentional_repeat` bei den Videoclips), gilt die Anhebung
+    als am fertigen Ton geprueft und wird nicht gemeldet. Gebraucht fuer O-Ton-Betten, die von
+    Haus aus sehr leise aufgenommen sind — das Meeresrauschen am Schluss von `vlog-edit` liegt
+    bei -34 dBFS RMS und waere ohne Anhebung schlicht nicht hoerbar. Die Regel bleibt der
+    Default; wer sie umgeht, muss den Spitzenpegel gemessen haben und das in der `note`
+    festhalten.
+    """
     return [
         f"Audio-Clip '{clip.id}' hat positiven Gain ({clip.gain_db:+.1f} dB) — Clipping-Risiko"
         for clip in timeline.tracks.audio
-        if clip.gain_db is not None and clip.gain_db > 0
+        if clip.gain_db is not None
+        and clip.gain_db > 0
+        and not getattr(clip, "gain_verified", False)
     ]
 
 
@@ -261,12 +272,47 @@ def _check_source_windows(timeline: Timeline, durations: dict[str, float]) -> li
     return issues
 
 
+def _check_music_coverage(timeline: Timeline, durations: dict[str, float]) -> list[str]:
+    """Ein Musiktrack darf nicht mehr Sekunden liefern muessen, als die Datei lang ist.
+
+    Gegenstueck zu `_check_source_windows` fuer die Tonspur, und derselbe Fehlermodus: es gibt
+    keine Fehlermeldung, der Ton hoert einfach auf. Gefunden 2026-08-09 am `vlog-edit`-Preview
+    — der letzte Titel war ab `src_in` 373,96s lang, die Timeline verlangte 385,35s, also lief
+    der Film **11,4 Sekunden stumm** zu Ende. Aufgefallen ist es dem Nutzer beim Zusehen, keiner
+    Pruefung.
+
+    Zusaetzlich: endet der letzte Musikclip mehr als eine Sekunde vor der Timeline, ist das
+    ebenfalls Stille am Schluss — dann fehlt schlicht Musik, unabhaengig von der Dateilaenge.
+    """
+    issues = []
+    music = [clip for clip in timeline.tracks.audio if getattr(clip, "src", None)]
+    for clip in music:
+        src_dur = durations.get(str(clip.src))
+        if src_dur is None:
+            continue
+        needed = float(clip.src_in or 0.0) + float(clip.dur)
+        if needed > src_dur + 0.05:
+            issues.append(
+                f"Musik '{clip.id}' verlangt {needed:.2f}s aus einer {src_dur:.2f}s langen "
+                f"Datei — die letzten {needed - src_dur:.2f}s laufen stumm"
+            )
+    if music:
+        last_end = max(float(c.tl_in) + float(c.dur) for c in music)
+        if last_end < timeline.duration - 1.0:
+            issues.append(
+                f"Musik endet bei {last_end:.2f}s, der Film laeuft bis {timeline.duration:.2f}s "
+                f"— {timeline.duration - last_end:.2f}s Stille am Schluss"
+            )
+    return issues
+
+
 def validate(
     timeline: Timeline,
     *,
     brief: dict | None = None,
     known_asset_ids: set[str] | None = None,
     asset_durations: dict[str, float] | None = None,
+    music_durations: dict[str, float] | None = None,
 ) -> list[str]:
     """Liste gefundener Probleme; leer heisst "besteht die Pruefung".
 
@@ -275,7 +321,8 @@ def validate(
     IDs aus `assets.json`) aktiviert die Pruefung, dass alle referenzierten Assets existieren.
     `asset_durations` (`{asset_id: Laufzeit in s}`, z.B. aus `probe.dur` in `assets.json`)
     aktiviert die Pruefung der Quell-Fenster — ohne die kann ein zu langes `src_out` den ganzen
-    Film abschneiden, ohne dass der Render meckert.
+    Film abschneiden, ohne dass der Render meckert. `music_durations` (`{src-Pfad: Laufzeit}`,
+    z.B. aus `probe.probe_duration`) aktiviert dasselbe fuer die Musikspur.
     """
     try:
         timeline.validate_semantics()
@@ -293,6 +340,8 @@ def validate(
         issues.extend(_check_known_assets(timeline, known_asset_ids))
     if asset_durations is not None:
         issues.extend(_check_source_windows(timeline, asset_durations))
+    if music_durations is not None:
+        issues.extend(_check_music_coverage(timeline, music_durations))
     if brief is not None:
         issues.extend(_check_against_brief(timeline, brief))
     return issues

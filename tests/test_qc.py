@@ -156,6 +156,22 @@ def test_validate_accepts_negative_or_missing_gain():
     assert validate(tl) == []
 
 
+def test_validate_accepts_positive_gain_when_marked_verified():
+    """`gain_verified` ist die dokumentierte Ausnahme fuer sehr leise O-Ton-Betten (das
+    Meeresrauschen am Schluss von `vlog-edit` liegt bei -34 dBFS RMS). Gleiche Bauart wie
+    `intentional_repeat`: die Regel bleibt Default, die Abweichung steht in der Timeline."""
+    tl = _timeline(
+        video=[{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 5, "tl_in": 0}],
+        audio=[
+            {"id": "au1", "asset": "a1", "tl_in": 0, "gain_db": 6.0, "gain_verified": True},
+            {"id": "au2", "asset": "a1", "tl_in": 0, "gain_db": 6.0},
+        ],
+    )
+    issues = validate(tl)
+    assert not any("au1" in i for i in issues)
+    assert any("Clipping" in i and "au2" in i for i in issues)
+
+
 # -- Overlay-Lesbarkeit -----------------------------------------------------
 
 

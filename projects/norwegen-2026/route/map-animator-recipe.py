@@ -1,8 +1,8 @@
-"""Rezept fuer die zwei Kartenaufgaben in `norwegen-2026`/`vlog-data` (map-animator).
+"""Rezept fuer die zwei Kartenaufgaben in `norwegen-2026`/`vlog-edit` (map-animator).
 
 **Nicht ausgefuehrt in dieser Session** (Auftrag: "Kein Rendering von Video/Preview in diesem
 Schritt"). Dieses Skript ist das exakte, direkt lauffaehige Rezept fuer den `timeline-builder`
-bzw. den Render-Schritt, der es aufruft, sobald `timeline.json` fuer `vlog-data` gebaut wird.
+bzw. den Render-Schritt, der es aufruft, sobald `timeline.json` fuer `vlog-edit` gebaut wird.
 Alle Parameter (Bounding-Box, Zoom, Track-Indizes, km-Offsets, POIs, Etappengrenzen) sind aus
 `route/roadtrip.gpx`, `route/stages.csv` und `route/locations.csv` hergeleitet und unten
 begruendet. `python map-animator-recipe.py` (ohne Argumente) rechnet nur die Tabelle nach --

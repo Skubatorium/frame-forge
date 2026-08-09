@@ -1017,6 +1017,31 @@ def build(project: str, export: str) -> None:
         )
 
 
+def _music_durations(proj, timeline) -> dict[str, float]:
+    """Laufzeit jeder in der Timeline referenzierten Musikdatei, fuer `qc.validate`.
+
+    Ein zu kurzer Track laesst den Film stumm zu Ende laufen, ohne Fehlermeldung (gefunden
+    2026-08-09: 11,4s Stille am Schluss von `vlog-edit`). Nicht ermittelbare Dateien werden
+    weggelassen statt gemeldet -- die Pruefung ist eine Zusatzsicherung, kein Gatekeeper fuer
+    exotische Formate.
+    """
+    def duration_of(src: str) -> float | None:
+        try:
+            return probe_module.probe_duration(proj.root / src)
+        except Exception:  # noqa: BLE001 -- fehlende/unlesbare Datei faellt woanders auf
+            return None
+
+    durations: dict[str, float] = {}
+    for clip in timeline.tracks.audio:
+        src = getattr(clip, "src", None)
+        if not src or str(src) in durations:
+            continue
+        found = duration_of(str(src))
+        if found is not None:
+            durations[str(src)] = found
+    return durations
+
+
 @app.command()
 def preview(project: str, export: str) -> None:
     """1080p-Proxy-Render. Erfordert `timeline.json` + Export-Phase >= TIMELINE + QC-Pass."""
@@ -1047,7 +1072,8 @@ def preview(project: str, export: str) -> None:
         if a.get("kind") != "photo" and (a.get("probe") or {}).get("dur")
     }
     issues = qc.validate(
-        timeline, brief=brief, known_asset_ids=known_ids, asset_durations=durations
+        timeline, brief=brief, known_asset_ids=known_ids, asset_durations=durations,
+        music_durations=_music_durations(proj, timeline),
     )
     if issues:
         for issue in issues:
@@ -1124,7 +1150,8 @@ def render(
         if a.get("kind") != "photo" and (a.get("probe") or {}).get("dur")
     }
     issues = qc.validate(
-        timeline, brief=brief, known_asset_ids=known_ids, asset_durations=durations
+        timeline, brief=brief, known_asset_ids=known_ids, asset_durations=durations,
+        music_durations=_music_durations(proj, timeline),
     )
     if issues:
         for issue in issues:

@@ -1,4 +1,4 @@
-# Beat-Sheet — `norwegen-2026` / `vlog-data`
+# Beat-Sheet — `norwegen-2026` / `vlog-edit`
 
 **Revision 2 (2026-08-08).** Die Vollversion des Roadtrips: alle Kameras (Drohne, Chris-iPhone,
 Christina-iPhone, Fotos), durchgehende Karte unten rechts, drei Musikteile, Cold Open mit
@@ -52,7 +52,7 @@ warum der Film 18 Minuten dauern darf. Drohnenmaterial ist der **Atem** zwischen
 nicht das Rückgrat. Faustregel je Kapitel: **1 Drohnen-Establisher am Anfang, 1 am Ende, dazwischen
 Menschen/Details.** Beats, die im `drone-edit` wörtlich vorkommen, dürfen hier wiederverwendet
 werden, aber **nicht in derselben Reihenfolge und nie als ganze Sequenz** — sonst fühlt sich
-`vlog-data` wie ein gestreckter `drone-edit` an.
+`vlog-edit` wie ein gestreckter `drone-edit` an.
 
 ---
 
@@ -524,7 +524,7 @@ Vogelperspektive, Steinmännchen, „No Trolls beyond this point"-Schild.
 mindestens zwei fremde Beats dazwischen, damit die gemeinsame Herkunft nicht auffällt. Der
 beschleunigte Mittelteil dieses Clips ist gesperrt (`speed > 1.0`).
 **Menschen im Höhepunkt:** mindestens **zwei** der Verdichtungsbeats zeigen Gesichter auf der
-Plattform. Der `drone-edit` durfte hier menschenleer sein — `vlog-data` darf es nicht, sonst
+Plattform. Der `drone-edit` durfte hier menschenleer sein — `vlog-edit` darf es nicht, sonst
 kippt der Film in seiner stärksten Passage in eine andere Erzählung.
 **Fotoanteil:** höchstens 20 %, und **nie zwei Fotos hintereinander** in der Verdichtung.
 
