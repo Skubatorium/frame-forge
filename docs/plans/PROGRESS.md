@@ -2939,3 +2939,17 @@ Drohne (`bt709`), 61 HEIC-Fotos (Display P3). Drei Raeume, bis dahin null Konver
 `drone-edit` bleibt wie er ist (korrekt getaggt, keine HLG-Quellen). Der `vlog-edit`-4K-Export
 traegt dieselben falschen Tags wie die 1080p und muesste bei Bedarf ebenfalls neu gerendert
 werden — auf Nutzerwunsch zunaechst nur die 1080p.
+
+### Neu gerendert (2026-08-10, 17:27)
+
+`vlog-edit_1080p.mp4` neu erzeugt (1080,4 s, 1,06 GB — vorher 1,78 GB, der Unterschied kommt
+aus dem sauberen Limited-Range-Signal). Farbtags am fertigen File geprueft:
+
+```
+pix_fmt=yuv420p  color_range=tv  bt709 / bt709 / bt709
+```
+
+Stichproben gegen die Quellen: HLG-Clips sind hoerbar—sichtbar heller als vorher (die
+Nicht-Konvertierung hatte sie zu dunkel gehalten), Hauttoene neutral, keine ausgefressenen
+Lichter. `vlog-edit_4k.mp4` traegt weiterhin die alten, falschen Tags — auf Nutzerwunsch nur
+die 1080p neu gerendert.
