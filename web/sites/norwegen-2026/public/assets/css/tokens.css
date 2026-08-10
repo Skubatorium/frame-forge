@@ -1,8 +1,8 @@
 /* ============================================================
-   tokens.css — SYSTEM-TOKENS (reisenübergreifend)
+   tokens.css - SYSTEM-TOKENS (reisenübergreifend)
    Hier stehen nur Dinge, die für JEDE Reise-Website gleich
    bleiben: Typo-Skala, Abstände, Radien, Linien, Motion,
-   Breakpoints — plus die Namen der Farb-ROLLEN.
+   Breakpoints - plus die Namen der Farb-ROLLEN.
    Die konkreten Farbwerte liefert die Theme-Datei
    (z. B. theme-norwegen-2026.css). Diese Datei nie pro Reise
    anfassen.
@@ -91,7 +91,7 @@
   --dur-2: 240ms; /* @kind other */   /* Hover, kleine Bewegung */
   --dur-3: 480ms; /* @kind other */   /* Einblendungen */
   --dur-cross: 2200ms; /* @kind other */  /* Hero-Überblendung */
-  --dur-scene: 7000ms; /* @kind other */  /* Standzeit je Hero-Bild */
+  --dur-scene: 9000ms; /* @kind other */  /* Standzeit je Hero-Bild */
 
   /* --- Fokus --- */
   --focus-width: 2px; /* @kind other */
@@ -105,7 +105,7 @@
   --z-skip: 40; /* @kind other */
 
   /* ==========================================================
-     FARB-ROLLEN — Namen, keine Werte.
+     FARB-ROLLEN - Namen, keine Werte.
      Neutrale Notfall-Defaults; die Theme-Datei überschreibt
      jede dieser Zeilen. Komponenten benutzen ausschließlich
      diese Rollen, nie Palettenwerte direkt.
@@ -137,7 +137,7 @@
   --selection-fg: #ffffff;
 }
 
-/* Breakpoints (Referenz — Custom Properties funktionieren in
+/* Breakpoints (Referenz - Custom Properties funktionieren in
    @media nicht, die Werte stehen hier zur Dokumentation):
    s  = 480px    Handy quer
    m  = 720px    kleines Tablet

@@ -1,5 +1,5 @@
 /* ============================================================
-   theme-norwegen-2026.css — THEMEN-TOKENS für diese eine Reise
+   theme-norwegen-2026.css - THEMEN-TOKENS für diese eine Reise
    Palette: Fjordblau, Gletschertürkis, Granit, Kiefer/Moos,
    Mitternachtssonnen-Gold. Flaggenfarben nur als Marke.
    Für eine neue Reise wird NUR diese Datei ersetzt.
@@ -77,10 +77,13 @@
       rgb(7 15 22 / 0.58) 72%,
       var(--bg-page) 100%);
   /* Schutzverlauf auf Karten-Bildern */
+  /* Kraeftiger als zunaechst gedacht: die Teaserbilder sind hell
+     (Wolken, Wasser, Sommergruen), darunter steht Fliesstext. */
   --scrim-card: linear-gradient(to top,
-      rgb(7 15 22 / 0.92) 0%,
-      rgb(7 15 22 / 0.35) 52%,
-      rgb(7 15 22 / 0.05) 100%); /* @kind other */
+      rgb(7 15 22 / 0.95) 0%,
+      rgb(7 15 22 / 0.88) 42%,
+      rgb(7 15 22 / 0.45) 70%,
+      rgb(7 15 22 / 0.10) 100%); /* @kind other */
   /* Kalte Grundstimmung auf Bildmaterial (dezent) */
   --img-filter: saturate(0.94) contrast(1.03); /* @kind other */
   /* Flaggen-Akzentmarke: drei Striche Rot/Weiß/Marine */

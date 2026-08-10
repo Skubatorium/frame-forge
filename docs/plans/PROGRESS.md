@@ -2768,6 +2768,7 @@ mit den fertigen Filmen. Pilot: `web/sites/norwegen-2026/` fuer https://norwegen
 | Struktur `web/` + Design-Prompt | ✅ `856d481` |
 | Designsystem-Export (5 Seiten, Tokens, Komponenten) | ✅ `f13d623`, `8a26491` |
 | `public/` mit echten Bildern aus dem Material | ✅ `16e5072`, `96b71bd` |
+| Umbau nach Nutzer-Feedback (Plan `docs/plans/0002-website-feedback.md`) | ✅ |
 | Schriften (Schibsted Grotesk, Source Serif 4) | ⬜ Netzzugriff gesperrt, Nutzer laedt sie |
 | Videos auf den Server | ⬜ Nutzer, 4 Dateien / ~14 GB |
 | Traefik Basic Auth | ⬜ Nutzer, Infrastruktur-Ebene |
@@ -2787,6 +2788,28 @@ mit den fertigen Filmen. Pilot: `web/sites/norwegen-2026/` fuer https://norwegen
    zweites Deliverable derselben Freigabe, kein zweiter Schnitt. Geaenderte Timeline blockiert
    weiterhin. `.claude/hooks/gate.py` gibt den Fingerprint mit.
 
+### Runde 2: Umbau nach dem ersten Deployment (2026-08-10)
+
+Vollstaendige Liste in `docs/plans/0002-website-feedback.md`. Die Punkte, die ueber Text
+hinausgehen:
+
+1. **Standbilder sind jetzt reproduzierbar** (`deploy/grab-stills.py`): Teaser, Seitenkoepfe,
+   Video-Poster und die Routenkarte entstehen aus Asset-IDs bzw. den fertigen Filmen. FFmpeg
+   laeuft dabei ueber `frameforge.render._run_ffmpeg_cmd`, nicht nackt. Die Poster sind die
+   echten Titelbilder der Filme (Vlog Sekunde 19, Drone Sekunde 13; Quelle fuer die Zeitpunkte:
+   `timeline.json`, Overlay `ov-title-*`).
+2. **Hero-Rotator**: Das Kreuzfahrtschiff ist raus, fuenf Szenen statt sechs. Der beim Laden
+   sichtbare „Doppel-Zoom" kam daher, dass Szene 1 eingezoomt startete, waehrend dasselbe Bild
+   ungezoomt als `background-image` darunter lag. Szenen starten jetzt auf `scale(1)`.
+3. **Flagge in der Kopfzeile** war ein waagerechter Streifenverlauf und damit keine
+   Norwegen-Flagge. Ersetzt durch dasselbe SVG wie im Favicon (`.flagmark--flag`).
+4. **Gemessene Zahlen statt Schaetzungen**: 30 fps (nicht 60 — die Timeline steht auf 30),
+   1,8 / 7,3 / 1,5 / 5,8 GB, 13 / 54 / 21 / 82 Mbit/s. Quelle `frameforge.probe.probe_video`.
+5. **Rundkurs 1.332 km / 22 h 40 min** — der Nutzer hat `index/final-route.png` gegen den
+   richtigen Screenshot getauscht (Rueckweg identisch ueber Heddal statt Schleife ueber
+   Kongsberg). Alle Stellen nachgezogen, auch `content/facts.md` und `deploy/README.md`.
+6. **Geviertstriche komplett raus.** Ausdruecklicher Wunsch: liest sich wie maschinell erzeugt.
+
 ### Stolperstellen
 
 - **`_generated/` unter `media_root` war verschwunden.** Der 1080p-Lauf des Vlogs brach sofort
@@ -2795,6 +2818,10 @@ mit den fertigen Filmen. Pilot: `web/sites/norwegen-2026/` fuer https://norwegen
   sie stehen in `assets.json` wie jedes andere Material.
 - **Netzzugriff ist aus der Arbeitsumgebung gesperrt.** Schriften und andere externe Dateien
   muss der Nutzer selbst beschaffen.
+- **`url()` in einer Custom Property** wird relativ zu dem Stylesheet aufgeloest, in dem die
+  *Verwendung* steht, nicht die Deklaration. `--header-image: url('assets/img/...')` im
+  `<style>`-Block der Seite, benutzt in `components.css`, ergab
+  `/assets/css/assets/img/...` → 404. Deshalb dort absolute Pfade ab Docroot.
 - **Bitraten der 1080p-Fassungen** liegen bei CRF 20 hoeher als erwartet: vlog 1,7 GB
   (~12,6 Mbit/s), drone 1,4 GB (~20 Mbit/s). Bewusst so belassen — geschaut wird am grossen
   Bildschirm, nicht unterwegs.

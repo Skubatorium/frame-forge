@@ -1,5 +1,5 @@
 /* ============================================================
-   components.css — die benannten Bausteine.
+   components.css - die benannten Bausteine.
    Reihenfolge: nav · hero-rotator · page-header · prose-Ergänzung
    · button · film-card · stat-grid · video-block · map-figure
    · fact-list · fun-facts · notice · footer
@@ -12,7 +12,7 @@
 .nav__inner { display: flex; align-items: center; gap: var(--space-5); min-height: var(--nav-height); flex-wrap: wrap }
 .nav__brand { display: flex; align-items: center; gap: var(--space-3); font-family: var(--font-display); font-weight: var(--weight-semibold); font-size: var(--step--1); letter-spacing: 0.02em; color: var(--text-1); text-decoration: none; margin-right: auto }
 .nav__brand:hover { color: var(--text-1) }
-.nav__brand .flagmark { width: 22px; height: 12px; border-radius: var(--radius-1) }
+.nav__brand .flagmark--flag { flex: none }
 .nav__list { display: flex; align-items: center; gap: var(--space-1); list-style: none; padding: 0; margin: 0; flex-wrap: wrap }
 .nav__link { display: block; font-family: var(--font-display); font-size: var(--step--1); font-weight: var(--weight-medium); color: var(--text-3); text-decoration: none; padding: var(--space-2) var(--space-3); border-radius: var(--radius-2); transition: color var(--dur-1) var(--ease-out), background var(--dur-1) var(--ease-out) }
 .nav__link:hover { color: var(--text-1); background: var(--bg-raised) }
@@ -20,21 +20,26 @@
 .nav__link[aria-current="page"]::after { content: ""; display: block; height: 2px; margin-top: 5px; background: var(--accent); border-radius: var(--radius-1) }
 
 /* -------------------------- hero-rotator -------------------------
-   Vollbild-Hero mit 4–6 überblendenden Standbildern.
-   Reines CSS. Keyframes sind auf SECHS Szenen abgestimmt
-   (--dur-scene je Bild); bei anderer Anzahl --n setzen und die
-   Prozentwerte unten anpassen. prefers-reduced-motion → Standbild. */
+   Vollbild-Hero mit überblendenden Standbildern. Reines CSS.
+   Die Prozentwerte unten sind auf FÜNF Szenen gerechnet: jede Szene
+   belegt 20 % des Zyklus, das Überblendfenster ragt 4 % in die
+   nächste hinein. Bei anderer Anzahl --n setzen UND die Werte
+   nachrechnen. prefers-reduced-motion → Standbild.
+
+   Wichtig: Die Szene startet auf scale(1) - also exakt dem Ausschnitt
+   des Grundbildes darunter. Startete sie eingezoomt, sähe der erste
+   Wechsel nach dem Laden wie ein harter Doppel-Zoom aus. */
 .hero { position: relative; min-height: min(88svh, 900px); display: grid; align-items: end; isolation: isolate; overflow: clip }
 /* Grundbild verhindert ein schwarzes Bild in der ersten Sekunde:
    Szene 1 liegt als background-image (inline gesetzt) darunter. */
 .hero__scenes { position: absolute; inset: 0; z-index: -2; background: var(--fjord-800) center / cover no-repeat; filter: var(--img-filter) }
-.hero__scene { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; will-change: opacity, transform; animation: hero-scene calc(var(--n, 6) * var(--dur-scene)) var(--ease-in-out) infinite; animation-delay: calc(var(--i, 0) * var(--dur-scene)) }
+.hero__scene { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; will-change: opacity, transform; animation: hero-scene calc(var(--n, 5) * var(--dur-scene)) linear infinite; animation-delay: calc(var(--i, 0) * var(--dur-scene)) }
 @keyframes hero-scene {
-  0%   { opacity: 0; transform: scale(1.06) }
-  4%   { opacity: 1 }
-  15%  { opacity: 1 }
-  19%  { opacity: 0; transform: scale(1.12) }
-  100% { opacity: 0; transform: scale(1.12) }
+  0%   { opacity: 0; transform: scale(1) }
+  3%   { opacity: 1 }
+  20%  { opacity: 1 }
+  24%  { opacity: 0; transform: scale(1.075) }
+  100% { opacity: 0; transform: scale(1.075) }
 }
 .hero__scrim { position: absolute; inset: 0; z-index: -1; background: var(--scrim-hero) }
 .hero__inner { padding-block: clamp(3rem, 8vh, 7rem) }
@@ -57,7 +62,18 @@
 .page-header__meta { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); margin-top: var(--space-6); list-style: none; padding: 0 }
 .page-header__meta li { font-family: var(--font-display); font-size: var(--step--1); color: var(--text-3) }
 .page-header__meta b { color: var(--text-1); font-weight: var(--weight-medium) }
+.page-header__meta small { font-size: 1em; color: var(--text-3) }
+.page-header__meta a { color: var(--text-2); text-decoration-color: var(--accent-quiet) }
+.page-header__meta a:hover { color: var(--accent) }
 .page-header--quiet { background: none }
+
+/* Bildkopf der beiden Filmseiten: dasselbe Geruest, nur mit Standbild
+   und Schutzverlauf dahinter. Beide Filmseiten benutzen ihn, damit sie
+   nicht unterschiedlich dunkel wirken. */
+.page-header--image { position: relative; isolation: isolate; background: var(--fjord-950); border-bottom: 0; padding-block: clamp(5rem, 12vw, 9rem) var(--space-8) }
+.page-header--image::before { content: ""; position: absolute; inset: 0; z-index: -2; background: var(--header-image) center / cover no-repeat; filter: var(--img-filter) }
+.page-header--image::after { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--scrim-hero) }
+.page-header--image .page-header__title { color: var(--snow-100) }
 
 /* ---------------------------- button -----------------------------
    Drei Varianten: primär · sekundär · download. Keine Schatten,
@@ -91,7 +107,9 @@
 .film-card__title { font-size: var(--step-3); color: var(--snow-100) }
 .film-card__text { margin-top: var(--space-3); max-width: 42ch; color: var(--text-2); font-size: var(--step-0) }
 .film-card__actions { margin-top: var(--space-5); display: flex; gap: var(--space-3); flex-wrap: wrap }
-.film-card__duration { font-family: var(--font-display); font-size: var(--step--2); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--accent) }
+/* Plakette statt nackter Schrift: der Kicker liegt auf dem Bild und war
+   auf hellen Motiven (Wolken, Wasser) nicht mehr zu lesen. */
+.film-card__duration { display: inline-block; font-family: var(--font-display); font-size: var(--step--2); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--accent); background: rgb(7 15 22 / 0.72); border: var(--hairline) solid var(--line-2); border-radius: var(--radius-2); padding: 0.45em 0.8em; backdrop-filter: blur(6px) }
 
 /* --------------------------- stat-grid ---------------------------
    Zahl groß, Label klein. 2 Spalten mobil, bis 4 auf großem Schirm. */
@@ -102,6 +120,9 @@
 .stat { background: var(--bg-page); padding: var(--space-6) var(--space-5); display: flex; flex-direction: column; gap: var(--space-2) }
 .stat__value { font-family: var(--font-display); font-size: clamp(1.62rem, 1.05rem + 1.75vw, 3rem); white-space: nowrap; font-weight: var(--weight-medium); color: var(--text-1); line-height: var(--leading-tight); letter-spacing: -0.02em; font-variant-numeric: lining-nums }
 .stat__value small { font-size: 0.5em; color: var(--text-3); font-weight: var(--weight-regular); letter-spacing: 0 }
+/* Datumsspanne: beide Daten gleich gross. Mit <small> sah der zweite Teil
+   aus wie eine Einheit, nicht wie das Ende des Zeitraums. */
+.stat__value--range { font-size: clamp(1.2rem, 0.85rem + 1.1vw, 2rem) }
 .stat__label { font-family: var(--font-display); font-size: var(--step--2); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--text-3) }
 .stat-grid--sunken .stat { background: var(--bg-sunken) }
 .stat-bar__foot { display: flex; justify-content: flex-end; margin-top: var(--space-4) }
@@ -120,14 +141,19 @@
 .panel__title { font-size: var(--step-1); margin-bottom: var(--space-4) }
 .panel dl { display: grid; grid-template-columns: auto 1fr; gap: var(--space-3) var(--space-5); margin: 0 }
 .panel dt { font-family: var(--font-display); font-size: var(--step--1); color: var(--text-3) }
-.panel dd { margin: 0; font-size: var(--step--1); font-family: var(--font-display); color: var(--text-1); font-variant-numeric: tabular-nums }
+/* Keine Tabellenziffern hier: die Werte stehen untereinander, aber sie
+   enthalten Punkte und Kommata, die im Tabularsatz auseinandergezogen
+   werden ("7 , 3 GB"). Versalziffern reichen. */
+.panel dd { margin: 0; font-size: var(--step--1); font-family: var(--font-display); color: var(--text-1); font-variant-numeric: lining-nums }
 .download { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-5); padding: var(--space-6); background: var(--bg-raised); border: var(--hairline) solid var(--line-1); border-radius: var(--radius-3) }
 .download__text { flex: 1 1 22rem; min-width: 0 }
 .download__text p { color: var(--text-3); font-size: var(--step--1); margin-top: var(--space-2) }
 
 /* --------------------------- map-figure --------------------------- */
 .map-figure { margin: 0; display: flex; flex-direction: column; gap: var(--space-4) }
-.map-figure__frame { border: var(--hairline) solid var(--line-1); border-radius: var(--radius-3); overflow: hidden; background: var(--fjord-800) }
+/* Deckel auf die Breite: die Kartenquelle ist ein Screenshot mit fester
+   Pixelbreite. Weiter aufgezogen wird sie nur unscharf. */
+.map-figure__frame { border: var(--hairline) solid var(--line-1); border-radius: var(--radius-3); overflow: hidden; background: var(--fjord-800); max-width: 900px }
 .map-figure img { width: 100%; filter: var(--img-filter) brightness(0.94) }
 .map-figure figcaption { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2) var(--space-5); color: var(--text-3); font-size: var(--step--1); max-width: var(--measure) }
 
@@ -140,6 +166,10 @@
 .fact-list__item--mark::before { background: var(--accent); width: 7px; height: 7px; left: -4px }
 .fact-list__name { font-family: var(--font-display); font-weight: var(--weight-medium); color: var(--text-1); font-size: var(--step-0) }
 .fact-list__note { display: block; margin-top: var(--space-1); color: var(--text-3); font-size: var(--step--1) }
+.fact-list__index { display: inline-block; min-width: 1.9em; font-variant-numeric: tabular-nums; color: var(--text-3); font-weight: var(--weight-regular) }
+/* Legende, damit die hervorgehobenen Punkte nicht willkuerlich wirken. */
+.fact-legend { display: flex; align-items: center; gap: var(--space-3); margin-top: var(--space-4); color: var(--text-3); font-size: var(--step--2); font-family: var(--font-display) }
+.fact-legend::before { content: ""; width: 7px; height: 7px; border-radius: var(--radius-pill); background: var(--accent); flex: none }
 .fact-list--columns { columns: 1 }
 @media (min-width: 900px) { .fact-list--columns { columns: 2; column-gap: var(--space-8) } .fact-list--columns .fact-list__item { break-inside: avoid } }
 
@@ -162,8 +192,13 @@
 .notice__title { display: block; font-family: var(--font-display); font-size: var(--step--2); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--text-3); margin-bottom: var(--space-3) }
 .notice--quiet { background: none; border-left-color: var(--line-2) }
 
+/* ----------------------------- pager -----------------------------
+   Untere Blaetter-Navigation. Dieselbe Reihenfolge wie oben in der
+   Kopfzeile: Start · Roadtrip · Drone · Zahlen & Fakten · Start.    */
+.pager { display: flex; flex-wrap: wrap; gap: var(--space-4); justify-content: space-between; align-items: center }
+
 /* ----------------------------- footer ----------------------------- */
-.footer { background: var(--bg-sunken); border-top: var(--hairline) solid var(--line-1); padding-block: var(--space-8) var(--space-7); margin-top: var(--section-gap) }
+.footer { background: var(--bg-sunken); border-top: var(--hairline) solid var(--line-1); padding-block: var(--space-8) var(--space-7); margin-top: calc(var(--section-gap) * 0.45) }
 .footer__grid { display: grid; gap: var(--space-7); grid-template-columns: 1fr }
 @media (min-width: 860px) { .footer__grid { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: var(--space-9) } }
 .footer__share { max-width: var(--measure); color: var(--text-3); font-size: var(--step--1); line-height: var(--leading-normal) }

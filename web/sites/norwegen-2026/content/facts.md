@@ -24,14 +24,14 @@ damit sie bei Korrekturen an einer Stelle nachgezogen werden können.
   1.089 Stützpunkte in `route/elevation.json`. Grober Richtwert, kein Tachowert.
 - **3.829 km** Gesamtstrecke — Summe der `km`-Spalte aus `stages.csv` (inkl. ca. 325 km
   Fährstrecke).
-- **1.319 km / 22 h 31 min** Roadtrip-Rundkurs — Angabe aus dem Google-Maps-Screenshot.
+- **1.332 km / 22 h 40 min** Roadtrip-Rundkurs — Angabe aus dem Google-Maps-Screenshot.
 
 ## Kartenbild
 
 Liegt vor: `media/route-map-source.png` (2276 × 1844, Quelle:
 `projects/norwegen-2026/index/final-route.png`).
 
-Zeigt **nur den Roadtrip-Rundkurs** ab/bis Skien — 1.319 km, 22 h 31 min. Google Maps
+Zeigt **nur den Roadtrip-Rundkurs** ab/bis Skien — 1.332 km, 22 h 40 min. Google Maps
 erlaubt maximal zehn Wegpunkte, mehr Stationen hätten die Strecke verzerrt. Die Gesamtstrecke
 enthält zusätzlich Grevenbroich → Hamburg → Flensburg → Hirtshals, die Fähre nach Larvik und
 den identischen Rückweg — insgesamt ca. 3.829 km.

@@ -1,11 +1,11 @@
-<!-- @dsCard group="Website" viewport="1280x800" name="Film · Roadtrip" subtitle="film-vlog.html — Player, Infopanels, Download" -->
+<!-- @dsCard group="Website" viewport="1280x800" name="Film · Roadtrip Edition" subtitle="film-vlog.html - Player, Infopanels, Download" -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Roadtrip — Norwegen 2026</title>
-<meta name="description" content="Der 18-minütige Roadtrip-Film der Norwegenreise 2026, mit mitlaufender Karte.">
+<title>Roadtrip Edition - Norwegen 2026</title>
+<meta name="description" content="Der 18-minütige Roadtrip-Film der Norwegenreise 2026: achtzehn Tage der Reihe nach.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/tokens.css">
@@ -13,17 +13,25 @@
 <link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/base.css">
 <link rel="stylesheet" href="assets/css/components.css">
+<style>
+/* Beide Filmseiten teilen sich Grund und Bildkopf, damit sie gleich wirken.
+   Unterschiedlich ist nur das Motiv. */
+body { background: var(--fjord-950) }
+.page-header--image { --header-image: url('/assets/img/head-vlog.jpg') }
+.section { padding-block: calc(var(--section-gap) * 1.15) }
+.stat, .footer { background: transparent }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 <header class="nav">
 <div class="wrap nav__inner">
-<a class="nav__brand" href="index.html"><span class="flagmark" aria-hidden="true"></span>Norwegen 2026</a>
+<a class="nav__brand" href="index.html"><span class="flagmark flagmark--flag" role="img" aria-label="Norwegen"></span>Norwegen 2026</a>
 <nav aria-label="Hauptnavigation">
 <ul class="nav__list">
 <li><a class="nav__link" href="index.html">Start</a></li>
-<li><a class="nav__link" href="film-vlog.html" aria-current="page">Roadtrip</a></li>
-<li><a class="nav__link" href="film-drone.html">Drone Edit</a></li>
+<li><a class="nav__link" href="film-vlog.html" aria-current="page">Roadtrip Edition</a></li>
+<li><a class="nav__link" href="film-drone.html">Drone Edition</a></li>
 <li><a class="nav__link" href="fakten.html">Zahlen &amp; Fakten</a></li>
 </ul>
 </nav>
@@ -32,24 +40,25 @@
 
 <main id="main">
 
-<header class="page-header">
+<header class="page-header page-header--image">
 <div class="wrap wrap--content">
 <p class="eyebrow page-header__eyebrow">Film 1</p>
-<h1 class="page-header__title">Roadtrip</h1>
-<p class="page-header__sub">Achtzehn Tage in der Reihenfolge, in der sie passiert sind — von der Fähre über das Skagerrak bis zurück an die Schärenküste.</p>
+<h1 class="page-header__title">Roadtrip Edition</h1>
+<p class="page-header__sub">Achtzehn Tage in der Reihenfolge, in der sie passiert sind - von der Fähre über das Skagerrak bis zurück an die Schärenküste.</p>
 <ul class="page-header__meta">
-<li><b>18:00 min</b></li>
-<li><b>3840 × 2160</b>, 30 fps</li>
+<li><b>18:00</b> <small>min</small></li>
 <li><b>167</b> Einstellungen</li>
 <li>Streaming <b>1080p</b></li>
+<li><a href="#download">Download in 4K</a></li>
 </ul>
 </div>
 </header>
 
 <section class="section section--tight wrap wrap--content">
 <div class="prose stack">
-<p class="lead">Dieser Film ist die Reise selbst: chronologisch, mit Datum und Etappe, und mit einer Karte unten rechts, auf der die gefahrene Strecke mitwächst.</p>
-<p>Er beginnt still. Ein Cold Open ohne Musik, nur Wind, während sich die Route Kilometer für Kilometer über die Karte schiebt. Erst danach setzt das erste der drei Musikstücke ein, die den Film in drei Teile gliedern und jeweils ineinander überblenden — grob: Anreise und Telemark, der Westen mit Fjorden und Pässen, die Rückfahrt über die Hochebene. Text gibt es nur dort, wo er hilft: Datum, Ort, Etappe. Kommentar gibt es keinen.</p>
+<p class="lead">Dieser Film ist die Reise selbst: chronologisch, mit Datum, Ort und Etappe - ein Reisetagebuch aus achtzehn Tagen.</p>
+<p>Er beginnt zu Hause in Grevenbroich, mit einem Kombi, an dem noch die Dachbox offen steht, und endet auf derselben Einfahrt. Dazwischen liegen die Fähre über das Skagerrak, ruhige Tage am See in der Telemark, die Passstraße hinunter an den Aurlandsfjord, zwanzig Kilometer Dunkelheit im Lærdalstunnel, der Wasserfall bei Olden, die Sieben Schwestern im Geirangerfjord, die elf Haarnadelkurven des Trollstigen im Nebel und die karge Weite von Valdresflye.</p>
+<p>Drei Musikstücke gliedern den Film in drei Teile und blenden jeweils ineinander über. Text gibt es nur dort, wo er hilft: Datum, Ort, Tagesstrecke. Kommentar gibt es keinen.</p>
 </div>
 </section>
 
@@ -63,7 +72,7 @@
 <p>Dein Browser kann dieses Video nicht abspielen. <a href="/videos/vlog-edit_1080p.mp4">Direkt herunterladen (1080p)</a>.</p>
 </video>
 </div>
-<p class="video-block__caption"><span><b>1080p</b> Streaming-Fassung</span><span><b>1,7 GB</b></span><span>Ton: drei Musikstücke, kein Kommentar</span></p>
+<p class="video-block__caption"><span><b>1080p</b> Streaming-Fassung</span><span><b>1,8 GB</b></span><span>Ton: Musik, kein Kommentar</span></p>
 </div>
 </section>
 
@@ -72,20 +81,19 @@
 <div class="panel">
 <h2 class="panel__title">Über den Film</h2>
 <div class="prose prose--wide stack">
-<p>Die Dramaturgie folgt der Musik, nicht der Landkarte: drei Stücke, drei Kapitel, die weich ineinanderlaufen. Innerhalb der Kapitel bleibt die Reihenfolge streng chronologisch — was an Tag neun passiert ist, kommt an Tag neun.</p>
-<p>Die Kartenanimation unten rechts läuft durchgehend mit. Sie zeigt den aktuellen Ort und die bis dahin gefahrene Gesamtstrecke; im Cold Open ist sie für eine Minute das einzige Bewegte im Bild.</p>
-<p>Geschnitten aus 1.181 gesichteten Aufnahmen, knapp vier Stunden Rohmaterial. 167 Einstellungen haben es in den Film geschafft.</p>
+<p>Die Dramaturgie folgt der Musik, nicht der Landkarte: drei Stücke, drei Kapitel, die weich ineinanderlaufen. Innerhalb der Kapitel bleibt die Reihenfolge streng chronologisch - was an Tag neun passiert ist, kommt an Tag neun.</p>
+<p>Geschnitten wurde aus 1.181 gesichteten Aufnahmen: 465 Videoclips mit knapp vier Stunden Laufzeit und 716 Fotos. 167 Einstellungen haben es in den Film geschafft.</p>
+<p>Musik: <em>Cuatro Vientos</em> (Danit), <em>Naturaleza (Mose Edit)</em> (Mose &amp; Danit) und <em>Aguila de Oro (Ecstatic Mix)</em> (Little Whale, Sariel Orenda &amp; UAK).</p>
 </div>
 </div>
 <div class="panel">
 <h2 class="panel__title">Technisches</h2>
 <dl>
 <dt>Länge</dt><dd>18:00 min</dd>
-<dt>Auflösung</dt><dd>3840 × 2160, 30 fps</dd>
 <dt>Einstellungen</dt><dd>167 von 1.181</dd>
-<dt>Rohmaterial</dt><dd>ca. 4 h</dd>
-<dt>Streaming</dt><dd>1080p, 1,7 GB</dd>
-<dt>Download</dt><dd>4K, 6,8 GB</dd>
+<dt>Rohmaterial</dt><dd>465 Videos, 716 Fotos</dd>
+<dt>Streaming</dt><dd>1920 × 1080, 30 fps<br>1,8 GB · 13 Mbit/s</dd>
+<dt>Download</dt><dd>3840 × 2160, 30 fps<br>7,3 GB · 54 Mbit/s</dd>
 </dl>
 </div>
 </div>
@@ -96,17 +104,17 @@
 <div class="download">
 <div class="download__text">
 <h3>4K-Fassung herunterladen</h3>
-<p>3840 × 2160, 30 fps. <b>6,8 GB</b> — das ist eine sehr große Datei. Die 4K-Fassung hat eine sehr hohe Datenrate und will eine Leitung ab etwa <b>20 Mbit/s</b>: über Mobilfunk lieber nicht, und am besten erst herunterladen, dann schauen.</p>
+<p>Für alle, die die Landschaft in voller Auflösung sehen wollen: 3840 × 2160 bei 54 Mbit/s. Zum Streamen ist das zu viel, deshalb läuft oben die 1080p-Fassung - herunterladen und lokal abspielen sieht deutlich besser aus. <b>7,3 GB</b>, über Mobilfunk lieber nicht, und bitte nur einmal laden.</p>
 </div>
-<a class="btn btn--download" href="/videos/vlog-edit_4k.mp4" download>Roadtrip in 4K <span class="btn__size">6,8 GB</span></a>
+<a class="btn btn--download" href="/videos/vlog-edit_4k.mp4" download>Roadtrip Edition in 4K <span class="btn__size">7,3 GB</span></a>
 </div>
 </section>
 
 <section class="section section--tight wrap wrap--content">
 <hr class="rule">
-<div style="display:flex;flex-wrap:wrap;gap:var(--space-4);justify-content:space-between;align-items:center">
+<div class="pager">
 <a class="btn btn--ghost" href="index.html">← Zurück zur Übersicht</a>
-<a class="btn btn--secondary" href="film-drone.html">Weiter zum Drone Edit <span class="btn__arrow" aria-hidden="true">→</span></a>
+<a class="btn btn--secondary" href="film-drone.html">Weiter zur Drone Edition <span class="btn__arrow" aria-hidden="true">→</span></a>
 </div>
 </section>
 
@@ -117,18 +125,18 @@
 <div class="footer__grid">
 <div class="footer__share">
 <span class="flagmark" aria-hidden="true" style="margin-bottom:var(--space-4)"></span>
-<p><b>Diese Seite ist privat.</b> Bitte gib Link und Passwort nicht weiter — auf den Bildern sind Menschen zu sehen, die nicht gefragt wurden, und jeder Abruf kostet Serverdaten. Soll jemand die Filme sehen: sag Bescheid, ich schicke den Zugang.</p>
+<p><b>Diese Seite ist privat.</b> Bitte gebt Link und Passwort nicht weiter. Auf den Bildern sind Familie und Freunde zu sehen, und die Filme müssen nicht durchs Netz kreisen. Soll jemand sie sehen: sagt Bescheid, ich schicke den Zugang. Das Passwort wechseln wir in Abständen.</p>
 </div>
 <nav class="footer__nav" aria-label="Fußzeile">
 <a href="index.html">Start</a>
-<a href="film-vlog.html">Roadtrip</a>
-<a href="film-drone.html">Drone Edit</a>
+<a href="film-vlog.html">Roadtrip Edition</a>
+<a href="film-drone.html">Drone Edition</a>
 <a href="fakten.html">Zahlen &amp; Fakten</a>
 <a href="impressum.html">Impressum</a>
 </nav>
 </div>
 <div class="footer__base">
-<span>Norwegen 2026 · privat, nicht kommerziell</span>
+<span>Norwegen 2026 · private Reiseseite, nicht kommerziell</span>
 </div>
 </div>
 </footer>

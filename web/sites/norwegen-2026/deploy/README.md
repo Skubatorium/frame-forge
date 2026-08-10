@@ -47,9 +47,9 @@ unter `/videos/`, solange die Middleware auf dem gesamten Router liegt.
 - **Kein gzip auf MP4** — bringt nichts und stört das Ausliefern in Teilstücken.
 - **Plattenplatz:** ~14 GB für alle vier Fassungen.
 - **Traffic:** jede vollständige Ansicht überträgt die volle Dateigröße der 1080p-Fassung
-  (~1,3 GB bzw. ~0,7 GB). Inklusivvolumen im Blick behalten.
+  (1,8 GB bzw. 1,5 GB). Inklusivvolumen im Blick behalten.
 - **`Content-Disposition: attachment`** für die `*-4k.mp4`, damit sie heruntergeladen und
-  nicht im Tab abgespielt werden (optional, aber sinnvoll — 4K liegt bei 50–76 Mbit/s).
+  nicht im Tab abgespielt werden (optional, aber sinnvoll — 4K liegt bei 54–82 Mbit/s).
 
 ## Dateinamen
 
@@ -57,10 +57,10 @@ Die Renderpipeline schreibt die Fassungen mit der Auflösung im Namen:
 
 | Datei | Zweck | Größe |
 |---|---|---|
-| `vlog-edit_1080p.mp4` | Streaming | 1,7 GB |
-| `vlog-edit_4k.mp4` | Download | 6,8 GB |
-| `drone-edit_1080p.mp4` | Streaming | 1,4 GB |
-| `drone-edit_4k.mp4` | Download | 5,4 GB |
+| `vlog-edit_1080p.mp4` | Streaming | 1,8 GB |
+| `vlog-edit_4k.mp4` | Download | 7,3 GB |
+| `drone-edit_1080p.mp4` | Streaming | 1,5 GB |
+| `drone-edit_4k.mp4` | Download | 5,8 GB |
 
 Auf dem Server dürfen sie umbenannt werden (z. B. Bindestrich statt Unterstrich) — dann die
 vier Referenzen im HTML anpassen. Alle vier Dateien werden mit `faststart` gerendert, das

@@ -1,5 +1,5 @@
 /* ============================================================
-   base.css — Reset, Grundtypografie, Seitengerüst, Utilities
+   base.css - Reset, Grundtypografie, Seitengerüst, Utilities
    ============================================================ */
 
 *, *::before, *::after { box-sizing: border-box }
@@ -74,8 +74,17 @@ a:active { color: var(--accent) }
 .prose li::marker { color: var(--accent-quiet) }
 .prose--wide { max-width: none }
 
-/* Kleine Flaggen-Marke als Trenner — 40px, mehr nicht. */
+/* Kleine Flaggen-Marke als Trenner - 40px, mehr nicht. */
 .flagmark { width: 40px; height: 3px; background: var(--flag-stripe); border-radius: var(--radius-1) }
+
+/* Echte Norwegen-Flagge fuer die Kopfzeile. Derselbe Pfad wie im Favicon:
+   roter Grund, weiss umrandetes blaues Kreuz, Kreuzbalken nach links versetzt.
+   Als background-image, damit sie ohne zusaetzlichen HTTP-Request auskommt. */
+.flagmark--flag {
+  width: 22px; height: 16px; border-radius: 2px; background: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 16'%3E%3Crect width='22' height='16' fill='%23ba0c2f'/%3E%3Cpath d='M0 6h6V0h4v6h12v4H10v6H6v-6H0z' fill='%23fff'/%3E%3Cpath d='M0 7h7V0h2v7h13v2H9v7H7V9H0z' fill='%2300205b'/%3E%3C/svg%3E");
+  background-size: cover;
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important }
