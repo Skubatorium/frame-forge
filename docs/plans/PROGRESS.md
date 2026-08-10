@@ -2953,3 +2953,31 @@ Stichproben gegen die Quellen: HLG-Clips sind hoerbar—sichtbar heller als vorh
 Nicht-Konvertierung hatte sie zu dunkel gehalten), Hauttoene neutral, keine ausgefressenen
 Lichter. `vlog-edit_4k.mp4` traegt weiterhin die alten, falschen Tags — auf Nutzerwunsch nur
 die 1080p neu gerendert.
+
+### Schwarzbild ab 8:51 im Ein-Pass-Render (2026-08-10) — **behoben durch Chunk-Render**
+
+Der erste Neurender lief ohne Fehlermeldung durch und war formal 1080,4 s lang, ab 530,7 s
+(Clip `c076`) aber durchgehend schwarz — die halbe Laufzeit. Aufgefallen ist es dem Nutzer an
+der Dateigroesse: 1,06 GB statt 1,78 GB, weil Schwarzbild praktisch nichts kostet. **Mein
+Fehler in der Verifikation:** ich hatte nur an den drei vom Nutzer genannten Zeitmarken
+stichprobiert, und die liegen alle vor 3:00.
+
+Ursache ist nicht das Material und nicht ein einzelner Clip: der alte 4K-Export ist an
+derselben Stelle intakt, und derselbe Ausschnitt (8:31–9:16) isoliert nachgerendert lief
+sauber durch. Es ist die Groesse des Graphen — 213 gleichzeitig offene Inputs, dazu jetzt je
+HLG-Clip zwei zusaetzliche Stufen (`format=gbrp` + `lut3d`). Genau die Grenze, an der laut
+`CHUNK_EDGE_MARGIN_S` schon der 4K-Render gescheitert ist. ffmpeg bricht dabei **nicht** ab,
+es schreibt ab dem Punkt schwarze Frames weiter — die Stille ist das eigentlich Gefaehrliche.
+
+Neu gerendert mit `--chunk-s 120`: 9 Chunks mit 22–25 Inputs statt 213.
+
+Verifikation des fertigen Files (jetzt vollstaendig, nicht stichprobenhaft):
+- Tags `yuv420p / tv / bt709 / bt709 / bt709`, Dauer 1080,4 s, 32.411 Frames (= 30 fps)
+- Abtastung alle 5 s ueber den ganzen Film: schwarz nur bei 0 s/5 s (Cold-Open) und 1080 s
+  (Schlussschwarz) — beides gewollt
+- alle 8 Chunk-Nahtstellen bildstetig (Mittelwert vorher/nachher innerhalb 3 %)
+
+**Offen:** die Datei ist mit 2,57 GB / 19 Mbit/s deutlich groesser als die alte 1080p
+(1,78 GB / 13 Mbit/s). Zwei Gruende: die HLG-Clips tragen nach der Konvertierung mehr
+Zeichnung (vorher flau und dunkel = billig zu kodieren), und der Chunk-Render kodiert je
+Stueck getrennt. Die Website nennt an zwei Stellen noch „1,8 GB · 13 Mbit/s".
