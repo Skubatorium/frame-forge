@@ -5,10 +5,27 @@ Plattform: skubus-VPS. Zwei getrennte Dinge, die nicht zusammen ausgeliefert wer
 ## 1. Die Website
 
 Alles aus `../public/` kommt **1:1 in den Docroot** — `index.html` und `assets/` liegen flach
-im Wurzelverzeichnis, keine zusätzliche Verschachtelung.
+im Wurzelverzeichnis, die englische Fassung unter `en/`.
+
+Deployt wird über `deploy-norway-site.sh` im Repo-Wurzelverzeichnis. Das Skript lädt **nicht**
+`public/` direkt hoch, sondern eine Kopie, in der jeder Asset-Verweis einen Inhalts-Hash trägt
+(`…/base.css?v=ab12cd34`, erzeugt von `cache-bust.py`).
+
+**Warum das nötig ist:** Vor dem Server steht Cloudflare. Die HTML kommt frisch durch
+(`cf-cache-status: DYNAMIC`), CSS und Bilder aber nicht — die liegen mit `max-age=14400`
+vier Stunden im Edge-Cache. Nach einem Deploy zeigt also neues HTML stundenlang auf alte
+Assets. Genau so verschwand am 10.08. der Sprachumschalter: Die Kürzel „DE"/„EN" waren im
+HTML schon durch Flaggen-Elemente ersetzt, die zugehörigen CSS-Regeln aber noch nicht
+ausgeliefert — also stand dort nichts mehr.
+
+Mit dem Hash in der URL ändert sich bei jeder Dateiänderung die URL, und der Cache muss neu
+laden. Bleibt eine Datei gleich, bleibt die URL stabil und der Cache greift weiter.
+
+Zum Nachprüfen, was Cloudflare gerade ausliefert:
 
 ```bash
-rsync -avz --delete web/sites/norwegen-2026/public/ user@vps:<docroot>/
+curl -sSI https://norwegen.skubus.de/assets/css/components.css | grep -i 'cf-cache-status\|age\|last-modified'
+curl -sS "https://norwegen.skubus.de/assets/css/components.css?bust=$RANDOM" | wc -c   # Origin, am Cache vorbei
 ```
 
 ## 2. Die Videos

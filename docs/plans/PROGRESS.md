@@ -2843,7 +2843,15 @@ Zwei bewusste Entscheidungen:
   wurden von dort zurueckgeholt. Wer `media_root` aufraeumt, trifft auch generierte Assets —
   sie stehen in `assets.json` wie jedes andere Material.
 - **Netzzugriff ist aus der Arbeitsumgebung gesperrt.** Schriften und andere externe Dateien
-  muss der Nutzer selbst beschaffen.
+  muss der Nutzer selbst beschaffen. (Stand 2026-08-10: `curl` nach aussen geht wieder, die
+  Live-Seite laesst sich also direkt pruefen.)
+- **Cloudflare cacht die Assets vier Stunden, die HTML nicht.** Nach dem Deploy der
+  Flaggen-Aenderung war der Sprachumschalter leer: HTML aktuell (`cf-cache-status: DYNAMIC`),
+  `components.css` aber vom Vortag (`HIT`, `age: 6631`, `max-age=14400`) und damit ohne die
+  Flaggen-Regeln. Der Upload war vollstaendig — nachweisbar, indem man dieselbe Datei mit
+  einem beliebigen Query-String holt (`?bust=…` → `MISS`, 22341 statt 16959 Bytes).
+  Seitdem haengt `deploy/cache-bust.py` an jeden Asset-Verweis einen Inhalts-Hash, und
+  `deploy-norway-site.sh` laedt das Ergebnis statt `public/` direkt hoch.
 - **`url()` in einer Custom Property** wird relativ zu dem Stylesheet aufgeloest, in dem die
   *Verwendung* steht, nicht die Deklaration. `--header-image: url('assets/img/...')` im
   `<style>`-Block der Seite, benutzt in `components.css`, ergab
