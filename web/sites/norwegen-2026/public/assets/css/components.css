@@ -23,11 +23,25 @@
    Zwei Kuerzel in einer Pille, rechts neben der Navigation. Die
    aktive Sprache ist markiert, die andere ist ein Link auf dieselbe
    Seite im anderen Sprachbaum (/ bzw. /en/).                        */
-.lang-switch { display: flex; align-items: center; gap: var(--hairline); padding: 2px; border: var(--hairline) solid var(--line-1); border-radius: var(--radius-2); background: var(--bg-raised) }
-.lang-switch__opt { display: block; font-family: var(--font-display); font-size: var(--step--2); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-label); color: var(--text-3); text-decoration: none; padding: var(--space-2) var(--space-3); border-radius: calc(var(--radius-2) - 2px); transition: color var(--dur-1) var(--ease-out), background var(--dur-1) var(--ease-out) }
-.lang-switch__opt:hover { color: var(--text-1); background: var(--bg-raised-hover) }
-.lang-switch__opt[aria-current="true"] { color: var(--text-on-accent); background: var(--accent) }
-.lang-switch__opt[aria-current="true"]:hover { background: var(--accent) }
+.lang-switch { display: flex; align-items: center; gap: 2px; padding: 3px; border: var(--hairline) solid var(--line-1); border-radius: var(--radius-2); background: var(--bg-raised) }
+.lang-switch__opt { display: flex; align-items: center; text-decoration: none; padding: var(--space-2); border-radius: calc(var(--radius-2) - 2px); transition: background var(--dur-1) var(--ease-out) }
+.lang-switch__opt:hover { background: var(--bg-raised-hover) }
+/* Aktive Sprache: volle Farbe. Inaktive: entsaettigt und abgedunkelt, damit
+   auf einen Blick klar ist, welche Fassung gerade laeuft. */
+.lang-switch__opt[aria-current="true"] { background: var(--bg-raised-hover); box-shadow: inset 0 0 0 var(--hairline) var(--accent-quiet) }
+.lang-switch__flag { display: block; height: 12px; border-radius: 1px; background-size: 100% 100%; background-repeat: no-repeat; filter: saturate(0.35) opacity(0.55); transition: filter var(--dur-1) var(--ease-out) }
+.lang-switch__opt:hover .lang-switch__flag,
+.lang-switch__opt[aria-current="true"] .lang-switch__flag { filter: none }
+/* Deutschland 5:3, Vereinigtes Koenigreich 2:1 - jede Flagge behaelt ihr
+   eigenes Seitenverhaeltnis, gestreckt saehen beide falsch aus. */
+.lang-switch__flag--de {
+  width: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 3'%3E%3Crect width='5' height='3' fill='%23000'/%3E%3Crect y='1' width='5' height='2' fill='%23D00'/%3E%3Crect y='2' width='5' height='1' fill='%23FFCE00'/%3E%3C/svg%3E");
+}
+.lang-switch__flag--en {
+  width: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3CclipPath id='a'%3E%3Cpath d='M0 0v30h60V0z'/%3E%3C/clipPath%3E%3CclipPath id='b'%3E%3Cpath d='M30 15h30v15zv15H30zH0V15zV0h30z'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M0 0v30h60V0z' fill='%23012169'/%3E%3Cpath d='M0 0l60 30m0-30L0 30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0l60 30m0-30L0 30' clip-path='url(%23b)' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/g%3E%3C/svg%3E");
+}
 
 /* -------------------------- hero-rotator -------------------------
    Vollbild-Hero mit überblendenden Standbildern. Reines CSS.

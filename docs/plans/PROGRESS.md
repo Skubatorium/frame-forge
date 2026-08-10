@@ -2821,6 +2821,12 @@ Voraussetzung dafuer war, **alle Pfade absolut ab Docroot** zu machen (`/assets/
 `/film-vlog.html`) — relative Pfade zeigen unter `en/` ins Leere. `hreflang`-Verweise stehen
 paarweise im `<head>`.
 
+Der Umschalter zeigt **Miniflaggen statt Kuerzel** (Deutschland, Vereinigtes Koenigreich), als
+Inline-SVG in `background-image` — keine zusaetzlichen Requests. Die inaktive Flagge ist
+entsaettigt und abgedunkelt, die aktive traegt einen Akzentring. Beide Flaggen behalten ihr
+eigenes Seitenverhaeltnis (5:3 bzw. 2:1); auf eine gemeinsame Box gestreckt saehen sie falsch
+aus. Der Sprachname steht als `aria-label` am Bild, damit Screenreader nicht nur "Link" hoeren.
+
 Zwei bewusste Entscheidungen:
 
 - Das englische Impressum ist eine Lesehilfe und sagt das auch: verbindlich bleibt die
