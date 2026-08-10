@@ -231,13 +231,17 @@
 /* ------------------------------ thanks ----------------------------
    Dank an die Gastgeber. Text links, Foto rechts, Gruss quer darunter. */
 .thanks { display: grid; gap: var(--space-6); grid-template-columns: 1fr; align-items: start }
-@media (min-width: 780px) { .thanks { grid-template-columns: 1fr auto; gap: var(--space-8); align-items: start } }
+@media (min-width: 780px) { .thanks { grid-template-columns: 1fr auto; gap: var(--space-8); align-items: stretch } }
 /* Hochformat: ohne Deckel dominiert das Foto den Abschnitt und laesst neben dem Text
    eine grosse Leerflaeche stehen. */
 /* Nicht bis an die Satzkante: das Foto sitzt ein Stueck eingerueckt, sonst klebt es
    am rechten Rand des Rasters. */
+/* Textspalte fuellt die Bildhoehe und verteilt Ueberschrift, Text und Gruss darin --
+   deshalb steht die Ueberschrift IM Raster, nicht darueber. */
+.thanks__col { display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-5) }
+.thanks__col > h2 { margin: 0 }
 .thanks__figure { margin: 0; max-width: min(22rem, 40vw) }
 @media (min-width: 780px) { .thanks__figure { margin-inline-end: 45px } }
 .thanks__figure img { display: block; width: 100%; height: auto; border-radius: var(--radius-3) }
-.thanks__salute { margin-top: var(--space-5); font-family: var(--font-display); font-size: var(--step-1); color: var(--accent); letter-spacing: -0.01em }
+.thanks__salute { margin: 0; font-family: var(--font-display); font-size: var(--step-1); color: var(--accent); letter-spacing: -0.01em }
 .thanks__salute small { display: block; margin-top: var(--space-2); font-family: var(--font-body); font-size: var(--step--2); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--text-3) }
