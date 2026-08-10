@@ -1314,10 +1314,15 @@ def test_kenburns_zoom_out_is_not_clamped_to_zoom_in():
 
 
 def test_kenburns_oversampling_follows_max_zoom_not_a_fixed_factor():
-    """Das Zwischenbild wird nur so weit hochskaliert, wie der groesste Zoom es braucht.
+    """Das Zwischenbild skaliert mit dem groessten Zoom -- und mit der Zielaufloesung.
 
-    Pauschale 2x bedeuteten bei 4K-Ziel 7680x4320 je Frame (~100 MB) -- der Preview-Render hat
-    damit den Arbeitsspeicher gesprengt (11 GB Swap, Platte voll, Prozess tot).
+    Zwei Anforderungen, die gegeneinander laufen:
+    - In 4K wuerde ein grosser Faktor den Arbeitsspeicher sprengen (7680x4320 je Frame,
+      ~100 MB; genau daran ist der Preview-Render gestorben: 11 GB Swap, Platte voll).
+    - In 1080p rastet `zoompan` sonst zu grob und die Fotos zittern sichtbar
+      (Nutzer-Report 2026-08-10). Dort ist ein grosser Faktor bezahlbar.
+
+    Deshalb haengt die Reserve an der Zielhoehe, der Zoom-Anteil bleibt in beiden Faellen.
     """
     def sample_dims(zoom_to):
         tl = _timeline(
@@ -1336,11 +1341,26 @@ def test_kenburns_oversampling_follows_max_zoom_not_a_fixed_factor():
 
     # Zielgroesse in `_timeline` ist 320x240.
     modest_w, _ = sample_dims(1.13)
-    assert modest_w < 320 * 2, "kein pauschales 2x mehr"
     assert modest_w >= 320 * 1.13, "muss den Zoom noch voll abdecken"
-    # Groesserer Zoom => groesseres Zwischenbild.
+    # Groesserer Zoom => groesseres Zwischenbild (der Zoom-Anteil wirkt weiterhin).
     big_w, _ = sample_dims(1.6)
     assert big_w > modest_w
+
+    # 4K bleibt sparsam: dort deckt die Reserve nur den Zoom plus etwas Rand ab, sonst
+    # kippt der Render wieder in den Swap.
+    uhd = Timeline(
+        export="teaser", fps=25, resolution=(3840, 2160), duration=2.0,
+        tracks={"video": [{"id": "c1", "asset": "photo1", "src_in": 0, "src_out": 2,
+                           "tl_in": 0,
+                           "effects": [{"type": "kenburns", "from": [0, 0, 1.0],
+                                        "to": [0, 0, 1.13]}]}]},
+    )
+    uhd_graph = build_filtergraph(
+        uhd, resolve_asset=lambda a: Path(f"/m/{a}.jpg"),
+        export_root=Path("/e"), project_root=Path("/p"),
+    )
+    uhd_w = int(re.search(r"scale=(\d+):\d+,zoompan=", uhd_graph.filter_complex).group(1))
+    assert uhd_w < 3840 * 1.4, "4K darf nicht in die grosse Reserve laufen"
     # Ungerade Kantenlaengen wuerden libx264/yuv420p aergern.
     assert big_w % 2 == 0
 

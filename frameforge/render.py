@@ -297,7 +297,17 @@ def _kenburns_expr(clip, dur: float, fps: float, res: tuple[int, int]) -> str | 
     # `zoompan` schneidet `iw/zoom` heraus -- ein Oversampling um `max_zoom` reicht also exakt
     # aus, damit dieser Ausschnitt noch mindestens die Zielgroesse hat; 1.15 ist die Reserve.
     # Bei typischem Zoom 1.13 sind das 1.30x statt 2x, also ~2,4x weniger Speicher je Frame.
-    sample = max(1.05, max(z_from, z_to)) * 1.15
+    # Reserve abhaengig von der Zielaufloesung (Nutzer-Report 2026-08-10: "die Fotos
+    # zittern"). `zoompan` rastet den Ausschnitt auf ganze QUELLpixel; ein Quellpixel
+    # entspricht `1/sample` Ausgabepixeln. Bei 1.15 Reserve sind das 0,77 Ausgabepixel --
+    # sichtbar als Ruckeln, gemessen 0,12-0,18 px Ruck je Frame gegenueber 0,02 px bei
+    # Videoclips. In 4K faellt derselbe Fehler beim Herunterskalieren auf einen 1080p-Schirm
+    # zur Haelfte weg, deshalb war er dort nie auffaellig.
+    # 1080p-Ziele bekommen darum 3.0 statt 1.15: ~0,29 statt 0,77 Ausgabepixel je Rastschritt.
+    # Der Speicher gibt das her, seit der Final-Render in Chunks laeuft (~24 offene Inputs
+    # statt 213) -- in 4K bleibt es bei 1.15, dort waeren es sonst wieder ~600 MB je Frame.
+    reserve = 3.0 if h <= 1200 else 1.15
+    sample = max(1.05, max(z_from, z_to)) * reserve
     sw, sh = round(w * sample), round(h * sample)
     sw += sw % 2
     sh += sh % 2

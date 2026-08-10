@@ -2981,3 +2981,43 @@ Verifikation des fertigen Files (jetzt vollstaendig, nicht stichprobenhaft):
 (1,78 GB / 13 Mbit/s). Zwei Gruende: die HLG-Clips tragen nach der Konvertierung mehr
 Zeichnung (vorher flau und dunkel = billig zu kodieren), und der Chunk-Render kodiert je
 Stueck getrennt. Die Website nennt an zwei Stellen noch „1,8 GB · 13 Mbit/s".
+
+### Zitternde Fotos im 1080p-Export (2026-08-10) — **behoben, Render laeuft**
+
+Nutzer-Report: in der neuen 1080p zittern alle Foto-Clips (Ken Burns), Videoclips nicht.
+Gemessen per Phasenkorrelation, auf gleiche Betrachtungsgroesse normiert — Ruck je Frame:
+Fotos 0,118/0,176 px (neue 1080p) gegen 0,055/0,049 px (alte 4K), Videoclips 0,019 px.
+
+Ursache: `zoompan` rastet den Ausschnitt auf ganze **Quell**pixel. Das Zwischenbild war nur
+`max_zoom * 1.15` gross, ein Quellpixel entsprach damit 0,77 Ausgabepixeln — der Zoom kann
+sich nicht feiner bewegen. In 4K faellt derselbe Fehler beim Herunterskalieren auf einen
+1080p-Schirm zur Haelfte weg, deshalb war er dort nie auffaellig.
+
+**Kein Folgefehler des Farb-Fixes** — dieser Codepfad war unangetastet. Ein direktes A/B mit
+der alten 1080p ist nicht mehr moeglich, sie wurde geloescht.
+
+Fix: die Reserve haengt jetzt an der Zielhoehe. `<= 1200 px` bekommt 3.0 statt 1.15 (~0,29
+statt 0,77 Ausgabepixel je Rastschritt), 4K bleibt bei 1.15 — dort waeren es sonst wieder
+~600 MB je Frame. Bezahlbar ist das erst, seit der Final-Render in Chunks laeuft
+(~24 offene Inputs statt 213).
+
+### Offen: Wiedergabe bricht im Browser bei 2:59 ab
+
+**Nicht die Datei.** Geprueft: `moov` vor `mdat` (faststart), 32.411 Video-Pakete mit streng
+monotonem DTS ohne Luecken, Dekodierung bei 2:58-3:18 und 17:30-Ende fehlerfrei, und die
+Datei auf dem Server ist mit 2.567.131.664 Bytes byteidentisch zur lokalen — der Upload ist
+vollstaendig.
+
+2:59 entspricht Byte 259.033.839, also 10 % der Datei. Zusammen mit dem zweiten Symptom
+(Scrubbing wirft auf Sekunde 0 zurueck) deutet das auf **fehlende HTTP-Range-Unterstuetzung**
+in der Auslieferung: der Browser kann nicht springen, laedt von vorn, und haelt am Ende
+seines Puffers an. `norwegen.skubus.de` liegt hinter Cloudflare + traefik-Basic-Auth, von
+aussen nicht pruefbar (401). Test mit Zugangsdaten:
+
+```
+curl -sI -u BENUTZER:PASSWORT -r 2000000000-2000065535 \
+  https://norwegen.skubus.de/videos/vlog-edit_1080p.mp4 | head -5
+```
+
+`206` + `Accept-Ranges: bytes` = Auslieferung in Ordnung, weitersuchen. `200` = Ranges werden
+nicht durchgereicht, Ursache sitzt in traefik/Cloudflare.
