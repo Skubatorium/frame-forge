@@ -2859,3 +2859,83 @@ Zwei bewusste Entscheidungen:
 - **Bitraten der 1080p-Fassungen** liegen bei CRF 20 hoeher als erwartet: vlog 1,7 GB
   (~12,6 Mbit/s), drone 1,4 GB (~20 Mbit/s). Bewusst so belassen — geschaut wird am grossen
   Bildschirm, nicht unterwegs.
+
+## Farbraum-Fehler im `vlog-edit` (2026-08-10) — **behoben**
+
+Nutzer-Report: im hochgeladenen `vlog-edit` sind bei 2:46 die Gesichter der drei Personen auf
+dem Schiffsdeck „einfach nur rot", bei 1:43 springt die Farbigkeit hart um, Fotos wirken
+uebersaettigt. **Lokal in QuickTime/macOS-Vorschau war nichts davon zu sehen** — der Fehler
+zeigte sich nur im Chromium-basierten Browser. Genau diese Diskrepanz war der entscheidende
+Hinweis: es lag nicht am Bildinhalt, sondern an den Farb-Metadaten der Datei.
+
+### Befund
+
+```
+drone-edit_1080p/4k.mp4 : yuv420p  range=tv  bt709/bt709/bt709   <- korrekt
+vlog-edit_1080p/4k.mp4  : yuvj420p range=pc  bt470bg, kein trc   <- falsch
+```
+
+Ursache: `_run_ffmpeg` setzte nur `-pix_fmt yuv420p` und **keine** Farbtags, und der
+Filtergraph normalisierte die Quellen nicht. Der `vlog-edit` zieht 61 HEIC-Foto-Proxies als
+MJPEG-Inputs (`yuvj420p`, Full-Range, `bt470bg`); deren Metadaten haben sich durch die
+ffmpeg-Aushandlung auf den gesamten Film durchgesetzt. `-pix_fmt yuv420p` greift dagegen
+nicht, weil ffmpeg `yuv420p` und `yuvj420p` als kompatibel behandelt. Der `drone-edit` hat
+keine Fotos und ausschliesslich BT.709-Quellen — deshalb war er unauffaellig und musste **nicht**
+neu gerendert werden.
+
+Player, die die Tags befolgen (Chromium), dekodieren dann mit BT.601-Matrix im
+Full-Range-Modus → kraeftiger Rot-/Saettigungs-Shift, am staerksten auf Hauttoenen. Player, die
+sie ignorieren (QuickTime), zeigen dieselbe Datei unauffaellig.
+
+Farbraeume im `vlog-edit`: 41 Clips iPhone-HLG (`bt2020nc`/`arib-std-b67`, 10 bit), 65 Clips
+Drohne (`bt709`), 61 HEIC-Fotos (Display P3). Drei Raeume, bis dahin null Konvertierung.
+
+### Fix
+
+- **Neu: `frameforge/color.py`.** `normalize_chain(path)` bringt jedes Segment an der Quelle
+  nach BT.709/TV — HLG ueber eine erzeugte 3D-LUT, Full-Range-JPEG ueber explizites
+  `scale=in_range=full:in_color_matrix=bt470bg:…`, BT.709-Material nur mit `setparams`.
+  Danach existiert im Graphen genau ein Farbraum, und Look-Filter arbeiten auf definierten
+  Werten.
+- **Kein `zscale`** — der Homebrew-ffmpeg dieser Umgebung ist ohne libzimg gebaut, und der
+  `colorspace`-Filter kennt `arib-std-b67` nicht (`Unable to parse "itrc" option value`).
+  HLG→BT.709 laeuft deshalb ueber eine in Numpy gerechnete `.cube`-LUT im Cache.
+- **HLG-Kurve ohne OOTF (Systemgamma 1.0)**, auf Diffusweiss normiert, weiche Schulter ab 70 %.
+  Mit BT.2100-γ=1.2 plus Filmkurve landete Diffusweiss bei 0.71 statt 0.94 — die Clips waeren
+  deutlich dunkler geworden als im bisherigen Export. Der Nutzer hat am Bild der Videoclips
+  nichts auszusetzen; der Fix stellt den Farbraum richtig, er baut den Look nicht um.
+- **`_run_ffmpeg` taggt den Output explizit** (`-colorspace/-color_primaries/-color_trc bt709`,
+  `-color_range tv`), und der Graph endet auf `format=yuv420p,setparams=…`.
+- **`colorbalance=rs/bs` war der falsche Filter.** `rs`/`bs` sind die **Schatten**-Regler fuer
+  Rot/Blau, keine Farbtemperatur: der Code hob Rot in den dunklen Partien an und senkte Blau,
+  Lichter blieben unberuehrt — deshalb sahen Fotos „qualitativ schlechter" aus. Ersetzt durch
+  `colortemperature` (neu: `render.temperature_filter`).
+- **Vorzeichenkonvention vereinheitlicht.** `_MOOD_MAP` hatte „negativ = waermer",
+  `match_filter` schon „positiv = waermer" — dasselbe Feld mit entgegengesetzter Bedeutung.
+  Jetzt ueberall **positiv = waermer**.
+- **Kalibrierung `_KELVIN_PER_UNIT = 2000`.** Gemessen entsprechen ~100 K etwa 1.5 Punkten
+  R−B. Die Mood-Werte waren fuer den viel schwaecheren Schatten-Regler getunt; mit 4000 K je
+  Einheit haette `cool_highlights_warm_lights` ~+7 R−B ergeben, also genau den beanstandeten
+  Warmstich. 2000 K → 6380 K ≈ +3.5 R−B.
+- **`ingest._write_heif_proxy`: HEIC jetzt farbverwaltet nach sRGB.** Alle iPhone-HEICs tragen
+  ein Display-P3-Profil; `convert("RGB")` hat es nur weggeworfen, die Werte blieben P3 und
+  wurden downstream als sRGB gelesen. Jetzt `ImageCms.profileToProfile` + eingebettetes
+  sRGB-Profil. Die 667 vorhandenen Foto-Proxies wurden geloescht und neu erzeugt.
+
+### Nachweis
+
+- `tests/test_color.py` (10 Tests): Zielformat je Quellklasse, LUT-Einbindung, Full-Range-
+  Konvertierung, Monotonie/Neutralitaet der HLG-Kurve, Diffusweiss > 0.9, `.cube`-Format,
+  Idempotenz. `tests/test_render.py`: der Warm-Mood-Test prueft jetzt die **Wirkung**
+  (Kelvin < 6500) statt eines Filternamens. Gesamt 630 Tests gruen.
+- Smoke-Render (HLG-Clip + HEIC-Foto + Drohnen-Clip in einem Graphen) liefert
+  `yuv420p / tv / bt709 / bt709 / bt709`.
+- Foto `IMG_9374` (Deck-Selfie, 2:46), R−B gegen das Original (+5.0): alter Export **+13.3**,
+  neue Pipeline ohne Grade **+8.8**, mit Grade **~+12** bei 4000 K/Einheit → auf 2000 K
+  halbiert.
+
+### Offen
+
+`drone-edit` bleibt wie er ist (korrekt getaggt, keine HLG-Quellen). Der `vlog-edit`-4K-Export
+traegt dieselben falschen Tags wie die 1080p und muesste bei Bedarf ebenfalls neu gerendert
+werden — auf Nutzerwunsch zunaechst nur die 1080p.

@@ -3,9 +3,12 @@
 from __future__ import annotations
 
 import hashlib
+import io
 import subprocess
 from dataclasses import dataclass, field
 from pathlib import Path
+
+from PIL import ImageCms
 
 from frameforge.imageio import HEIF_EXTENSIONS, ImageReadError, open_image
 
@@ -22,6 +25,10 @@ PROXY_HEIGHT = 1080
 # PROGRESS.md HEIC-1) — deshalb volle Aufloesung und hohe JPEG-Qualitaet, kein 1080p-Downscale
 # wie bei Video-Proxies. q95 ist visuell verlustfrei; bei 24 MP kostet das ~5 MB je Foto.
 HEIF_PROXY_JPEG_QUALITY = 95
+
+# sRGB-Profil, das jedem HEIC-Proxy mitgegeben wird — damit steht am JPEG, in welchem Raum
+# seine Werte liegen, statt dass jeder Konsument raten muss.
+_SRGB_ICC = ImageCms.ImageCmsProfile(ImageCms.createProfile("sRGB")).tobytes()
 
 
 @dataclass(frozen=True)
@@ -104,6 +111,37 @@ def proxy_path(asset_path: Path, out_dir: Path, *, media_root: Path) -> Path:
     return out_dir / f"{asset_path.stem}_{digest}{asset_path.suffix}"
 
 
+def _write_heif_proxy(asset: Path, target: Path) -> None:
+    """HEIC/HEIF → JPEG, **farbverwaltet** nach sRGB.
+
+    Alle iPhone-HEICs des Fundus tragen ein Display-P3-ICC-Profil. `convert("RGB")` allein
+    rechnet nicht um, es wirft das Profil nur weg — die Pixelwerte bleiben P3 und werden
+    danach von jedem Consumer als sRGB gelesen. Das verschiebt die Farben (gemessen ~10 %
+    Saettigung, plus Farbtonfehler) und ist im Render nicht mehr korrigierbar, weil die
+    Information, in welchem Raum die Werte stehen, verloren ist.
+
+    Ohne lesbares Profil bleibt es beim reinen `convert("RGB")` — dann ist sRGB die
+    vernuenftigste Annahme, und eine erzwungene Konvertierung waere geraten statt gerechnet.
+    """
+    image = open_image(asset)
+    icc = image.info.get("icc_profile")
+    if icc:
+        try:
+            image = ImageCms.profileToProfile(
+                image,
+                ImageCms.ImageCmsProfile(io.BytesIO(icc)),
+                ImageCms.createProfile("sRGB"),
+                outputMode="RGB",
+            )
+        except (ImageCms.PyCMSError, OSError, ValueError):
+            image = image.convert("RGB")  # defektes Profil darf den Ingest nicht kippen
+    else:
+        image = image.convert("RGB")
+    if image.mode != "RGB":
+        image = image.convert("RGB")
+    image.save(target, format="JPEG", quality=HEIF_PROXY_JPEG_QUALITY, icc_profile=_SRGB_ICC)
+
+
 def build_proxies(
     assets: list[Path], out_dir: Path, *, media_root: Path, timeout_s: float = 1800.0
 ) -> ProxyResult:
@@ -172,9 +210,7 @@ def build_proxies(
                     timeout=timeout_s,
                 )
             elif asset.suffix.lower() in HEIF_EXTENSIONS:
-                open_image(asset).convert("RGB").save(
-                    target, format="JPEG", quality=HEIF_PROXY_JPEG_QUALITY
-                )
+                _write_heif_proxy(asset, target)
             else:
                 target.write_bytes(asset.read_bytes())
         except (

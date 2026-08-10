@@ -21,6 +21,7 @@ from collections.abc import Callable
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from frameforge import color as color_module
 from frameforge.imageio import HEIF_EXTENSIONS
 from frameforge.index import load_assets
 from frameforge.ingest import PHOTO_EXTENSIONS, proxy_path
@@ -179,19 +180,46 @@ def _face_crop_center(
 # Keine Ersatz für eine echte Farbkorrektur (dafür `--lut`), aber gibt jedem Stil-Preset
 # automatisch einen passenden Grundton. Werte konservativ gehalten, damit nichts "kaputt" aussieht.
 _CONTRAST_MAP = {"low": 0.95, "medium": 1.05, "medium_high": 1.12, "high": 1.20}
+# Konvention (einheitlich mit `match_filter`/`ColorMatch`): **positives** `temperature` =
+# wärmer. Bis 2026-08-10 galt hier das Gegenteil, in `match_filter` aber schon diese Regel —
+# dasselbe Feld hatte in beiden Funktionen entgegengesetzte Bedeutung.
 _MOOD_MAP: dict[str, dict] = {
-    "cool_highlights_warm_lights": {"saturation": 1.05, "temperature": -0.06},
+    "cool_highlights_warm_lights": {"saturation": 1.05, "temperature": 0.06},
     "punchy": {"saturation": 1.22, "contrast_boost": 0.05},
     "natural": {"saturation": 1.02},
     "consistent_across_theme": {"saturation": 1.05},
     "raw": {"saturation": 0.9, "contrast_boost": -0.05},
     "vivid": {"saturation": 1.28, "contrast_boost": 0.03},
-    # Konvention (siehe cool_highlights_warm_lights): negatives temperature = wärmer.
-    "teal_orange": {"saturation": 1.20, "temperature": -0.03, "contrast_boost": 0.05},
+    "teal_orange": {"saturation": 1.20, "temperature": 0.03, "contrast_boost": 0.05},
     "clean_modern": {"saturation": 1.08},
     "soft_pastel": {"saturation": 0.9, "contrast_boost": -0.03},
-    "warm_nostalgic": {"saturation": 0.95, "temperature": -0.08, "contrast_boost": -0.02},
+    "warm_nostalgic": {"saturation": 0.95, "temperature": 0.08, "contrast_boost": -0.02},
 }
+
+# Referenzweiss und Umrechnung `temperature` (dimensionslos, positiv = wärmer) → Kelvin.
+_NEUTRAL_KELVIN = 6500.0
+# Gemessen an `colortemperature`: ~100 K entsprechen ~1.5 Punkten R−B. Die Mood-Werte
+# (0.03–0.08) waren fuer den alten, viel schwaecheren Schatten-Regler getunt; mit 2000 K je
+# Einheit landet `cool_highlights_warm_lights` bei 6380 K ≈ +3.5 R−B — spuerbar warm, aber
+# kein Stich. Mit 4000 K waeren es ~+7 gewesen, und genau darueber kam der Nutzer-Report.
+_KELVIN_PER_UNIT = 2000.0
+
+
+def temperature_filter(temperature: float) -> str | None:
+    """`colortemperature`-Filter für eine Farbtemperatur-Korrektur, `None` bei 0.
+
+    **Ersetzt `colorbalance=rs=…:bs=…`** (Bug, gefunden 2026-08-10). `rs`/`bs` sind in ffmpeg
+    die **Schatten**-Regler für Rot/Blau, nicht Farbtemperatur — der alte Code hob damit Rot
+    in den dunklen Bildpartien an und senkte Blau, während die Lichter unberührt blieben.
+    Gemessen am `vlog-edit`: farbneutrale Motive kamen mit R−B +13 statt +5 heraus, Hauttöne
+    kippten sichtbar ins Rote. `colortemperature` verschiebt stattdessen das Weiss des ganzen
+    Bildes, also das, was der Preset-Katalog mit "wärmer/kühler" tatsächlich meint.
+    """
+    if not temperature:
+        return None
+    kelvin = _NEUTRAL_KELVIN - temperature * _KELVIN_PER_UNIT
+    # `pl=1` (preserve lightness): eine Temperaturkorrektur soll die Helligkeit nicht mitziehen.
+    return f"colortemperature=temperature={kelvin:.0f}:mix=1:pl=1"
 
 
 # Übergangstypen, die als Crossfade (xfade) gerendert werden.
@@ -382,9 +410,9 @@ def match_filter(color_match) -> str | None:
     if brightness == 0.0 and saturation == 1.0 and temperature == 0.0:
         return None
     chain = f"eq=brightness={brightness:.4f}:saturation={saturation:.4f}"
-    if temperature:
-        # positiv = waermer (mehr Rot, weniger Blau), analog zu `grade_filter`
-        chain += f",colorbalance=rs={temperature:.4f}:bs={-temperature:.4f}"
+    temp = temperature_filter(temperature)  # positiv = waermer, analog zu `grade_filter`
+    if temp:
+        chain += f",{temp}"
     return chain
 
 
@@ -465,10 +493,9 @@ def grade_filter(color_grade: dict | None) -> str | None:
         return None
 
     chain = f"eq=contrast={contrast:.3f}:saturation={saturation:.3f}"
-    temp = params.get("temperature")
+    temp = temperature_filter(params.get("temperature", 0.0))
     if temp:
-        # negatives temp => mehr Rot/weniger Blau = wärmer; positives => kühler.
-        chain += f",colorbalance=rs={-temp:.3f}:bs={temp:.3f}"
+        chain += f",{temp}"
     return chain
 
 
@@ -665,6 +692,10 @@ def build_filtergraph(
         # Farbangleichung **pro Clip** und VOR dem Stil-Grade (Plan 0003 §H2): erst die
         # Kameras auf einen Nenner bringen, dann den Look darüber. Andersherum wäre "kühl"
         # eine Aussage über die zufällige Kameramischung statt über den Film.
+        # Farbraum-Normalisierung **zuerst**: HLG/BT.2020 (iPhone), Full-Range-JPEG (Foto-
+        # Proxies) und BT.709 (Drohne) liegen sonst nebeneinander im selben Graphen, und jeder
+        # nachfolgende Filter arbeitet je Clip auf anderen Werten. Siehe frameforge.color.
+        post.extend(color_module.normalize_chain(source))
         match = match_filter(clip.color_match)
         if match:
             post.append(match)
@@ -809,7 +840,15 @@ def build_filtergraph(
             filters.append(f"[{cur_video}]fade=t=out:st={st:.3f}:d={d:.3f}[{out}]")
             cur_video = out
 
-    graph.video_label = cur_video
+    # Letzter Schritt vor dem Encoder: Pixelformat und Farbtags festnageln. Grade/LUT/Overlay
+    # laufen ueber RGB-Filter, und was danach herauskommt, bestimmte bisher allein die
+    # ffmpeg-Aushandlung — im vlog-edit hatten die MJPEG-Foto-Inputs damit `yuvj420p / pc /
+    # bt470bg` fuer den ganzen Film durchgesetzt. Siehe frameforge.color.
+    final_video = f"{cur_video}_out"
+    filters.append(
+        f"[{cur_video}]format=yuv420p,{color_module.output_params_filter()}[{final_video}]"
+    )
+    graph.video_label = final_video
 
     graph.audio_label = _build_audio_chain(
         timeline,
@@ -941,6 +980,10 @@ def _run_ffmpeg(
     if graph.audio_label:
         cmd.extend(["-map", f"[{graph.audio_label}]"])
     cmd.extend(["-r", str(timeline.fps), "-c:v", "libx264", "-pix_fmt", "yuv420p"])
+    # Ohne diese Tags schreibt libx264, was die Aushandlung gerade durchreicht. Player, die
+    # die Tags befolgen (Chromium), dekodieren sonst mit falscher Matrix im falschen
+    # Wertebereich — sichtbar als kraeftiger Rotstich auf Hauttoenen.
+    cmd.extend(color_module.OUTPUT_COLOR_ARGS)
     if crf is not None:
         cmd.extend(["-crf", str(crf)])
     if preset is not None:

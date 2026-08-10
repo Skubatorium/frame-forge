@@ -425,7 +425,7 @@ def test_build_filtergraph_lut_path_applies_lut3d_filter():
         lut_path=Path("/luts/log-to-rec709.cube"),
     )
     assert "lut3d=file='/luts/log-to-rec709.cube'" in graph.filter_complex
-    assert graph.video_label.endswith("_lut")
+    assert "_lut" in graph.video_label
 
 
 def test_build_filtergraph_without_lut_path_skips_lut3d():
@@ -781,7 +781,7 @@ def test_build_filtergraph_applies_color_grade():
         color_grade={"mood": "punchy", "contrast": "high"},
     )
     assert "eq=contrast=" in graph.filter_complex
-    assert graph.video_label.endswith("_grade")
+    assert "_grade" in graph.video_label
 
 
 def test_grade_filter_unknown_mood_returns_none():
@@ -800,13 +800,23 @@ def test_grade_filter_new_moods_produce_eq():
         assert out and out.startswith("eq=")
 
 
-def test_grade_filter_warm_moods_add_red_not_blue():
-    """Warme Moods muessen tatsaechlich waermen: rs positiv (mehr Rot), nicht kuehlen."""
+def test_grade_filter_warm_moods_lower_the_color_temperature():
+    """Warme Moods muessen tatsaechlich waermen: Kelvin unter dem Neutralweiss von 6500.
+
+    Bis 2026-08-10 stand hier `colorbalance=rs=0.`. Das war doppelt falsch: `rs` ist der
+    **Schatten**-Regler fuer Rot, keine Farbtemperatur, und das Vorzeichen im Mood-Katalog
+    war zu `match_filter` entgegengesetzt. Jetzt prueft der Test die Wirkung (waermer =
+    weniger Kelvin) statt eines bestimmten Filternamens.
+    """
+    import re
+
     from frameforge.render import grade_filter
 
     for mood in ("warm_nostalgic", "teal_orange", "cool_highlights_warm_lights"):
         out = grade_filter({"mood": mood})
-        assert "colorbalance=rs=0." in out, f"{mood} kuehlt statt zu waermen: {out}"
+        match = re.search(r"colortemperature=temperature=(\d+)", out)
+        assert match, f"{mood} setzt keine Farbtemperatur: {out}"
+        assert int(match.group(1)) < 6500, f"{mood} kuehlt statt zu waermen: {out}"
 
 
 def test_render_final_with_color_grade_still_renders(proj):
