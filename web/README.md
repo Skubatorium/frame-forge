@@ -25,12 +25,29 @@ web/
         media/                  Rohbilder, Kartenscreenshot, Stills (gitignored)
       public/                   >>> kommt 1:1 in den Docroot <<<
         index.html film-vlog.html film-drone.html fakten.html impressum.html
+        en/                     englische Fassung, gleiche Dateinamen
         assets/{css,js,img,fonts}/
       deploy/                   Deployment-Anleitung (rsync, Videopfade, Auth)
 ```
 
 **Regel:** Alles unter `public/` wird 1:1 auf den Server kopiert. Alles außerhalb von
 `public/` ist Arbeitsmaterial und bleibt lokal.
+
+## Zweisprachigkeit
+
+Deutsch liegt in der Wurzel, Englisch unter `en/` — **gleiche Dateinamen**, damit der
+Sprachumschalter aus jedem Pfad mechanisch den Gegenpart bilden kann (`/fakten.html` ↔
+`/en/fakten.html`). Kein JavaScript, kein Build-Schritt: zwei vollständige Seitensätze, die
+sich Stylesheets, Schriften und Bilder teilen.
+
+Deshalb sind **alle Pfade absolut ab Docroot** (`/assets/…`, `/film-vlog.html`). Relative
+Pfade würden unter `en/` ins Leere zeigen. Der Umschalter steht in der Kopfzeile
+(`.lang-switch`), die aktive Sprache trägt `aria-current="true"`; zusätzlich verweisen
+`<link rel="alternate" hreflang>` im `<head>` aufeinander.
+
+Eine neue Sprache heißt: `public/<code>/` anlegen, fünf Seiten übersetzen, in *allen*
+vorhandenen Seiten eine Zeile im Umschalter ergänzen. Ab drei Sprachen lohnt sich stattdessen
+ein Generator.
 
 ## Neue Reise anlegen
 

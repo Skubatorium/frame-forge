@@ -2769,6 +2769,7 @@ mit den fertigen Filmen. Pilot: `web/sites/norwegen-2026/` fuer https://norwegen
 | Designsystem-Export (5 Seiten, Tokens, Komponenten) | ✅ `f13d623`, `8a26491` |
 | `public/` mit echten Bildern aus dem Material | ✅ `16e5072`, `96b71bd` |
 | Umbau nach Nutzer-Feedback (Plan `docs/plans/0002-website-feedback.md`) | ✅ |
+| Zweisprachig DE/EN (`public/` + `public/en/`, Umschalter in der Kopfzeile) | ✅ |
 | Schriften (Schibsted Grotesk, Source Serif 4) | ⬜ Netzzugriff gesperrt, Nutzer laedt sie |
 | Videos auf den Server | ⬜ Nutzer, 4 Dateien / ~14 GB |
 | Traefik Basic Auth | ⬜ Nutzer, Infrastruktur-Ebene |
@@ -2809,6 +2810,25 @@ hinausgehen:
    richtigen Screenshot getauscht (Rueckweg identisch ueber Heddal statt Schleife ueber
    Kongsberg). Alle Stellen nachgezogen, auch `content/facts.md` und `deploy/README.md`.
 6. **Geviertstriche komplett raus.** Ausdruecklicher Wunsch: liest sich wie maschinell erzeugt.
+
+### Runde 3: Zweisprachig DE/EN (2026-08-10)
+
+Deutsch in der Wurzel, Englisch unter `public/en/` mit denselben Dateinamen. Kein JavaScript,
+kein Build — zwei vollstaendige Seitensaetze, gemeinsame CSS/Schriften/Bilder. Der Umschalter
+(`.lang-switch`, Kopfzeile rechts) bildet den Gegenpart mechanisch aus dem Pfad.
+
+Voraussetzung dafuer war, **alle Pfade absolut ab Docroot** zu machen (`/assets/…`,
+`/film-vlog.html`) — relative Pfade zeigen unter `en/` ins Leere. `hreflang`-Verweise stehen
+paarweise im `<head>`.
+
+Zwei bewusste Entscheidungen:
+
+- Das englische Impressum ist eine Lesehilfe und sagt das auch: verbindlich bleibt die
+  deutsche Fassung, auf die es verlinkt.
+- Der Kartenscreenshot bleibt in beiden Faellen derselbe und damit deutsch beschriftet
+  („Norwegen"). Ein zweiter Screenshot waere die einzige Alternative.
+
+`deploy-norway-site.sh` musste nicht angefasst werden: `rsync` von `public/` nimmt `en/` mit.
 
 ### Stolperstellen
 

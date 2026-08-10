@@ -19,6 +19,16 @@
 .nav__link[aria-current="page"] { color: var(--text-1) }
 .nav__link[aria-current="page"]::after { content: ""; display: block; height: 2px; margin-top: 5px; background: var(--accent); border-radius: var(--radius-1) }
 
+/* ------------------------- lang-switch ---------------------------
+   Zwei Kuerzel in einer Pille, rechts neben der Navigation. Die
+   aktive Sprache ist markiert, die andere ist ein Link auf dieselbe
+   Seite im anderen Sprachbaum (/ bzw. /en/).                        */
+.lang-switch { display: flex; align-items: center; gap: var(--hairline); padding: 2px; border: var(--hairline) solid var(--line-1); border-radius: var(--radius-2); background: var(--bg-raised) }
+.lang-switch__opt { display: block; font-family: var(--font-display); font-size: var(--step--2); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-label); color: var(--text-3); text-decoration: none; padding: var(--space-2) var(--space-3); border-radius: calc(var(--radius-2) - 2px); transition: color var(--dur-1) var(--ease-out), background var(--dur-1) var(--ease-out) }
+.lang-switch__opt:hover { color: var(--text-1); background: var(--bg-raised-hover) }
+.lang-switch__opt[aria-current="true"] { color: var(--text-on-accent); background: var(--accent) }
+.lang-switch__opt[aria-current="true"]:hover { background: var(--accent) }
+
 /* -------------------------- hero-rotator -------------------------
    Vollbild-Hero mit überblendenden Standbildern. Reines CSS.
    Die Prozentwerte unten sind auf FÜNF Szenen gerechnet: jede Szene
