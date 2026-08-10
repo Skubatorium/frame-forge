@@ -3021,3 +3021,20 @@ curl -sI -u BENUTZER:PASSWORT -r 2000000000-2000065535 \
 
 `206` + `Accept-Ranges: bytes` = Auslieferung in Ordnung, weitersuchen. `200` = Ranges werden
 nicht durchgereicht, Ursache sitzt in traefik/Cloudflare.
+
+**Verifikation des Renders mit der neuen Reserve (2026-08-10, 23:28):**
+
+| | vorher (Reserve 1.15) | nachher (Reserve 3.0) |
+|---|---|---|
+| Foto c002, Ruck je Frame | 0,118 px (max 0,42) | **0,096 px (max 0,17)** |
+| Foto c003, Ruck je Frame | 0,176 px (max 0,51) | **0,106 px (max 0,22)** |
+| Videoclip c001 (Referenz) | 0,019 px | 0,019 px |
+
+Der Ausreisser je Frame ist damit auf ein Drittel gefallen — das ist der Wert, der als
+Zittern sichtbar wird. Die vorhergesagten 0,29 statt 0,77 Ausgabepixel je Rastschritt decken
+sich mit dem gemessenen Faktor 2,3.
+
+Weiter geprueft: Tags `yuv420p / tv / bt709 / bt709 / bt709`, 1080,4 s, 32.411 Frames,
+Schwarzbild-Abtastung alle 5 s nur bei 0/5 s (Cold-Open) und 1080 s (Schlussschwarz), alle 8
+Chunk-Nahtstellen unauffaellig. 2,55 GB bei 18,9 Mbit/s — die Angaben auf der Website
+(2,6 GB / 19 Mbit/s) stimmen weiterhin.
