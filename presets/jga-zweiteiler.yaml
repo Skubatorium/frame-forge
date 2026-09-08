@@ -1,0 +1,48 @@
+# ENTWURF (Plan 0004) - vor Nutzung im /ff-brief-Wizard gegenlesen und ggf. anpassen.
+# Gegen den echten Preset-Code (frameforge/presets.py, frameforge/render.py) geprueft
+# (2026-09-07, siehe Plan §18) -- `presets.py` selbst validiert nichts (reines YAML-Dict),
+# reale Fehlerquelle sind Werte, die `render.py` an keiner Stelle kennt:
+# - `transition_vocabulary` (cut/hard_cut/whip_pan/fade) ist reine Stil-Vokabel fuer den
+#   story-architect/timeline-builder, keine literale Render-Anweisung -- so verwenden es auch
+#   alle 12 mitgelieferten Presets (z.B. "speed_ramp"/"match_cut" sind ebenfalls nicht
+#   implementiert). Kein Fehler.
+# - `color_grade.mood` DAGEGEN wird direkt nachgeschlagen (`render._MOOD_MAP`) -- ein
+#   unbekannter Wert faellt still auf "kein Grade" zurueck, ohne Fehlermeldung. Der urspruengliche
+#   Entwurf hatte hier "warm_then_vivid" (Wunschdenken: zwei verschiedene Stimmungen fuer
+#   Akt 1/2), aber `color_grade` ist EIN globaler Wert fuers ganze Rendering, kein
+#   Kapitel-Feld -- ein "warm dann vivid"-Verlauf laesst sich damit gar nicht ausdruecken.
+#   Korrigiert auf "natural" (nur `_MOOD_MAP["natural"]`, sehr milde Saettigung +2%) -- passt
+#   zu Christians expliziter Vorgabe, das Footage nicht kraeftig auf die Design-Palette zu
+#   graden (Plan §16). Der Akt-2-Energieunterschied kommt stattdessen aus Schnittrhythmus
+#   (`pacing`) und den `color_pop`/`cartoon_outline`-Effekten des `party-fx`-Agenten (Plan §6),
+#   die gezielt einzelne Clips betreffen statt den ganzen Film global umzufaerben.
+slug: jga-zweiteiler
+name: JGA Zweiteiler
+description: >-
+  Ein Film, zwei Songs, zwei Welten. Ruhiger, gediegener Auftakt kippt beim Zusammentreffen
+  der Gruppe in eine laute, schnelle Partynacht, kurzer ruhiger Ausklang mit eigenem Track.
+  Das Pacing veraendert sich ueber den Film komplett; die Farbe bleibt bewusst ein milder,
+  einheitlicher Grundton (kein Grade-Sprung), die Party-Energie kommt stattdessen aus
+  Comic-FX-Akzenten (Farb-Pop, Cartoon-Outline) auf einzelnen Akt-2-Clips.
+best_for: Junggesellenabschied/Partywochenende mit klarem Vorher/Nachher
+example: >-
+  Erste zwei Minuten wie ein ruhiges Reisetagebuch (lange Einstellungen, Vivaldi), harter
+  Wechsel zur Cast-Intro-Sequenz beim Zusammentreffen der Gruppe, danach schnelle Beat-Cuts
+  zur Partynacht (Pulp-Fiction-Stueck), letzte 20s wieder ruhig zum Ausklang.
+arc: >-
+  [v3, korrigiert] Akt 1 "Gediegen" (ca. 35-40% der Laufzeit): langsamer, warmer Schnitt,
+  kaum Text, Vivaldi traegt die Stimmung. Akt 2 "Eskalation" (ca. 50-55%): ab der ersten
+  Kneipe harte, schnelle Beat-Cuts, Comic-FX aktiv, Pulp-Fiction-Stueck traegt -- MITTENDRIN,
+  konkret in der Karaoke-Bar "Red", ein kurzer Cast-Intro-Beat (Bild friert ein, Name wird
+  eingeblendet, SFX-Einschuss), danach geht die Eskalation weiter. Outro (ca. 10%): abrupt
+  ruhiger, eigener dritter Musiktrack, kaum Bewegung, sanfter Ausklang. Ziellaenge ist ein
+  offener Richtwert (circa 6-7 min), kein starrer Wert.
+
+pacing: { min_s: 0.4, max_s: 6, rhythm: mixed_by_chapter }
+transition_vocabulary: [cut, hard_cut, whip_pan, fade]
+color_grade: { mood: natural, contrast: medium }
+text_density: bold_large
+music_energy_curve: build_drop_calm
+map_usage: none
+photo_treatment: { ken_burns: moderate }
+original_audio_policy: accent
