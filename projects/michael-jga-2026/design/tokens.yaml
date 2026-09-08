@@ -1,0 +1,36 @@
+# Designsystem michael-jga-2026 — 1:1 uebernommen aus der Web-Mini-Site
+# (web/sites/michael-jga-2026/design/assets/css/tokens.css + theme-jga-2026.css).
+# Grundlage: Stilreferenz web/sites/michael-jga-2026/design/reference/style-reference-jga-poster.png
+# "Micha im Delirium 2026" — Bruessel bei Nacht, Comic/Party. Es gibt keinen Light-Mode.
+
+# --- Farbrollen (aus theme-jga-2026.css) ------------------------------------
+primary_color: "#1e1640"     # --ink-800  Grund-Indigo/Purpur (Nacht), Titelkarten-BG, Denkblasen-Kontur
+secondary_color: "#ff2e8a"   # --pink-500 Neon-Pink/Magenta, Delirium-Neon, Sticker-Glow
+accent_color: "#d9a441"      # --gold-500 warmes Gold, Hauptfarbe des Schriftzugs, Bauchbinden-Akzent
+text_color: "#fdf6ec"        # --cream-050 warmes Cremeweiss, nie reines Weiss
+
+# Weitere Palette der Web-Site (nicht direkt von den SVG-Templates konsumiert, hier als
+# verbindliche Referenz fuer Grafiken/Cast-Karten/Farb-Pop):
+#   --ink-950 #0d0722 (tiefste Nacht)   --ink-900 #120a2a (Seiten-BG)   --ink-700 #2a1e5c (erhoehte Flaeche)
+#   --gold-400 #ffcf5c (Highlight)      --gold-600 #b07c22 (Schatten)
+#   --pink-400 #ff5cb8                  --pink-600 #c8106a
+#   --cyan-500 #35d6ff (EIN blauer Spezial-Akzent, sehr sparsam — ein leuchtendes Accessoire)
+#   --violet-500 #7a3cff (Club-Ambient-Glow, nur Hintergruende)
+
+font_display: "Bangers"      # --font-display  Comic-Titel, Denkblasen, Cast-Namen
+font_text: "Poppins"         # --font-body     Bauchbinden/Fliesstext, klein noch lesbar
+
+motion:
+  fade_in_s: 0.4
+  fade_out_s: 0.5
+  overlay_hold_min_s: 1.5
+
+type_scale:
+  title: 110
+  subtitle: 40
+  caption: 30
+
+# Intro-/Outro-Standbilder (Plan 0004 §4): projects/michael-jga-2026/design/assets/img/
+#   JGA_INTRO.png  — Auftakt-Bild (ruhiger "gediegener" Einstieg)
+#   JGA_OUTRO.png  — Schluss-Bild (Ausklang nach der Partynacht)
+# Beide 1672x941 (~16:9) — beim Build auf die Zielaufloesung skalieren, ggf. leichter Rand.
