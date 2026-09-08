@@ -26,7 +26,7 @@ from pathlib import Path
 from frameforge import ingest as ingest_module
 from frameforge import probe as probe_module
 from frameforge.analyze import analyze_clip, analyze_photo
-from frameforge.index import load_assets
+from frameforge.index import PRIORITY_LEVELS, load_assets
 from frameforge.keyframes import extract_keyframes
 from frameforge.project import Project
 
@@ -188,17 +188,25 @@ def index_prepared_asset(
     source: str,
     people: bool = False,
     place: str | None = None,
+    priority: str = "ok",
 ) -> dict:
     """Mergt die vom `media-indexer` vergebenen Inhaltsfelder in ein Prep-Dict und schreibt es.
 
     Deterministischer Schreibpfad: lädt `prep/<hash>.json` (technische Felder), ergänzt
     `content`, `rating`, `source` und ruft `index.write_asset`. So braucht der Agent pro Asset
     nur einen Befehl statt JSON-Bastelei. Gibt den geschriebenen Eintrag zurück.
+
+    `priority` (Plan 0004 §4, `must`/`nice`/`ok`) ist standardmaessig `ok` — der Nutzer setzt
+    die fuer ihn wichtigen Anker-Assets typischerweise nachtraeglich per `set-priority`
+    (dateinamen-basiert). Der `media-indexer` kann hier optional `nice` mitgeben, wenn ein
+    Asset beim Sichten auffaellig gut zu einem bekannten Anker passt.
     """
     if source not in probe_module.SOURCE_TYPES:
         raise ValueError(f"source '{source}' nicht in {probe_module.SOURCE_TYPES}")
     if not 1 <= rating <= 5:
         raise ValueError("rating muss 1..5 sein")
+    if priority not in PRIORITY_LEVELS:
+        raise ValueError(f"priority muss einer von {PRIORITY_LEVELS} sein, nicht '{priority}'")
 
     asset = load_prep_by_hash(project, digest)
     asset["source"] = source
@@ -208,6 +216,7 @@ def index_prepared_asset(
         "tags": tags,
         "people": people,
         "usable_as": usable_as,
+        "priority": priority,
     }
     if place:
         gps = asset.get("gps") or {}

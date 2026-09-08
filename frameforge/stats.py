@@ -344,6 +344,25 @@ def build_report(project: Project, export: Export, timeline: Timeline) -> str:
         f"({_pct(len(used), stats.indexed)} des Fundus)"
     )
     lines.append("")
+
+    # Prioritaetsstufen (Plan 0004 §4): zeigt sofort, ob ein als "must" markiertes Asset
+    # es nicht in den Schnitt geschafft hat, statt das stillschweigend zu uebersehen.
+    used_set = set(used)
+    priority_of = lambda a: a.get("content", {}).get("priority", "ok")
+    priority_counts = Counter(priority_of(a) for a in assets)
+    if any(priority_counts.get(level) for level in ("must", "nice")):
+        lines.append("**Prioritaeten:**")
+        for level in ("must", "nice", "ok"):
+            total = priority_counts.get(level, 0)
+            if not total:
+                continue
+            used_n = sum(1 for a in assets if priority_of(a) == level and a["id"] in used_set)
+            lines.append(f"- **{level}:** {used_n} von {total} verwendet")
+        missing_must = [a["id"] for a in assets if priority_of(a) == "must" and a["id"] not in used_set]
+        if missing_must:
+            lines.append(f"- ⚠️ **{len(missing_must)} must-Asset(s) fehlen im Schnitt:** {', '.join(missing_must)}")
+        lines.append("")
+
     lines.append("| Clip | Asset | In–Out (s) | Beschreibung |")
     lines.append("|---|---|---|---|")
     for clip in timeline.tracks.video:

@@ -769,6 +769,9 @@ def index_asset_cmd(
     source: str = typer.Option(..., "--source", help="drone/phone/camera/action_cam/unknown"),
     people: bool = typer.Option(False, "--people/--no-people", help="Personen im Bild?"),
     place: str = typer.Option(None, "--place", help="Ortsname (optional)"),
+    priority: str = typer.Option(
+        "ok", "--priority", help="must/nice/ok (Plan 0004 §4) — Default 'ok', optionaler Vorschlag des Agenten"
+    ),
 ) -> None:
     """Schreibt einen indizierten Asset-Eintrag (Prep + Inhaltsfelder) — ein Befehl je Asset."""
     proj = _resolve_or_fail(project)
@@ -784,10 +787,11 @@ def index_asset_cmd(
             source=source,
             people=people,
             place=place,
+            priority=priority,
         )
     except (FileNotFoundError, ValueError) as exc:
         raise _fail(str(exc)) from exc
-    console.print(f"[green]indiziert:[/green] {asset['id']}  (rating {rating}, {source})")
+    console.print(f"[green]indiziert:[/green] {asset['id']}  (rating {rating}, {source}, priority {priority})")
 
 
 @app.command(name="prepare-index")
@@ -836,15 +840,20 @@ def query(
     kind: str = typer.Option(None),
     person: str = typer.Option(None, help="Nur Assets mit dieser (benannten) Person"),
     source: str = typer.Option(None, help="Nur diese Quelle: drone/phone/camera/action_cam"),
+    priority: str = typer.Option(None, help="Nur diese Prioritaetsstufe: must/nice/ok"),
 ) -> None:
     """Kompaktes JSON aus `assets.json`, gefiltert — statt ganze Verzeichnisse zu lesen.
 
     `--source drone` liefert z.B. nur Drohnen-Shots; `--person <name>` filtert auf Assets, in
     denen die per `name-person` benannte Person vorkommt (setzt `frameforge faces` voraus).
+    `--priority must` liefert nur die hart eingeplanten Anker-Assets (Plan 0004 §4) — fuer den
+    `timeline-builder`, der die zuerst platziert, bevor er mit `nice` vor `ok` auffuellt.
     """
+    if priority is not None and priority not in index_module.PRIORITY_LEVELS:
+        raise _fail(f"--priority muss einer von {index_module.PRIORITY_LEVELS} sein.")
     proj = _resolve_or_fail(project)
     results = index_module.query_assets(
-        proj, tag=tag, place=place, min_rating=min_rating, kind=kind, source=source
+        proj, tag=tag, place=place, min_rating=min_rating, kind=kind, source=source, priority=priority
     )
     if person is not None:
         allowed = set(people_module.assets_for_person(proj, person))
@@ -1298,6 +1307,113 @@ def exclude(
     index_module.write_asset(proj, asset)
     state = "entsperrt" if undo else "gesperrt"
     console.print(f"[green]Asset '{asset_id}' {state}.[/green]" + (f" ({reason})" if reason and not undo else ""))
+
+
+def _apply_priority(proj: Project, asset: dict, priority: str) -> None:
+    content = asset.setdefault("content", {})
+    content["priority"] = priority
+    index_module.write_asset(proj, asset)
+
+
+def _bulk_set_priority(proj: Project, csv_path: Path) -> None:
+    """`--from-file`-Variante von `set-priority`: eine Zeile pro Asset statt vieler Aufrufe.
+
+    CSV mit Kopfzeile `filename,priority`. Mehrdeutige oder unbekannte Dateinamen werden
+    uebersprungen und am Ende gesammelt gemeldet — kein Abbruch mitten in einem grossen Batch.
+    """
+    import csv
+
+    if not csv_path.exists():
+        raise _fail(f"{csv_path} nicht gefunden.")
+
+    applied = 0
+    ambiguous: list[tuple[str, list[str]]] = []
+    unmatched: list[str] = []
+    invalid: list[str] = []
+
+    with csv_path.open(newline="", encoding="utf-8") as fh:
+        for row in csv.DictReader(fh):
+            fname = (row.get("filename") or "").strip()
+            prio = (row.get("priority") or "").strip()
+            if not fname:
+                continue
+            if prio not in index_module.PRIORITY_LEVELS:
+                invalid.append(f"{fname} (priority='{prio}')")
+                continue
+            matches = index_module.find_assets_by_filename(proj, fname)
+            if not matches:
+                unmatched.append(fname)
+                continue
+            if len(matches) > 1:
+                ambiguous.append((fname, [a["id"] for a in matches]))
+                continue
+            _apply_priority(proj, matches[0], prio)
+            applied += 1
+
+    console.print(f"[green]{applied} Asset(s) aktualisiert.[/green]")
+    if ambiguous:
+        console.print(f"[yellow]{len(ambiguous)} mehrdeutig (uebersprungen, bitte praezisieren):[/yellow]")
+        for fname, ids in ambiguous:
+            console.print(f"  '{fname}' -> {', '.join(ids)}")
+    if unmatched:
+        console.print(f"[yellow]{len(unmatched)} ohne Treffer (uebersprungen):[/yellow] {', '.join(unmatched)}")
+    if invalid:
+        console.print(
+            f"[yellow]{len(invalid)} Zeile(n) mit ungueltiger Prioritaet (uebersprungen):[/yellow] "
+            + ", ".join(invalid)
+        )
+
+
+@app.command(name="set-priority")
+def set_priority_cmd(
+    project: str,
+    filename: str = typer.Option(
+        None, "--filename", help="Teilstring aus dem Dateinamen (z.B. IMG_1234 oder nur 1234)"
+    ),
+    priority: str = typer.Option(None, "--priority", help="must/nice/ok"),
+    from_file: Path = typer.Option(
+        None, "--from-file", help="CSV mit Spalten 'filename,priority' fuer Bulk-Import statt Einzelaufrufen"
+    ),
+    all_matches: bool = typer.Option(
+        False,
+        "--all-matches",
+        help="Bei mehrdeutigem --filename auf ALLE Treffer anwenden, statt abzubrechen",
+    ),
+) -> None:
+    """Setzt `content.priority` (must/nice/ok, Plan 0004 §4) — dateinamen-, nicht hash-basiert.
+
+    Du kennst beim Sichten deiner eigenen Fotos/Videos keine internen Asset-Hashes, aber den
+    Dateinamen (oder einen Teil davon) — `--filename` matcht als Teilstring (case-insensitive)
+    gegen den gespeicherten Pfad. Bei mehreren Treffern bricht der Befehl ab und listet sie auf,
+    damit nichts versehentlich falsch getaggt wird; `--all-matches` erzwingt die Anwendung auf
+    alle. Fuer viele Anker-Assets auf einmal: `--from-file prioritaeten.csv` (Kopfzeile
+    `filename,priority`) statt eines Aufrufs pro Datei.
+
+    `must` wird vom `timeline-builder` garantiert eingeplant (Konflikt wird gemeldet, statt
+    das Asset stillschweigend fallen zu lassen), `nice` bevorzugt vor `ok` bei Restzeit, `ok`
+    ist der Default und reiner Luecken-fueller.
+    """
+    proj = _resolve_or_fail(project)
+    if from_file is not None:
+        _bulk_set_priority(proj, from_file)
+        return
+    if filename is None or priority is None:
+        raise _fail("--filename und --priority angeben (oder --from-file fuer Bulk-Import).")
+    if priority not in index_module.PRIORITY_LEVELS:
+        raise _fail(f"--priority muss einer von {index_module.PRIORITY_LEVELS} sein, nicht '{priority}'.")
+
+    matches = index_module.find_assets_by_filename(proj, filename)
+    if not matches:
+        raise _fail(f"Kein Asset mit '{filename}' im Pfad gefunden.")
+    if len(matches) > 1 and not all_matches:
+        console.print(f"[yellow]{len(matches)} Treffer fuer '{filename}' — bitte praeziser oder --all-matches:[/yellow]")
+        for a in matches:
+            console.print(f"  {a['id']}  {a.get('path')}")
+        raise typer.Exit(code=1)
+
+    for asset in matches:
+        _apply_priority(proj, asset, priority)
+        console.print(f"[green]{asset['id']}[/green] ({asset.get('path')}) -> {priority}")
 
 
 @app.command()

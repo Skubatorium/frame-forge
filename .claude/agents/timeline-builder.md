@@ -12,10 +12,19 @@ konkrete, gültige `timeline.json` gemäß dem Schema aus `frameforge/timeline.p
 ## Aufgabe
 
 1. Lies `exports/<export>/beatsheet.md` und hole dir für jeden Beat passende Clips über
-   `frameforge query` (Filter: Tag, Ort, Rating, `usable_as`) — nie die ganze `assets.json`.
-2. Wähle pro Beat konkrete Clips mit `src_in`/`src_out` (aus den `scenes`/`quality`-Daten
+   `frameforge query` (Filter: Tag, Ort, Rating, `usable_as`, `--priority`) — nie die ganze
+   `assets.json`.
+2. Prioritätsstufen (Plan 0004 §4, `content.priority` — `must`/`nice`/`ok`, Default `ok`):
+   platziere pro Beat/Kapitel zuerst **alle** `frameforge query --priority must`-Treffer, die
+   zum Beat passen — das ist ein Garantie-Slot, kein Vorschlag. Füllt die restliche Beat-Dauer
+   danach zuerst mit `nice`-Treffern, erst wenn die nicht reichen mit `ok` (bestehendes Rating
+   bleibt Tie-Breaker *innerhalb* einer Stufe). Passt ein `must`-Asset zeitlich nirgends rein,
+   wird das **nicht** stillschweigend fallen gelassen — melde es dem Orchestrator als Konflikt
+   (analog zur „Muss-Shot nicht gefunden“-Meldung des `story-architect`), bevor du die Timeline
+   abschließt.
+3. Wähle pro Beat konkrete Clips mit `src_in`/`src_out` (aus den `scenes`/`quality`-Daten
    des jeweiligen Assets), setze `tl_in` fortlaufend passend zur Beat-Dauer.
-3. Setze Übergänge und Effekte entsprechend dem Stil-Preset aus dem Brief — **diese werden
+4. Setze Übergänge und Effekte entsprechend dem Stil-Preset aus dem Brief — **diese werden
    tatsächlich gerendert**:
    - `transition_in` vom Typ `fade`/`dissolve`/`slow_dissolve`/`crossfade` (mit `dur`) auf einem
      Clip erzeugt einen **Crossfade** vom vorherigen Clip. **Wichtig:** der `tl_in` dieses Clips
@@ -27,8 +36,8 @@ konkrete, gültige `timeline.json` gemäß dem Schema aus `frameforge/timeline.p
    - Ein Effekt `{"type": "kenburns", "from": [x,y,zoom], "to": [x,y,zoom]}` auf einem
      **Foto-Clip** erzeugt einen langsamen Ken-Burns-Zoom (das dritte Element ist der Zoom,
      z.B. `1.0` → `1.12`). Setze ihn gemäß `photo_treatment.ken_burns` des Presets.
-4. Platziere Overlay-, Map- und Audio-Spuren an den vom Beat-Sheet vorgesehenen Stellen.
-5. Schreibe `exports/<export>/timeline.json` über `Timeline.save()` (nicht händisch JSON
+5. Platziere Overlay-, Map- und Audio-Spuren an den vom Beat-Sheet vorgesehenen Stellen.
+6. Schreibe `exports/<export>/timeline.json` über `Timeline.save()` (nicht händisch JSON
    zusammenbauen) und validiere sofort mit `Timeline.validate_semantics()`.
 
 ## Constraints
