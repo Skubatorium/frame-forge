@@ -26,4 +26,11 @@ rsync -avz --delete --exclude='videos' \
   "$BUILD"/ \
   chris@159.195.213.69:/opt/apps/jga-2026/
 
+# nginx im Container laeuft als anderer User als "chris" und braucht
+# mindestens Lese-/Traversier-Rechte. rsync's --chmod verlaesst sich auf
+# den lokalen rsync (auf macOS oft die alte 2.6.9, die das nicht sauber
+# unterstuetzt) -- deshalb stattdessen server-seitig fixen, unabhaengig
+# von der lokalen rsync-Version.
+ssh chris@159.195.213.69 "chmod -R a+rX /opt/apps/jga-2026/"
+
 echo "JGA-Website aktualisiert: https://micha-jga.skubus.de"

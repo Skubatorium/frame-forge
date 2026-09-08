@@ -20,4 +20,10 @@ rsync -avz --delete --exclude='videos' \
   "$BUILD"/ \
   chris@159.195.213.69:/opt/apps/norwegen/
 
+# nginx im Container laeuft als anderer User als "chris" und braucht
+# mindestens Lese-/Traversier-Rechte. Bei restriktivem lokalem umask
+# koennten sonst Dateien mit z. B. 600/700 landen (macOS' openrsync
+# unterstuetzt --chmod nicht zuverlaessig, deshalb Fix server-seitig).
+ssh chris@159.195.213.69 "chmod -R a+rX /opt/apps/norwegen/"
+
 echo "Norwegen-Website aktualisiert: https://norwegen.skubus.de"
