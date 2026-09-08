@@ -385,7 +385,13 @@ def build_report(project: Project, export: Export, timeline: Timeline) -> str:
     lines.append("")
 
     lines.append("## Audio")
-    music = [a for a in timeline.tracks.audio if a.src is not None]
+    # `type == "sfx"` (Plan 0004 §6, Comic/Party-FX-Baukasten): kurze Einzel-Soundeffekte
+    # (z.B. ein "Bling" zum Cast-Intro-Namensstempel) sind technisch ganz normale `src`-Audio-
+    # Clips -- ohne diese Unterscheidung wuerden sie im Report unter "Musik" auftauchen, obwohl
+    # es kein Musikstueck ist. `render.py` behandelt `type` bewusst nirgends anders (ein SFX-
+    # Clip mischt/duckt/faded exakt wie jeder andere `src`-Clip), das ist rein fuers Datenblatt.
+    sfx = [a for a in timeline.tracks.audio if a.type == "sfx"]
+    music = [a for a in timeline.tracks.audio if a.src is not None and a.type != "sfx"]
     oton = [a for a in timeline.tracks.audio if a.asset is not None]
     if music:
         for a in music:
@@ -396,6 +402,8 @@ def build_report(project: Project, export: Export, timeline: Timeline) -> str:
     for a in oton:
         duck = f", Musik geduckt {a.duck_music_db:+.0f} dB" if a.duck_music_db is not None else ""
         lines.append(f"- **O-Ton:** Asset `{a.asset}` bei {a.tl_in:.1f} s{duck}")
+    for a in sfx:
+        lines.append(f"- **SFX:** `{a.src}` bei {a.tl_in:.1f} s")
     lines.append("")
 
     lines.append("## Design")

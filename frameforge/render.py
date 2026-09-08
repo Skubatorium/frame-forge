@@ -321,6 +321,66 @@ def _kenburns_expr(clip, dur: float, fps: float, res: tuple[int, int]) -> str | 
     )
 
 
+def _color_pop_expr(clip) -> str | None:
+    """`eq`-Filterausdruck fuer einen kurzen Saettigungs-/Farb-Puls (Plan 0004 §5, Comic-FX).
+
+    Aktiv nur, wenn der Clip einen Effekt vom Typ `color_pop` traegt (analog zu
+    `_kenburns_expr`). Parameter (alle optional, Defaults in Klammern): `at` (0.0) — Clip-
+    lokale Sekunde, an der der Puls beginnt; `dur` (0.3) — Laenge des Pulses in Sekunden;
+    `peak` (1.8) — Saettigung im Puls-Maximum (1.0 = unveraendert).
+
+    `t` ist hier Clip-lokale Zeit (durch `setpts=PTS-STARTPTS` weiter oben in der Kette),
+    nicht Timeline-Zeit — der Puls sitzt also relativ zum Clip-Anfang, unabhaengig davon, wo
+    der Clip in der Timeline landet. `enable='between(...)'` schaltet den Filter ausserhalb
+    des Fensters komplett ab (derselbe Kniff wie bei Overlay-/Duck-Fenstern), ein
+    Sinus-Envelope innerhalb des Fensters sorgt fuer weiches Ein-/Ausschwingen statt eines
+    harten Sprungs.
+    """
+    fx = next((e for e in clip.effects if e.type == "color_pop"), None)
+    if fx is None:
+        return None
+    data = fx.model_dump()
+    at = float(data.get("at", 0.0))
+    dur = max(0.05, float(data.get("dur", 0.3)))
+    peak = float(data.get("peak", 1.8))
+    end = at + dur
+    envelope = f"sin(PI*(t-{at:.3f})/{dur:.3f})"
+    saturation = f"1+({peak:.3f}-1)*({envelope})"
+    return f"eq=eval=frame:saturation='{saturation}':enable='between(t,{at:.3f},{end:.3f})'"
+
+
+def _cartoon_outline_expr(clip) -> str | None:
+    """Filterkette fuer einen Comic-/Kritzel-Rand (Plan 0004 §5, Comic-FX).
+
+    Aktiv nur bei einem Effekt vom Typ `cartoon_outline`. FFmpeg-natives Aequivalent zum im
+    Plan urspruenglich skizzierten OpenCV-Cartoonizer (Bilateral-Filter + Kantenerkennung):
+    `gblur` glaettet vor der Kantenerkennung (entspricht dem Bilateral-Schritt), `edgedetect=
+    mode=colormix` legt die erkannten Kanten in Originalfarbe ueber das geglaettete Bild statt
+    es (wie `mode=wires`) komplett durch eine Kantenkarte zu ersetzen. Vorteil gegenueber einer
+    echten OpenCV-Vorverarbeitung: bleibt im bestehenden Ein-Pass-Filtergraphen dieser Funktion,
+    statt eine zweite Video-Datei vorab zu erzeugen — weniger neue Codepfade, aber auch ein
+    einfacherer Look. Wirkt schwaecher als eine echte Bilateral-Kantenerkennung; falls das nach
+    einem echten Render zu duenn aussieht, ist eine OpenCV-Vorstufe der naheliegende Ausbau.
+
+    Parameter (alle optional): `at`/`dur` — Zeitfenster wie bei `_color_pop_expr` (Default: die
+    ganze Clipdauer, kein `enable`-Gate); `blur` (4.0) — Glaettungsstaerke vor der
+    Kantenerkennung; `edge_low`/`edge_high` (0.1/0.35) — `edgedetect`-Schwellwerte.
+    """
+    fx = next((e for e in clip.effects if e.type == "cartoon_outline"), None)
+    if fx is None:
+        return None
+    data = fx.model_dump()
+    blur = max(0.0, float(data.get("blur", 4.0)))
+    low = float(data.get("edge_low", 0.1))
+    high = float(data.get("edge_high", 0.35))
+    gate = ""
+    if data.get("at") is not None and data.get("dur") is not None:
+        at = float(data["at"])
+        end = at + max(0.05, float(data["dur"]))
+        gate = f":enable='between(t,{at:.3f},{end:.3f})'"
+    return f"gblur=sigma={blur:.2f}{gate},edgedetect=mode=colormix:low={low:.3f}:high={high:.3f}{gate}"
+
+
 BLACK_TRANSITION = "black"
 
 
@@ -709,6 +769,16 @@ def build_filtergraph(
         match = match_filter(clip.color_match)
         if match:
             post.append(match)
+        # Comic/Party-FX-Baukasten (Plan 0004 §5/§6): Farb-Pop und Cartoon-Outline sind
+        # Effekte AUF dem Clip selbst (wie `kenburns`), keine Overlay-Datei — deshalb hier,
+        # nach der Farbangleichung und vor dem Stil-Grade, damit sie auf demselben,
+        # bereits farbnormalisierten Bild wirken wie alles andere.
+        pop = _color_pop_expr(clip)
+        if pop:
+            post.append(pop)
+        cartoon = _cartoon_outline_expr(clip)
+        if cartoon:
+            post.append(cartoon)
         # Konstante fps sichern, damit concat/xfade sauber zusammenpassen. `fps` allein
         # normalisiert aber nicht die Timebase: `zoompan` (Ken-Burns-Fotos) liefert
         # AV_TIME_BASE (1/1000000), `fps` laesst das unangetastet, wenn sich an der
