@@ -3038,3 +3038,96 @@ Weiter geprueft: Tags `yuv420p / tv / bt709 / bt709 / bt709`, 1080,4 s, 32.411 F
 Schwarzbild-Abtastung alle 5 s nur bei 0/5 s (Cold-Open) und 1080 s (Schlussschwarz), alle 8
 Chunk-Nahtstellen unauffaellig. 2,55 GB bei 18,9 Mbit/s — die Angaben auf der Website
 (2,6 GB / 19 Mbit/s) stimmen weiterhin.
+
+---
+
+## Plan 0004 — JGA Brüssel (v2, in Planung)
+
+Plan-Referenz: `docs/plans/0004-jga-brussel-video.md`. Reiner Planungs-/Vorbereitungsstand,
+v2 nach Rückfragen überarbeitet (2026-09-07). Wichtigster Befund: `frameforge`-Befehle lassen
+sich aus der Geräte-Anbindung heraus **nicht ausführen** (Python-venv + Homebrew-Tools liegen
+außerhalb des gemounteten Ordners) — Projekt-Anlage (`frameforge new`) muss der Nutzer selbst
+im Mac-Terminal oder einer nativen Claude-Code-Session anstoßen. Reine Dateiarbeit (Doku,
+Presets als YAML, Website-HTML/CSS) ist dagegen von hier aus möglich.
+
+Zwei genuine Neuentwicklungen: Prioritätsstufen für Assets (`must`/`nice`/`ok`, jetzt
+dateinamen- statt hash-basiert, Paket J2) und ein wiederverwendbarer Comic/Party-FX-Baukasten
+inkl. neuer Cast-Intro-Mechanik (Freeze-Frame + Stempel-Text + SFX, Paket J6). Design-System-
+Vorschlag (Farben/Fonts/Bild-Prompts) liegt bereits fertig in Plan §4. Subdomain bestätigt:
+`micha-jga.skubus.de`.
+
+| # | Arbeitspaket | Phase | Status |
+|---|---|---|---|
+| J1 | Projekt `michael-jga-2026` anlegen | 1 (Nutzer/native Session) | ✅ fertig (2026-09-07, `frameforge new` gelaufen, Phase INIT) |
+| J2 | Prioritätsstufen (`content.priority`, dateinamen-basiert + Bulk-Import) | Dev | ✅ Code steht (`index.py`/`preindex.py`/`cli.py`/`stats.py`, `set-priority`-Befehl, `timeline-builder.md` angepasst) — funktional gegen echte Aufrufe getestet, End-to-End-CLI/echter Fundus noch offen (§18) |
+| J3 | Ingest + Index (inkl. iPhone-Zeitzonen-Check) | 2 | ⬜ offen — braucht echtes Material |
+| J4 | Designsystem (`tokens.yaml`, Fonts, Bild-Prompts — Vorschlag steht in Plan §4) | 0/2 | 🔄 `tokens.yaml`-Entwurf + Fonts liegen bereit, `frameforge design` erst nach ingest+index möglich |
+| J5 | Custom Preset `jga-zweiteiler` (dreiteiliger Arc) | 0 | ✅ fertig, gegen echten Preset-Loader/`_MOOD_MAP` geprüft — dabei einen ungueltigen `color_grade.mood`-Wert gefunden und korrigiert (§18) |
+| J6 | Comic/Party-FX-Baukasten + Cast-Intro (neuer Agent, Denkblasen/Sticker/Speedlines/Farb-Pop/Cartoon-Outline) | Dev | ✅ Code steht (3 neue SVG-Templates, 2 neue `render.py`-Effekte, neuer Agent `party-fx.md`) — bewusst OHNE neue `fx`-Spur, siehe Architektur-Korrektur §18; funktional getestet, echtes Rendering noch offen |
+| J7 | Brief + Beat-Sheet (Muss-Shot-Liste, drei Akte + Cast-Intro) | 0/2 | 🔄 Entwurf liegt in `projects/michael-jga-2026/brief-notes.md`, echter `beatsheet.md` erst nach Ingest/Index/Export-Anlage möglich |
+| J8 | Audio (3 Musik-Tracks + 1-2 SFX, Ducking) | 1/2 | 🔄 Outro-Musik-Prompt liegt in `projects/michael-jga-2026/design/prompts.md`; Vivaldi/Pulp-Fiction-Datei + genauer Songtitel weiterhin bei Christian |
+| J9 | Build → Preview → Freigabe → Render | 2 | ⬜ offen — braucht echtes Material |
+| J10 | Website `web/sites/michael-jga-2026/` + Deploy + DNS/Basic-Auth | 0/2 | ✅ `public/` gebaut (3 Seiten + Assets, Pfade auf root-relativ normalisiert), `deploy-jga-site.sh` + `deploy/cache-bust.py` stehen — DNS/Traefik-Basic-Auth (Server-seitig) und die inhaltlichen TODOs (Datum, echte Namen/Cast-Fotos, Songtitel, Impressum-Adresse) offen |
+
+**Update v3 (2026-09-07, zweite Runde):** Ziellänge ist ein offener Richtwert (circa
+6-7 statt starrer 5,5 Minuten). Cast-Intro sitzt inhaltlich in der Karaoke-Bar „Red",
+mitten in Akt 2, nicht am Akt-Übergang. Christian liefert zusätzlich ein Intro- und ein
+Outro-Standbild als fertige Design-Assets. Ein Stilreferenz-Bild von Christian liegt unter
+`web/sites/michael-jga-2026/design/reference/style-reference-jga-poster.png` und hat den
+Designsystem-Vorschlag (Gold als Hauptakzent statt Pink, Indigo-Purpur-Basis, Neon-Doodle-
+Sticker-Optik) präzisiert — siehe `docs/plans/0004-jga-brussel-video.md` §4.
+
+**Offen vor Start von J1:** exakter `media_root`-Pfad (Platzhalter reicht für `frameforge
+new`), genauer Pulp-Fiction-Songtitel.
+
+**Update v4 (2026-09-07, dritte Runde):** Design-System-Export (aus externem Tool, auf Basis
+von `PROMPT-designsystem.md` + Stilreferenz-Bild + Plan §4-Farben) ist da und vollständig
+(Tokens/Theme/Base/Components-CSS, echte Bangers-/Poppins-Fontdateien inkl. Lizenzen, 3
+HTML-Seiten, JSX-Komponenten core/film/site, 20 Guideline-Seiten). War zunächst versehentlich
+in `projects/michael-jga-2026/design/` (Video-Projekt) statt `web/sites/michael-jga-2026/design/`
+(Website) gelandet — korrigiert: Website-Dateien liegen jetzt in
+`web/sites/michael-jga-2026/design/` (neben der schon vorhandenen `PROMPT-designsystem.md`/
+`README.md`/Referenzbild), die Bangers-/Poppins-`.ttf`-Dateien zusätzlich nach
+`projects/michael-jga-2026/design/fonts/` kopiert (für `frameforge design`/SVG-Rendering im
+Video). `projects/michael-jga-2026/design/` enthält jetzt wieder nur `tokens.yaml` + `fonts/`
+(erwartete flache FrameForge-Struktur). Hinweis: die generierten Bilder im Export
+(`hero.jpg`, `poster.jpg`, `film-poster.jpg`, `cast-01..10.jpg`) sind laut Export-eigenem
+Readme aus dem einen Referenzbild abgeleitete Platzhalter, keine echten Einzelfotos der zehn
+Freunde — für die Website erstmal nutzbar, für die tatsächliche Cast-Intro-Sequenz im Video
+werden später echte Einzelfotos gebraucht.
+
+**Update v5 (2026-09-07, vierte Runde):** Auf Nutzerwunsch alles umgesetzt, was nicht an
+echtem Videomaterial hängt (siehe Plan §18 für Details): Website `public/` fertig gebaut und
+deploybar; J2 (Prioritätsstufen) und J6 (Comic/Party-FX inkl. Cast-Intro) als echter
+FrameForge-Code geschrieben und funktional gegengetestet (echte Funktionsaufrufe gegen eine
+separat installierte reine-Python-Umgebung, nicht nur Syntax-Checks — `frameforge` selbst
+bleibt aus dieser Session heraus nicht ausführbar, §0); dabei zwei echte Korrekturen: keine
+neue `fx`-Spur nötig (bestehendes Overlay-/Effect-/Audio-Schema reicht), und der
+Preset-Entwurf hatte einen ungültigen `color_grade.mood`-Wert, der sonst still wirkungslos
+geblieben wäre. Zusätzlich Preset gegen den echten Loader geprüft, ein Beat-Sheet-/
+Muss-Shot-Entwurf (`projects/michael-jga-2026/brief-notes.md`) und ein Outro-Musik-Prompt
+(`design/prompts.md`) vorbereitet. Bleibt vor J3/J9: Ingest/Index mit echtem Material,
+danach ein kurzer Test-Export der neuen Effekte, bevor `party-fx` sie für ganz Akt 2 einsetzt.
+
+**Update v6 (2026-09-08, /ff-wizard-Session mit echtem Material):**
+- **J3 erledigt.** `frameforge ingest` (329 Assets, 329 Proxies) und `frameforge index`
+  (329/329 indiziert, Phase INDEXED). Indizierung über 6 parallele `media-indexer`-Agenten
+  (je ~55 Assets) + 6 Nachzügler seriell.
+- **Bugfix beim Parallel-Index:** `index.write_asset`/`save_assets` schrieben `assets.json`
+  ohne Lock und nicht atomar → bei 6 gleichzeitigen Agenten reproduzierbar korrupt
+  (`Extra data` / abgeschnittenes JSON), einzelne Einträge gingen durch Fremd-Writes
+  verloren. Behoben: `flock` um das Read-modify-write + tmp-Datei + `os.replace`
+  (Commit zusammen mit J2). Danach alle 329 Einträge sauber, keine verwaisten `.md`.
+- **J4 erledigt.** `projects/michael-jga-2026/design/tokens.yaml` 1:1 aus der Web-Mini-Site
+  übernommen (Farbrollen aus `theme-jga-2026.css`, Bangers/Poppins, natürliche Palette).
+  `frameforge design` gelaufen, Phase DESIGNED. Keine Grafiken angefordert (Text-Overlays
+  reichen); Intro-/Outro-Standbild `JGA_INTRO.png`/`JGA_OUTRO.png` liegen in
+  `design/assets/img/` (gitignored), Skalierung 1672×941 → Zielauflösung beim Build klären.
+- **Fundus-Lage:** gediegener Auftakt stark (Grand Place, Schokolade/Waffel, Pizza,
+  Bierverkostung); Partynacht reichlich aber dunkel/neonstichig (meist Rating 2–3, Karaoke
+  nur Screen + 1–2 Videos); ruhiger Ausklang dünn (gute Sonnenuntergang-Panoramen fürs
+  Outro, kaum ruhige Innen-/Abreise-Shots); ~20 Fotos mit falscher EXIF-Rotation (Rating
+  gedämpft, Tag gesetzt). Kein Drohnenmaterial.
+- **Offen:** J7 Brief/Beat-Sheet (Export anlegen), J8 Musik-Dateien (3 Tracks liegen in
+  `music/`, Analyse läuft im Build), J9 Build→Preview→Render. Nachzügler-Fotos + Christians
+  Muss-Foto-Auswahl kommen vor dem Build per `ingest`-Nachlauf + `set-priority`.
