@@ -1,0 +1,48 @@
+/* THEME: JGA 2026 — "Micha im Delirium", Brüssel.
+   Semantic roles. Components only ever reference these, never raw palette. */
+:root{
+  /* Surfaces — dark is the fixed optic, there is no light mode */
+  --surface-page:var(--ink-900);
+  --surface-deep:var(--ink-950);
+  --surface-card:color-mix(in oklab,var(--ink-800) 88%,var(--cream-050) 12%);
+  --surface-raised:var(--ink-700);
+  --surface-quiet:color-mix(in oklab,var(--ink-800) 70%,var(--ink-950) 30%);
+  --surface-scrim:rgb(13 7 34 / .72);
+
+  /* Ink */
+  --text-body:var(--cream-050);
+  --text-muted:var(--cream-400);
+  --text-display:var(--gold-500);
+  --text-on-gold:var(--ink-950);
+  --text-on-pink:#2a0016;
+
+  /* Accents */
+  --accent-primary:var(--gold-500);
+  --accent-primary-bright:var(--gold-400);
+  --accent-secondary:var(--pink-500);
+  --accent-special:var(--cyan-500);   /* one person's glowing accessory — use sparingly */
+
+  /* Lines */
+  --border-quiet:color-mix(in oklab,var(--ink-600) 70%,transparent);
+  --border-loud:var(--gold-500);
+  --rule-hairline:color-mix(in oklab,var(--cream-050) 35%,transparent);
+
+  /* Gradients */
+  --grad-gold:linear-gradient(178deg,var(--gold-400) 0%,var(--gold-500) 46%,var(--gold-600) 100%);
+  --grad-pink:linear-gradient(178deg,var(--pink-400),var(--pink-600));
+  --grad-night:radial-gradient(120% 80% at 18% 0%,color-mix(in oklab,var(--violet-500) 34%,transparent) 0%,transparent 62%),
+               radial-gradient(90% 70% at 88% 12%,color-mix(in oklab,var(--pink-500) 22%,transparent) 0%,transparent 60%),
+               linear-gradient(180deg,var(--ink-900) 0%,var(--ink-950) 100%);
+  --grad-protect:linear-gradient(180deg,transparent 0%,rgb(13 7 34 / .5) 55%,var(--ink-950) 100%);
+
+  /* Neon glow — thin contour + soft halo, never a flat fill */
+  --glow-gold:0 0 6px color-mix(in oklab,var(--gold-400) 80%,transparent),0 0 22px color-mix(in oklab,var(--gold-500) 55%,transparent);
+  --glow-pink:0 0 6px color-mix(in oklab,var(--pink-400) 85%,transparent),0 0 24px color-mix(in oklab,var(--pink-500) 60%,transparent);
+  --glow-cyan:0 0 6px color-mix(in oklab,var(--cyan-400) 85%,transparent),0 0 24px color-mix(in oklab,var(--cyan-500) 55%,transparent);
+  --text-glow-gold:0 0 10px color-mix(in oklab,var(--gold-500) 55%,transparent),0 0 40px color-mix(in oklab,var(--pink-500) 30%,transparent);
+  --text-glow-pink:0 0 10px color-mix(in oklab,var(--pink-500) 60%,transparent),0 0 38px color-mix(in oklab,var(--pink-600) 40%,transparent);
+
+  /* Focus — always visible, always cyan so it reads against gold and pink */
+  --focus-ring:2px solid var(--cyan-400);
+  --focus-offset:3px;
+}

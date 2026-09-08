@@ -1,0 +1,76 @@
+/* SYSTEM TOKENS — structure only. Colour roles live in theme-jga-2026.css. */
+:root{
+  /* ---- Raw palette ---------------------------------------------------- */
+  --ink-950:#0d0722;   /* deepest night, page bottom */
+  --ink-900:#120a2a;   /* page background */
+  --ink-800:#1e1640;   /* base indigo-purple (brief value) */
+  --ink-700:#2a1e5c;   /* raised surface */
+  --ink-600:#3b2a7d;   /* borders on dark */
+  --ink-500:#57409f;   /* muted stroke / disabled */
+
+  --gold-400:#ffcf5c;  /* gold highlight (top of gradient) */
+  --gold-500:#d9a441;  /* gold, primary accent */
+  --gold-600:#b07c22;  /* gold shadow (bottom of gradient) */
+
+  --pink-400:#ff5cb8;  /* pink highlight */
+  --pink-500:#ff2e8a;  /* pink, secondary accent */
+  --pink-600:#c8106a;  /* pink shadow */
+
+  --cyan-400:#7ee7ff;
+  --cyan-500:#35d6ff;  /* the one blue special accent */
+
+  --violet-500:#7a3cff; /* ambient club glow, backgrounds only */
+
+  --cream-050:#fdf6ec; /* warm off-white — never pure #fff */
+  --cream-200:#e8dcc9;
+  --cream-400:#b3a692;
+
+  /* ---- Type ----------------------------------------------------------- */
+  --font-display:"Bangers","Impact","Haettenschweiler",system-ui,sans-serif;
+  --font-body:"Poppins","Segoe UI",system-ui,-apple-system,sans-serif;
+
+  --step--1:clamp(.8125rem,.79rem + .12vw,.875rem); /* @kind other */
+  --step-0:clamp(1rem,.96rem + .2vw,1.0625rem); /* @kind other */
+  --step-1:clamp(1.125rem,1.05rem + .35vw,1.25rem); /* @kind other */
+  --step-2:clamp(1.375rem,1.24rem + .6vw,1.625rem); /* @kind other */
+  --step-3:clamp(1.75rem,1.5rem + 1.2vw,2.375rem); /* @kind other */
+  --step-4:clamp(2.25rem,1.8rem + 2.2vw,3.5rem); /* @kind other */
+  --step-5:clamp(3rem,2.1rem + 4.4vw,6rem); /* @kind other */
+  --step-6:clamp(3.75rem,2.2rem + 7vw,9rem); /* @kind other */
+
+  --lh-tight:.92; /* @kind font */
+  --lh-snug:1.2; /* @kind font */
+  --lh-body:1.65; /* @kind font */
+  --tracking-display:.01em; /* @kind font */
+  /* --tracking-caps: the quiet, "gediegene" voice */
+  --tracking-caps:.18em; /* @kind font */
+  --tracking-caps-wide:.32em; /* @kind font */
+
+  /* ---- Space (4px base) ----------------------------------------------- */
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:.75rem; --sp-4:1rem; --sp-5:1.5rem;
+  --sp-6:2rem; --sp-7:3rem; --sp-8:4rem; --sp-9:6rem; --sp-10:8rem;
+
+  --measure:64ch; /* @kind spacing */
+  --page-max:1180px; /* @kind spacing */
+  --page-gutter:clamp(1rem,4vw,3rem); /* @kind spacing */
+
+  /* ---- Radii & lines --------------------------------------------------- */
+  --radius-xs:4px; --radius-sm:8px; --radius-md:14px; --radius-lg:22px;
+  --radius-pill:999px;
+  --border-hair:1px; --border-strong:2px; --border-chunky:4px;
+
+  /* ---- Elevation & glow ------------------------------------------------ */
+  --shadow-1:0 2px 8px rgb(6 2 20 / .5);
+  --shadow-2:0 12px 32px -8px rgb(6 2 20 / .7);
+  --shadow-3:0 28px 70px -18px rgb(6 2 20 / .85);
+
+  /* ---- Motion ---------------------------------------------------------- */
+  --ease-out:cubic-bezier(.2,.7,.25,1); /* @kind other */
+  --ease-pop:cubic-bezier(.2,1.5,.4,1); /* @kind other */
+  --dur-fast:120ms; /* @kind other */
+  --dur-mid:240ms; /* @kind other */
+  --dur-slow:600ms; /* @kind other */
+
+  --z-sticker:5; /* @kind other */
+  --z-nav:50; /* @kind other */
+}
