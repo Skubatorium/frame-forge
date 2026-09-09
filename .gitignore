@@ -47,3 +47,4 @@ web/sites/*/public/video/*
 # (wenige MB). Draussen bleiben nur die Videos und das Quellmaterial.
 # Schriften liegen als TTF im Repo (OFL, ~2,3 MB) - die Seite darf keine externen Requests machen.
 web/sites/*/content/media/
+.thumbnail

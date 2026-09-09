@@ -3169,9 +3169,9 @@ punktuell). Kernpunkte:
 | T9 | `frameforge preview` neu, altes `JGA_preview.mp4` löschen, Audio gegenhören, an Christian | Neues Preview liegt, PROGRESS + Memory fortgeschrieben, Push | ⬜ offen | — |
 
 Reihenfolge: T1 → T2 → (T3 ∥ T4) → T5 → T6 → T7 → T8 → T9. Commit + ggf. Push nach jedem Task.
-**Nicht** von uns anzufassen: `projects/michael-jga-2026/design/uploads/`,
-`web/sites/michael-jga-2026/design/Micha im Delirium — JGA Design System/` (Christians
-Design-Assets, Entscheidung über Tracking liegt bei ihm).
+`design/uploads/style-reference-jga-poster.png` ist jetzt versioniert (Stilreferenz, 2,7 MB).
+Der Ordner `web/sites/.../Micha im Delirium — JGA Design System/` enthielt nur macOS-Müll
+(`.DS_Store` / `.thumbnail`, beide jetzt in `.gitignore`) — kein echter Inhalt.
 
 **HIER GEHT ES WEITER (nächste Session) — T6.** Stand 2026-09-09, `5db828d`:
 - T1–T5 fertig + gepusht. Templates grün (647 Tests), `music/sfx/` (3 Dateien),
