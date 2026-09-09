@@ -21,8 +21,8 @@ preset: jga-zweiteiler
 # umgekehrt. RUNDE 2: CL-Theme 181,5 s (Akt 1, ganz) + Miserlou-Loop ~196 s (Akt 2) + Where
 # Is My Mind ab src_in ~17 s ~45 s + ~6 s Stille ≈ ~428 s ≈ 7:08. Der Wert unten wird in
 # Task T7 auf die TATSÄCHLICH gebaute Länge nachgezogen (sonst bricht die QC-Längenprüfung
-# ±2 s ab — HANDOVER). Bis dahin steht hier noch die alte 534 als Platzhalter.
-target_duration_s: 534
+# ±2 s ab — HANDOVER). T7 (Runde 2): real gebaute timeline.duration = 428,4 s.
+target_duration_s: 428.4
 language: de
 
 # ---------------------------------------------------------------- Overrides (über dem Preset)

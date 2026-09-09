@@ -3164,9 +3164,9 @@ punktuell). Kernpunkte:
 | T4 | Miserlou-Loop-Datei `music/01 Miserlou (loop-196).m4a` (nahtlose interne Wdh., ~196 s, endet auf Downbeat) | Naht unhörbar, Länge 196±4 s, Analyse gecacht | ✅ 195,93 s, Region 43,2→103,2 s dupliziert, Nahtstellen ~103,2/163,2 s (RMS-stetig), Analyse gecacht — Ohrenprobe im Preview | `3104c99` |
 | T5 | `audio-plan.md` neu: 3 neue Tracks, BPM/Beatgrid frisch, neue Anker, **kein Ducking**, Cast-SFX auf Miserlou-Grid | audio-designer, Datei konsistent zu `editorial-notes-round2.md` §0 | ✅ fertig | `a1d8088` |
 | T6 | `beatsheet.md` neu: 3-Akt-Struktur auf ~7:08, Runde-2-Regie eingearbeitet | story-architect, Kapitelsummen = neue Musiklängen | ✅ fertig | `1dec782` |
-| T7 | `timeline.json` neu bauen (timeline-builder): Reorder/Cuts, `fit: blur`, variables Ken Burns, Text-Regeln, Speed-Ramps, Aftermath-Order, Ende | `frameforge` validate_semantics grün, QC-Gate grün, Länge ~7:08 | ⬜ offen | — |
-| T8 | party-fx: Denkblasen/Sticker/Kronen/Herzchen/Speedlines/„Delirium"-Schrift, André-Konsistenz, Overlays neu rendern | Overlays gebaut, FX-Budget eingehalten | ⬜ offen | — |
-| T9 | `frameforge preview` neu, altes `JGA_preview.mp4` löschen, Audio gegenhören, an Christian | Neues Preview liegt, PROGRESS + Memory fortgeschrieben, Push | ⬜ offen | — |
+| T7 | `timeline.json` neu bauen (timeline-builder): Reorder/Cuts, `fit: blur`, variables Ken Burns, Text-Regeln, Speed-Ramps, Aftermath-Order, Ende | `frameforge` validate_semantics grün, QC-Gate grün, Länge ~7:08 | ✅ fertig | `<T7T8-Commit>` |
+| T8 | party-fx: Denkblasen/Sticker/Kronen/Herzchen/Speedlines/„Delirium"-Schrift, André-Konsistenz, Overlays neu rendern | Overlays gebaut, FX-Budget eingehalten | ✅ fertig | `<T7T8-Commit>` |
+| T9 | `frameforge preview` neu, altes `JGA_preview.mp4` löschen, Audio gegenhören, an Christian | Neues Preview liegt, PROGRESS + Memory fortgeschrieben, Push | 🔄 Render läuft | — |
 
 Reihenfolge: T1 → T2 → (T3 ∥ T4) → T5 → T6 → T7 → T8 → T9. Commit + ggf. Push nach jedem Task.
 `design/uploads/style-reference-jga-poster.png` ist jetzt versioniert (Stilreferenz, 2,7 MB).
@@ -3195,7 +3195,42 @@ nice · 1 ok (IMG_1449) · 0 forbidden · 0 Ducking-Stellen.**
 - **`target_duration_s: 534` in `brief.yaml` weiter veraltet** — in T7 auf ~428,4 nachziehen
   (sonst QC-Längenprüfung ±2 s, HANDOVER).
 
-**HIER GEHT ES WEITER (nächste Session) — T7.** Stand 2026-09-09:
+**T7 + T8 fertig (2026-09-10).** `timeline.json` Runde 2 komplett neu (timeline-builder),
+danach FX-Schicht (party-fx). Beide QC-grün, Export-Phase `TIMELINE`.
+- **timeline.duration 428,40 s.** video 172 · overlay 31 · audio 25 (3 music + 4 oton +
+  18 sfx) · map 0. `qc.validate(...)` → leere Liste. `frameforge build` → „'JGA' ist TIMELINE".
+- **Musik komplett getauscht**, alle Duck-Felder entfernt, `oton-01-img1395` + `oton-05-img1641`
+  entfallen (4 O-Ton-Clips: 1460/1613/1637/4835, negatives `gain_db`, kein Ducking).
+- **Abweichung von `audio-plan.md` §2.3:** WIMM-Clip `dur 51,02` (bis Filmende) statt 45,0,
+  `fade_out_s 10,0` statt 4,0 — QC `_check_music_coverage` verbietet >1 s Stille am Schluss;
+  der Song ist per Fade ~10 s vor Ende hörbar aus, „Stille unter der Danke-Karte" bleibt
+  praktisch erhalten. Als `note` am Clip vermerkt.
+- `brief.yaml` `target_duration_s` 534 → **428.4**.
+- Ken Burns pro Clip variiert (Pan L/R, hoch/runter, rein/**raus**, ~jedes 3. Bild ohne),
+  `fit:"blur"` auf allen Hochkant-Motiven, Speed-Ramps an 1621/1635/1637 (je 2 Sub-Clips
+  `speed 1.6`+`1.0`, alle `intentional_repeat: true`).
+- **André = „André"** mit Akzent (Bangers rendert É sauber, party-fx-Test-PNG geprüft).
+- **31 Overlay-PNGs** in `exports/JGA/overlays/` (gitignored, reproduzierbar über
+  `party-fx-recipe.py`): 18 Text + 9 Cast-Namen + 4 Comic-FX (Sticker Bär, Delirium-Schrift,
+  Krone 1707, Herz 1706).
+- **Offen fürs Preview (Feedback-Punkte):**
+  - **IMG_8337 bleibt ungedreht** — Schema hat kein Rotate-Feld, Preview zeigt den Clip ggf.
+    seitlich. `note` am Clip. Wenn Christian ihn drin haben will → Render braucht ein
+    Rotate-Feature oder ein vorgedrehtes Derivat.
+  - Cast-Namen ragen ~0,3 s ins Folgefoto (QC-Untergrenze `MIN_OVERLAY_READABLE_S 1,2` >
+    0,9-s-Fotofenster) — nur über den Ausblend-Fade vor dem Cut gelöst, Beat-Grid unangetastet.
+  - FX-Stärke (Herz/Krone/Glow), `color_pop`/`speedlines` nie real gerendert → im Preview prüfen.
+  - „Buchstaben einzeln" ist über Slide+Fade angenähert, kein echter Per-Letter-Stagger.
+  - `ov-sulemann` = „Suleman Pizza-Star" (falls „Süleman" gewünscht: `text` in der Timeline
+    ändern + PNG neu).
+- **Abweichung Prozess:** T7 wurde nicht vor T8 committet (Agenten liefen sequenziell ohne
+  Zwischen-Checkpoint) → **ein** gemeinsamer T7+T8-Commit, beide Task-Zeilen zeigen denselben Hash.
+
+**T9 läuft:** `frameforge preview michael-jga-2026 JGA` (1080p-Proxy, ~20 min, speicherfragil —
+im Vordergrund/nohup). Danach: altes `preview/JGA_preview.mp4` wird vom Render überschrieben,
+PROGRESS + Memory fortschreiben, Push, an Christian.
+
+**Stand 2026-09-09 (Kontext):**
 - T1–T6 fertig. T6 committet ohne Hash in der Task-Zeile (Hash-Merke unten), Hash im
   Folgecommit nachtragen.
 - **T7:** `timeline.json` neu bauen (timeline-builder). Eingaben: neues `beatsheet.md` +
