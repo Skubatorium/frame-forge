@@ -12,11 +12,11 @@
 preset: jga-zweiteiler
 
 # Ziellänge ist ein OFFENER RICHTWERT. Die drei Musiktracks bestimmen die Länge, nicht
-# umgekehrt (Plan 0004 §3/§10). Rechnung: Vivaldi 211,5 s (Akt 1, ganz) + Galvanize [Edit]
-# 271,4 s (Akt 2, ganz) + Where Is My Mind ab src_in ~17 s, nur ~35-45 s genutzt (Aftermath/
-# Outro) ≈ 520-530 s ≈ 8:40-8:50. "Acht oder neun Minuten ist egal" (Christian). QC bitte die
-# Längen-Toleranz entsprechend weit fassen.
-target_duration_s: 525
+# umgekehrt (Plan 0004 §3/§10). Rechnung: Vivaldi 211,4 s (Akt 1, ganz) + Galvanize [Edit]
+# 271,4 s (Akt 2, ganz) + Where Is My Mind ab src_in ~17 s (Aftermath/Outro) ≈ 534 s ≈ 8:54.
+# "Acht oder neun Minuten ist egal" (Christian). Wert hier = tatsächliche gebaute Länge, damit
+# die QC-Längenprüfung (±2 s) nicht gegen einen Fantasiewert läuft.
+target_duration_s: 534
 language: de
 
 # ---------------------------------------------------------------- Overrides (über dem Preset)
@@ -169,30 +169,13 @@ forbidden_shots:
   - IMG_8659.HEIC
 
 # --------------------------------------------------------------------- Muss-Anker (Erzählung)
-# Vollständige Muss-Liste = assets.json content.priority == "must". Hier nur die harten
-# dramaturgischen Anker, die in JEDER Fassung vorkommen und in dieser Reihenfolge sitzen:
-must_shots:
-  - "Öffnung: Schwarz -> JGA_INTRO-Standbild"
-  - "Erster Shot Rohmaterial: IMG_4734 (Abholung zu Hause, Text 'Let's go')"
-  - "Auto-Grimassen 1646D950…777E direkt danach"
-  - "Ankunft Unterkunft: IMG_1699, IMG_1252"
-  - "Pizza-Abend: Sülemann/Uber-Eats IMG_1309 + Pizza IMG_1310/IMG_1312"
-  - "Frühstück Samstag: IMG_1321"
-  - "Waffeln + Schokolade kaufen: IMG_1391/IMG_1392/IMG_1393 + Unboxing-Video IMG_1395"
-  - "Schoko-Waffel-Bissen-Video IMG_1404 (Cut ~25-37 s)"
-  - "Pommes: IMG_1444 dann IMG_1443 -> Übergang"
-  - "Zusammentreffen der Gruppe: F9615661…1429 direkt vor IMG_1445 (à la Bécasse)"
-  - "HARTER Musikwechsel zu Galvanize: Bar + Bierkarte -> Gläser vollschütten -> Party"
-  - "Rooftop Bar 58: IMG_1500 (Text 'Rooftop Bar 58, wir kommen') + Sonnenuntergänge"
-  - "Corona-Anstoßen alle: IMG_1524"
-  - "Cast-Intro in der Red Karaoke-Bar (9 Personen, s. oben)"
-  - "Karaoke-Höhepunkt: IMG_1637 (Cut 2:22-2:38) + IMG_1641 + Tanz IMG_1635"
-  - "Tequila-Shots: IMG_4835 (ab ~8 s, hochhalten bis Ende)"
-  - "Abgeschossen im Bett + Gurken-Gag: IMG_1660 ('WTF?') + IMG_1661"
-  - "Taxi-Heimfahrt: IMG_1652 + IMG_1653 (KEIN Ducking)"
-  - "Aftermath (Where Is My Mind ab ~17 s): IMG_1663/1664 -> IMG_1666 -> IMG_1667 -> IMG_2644"
-  - "Outro: Auto-Schlaf 93638dac…5F53 dann c12b0d91…EA4B"
-  - "Letztes Vollbild: JGA_OUTRO ('Danke'), Musik ausgefadet, dann Schwarz"
+# Die vollständige, verbindliche Muss-Liste steckt in assets.json (content.priority == "must",
+# 156 Assets) und wird vom timeline-builder garantiert eingeplant. `must_shots` hier bleibt
+# LEER — die QC-Prüfung `_check_against_brief` matcht Einträge stumpf als Asset-IDs gegen die
+# Timeline; freitextliche Anker würden dort alle als "fehlt" gemeldet. Die dramaturgischen
+# Anker + ihre Reihenfolge stehen in editorial-notes.md §"Reihenfolge-Zwänge" und im
+# beatsheet.md.
+must_shots: []
 
 notes: >-
   Zweiakter mit drittem, kurzem Ausklang. AKT 1 "GEDIEGEN" (Vivaldi "Der Winter", ganze

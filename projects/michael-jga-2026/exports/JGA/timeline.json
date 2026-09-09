@@ -22,7 +22,8 @@
           "hold": 0.0
         },
         "effects": [],
-        "note": "Schwarz, Vivaldi setzt leise ein (fade-up ab Schwarz)"
+        "note": "Schwarz, Vivaldi setzt leise ein (fade-up ab Schwarz)",
+        "intentional_repeat": true
       },
       {
         "id": "c001",
@@ -67,7 +68,8 @@
           "hold": 0.0
         },
         "effects": [],
-        "note": "weiche Schwarzblende"
+        "note": "weiche Schwarzblende",
+        "intentional_repeat": true
       },
       {
         "id": "c003",
@@ -197,7 +199,7 @@
         "asset": "20260904-phone-07b316",
         "src_in": 0.0,
         "src_out": 2.9,
-        "tl_in": 22.3,
+        "tl_in": 22.299999999999997,
         "speed": 1.0,
         "effects": [
           {
@@ -221,7 +223,7 @@
         "asset": "20260904-phone-1290ed",
         "src_in": 0.0,
         "src_out": 2.9,
-        "tl_in": 25.2,
+        "tl_in": 25.199999999999996,
         "speed": 1.0,
         "effects": [
           {
@@ -245,7 +247,7 @@
         "asset": "20260904-phone-6adc6f",
         "src_in": 0.0,
         "src_out": 2.9,
-        "tl_in": 28.1,
+        "tl_in": 28.099999999999994,
         "speed": 1.0,
         "effects": [
           {
@@ -269,7 +271,7 @@
         "asset": "20260904-phone-78f8f6",
         "src_in": 0.0,
         "src_out": 2.9,
-        "tl_in": 31.0,
+        "tl_in": 30.999999999999993,
         "speed": 1.0,
         "effects": [
           {
@@ -293,7 +295,7 @@
         "asset": "20260904-phone-16f159",
         "src_in": 0.0,
         "src_out": 3.1,
-        "tl_in": 33.9,
+        "tl_in": 33.89999999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -318,7 +320,7 @@
         "asset": "20260904-phone-de4702",
         "src_in": 0.0,
         "src_out": 4.1538,
-        "tl_in": 37.0,
+        "tl_in": 36.99999999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -343,7 +345,7 @@
         "asset": "20260904-phone-4616e5",
         "src_in": 0.0,
         "src_out": 3.1154,
-        "tl_in": 41.1538,
+        "tl_in": 41.15379999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -367,7 +369,7 @@
         "asset": "20260904-phone-c9086e",
         "src_in": 0.0,
         "src_out": 3.1154,
-        "tl_in": 44.2692,
+        "tl_in": 44.26919999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -391,7 +393,7 @@
         "asset": "20260904-phone-da5699",
         "src_in": 0.0,
         "src_out": 3.1154,
-        "tl_in": 46.8846,
+        "tl_in": 46.88459999999999,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
@@ -421,7 +423,7 @@
         "asset": "20260905-phone-604ca9",
         "src_in": 0.0,
         "src_out": 3.1667,
-        "tl_in": 49.5,
+        "tl_in": 49.49999999999999,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
@@ -450,7 +452,7 @@
         "asset": "20260905-phone-33c359",
         "src_in": 0.0,
         "src_out": 3.1667,
-        "tl_in": 52.6667,
+        "tl_in": 52.66669999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -474,7 +476,7 @@
         "asset": "20260905-phone-d17413",
         "src_in": 0.0,
         "src_out": 3.1667,
-        "tl_in": 55.8333,
+        "tl_in": 55.83339999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -498,7 +500,7 @@
         "asset": "20260905-phone-086c6e",
         "src_in": 0.0,
         "src_out": 2.9,
-        "tl_in": 59.0,
+        "tl_in": 59.00009999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -522,7 +524,7 @@
         "asset": "20260905-phone-df44a7",
         "src_in": 0.0,
         "src_out": 2.9,
-        "tl_in": 61.9,
+        "tl_in": 61.90009999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -546,7 +548,7 @@
         "asset": "20260905-phone-61b8d2",
         "src_in": 0.0,
         "src_out": 2.9,
-        "tl_in": 64.8,
+        "tl_in": 64.80009999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -570,7 +572,7 @@
         "asset": "20260905-phone-e49285",
         "src_in": 0.0,
         "src_out": 2.9,
-        "tl_in": 67.7,
+        "tl_in": 67.70009999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -594,7 +596,7 @@
         "asset": "20260905-phone-f59566",
         "src_in": 0.0,
         "src_out": 2.9,
-        "tl_in": 70.6,
+        "tl_in": 70.6001,
         "speed": 1.0,
         "effects": [
           {
@@ -618,7 +620,7 @@
         "asset": "20260905-phone-1116a4",
         "src_in": 0.0,
         "src_out": 2.9,
-        "tl_in": 73.5,
+        "tl_in": 73.5001,
         "speed": 1.0,
         "effects": [
           {
@@ -642,7 +644,7 @@
         "asset": "20260905-phone-dbd59f",
         "src_in": 0.0,
         "src_out": 3.1,
-        "tl_in": 76.4,
+        "tl_in": 76.40010000000001,
         "speed": 1.0,
         "effects": [
           {
@@ -666,7 +668,7 @@
         "asset": "20260905-phone-93f6c3",
         "src_in": 0.0,
         "src_out": 2.4,
-        "tl_in": 79.5,
+        "tl_in": 79.5001,
         "speed": 1.0,
         "effects": [
           {
@@ -690,7 +692,7 @@
         "asset": "20260905-phone-160137",
         "src_in": 0.0,
         "src_out": 2.4,
-        "tl_in": 81.9,
+        "tl_in": 81.90010000000001,
         "speed": 1.0,
         "effects": [
           {
@@ -714,7 +716,7 @@
         "asset": "20260905-phone-21d9c8",
         "src_in": 0.0,
         "src_out": 2.4,
-        "tl_in": 84.3,
+        "tl_in": 84.30010000000001,
         "speed": 1.0,
         "effects": [
           {
@@ -739,7 +741,7 @@
         "asset": "20260905-phone-56accc",
         "src_in": 0.0,
         "src_out": 2.4,
-        "tl_in": 86.7,
+        "tl_in": 86.70010000000002,
         "speed": 1.0,
         "effects": [
           {
@@ -763,7 +765,7 @@
         "asset": "20260905-phone-3033e3",
         "src_in": 0.0,
         "src_out": 2.4,
-        "tl_in": 89.1,
+        "tl_in": 89.10010000000003,
         "speed": 1.0,
         "effects": [
           {
@@ -787,7 +789,7 @@
         "asset": "20260905-phone-6f8f5c",
         "src_in": 0.0,
         "src_out": 2.9795,
-        "tl_in": 91.5,
+        "tl_in": 91.50010000000003,
         "speed": 1.0,
         "effects": [
           {
@@ -811,7 +813,7 @@
         "asset": "20260905-phone-5703aa",
         "src_in": 0.0,
         "src_out": 2.7808,
-        "tl_in": 94.4795,
+        "tl_in": 94.47960000000003,
         "speed": 1.0,
         "effects": [
           {
@@ -835,7 +837,7 @@
         "asset": "20260905-phone-a5b6c9",
         "src_in": 0.0,
         "src_out": 2.9795,
-        "tl_in": 97.2603,
+        "tl_in": 97.26040000000003,
         "speed": 1.0,
         "effects": [
           {
@@ -859,7 +861,7 @@
         "asset": "20260905-phone-063633",
         "src_in": 0.0,
         "src_out": 2.9795,
-        "tl_in": 100.2397,
+        "tl_in": 100.23990000000003,
         "speed": 1.0,
         "effects": [
           {
@@ -883,7 +885,7 @@
         "asset": "20260905-phone-821fb8",
         "src_in": 0.0,
         "src_out": 3.2774,
-        "tl_in": 103.2192,
+        "tl_in": 103.21940000000004,
         "speed": 1.0,
         "effects": [
           {
@@ -907,7 +909,7 @@
         "asset": "20260905-phone-898366",
         "src_in": 0.0,
         "src_out": 2.5822,
-        "tl_in": 106.4966,
+        "tl_in": 106.49680000000004,
         "speed": 1.0,
         "effects": [
           {
@@ -932,7 +934,7 @@
         "asset": "20260905-phone-a74e4f",
         "src_in": 0.0,
         "src_out": 2.7808,
-        "tl_in": 109.0788,
+        "tl_in": 109.07900000000004,
         "speed": 1.0,
         "effects": [
           {
@@ -956,7 +958,7 @@
         "asset": "20260905-phone-a74734",
         "src_in": 0.0,
         "src_out": 2.9795,
-        "tl_in": 111.8596,
+        "tl_in": 111.85980000000004,
         "speed": 1.0,
         "effects": [
           {
@@ -980,7 +982,7 @@
         "asset": "20260905-phone-269273",
         "src_in": 0.0,
         "src_out": 2.7808,
-        "tl_in": 114.839,
+        "tl_in": 114.83930000000004,
         "speed": 1.0,
         "effects": [
           {
@@ -1004,7 +1006,7 @@
         "asset": "20260905-phone-80142a",
         "src_in": 0.0,
         "src_out": 2.8801,
-        "tl_in": 117.6199,
+        "tl_in": 117.62010000000004,
         "speed": 1.0,
         "effects": [
           {
@@ -1029,7 +1031,7 @@
         "asset": "20260905-phone-938440",
         "src_in": 0.0,
         "src_out": 3.0319,
-        "tl_in": 120.5,
+        "tl_in": 120.50020000000004,
         "speed": 1.0,
         "effects": [
           {
@@ -1053,7 +1055,7 @@
         "asset": "20260905-phone-771776",
         "src_in": 0.0,
         "src_out": 3.234,
-        "tl_in": 123.5319,
+        "tl_in": 123.53210000000003,
         "speed": 1.0,
         "effects": [
           {
@@ -1077,7 +1079,7 @@
         "asset": "20260905-phone-fb0c9f",
         "src_in": 0.0,
         "src_out": 2.8298,
-        "tl_in": 126.766,
+        "tl_in": 126.76610000000002,
         "speed": 1.0,
         "effects": [
           {
@@ -1101,7 +1103,7 @@
         "asset": "20260905-phone-ca257a",
         "src_in": 0.0,
         "src_out": 2.8298,
-        "tl_in": 129.5957,
+        "tl_in": 129.59590000000003,
         "speed": 1.0,
         "effects": [
           {
@@ -1125,7 +1127,7 @@
         "asset": "20260905-phone-75649d",
         "src_in": 0.0,
         "src_out": 2.6277,
-        "tl_in": 132.4255,
+        "tl_in": 132.42570000000003,
         "speed": 1.0,
         "effects": [
           {
@@ -1149,7 +1151,7 @@
         "asset": "20260905-phone-7ee203",
         "src_in": 0.0,
         "src_out": 2.8298,
-        "tl_in": 135.0532,
+        "tl_in": 135.05340000000004,
         "speed": 1.0,
         "effects": [
           {
@@ -1173,7 +1175,7 @@
         "asset": "20260905-phone-7fc518",
         "src_in": 0.0,
         "src_out": 2.6277,
-        "tl_in": 137.883,
+        "tl_in": 137.88320000000004,
         "speed": 1.0,
         "effects": [
           {
@@ -1197,7 +1199,7 @@
         "asset": "20260905-phone-dace94",
         "src_in": 0.0,
         "src_out": 2.8298,
-        "tl_in": 140.5106,
+        "tl_in": 140.51090000000005,
         "speed": 1.0,
         "effects": [
           {
@@ -1221,7 +1223,7 @@
         "asset": "20260907-camera-82c5d4",
         "src_in": 0.0,
         "src_out": 7.0,
-        "tl_in": 143.3404,
+        "tl_in": 143.34070000000006,
         "speed": 1.0,
         "effects": [],
         "note": "MOV Cut 0-7s; O-Ton-Fenster 1"
@@ -1231,7 +1233,7 @@
         "asset": "20260905-phone-efa313",
         "src_in": 0.0,
         "src_out": 2.6277,
-        "tl_in": 150.3404,
+        "tl_in": 150.34070000000006,
         "speed": 1.0,
         "effects": [
           {
@@ -1255,7 +1257,7 @@
         "asset": "20260905-phone-b92d14",
         "src_in": 0.0,
         "src_out": 3.0319,
-        "tl_in": 152.9681,
+        "tl_in": 152.96840000000006,
         "speed": 1.0,
         "effects": [
           {
@@ -1279,7 +1281,7 @@
         "asset": "20260905-phone-7e66a8",
         "src_in": 0.0,
         "src_out": 2.8392,
-        "tl_in": 156.0,
+        "tl_in": 156.00030000000007,
         "speed": 1.0,
         "effects": [
           {
@@ -1303,7 +1305,7 @@
         "asset": "20260905-phone-66e67b",
         "src_in": 0.0,
         "src_out": 2.535,
-        "tl_in": 158.8392,
+        "tl_in": 158.83950000000007,
         "speed": 1.0,
         "effects": [
           {
@@ -1328,7 +1330,7 @@
         "asset": "20260905-phone-129d47",
         "src_in": 0.0,
         "src_out": 2.8392,
-        "tl_in": 161.3741,
+        "tl_in": 161.37450000000007,
         "speed": 1.0,
         "effects": [
           {
@@ -1352,7 +1354,7 @@
         "asset": "20260905-phone-fe9794",
         "src_in": 0.0,
         "src_out": 3.042,
-        "tl_in": 164.2133,
+        "tl_in": 164.21370000000007,
         "speed": 1.0,
         "effects": [
           {
@@ -1376,7 +1378,7 @@
         "asset": "20260907-camera-016887",
         "src_in": 25.0,
         "src_out": 35.0,
-        "tl_in": 167.2552,
+        "tl_in": 167.25570000000008,
         "speed": 1.0,
         "effects": [],
         "note": "MOV Cut 25-35s"
@@ -1386,7 +1388,7 @@
         "asset": "20260905-phone-8a052f",
         "src_in": 0.0,
         "src_out": 3.2448,
-        "tl_in": 177.2552,
+        "tl_in": 177.25570000000008,
         "speed": 1.0,
         "effects": [
           {
@@ -1410,7 +1412,7 @@
         "asset": "20260905-phone-8596ee",
         "src_in": 0.0,
         "src_out": 3.0612,
-        "tl_in": 180.5,
+        "tl_in": 180.50050000000007,
         "speed": 1.0,
         "effects": [
           {
@@ -1434,7 +1436,7 @@
         "asset": "20260905-phone-748fb3",
         "src_in": 0.0,
         "src_out": 2.8571,
-        "tl_in": 183.5612,
+        "tl_in": 183.5617000000001,
         "speed": 1.0,
         "effects": [
           {
@@ -1458,7 +1460,7 @@
         "asset": "20260905-phone-73ba09",
         "src_in": 0.0,
         "src_out": 4.0816,
-        "tl_in": 186.4184,
+        "tl_in": 186.4188000000001,
         "speed": 1.0,
         "effects": [
           {
@@ -1483,7 +1485,7 @@
         "asset": "20260905-phone-a243f4",
         "src_in": 0.0,
         "src_out": 3.0,
-        "tl_in": 190.5,
+        "tl_in": 190.5004000000001,
         "speed": 1.0,
         "effects": [
           {
@@ -1507,7 +1509,7 @@
         "asset": "20260905-phone-0f261e",
         "src_in": 0.0,
         "src_out": 3.0,
-        "tl_in": 193.5,
+        "tl_in": 193.5004000000001,
         "speed": 1.0,
         "effects": [
           {
@@ -1531,7 +1533,7 @@
         "asset": "20260905-phone-565043",
         "src_in": 0.0,
         "src_out": 3.0,
-        "tl_in": 196.5,
+        "tl_in": 196.5004000000001,
         "speed": 1.0,
         "effects": [
           {
@@ -1555,7 +1557,7 @@
         "asset": "20260905-phone-25f4aa",
         "src_in": 0.0,
         "src_out": 3.0,
-        "tl_in": 199.5,
+        "tl_in": 199.5004000000001,
         "speed": 1.0,
         "effects": [
           {
@@ -1579,7 +1581,7 @@
         "asset": "20260905-phone-cfae4a",
         "src_in": 0.0,
         "src_out": 3.0,
-        "tl_in": 202.5,
+        "tl_in": 202.5004000000001,
         "speed": 1.0,
         "effects": [
           {
@@ -1604,7 +1606,7 @@
         "asset": "20260905-phone-dc2cec",
         "src_in": 0.0,
         "src_out": 3.0,
-        "tl_in": 205.5,
+        "tl_in": 205.5004000000001,
         "speed": 1.0,
         "effects": [
           {
@@ -1627,8 +1629,8 @@
         "id": "c068",
         "asset": "20260905-phone-82723b",
         "src_in": 0.0,
-        "src_out": 2.9,
-        "tl_in": 208.5,
+        "src_out": 2.899599999999907,
+        "tl_in": 208.5004000000001,
         "speed": 1.0,
         "effects": [
           {
@@ -1726,7 +1728,7 @@
         "id": "c072",
         "asset": "20260905-phone-74fa05",
         "src_in": 0.0,
-        "src_out": 2.335,
+        "src_out": 2.335000000000008,
         "tl_in": 217.9,
         "speed": 1.0,
         "effects": [
@@ -1904,7 +1906,7 @@
         "asset": "20260905-phone-5e9805",
         "src_in": 0.0,
         "src_out": 1.4953,
-        "tl_in": 229.9047,
+        "tl_in": 229.9046,
         "speed": 1.0,
         "effects": [
           {
@@ -1929,7 +1931,7 @@
         "asset": "20260905-phone-519b88",
         "src_in": 0.0,
         "src_out": 1.2391,
-        "tl_in": 231.4,
+        "tl_in": 231.39989999999997,
         "speed": 1.0,
         "effects": [
           {
@@ -1953,7 +1955,7 @@
         "asset": "20260907-camera-5791b1",
         "src_in": 0.0,
         "src_out": 5.0,
-        "tl_in": 232.6391,
+        "tl_in": 232.63899999999998,
         "speed": 1.0,
         "effects": [],
         "note": "MOV; O-Ton-Fenster 2 (Michas Lachen)"
@@ -1963,7 +1965,7 @@
         "asset": "20260905-phone-e2d5ac",
         "src_in": 0.0,
         "src_out": 1.6522,
-        "tl_in": 237.6391,
+        "tl_in": 237.63899999999998,
         "speed": 1.0,
         "effects": [
           {
@@ -1987,7 +1989,7 @@
         "asset": "20260905-phone-10a55f",
         "src_in": 0.0,
         "src_out": 1.8587,
-        "tl_in": 239.2913,
+        "tl_in": 239.29119999999998,
         "speed": 1.0,
         "effects": [
           {
@@ -2011,7 +2013,7 @@
         "asset": "20260905-phone-787411",
         "src_in": 0.0,
         "src_out": 2.2717,
-        "tl_in": 241.15,
+        "tl_in": 241.14989999999997,
         "speed": 1.0,
         "effects": [
           {
@@ -2035,7 +2037,7 @@
         "asset": "20260905-phone-790360",
         "src_in": 0.0,
         "src_out": 1.6522,
-        "tl_in": 243.4217,
+        "tl_in": 243.42159999999998,
         "speed": 1.0,
         "effects": [
           {
@@ -2059,7 +2061,7 @@
         "asset": "20260905-phone-40fcd7",
         "src_in": 0.0,
         "src_out": 2.4783,
-        "tl_in": 245.0739,
+        "tl_in": 245.07379999999998,
         "speed": 1.0,
         "effects": [
           {
@@ -2084,7 +2086,7 @@
         "asset": "20260905-phone-c3387f",
         "src_in": 0.0,
         "src_out": 1.6522,
-        "tl_in": 247.5522,
+        "tl_in": 247.55209999999997,
         "speed": 1.0,
         "effects": [
           {
@@ -2108,7 +2110,7 @@
         "asset": "20260905-phone-582e5e",
         "src_in": 0.0,
         "src_out": 1.6522,
-        "tl_in": 249.2043,
+        "tl_in": 249.20429999999996,
         "speed": 1.0,
         "effects": [
           {
@@ -2132,7 +2134,7 @@
         "asset": "20260905-phone-7be2d0",
         "src_in": 0.0,
         "src_out": 1.2391,
-        "tl_in": 250.8565,
+        "tl_in": 250.85649999999995,
         "speed": 1.0,
         "effects": [
           {
@@ -2156,7 +2158,7 @@
         "asset": "20260905-phone-ce0da5",
         "src_in": 0.0,
         "src_out": 1.6522,
-        "tl_in": 252.0957,
+        "tl_in": 252.09559999999996,
         "speed": 1.0,
         "effects": [
           {
@@ -2180,7 +2182,7 @@
         "asset": "20260905-phone-e3b107",
         "src_in": 0.0,
         "src_out": 1.6522,
-        "tl_in": 253.7478,
+        "tl_in": 253.74779999999996,
         "speed": 1.0,
         "effects": [
           {
@@ -2204,7 +2206,7 @@
         "asset": "20260905-phone-9b9a00",
         "src_in": 0.0,
         "src_out": 2.4306,
-        "tl_in": 255.4,
+        "tl_in": 255.39999999999995,
         "speed": 1.0,
         "effects": [
           {
@@ -2228,7 +2230,7 @@
         "asset": "20260905-phone-64a46f",
         "src_in": 0.0,
         "src_out": 1.4583,
-        "tl_in": 257.8306,
+        "tl_in": 257.83059999999995,
         "speed": 1.0,
         "effects": [
           {
@@ -2252,7 +2254,7 @@
         "asset": "20260905-phone-a0ad60",
         "src_in": 0.0,
         "src_out": 1.9444,
-        "tl_in": 259.2889,
+        "tl_in": 259.28889999999996,
         "speed": 1.0,
         "effects": [
           {
@@ -2276,7 +2278,7 @@
         "asset": "20260905-phone-dcd7c7",
         "src_in": 0.0,
         "src_out": 1.1667,
-        "tl_in": 261.2333,
+        "tl_in": 261.23329999999993,
         "speed": 1.0,
         "effects": [
           {
@@ -2300,7 +2302,7 @@
         "asset": "20260905-phone-a566d7",
         "src_in": 0.0,
         "src_out": 3.3333,
-        "tl_in": 262.4,
+        "tl_in": 262.3999999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -2325,7 +2327,7 @@
         "asset": "20260905-phone-c9d572",
         "src_in": 0.0,
         "src_out": 2.2222,
-        "tl_in": 265.7333,
+        "tl_in": 265.73329999999993,
         "speed": 1.0,
         "effects": [
           {
@@ -2349,7 +2351,7 @@
         "asset": "20260905-phone-ab76ed",
         "src_in": 0.0,
         "src_out": 2.0,
-        "tl_in": 267.9556,
+        "tl_in": 267.9554999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -2373,7 +2375,7 @@
         "asset": "20260905-phone-cd406c",
         "src_in": 0.0,
         "src_out": 2.0,
-        "tl_in": 269.9556,
+        "tl_in": 269.9554999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -2397,7 +2399,7 @@
         "asset": "20260905-phone-0d3dcb",
         "src_in": 0.0,
         "src_out": 2.2222,
-        "tl_in": 271.9556,
+        "tl_in": 271.9554999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -2422,7 +2424,7 @@
         "asset": "20260905-phone-b05a02",
         "src_in": 0.0,
         "src_out": 2.0,
-        "tl_in": 274.1778,
+        "tl_in": 274.1776999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -2446,7 +2448,7 @@
         "asset": "20260905-phone-bcd373",
         "src_in": 0.0,
         "src_out": 2.0,
-        "tl_in": 276.1778,
+        "tl_in": 276.1776999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -2470,7 +2472,7 @@
         "asset": "20260905-phone-c0fbb2",
         "src_in": 0.0,
         "src_out": 2.0,
-        "tl_in": 278.1778,
+        "tl_in": 278.1776999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -2494,7 +2496,7 @@
         "asset": "20260908-unknown-757aac",
         "src_in": 0.0,
         "src_out": 2.4444,
-        "tl_in": 280.1778,
+        "tl_in": 280.1776999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -2519,7 +2521,7 @@
         "asset": "20260905-phone-1467c1",
         "src_in": 0.0,
         "src_out": 1.4444,
-        "tl_in": 282.6222,
+        "tl_in": 282.6220999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -2543,7 +2545,7 @@
         "asset": "20260905-phone-00a6a7",
         "src_in": 0.0,
         "src_out": 1.4444,
-        "tl_in": 284.0667,
+        "tl_in": 284.06649999999985,
         "speed": 1.0,
         "effects": [
           {
@@ -2567,7 +2569,7 @@
         "asset": "20260905-phone-aacc83",
         "src_in": 0.0,
         "src_out": 1.8889,
-        "tl_in": 285.5111,
+        "tl_in": 285.5108999999998,
         "speed": 1.0,
         "effects": [
           {
@@ -2591,7 +2593,7 @@
         "asset": "20260907-camera-169edf",
         "src_in": 0.0,
         "src_out": 3.0,
-        "tl_in": 287.4,
+        "tl_in": 287.3997999999998,
         "speed": 1.0,
         "effects": [],
         "note": "MOV Ausschnitt volle Dachterrasse"
@@ -2601,7 +2603,7 @@
         "asset": "20260905-phone-d09c11",
         "src_in": 0.0,
         "src_out": 2.4286,
-        "tl_in": 290.4,
+        "tl_in": 290.3997999999998,
         "speed": 1.0,
         "effects": [
           {
@@ -2626,7 +2628,7 @@
         "asset": "20260905-phone-8d1ede",
         "src_in": 0.0,
         "src_out": 1.4571,
-        "tl_in": 292.8286,
+        "tl_in": 292.8283999999998,
         "speed": 1.0,
         "effects": [
           {
@@ -2650,7 +2652,7 @@
         "asset": "20260905-phone-a05520",
         "src_in": 0.0,
         "src_out": 1.9429,
-        "tl_in": 294.2857,
+        "tl_in": 294.28549999999984,
         "speed": 1.0,
         "effects": [
           {
@@ -2675,7 +2677,7 @@
         "asset": "20260905-phone-536197",
         "src_in": 0.0,
         "src_out": 2.4286,
-        "tl_in": 296.2286,
+        "tl_in": 296.22839999999985,
         "speed": 1.0,
         "effects": [
           {
@@ -2700,7 +2702,7 @@
         "asset": "20260905-phone-c6a467",
         "src_in": 0.0,
         "src_out": 2.4286,
-        "tl_in": 298.6571,
+        "tl_in": 298.65699999999987,
         "speed": 1.0,
         "effects": [
           {
@@ -2725,7 +2727,7 @@
         "asset": "20260905-phone-9729c4",
         "src_in": 0.0,
         "src_out": 1.5543,
-        "tl_in": 301.0857,
+        "tl_in": 301.0855999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -2749,7 +2751,7 @@
         "asset": "20260905-phone-ab3a6b",
         "src_in": 0.0,
         "src_out": 1.4571,
-        "tl_in": 302.64,
+        "tl_in": 302.6398999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -2773,7 +2775,7 @@
         "asset": "20260905-phone-d73c70",
         "src_in": 0.0,
         "src_out": 1.36,
-        "tl_in": 304.0971,
+        "tl_in": 304.0969999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -2797,7 +2799,7 @@
         "asset": "20260905-phone-b335e0",
         "src_in": 0.0,
         "src_out": 0.9714,
-        "tl_in": 305.4571,
+        "tl_in": 305.45699999999994,
         "speed": 1.0,
         "effects": [
           {
@@ -2821,7 +2823,7 @@
         "asset": "20260905-phone-4d3422",
         "src_in": 0.0,
         "src_out": 0.9714,
-        "tl_in": 306.4286,
+        "tl_in": 306.42839999999995,
         "speed": 1.0,
         "effects": [
           {
@@ -2845,7 +2847,7 @@
         "asset": "20260905-camera-8ddb7c",
         "src_in": 0.0,
         "src_out": 3.0,
-        "tl_in": 307.4,
+        "tl_in": 307.39979999999997,
         "speed": 1.0,
         "effects": [],
         "note": "MOV 0-5s"
@@ -2855,7 +2857,7 @@
         "asset": "20260905-phone-a4612d",
         "src_in": 0.0,
         "src_out": 1.5,
-        "tl_in": 310.4,
+        "tl_in": 310.39979999999997,
         "speed": 1.0,
         "effects": [
           {
@@ -2879,7 +2881,7 @@
         "asset": "20260905-phone-811d4b",
         "src_in": 0.0,
         "src_out": 1.8,
-        "tl_in": 311.9,
+        "tl_in": 311.89979999999997,
         "speed": 1.0,
         "effects": [
           {
@@ -2903,7 +2905,7 @@
         "asset": "20260905-phone-e7cb72",
         "src_in": 0.0,
         "src_out": 1.8,
-        "tl_in": 313.7,
+        "tl_in": 313.6998,
         "speed": 1.0,
         "effects": [
           {
@@ -2927,7 +2929,7 @@
         "asset": "20260905-phone-b0ee14",
         "src_in": 0.0,
         "src_out": 1.8,
-        "tl_in": 315.5,
+        "tl_in": 315.4998,
         "speed": 1.0,
         "effects": [
           {
@@ -2951,7 +2953,7 @@
         "asset": "20260905-phone-beacf6",
         "src_in": 0.0,
         "src_out": 1.5,
-        "tl_in": 317.3,
+        "tl_in": 317.2998,
         "speed": 1.0,
         "effects": [
           {
@@ -2975,7 +2977,7 @@
         "asset": "20260905-camera-3d4025",
         "src_in": 0.0,
         "src_out": 2.0,
-        "tl_in": 318.8,
+        "tl_in": 318.7998,
         "speed": 1.0,
         "effects": [],
         "note": "MOV"
@@ -2985,7 +2987,7 @@
         "asset": "20260905-phone-09a78f",
         "src_in": 0.0,
         "src_out": 3.0,
-        "tl_in": 320.8,
+        "tl_in": 320.7998,
         "speed": 1.0,
         "effects": [
           {
@@ -3010,7 +3012,7 @@
         "asset": "20260905-phone-4b7b47",
         "src_in": 0.0,
         "src_out": 2.2,
-        "tl_in": 323.8,
+        "tl_in": 323.7998,
         "speed": 1.0,
         "effects": [
           {
@@ -3035,7 +3037,7 @@
         "asset": "20260905-phone-368a0b",
         "src_in": 0.0,
         "src_out": 2.4,
-        "tl_in": 326.0,
+        "tl_in": 325.9998,
         "speed": 1.0,
         "effects": [
           {
@@ -3060,7 +3062,7 @@
         "asset": "20260905-phone-f78961",
         "src_in": 0.0,
         "src_out": 2.6408,
-        "tl_in": 328.4,
+        "tl_in": 328.39979999999997,
         "speed": 1.0,
         "effects": [
           {
@@ -3084,7 +3086,7 @@
         "asset": "20260905-phone-4c48f5",
         "src_in": 0.0,
         "src_out": 1.2676,
-        "tl_in": 331.0408,
+        "tl_in": 331.0406,
         "speed": 1.0,
         "effects": [
           {
@@ -3108,7 +3110,7 @@
         "asset": "20260905-phone-335263",
         "src_in": 0.0,
         "src_out": 1.0563,
-        "tl_in": 332.3085,
+        "tl_in": 332.3082,
         "speed": 1.0,
         "effects": [
           {
@@ -3132,7 +3134,7 @@
         "asset": "20260905-phone-f792b0",
         "src_in": 0.0,
         "src_out": 1.9014,
-        "tl_in": 333.3648,
+        "tl_in": 333.3645,
         "speed": 1.0,
         "effects": [
           {
@@ -3156,7 +3158,7 @@
         "asset": "20260905-phone-dc622a",
         "src_in": 0.0,
         "src_out": 1.6901,
-        "tl_in": 335.2662,
+        "tl_in": 335.26590000000004,
         "speed": 1.0,
         "effects": [
           {
@@ -3180,7 +3182,7 @@
         "asset": "20260905-phone-687176",
         "src_in": 0.0,
         "src_out": 2.3239,
-        "tl_in": 336.9563,
+        "tl_in": 336.956,
         "speed": 1.0,
         "effects": [
           {
@@ -3204,7 +3206,7 @@
         "asset": "20260905-phone-88ebf6",
         "src_in": 0.0,
         "src_out": 2.8521,
-        "tl_in": 339.2803,
+        "tl_in": 339.2799,
         "speed": 1.0,
         "effects": [
           {
@@ -3229,7 +3231,7 @@
         "asset": "20260905-phone-7de221",
         "src_in": 0.0,
         "src_out": 1.2676,
-        "tl_in": 342.1324,
+        "tl_in": 342.132,
         "speed": 1.0,
         "effects": [
           {
@@ -3253,7 +3255,7 @@
         "asset": "20260905-phone-b71a70",
         "src_in": 0.0,
         "src_out": 1.8,
-        "tl_in": 343.4,
+        "tl_in": 343.3996,
         "speed": 1.0,
         "effects": [
           {
@@ -3277,7 +3279,7 @@
         "asset": "20260907-camera-ac36e9",
         "src_in": 28.0,
         "src_out": 31.0,
-        "tl_in": 345.2,
+        "tl_in": 345.19960000000003,
         "speed": 1.0,
         "effects": [],
         "note": "MOV ab ~28s"
@@ -3287,7 +3289,7 @@
         "asset": "20260905-phone-3ad32e",
         "src_in": 0.0,
         "src_out": 1.8,
-        "tl_in": 348.2,
+        "tl_in": 348.19960000000003,
         "speed": 1.0,
         "effects": [
           {
@@ -3311,7 +3313,7 @@
         "asset": "20260907-camera-317b4d",
         "src_in": 10.0,
         "src_out": 24.0,
-        "tl_in": 350.0,
+        "tl_in": 349.99960000000004,
         "speed": 1.0,
         "effects": [],
         "note": "MOV Cut ~10-24s; O-Ton-Fenster 3; Fuesschen ~21s"
@@ -3321,7 +3323,7 @@
         "asset": "20260905-phone-15764f",
         "src_in": 0.0,
         "src_out": 1.5,
-        "tl_in": 364.0,
+        "tl_in": 363.99960000000004,
         "speed": 1.0,
         "effects": [
           {
@@ -3345,7 +3347,7 @@
         "asset": "20260905-phone-a5f421",
         "src_in": 0.0,
         "src_out": 1.5,
-        "tl_in": 365.5,
+        "tl_in": 365.49960000000004,
         "speed": 1.0,
         "effects": [
           {
@@ -3369,7 +3371,7 @@
         "asset": "20260905-phone-e70c57",
         "src_in": 0.0,
         "src_out": 1.6,
-        "tl_in": 367.0,
+        "tl_in": 366.99960000000004,
         "speed": 1.0,
         "effects": [
           {
@@ -3393,7 +3395,7 @@
         "asset": "20260905-phone-46e6b4",
         "src_in": 0.0,
         "src_out": 1.6,
-        "tl_in": 368.6,
+        "tl_in": 368.59960000000007,
         "speed": 1.0,
         "effects": [
           {
@@ -3417,7 +3419,7 @@
         "asset": "20260905-phone-cc085d",
         "src_in": 0.0,
         "src_out": 1.2,
-        "tl_in": 370.2,
+        "tl_in": 370.1996000000001,
         "speed": 1.0,
         "effects": [
           {
@@ -3441,7 +3443,7 @@
         "asset": "20260905-camera-ba9b81",
         "src_in": 0.0,
         "src_out": 2.5,
-        "tl_in": 371.4,
+        "tl_in": 371.3996000000001,
         "speed": 1.0,
         "effects": [],
         "note": "frueher raus ~2.5s"
@@ -3451,7 +3453,7 @@
         "asset": "20260905-phone-210836",
         "src_in": 0.0,
         "src_out": 1.5,
-        "tl_in": 373.9,
+        "tl_in": 373.8996000000001,
         "speed": 1.0,
         "effects": [
           {
@@ -3475,7 +3477,7 @@
         "asset": "20260905-phone-5d9169",
         "src_in": 0.0,
         "src_out": 0.9,
-        "tl_in": 375.4,
+        "tl_in": 375.3996000000001,
         "speed": 1.0,
         "effects": [],
         "note": "Cast-Intro: Witte | party-fx: Freeze + Namensstempel (Bangers) + SFX + color_pop"
@@ -3485,7 +3487,7 @@
         "asset": "20260905-phone-e368e5",
         "src_in": 0.0,
         "src_out": 0.9,
-        "tl_in": 376.3,
+        "tl_in": 376.29960000000005,
         "speed": 1.0,
         "effects": [],
         "note": "Christoph | party-fx: Freeze + Namensstempel (Bangers) + SFX + color_pop"
@@ -3495,7 +3497,7 @@
         "asset": "20260905-phone-c004d1",
         "src_in": 0.0,
         "src_out": 0.9,
-        "tl_in": 377.2,
+        "tl_in": 377.19960000000003,
         "speed": 1.0,
         "effects": [],
         "note": "Matti | party-fx: Freeze + Namensstempel (Bangers) + SFX + color_pop"
@@ -3505,7 +3507,7 @@
         "asset": "20260905-phone-3bff55",
         "src_in": 0.0,
         "src_out": 0.9,
-        "tl_in": 378.1,
+        "tl_in": 378.0996,
         "speed": 1.0,
         "effects": [],
         "note": "Bartosz | party-fx: Freeze + Namensstempel (Bangers) + SFX + color_pop"
@@ -3515,7 +3517,7 @@
         "asset": "20260905-phone-c64f1b",
         "src_in": 0.0,
         "src_out": 0.9,
-        "tl_in": 379.0,
+        "tl_in": 378.9996,
         "speed": 1.0,
         "effects": [],
         "note": "Hagi | party-fx: Freeze + Namensstempel (Bangers) + SFX + color_pop"
@@ -3525,7 +3527,7 @@
         "asset": "20260905-phone-0731e1",
         "src_in": 0.0,
         "src_out": 0.9,
-        "tl_in": 379.9,
+        "tl_in": 379.89959999999996,
         "speed": 1.0,
         "effects": [],
         "note": "Bernhard | party-fx: Freeze + Namensstempel (Bangers) + SFX + color_pop"
@@ -3535,7 +3537,7 @@
         "asset": "20260905-phone-bfd502",
         "src_in": 0.0,
         "src_out": 0.9,
-        "tl_in": 380.8,
+        "tl_in": 380.79959999999994,
         "speed": 1.0,
         "effects": [],
         "note": "Andre | party-fx: Freeze + Namensstempel (Bangers) + SFX + color_pop"
@@ -3545,7 +3547,7 @@
         "asset": "20260905-phone-8aaf40",
         "src_in": 0.0,
         "src_out": 0.9,
-        "tl_in": 381.7,
+        "tl_in": 381.6995999999999,
         "speed": 1.0,
         "effects": [],
         "note": "Skuub | party-fx: Freeze + Namensstempel (Bangers) + SFX + color_pop"
@@ -3555,7 +3557,7 @@
         "asset": "20260905-phone-59d423",
         "src_in": 0.0,
         "src_out": 1.8,
-        "tl_in": 382.6,
+        "tl_in": 382.5995999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -3573,17 +3575,18 @@
         "asset": "20260907-camera-8674da",
         "src_in": 1.0,
         "src_out": 7.0,
-        "tl_in": 384.4,
+        "tl_in": 384.3995999999999,
         "speed": 1.0,
         "effects": [],
-        "note": "Teil A ~1-7s"
+        "note": "Teil A ~1-7s",
+        "intentional_repeat": true
       },
       {
         "id": "c158",
         "asset": "20260905-phone-33cc9e",
         "src_in": 0.0,
         "src_out": 1.54,
-        "tl_in": 390.4,
+        "tl_in": 390.3995999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -3607,17 +3610,18 @@
         "asset": "20260907-camera-8674da",
         "src_in": 20.0,
         "src_out": 24.0,
-        "tl_in": 391.94,
+        "tl_in": 391.9395999999999,
         "speed": 1.0,
         "effects": [],
-        "note": "Teil B ~20-24s"
+        "note": "Teil B ~20-24s",
+        "intentional_repeat": true
       },
       {
         "id": "c160",
         "asset": "20260905-phone-df75af",
         "src_in": 0.0,
         "src_out": 1.8481,
-        "tl_in": 395.94,
+        "tl_in": 395.9395999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -3642,17 +3646,18 @@
         "asset": "20260907-camera-8674da",
         "src_in": 29.0,
         "src_out": 33.0,
-        "tl_in": 397.7881,
+        "tl_in": 397.7876999999999,
         "speed": 1.0,
         "effects": [],
-        "note": "Teil C ~29-33s"
+        "note": "Teil C ~29-33s",
+        "intentional_repeat": true
       },
       {
         "id": "c162",
         "asset": "20260905-phone-b65bc7",
         "src_in": 0.0,
         "src_out": 1.54,
-        "tl_in": 401.7881,
+        "tl_in": 401.7876999999999,
         "speed": 1.0,
         "effects": [
           {
@@ -3677,7 +3682,7 @@
         "asset": "20260907-camera-faed4c",
         "src_in": 0.0,
         "src_out": 6.0,
-        "tl_in": 403.3281,
+        "tl_in": 403.32769999999994,
         "speed": 1.0,
         "effects": [],
         "note": "MOV 0-6s"
@@ -3687,7 +3692,7 @@
         "asset": "20260905-phone-85ee91",
         "src_in": 0.0,
         "src_out": 1.232,
-        "tl_in": 409.3281,
+        "tl_in": 409.32769999999994,
         "speed": 1.0,
         "effects": [
           {
@@ -3711,7 +3716,7 @@
         "asset": "20260907-camera-cc0808",
         "src_in": 0.0,
         "src_out": 5.0,
-        "tl_in": 410.5602,
+        "tl_in": 410.55969999999996,
         "speed": 1.0,
         "effects": [
           {
@@ -3729,7 +3734,7 @@
         "asset": "20260905-phone-830ba1",
         "src_in": 0.0,
         "src_out": 1.232,
-        "tl_in": 415.5602,
+        "tl_in": 415.55969999999996,
         "speed": 1.0,
         "effects": [
           {
@@ -3753,7 +3758,7 @@
         "asset": "20260907-camera-cc0808",
         "src_in": 8.0,
         "src_out": 13.0,
-        "tl_in": 416.7922,
+        "tl_in": 416.7917,
         "speed": 1.0,
         "effects": [],
         "note": "Teil B ~8-13s"
@@ -3763,7 +3768,7 @@
         "asset": "20260905-phone-ed34d1",
         "src_in": 0.0,
         "src_out": 1.54,
-        "tl_in": 421.7922,
+        "tl_in": 421.7917,
         "speed": 1.0,
         "effects": [
           {
@@ -3788,7 +3793,7 @@
         "asset": "20260907-camera-8794ae",
         "src_in": 142.0,
         "src_out": 157.0,
-        "tl_in": 423.3322,
+        "tl_in": 423.3317,
         "speed": 1.0,
         "effects": [
           {
@@ -3806,7 +3811,7 @@
         "asset": "20260905-phone-6de17d",
         "src_in": 0.0,
         "src_out": 1.54,
-        "tl_in": 438.3322,
+        "tl_in": 438.3317,
         "speed": 1.0,
         "effects": [
           {
@@ -3831,7 +3836,7 @@
         "asset": "20260907-camera-283b7c",
         "src_in": 0.0,
         "src_out": 3.0,
-        "tl_in": 439.8723,
+        "tl_in": 439.87170000000003,
         "speed": 1.0,
         "effects": [],
         "note": "MOV ~0-3s"
@@ -3841,7 +3846,7 @@
         "asset": "20260905-phone-1f8c7d",
         "src_in": 0.0,
         "src_out": 1.6427,
-        "tl_in": 442.8723,
+        "tl_in": 442.87170000000003,
         "speed": 1.0,
         "effects": [
           {
@@ -3866,7 +3871,7 @@
         "asset": "20260907-camera-9bc26f",
         "src_in": 24.0,
         "src_out": 29.0,
-        "tl_in": 444.515,
+        "tl_in": 444.5144,
         "speed": 1.0,
         "effects": [],
         "note": "MOV ~0:24-0:29; O-Ton-Fenster 5"
@@ -3876,7 +3881,7 @@
         "asset": "20260905-camera-251729",
         "src_in": 8.0,
         "src_out": 12.885,
-        "tl_in": 449.515,
+        "tl_in": 449.5144,
         "speed": 1.0,
         "effects": [
           {
@@ -3894,7 +3899,7 @@
         "asset": "20260906-phone-5dec8d",
         "src_in": 0.0,
         "src_out": 2.0,
-        "tl_in": 454.4,
+        "tl_in": 454.3994,
         "speed": 1.0,
         "effects": [
           {
@@ -3918,7 +3923,7 @@
         "asset": "20260906-phone-cb0594",
         "src_in": 0.0,
         "src_out": 2.5,
-        "tl_in": 456.4,
+        "tl_in": 456.3994,
         "speed": 1.0,
         "effects": [
           {
@@ -3942,7 +3947,7 @@
         "asset": "20260906-phone-2dde02",
         "src_in": 0.0,
         "src_out": 2.2,
-        "tl_in": 458.9,
+        "tl_in": 458.8994,
         "speed": 1.0,
         "effects": [
           {
@@ -3966,7 +3971,7 @@
         "asset": "20260906-phone-c3c909",
         "src_in": 0.0,
         "src_out": 2.3,
-        "tl_in": 461.1,
+        "tl_in": 461.0994,
         "speed": 1.0,
         "effects": [
           {
@@ -3991,7 +3996,7 @@
         "asset": "20260906-phone-159fb6",
         "src_in": 0.0,
         "src_out": 2.0,
-        "tl_in": 463.4,
+        "tl_in": 463.3994,
         "speed": 1.0,
         "effects": [
           {
@@ -4015,7 +4020,7 @@
         "asset": "20260907-camera-7a03f0",
         "src_in": 10.0,
         "src_out": 18.0,
-        "tl_in": 465.4,
+        "tl_in": 465.3994,
         "speed": 1.0,
         "effects": [],
         "note": "MOV Cut ~10-18s; KEIN Ducking"
@@ -4025,7 +4030,7 @@
         "asset": "20260906-phone-eb2bb6",
         "src_in": 0.0,
         "src_out": 1.4984,
-        "tl_in": 473.4,
+        "tl_in": 473.3994,
         "speed": 1.0,
         "effects": [
           {
@@ -4049,7 +4054,7 @@
         "asset": "20260906-phone-ba621b",
         "src_in": 0.0,
         "src_out": 2.1977,
-        "tl_in": 474.8984,
+        "tl_in": 474.8978,
         "speed": 1.0,
         "effects": [
           {
@@ -4073,7 +4078,7 @@
         "asset": "20260906-phone-b6e756",
         "src_in": 0.0,
         "src_out": 1.4984,
-        "tl_in": 477.0961,
+        "tl_in": 477.0955,
         "speed": 1.0,
         "effects": [
           {
@@ -4097,7 +4102,7 @@
         "asset": "20260906-phone-ab651c",
         "src_in": 0.0,
         "src_out": 2.1977,
-        "tl_in": 478.5945,
+        "tl_in": 478.5939,
         "speed": 1.0,
         "effects": [
           {
@@ -4130,8 +4135,8 @@
         "id": "c185",
         "asset": "20260906-phone-5f70d5",
         "src_in": 0.0,
-        "src_out": 1.9979,
-        "tl_in": 480.7921,
+        "src_out": 1.9984000000000037,
+        "tl_in": 480.7916,
         "speed": 1.0,
         "effects": [
           {
@@ -4268,7 +4273,7 @@
         "asset": "20260908-unknown-4e2204",
         "src_in": 0.0,
         "src_out": 3.9667,
-        "tl_in": 494.9567,
+        "tl_in": 494.95669999999996,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
@@ -4297,7 +4302,7 @@
         "asset": "20260908-unknown-3080a9",
         "src_in": 0.0,
         "src_out": 3.4,
-        "tl_in": 498.4233,
+        "tl_in": 498.42339999999996,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
@@ -4326,7 +4331,7 @@
         "asset": "20260906-phone-ce985f",
         "src_in": 0.0,
         "src_out": 3.9667,
-        "tl_in": 501.3233,
+        "tl_in": 501.32339999999994,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
@@ -4355,7 +4360,7 @@
         "asset": "20260906-phone-85a96b",
         "src_in": 0.0,
         "src_out": 3.9667,
-        "tl_in": 504.79,
+        "tl_in": 504.79009999999994,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
@@ -4384,7 +4389,7 @@
         "asset": "20260908-unknown-6d898d",
         "src_in": 0.0,
         "src_out": 5.1,
-        "tl_in": 508.2567,
+        "tl_in": 508.25679999999994,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
@@ -4414,7 +4419,7 @@
         "asset": "20260906-phone-3f78c2",
         "src_in": 0.0,
         "src_out": 3.4,
-        "tl_in": 512.8567,
+        "tl_in": 512.8567999999999,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
@@ -4443,7 +4448,7 @@
         "asset": "20260906-phone-5e04c0",
         "src_in": 0.0,
         "src_out": 3.9667,
-        "tl_in": 515.7567,
+        "tl_in": 515.7567999999999,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
@@ -4473,7 +4478,7 @@
         "asset": "20260907-unknown-653744",
         "src_in": 0.0,
         "src_out": 4.5333,
-        "tl_in": 519.2233,
+        "tl_in": 519.2234999999998,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
@@ -4503,7 +4508,7 @@
         "asset": "20260907-unknown-0ff60c",
         "src_in": 0.0,
         "src_out": 4.5333,
-        "tl_in": 523.2567,
+        "tl_in": 523.2567999999999,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
@@ -4533,7 +4538,7 @@
         "asset": "jga-outro-card",
         "src_in": 0.0,
         "src_out": 5.55,
-        "tl_in": 527.19,
+        "tl_in": 527.1900999999999,
         "speed": 1.0,
         "transition_in": {
           "type": "fade",
@@ -4562,8 +4567,8 @@
         "id": "c200",
         "asset": "generated-black",
         "src_in": 0.0,
-        "src_out": 1.85,
-        "tl_in": 531.94,
+        "src_out": 1.8499000000000478,
+        "tl_in": 531.9400999999999,
         "speed": 1.0,
         "transition_in": {
           "type": "fade",
@@ -4571,7 +4576,8 @@
           "hold": 0.0
         },
         "effects": [],
-        "note": "Blende -> Schwarz (fade to black)"
+        "note": "Blende -> Schwarz (fade to black)",
+        "intentional_repeat": true
       }
     ],
     "overlay": [
@@ -4592,7 +4598,7 @@
       {
         "id": "ov-sulemann",
         "png": "overlays/ov-sulemann.png",
-        "tl_in": 37.15,
+        "tl_in": 37.14999999999999,
         "dur": 3.8538,
         "anim": {
           "fade_in_s": "0.25",
@@ -4606,7 +4612,7 @@
       {
         "id": "ov-biere",
         "png": "overlays/ov-biere.png",
-        "tl_in": 103.3692,
+        "tl_in": 103.36940000000004,
         "dur": 2.9774,
         "anim": {
           "fade_in_s": "0.25",
@@ -4620,7 +4626,7 @@
       {
         "id": "ov-praesente",
         "png": "overlays/ov-praesente.png",
-        "tl_in": 164.3633,
+        "tl_in": 164.36370000000008,
         "dur": 2.742,
         "anim": {
           "fade_in_s": "0.25",
@@ -4634,7 +4640,7 @@
       {
         "id": "ov-genuss",
         "png": "overlays/ov-genuss.png",
-        "tl_in": 177.4052,
+        "tl_in": 177.40570000000008,
         "dur": 2.9448,
         "anim": {
           "fade_in_s": "0.25",
@@ -4648,7 +4654,7 @@
       {
         "id": "ov-rooftop",
         "png": "overlays/ov-rooftop.png",
-        "tl_in": 262.55,
+        "tl_in": 262.54999999999995,
         "dur": 3.0333,
         "anim": {
           "fade_in_s": "0.25",
@@ -4662,7 +4668,7 @@
       {
         "id": "ov-hydrated",
         "png": "overlays/ov-hydrated.png",
-        "tl_in": 294.4357,
+        "tl_in": 294.4354999999998,
         "dur": 1.6429,
         "anim": {
           "fade_in_s": "0.25",
@@ -4676,7 +4682,7 @@
       {
         "id": "ov-christoph",
         "png": "overlays/ov-christoph.png",
-        "tl_in": 298.8071,
+        "tl_in": 298.80699999999985,
         "dur": 2.1286,
         "anim": {
           "fade_in_s": "0.25",
@@ -4690,7 +4696,7 @@
       {
         "id": "ov-token",
         "png": "overlays/ov-token.png",
-        "tl_in": 339.4303,
+        "tl_in": 339.4299,
         "dur": 2.5521,
         "anim": {
           "fade_in_s": "0.25",
@@ -4704,7 +4710,7 @@
       {
         "id": "ov-lampen",
         "png": "overlays/ov-lampen.png",
-        "tl_in": 396.09,
+        "tl_in": 396.0895999999999,
         "dur": 1.5481,
         "anim": {
           "fade_in_s": "0.25",
@@ -4718,7 +4724,7 @@
       {
         "id": "ov-wtf",
         "png": "overlays/ov-wtf.png",
-        "tl_in": 478.7445,
+        "tl_in": 478.74390000000005,
         "dur": 1.8977,
         "anim": {
           "fade_in_s": "0.25",
@@ -4732,7 +4738,7 @@
       {
         "id": "ov-gurken",
         "png": "overlays/ov-gurken.png",
-        "tl_in": 480.9421,
+        "tl_in": 480.9416,
         "dur": 1.6979,
         "anim": {
           "fade_in_s": "0.25",
@@ -4746,8 +4752,8 @@
       {
         "id": "ov-cast-01-witte",
         "png": "overlays/ov-cast-01-witte.png",
-        "tl_in": 375.43,
-        "dur": 0.87,
+        "tl_in": 375.4296000000001,
+        "dur": 1.35,
         "anim": {
           "fade_in_s": "0.08",
           "fade_out_s": "0.12",
@@ -4762,8 +4768,8 @@
       {
         "id": "ov-cast-02-christoph",
         "png": "overlays/ov-cast-02-christoph.png",
-        "tl_in": 376.33,
-        "dur": 0.87,
+        "tl_in": 376.3296,
+        "dur": 1.35,
         "anim": {
           "fade_in_s": "0.08",
           "fade_out_s": "0.12",
@@ -4778,8 +4784,8 @@
       {
         "id": "ov-cast-03-matti",
         "png": "overlays/ov-cast-03-matti.png",
-        "tl_in": 377.23,
-        "dur": 0.87,
+        "tl_in": 377.22960000000006,
+        "dur": 1.35,
         "anim": {
           "fade_in_s": "0.08",
           "fade_out_s": "0.12",
@@ -4794,8 +4800,8 @@
       {
         "id": "ov-cast-04-bartosz",
         "png": "overlays/ov-cast-04-bartosz.png",
-        "tl_in": 378.13,
-        "dur": 0.87,
+        "tl_in": 378.1296,
+        "dur": 1.35,
         "anim": {
           "fade_in_s": "0.08",
           "fade_out_s": "0.12",
@@ -4810,8 +4816,8 @@
       {
         "id": "ov-cast-05-hagi",
         "png": "overlays/ov-cast-05-hagi.png",
-        "tl_in": 379.03,
-        "dur": 0.87,
+        "tl_in": 379.02959999999996,
+        "dur": 1.35,
         "anim": {
           "fade_in_s": "0.08",
           "fade_out_s": "0.12",
@@ -4826,8 +4832,8 @@
       {
         "id": "ov-cast-06-bernhard",
         "png": "overlays/ov-cast-06-bernhard.png",
-        "tl_in": 379.93,
-        "dur": 0.87,
+        "tl_in": 379.9296,
+        "dur": 1.35,
         "anim": {
           "fade_in_s": "0.08",
           "fade_out_s": "0.12",
@@ -4842,8 +4848,8 @@
       {
         "id": "ov-cast-07-andre",
         "png": "overlays/ov-cast-07-andre.png",
-        "tl_in": 380.83,
-        "dur": 0.87,
+        "tl_in": 380.8295999999999,
+        "dur": 1.35,
         "anim": {
           "fade_in_s": "0.08",
           "fade_out_s": "0.12",
@@ -4858,8 +4864,8 @@
       {
         "id": "ov-cast-08-skuub",
         "png": "overlays/ov-cast-08-skuub.png",
-        "tl_in": 381.73,
-        "dur": 0.87,
+        "tl_in": 381.72959999999995,
+        "dur": 1.35,
         "anim": {
           "fade_in_s": "0.08",
           "fade_out_s": "0.12",
@@ -4874,7 +4880,7 @@
       {
         "id": "ov-cast-09-micha",
         "png": "overlays/ov-cast-09-micha.png",
-        "tl_in": 382.63,
+        "tl_in": 382.62959999999987,
         "dur": 1.77,
         "anim": {
           "fade_in_s": "0.08",
@@ -4919,7 +4925,7 @@
         "src": "music/07 Where Is My Mind_ (2007 Remaster).m4a",
         "type": "music",
         "tl_in": 482.79,
-        "dur": 45.0,
+        "dur": 51.0,
         "src_in": 17.0,
         "gain_db": 0.0,
         "duck_fade_s": 0.0,
@@ -4930,7 +4936,7 @@
         "id": "oton-01-img1395",
         "asset": "20260907-camera-82c5d4",
         "type": "oton",
-        "tl_in": 143.3404,
+        "tl_in": 143.34070000000006,
         "dur": 2.0,
         "src_in": 0.0,
         "gain_db": 0.0,
@@ -4944,7 +4950,7 @@
         "id": "oton-02-img1460",
         "asset": "20260907-camera-5791b1",
         "type": "oton",
-        "tl_in": 232.6391,
+        "tl_in": 232.63899999999998,
         "dur": 5.0,
         "src_in": 0.0,
         "gain_db": 0.0,
@@ -4958,7 +4964,7 @@
         "id": "oton-03-img1613",
         "asset": "20260907-camera-317b4d",
         "type": "oton",
-        "tl_in": 350.0,
+        "tl_in": 349.99960000000004,
         "dur": 14.0,
         "src_in": 10.0,
         "gain_db": 0.0,
@@ -4972,10 +4978,10 @@
         "id": "oton-04-img1637",
         "asset": "20260907-camera-8794ae",
         "type": "oton",
-        "tl_in": 423.3322,
+        "tl_in": 423.3317,
         "dur": 15.0,
         "src_in": 142.0,
-        "gain_db": 1.0,
+        "gain_db": 0.0,
         "duck_music_db": -17.0,
         "duck_fade_s": 0.6,
         "fade_in_s": 0.0,
@@ -4986,7 +4992,7 @@
         "id": "oton-05-img1641",
         "asset": "20260907-camera-9bc26f",
         "type": "oton",
-        "tl_in": 444.515,
+        "tl_in": 444.5144,
         "dur": 5.0,
         "src_in": 24.0,
         "gain_db": 0.0,
@@ -5000,7 +5006,7 @@
         "id": "oton-06-img4835",
         "asset": "20260905-camera-251729",
         "type": "oton",
-        "tl_in": 449.515,
+        "tl_in": 449.5144,
         "dur": 4.885,
         "src_in": 8.0,
         "gain_db": 0.0,
