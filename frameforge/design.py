@@ -81,7 +81,12 @@ class TemplateError(RuntimeError):
 # - `background_layer`: optionale Hintergrundgrafik in Titelkarte/Kapitelmarke (Plan §D2)
 # - `ascent_label`: kumulierte Hoehenmeter im Karten-HUD (Plan §B1) — fehlt bei Etappen ohne
 #   Hoehendaten und bei Aufrufern, die das HUD nicht nutzen
-_OPTIONAL_TOKENS = {"background_layer": "", "ascent_label": ""}
+_OPTIONAL_TOKENS = {
+    "background_layer": "",
+    "ascent_label": "",
+    # thought-bubble.svg: zweite Textzeile optional, eine Zeile reicht oft (Plan 0004 §5/§6).
+    "bubble_line2": "",
+}
 
 
 def build_svg_from_tokens(template_path: Path, tokens: dict) -> str:
@@ -252,6 +257,53 @@ def overlay_tokens(tokens: dict, *, width: int, height: int, **extra) -> dict:
         "value_y": round(height * 0.55),
         "label_y": round(height * 0.78),
         "background_layer": "",
+        # thought-bubble.svg (Plan 0004 §5/§6, Comic/Party-FX-Baukasten): Default oben rechts
+        # im Bild, damit die Blase die Handlung in der Bildmitte nicht verdeckt. Die drei
+        # Schwaenzchen-Kreise laufen diagonal von der Blasen-Unterkante Richtung Bildmitte
+        # (zur sprechenden/denkenden Person). Ein Aufrufer, der mehrere Blasen in einem Export
+        # braucht (oder die Blase woanders platzieren will), ueberschreibt `bubble_*` pro
+        # Instanz wie bei jedem anderen Template -- ABER: `bubble_x_pct_center`/
+        # `bubble_text1_y_pct`/`bubble_text2_y_pct`/`tail*` sind aus `bubble_x_pct`/
+        # `bubble_y_pct`/`bubble_w_pct`/`bubble_h_pct` ABGELEITET und muessen bei einer
+        # Repositionierung MIT neu berechnet werden (wie `stage-caption-recipe.py` es fuer
+        # seine Box-Geometrie tut) -- sonst zeigen Schwaenzchen-Kreise oder Text ins Leere.
+        "bubble_x_pct": 58.0,
+        "bubble_y_pct": 8.0,
+        "bubble_w_pct": 36.0,
+        "bubble_h_pct": 18.0,
+        "bubble_x_pct_center": 58.0 + 36.0 / 2,
+        "bubble_text1_y_pct": 8.0 + 18.0 * 0.34,
+        "bubble_text2_y_pct": 8.0 + 18.0 * 0.68,
+        "bubble_corner_radius": round(height * 0.035),
+        "bubble_opacity": 0.95,
+        "bubble_fill": tokens.get("text_color", "#fdf6ec"),
+        "bubble_stroke": tokens.get("primary_color", "#1e1640"),
+        "bubble_stroke_width": max(2, round(height * 0.0035)),
+        "bubble_text_size": round(caption * 1.1, 1),
+        "tail_r1": max(3, round(height * 0.014)),
+        "tail_r2": max(2, round(height * 0.008)),
+        "tail_r3": max(1, round(height * 0.0045)),
+        "tail1_x_pct": 52.0,
+        "tail1_y_pct": 27.0,
+        "tail2_x_pct": 47.0,
+        "tail2_y_pct": 32.0,
+        "tail3_x_pct": 43.0,
+        "tail3_y_pct": 36.0,
+        # sticker.svg (Plan 0004 §5/§6): zentrierter Glyph-Sticker, Default mittig/groß genug
+        # zum Erkennen — ein Aufrufer setzt `x_pct`/`y_pct` pro Instanz fuer "sprudelnde"
+        # mehrfach platzierte Sticker (Herzchen etc.).
+        "sticker_x_pct": 50.0,
+        "sticker_y_pct": 50.0,
+        "sticker_size": round(title * 0.5, 1),
+        "sticker_fill": tokens.get("accent_color", "#d9a441"),
+        "sticker_glow_color": tokens.get("secondary_color", "#ff2e8a"),
+        "sticker_glow_blur": round(height * 0.012, 1),
+        # speedlines.svg (Plan 0004 §5/§6): Default weiss/dezent-transparent, wie ein kurzer
+        # Kamerablitz -- Aufrufer kann pro Einsatz `speedline_color` auf `accent_color` o.ae.
+        # umstellen, wenn eine Farbvariante gebraucht wird.
+        "speedline_color": tokens.get("text_color", "#ffffff"),
+        "speedline_opacity": 0.55,
+        "speedline_width": max(2, round(height * 0.006)),
     }
     ignored = {"type_scale", "motion"}  # kein Layout-Token, gehoert nicht ins SVG
     return derived | {k: v for k, v in tokens.items() if k not in ignored} | extra

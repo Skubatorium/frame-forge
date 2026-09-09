@@ -1,0 +1,28 @@
+<svg width="{{width}}" height="{{height}}" xmlns="http://www.w3.org/2000/svg">
+  <!-- Denkblase fuer den Comic/Party-FX-Baukasten (Plan 0004 §5/§6). Bewusst als runde Box
+       mit drei kleinen Schwaenzchen-Kreisen gebaut statt als echte Wolkenform — cairosvg-
+       sicher (nur rect/circle/text, keine komplexen Pfad-Kurven) und passt zum sonstigen
+       Panel-Stil der anderen Templates (box-only.svg). Position/Groesse frei ueber
+       `bubble_*`-Tokens, wie bei den anderen Overlay-Templates. Zwei Textzeilen moeglich
+       (`bubble_line2` optional, siehe design.py `_OPTIONAL_TOKENS`) — laengere Gedanken
+       gehoeren in zwei kurze Zeilen statt eine lange, die aus der Blase laeuft. -->
+  <rect x="{{bubble_x_pct}}%" y="{{bubble_y_pct}}%" width="{{bubble_w_pct}}%" height="{{bubble_h_pct}}%"
+        rx="{{bubble_corner_radius}}" ry="{{bubble_corner_radius}}"
+        fill="{{bubble_fill}}" fill-opacity="{{bubble_opacity}}"
+        stroke="{{bubble_stroke}}" stroke-width="{{bubble_stroke_width}}"/>
+  <circle cx="{{tail1_x_pct}}%" cy="{{tail1_y_pct}}%" r="{{tail_r1}}"
+          fill="{{bubble_fill}}" fill-opacity="{{bubble_opacity}}"
+          stroke="{{bubble_stroke}}" stroke-width="{{bubble_stroke_width}}"/>
+  <circle cx="{{tail2_x_pct}}%" cy="{{tail2_y_pct}}%" r="{{tail_r2}}"
+          fill="{{bubble_fill}}" fill-opacity="{{bubble_opacity}}"
+          stroke="{{bubble_stroke}}" stroke-width="{{bubble_stroke_width}}"/>
+  <circle cx="{{tail3_x_pct}}%" cy="{{tail3_y_pct}}%" r="{{tail_r3}}"
+          fill="{{bubble_fill}}" fill-opacity="{{bubble_opacity}}"
+          stroke="{{bubble_stroke}}" stroke-width="{{bubble_stroke_width}}"/>
+  <text x="{{bubble_x_pct_center}}%" y="{{bubble_text1_y_pct}}%" font-family="{{font_text}}"
+        font-weight="700" font-size="{{bubble_text_size}}" fill="{{bubble_stroke}}"
+        text-anchor="middle" dominant-baseline="middle">{{bubble_line1}}</text>
+  <text x="{{bubble_x_pct_center}}%" y="{{bubble_text2_y_pct}}%" font-family="{{font_text}}"
+        font-weight="700" font-size="{{bubble_text_size}}" fill="{{bubble_stroke}}"
+        text-anchor="middle" dominant-baseline="middle">{{bubble_line2}}</text>
+</svg>

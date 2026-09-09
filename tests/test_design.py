@@ -215,6 +215,11 @@ _TEMPLATE_CONTENT = {
     "line1": "Oskar",
     "line2": "Anna",
     "line3": "",
+    # thought-bubble.svg / sticker.svg (Plan 0004 §5/§6, Comic/Party-FX): Inhalts-Tokens.
+    # `bubble_line2` bleibt bewusst weg -- die zweite Zeile ist optional (`_OPTIONAL_TOKENS`),
+    # der Default-Pfad soll mitgeprueft werden. `speedlines.svg` hat keinen Inhalts-Token.
+    "bubble_line1": "Läuft bei uns",
+    "glyph": "★",
 }
 
 

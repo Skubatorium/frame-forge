@@ -1,0 +1,17 @@
+<svg width="{{width}}" height="{{height}}" xmlns="http://www.w3.org/2000/svg">
+  <!-- Einzelnes Glyph-Sticker (Herz/Stern/Krone, ...) fuer den Comic/Party-FX-Baukasten
+       (Plan 0004 §5/§6) — dieselbe Optik wie die "sticker"-Klasse auf der JGA-Website
+       (glow-doodle, siehe web/sites/michael-jga-2026/design/assets/css/components.css).
+       `{{glyph}}` ist ein einzelnes Unicode-Zeichen (z.B. ♥/★/♛), kein Bild — Aufruf-/
+       Positionierungsfreiheit wie bei title-only.svg. Auf-/Ab-/Fade-Bewegung passiert wie bei
+       allen anderen Overlays per `anim`-Feld des Overlay-Clips im Render, nicht hier im SVG. -->
+  <defs>
+    <filter id="ff-sticker-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="0" stdDeviation="{{sticker_glow_blur}}"
+                    flood-color="{{sticker_glow_color}}" flood-opacity="0.85"/>
+    </filter>
+  </defs>
+  <text x="{{sticker_x_pct}}%" y="{{sticker_y_pct}}%" font-family="{{font_display}}"
+        font-size="{{sticker_size}}" fill="{{sticker_fill}}" text-anchor="middle"
+        dominant-baseline="middle" filter="url(#ff-sticker-glow)">{{glyph}}</text>
+</svg>

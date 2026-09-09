@@ -1,0 +1,21 @@
+<svg width="{{width}}" height="{{height}}" xmlns="http://www.w3.org/2000/svg">
+  <!-- Radiale "Speedlines" fuer den Comic/Party-FX-Baukasten (Plan 0004 §5/§6): acht
+       Linien von den Bildraendern Richtung Mitte, klassisches Manga-/Comic-Impact-Motiv.
+       Bewusst als formatfuellendes, kurzes Overlay gedacht (0.1-0.3s Ein-/Ausblenden ueber
+       das bestehende `anim.fade_in_s`/`fade_out_s`), passend zu einem harten Schnitt in
+       Akt 2. Kein neues Template pro Einsatz noetig, nur Farbe, Deckkraft, Staerke sind
+       Tokens. Feste Geometrie statt Tokens pro Linie: `build_svg_from_tokens` ersetzt nur
+       flach einzelne Platzhalter, kein Loop, eine feste sorgfaeltig gesetzte Anordnung
+       reicht fuer einen Blitz-Effekt voellig aus. -->
+  <g stroke="{{speedline_color}}" stroke-opacity="{{speedline_opacity}}"
+     stroke-width="{{speedline_width}}" stroke-linecap="round">
+    <line x1="0%" y1="0%" x2="30%" y2="24%"/>
+    <line x1="50%" y1="-4%" x2="50%" y2="26%"/>
+    <line x1="100%" y1="0%" x2="70%" y2="24%"/>
+    <line x1="-4%" y1="50%" x2="26%" y2="50%"/>
+    <line x1="104%" y1="50%" x2="74%" y2="50%"/>
+    <line x1="0%" y1="100%" x2="30%" y2="76%"/>
+    <line x1="50%" y1="104%" x2="50%" y2="74%"/>
+    <line x1="100%" y1="100%" x2="70%" y2="76%"/>
+  </g>
+</svg>
