@@ -1,0 +1,231 @@
+# Export "JGA" — Micha im Delirium 2026 (Junggesellenabschied Brüssel)
+#
+# Erstellt 2026-09-09 aus Christians vollständiger Sicht-/Skript-Durchsprache (Voice-Transkript).
+# Muss-/Nice-Einstufung der Assets liegt in assets.json (via `set-priority --from-file
+# exports/JGA/priorities.csv`, 156 must + 50 nice). Zwei Assets hart gesperrt (`frameforge
+# exclude`): IMG_4745 (unvorteilhaft), IMG_8338 (Datei defekt).
+#
+# DETAIL-REGIE pro Bild/Clip (Texteinblendungen, Schnitt-In/Out-Punkte, FX-Stellen,
+# Reihenfolge-Zwänge, Ducking) steht in exports/JGA/editorial-notes.md — story-architect,
+# timeline-builder und party-fx MÜSSEN diese Datei lesen.
+
+preset: jga-zweiteiler
+
+# Ziellänge ist ein OFFENER RICHTWERT. Die drei Musiktracks bestimmen die Länge, nicht
+# umgekehrt (Plan 0004 §3/§10). Rechnung: Vivaldi 211,5 s (Akt 1, ganz) + Galvanize [Edit]
+# 271,4 s (Akt 2, ganz) + Where Is My Mind ab src_in ~17 s, nur ~35-45 s genutzt (Aftermath/
+# Outro) ≈ 520-530 s ≈ 8:40-8:50. "Acht oder neun Minuten ist egal" (Christian). QC bitte die
+# Längen-Toleranz entsprechend weit fassen.
+target_duration_s: 525
+language: de
+
+# ---------------------------------------------------------------- Overrides (über dem Preset)
+# Farbe bleibt bewusst mild/einheitlich (kein Grade-Sprung Akt1/Akt2) — Preset-Default
+# color_grade.mood=natural NICHT überschreiben. Party-Energie kommt aus Schnitt + Comic-FX.
+color_match: soft
+
+pacing:
+  # rhythm bleibt mixed_by_chapter (Preset). Konkrete Fenster:
+  #   Akt 1 "Gediegen": 3.5-6 s je Foto, lange Videoeinstellungen, ruhige Ken-Burns-Ausschnitte
+  #   Akt 2 "Eskalation": 0.4-2.0 s Beat-Cuts auf Galvanize, wenig/keine Ken-Burns-Bewegung
+  #   Aftermath/Outro: 4-8 s, nahezu statisch
+  min_s: 0.4
+  max_s: 6
+
+photo_treatment:
+  ken_burns: moderate   # Akt 1: ruhig. Akt 2: eher zügig ODER still (editorial-notes), nie hektisch.
+
+text_density: bold_large   # Preset-Default; viele bewusst gesetzte Gag-Texte, s. editorial-notes
+
+original_audio_policy: accent
+# O-Ton-Fenster (Musik dort ducken) — Clip-Details/Timecodes in editorial-notes.md:
+#   IMG_1395 (Schoko-Unboxing, nur der "da-da-da"-String am Anfang), IMG_1460 (Michas Lachen),
+#   IMG_1613, IMG_1621, IMG_1635, IMG_1637, IMG_1641 (Karaoke/Tanz/Gesang), IMG_4835 (Tequila).
+#   AUSNAHME: IMG_1653 (Taxi-POV) — KEIN Ducking, Musik durchlaufen lassen (Christian explizit).
+
+# --------------------------------------------------------------------------- Audio / Musik
+audio:
+  tracks:
+    - "10 Violinkonzert No. 4 in F Minor, Op. 8, RV 297 - _Der Winter__ I. Allegro non molto.m4a"  # Akt 1
+    - "01 Galvanize (feat. Q-Tip) [Edit].m4a"                                                       # Akt 2
+    - "07 Where Is My Mind_ (2007 Remaster).m4a"                                                     # Aftermath/Outro
+  structure_hint: three_parts
+  # Akt 1 -> Akt 2: HARTER Wechsel, kein langer Crossfade. Sync-Punkt visuell: erste Kneipe
+  #   sichtbar (à la Bécasse) + die große Bierkarte, dann setzt der Galvanize-Intro-Beat ein
+  #   und die Gläser werden vollgeschüttet -> Party. Galvanize von Anfang (src_in 0).
+  # Akt 2 -> Aftermath: ABRUPTER Cut in die Stille. Where Is My Mind mit src_in ~17 s
+  #   einsteigen (nicht von vorne — "man kennt das Lied", direkt in die traurige Stelle).
+  fade_in_s: 2      # Vivaldi kommt langsam hoch, während das Intro-Standbild steht
+  fade_out_s: 4     # Where Is My Mind ganz ausfaden, BEVOR die Danke-Karte steht
+  transition: cut
+
+# ------------------------------------------------------------------------------- Intro
+intro:
+  transition_in: black          # Film STARTET auf Schwarz
+  cold_open_s: 0
+  # Ablauf: Schwarz -> weiche Blende in das Standbild design/assets/img/JGA_INTRO.png
+  #   (= zugleich das Poster-Bild der Website), ein paar Sekunden halten, Vivaldi langsam
+  #   hoch, dann weiche Schwarzblenden / ein paar Schnitte, dann rein in Akt 1.
+  hero_still: "design/assets/img/JGA_INTRO.png"
+  title: "Micha im Delirium"
+  subtitle: "JGA · Brüssel 2026"
+  fade: slow
+
+# ------------------------------------------------------------------------------- Outro
+outro:
+  transition_out: black
+  # Letztes Vollbild: design/assets/img/JGA_OUTRO.png ("Danke"). Musik ist da schon
+  #   ausgefadet. Kurz halten, dann ins Schwarz. Falls JGA_OUTRO.png KEIN "Danke" trägt:
+  #   danach eine schlichte credits-/title-card "Danke" (bestehendes SVG-Template).
+  hero_still: "design/assets/img/JGA_OUTRO.png"
+
+# --------------------------------------------------------------------------- Comic/Party-FX
+# NUR Akt 2 flächig (Kontrast-Witz). Akt 1: höchstens ein einzelner dezenter Akzent.
+# Cast-Intro sitzt MITTEN in Akt 2, in der Karaoke-Bar "Red" — 9 Personen, je ein
+# Sonnenbrillen-Foto (Standbild), Namensstempel, kurzer SFX. Reihenfolge:
+#   1 Witte   IMG_1624
+#   2 Christoph IMG_1625
+#   3 Matti   IMG_1627
+#   4 Bartosz IMG_1628
+#   5 Hagi    IMG_1629
+#   6 Bernhard IMG_1630
+#   7 André   IMG_1631
+#   8 Skuub   IMG_1632
+#   9 Micha   IMG_1626   (der Bräutigam, kommt zuletzt; Stempel z.B. "Micha im Delirium",
+#                          optional in Michas blauem Sonderfarbton #4fd8ff, Plan §4.1)
+# Konkrete FX-Wunschstellen (Herzchen/Kronen/Denkblasen/Sprechblasen) stehen mit Bildnummer
+# in editorial-notes.md ("FX:"-Zeilen). Sparsam, als Akzent — erst 1-2 testen, dann breiter.
+
+# --------------------------------------------------------------------- verbotene Shots
+# Für DIESEN Export raus (nicht hart gesperrt — für spätere Exporte weiter verfügbar).
+# Grund je Datei in editorial-notes.md.
+forbidden_shots:
+  - IMG_1271.JPG
+  - IMG_1311.jpeg
+  - IMG_1372.jpeg
+  - IMG_1373.jpeg
+  - IMG_1375.jpeg
+  - IMG_1380.jpeg
+  - IMG_1394.jpeg
+  - IMG_1408.jpeg
+  - IMG_1424.jpeg
+  - IMG_1426.jpeg
+  - IMG_1429.jpeg
+  - IMG_1432.jpeg
+  - IMG_1437.jpeg
+  - IMG_1441.jpeg
+  - IMG_1446.jpeg
+  - IMG_1456.jpeg
+  - IMG_1458.jpeg
+  - IMG_1477.jpeg
+  - IMG_1542.jpeg
+  - IMG_1546.jpeg
+  - IMG_1550.jpeg
+  - IMG_1553.jpeg
+  - IMG_1583.JPG
+  - IMG_1587.jpeg
+  - IMG_1599.jpeg
+  - IMG_1643.MOV
+  - IMG_1651.jpeg
+  - IMG_1669.jpeg
+  - IMG_1698.JPG
+  - IMG_1701.JPG
+  - IMG_1708.JPG
+  - IMG_4756.HEIC
+  - IMG_4761.HEIC
+  - IMG_4762.HEIC
+  - IMG_4764.HEIC
+  - IMG_4765.HEIC
+  - IMG_4766.HEIC
+  - IMG_4770.JPG
+  - IMG_4780.HEIC
+  - IMG_4786.HEIC
+  - IMG_4791.HEIC
+  - IMG_4795.HEIC
+  - IMG_4796.HEIC
+  - IMG_4798.HEIC
+  - IMG_4799.HEIC
+  - IMG_4801.HEIC
+  - IMG_4805.HEIC
+  - IMG_4806.HEIC
+  - IMG_4807.HEIC
+  - IMG_4816.HEIC
+  - IMG_4818.HEIC
+  - IMG_4828.HEIC
+  - IMG_4831.HEIC
+  - IMG_4834.MOV
+  - IMG_4836.MOV
+  - IMG_4837.HEIC
+  - IMG_4838.HEIC
+  - IMG_4846.HEIC
+  - IMG_4847.HEIC
+  - IMG_8323.HEIC
+  - IMG_8330.HEIC
+  - IMG_8333.HEIC
+  - IMG_8343.HEIC
+  - IMG_8649.MP4
+  - IMG_8657.HEIC
+  - IMG_8657.MP4
+  - IMG_8659.HEIC
+
+# --------------------------------------------------------------------- Muss-Anker (Erzählung)
+# Vollständige Muss-Liste = assets.json content.priority == "must". Hier nur die harten
+# dramaturgischen Anker, die in JEDER Fassung vorkommen und in dieser Reihenfolge sitzen:
+must_shots:
+  - "Öffnung: Schwarz -> JGA_INTRO-Standbild"
+  - "Erster Shot Rohmaterial: IMG_4734 (Abholung zu Hause, Text 'Let's go')"
+  - "Auto-Grimassen 1646D950…777E direkt danach"
+  - "Ankunft Unterkunft: IMG_1699, IMG_1252"
+  - "Pizza-Abend: Sülemann/Uber-Eats IMG_1309 + Pizza IMG_1310/IMG_1312"
+  - "Frühstück Samstag: IMG_1321"
+  - "Waffeln + Schokolade kaufen: IMG_1391/IMG_1392/IMG_1393 + Unboxing-Video IMG_1395"
+  - "Schoko-Waffel-Bissen-Video IMG_1404 (Cut ~25-37 s)"
+  - "Pommes: IMG_1444 dann IMG_1443 -> Übergang"
+  - "Zusammentreffen der Gruppe: F9615661…1429 direkt vor IMG_1445 (à la Bécasse)"
+  - "HARTER Musikwechsel zu Galvanize: Bar + Bierkarte -> Gläser vollschütten -> Party"
+  - "Rooftop Bar 58: IMG_1500 (Text 'Rooftop Bar 58, wir kommen') + Sonnenuntergänge"
+  - "Corona-Anstoßen alle: IMG_1524"
+  - "Cast-Intro in der Red Karaoke-Bar (9 Personen, s. oben)"
+  - "Karaoke-Höhepunkt: IMG_1637 (Cut 2:22-2:38) + IMG_1641 + Tanz IMG_1635"
+  - "Tequila-Shots: IMG_4835 (ab ~8 s, hochhalten bis Ende)"
+  - "Abgeschossen im Bett + Gurken-Gag: IMG_1660 ('WTF?') + IMG_1661"
+  - "Taxi-Heimfahrt: IMG_1652 + IMG_1653 (KEIN Ducking)"
+  - "Aftermath (Where Is My Mind ab ~17 s): IMG_1663/1664 -> IMG_1666 -> IMG_1667 -> IMG_2644"
+  - "Outro: Auto-Schlaf 93638dac…5F53 dann c12b0d91…EA4B"
+  - "Letztes Vollbild: JGA_OUTRO ('Danke'), Musik ausgefadet, dann Schwarz"
+
+notes: >-
+  Zweiakter mit drittem, kurzem Ausklang. AKT 1 "GEDIEGEN" (Vivaldi "Der Winter", ganze
+  211,5 s): Freitag-Anreise, Unterkunft, Pizza-Abend, Samstag-Frühstück, Stadtbummel Brüssel
+  (Grand Place, Belgian Beer Weekend, Galeries, Waffeln, Schokolade kaufen, Manneken Pis /
+  Duck Store, MOK Coffee, Pommes). Langsamer, warmer Schnitt, ruhige Ausschnitte, leiser
+  selbstironischer Humor ("wir sind schon ziemlich alt geworden"). KEINE Comic-FX-Dichte —
+  bewusst der Kontrast zu Akt 2; ein einzelner dezenter Akzent (z.B. ein Herzchen) ist
+  erlaubt. Texteinblendungen in Akt 1 sind trocken/klein und stehen möglichst am Bildrand,
+  nicht mittig (Christian: kein roter Rahmen aus der Mitte).
+
+  AKT 2 "ESKALATION" (Galvanize [Edit], ganze 271,4 s): ab der ersten Kneipe (à la Bécasse),
+  jetzt mit der ganzen Gruppe. Bierverkostung Delirium, Kreisbilder, Rooftop Bar 58 mit
+  Sonnenuntergang, blaue Stunde, Burger, dann Red Karaoke-Bar mit Cast-Intro mittendrin,
+  Tanz/Gesang/Tequila, Weiterziehen (Delirium Village, Dubliner), Taxi, "abgeschossen im
+  Bett", Gurken-Gag. Schnelle, laute Beat-Cuts, Comic-FX aktiv aber als Akzent. Im zweiten
+  Teil liegen mehr Videos — die tragen hier den Rhythmus mit.
+
+  AFTERMATH/OUTRO (Where Is My Mind, src_in ~17 s, nur ~35-45 s): abrupter Wechsel aus der
+  Party in die Stille. Nächster Morgen auf den Sofas, "alle sind erledigt", Christoph/
+  Kotz-Bilder (dezent), Micha zerstört, dann die zwei Auto-Schlaf-Fotos. Musik faded aus,
+  Schluss-Standbild JGA_OUTRO ("Danke") -> Schwarz.
+
+  Chronologie: captured_at aus EXIF nutzen, wo vorhanden. Ohne Zeitstempel sind die
+  Hagi-Fotos (IMG_1697-1708) und die vier UUID-JPGs — deren grobe Einordnung steht in
+  editorial-notes.md. Reihenfolge-Zwänge (z.B. "IMG_1444 vor IMG_1443", "1518 vor 1556",
+  "1508 spät, kurz vor Verlassen der Rooftop-Bar", "Gruppen-Foto der Zusteiger vor 1445")
+  ebenfalls dort.
+
+  Redundanz vermeiden: viele sehr ähnliche Rooftop-/Sonnenuntergangs-/Bar-Aufnahmen. Nicht
+  mehrere fast gleiche hintereinander (z.B. 1356 & 1358 nicht direkt nacheinander; die drei
+  Manneken-Pis-Perspektiven 1409/1410/1411 auseinanderziehen).
+
+  Wackel-/Dunkelheit: Party-Material ist teils dunkel/neonstichig und verwackelt — bei
+  gleichwertiger Auswahl das ruhigere/schärfere nehmen; wo ein Wackler mitten im Take sitzt,
+  eher kürzen.

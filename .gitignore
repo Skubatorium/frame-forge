@@ -26,6 +26,7 @@ projects/*/exports/*/report.md
 projects/*/design/fonts/
 projects/*/design/assets/
 projects/*/.state.lock
+projects/*/index/assets.json.lock
 
 # Gesichtserkennung: biometrische Daten (Encodings), niemals ins Repo (frameforge faces)
 projects/*/index/people.json

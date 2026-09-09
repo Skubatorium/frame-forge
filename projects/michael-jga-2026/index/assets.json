@@ -99,7 +99,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -144,7 +144,9 @@
         "b-roll"
       ],
       "priority": "ok"
-    }
+    },
+    "exclude": true,
+    "exclude_reason": "unvorteilhaft, Christian will es nicht (Sicht 2026-09-09)"
   },
   {
     "hash": "sha256:1290ed73ca944cd8fac4c6e7047e40e8f3ff46c17f7421c0878cf291322dddda",
@@ -195,7 +197,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -249,7 +251,7 @@
         "intro",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -354,7 +356,7 @@
         "b-roll",
         "insert"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -458,7 +460,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -509,7 +511,7 @@
         "b-roll",
         "establisher"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -559,7 +561,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -655,7 +657,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -708,7 +710,7 @@
         "b-roll",
         "insert"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -814,7 +816,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -868,7 +870,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -974,7 +976,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -1016,7 +1018,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -1118,7 +1120,7 @@
         "b-roll",
         "establisher"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -1168,7 +1170,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -1231,7 +1233,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -1294,7 +1296,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -1357,7 +1359,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -1482,7 +1484,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -1545,7 +1547,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     },
     "gps": {
       "place": "Bruessel"
@@ -1675,7 +1677,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     },
     "gps": {
       "place": "Bruessel"
@@ -1813,7 +1815,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     },
     "gps": {
       "place": "Bruessel"
@@ -1880,7 +1882,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     },
     "gps": {
       "place": "Grand Place, Bruessel"
@@ -2055,7 +2057,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -2109,7 +2111,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -2252,7 +2254,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -2358,7 +2360,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -2412,7 +2414,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -2514,7 +2516,7 @@
         "outro",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -2569,7 +2571,7 @@
         "outro",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -2621,7 +2623,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -2728,7 +2730,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -2780,7 +2782,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -2829,7 +2831,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -2978,7 +2980,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -3082,7 +3084,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -3182,7 +3184,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -3235,7 +3237,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -3289,7 +3291,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -3343,7 +3345,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -3395,7 +3397,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -3607,7 +3609,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -3661,7 +3663,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -3923,7 +3925,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -3977,7 +3979,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -4024,7 +4026,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -4214,7 +4216,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -4366,7 +4368,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -4418,7 +4420,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -4470,7 +4472,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -4624,7 +4626,7 @@
         "b-roll",
         "establisher"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -4723,7 +4725,7 @@
       "usable_as": [
         "insert"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -4823,7 +4825,7 @@
         "b-roll",
         "establisher"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -4875,7 +4877,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -4930,7 +4932,7 @@
         "b-roll",
         "outro"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -4984,7 +4986,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -5036,7 +5038,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -5103,7 +5105,9 @@
     },
     "gps": {
       "place": "Floris Bar, Bruessel"
-    }
+    },
+    "exclude": true,
+    "exclude_reason": "Datei nicht abspielbar (Sicht 2026-09-09)"
   },
   {
     "hash": "sha256:46e6b4212cbc3c002778e29a36b70d9f9a9cc45a29f67c9d526d608ea7a42374",
@@ -5154,7 +5158,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -5209,7 +5213,7 @@
         "b-roll",
         "outro"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -5315,7 +5319,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -5368,7 +5372,7 @@
         "b-roll",
         "insert"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -5731,7 +5735,7 @@
         "insert",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -5836,7 +5840,7 @@
       "usable_as": [
         "insert"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -5890,7 +5894,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -5943,7 +5947,7 @@
         "insert",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -6048,7 +6052,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -6100,7 +6104,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -6304,7 +6308,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -6401,7 +6405,7 @@
         "b-roll",
         "cutaway"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -6498,7 +6502,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -6544,7 +6548,7 @@
       "usable_as": [
         "establisher"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -6598,7 +6602,7 @@
         "cutaway",
         "establisher"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -6702,7 +6706,7 @@
       "usable_as": [
         "cutaway"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -6756,7 +6760,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -6810,7 +6814,7 @@
         "b-roll",
         "establisher"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -6853,7 +6857,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -6906,7 +6910,7 @@
         "b-roll",
         "cutaway"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -6957,7 +6961,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -7210,7 +7214,7 @@
       "usable_as": [
         "establisher"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -7313,7 +7317,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -7366,7 +7370,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -7470,7 +7474,7 @@
         "b-roll",
         "cutaway"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -7576,7 +7580,7 @@
         "cutaway",
         "establisher"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -7622,7 +7626,7 @@
         "b-roll",
         "establisher"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -7665,7 +7669,7 @@
         "cutaway",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -8011,7 +8015,7 @@
         "cutaway",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -8064,7 +8068,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -8111,7 +8115,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -8165,7 +8169,7 @@
         "b-roll",
         "insert"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -8219,7 +8223,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -8273,7 +8277,7 @@
         "insert",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -8319,7 +8323,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -8365,7 +8369,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -8472,7 +8476,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -8525,7 +8529,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -8684,7 +8688,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -8843,7 +8847,7 @@
       "usable_as": [
         "insert"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -8896,7 +8900,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -8949,7 +8953,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -9003,7 +9007,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -9056,7 +9060,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -9110,7 +9114,7 @@
         "b-roll",
         "establisher"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -9214,7 +9218,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -9268,7 +9272,7 @@
         "b-roll",
         "establisher"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -9315,7 +9319,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -9415,7 +9419,7 @@
         "establisher",
         "outro"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -9522,7 +9526,7 @@
         "b-roll",
         "intro"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -9568,7 +9572,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -9675,7 +9679,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -9729,7 +9733,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -9870,7 +9874,7 @@
         "insert",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -10023,7 +10027,7 @@
         "b-roll",
         "establisher"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -10076,7 +10080,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -10130,7 +10134,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -10183,7 +10187,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -10237,7 +10241,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -10291,7 +10295,7 @@
         "establisher",
         "cutaway"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -10344,7 +10348,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -10451,7 +10455,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -10503,7 +10507,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -10657,7 +10661,7 @@
         "b-roll",
         "establisher"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -10710,7 +10714,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -11129,7 +11133,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -11236,7 +11240,7 @@
         "b-roll",
         "establisher"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -11344,7 +11348,7 @@
         "b-roll",
         "outro"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -11398,7 +11402,7 @@
         "b-roll",
         "establisher"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -11451,7 +11455,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -11504,7 +11508,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -11557,7 +11561,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -11604,7 +11608,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -11657,7 +11661,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -11710,7 +11714,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -11819,7 +11823,7 @@
         "establisher",
         "outro"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -11866,7 +11870,7 @@
         "b-roll",
         "establisher"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -11919,7 +11923,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -12018,7 +12022,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -12071,7 +12075,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -12126,7 +12130,7 @@
         "b-roll",
         "outro"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -12179,7 +12183,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -12284,7 +12288,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -12337,7 +12341,7 @@
         "b-roll",
         "establisher"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -12388,7 +12392,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -12519,7 +12523,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -12716,7 +12720,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -12761,7 +12765,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -12805,7 +12809,7 @@
         "b-roll",
         "establisher"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -12856,7 +12860,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -12951,7 +12955,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -13105,7 +13109,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -13155,7 +13159,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -13207,7 +13211,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -13409,7 +13413,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -13459,7 +13463,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -13509,7 +13513,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -13561,7 +13565,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -13611,7 +13615,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -13660,7 +13664,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -13805,7 +13809,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -13848,7 +13852,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -14097,7 +14101,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -14148,7 +14152,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -14199,7 +14203,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -14251,7 +14255,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -14302,7 +14306,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -14406,7 +14410,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -14459,7 +14463,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -14511,7 +14515,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -14563,7 +14567,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -14615,7 +14619,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -14669,7 +14673,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -14712,7 +14716,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -14764,7 +14768,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -14915,7 +14919,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -15060,7 +15064,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -15113,7 +15117,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -15166,7 +15170,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -15219,7 +15223,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -15272,7 +15276,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -15326,7 +15330,7 @@
         "b-roll",
         "establisher"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -15379,7 +15383,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -15478,7 +15482,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
@@ -15597,7 +15601,7 @@
         "b-roll",
         "establisher"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -15660,7 +15664,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     },
     "gps": {
       "place": "Brüssel"
@@ -15811,7 +15815,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     },
     "gps": {
       "place": "Brüssel"
@@ -15876,7 +15880,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -15939,7 +15943,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -16001,7 +16005,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -16068,7 +16072,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     },
     "gps": {
       "place": "Bruessel"
@@ -16134,7 +16138,7 @@
         "b-roll",
         "insert"
       ],
-      "priority": "ok"
+      "priority": "must"
     },
     "gps": {
       "place": "Bruessel"
@@ -16205,7 +16209,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     },
     "gps": {
       "place": "Bruessel"
@@ -16281,7 +16285,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     },
     "gps": {
       "place": "Bruessel"
@@ -16346,7 +16350,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     },
     "gps": {
       "place": "Bruessel"
@@ -16412,7 +16416,7 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     },
     "gps": {
       "place": "Brüssel"
@@ -16478,7 +16482,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     },
     "gps": {
       "place": "Bruessel"
@@ -16543,7 +16547,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -16586,7 +16590,7 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
@@ -16629,12 +16633,12 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
     "hash": "sha256:06ed4015475d765e1ecd2ebc073bf02b8ba403e4794bc83ec08230cda6cb663b",
-    "path": "Hagi/IMG_1704.JPG",
+    "path": "IMG_1704.JPG",
     "kind": "photo",
     "source_guess": "unknown",
     "captured_at": null,
@@ -16676,12 +16680,12 @@
         "b-roll",
         "cutaway"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
     "hash": "sha256:3080a986c35b5d2777ca7c06676a91eabe6a9d81313c411db2609a4f92aab905",
-    "path": "Hagi/IMG_1705.JPG",
+    "path": "IMG_1705.JPG",
     "kind": "photo",
     "source_guess": "unknown",
     "captured_at": null,
@@ -16720,12 +16724,12 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
     "hash": "sha256:46ec88fdc495030c3397140befafafa0026694ab31f083e0b425d7eb394bda6d",
-    "path": "Hagi/IMG_1697.JPG",
+    "path": "IMG_1697.JPG",
     "kind": "photo",
     "source_guess": "unknown",
     "captured_at": null,
@@ -16764,12 +16768,12 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
     "hash": "sha256:471a674636fb06ebb72c0771bd6cb02638ea8f39e3d1bfce6928d427097ad736",
-    "path": "Hagi/IMG_1701.JPG",
+    "path": "IMG_1701.JPG",
     "kind": "photo",
     "source_guess": "unknown",
     "captured_at": null,
@@ -16813,7 +16817,7 @@
   },
   {
     "hash": "sha256:4e2204dcded143ee544e249a7a8a5288742f7e79408066a6c9551a2e7c1bf2bb",
-    "path": "Hagi/IMG_1703.JPG",
+    "path": "IMG_1703.JPG",
     "kind": "photo",
     "source_guess": "unknown",
     "captured_at": null,
@@ -16853,12 +16857,12 @@
         "establisher",
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
     "hash": "sha256:58b856b51c271709e4510e85fa2e95baaf6b0431e6cfe176913f508231ea9577",
-    "path": "Hagi/IMG_1699.JPG",
+    "path": "IMG_1699.JPG",
     "kind": "photo",
     "source_guess": "unknown",
     "captured_at": null,
@@ -16897,12 +16901,12 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
     "hash": "sha256:5ed6d59396c1c502fc38ac6b0c1211163e606ddd3627e4b1d72b60a507d3e246",
-    "path": "Hagi/IMG_1708.JPG",
+    "path": "IMG_1708.JPG",
     "kind": "photo",
     "source_guess": "unknown",
     "captured_at": null,
@@ -16949,7 +16953,7 @@
   },
   {
     "hash": "sha256:6d898d4ba53e8ba7fb81ebc732c0550c0cb3a8873bc3ee49853d101357f90ee1",
-    "path": "Hagi/IMG_1706.JPG",
+    "path": "IMG_1706.JPG",
     "kind": "photo",
     "source_guess": "unknown",
     "captured_at": null,
@@ -16987,12 +16991,12 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
     "hash": "sha256:757aac5c372df05874057365f9d3aabab26eaa7db9cd75726a983fd8deacdced",
-    "path": "Hagi/IMG_1707.JPG",
+    "path": "IMG_1707.JPG",
     "kind": "photo",
     "source_guess": "unknown",
     "captured_at": null,
@@ -17033,12 +17037,12 @@
         "b-roll",
         "establisher"
       ],
-      "priority": "ok"
+      "priority": "must"
     }
   },
   {
     "hash": "sha256:7a63ddf93746d62833ba1ecce87af3d6013b0d8db1323c3385b4b81f34b2086d",
-    "path": "Hagi/IMG_1702.JPG",
+    "path": "IMG_1702.JPG",
     "kind": "photo",
     "source_guess": "unknown",
     "captured_at": null,
@@ -17076,12 +17080,12 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
     "hash": "sha256:a0e94a251d0f06891fae3509752a2236cb59b657e6234ed6ab9149360bb4a763",
-    "path": "Hagi/IMG_1700.JPG",
+    "path": "IMG_1700.JPG",
     "kind": "photo",
     "source_guess": "unknown",
     "captured_at": null,
@@ -17122,12 +17126,12 @@
       "usable_as": [
         "b-roll"
       ],
-      "priority": "ok"
+      "priority": "nice"
     }
   },
   {
     "hash": "sha256:d79a3368fe239a10d1d4f680d73903245e5e639bb70d69bf843b801538c70b56",
-    "path": "Hagi/IMG_1698.JPG",
+    "path": "IMG_1698.JPG",
     "kind": "photo",
     "source_guess": "unknown",
     "captured_at": null,
