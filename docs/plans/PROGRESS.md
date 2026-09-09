@@ -3158,9 +3158,9 @@ punktuell). Kernpunkte:
 
 | # | Task | Abnahme | Status | Commit |
 |---|------|---------|--------|--------|
-| T1 | 3 FX-Templates (`thought-bubble`/`sticker`/`speedlines.svg`) + `design.py` + Test-Fixture reparieren | `pytest tests/test_design.py` grün (99/99), `ruff` sauber; `party-fx.md` + SVGs committed | ⬜ offen | — |
-| T2 | `editorial-notes-round2.md` + diese PROGRESS-Sektion + `brief.yaml`-Musik/Target anpassen | Doku committed, `brief.yaml` referenziert neue Tracks | ⬜ offen | — |
-| T3 | Cast-Intro-SFX: 3 Dateien (`whoosh`/`stamp`/`stamp-micha`) lizenzsicher (Pixabay/Mixkit) nach `music/sfx/` | Dateien da, 48 kHz WAV, ~−12 dBFS, Lizenzvermerk notiert | ⬜ offen | — |
+| T1 | 3 FX-Templates (`thought-bubble`/`sticker`/`speedlines.svg`) + `design.py` + Test-Fixture reparieren | `pytest tests/test_design.py` grün (99/99), `ruff` sauber; `party-fx.md` + SVGs committed | ✅ fertig | `fb1631d` |
+| T2 | `editorial-notes-round2.md` + diese PROGRESS-Sektion + `brief.yaml`-Musik/Target anpassen | Doku committed, `brief.yaml` referenziert neue Tracks | ✅ fertig | `8655cee` |
+| T3 | Cast-Intro-SFX: 3 Dateien (`whoosh`/`stamp`/`stamp-micha`) lizenzsicher (Pixabay/Mixkit) nach `music/sfx/` | Dateien da, 48 kHz WAV, ~−12 dBFS, Lizenzvermerk notiert | ✅ fertig | `b9d51e9` |
 | T4 | Miserlou-Loop-Datei `music/01 Miserlou (loop-196).m4a` (nahtlose interne Wdh., ~196 s, endet auf Downbeat) | Naht unhörbar, Länge 196±4 s, Analyse gecacht | ⬜ offen | — |
 | T5 | `audio-plan.md` neu: 3 neue Tracks, BPM/Beatgrid frisch, neue Anker, **kein Ducking**, Cast-SFX auf Miserlou-Grid | audio-designer, Datei konsistent zu `editorial-notes-round2.md` §0 | ⬜ offen | — |
 | T6 | `beatsheet.md` neu: 3-Akt-Struktur auf ~7:08, Runde-2-Regie eingearbeitet | story-architect, Kapitelsummen = neue Musiklängen | ⬜ offen | — |

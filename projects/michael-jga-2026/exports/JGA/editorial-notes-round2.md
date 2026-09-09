@@ -227,8 +227,19 @@ Karaoke-Bar-Block **sauber nacheinander**, keine Sprünge zurück.
   - Ansonsten Mechanik wie geplant (Standbild 0,6–1,0 s, Bangers, kurzer SFX, `color_pop`
     beim Cut). Reihenfolge unverändert: Witte · Christoph · Matti · Bartosz · Hagi · Bernhard ·
     André · Skuub · **Micha zuletzt** (Stempel „Micha im Delirium", Sonderblau `#4fd8ff`).
-  - SFX: 9× Whoosh + Stamp aus `music/sfx/` (Pixabay/Mixkit), Micha größerer Stamp. Zeiten an
-    die realen Cast-Cuts auf dem Miserlou-Beatgrid binden.
+  - SFX: 9× Whoosh + Stamp aus `music/sfx/` (liegt bereit, siehe unten), Micha größerer
+    Stamp. Zeiten an die realen Cast-Cuts auf dem Miserlou-Beatgrid binden.
+
+**SFX-Dateien (Task T3, liegen in `projects/michael-jga-2026/music/sfx/`, gitignoriert wie
+alle `music/*`):**
+| Datei | Länge | Peak | Quelle / Lizenz |
+|---|---|---|---|
+| `sfx-cast-whoosh.wav` | 0,42 s | −12 dBFS | Mixkit SFX #1485 „Fast whoosh transition", **Mixkit Free License** (kommerziell frei, keine Attribution, nicht als Stock weiterverbreiten) |
+| `sfx-cast-stamp.wav` | 0,40 s | −10 dBFS | Mixkit SFX #752 (Kategorie „thud"), Mixkit Free License |
+| `sfx-cast-stamp-micha.wav` | 0,55 s | −9 dBFS | wie #752, −5 Halbtöne + kurzer Raum (für den Bräutigam) |
+Aufbereitet mit `soundfile`/`librosa` (48 kHz, Stereo, PCM16), Skript im Scratchpad
+(`mk_sfx.py`). Whoosh+Stamp im Render pro Person **überlappend** legen (Whoosh −6 dB, Stamp
+0 dB), Micha-Cut nutzt `sfx-cast-stamp-micha.wav`.
 
 ### Weiterziehen / Tanz / Gesang
 - **Ducking überall raus** (§0.3). „Einfach nur Musik."
