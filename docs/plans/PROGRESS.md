@@ -3131,3 +3131,45 @@ danach ein kurzer Test-Export der neuen Effekte, bevor `party-fx` sie für ganz 
 - **Offen:** J7 Brief/Beat-Sheet (Export anlegen), J8 Musik-Dateien (3 Tracks liegen in
   `music/`, Analyse läuft im Build), J9 Build→Preview→Render. Nachzügler-Fotos + Christians
   Muss-Foto-Auswahl kommen vor dem Build per `ingest`-Nachlauf + `set-priority`.
+
+**Update v7 (2026-09-09) — J9 Preview lief, Christians Feedback-Runde 2:**
+Erstes Preview `exports/JGA/preview/JGA_preview.mp4` (8:53) gebaut, Export-Phase `PREVIEWED`.
+Christian hat gesichtet und umfangreiches Voice-Feedback gegeben → keine Freigabe, zurück zu
+Bild. Vollständig transkribiert und strukturiert in
+**`projects/michael-jga-2026/exports/JGA/editorial-notes-round2.md`** (überschreibt Runde 1
+punktuell). Kernpunkte:
+- **Musik komplett getauscht:** Vivaldi → **Champions League Theme** (181,5 s), Galvanize →
+  **Miserlou** (Dick Dale, 136,1 s → als loop-verlängerte Datei ~196 s), Where Is My Mind
+  bleibt unverändert. Neue Filmlänge ~7:08 statt 8:53 → ~1:45 müssen raus (Kürzung über
+  `priorities.csv` + Streichliste Runde 2).
+- **Ducking überall raus** (Christian explizit). Keine Duck-Clips mehr.
+- **Ken Burns pro Clip variieren** (alt: immer gleicher langsamer Zoom-in — Hauptkritik).
+- **Hochkantbilder `fit: "blur"`** (Blur-Extend seitlich) statt Überskalieren.
+- **Text-Overlays:** nicht mittig, nie über Gesichtern, animierter Auftritt (Buchstaben
+  einzeln), muss vor dem Fade weg sein; Schatten, schräg, bold.
+- **Speed-Ramps** in Akt-2-Videos (Dynamik + Zeitgewinn).
+- Zahlreiche Reihenfolge-/Streich-Entscheidungen, Aftermath komplett neu geordnet, Ende neu.
+- **`thought-bubble.svg` / `sticker.svg` / `speedlines.svg`** haben 16 rote Tests in
+  `tests/test_design.py` (unfertiges Vorgänger-WIP, kein Fremdcode-Problem: Content-Tokens
+  ohne Fixture, FX-Tokens ohne Default im Pre-0003-Pfad). `frameforge/design.py` trägt einen
+  uncommitteten Halb-Fix. Diese Templates + `.claude/agents/party-fx.md` sind noch untracked.
+
+### Plan 0004 — JGA Runde 2 (Rework nach Preview-Feedback)
+
+| # | Task | Abnahme | Status | Commit |
+|---|------|---------|--------|--------|
+| T1 | 3 FX-Templates (`thought-bubble`/`sticker`/`speedlines.svg`) + `design.py` + Test-Fixture reparieren | `pytest tests/test_design.py` grün (99/99), `ruff` sauber; `party-fx.md` + SVGs committed | ⬜ offen | — |
+| T2 | `editorial-notes-round2.md` + diese PROGRESS-Sektion + `brief.yaml`-Musik/Target anpassen | Doku committed, `brief.yaml` referenziert neue Tracks | ⬜ offen | — |
+| T3 | Cast-Intro-SFX: 3 Dateien (`whoosh`/`stamp`/`stamp-micha`) lizenzsicher (Pixabay/Mixkit) nach `music/sfx/` | Dateien da, 48 kHz WAV, ~−12 dBFS, Lizenzvermerk notiert | ⬜ offen | — |
+| T4 | Miserlou-Loop-Datei `music/01 Miserlou (loop-196).m4a` (nahtlose interne Wdh., ~196 s, endet auf Downbeat) | Naht unhörbar, Länge 196±4 s, Analyse gecacht | ⬜ offen | — |
+| T5 | `audio-plan.md` neu: 3 neue Tracks, BPM/Beatgrid frisch, neue Anker, **kein Ducking**, Cast-SFX auf Miserlou-Grid | audio-designer, Datei konsistent zu `editorial-notes-round2.md` §0 | ⬜ offen | — |
+| T6 | `beatsheet.md` neu: 3-Akt-Struktur auf ~7:08, Runde-2-Regie eingearbeitet | story-architect, Kapitelsummen = neue Musiklängen | ⬜ offen | — |
+| T7 | `timeline.json` neu bauen (timeline-builder): Reorder/Cuts, `fit: blur`, variables Ken Burns, Text-Regeln, Speed-Ramps, Aftermath-Order, Ende | `frameforge` validate_semantics grün, QC-Gate grün, Länge ~7:08 | ⬜ offen | — |
+| T8 | party-fx: Denkblasen/Sticker/Kronen/Herzchen/Speedlines/„Delirium"-Schrift, André-Konsistenz, Overlays neu rendern | Overlays gebaut, FX-Budget eingehalten | ⬜ offen | — |
+| T9 | `frameforge preview` neu, altes `JGA_preview.mp4` löschen, Audio gegenhören, an Christian | Neues Preview liegt, PROGRESS + Memory fortgeschrieben, Push | ⬜ offen | — |
+
+Reihenfolge: T1 → T2 → (T3 ∥ T4) → T5 → T6 → T7 → T8 → T9. Commit + ggf. Push nach jedem Task.
+Untracked, mit T1 zu committen: `templates/svg/{thought-bubble,sticker,speedlines}.svg`,
+`.claude/agents/party-fx.md`. **Nicht** von uns anzufassen: `projects/michael-jga-2026/design/uploads/`,
+`web/sites/michael-jga-2026/design/Micha im Delirium — JGA Design System/` (Christians
+Design-Assets, Entscheidung über Tracking liegt bei ihm).

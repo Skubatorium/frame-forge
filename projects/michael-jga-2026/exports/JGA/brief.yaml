@@ -6,16 +6,22 @@
 # exclude`): IMG_4745 (unvorteilhaft), IMG_8338 (Datei defekt).
 #
 # DETAIL-REGIE pro Bild/Clip (Texteinblendungen, Schnitt-In/Out-Punkte, FX-Stellen,
-# Reihenfolge-Zwänge, Ducking) steht in exports/JGA/editorial-notes.md — story-architect,
-# timeline-builder und party-fx MÜSSEN diese Datei lesen.
+# Reihenfolge-Zwänge) steht in exports/JGA/editorial-notes.md PLUS
+# exports/JGA/editorial-notes-round2.md (Preview-Feedback, überschreibt Runde 1 punktuell) —
+# story-architect, timeline-builder und party-fx MÜSSEN BEIDE Dateien lesen.
+#
+# RUNDE 2 (2026-09-09, nach erstem Preview): Musik komplett getauscht (s.u.), Ducking
+# ENTFÄLLT komplett, Ken Burns pro Clip variieren, Hochkant = fit: "blur", Text-Overlays
+# nicht mittig / animiert / vor dem Fade weg, Speed-Ramps in Akt-2-Videos. Details in
+# editorial-notes-round2.md §0.
 
 preset: jga-zweiteiler
 
 # Ziellänge ist ein OFFENER RICHTWERT. Die drei Musiktracks bestimmen die Länge, nicht
-# umgekehrt (Plan 0004 §3/§10). Rechnung: Vivaldi 211,4 s (Akt 1, ganz) + Galvanize [Edit]
-# 271,4 s (Akt 2, ganz) + Where Is My Mind ab src_in ~17 s (Aftermath/Outro) ≈ 534 s ≈ 8:54.
-# "Acht oder neun Minuten ist egal" (Christian). Wert hier = tatsächliche gebaute Länge, damit
-# die QC-Längenprüfung (±2 s) nicht gegen einen Fantasiewert läuft.
+# umgekehrt. RUNDE 2: CL-Theme 181,5 s (Akt 1, ganz) + Miserlou-Loop ~196 s (Akt 2) + Where
+# Is My Mind ab src_in ~17 s ~45 s + ~6 s Stille ≈ ~428 s ≈ 7:08. Der Wert unten wird in
+# Task T7 auf die TATSÄCHLICH gebaute Länge nachgezogen (sonst bricht die QC-Längenprüfung
+# ±2 s ab — HANDOVER). Bis dahin steht hier noch die alte 534 als Platzhalter.
 target_duration_s: 534
 language: de
 
@@ -38,24 +44,27 @@ photo_treatment:
 text_density: bold_large   # Preset-Default; viele bewusst gesetzte Gag-Texte, s. editorial-notes
 
 original_audio_policy: accent
-# O-Ton-Fenster (Musik dort ducken) — Clip-Details/Timecodes in editorial-notes.md:
-#   IMG_1395 (Schoko-Unboxing, nur der "da-da-da"-String am Anfang), IMG_1460 (Michas Lachen),
-#   IMG_1613, IMG_1621, IMG_1635, IMG_1637, IMG_1641 (Karaoke/Tanz/Gesang), IMG_4835 (Tequila).
-#   AUSNAHME: IMG_1653 (Taxi-POV) — KEIN Ducking, Musik durchlaufen lassen (Christian explizit).
+# RUNDE 2: KEIN Ducking mehr, nirgends (Christian explizit: "du kannst überall das Ducking
+#   rausnehmen"). Keine Duck-AudioClips. O-Ton-Stellen, die hörbar bleiben sollen (IMG_1460
+#   Michas Lachen, IMG_1613/1637 Karaoke-Gesang, IMG_4835 Tequila-Anstoß), laufen nur als
+#   leiser O-Ton-Clip UNTER durchlaufender, ungedämpfter Musik. Akt-2-Party-Videos: nur Musik.
 
 # --------------------------------------------------------------------------- Audio / Musik
 audio:
+  # RUNDE 2 — Tracks komplett getauscht. Vivaldi + Galvanize fallen raus (Dateien bleiben
+  # in music/ liegen). Neue Längen: CL-Theme 181,5 s, Miserlou 136,1 s -> loop-verlängert
+  # ~196 s (music/"01 Miserlou (loop-196).m4a", von audio-designer gebaut), WIMM unverändert.
   tracks:
-    - "10 Violinkonzert No. 4 in F Minor, Op. 8, RV 297 - _Der Winter__ I. Allegro non molto.m4a"  # Akt 1
-    - "01 Galvanize (feat. Q-Tip) [Edit].m4a"                                                       # Akt 2
-    - "07 Where Is My Mind_ (2007 Remaster).m4a"                                                     # Aftermath/Outro
+    - "01 Champions League Theme (Champions League Theme).m4a"  # Intro + Akt 1
+    - "01 Miserlou (loop-196).m4a"                              # Akt 2 (loop-verlängerte Variante)
+    - "07 Where Is My Mind_ (2007 Remaster).m4a"                # Aftermath/Outro (src_in ~17 s)
   structure_hint: three_parts
-  # Akt 1 -> Akt 2: HARTER Wechsel, kein langer Crossfade. Sync-Punkt visuell: erste Kneipe
-  #   sichtbar (à la Bécasse) + die große Bierkarte, dann setzt der Galvanize-Intro-Beat ein
-  #   und die Gläser werden vollgeschüttet -> Party. Galvanize von Anfang (src_in 0).
+  # Akt 1 -> Akt 2: HARTER Wechsel, kein langer Crossfade. CL-Theme endet hart nach dem
+  #   Pommes-Schwenk; Miserlou setzt ~0,5 s vorher ein, sein erster Beat sitzt auf dem Cut
+  #   zum "3 Personen Daumen hoch"-Bild (die neu Dazugestoßenen). Miserlou von src_in 0.
   # Akt 2 -> Aftermath: ABRUPTER Cut in die Stille. Where Is My Mind mit src_in ~17 s
   #   einsteigen (nicht von vorne — "man kennt das Lied", direkt in die traurige Stelle).
-  fade_in_s: 2      # Vivaldi kommt langsam hoch, während das Intro-Standbild steht
+  fade_in_s: 2      # CL-Theme kommt langsam hoch, während das Intro-Standbild steht
   fade_out_s: 4     # Where Is My Mind ganz ausfaden, BEVOR die Danke-Karte steht
   transition: cut
 
