@@ -3163,7 +3163,7 @@ punktuell). Kernpunkte:
 | T3 | Cast-Intro-SFX: 3 Dateien (`whoosh`/`stamp`/`stamp-micha`) lizenzsicher (Pixabay/Mixkit) nach `music/sfx/` | Dateien da, 48 kHz WAV, ~−12 dBFS, Lizenzvermerk notiert | ✅ fertig | `b9d51e9` |
 | T4 | Miserlou-Loop-Datei `music/01 Miserlou (loop-196).m4a` (nahtlose interne Wdh., ~196 s, endet auf Downbeat) | Naht unhörbar, Länge 196±4 s, Analyse gecacht | ✅ 195,93 s, Region 43,2→103,2 s dupliziert, Nahtstellen ~103,2/163,2 s (RMS-stetig), Analyse gecacht — Ohrenprobe im Preview | `3104c99` |
 | T5 | `audio-plan.md` neu: 3 neue Tracks, BPM/Beatgrid frisch, neue Anker, **kein Ducking**, Cast-SFX auf Miserlou-Grid | audio-designer, Datei konsistent zu `editorial-notes-round2.md` §0 | ✅ fertig | `a1d8088` |
-| T6 | `beatsheet.md` neu: 3-Akt-Struktur auf ~7:08, Runde-2-Regie eingearbeitet | story-architect, Kapitelsummen = neue Musiklängen | ⬜ offen | — |
+| T6 | `beatsheet.md` neu: 3-Akt-Struktur auf ~7:08, Runde-2-Regie eingearbeitet | story-architect, Kapitelsummen = neue Musiklängen | ✅ fertig | Hash im Folgecommit |
 | T7 | `timeline.json` neu bauen (timeline-builder): Reorder/Cuts, `fit: blur`, variables Ken Burns, Text-Regeln, Speed-Ramps, Aftermath-Order, Ende | `frameforge` validate_semantics grün, QC-Gate grün, Länge ~7:08 | ⬜ offen | — |
 | T8 | party-fx: Denkblasen/Sticker/Kronen/Herzchen/Speedlines/„Delirium"-Schrift, André-Konsistenz, Overlays neu rendern | Overlays gebaut, FX-Budget eingehalten | ⬜ offen | — |
 | T9 | `frameforge preview` neu, altes `JGA_preview.mp4` löschen, Audio gegenhören, an Christian | Neues Preview liegt, PROGRESS + Memory fortgeschrieben, Push | ⬜ offen | — |
@@ -3173,16 +3173,36 @@ Reihenfolge: T1 → T2 → (T3 ∥ T4) → T5 → T6 → T7 → T8 → T9. Commi
 Der Ordner `web/sites/.../Micha im Delirium — JGA Design System/` enthielt nur macOS-Müll
 (`.DS_Store` / `.thumbnail`, beide jetzt in `.gitignore`) — kein echter Inhalt.
 
-**HIER GEHT ES WEITER (nächste Session) — T6.** Stand 2026-09-09, `5db828d`:
-- T1–T5 fertig + gepusht. Templates grün (647 Tests), `music/sfx/` (3 Dateien),
-  `music/01 Miserlou (loop-196).m4a` (195,93 s, Analyse gecacht), `audio-plan.md` Runde 2 steht.
-- **T6:** `beatsheet.md` komplett neu schreiben. Eingaben: `editorial-notes.md` (Runde 1,
-  Basis) + `editorial-notes-round2.md` (überschreibt punktuell) + `audio-plan.md` (Anker
-  181,45 / 377,38 / 422,38 s, Filmende ~428 s). Kapitelsummen MÜSSEN auf die neuen
-  Musiklängen passen (Akt 1 = 181,45 s CL-Theme, Akt 2 = 195,93 s Miserlou-Loop,
-  Aftermath ≈ 45 s WIMM + ~6 s Stille). ~1:45 kürzer als die alte 8:53-Fassung → `ok`-Bilder
-  raus, dann `nice`; `must` bleibt (Liste `priorities.csv` / assets.json `content.priority`).
-- **T7** danach: Export-Phase steht auf `PREVIEWED` (8). Für den Neubau der `timeline.json`
+**T6 fertig (2026-09-09).** `beatsheet.md` Runde 2 neu geschrieben (story-architect, 682 Zeilen).
+Gesamtlänge **428,40 s = 7:08,4**, Anker-Abgleich sauber: Intro+Akt 1 unter CL Theme 181,45 ✔ ·
+Miserlou 181,45→377,38 = 195,93 ✔ · WIMM 377,38→422,38 = 45,00 ✔ · Stille 6,02 ✔. Loop-Nähte
+(~284,7 / ~344,7 s) bewusst unter regulären Beat-Cuts. Untergebracht: **145/156 must · 14/50
+nice · 1 ok (IMG_1449) · 0 forbidden · 0 Ducking-Stellen.**
+
+- **Abweichung: 11 `must` gestrichen** — jede mit wörtlicher „raus"-Anweisung aus
+  `editorial-notes-round2.md` belegt (Tabelle im Beat-Sheet §Bilanz): 1257, 1265, 1352, 1386,
+  1391, 1393, 1395, **1445** (Bécasse-Eingang → 4817 trägt den Einstieg), 1664, 1703, 1705.
+  Runde 2 überschreibt punktuell, daher Vorrang vor der `must`-Garantie. Falls Christian `must`
+  absolut will: ~28 s müssten anderswo raus (v.a. B10-Videofenster).
+- **6 Zeitstempel→Asset-ID-Zuordnungen sind abgeleitet**, nicht verifiziert (Runde 2 nennt nur
+  `M:SS` aus dem alten Preview): 1352 (Kranbild), 1257 (nur das Bett), 1265 (2. Haus-Bild),
+  1386 (Waffeln von vorn), 1697 (~8:11 Michael), 1706 (~8:30 vor der Tür). `timeline-builder`
+  in T7 gegen die Keyframes gegenprüfen.
+- **Struktur-Umbau:** Rooftop (B4–B6) und Karaoke (B8–B10) hart getrennt, Burger-Stop (B7)
+  dazwischen; 1706 „vor der Tür" aus dem Aftermath in den Rooftop-Abgang; 1508 in die Mitte
+  der Rooftop-Sequenz (hebt Runde-1-Zwang „1508 spät" auf); Aftermath in Christians diktierter
+  Folge mit „Where is my mind?" auf Bild 1; Gurken-Ende 1660→1656→1658→1659→1661.
+- **`target_duration_s: 534` in `brief.yaml` weiter veraltet** — in T7 auf ~428,4 nachziehen
+  (sonst QC-Längenprüfung ±2 s, HANDOVER).
+
+**HIER GEHT ES WEITER (nächste Session) — T7.** Stand 2026-09-09:
+- T1–T6 fertig. T6 committet ohne Hash in der Task-Zeile (Hash-Merke unten), Hash im
+  Folgecommit nachtragen.
+- **T7:** `timeline.json` neu bauen (timeline-builder). Eingaben: neues `beatsheet.md` +
+  beide `editorial-notes*.md` + `audio-plan.md` §2/§6 (3 Musik-Clips, 4 O-Ton-`oton`-Clips
+  ohne Ducking-Feld, 18 Cast-SFX-Clips). Die „Offene Konflikte" #4–#8 im Beat-Sheet abarbeiten
+  (abgeleitete IDs prüfen, Videofenster gegen echte Clipdauern, Speed-Ramp-`src_out`).
+- **T7:** Export-Phase steht auf `PREVIEWED` (8). Für den Neubau der `timeline.json`
   muss zurück auf `TIMELINE`/`STORYBOARDED` — `frameforge build` erneut laufen lassen bzw.
   Gate-Weg prüfen (`.claude/hooks/gate.py`). Altes Preview `preview/JGA_preview.mp4` erst in
   T9 löschen. Vor `frameforge preview`: `df -h /` + `sysctl -n vm.swapusage`, ≥4 GB frei
