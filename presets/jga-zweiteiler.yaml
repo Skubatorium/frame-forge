@@ -26,17 +26,19 @@ description: >-
   Comic-FX-Akzenten (Farb-Pop, Cartoon-Outline) auf einzelnen Akt-2-Clips.
 best_for: Junggesellenabschied/Partywochenende mit klarem Vorher/Nachher
 example: >-
-  Erste zwei Minuten wie ein ruhiges Reisetagebuch (lange Einstellungen, Vivaldi), harter
-  Wechsel zur Cast-Intro-Sequenz beim Zusammentreffen der Gruppe, danach schnelle Beat-Cuts
-  zur Partynacht (Pulp-Fiction-Stueck), letzte 20s wieder ruhig zum Ausklang.
+  Erste ~3,5 Minuten wie ein ruhiges Reisetagebuch (lange Einstellungen, Vivaldi "Der
+  Winter"), harter Musikwechsel zu "Galvanize" (Chemical Brothers, Edit) bei der ersten
+  Kneipe, danach schnelle Beat-Cuts zur Partynacht mit Cast-Intro mittendrin, zum Schluss
+  Pixies "Where Is My Mind" (ab ~17 s) fuer einen kurzen, traurigen Aftermath.
 arc: >-
-  [v3, korrigiert] Akt 1 "Gediegen" (ca. 35-40% der Laufzeit): langsamer, warmer Schnitt,
-  kaum Text, Vivaldi traegt die Stimmung. Akt 2 "Eskalation" (ca. 50-55%): ab der ersten
-  Kneipe harte, schnelle Beat-Cuts, Comic-FX aktiv, Pulp-Fiction-Stueck traegt -- MITTENDRIN,
+  [v3, korrigiert; v4 2026-09-09: Musiktitel an Export "JGA" angeglichen] Akt 1 "Gediegen"
+  (ca. 35-40% der Laufzeit): langsamer, warmer Schnitt, kaum Text, Vivaldi "Der Winter"
+  traegt die Stimmung. Akt 2 "Eskalation" (ca. 50-55%): ab der ersten Kneipe harte, schnelle
+  Beat-Cuts, Comic-FX aktiv, "Galvanize" (Chemical Brothers, Edit) traegt -- MITTENDRIN,
   konkret in der Karaoke-Bar "Red", ein kurzer Cast-Intro-Beat (Bild friert ein, Name wird
   eingeblendet, SFX-Einschuss), danach geht die Eskalation weiter. Outro (ca. 10%): abrupt
-  ruhiger, eigener dritter Musiktrack, kaum Bewegung, sanfter Ausklang. Ziellaenge ist ein
-  offener Richtwert (circa 6-7 min), kein starrer Wert.
+  ruhiger, Pixies "Where Is My Mind" ab ~17 s, kaum Bewegung, sanfter Ausklang. Ziellaenge
+  ist ein offener Richtwert (circa 6-9 min), kein starrer Wert.
 
 pacing: { min_s: 0.4, max_s: 6, rhythm: mixed_by_chapter }
 transition_vocabulary: [cut, hard_cut, whip_pan, fade]

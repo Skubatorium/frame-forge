@@ -4,8 +4,10 @@
   "content_hashes": {},
   "exports": {
     "JGA": {
-      "phase": 4,
-      "content_hashes": {}
+      "phase": 6,
+      "content_hashes": {
+        "assets": "92d60a83146705a0f38d31f46409e9f46d10c50b9325711a12a1a0e929a75fc6"
+      }
     }
   }
 }

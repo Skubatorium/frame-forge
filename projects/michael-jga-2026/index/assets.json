@@ -17170,5 +17170,79 @@
       ],
       "priority": "ok"
     }
+  },
+  {
+    "id": "generated-black",
+    "path": "_generated/black.jpg",
+    "kind": "photo",
+    "source": "generated",
+    "source_guess": "generated",
+    "content": {
+      "summary": "Reines Schwarzbild fuer Intro/Outro-Blenden.",
+      "tags": [
+        "schwarz",
+        "generiert"
+      ],
+      "people": false,
+      "usable_as": [
+        "cold-open"
+      ],
+      "priority": "ok"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.0,
+      "score": 1.0
+    }
+  },
+  {
+    "id": "jga-intro-card",
+    "path": "_generated/JGA_INTRO.png",
+    "kind": "photo",
+    "source": "generated",
+    "source_guess": "generated",
+    "content": {
+      "summary": "Intro-Standbild JGA (Titel \"Micha im Delirium\", Subtitle \"JGA Bruessel 2026\").",
+      "tags": [
+        "intro",
+        "titel",
+        "standbild"
+      ],
+      "people": false,
+      "usable_as": [
+        "title-card"
+      ],
+      "priority": "must"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.7,
+      "score": 1.0
+    }
+  },
+  {
+    "id": "jga-outro-card",
+    "path": "_generated/JGA_OUTRO.png",
+    "kind": "photo",
+    "source": "generated",
+    "source_guess": "generated",
+    "content": {
+      "summary": "Outro-Standbild JGA (\"Danke\").",
+      "tags": [
+        "outro",
+        "danke",
+        "standbild"
+      ],
+      "people": false,
+      "usable_as": [
+        "title-card"
+      ],
+      "priority": "must"
+    },
+    "quality": {
+      "sharpness": 1.0,
+      "exposure": 0.7,
+      "score": 1.0
+    }
   }
 ]
