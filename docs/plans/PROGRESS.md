@@ -3162,7 +3162,7 @@ punktuell). Kernpunkte:
 | T2 | `editorial-notes-round2.md` + diese PROGRESS-Sektion + `brief.yaml`-Musik/Target anpassen | Doku committed, `brief.yaml` referenziert neue Tracks | ✅ fertig | `8655cee` |
 | T3 | Cast-Intro-SFX: 3 Dateien (`whoosh`/`stamp`/`stamp-micha`) lizenzsicher (Pixabay/Mixkit) nach `music/sfx/` | Dateien da, 48 kHz WAV, ~−12 dBFS, Lizenzvermerk notiert | ✅ fertig | `b9d51e9` |
 | T4 | Miserlou-Loop-Datei `music/01 Miserlou (loop-196).m4a` (nahtlose interne Wdh., ~196 s, endet auf Downbeat) | Naht unhörbar, Länge 196±4 s, Analyse gecacht | ✅ 195,93 s, Region 43,2→103,2 s dupliziert, Nahtstellen ~103,2/163,2 s (RMS-stetig), Analyse gecacht — Ohrenprobe im Preview | `3104c99` |
-| T5 | `audio-plan.md` neu: 3 neue Tracks, BPM/Beatgrid frisch, neue Anker, **kein Ducking**, Cast-SFX auf Miserlou-Grid | audio-designer, Datei konsistent zu `editorial-notes-round2.md` §0 | ⬜ offen | — |
+| T5 | `audio-plan.md` neu: 3 neue Tracks, BPM/Beatgrid frisch, neue Anker, **kein Ducking**, Cast-SFX auf Miserlou-Grid | audio-designer, Datei konsistent zu `editorial-notes-round2.md` §0 | ✅ fertig | `6187021` |
 | T6 | `beatsheet.md` neu: 3-Akt-Struktur auf ~7:08, Runde-2-Regie eingearbeitet | story-architect, Kapitelsummen = neue Musiklängen | ⬜ offen | — |
 | T7 | `timeline.json` neu bauen (timeline-builder): Reorder/Cuts, `fit: blur`, variables Ken Burns, Text-Regeln, Speed-Ramps, Aftermath-Order, Ende | `frameforge` validate_semantics grün, QC-Gate grün, Länge ~7:08 | ⬜ offen | — |
 | T8 | party-fx: Denkblasen/Sticker/Kronen/Herzchen/Speedlines/„Delirium"-Schrift, André-Konsistenz, Overlays neu rendern | Overlays gebaut, FX-Budget eingehalten | ⬜ offen | — |
