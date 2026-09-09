@@ -3166,7 +3166,7 @@ punktuell). Kernpunkte:
 | T6 | `beatsheet.md` neu: 3-Akt-Struktur auf ~7:08, Runde-2-Regie eingearbeitet | story-architect, Kapitelsummen = neue Musiklängen | ✅ fertig | `1dec782` |
 | T7 | `timeline.json` neu bauen (timeline-builder): Reorder/Cuts, `fit: blur`, variables Ken Burns, Text-Regeln, Speed-Ramps, Aftermath-Order, Ende | `frameforge` validate_semantics grün, QC-Gate grün, Länge ~7:08 | ✅ fertig | `b2e93ea` |
 | T8 | party-fx: Denkblasen/Sticker/Kronen/Herzchen/Speedlines/„Delirium"-Schrift, André-Konsistenz, Overlays neu rendern | Overlays gebaut, FX-Budget eingehalten | ✅ fertig | `b2e93ea` |
-| T9 | `frameforge preview` neu, altes `JGA_preview.mp4` löschen, Audio gegenhören, an Christian | Neues Preview liegt, PROGRESS + Memory fortgeschrieben, Push | 🔄 Render läuft | — |
+| T9 | `frameforge preview` neu, altes `JGA_preview.mp4` löschen, Audio gegenhören, an Christian | Neues Preview liegt, PROGRESS + Memory fortgeschrieben, Push | ✅ fertig | `<T9-Commit>` |
 
 Reihenfolge: T1 → T2 → (T3 ∥ T4) → T5 → T6 → T7 → T8 → T9. Commit + ggf. Push nach jedem Task.
 `design/uploads/style-reference-jga-poster.png` ist jetzt versioniert (Stilreferenz, 2,7 MB).
@@ -3226,9 +3226,24 @@ danach FX-Schicht (party-fx). Beide QC-grün, Export-Phase `TIMELINE`.
 - **Abweichung Prozess:** T7 wurde nicht vor T8 committet (Agenten liefen sequenziell ohne
   Zwischen-Checkpoint) → **ein** gemeinsamer T7+T8-Commit, beide Task-Zeilen zeigen denselben Hash.
 
-**T9 läuft:** `frameforge preview michael-jga-2026 JGA` (1080p-Proxy, ~20 min, speicherfragil —
-im Vordergrund/nohup). Danach: altes `preview/JGA_preview.mp4` wird vom Render überschrieben,
-PROGRESS + Memory fortschreiben, Push, an Christian.
+**T9 fertig (2026-09-10).** `frameforge preview michael-jga-2026 JGA` (nohup+disown, ~8 min,
+Ein-Pass-Graph 172 Inputs). Neues `exports/JGA/preview/JGA_preview.mp4`: **428,43 s = 7:08**,
+71,8 MB, 1080p30. QC beim Preview-Gate ohne Meldung, ffmpeg-Log ohne Error/Warning. Altes
+Runde-1-Preview (8:53) überschrieben, Backup entfernt. Export-Phase wieder `PREVIEWED` (8) —
+Christian kann nach dem Sichten `frameforge approve` geben (dann T-Final).
+
+**Runde 2 (T1–T9) komplett — wartet auf Christians Preview-Feedback.** Prüf-/Feedback-Punkte:
+- **IMG_8337** (Clip v066) wird **nicht gedreht** — Schema hat kein Rotate-Feld, im Preview
+  ggf. seitlich. Entweder Rotate-Feature ergänzen, vorgedrehtes Derivat einlegen, oder Clip raus.
+- **Cast-Namen** ragen ~0,3 s ins Folgefoto (QC `MIN_OVERLAY_READABLE_S 1,2` > 0,9-s-Fotos).
+- **FX-Stärke** (Herz/Krone/Glow), `color_pop`, `speedlines` zum ersten Mal real gerendert →
+  Optik/Intensität gegen das Nachtmaterial prüfen.
+- „Buchstaben einzeln" = Slide+Fade angenähert, kein echter Per-Letter-Stagger.
+- `ov-sulemann` sagt „Suleman Pizza-Star" — falls „Süleman" gewünscht: `text` in der Timeline
+  ändern + PNG neu rendern.
+- **WIMM-Ausklang** (dur 51 / fade 10 statt 45 / 4) am Schluss gegenhören — soll die Danke-
+  Karte wirklich in „gefühlter Stille" stehen.
+- Loop-Nähte Miserlou bei ~284,6 s / ~344,5 s (unter Beat-Cuts) auf Hörbarkeit prüfen.
 
 **Stand 2026-09-09 (Kontext):**
 - T1–T6 fertig. T6 committet ohne Hash in der Task-Zeile (Hash-Merke unten), Hash im
