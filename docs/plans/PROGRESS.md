@@ -3169,7 +3169,24 @@ punktuell). Kernpunkte:
 | T9 | `frameforge preview` neu, altes `JGA_preview.mp4` löschen, Audio gegenhören, an Christian | Neues Preview liegt, PROGRESS + Memory fortgeschrieben, Push | ⬜ offen | — |
 
 Reihenfolge: T1 → T2 → (T3 ∥ T4) → T5 → T6 → T7 → T8 → T9. Commit + ggf. Push nach jedem Task.
-Untracked, mit T1 zu committen: `templates/svg/{thought-bubble,sticker,speedlines}.svg`,
-`.claude/agents/party-fx.md`. **Nicht** von uns anzufassen: `projects/michael-jga-2026/design/uploads/`,
+**Nicht** von uns anzufassen: `projects/michael-jga-2026/design/uploads/`,
 `web/sites/michael-jga-2026/design/Micha im Delirium — JGA Design System/` (Christians
 Design-Assets, Entscheidung über Tracking liegt bei ihm).
+
+**HIER GEHT ES WEITER (nächste Session) — T6.** Stand 2026-09-09, `5db828d`:
+- T1–T5 fertig + gepusht. Templates grün (647 Tests), `music/sfx/` (3 Dateien),
+  `music/01 Miserlou (loop-196).m4a` (195,93 s, Analyse gecacht), `audio-plan.md` Runde 2 steht.
+- **T6:** `beatsheet.md` komplett neu schreiben. Eingaben: `editorial-notes.md` (Runde 1,
+  Basis) + `editorial-notes-round2.md` (überschreibt punktuell) + `audio-plan.md` (Anker
+  181,45 / 377,38 / 422,38 s, Filmende ~428 s). Kapitelsummen MÜSSEN auf die neuen
+  Musiklängen passen (Akt 1 = 181,45 s CL-Theme, Akt 2 = 195,93 s Miserlou-Loop,
+  Aftermath ≈ 45 s WIMM + ~6 s Stille). ~1:45 kürzer als die alte 8:53-Fassung → `ok`-Bilder
+  raus, dann `nice`; `must` bleibt (Liste `priorities.csv` / assets.json `content.priority`).
+- **T7** danach: Export-Phase steht auf `PREVIEWED` (8). Für den Neubau der `timeline.json`
+  muss zurück auf `TIMELINE`/`STORYBOARDED` — `frameforge build` erneut laufen lassen bzw.
+  Gate-Weg prüfen (`.claude/hooks/gate.py`). Altes Preview `preview/JGA_preview.mp4` erst in
+  T9 löschen. Vor `frameforge preview`: `df -h /` + `sysctl -n vm.swapusage`, ≥4 GB frei
+  (HANDOVER — Preview-Render ist speicherfragil, ~20 min).
+- **Hash-Merke:** in PROGRESS die Task-Zeile NICHT per `git commit --amend` mit dem eigenen
+  Hash füllen (Hash ändert sich durch den Amend). Tick ohne Hash committen, Hash im
+  Folgecommit nachtragen.
