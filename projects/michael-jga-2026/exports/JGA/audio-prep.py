@@ -51,7 +51,7 @@ def _fetch_mixkit() -> dict[str, Path]:
         if not p.exists():
             url = f"https://assets.mixkit.co/active_storage/sfx/{sid}/{sid}.wav"
             req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-            p.write_bytes(urllib.request.urlopen(req).read())  # noqa: S310
+            p.write_bytes(urllib.request.urlopen(req).read())
         out[name] = p
     return out
 
