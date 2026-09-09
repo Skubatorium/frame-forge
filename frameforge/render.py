@@ -1043,6 +1043,19 @@ def _build_audio_chain(
     return label
 
 
+# Ab so vielen gleichzeitig offenen Inputs wird die Threadzahl des Filtergraphen gedrosselt
+# (siehe `_run_ffmpeg`). Der Chunk-Render haelt die Inputzahl je Aufruf klein (~20-25, siehe
+# `CHUNK_EDGE_MARGIN_S`-Block) und bleibt damit unter der Schwelle -- bestehende Final-Renders
+# aendern sich nicht. Nur der monolithische Ein-Pass-Graph (Proxy-Preview, oder ein Final ohne
+# `chunk_s`) mit hunderten Inputs laeuft in die Drosselung.
+_LARGE_GRAPH_INPUT_THRESHOLD = 64
+# Slice-Threads je threaded Filter im grossen Graphen. Empirisch (JGA-Preview, 231 Inputs, macOS
+# mit `kern.maxprocperuid` = 2666): Default (= CPU-Anzahl) sprengt das Limit, 3 laeuft mit
+# komfortablem Abstand durch. Bewusst nicht 1 -- das ist ~3x langsamer, ohne mehr Sicherheit zu
+# bringen.
+_LARGE_GRAPH_FILTER_THREADS = 3
+
+
 def _run_ffmpeg(
     graph: FilterGraph,
     timeline: Timeline,
@@ -1056,6 +1069,18 @@ def _run_ffmpeg(
     cmd = ["ffmpeg", "-y"]
     for args in graph.input_args:
         cmd.extend(args)
+    # Jeder threaded Filter (scale, die auto-eingefuegten Pixelformat-Konvertierungen, zoompan,
+    # xfade) legt bis zu `filter_complex_threads` Slice-Threads an -- Default ist die CPU-Anzahl.
+    # In einem monolithischen Graphen mit hunderten solcher Filter (JGA-Preview: 201 Video-Clips
+    # + 21 RGBA-Overlays) summiert sich das ueber das Prozess-/Thread-Limit pro Nutzer hinaus
+    # (macOS `kern.maxprocperuid`, hier 2666, nicht ohne root anhebbar). `sws_init_context`
+    # bekommt dann von `pthread_create` EAGAIN und meldet reihenweise "Failed initializing
+    # scaling graph (Resource temporarily unavailable)"; der Encoder wird nie geoeffnet, die
+    # Ausgabedatei bleibt 0 Byte. Deckeln loest das -- der Render wird langsamer, laeuft aber
+    # durch. Kleine Graphen (u.a. jeder Chunk des Chunk-Renders) bleiben unangetastet.
+    if len(graph.input_args) > _LARGE_GRAPH_INPUT_THRESHOLD:
+        threads = str(_LARGE_GRAPH_FILTER_THREADS)
+        cmd.extend(["-filter_complex_threads", threads, "-filter_threads", threads])
     cmd.extend(["-filter_complex", graph.filter_complex, "-map", f"[{graph.video_label}]"])
     if graph.audio_label:
         cmd.extend(["-map", f"[{graph.audio_label}]"])

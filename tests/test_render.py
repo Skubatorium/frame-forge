@@ -1815,3 +1815,57 @@ def test_resolution_label_marks_4k_and_p_variants():
     assert resolution_label((4096, 2160)) == "4k"
     assert resolution_label((1920, 1080)) == "1080p"
     assert resolution_label((1280, 720)) == "720p"
+
+
+# -- Thread-Drosselung fuer grosse Filtergraphen -----------------------------------
+
+
+def _capture_ffmpeg_cmd(monkeypatch) -> list[list[str]]:
+    """Faengt jeden von `_run_ffmpeg` gebauten ffmpeg-Aufruf ab, ohne ihn auszufuehren."""
+    seen: list[list[str]] = []
+
+    def fake(cmd, *, timeout_s):  # Signatur wie render_module._run_ffmpeg_cmd
+        seen.append(list(cmd))
+
+    monkeypatch.setattr(render_module, "_run_ffmpeg_cmd", fake)
+    return seen
+
+
+def _dummy_graph(n_inputs: int) -> FilterGraph:
+    graph = FilterGraph()
+    graph.input_args = [["-i", f"in{i}.mp4"] for i in range(n_inputs)]
+    graph.filter_complex = "[0:v]null[vout]"
+    graph.video_label = "vout"
+    return graph
+
+
+def test_large_graph_caps_filter_threads(monkeypatch):
+    seen = _capture_ffmpeg_cmd(monkeypatch)
+    timeline = _timeline(video=[{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0}])
+
+    render_module._run_ffmpeg(
+        _dummy_graph(render_module._LARGE_GRAPH_INPUT_THRESHOLD + 1),
+        timeline, Path("/tmp/out.mp4"),
+    )
+
+    cmd = seen[0]
+    threads = str(render_module._LARGE_GRAPH_FILTER_THREADS)
+    assert "-filter_complex_threads" in cmd
+    assert cmd[cmd.index("-filter_complex_threads") + 1] == threads
+    assert cmd[cmd.index("-filter_threads") + 1] == threads
+    # Drossel-Optionen sind globale Optionen und muessen vor -filter_complex stehen.
+    assert cmd.index("-filter_complex_threads") < cmd.index("-filter_complex")
+
+
+def test_small_graph_keeps_default_threading(monkeypatch):
+    seen = _capture_ffmpeg_cmd(monkeypatch)
+    timeline = _timeline(video=[{"id": "c1", "asset": "a1", "src_in": 0, "src_out": 2, "tl_in": 0}])
+
+    render_module._run_ffmpeg(
+        _dummy_graph(render_module._LARGE_GRAPH_INPUT_THRESHOLD),
+        timeline, Path("/tmp/out.mp4"),
+    )
+
+    cmd = seen[0]
+    assert "-filter_complex_threads" not in cmd
+    assert "-filter_threads" not in cmd
