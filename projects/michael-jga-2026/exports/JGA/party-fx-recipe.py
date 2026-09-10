@@ -71,7 +71,7 @@ PLACEMENT = {
     "center": (50.0, 46.0, "middle"),
 }
 
-_TEXT_RE = re.compile(r"<text\b([^>]*)>(.*?)</text>", re.S)
+_TEXT_RE = re.compile(r"<text\b([^>]*)>(.*?)</text>", re.DOTALL)
 
 
 def _slant_for(placement: str, magnitude: float = 4.0) -> float:
@@ -154,10 +154,10 @@ def render_text(out_name: str, template: Path, text: str, placement: str, *,
         elif 40 <= y_pct <= 60:
             y_eff = y_pct - (n_lines - 1) * lh_pct / 2
 
-    extra = dict(
-        text_x_pct=x_pct, text_y_pct=round(y_eff, 2), text_anchor=anchor,
-        font_display="Bangers", font_text="Bangers",
-    )
+    extra = {
+        "text_x_pct": x_pct, "text_y_pct": round(y_eff, 2), "text_anchor": anchor,
+        "font_display": "Bangers", "font_text": "Bangers",
+    }
     if template == TITLE_ONLY:
         extra.update(title=inner, title_size=size, text_color=front)
     else:
@@ -177,10 +177,11 @@ def render_cluster(out_name: str, glyphs: list[str], fills: list[str], *,
     Runde 3: "nicht so kleine einzelne Icons, ein paar mehr Icons zusammen"."""
     rnd = random.Random(seed)
     x0, y0, x1, y1 = area
+    _glow = round(H * 0.010)
     parts = [
-        f'<defs><filter id="cl" x="-60%" y="-60%" width="220%" height="220%">'
-        f'<feDropShadow dx="0" dy="0" stdDeviation="{round(H * 0.010)}" '
-        f'flood-color="{fills[0]}" flood-opacity="0.85"/></filter></defs>'
+        (f'<defs><filter id="cl" x="-60%" y="-60%" width="220%" height="220%">'
+         f'<feDropShadow dx="0" dy="0" stdDeviation="{_glow}" '
+         f'flood-color="{fills[0]}" flood-opacity="0.85"/></filter></defs>')
     ]
     for _ in range(count):
         gx = rnd.uniform(x0, x1)
