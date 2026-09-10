@@ -304,9 +304,10 @@ def main() -> None:
     # Nur `♥` (U+2665) — `❤` hat in Apple Symbols via cairosvg keinen Glyph (Tofu).
     render_cluster("ov-fx-herzen.png", ["♥"], [PINK, PINK_HI, "#ff8ac4", "#ffffff"],
                    count=64, seed=457, size_lo=70, size_hi=420, area=(8, 8, 92, 92))
-    # Einzelner Herz-Sticker "vor der Tuer" (1706) bleibt.
-    render_cluster("ov-fx-herz-1706.png", ["♥"], [PINK, PINK_HI],
-                   count=3, seed=1706, size_lo=200, size_hi=300, area=(60, 20, 82, 40))
+    # Herz-Sticker "vor der Tuer" (1706): Runde 4 — ein paar mehr, verschiedene Groessen,
+    # links UND rechts verteilt (Christian: "noch 2 die 50 % kleiner und ein groesseres").
+    render_cluster("ov-fx-herz-1706.png", ["♥"], [PINK, PINK_HI, "#ff8ac4"],
+                   count=8, seed=1706, size_lo=120, size_hi=340, area=(10, 14, 90, 62))
     # Speedlines-Blitz.
     render_speedlines("ov-fx-speedlines.png")
     # ov-fx-sterne: GELOESCHT (Runde 4 — Sterne bewegten sich nicht).
