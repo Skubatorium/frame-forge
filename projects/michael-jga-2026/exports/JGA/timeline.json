@@ -6,7 +6,7 @@
     3840,
     2160
   ],
-  "duration": 428.4,
+  "duration": 422.2,
   "tracks": {
     "video": [
       {
@@ -67,19 +67,20 @@
           {
             "type": "kenburns",
             "from": [
-              0,
-              0,
-              1.06
+              -0.05,
+              -0.03,
+              1.02
             ],
             "to": [
-              0,
-              0,
-              1.0
+              0.03,
+              0.04,
+              1.12
             ],
-            "ease": "smooth"
+            "ease": "in"
           }
         ],
-        "note": "allererster Shot, Abholung zu Hause"
+        "note": "allererster Shot, Abholung zu Hause",
+        "fit": "blur"
       },
       {
         "id": "v004",
@@ -92,16 +93,16 @@
           {
             "type": "kenburns",
             "from": [
-              -0.03,
-              0,
-              1.04
+              0.04,
+              -0.04,
+              1.03
             ],
             "to": [
-              0.03,
-              0,
-              1.04
+              -0.04,
+              0.05,
+              1.13
             ],
-            "ease": "smooth"
+            "ease": "in"
           }
         ],
         "note": "Grimassen im Auto (Zwang: direkt nach 4734)"
@@ -127,16 +128,16 @@
           {
             "type": "kenburns",
             "from": [
-              0,
-              0,
-              1.0
+              0.0,
+              0.06,
+              1.02
             ],
             "to": [
-              0,
-              0,
-              1.03
+              -0.03,
+              -0.03,
+              1.12
             ],
-            "ease": "smooth"
+            "ease": "in"
           }
         ],
         "note": "Hagi, helle Kueche, Daumen hoch (nach hinten geschoben)"
@@ -152,14 +153,14 @@
           {
             "type": "kenburns",
             "from": [
+              -0.04,
               0.03,
-              0,
-              1.04
+              1.03
             ],
             "to": [
-              -0.03,
-              0,
-              1.04
+              0.04,
+              -0.04,
+              1.12
             ],
             "ease": "smooth"
           }
@@ -186,16 +187,16 @@
           {
             "type": "kenburns",
             "from": [
-              0,
+              -0.05,
               -0.03,
-              1.04
+              1.02
             ],
             "to": [
-              0,
               0.03,
-              1.04
+              0.04,
+              1.12
             ],
-            "ease": "smooth"
+            "ease": "in"
           }
         ],
         "note": "Treppenhaus von oben"
@@ -211,16 +212,16 @@
           {
             "type": "kenburns",
             "from": [
-              0,
-              0,
-              1.0
+              0.05,
+              0.03,
+              1.12
             ],
             "to": [
-              0,
-              0,
-              1.03
+              -0.04,
+              -0.04,
+              1.0
             ],
-            "ease": "smooth"
+            "ease": "in"
           }
         ],
         "fit": "blur",
@@ -248,16 +249,16 @@
           {
             "type": "kenburns",
             "from": [
-              0,
-              0,
-              1.0
+              0.04,
+              -0.04,
+              1.03
             ],
             "to": [
-              0,
-              0,
-              1.06
+              -0.04,
+              0.05,
+              1.13
             ],
-            "ease": "smooth"
+            "ease": "in"
           }
         ],
         "fit": "blur"
@@ -273,16 +274,16 @@
           {
             "type": "kenburns",
             "from": [
-              0,
-              0,
-              1.06
+              0.0,
+              0.06,
+              1.02
             ],
             "to": [
-              0,
-              0,
-              1.0
+              -0.03,
+              -0.03,
+              1.12
             ],
-            "ease": "smooth"
+            "ease": "in"
           }
         ],
         "fit": "blur"
@@ -294,22 +295,7 @@
         "src_out": 3.4,
         "tl_in": 42.1,
         "speed": 1.0,
-        "effects": [
-          {
-            "type": "kenburns",
-            "from": [
-              0,
-              0,
-              1.0
-            ],
-            "to": [
-              0,
-              0,
-              1.05
-            ],
-            "ease": "smooth"
-          }
-        ],
+        "effects": [],
         "note": "Nachtaufnahme Fensterfront, schliesst den Abend"
       },
       {
@@ -328,14 +314,14 @@
           {
             "type": "kenburns",
             "from": [
-              -0.03,
-              0,
-              1.04
+              -0.04,
+              0.03,
+              1.03
             ],
             "to": [
-              0.03,
-              0,
-              1.04
+              0.04,
+              -0.04,
+              1.12
             ],
             "ease": "smooth"
           }
@@ -349,7 +335,22 @@
         "src_out": 3.4,
         "tl_in": 48.9,
         "speed": 1.0,
-        "effects": [],
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.05,
+              -0.03,
+              1.02
+            ],
+            "to": [
+              0.03,
+              0.04,
+              1.12
+            ],
+            "ease": "in"
+          }
+        ],
         "note": "Gruppe auf dem Buergersteig (vorgezogen)"
       },
       {
@@ -359,22 +360,7 @@
         "src_out": 3.4,
         "tl_in": 52.3,
         "speed": 1.0,
-        "effects": [
-          {
-            "type": "kenburns",
-            "from": [
-              0,
-              0,
-              1.0
-            ],
-            "to": [
-              0,
-              0,
-              1.06
-            ],
-            "ease": "smooth"
-          }
-        ],
+        "effects": [],
         "note": "pinke Cafe-Front Marie"
       },
       {
@@ -388,16 +374,16 @@
           {
             "type": "kenburns",
             "from": [
-              0.03,
-              0,
-              1.04
+              0.04,
+              -0.04,
+              1.03
             ],
             "to": [
-              -0.03,
-              0,
-              1.04
+              -0.04,
+              0.05,
+              1.13
             ],
-            "ease": "smooth"
+            "ease": "in"
           }
         ]
       },
@@ -408,7 +394,23 @@
         "src_out": 3.0,
         "tl_in": 58.9,
         "speed": 1.0,
-        "effects": []
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.04,
+              0.04,
+              1.12
+            ],
+            "to": [
+              0.04,
+              -0.03,
+              1.0
+            ],
+            "ease": "smooth"
+          }
+        ],
+        "fit": "blur"
       },
       {
         "id": "v020",
@@ -417,23 +419,9 @@
         "src_out": 4.0,
         "tl_in": 61.9,
         "speed": 1.0,
-        "effects": [
-          {
-            "type": "kenburns",
-            "from": [
-              0,
-              0,
-              1.06
-            ],
-            "to": [
-              0,
-              0,
-              1.0
-            ],
-            "ease": "smooth"
-          }
-        ],
-        "note": "Hero: fuenf Maenner Arm in Arm, Mont des Arts"
+        "effects": [],
+        "note": "Hero: fuenf Maenner Arm in Arm, Mont des Arts",
+        "fit": "blur"
       },
       {
         "id": "v021",
@@ -446,16 +434,16 @@
           {
             "type": "kenburns",
             "from": [
-              0,
+              0.04,
               0.03,
-              1.04
+              1.12
             ],
             "to": [
-              0,
               -0.03,
-              1.04
+              -0.04,
+              1.0
             ],
-            "ease": "smooth"
+            "ease": "in"
           }
         ]
       },
@@ -470,18 +458,19 @@
           {
             "type": "kenburns",
             "from": [
-              0,
-              0,
-              1.0
+              0.0,
+              0.06,
+              1.02
             ],
             "to": [
-              0,
-              0,
-              1.08
+              -0.03,
+              -0.03,
+              1.12
             ],
-            "ease": "smooth"
+            "ease": "in"
           }
-        ]
+        ],
+        "fit": "blur"
       },
       {
         "id": "v023",
@@ -490,7 +479,22 @@
         "src_out": 3.0,
         "tl_in": 72.3,
         "speed": 1.0,
-        "effects": []
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.05,
+              0.03,
+              1.13
+            ],
+            "to": [
+              0.05,
+              -0.03,
+              1.0
+            ],
+            "ease": "in"
+          }
+        ]
       },
       {
         "id": "v024",
@@ -503,18 +507,19 @@
           {
             "type": "kenburns",
             "from": [
-              -0.03,
-              0,
-              1.04
+              -0.04,
+              0.03,
+              1.03
             ],
             "to": [
-              0.03,
-              0,
-              1.04
+              0.04,
+              -0.04,
+              1.12
             ],
             "ease": "smooth"
           }
-        ]
+        ],
+        "fit": "blur"
       },
       {
         "id": "v025",
@@ -523,7 +528,22 @@
         "src_out": 3.2,
         "tl_in": 78.1,
         "speed": 1.0,
-        "effects": []
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.04,
+              -0.04,
+              1.12
+            ],
+            "to": [
+              -0.03,
+              0.05,
+              1.0
+            ],
+            "ease": "in"
+          }
+        ]
       },
       {
         "id": "v026",
@@ -536,16 +556,16 @@
           {
             "type": "kenburns",
             "from": [
-              0,
-              0,
+              -0.02,
+              -0.02,
               1.0
             ],
             "to": [
-              0,
-              0,
-              1.08
+              0.03,
+              0.03,
+              1.11
             ],
-            "ease": "smooth"
+            "ease": "in"
           }
         ]
       },
@@ -560,16 +580,16 @@
           {
             "type": "kenburns",
             "from": [
-              0,
+              -0.05,
               -0.03,
-              1.04
+              1.02
             ],
             "to": [
-              0,
               0.03,
-              1.04
+              0.04,
+              1.12
             ],
-            "ease": "smooth"
+            "ease": "in"
           }
         ]
       },
@@ -580,7 +600,8 @@
         "src_out": 3.0,
         "tl_in": 87.5,
         "speed": 1.0,
-        "effects": []
+        "effects": [],
+        "fit": "blur"
       },
       {
         "id": "v029",
@@ -593,16 +614,16 @@
           {
             "type": "kenburns",
             "from": [
-              0,
-              0.03,
-              1.04
+              0.04,
+              -0.04,
+              1.03
             ],
             "to": [
-              0,
-              -0.03,
-              1.04
+              -0.04,
+              0.05,
+              1.13
             ],
-            "ease": "smooth"
+            "ease": "in"
           }
         ]
       },
@@ -613,7 +634,23 @@
         "src_out": 2.8,
         "tl_in": 93.7,
         "speed": 1.0,
-        "effects": []
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.0,
+              0.05,
+              1.03
+            ],
+            "to": [
+              -0.03,
+              -0.04,
+              1.13
+            ],
+            "ease": "in"
+          }
+        ],
+        "fit": "blur"
       },
       {
         "id": "v031",
@@ -626,16 +663,16 @@
           {
             "type": "kenburns",
             "from": [
-              -0.03,
-              0,
-              1.04
+              0.05,
+              0.03,
+              1.12
             ],
             "to": [
-              0.03,
-              0,
-              1.04
+              -0.04,
+              -0.04,
+              1.0
             ],
-            "ease": "smooth"
+            "ease": "in"
           }
         ]
       },
@@ -659,16 +696,16 @@
           {
             "type": "kenburns",
             "from": [
-              0,
-              0,
-              1.0
+              0.0,
+              0.06,
+              1.02
             ],
             "to": [
-              0,
-              0,
-              1.03
+              -0.03,
+              -0.03,
+              1.12
             ],
-            "ease": "smooth"
+            "ease": "in"
           }
         ],
         "note": "Banner Belgian Beer Weekend; Text ~250 Biere"
@@ -684,14 +721,14 @@
           {
             "type": "kenburns",
             "from": [
-              0,
-              0,
-              1.0
+              -0.04,
+              0.03,
+              1.03
             ],
             "to": [
-              0,
-              0,
-              1.08
+              0.04,
+              -0.04,
+              1.12
             ],
             "ease": "smooth"
           }
@@ -704,22 +741,7 @@
         "src_out": 3.2,
         "tl_in": 109.1,
         "speed": 1.0,
-        "effects": [
-          {
-            "type": "kenburns",
-            "from": [
-              0.03,
-              0,
-              1.04
-            ],
-            "to": [
-              -0.03,
-              0,
-              1.04
-            ],
-            "ease": "smooth"
-          }
-        ]
+        "effects": []
       },
       {
         "id": "v036",
@@ -732,16 +754,16 @@
           {
             "type": "kenburns",
             "from": [
-              0,
-              0,
-              1.06
+              0.03,
+              0.02,
+              1.12
             ],
             "to": [
-              0,
-              0,
+              -0.03,
+              -0.03,
               1.0
             ],
-            "ease": "smooth"
+            "ease": "in"
           }
         ],
         "note": "Galeries innen, 2. Perspektive"
@@ -757,13 +779,13 @@
           {
             "type": "kenburns",
             "from": [
-              0,
-              0,
-              1.06
+              -0.03,
+              0.03,
+              1.12
             ],
             "to": [
-              0,
-              0,
+              0.03,
+              -0.02,
               1.0
             ],
             "ease": "smooth"
@@ -777,22 +799,7 @@
         "src_out": 3.4,
         "tl_in": 118.9,
         "speed": 1.0,
-        "effects": [
-          {
-            "type": "kenburns",
-            "from": [
-              -0.03,
-              0,
-              1.04
-            ],
-            "to": [
-              0.03,
-              0,
-              1.04
-            ],
-            "ease": "smooth"
-          }
-        ]
+        "effects": []
       },
       {
         "id": "v039",
@@ -801,7 +808,23 @@
         "src_out": 3.0,
         "tl_in": 122.3,
         "speed": 1.0,
-        "effects": []
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.04,
+              0.04,
+              1.12
+            ],
+            "to": [
+              0.04,
+              -0.03,
+              1.0
+            ],
+            "ease": "smooth"
+          }
+        ],
+        "fit": "blur"
       },
       {
         "id": "v040",
@@ -836,53 +859,54 @@
         "src_out": 3.0,
         "tl_in": 128.5,
         "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "v041b",
+        "asset": "20260905-phone-75649d",
+        "src_in": 0.0,
+        "src_out": 2.8,
+        "tl_in": 131.5,
+        "speed": 1.0,
         "effects": [
           {
             "type": "kenburns",
             "from": [
-              0,
-              0,
-              1.0
+              -0.05,
+              -0.03,
+              1.02
             ],
             "to": [
-              0,
-              0,
-              1.08
+              0.03,
+              0.04,
+              1.12
             ],
-            "ease": "smooth"
+            "ease": "in"
           }
-        ]
-      },
-      {
-        "id": "v042",
-        "asset": "20260905-phone-7fc518",
-        "src_in": 0.0,
-        "src_out": 3.0,
-        "tl_in": 131.5,
-        "speed": 1.0,
-        "effects": []
+        ],
+        "note": "R3: zweites Vitrinen-Foto (IMG_1391, must) - Christian wollte mehr Vitrine; ergaenzt v041"
       },
       {
         "id": "v043",
         "asset": "20260905-phone-efa313",
         "src_in": 0.0,
         "src_out": 2.8,
-        "tl_in": 134.5,
+        "tl_in": 134.3,
         "speed": 1.0,
         "effects": [
           {
             "type": "kenburns",
             "from": [
-              0,
-              0,
-              1.0
-            ],
-            "to": [
-              0,
-              0,
+              0.04,
+              -0.04,
               1.03
             ],
-            "ease": "smooth"
+            "to": [
+              -0.04,
+              0.05,
+              1.13
+            ],
+            "ease": "in"
           }
         ],
         "fit": "blur",
@@ -893,33 +917,33 @@
         "asset": "20260905-phone-b92d14",
         "src_in": 0.0,
         "src_out": 3.2,
-        "tl_in": 137.3,
+        "tl_in": 137.1,
         "speed": 1.0,
-        "effects": [
-          {
-            "type": "kenburns",
-            "from": [
-              0.03,
-              0,
-              1.04
-            ],
-            "to": [
-              -0.03,
-              0,
-              1.04
-            ],
-            "ease": "smooth"
-          }
-        ]
+        "effects": []
       },
       {
         "id": "v045",
         "asset": "20260905-phone-7e66a8",
         "src_in": 0.0,
         "src_out": 3.0,
-        "tl_in": 140.5,
+        "tl_in": 140.3,
         "speed": 1.0,
-        "effects": [],
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.0,
+              0.06,
+              1.02
+            ],
+            "to": [
+              -0.03,
+              -0.03,
+              1.12
+            ],
+            "ease": "in"
+          }
+        ],
         "fit": "blur",
         "note": "Brussels Duck Store Schild"
       },
@@ -928,20 +952,20 @@
         "asset": "20260905-phone-129d47",
         "src_in": 0.0,
         "src_out": 3.2,
-        "tl_in": 143.5,
+        "tl_in": 143.3,
         "speed": 1.0,
         "effects": [
           {
             "type": "kenburns",
             "from": [
-              0,
-              0,
-              1.0
+              -0.04,
+              0.03,
+              1.03
             ],
             "to": [
-              0,
-              0,
-              1.03
+              0.04,
+              -0.04,
+              1.12
             ],
             "ease": "smooth"
           }
@@ -954,7 +978,7 @@
         "asset": "20260905-phone-fe9794",
         "src_in": 0.0,
         "src_out": 3.2,
-        "tl_in": 146.7,
+        "tl_in": 146.5,
         "speed": 1.0,
         "effects": [],
         "note": "Hand haelt Schoko-Waffel; Text Praesente"
@@ -964,7 +988,7 @@
         "asset": "20260907-camera-016887",
         "src_in": 26.5,
         "src_out": 33.0,
-        "tl_in": 149.9,
+        "tl_in": 149.7,
         "speed": 1.0,
         "effects": [],
         "note": "MOV Cut 26.5-33.0 (Biss ~30)"
@@ -974,9 +998,24 @@
         "asset": "20260905-phone-8a052f",
         "src_in": 0.0,
         "src_out": 3.6,
-        "tl_in": 156.4,
+        "tl_in": 156.2,
         "speed": 1.0,
-        "effects": [],
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.05,
+              -0.03,
+              1.02
+            ],
+            "to": [
+              0.03,
+              0.04,
+              1.12
+            ],
+            "ease": "in"
+          }
+        ],
         "note": "genuesslich reinbeissen; Text dreizeilig links oben"
       },
       {
@@ -984,22 +1023,22 @@
         "asset": "20260905-phone-8596ee",
         "src_in": 0.0,
         "src_out": 3.0,
-        "tl_in": 160.0,
+        "tl_in": 159.8,
         "speed": 1.0,
         "effects": [
           {
             "type": "kenburns",
             "from": [
-              0,
-              0.03,
-              1.04
+              0.04,
+              -0.04,
+              1.03
             ],
             "to": [
-              0,
-              -0.03,
-              1.04
+              -0.04,
+              0.05,
+              1.13
             ],
-            "ease": "smooth"
+            "ease": "in"
           }
         ],
         "note": "Strassenschlucht"
@@ -1009,31 +1048,32 @@
         "asset": "20260905-phone-748fb3",
         "src_in": 0.0,
         "src_out": 3.0,
-        "tl_in": 163.0,
+        "tl_in": 162.8,
         "speed": 1.0,
-        "effects": []
+        "effects": [],
+        "fit": "pad"
       },
       {
         "id": "v052",
         "asset": "20260905-phone-73ba09",
         "src_in": 0.0,
         "src_out": 4.0,
-        "tl_in": 166.0,
+        "tl_in": 165.8,
         "speed": 1.0,
         "effects": [
           {
             "type": "kenburns",
             "from": [
-              0,
-              0,
-              1.06
+              0.0,
+              0.06,
+              1.02
             ],
             "to": [
-              0,
-              0,
-              1.0
+              -0.03,
+              -0.03,
+              1.12
             ],
-            "ease": "smooth"
+            "ease": "in"
           }
         ],
         "note": "Hero: Thomas in Grau, ultimatives Muss-Bild"
@@ -1043,31 +1083,32 @@
         "asset": "20260905-phone-a243f4",
         "src_in": 0.0,
         "src_out": 3.0,
-        "tl_in": 170.0,
+        "tl_in": 169.8,
         "speed": 1.0,
         "effects": [
           {
             "type": "kenburns",
             "from": [
-              -0.03,
-              0,
-              1.04
+              -0.04,
+              0.03,
+              1.03
             ],
             "to": [
-              0.03,
-              0,
-              1.04
+              0.04,
+              -0.04,
+              1.12
             ],
             "ease": "smooth"
           }
-        ]
+        ],
+        "fit": "blur"
       },
       {
         "id": "v054",
         "asset": "20260905-phone-0f261e",
         "src_in": 0.0,
         "src_out": 3.0,
-        "tl_in": 173.0,
+        "tl_in": 172.8,
         "speed": 1.0,
         "effects": []
       },
@@ -1076,7 +1117,1133 @@
         "asset": "20260905-phone-565043",
         "src_in": 0.0,
         "src_out": 3.2,
-        "tl_in": 176.0,
+        "tl_in": 175.8,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.05,
+              0.03,
+              1.13
+            ],
+            "to": [
+              0.05,
+              -0.03,
+              1.0
+            ],
+            "ease": "in"
+          }
+        ],
+        "note": "Schaufenster 100 Best Coffee Shops (muss)"
+      },
+      {
+        "id": "v056",
+        "asset": "20260905-phone-cfae4a",
+        "src_in": 0.0,
+        "src_out": 2.2,
+        "tl_in": 179.0,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.05,
+              -0.03,
+              1.02
+            ],
+            "to": [
+              0.03,
+              0.04,
+              1.12
+            ],
+            "ease": "in"
+          }
+        ],
+        "note": "Frietland-Terrasse kopfueber (Zwang: vor 1443)"
+      },
+      {
+        "id": "v057",
+        "asset": "20260905-phone-dc2cec",
+        "src_in": 0.0,
+        "src_out": 2.13,
+        "tl_in": 181.2,
+        "speed": 1.0,
+        "effects": [],
+        "note": "Pommes-Schwenk; laeuft ueber Musikschnitt 181.45 bis 183.53"
+      },
+      {
+        "id": "v058",
+        "asset": "20260905-phone-82723b",
+        "src_in": 0.0,
+        "src_out": 2.2,
+        "tl_in": 183.33,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.04,
+              -0.04,
+              1.12
+            ],
+            "to": [
+              -0.03,
+              0.05,
+              1.0
+            ],
+            "ease": "in"
+          }
+        ],
+        "fit": "blur",
+        "note": "3 Personen Daumen hoch; Cut sitzt auf Miserlou-Downbeat 183.53"
+      },
+      {
+        "id": "v059",
+        "asset": "20260905-phone-28bd04",
+        "src_in": 0.0,
+        "src_out": 2.27,
+        "tl_in": 185.53,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.04,
+              -0.04,
+              1.03
+            ],
+            "to": [
+              -0.04,
+              0.05,
+              1.13
+            ],
+            "ease": "in"
+          }
+        ],
+        "fit": "blur",
+        "note": "enge Zugangsgasse Becasse - Kneipen-Einstieg (statt 1445)"
+      },
+      {
+        "id": "v060",
+        "asset": "20260905-phone-287d0d",
+        "src_in": 0.0,
+        "src_out": 2.0,
+        "tl_in": 187.8,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "v061",
+        "asset": "20260905-phone-74fa05",
+        "src_in": 0.0,
+        "src_out": 1.6,
+        "tl_in": 189.8,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.0,
+              0.06,
+              1.02
+            ],
+            "to": [
+              -0.03,
+              -0.03,
+              1.12
+            ],
+            "ease": "in"
+          }
+        ],
+        "note": "belgische Bierkarte (einziger ok-Shot)"
+      },
+      {
+        "id": "v062",
+        "asset": "20260905-phone-0daf88",
+        "src_in": 0.0,
+        "src_out": 1.6,
+        "tl_in": 191.4,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.04,
+              0.03,
+              1.03
+            ],
+            "to": [
+              0.04,
+              -0.04,
+              1.12
+            ],
+            "ease": "smooth"
+          }
+        ],
+        "fit": "blur"
+      },
+      {
+        "id": "v063",
+        "asset": "20260905-phone-df8684",
+        "src_in": 0.0,
+        "src_out": 1.4,
+        "tl_in": 193.0,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "v064",
+        "asset": "20260905-phone-43849f",
+        "src_in": 0.0,
+        "src_out": 1.4,
+        "tl_in": 194.4,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.05,
+              0.03,
+              1.12
+            ],
+            "to": [
+              -0.04,
+              -0.04,
+              1.0
+            ],
+            "ease": "in"
+          }
+        ]
+      },
+      {
+        "id": "v065",
+        "asset": "20260905-phone-a97760",
+        "src_in": 0.0,
+        "src_out": 1.6,
+        "tl_in": 195.8,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.05,
+              -0.03,
+              1.02
+            ],
+            "to": [
+              0.03,
+              0.04,
+              1.12
+            ],
+            "ease": "in"
+          }
+        ],
+        "fit": "blur"
+      },
+      {
+        "id": "v067",
+        "asset": "20260905-phone-db6f81",
+        "src_in": 0.0,
+        "src_out": 2.0,
+        "tl_in": 197.4,
+        "speed": 1.0,
+        "effects": [],
+        "note": "Gruppen-Selfie langer Holztisch",
+        "fit": "blur"
+      },
+      {
+        "id": "v069",
+        "asset": "20260907-camera-5791b1",
+        "src_in": 2.8,
+        "src_out": 5.2,
+        "tl_in": 199.4,
+        "speed": 1.0,
+        "effects": [],
+        "note": "MOV Michas Lachen; Anfang weg, direkt aufs Laecheln; O-Ton-Clip -12 dB",
+        "fit": "blur"
+      },
+      {
+        "id": "v070",
+        "asset": "20260905-phone-e2d5ac",
+        "src_in": 0.0,
+        "src_out": 1.6,
+        "tl_in": 201.8,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.04,
+              -0.04,
+              1.03
+            ],
+            "to": [
+              -0.04,
+              0.05,
+              1.13
+            ],
+            "ease": "in"
+          }
+        ]
+      },
+      {
+        "id": "v071",
+        "asset": "20260905-phone-10a55f",
+        "src_in": 0.0,
+        "src_out": 1.6,
+        "tl_in": 203.4,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.0,
+              0.06,
+              1.02
+            ],
+            "to": [
+              -0.03,
+              -0.03,
+              1.12
+            ],
+            "ease": "in"
+          }
+        ]
+      },
+      {
+        "id": "v072",
+        "asset": "20260905-phone-787411",
+        "src_in": 0.0,
+        "src_out": 1.8,
+        "tl_in": 205.0,
+        "speed": 1.0,
+        "effects": [],
+        "fit": "blur"
+      },
+      {
+        "id": "v073",
+        "asset": "20260905-phone-790360",
+        "src_in": 0.0,
+        "src_out": 1.4,
+        "tl_in": 206.8,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.04,
+              0.03,
+              1.03
+            ],
+            "to": [
+              0.04,
+              -0.04,
+              1.12
+            ],
+            "ease": "smooth"
+          }
+        ]
+      },
+      {
+        "id": "v074",
+        "asset": "20260905-phone-40fcd7",
+        "src_in": 0.0,
+        "src_out": 2.2,
+        "tl_in": 208.2,
+        "speed": 1.0,
+        "effects": [],
+        "note": "R3: ov-fx-delirium gestrichen (Text steckt im Foto); fit pad = ganzes Bild, KEIN KB. Wackel-/Jitter-Effekt auf Video-Clips fehlt noch im Renderer.",
+        "fit": "pad"
+      },
+      {
+        "id": "v075",
+        "asset": "20260905-phone-c3387f",
+        "src_in": 0.0,
+        "src_out": 1.4,
+        "tl_in": 210.4,
+        "speed": 1.0,
+        "effects": [],
+        "fit": "pad"
+      },
+      {
+        "id": "v076",
+        "asset": "20260905-phone-582e5e",
+        "src_in": 0.0,
+        "src_out": 1.4,
+        "tl_in": 211.8,
+        "speed": 1.0,
+        "effects": [],
+        "fit": "pad"
+      },
+      {
+        "id": "v078",
+        "asset": "20260905-phone-e3b107",
+        "src_in": 0.0,
+        "src_out": 1.8,
+        "tl_in": 213.2,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.05,
+              -0.03,
+              1.02
+            ],
+            "to": [
+              0.03,
+              0.04,
+              1.12
+            ],
+            "ease": "in"
+          }
+        ],
+        "fit": "blur",
+        "note": "extreme Nahaufnahme Delirium-Glas"
+      },
+      {
+        "id": "v079",
+        "asset": "20260905-phone-9b9a00",
+        "src_in": 0.0,
+        "src_out": 2.4,
+        "tl_in": 215.0,
+        "speed": 1.0,
+        "effects": [],
+        "note": "Froschperspektive Kreismitte",
+        "fit": "blur"
+      },
+      {
+        "id": "v080",
+        "asset": "20260905-phone-a0ad60",
+        "src_in": 0.0,
+        "src_out": 2.4,
+        "tl_in": 217.4,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.04,
+              -0.04,
+              1.03
+            ],
+            "to": [
+              -0.04,
+              0.05,
+              1.13
+            ],
+            "ease": "in"
+          }
+        ],
+        "note": "Delirium-Gasse voller Bar-Schilder"
+      },
+      {
+        "id": "v081",
+        "asset": "20260905-phone-a566d7",
+        "src_in": 0.0,
+        "src_out": 2.6,
+        "tl_in": 219.8,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.04,
+              0.04,
+              1.12
+            ],
+            "to": [
+              0.04,
+              -0.03,
+              1.0
+            ],
+            "ease": "smooth"
+          }
+        ],
+        "note": "Aufzug-Selfie; Text Rooftop Bar 58 - wir kommen"
+      },
+      {
+        "id": "v082",
+        "asset": "20260905-phone-c9d572",
+        "src_in": 0.0,
+        "src_out": 1.8,
+        "tl_in": 222.4,
+        "speed": 1.0,
+        "effects": [],
+        "note": "Gluehbirnen-Ziffern 58",
+        "fit": "blur"
+      },
+      {
+        "id": "v083",
+        "asset": "20260905-phone-ab76ed",
+        "src_in": 0.0,
+        "src_out": 1.6,
+        "tl_in": 224.2,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.05,
+              0.03,
+              1.13
+            ],
+            "to": [
+              0.05,
+              -0.03,
+              1.0
+            ],
+            "ease": "in"
+          }
+        ]
+      },
+      {
+        "id": "v086",
+        "asset": "20260905-phone-b05a02",
+        "src_in": 0.0,
+        "src_out": 1.8,
+        "tl_in": 225.8,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.04,
+              -0.04,
+              1.12
+            ],
+            "to": [
+              -0.03,
+              0.05,
+              1.0
+            ],
+            "ease": "in"
+          }
+        ]
+      },
+      {
+        "id": "v084",
+        "asset": "20260905-phone-cd406c",
+        "src_in": 0.0,
+        "src_out": 1.6,
+        "tl_in": 227.6,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "v087",
+        "asset": "20260905-phone-bcd373",
+        "src_in": 0.0,
+        "src_out": 1.6,
+        "tl_in": 229.2,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.0,
+              0.06,
+              1.02
+            ],
+            "to": [
+              -0.03,
+              -0.03,
+              1.12
+            ],
+            "ease": "in"
+          }
+        ]
+      },
+      {
+        "id": "v088",
+        "asset": "20260905-phone-c0fbb2",
+        "src_in": 0.0,
+        "src_out": 1.2,
+        "tl_in": 230.8,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.05,
+              0.03,
+              1.12
+            ],
+            "to": [
+              -0.04,
+              -0.04,
+              1.0
+            ],
+            "ease": "in"
+          }
+        ],
+        "fit": "blur"
+      },
+      {
+        "id": "v089",
+        "asset": "20260905-phone-09a78f",
+        "src_in": 0.0,
+        "src_out": 2.6,
+        "tl_in": 232.0,
+        "speed": 1.0,
+        "effects": [],
+        "note": "feuriger Sonnenuntergang - Mitte der Rooftop-Sequenz"
+      },
+      {
+        "id": "v090",
+        "asset": "20260905-phone-d09c11",
+        "src_in": 0.0,
+        "src_out": 2.4,
+        "tl_in": 234.6,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.04,
+              0.04,
+              1.12
+            ],
+            "to": [
+              0.04,
+              -0.03,
+              1.0
+            ],
+            "ease": "smooth"
+          }
+        ],
+        "note": "Untersicht, alle stossen mit Corona an; Cut auf Miserlou-Akzent",
+        "fit": "blur"
+      },
+      {
+        "id": "v091",
+        "asset": "20260905-phone-8d1ede",
+        "src_in": 0.0,
+        "src_out": 1.2,
+        "tl_in": 237.0,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.05,
+              0.03,
+              1.13
+            ],
+            "to": [
+              0.05,
+              -0.03,
+              1.0
+            ],
+            "ease": "in"
+          }
+        ],
+        "note": "zweites Corona-Bild, kurzer Blitz"
+      },
+      {
+        "id": "v092",
+        "asset": "20260905-phone-a05520",
+        "src_in": 0.0,
+        "src_out": 2.2,
+        "tl_in": 238.2,
+        "speed": 1.0,
+        "effects": [],
+        "note": "Zunge raus neben Corona; Text Stay hydrated",
+        "fit": "blur"
+      },
+      {
+        "id": "v093",
+        "asset": "20260905-phone-c6a467",
+        "src_in": 0.0,
+        "src_out": 2.4,
+        "tl_in": 240.4,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.04,
+              -0.04,
+              1.12
+            ],
+            "to": [
+              -0.03,
+              0.05,
+              1.0
+            ],
+            "ease": "in"
+          }
+        ],
+        "note": "Breitbild-Reihe; Text Wo ist Christoph???"
+      },
+      {
+        "id": "v094",
+        "asset": "20260905-phone-9729c4",
+        "src_in": 0.0,
+        "src_out": 1.6,
+        "tl_in": 242.8,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.05,
+              0.03,
+              1.12
+            ],
+            "to": [
+              -0.04,
+              -0.04,
+              1.0
+            ],
+            "ease": "in"
+          }
+        ],
+        "fit": "blur",
+        "note": "Hochkant-Gruppenfoto"
+      },
+      {
+        "id": "v102",
+        "asset": "20260905-phone-4b7b47",
+        "src_in": 0.0,
+        "src_out": 2.2,
+        "tl_in": 244.4,
+        "speed": 1.0,
+        "effects": [],
+        "note": "feurig-oranger Sonnenuntergang (Zwang: direkt vor 1556)"
+      },
+      {
+        "id": "v097",
+        "asset": "20260905-phone-811d4b",
+        "src_in": 0.0,
+        "src_out": 1.8,
+        "tl_in": 246.6,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.04,
+              0.04,
+              1.12
+            ],
+            "to": [
+              0.04,
+              -0.03,
+              1.0
+            ],
+            "ease": "smooth"
+          }
+        ]
+      },
+      {
+        "id": "v100",
+        "asset": "20260908-unknown-757aac",
+        "src_in": 0.0,
+        "src_out": 2.0,
+        "tl_in": 248.4,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.05,
+              0.03,
+              1.13
+            ],
+            "to": [
+              0.05,
+              -0.03,
+              1.0
+            ],
+            "ease": "in"
+          }
+        ],
+        "note": "Hagi-Selfie Dachterrasse; FX Herzchen + goldene Kronen (party-fx)",
+        "fit": "blur"
+      },
+      {
+        "id": "v098",
+        "asset": "20260905-phone-e7cb72",
+        "src_in": 0.0,
+        "src_out": 1.8,
+        "tl_in": 250.4,
+        "speed": 1.0,
+        "effects": []
+      },
+      {
+        "id": "v099",
+        "asset": "20260905-phone-b0ee14",
+        "src_in": 0.0,
+        "src_out": 1.8,
+        "tl_in": 252.2,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.04,
+              0.03,
+              1.03
+            ],
+            "to": [
+              0.04,
+              -0.04,
+              1.12
+            ],
+            "ease": "smooth"
+          }
+        ],
+        "fit": "blur"
+      },
+      {
+        "id": "v101",
+        "asset": "20260905-phone-beacf6",
+        "src_in": 0.0,
+        "src_out": 1.4,
+        "tl_in": 254.0,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.05,
+              -0.03,
+              1.02
+            ],
+            "to": [
+              0.03,
+              0.04,
+              1.12
+            ],
+            "ease": "in"
+          }
+        ]
+      },
+      {
+        "id": "v103",
+        "asset": "20260905-phone-368a0b",
+        "src_in": 0.0,
+        "src_out": 2.4,
+        "tl_in": 255.4,
+        "speed": 1.0,
+        "effects": [],
+        "note": "naechtliche Dachterrasse - schliesst Rooftop-Sequenz"
+      },
+      {
+        "id": "v104",
+        "asset": "20260908-unknown-6d898d",
+        "src_in": 0.0,
+        "src_out": 2.4,
+        "tl_in": 257.8,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.04,
+              -0.04,
+              1.12
+            ],
+            "to": [
+              -0.03,
+              0.05,
+              1.0
+            ],
+            "ease": "in"
+          }
+        ],
+        "note": "vor der Tuer (umgezogen aus Aftermath); FX Herzchen + Kronen (party-fx)"
+      },
+      {
+        "id": "v105",
+        "asset": "20260905-phone-f78961",
+        "src_in": 0.0,
+        "src_out": 2.0,
+        "tl_in": 260.2,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.04,
+              -0.04,
+              1.03
+            ],
+            "to": [
+              -0.04,
+              0.05,
+              1.13
+            ],
+            "ease": "in"
+          }
+        ]
+      },
+      {
+        "id": "v106",
+        "asset": "20260905-phone-335263",
+        "src_in": 0.0,
+        "src_out": 1.0,
+        "tl_in": 262.2,
+        "speed": 1.0,
+        "effects": [],
+        "note": "Neonschild Down Town, schneller Blitz"
+      },
+      {
+        "id": "v107",
+        "asset": "20260905-phone-f792b0",
+        "src_in": 0.0,
+        "src_out": 1.6,
+        "tl_in": 263.2,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.0,
+              0.06,
+              1.02
+            ],
+            "to": [
+              -0.03,
+              -0.03,
+              1.12
+            ],
+            "ease": "in"
+          }
+        ]
+      },
+      {
+        "id": "v108",
+        "asset": "20260905-phone-dc622a",
+        "src_in": 0.0,
+        "src_out": 1.6,
+        "tl_in": 264.8,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.04,
+              0.03,
+              1.03
+            ],
+            "to": [
+              0.04,
+              -0.04,
+              1.12
+            ],
+            "ease": "smooth"
+          }
+        ]
+      },
+      {
+        "id": "v109",
+        "asset": "20260905-phone-687176",
+        "src_in": 0.0,
+        "src_out": 2.0,
+        "tl_in": 266.4,
+        "speed": 1.0,
+        "effects": [],
+        "note": "Gruppe am Stehtisch - Burger-Stop"
+      },
+      {
+        "id": "v110",
+        "asset": "20260905-phone-88ebf6",
+        "src_in": 0.0,
+        "src_out": 2.4,
+        "tl_in": 268.4,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.05,
+              0.03,
+              1.12
+            ],
+            "to": [
+              -0.04,
+              -0.04,
+              1.0
+            ],
+            "ease": "in"
+          }
+        ],
+        "fit": "blur",
+        "note": "Nacht-Selfie Juwelier; Text wolle Token kaufen ???"
+      },
+      {
+        "id": "v111",
+        "asset": "20260905-phone-4c48f5",
+        "src_in": 0.0,
+        "src_out": 1.4,
+        "tl_in": 270.8,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.04,
+              0.04,
+              1.12
+            ],
+            "to": [
+              0.04,
+              -0.03,
+              1.0
+            ],
+            "ease": "smooth"
+          }
+        ],
+        "note": "OReillys Irish Pub - Weg zur Karaoke-Bar"
+      },
+      {
+        "id": "v112",
+        "asset": "20260905-phone-3ad32e",
+        "src_in": 0.0,
+        "src_out": 1.8,
+        "tl_in": 272.2,
+        "speed": 1.0,
+        "effects": [],
+        "note": "rotes Neon KARAOKE - Einleitungsbild"
+      },
+      {
+        "id": "v114",
+        "asset": "20260905-phone-b71a70",
+        "src_in": 0.0,
+        "src_out": 1.8,
+        "tl_in": 274.0,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.05,
+              -0.03,
+              1.02
+            ],
+            "to": [
+              0.03,
+              0.04,
+              1.12
+            ],
+            "ease": "in"
+          }
+        ],
+        "note": "stoesst an - der Tequila ist da; kein Ducking"
+      },
+      {
+        "id": "v115",
+        "asset": "20260907-camera-ac36e9",
+        "src_in": 28.0,
+        "src_out": 30.6,
+        "tl_in": 275.8,
+        "speed": 1.0,
+        "effects": [],
+        "note": "MOV ab ~28s (Was machst du); nur Musik"
+      },
+      {
+        "id": "v116",
+        "asset": "20260907-camera-317b4d",
+        "src_in": 13.0,
+        "src_out": 22.0,
+        "tl_in": 278.4,
+        "speed": 1.0,
+        "effects": [],
+        "note": "MOV ganze Szene zusammen; Fuesschen ~21s enthalten; O-Ton-Clip -14 dB"
+      },
+      {
+        "id": "v118",
+        "asset": "20260905-phone-46e6b4",
+        "src_in": 0.0,
+        "src_out": 1.6,
+        "tl_in": 287.4,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.05,
+              0.03,
+              1.13
+            ],
+            "to": [
+              0.05,
+              -0.03,
+              1.0
+            ],
+            "ease": "in"
+          }
+        ]
+      },
+      {
+        "id": "v117",
+        "asset": "20260905-phone-a5f421",
+        "src_in": 0.0,
+        "src_out": 1.6,
+        "tl_in": 289.0,
+        "speed": 1.0,
+        "effects": [],
+        "fit": "blur"
+      },
+      {
+        "id": "v119",
+        "asset": "20260905-phone-210836",
+        "src_in": 0.0,
+        "src_out": 1.6,
+        "tl_in": 290.6,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.04,
+              -0.04,
+              1.12
+            ],
+            "to": [
+              -0.03,
+              0.05,
+              1.0
+            ],
+            "ease": "in"
+          }
+        ]
+      },
+      {
+        "id": "v120",
+        "asset": "20260905-phone-15764f",
+        "src_in": 0.0,
+        "src_out": 1.4,
+        "tl_in": 292.2,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.04,
+              -0.04,
+              1.03
+            ],
+            "to": [
+              -0.04,
+              0.05,
+              1.13
+            ],
+            "ease": "in"
+          }
+        ],
+        "note": "vier Maenner Portraet (Christians Wunschbild)",
+        "fit": "blur"
+      },
+      {
+        "id": "v122",
+        "asset": "20260905-phone-5d9169",
+        "src_in": 0.0,
+        "src_out": 1.4,
+        "tl_in": 293.6,
         "speed": 1.0,
         "effects": [
           {
@@ -1089,687 +2256,9 @@
             "to": [
               0,
               0,
-              1.08
+              1.05
             ],
             "ease": "smooth"
-          }
-        ],
-        "note": "Schaufenster 100 Best Coffee Shops (muss)"
-      },
-      {
-        "id": "v056",
-        "asset": "20260905-phone-cfae4a",
-        "src_in": 0.0,
-        "src_out": 2.2,
-        "tl_in": 179.2,
-        "speed": 1.0,
-        "effects": [],
-        "note": "Frietland-Terrasse kopfueber (Zwang: vor 1443)"
-      },
-      {
-        "id": "v057",
-        "asset": "20260905-phone-dc2cec",
-        "src_in": 0.0,
-        "src_out": 2.13,
-        "tl_in": 181.4,
-        "speed": 1.0,
-        "effects": [
-          {
-            "type": "kenburns",
-            "from": [
-              -0.03,
-              0,
-              1.04
-            ],
-            "to": [
-              0.03,
-              0,
-              1.04
-            ],
-            "ease": "smooth"
-          }
-        ],
-        "note": "Pommes-Schwenk; laeuft ueber Musikschnitt 181.45 bis 183.53"
-      },
-      {
-        "id": "v058",
-        "asset": "20260905-phone-82723b",
-        "src_in": 0.0,
-        "src_out": 2.2,
-        "tl_in": 183.53,
-        "speed": 1.0,
-        "effects": [],
-        "fit": "blur",
-        "note": "3 Personen Daumen hoch; Cut sitzt auf Miserlou-Downbeat 183.53"
-      },
-      {
-        "id": "v059",
-        "asset": "20260905-phone-28bd04",
-        "src_in": 0.0,
-        "src_out": 2.27,
-        "tl_in": 185.73,
-        "speed": 1.0,
-        "effects": [],
-        "fit": "blur",
-        "note": "enge Zugangsgasse Becasse - Kneipen-Einstieg (statt 1445)"
-      },
-      {
-        "id": "v060",
-        "asset": "20260905-phone-287d0d",
-        "src_in": 0.0,
-        "src_out": 2.0,
-        "tl_in": 188.0,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v061",
-        "asset": "20260905-phone-74fa05",
-        "src_in": 0.0,
-        "src_out": 1.6,
-        "tl_in": 190.0,
-        "speed": 1.0,
-        "effects": [],
-        "note": "belgische Bierkarte (einziger ok-Shot)"
-      },
-      {
-        "id": "v062",
-        "asset": "20260905-phone-0daf88",
-        "src_in": 0.0,
-        "src_out": 1.6,
-        "tl_in": 191.6,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v063",
-        "asset": "20260905-phone-df8684",
-        "src_in": 0.0,
-        "src_out": 1.4,
-        "tl_in": 193.2,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v064",
-        "asset": "20260905-phone-43849f",
-        "src_in": 0.0,
-        "src_out": 1.4,
-        "tl_in": 194.6,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v065",
-        "asset": "20260905-phone-a97760",
-        "src_in": 0.0,
-        "src_out": 1.6,
-        "tl_in": 196.0,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v066",
-        "asset": "20260905-phone-ccfcbc",
-        "src_in": 0.0,
-        "src_out": 1.4,
-        "tl_in": 197.6,
-        "speed": 1.0,
-        "effects": [],
-        "note": "Nah-Selfie Zunge raus. RENDER: 90 Grad CW noetig (Schema hat kein Rotate-Feld) - Preview zeigt den Clip ggf. seitlich. Clip bleibt drin."
-      },
-      {
-        "id": "v067",
-        "asset": "20260905-phone-db6f81",
-        "src_in": 0.0,
-        "src_out": 2.0,
-        "tl_in": 199.0,
-        "speed": 1.0,
-        "effects": [],
-        "note": "Gruppen-Selfie langer Holztisch"
-      },
-      {
-        "id": "v068",
-        "asset": "20260905-phone-5e9805",
-        "src_in": 0.0,
-        "src_out": 1.4,
-        "tl_in": 201.0,
-        "speed": 1.0,
-        "effects": [],
-        "note": "Emailleschild Timmermans (Zwang: nach dem Laden), ohne Text"
-      },
-      {
-        "id": "v069",
-        "asset": "20260907-camera-5791b1",
-        "src_in": 1.8,
-        "src_out": 5.2,
-        "tl_in": 202.4,
-        "speed": 1.0,
-        "effects": [],
-        "note": "MOV Michas Lachen; Anfang weg, direkt aufs Laecheln; O-Ton-Clip -12 dB"
-      },
-      {
-        "id": "v070",
-        "asset": "20260905-phone-e2d5ac",
-        "src_in": 0.0,
-        "src_out": 1.6,
-        "tl_in": 205.8,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v071",
-        "asset": "20260905-phone-10a55f",
-        "src_in": 0.0,
-        "src_out": 1.6,
-        "tl_in": 207.4,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v072",
-        "asset": "20260905-phone-787411",
-        "src_in": 0.0,
-        "src_out": 1.8,
-        "tl_in": 209.0,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v073",
-        "asset": "20260905-phone-790360",
-        "src_in": 0.0,
-        "src_out": 1.4,
-        "tl_in": 210.8,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v074",
-        "asset": "20260905-phone-40fcd7",
-        "src_in": 0.0,
-        "src_out": 2.2,
-        "tl_in": 212.2,
-        "speed": 1.0,
-        "effects": [],
-        "note": "pinkes Delirium-Neon; FX zittrige Leuchtschrift Delirium (party-fx)"
-      },
-      {
-        "id": "v075",
-        "asset": "20260905-phone-c3387f",
-        "src_in": 0.0,
-        "src_out": 1.4,
-        "tl_in": 214.4,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v076",
-        "asset": "20260905-phone-582e5e",
-        "src_in": 0.0,
-        "src_out": 1.4,
-        "tl_in": 215.8,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v077",
-        "asset": "20260905-phone-ce0da5",
-        "src_in": 0.0,
-        "src_out": 1.4,
-        "tl_in": 217.2,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v078",
-        "asset": "20260905-phone-e3b107",
-        "src_in": 0.0,
-        "src_out": 1.8,
-        "tl_in": 218.6,
-        "speed": 1.0,
-        "effects": [],
-        "fit": "blur",
-        "note": "extreme Nahaufnahme Delirium-Glas"
-      },
-      {
-        "id": "v079",
-        "asset": "20260905-phone-9b9a00",
-        "src_in": 0.0,
-        "src_out": 2.4,
-        "tl_in": 220.4,
-        "speed": 1.0,
-        "effects": [],
-        "note": "Froschperspektive Kreismitte"
-      },
-      {
-        "id": "v080",
-        "asset": "20260905-phone-a0ad60",
-        "src_in": 0.0,
-        "src_out": 2.4,
-        "tl_in": 222.8,
-        "speed": 1.0,
-        "effects": [],
-        "note": "Delirium-Gasse voller Bar-Schilder"
-      },
-      {
-        "id": "v081",
-        "asset": "20260905-phone-a566d7",
-        "src_in": 0.0,
-        "src_out": 2.6,
-        "tl_in": 225.2,
-        "speed": 1.0,
-        "effects": [],
-        "note": "Aufzug-Selfie; Text Rooftop Bar 58 - wir kommen"
-      },
-      {
-        "id": "v082",
-        "asset": "20260905-phone-c9d572",
-        "src_in": 0.0,
-        "src_out": 1.8,
-        "tl_in": 227.8,
-        "speed": 1.0,
-        "effects": [],
-        "note": "Gluehbirnen-Ziffern 58"
-      },
-      {
-        "id": "v083",
-        "asset": "20260905-phone-ab76ed",
-        "src_in": 0.0,
-        "src_out": 1.6,
-        "tl_in": 229.6,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v084",
-        "asset": "20260905-phone-cd406c",
-        "src_in": 0.0,
-        "src_out": 1.6,
-        "tl_in": 231.2,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v085",
-        "asset": "20260905-phone-0d3dcb",
-        "src_in": 0.0,
-        "src_out": 1.8,
-        "tl_in": 232.8,
-        "speed": 1.0,
-        "effects": [],
-        "note": "Kirchturm warmes Licht (Zwang: frueh)"
-      },
-      {
-        "id": "v086",
-        "asset": "20260905-phone-b05a02",
-        "src_in": 0.0,
-        "src_out": 1.8,
-        "tl_in": 234.6,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v087",
-        "asset": "20260905-phone-bcd373",
-        "src_in": 0.0,
-        "src_out": 1.6,
-        "tl_in": 236.4,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v088",
-        "asset": "20260905-phone-c0fbb2",
-        "src_in": 0.0,
-        "src_out": 1.2,
-        "tl_in": 238.0,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v089",
-        "asset": "20260905-phone-09a78f",
-        "src_in": 0.0,
-        "src_out": 2.6,
-        "tl_in": 239.2,
-        "speed": 1.0,
-        "effects": [],
-        "note": "feuriger Sonnenuntergang - Mitte der Rooftop-Sequenz"
-      },
-      {
-        "id": "v090",
-        "asset": "20260905-phone-d09c11",
-        "src_in": 0.0,
-        "src_out": 2.4,
-        "tl_in": 241.8,
-        "speed": 1.0,
-        "effects": [],
-        "note": "Untersicht, alle stossen mit Corona an; Cut auf Miserlou-Akzent"
-      },
-      {
-        "id": "v091",
-        "asset": "20260905-phone-8d1ede",
-        "src_in": 0.0,
-        "src_out": 1.2,
-        "tl_in": 244.2,
-        "speed": 1.0,
-        "effects": [],
-        "note": "zweites Corona-Bild, kurzer Blitz"
-      },
-      {
-        "id": "v092",
-        "asset": "20260905-phone-a05520",
-        "src_in": 0.0,
-        "src_out": 2.2,
-        "tl_in": 245.4,
-        "speed": 1.0,
-        "effects": [],
-        "note": "Zunge raus neben Corona; Text Stay hydrated"
-      },
-      {
-        "id": "v093",
-        "asset": "20260905-phone-c6a467",
-        "src_in": 0.0,
-        "src_out": 2.4,
-        "tl_in": 247.6,
-        "speed": 1.0,
-        "effects": [],
-        "note": "Breitbild-Reihe; Text Wo ist Christoph???"
-      },
-      {
-        "id": "v094",
-        "asset": "20260905-phone-9729c4",
-        "src_in": 0.0,
-        "src_out": 1.6,
-        "tl_in": 250.0,
-        "speed": 1.0,
-        "effects": [],
-        "fit": "blur",
-        "note": "Hochkant-Gruppenfoto"
-      },
-      {
-        "id": "v095",
-        "asset": "20260905-phone-536197",
-        "src_in": 0.0,
-        "src_out": 2.0,
-        "tl_in": 251.6,
-        "speed": 1.0,
-        "effects": [
-          {
-            "type": "color_pop",
-            "at": 0.0,
-            "dur": 0.5,
-            "peak": 1.8,
-            "note": "party-fx T8: Werbe-Look-Puls 1544 (Corona Extra gegen Sonnenuntergang)"
-          }
-        ],
-        "note": "Hand haelt Corona gegen Sonnenuntergang; FX Werbe-Look = color_pop (party-fx T8)"
-      },
-      {
-        "id": "v096",
-        "asset": "20260905-phone-a4612d",
-        "src_in": 0.0,
-        "src_out": 1.4,
-        "tl_in": 253.6,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v097",
-        "asset": "20260905-phone-811d4b",
-        "src_in": 0.0,
-        "src_out": 1.8,
-        "tl_in": 255.0,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v098",
-        "asset": "20260905-phone-e7cb72",
-        "src_in": 0.0,
-        "src_out": 1.8,
-        "tl_in": 256.8,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v099",
-        "asset": "20260905-phone-b0ee14",
-        "src_in": 0.0,
-        "src_out": 1.8,
-        "tl_in": 258.6,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v100",
-        "asset": "20260908-unknown-757aac",
-        "src_in": 0.0,
-        "src_out": 2.0,
-        "tl_in": 260.4,
-        "speed": 1.0,
-        "effects": [],
-        "note": "Hagi-Selfie Dachterrasse; FX Herzchen + goldene Kronen (party-fx)"
-      },
-      {
-        "id": "v101",
-        "asset": "20260905-phone-beacf6",
-        "src_in": 0.0,
-        "src_out": 1.4,
-        "tl_in": 262.4,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v102",
-        "asset": "20260905-phone-4b7b47",
-        "src_in": 0.0,
-        "src_out": 2.2,
-        "tl_in": 263.8,
-        "speed": 1.0,
-        "effects": [],
-        "note": "feurig-oranger Sonnenuntergang (Zwang: direkt vor 1556)"
-      },
-      {
-        "id": "v103",
-        "asset": "20260905-phone-368a0b",
-        "src_in": 0.0,
-        "src_out": 2.4,
-        "tl_in": 266.0,
-        "speed": 1.0,
-        "effects": [],
-        "note": "naechtliche Dachterrasse - schliesst Rooftop-Sequenz"
-      },
-      {
-        "id": "v104",
-        "asset": "20260908-unknown-6d898d",
-        "src_in": 0.0,
-        "src_out": 2.4,
-        "tl_in": 268.4,
-        "speed": 1.0,
-        "effects": [],
-        "note": "vor der Tuer (umgezogen aus Aftermath); FX Herzchen + Kronen (party-fx)"
-      },
-      {
-        "id": "v105",
-        "asset": "20260905-phone-f78961",
-        "src_in": 0.0,
-        "src_out": 2.0,
-        "tl_in": 270.8,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v106",
-        "asset": "20260905-phone-335263",
-        "src_in": 0.0,
-        "src_out": 1.0,
-        "tl_in": 272.8,
-        "speed": 1.0,
-        "effects": [],
-        "note": "Neonschild Down Town, schneller Blitz"
-      },
-      {
-        "id": "v107",
-        "asset": "20260905-phone-f792b0",
-        "src_in": 0.0,
-        "src_out": 1.6,
-        "tl_in": 273.8,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v108",
-        "asset": "20260905-phone-dc622a",
-        "src_in": 0.0,
-        "src_out": 1.6,
-        "tl_in": 275.4,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v109",
-        "asset": "20260905-phone-687176",
-        "src_in": 0.0,
-        "src_out": 2.0,
-        "tl_in": 277.0,
-        "speed": 1.0,
-        "effects": [],
-        "note": "Gruppe am Stehtisch - Burger-Stop"
-      },
-      {
-        "id": "v110",
-        "asset": "20260905-phone-88ebf6",
-        "src_in": 0.0,
-        "src_out": 2.4,
-        "tl_in": 279.0,
-        "speed": 1.0,
-        "effects": [],
-        "fit": "blur",
-        "note": "Nacht-Selfie Juwelier; Text wolle Token kaufen ???"
-      },
-      {
-        "id": "v111",
-        "asset": "20260905-phone-4c48f5",
-        "src_in": 0.0,
-        "src_out": 1.4,
-        "tl_in": 281.4,
-        "speed": 1.0,
-        "effects": [],
-        "note": "OReillys Irish Pub - Weg zur Karaoke-Bar"
-      },
-      {
-        "id": "v112",
-        "asset": "20260905-phone-3ad32e",
-        "src_in": 0.0,
-        "src_out": 1.8,
-        "tl_in": 282.8,
-        "speed": 1.0,
-        "effects": [],
-        "note": "rotes Neon KARAOKE - Einleitungsbild"
-      },
-      {
-        "id": "v113",
-        "asset": "20260905-phone-e70c57",
-        "src_in": 0.0,
-        "src_out": 1.6,
-        "tl_in": 284.6,
-        "speed": 1.0,
-        "effects": [],
-        "note": "rote Leuchtschrift La Pod; Cut bei 284.60 deckt Loop-Naht 1"
-      },
-      {
-        "id": "v114",
-        "asset": "20260905-phone-b71a70",
-        "src_in": 0.0,
-        "src_out": 1.8,
-        "tl_in": 286.2,
-        "speed": 1.0,
-        "effects": [],
-        "note": "stoesst an - der Tequila ist da; kein Ducking"
-      },
-      {
-        "id": "v115",
-        "asset": "20260907-camera-ac36e9",
-        "src_in": 28.0,
-        "src_out": 30.6,
-        "tl_in": 288.0,
-        "speed": 1.0,
-        "effects": [],
-        "note": "MOV ab ~28s (Was machst du); nur Musik"
-      },
-      {
-        "id": "v116",
-        "asset": "20260907-camera-317b4d",
-        "src_in": 13.0,
-        "src_out": 22.0,
-        "tl_in": 290.6,
-        "speed": 1.0,
-        "effects": [],
-        "note": "MOV ganze Szene zusammen; Fuesschen ~21s enthalten; O-Ton-Clip -14 dB"
-      },
-      {
-        "id": "v117",
-        "asset": "20260905-phone-a5f421",
-        "src_in": 0.0,
-        "src_out": 1.6,
-        "tl_in": 299.6,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v118",
-        "asset": "20260905-phone-46e6b4",
-        "src_in": 0.0,
-        "src_out": 1.6,
-        "tl_in": 301.2,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v119",
-        "asset": "20260905-phone-210836",
-        "src_in": 0.0,
-        "src_out": 1.6,
-        "tl_in": 302.8,
-        "speed": 1.0,
-        "effects": []
-      },
-      {
-        "id": "v120",
-        "asset": "20260905-phone-15764f",
-        "src_in": 0.0,
-        "src_out": 1.4,
-        "tl_in": 304.4,
-        "speed": 1.0,
-        "effects": [],
-        "note": "vier Maenner Portraet (Christians Wunschbild)"
-      },
-      {
-        "id": "v121",
-        "asset": "20260905-phone-cc085d",
-        "src_in": 0.0,
-        "src_out": 1.0,
-        "tl_in": 305.8,
-        "speed": 1.0,
-        "effects": [],
-        "note": "Karaoke-Screen I Want It That Way, Blitz"
-      },
-      {
-        "id": "v122",
-        "asset": "20260905-phone-5d9169",
-        "src_in": 0.0,
-        "src_out": 0.9,
-        "tl_in": 306.8,
-        "speed": 1.0,
-        "effects": [
-          {
-            "type": "color_pop",
-            "at": 0.0,
-            "dur": 0.4,
-            "peak": 1.9,
-            "note": "party-fx: Cast-Cut-Puls auf dem Miserlou-Beat"
           }
         ],
         "note": "Cast-Intro B9; color_pop; SFX legt party-fx (T8)"
@@ -1778,34 +2267,33 @@
         "id": "v123",
         "asset": "20260905-phone-e368e5",
         "src_in": 0.0,
-        "src_out": 0.9,
-        "tl_in": 307.7,
+        "src_out": 1.4,
+        "tl_in": 295.0,
         "speed": 1.0,
-        "effects": [
-          {
-            "type": "color_pop",
-            "at": 0.0,
-            "dur": 0.4,
-            "peak": 1.9,
-            "note": "party-fx: Cast-Cut-Puls auf dem Miserlou-Beat"
-          }
-        ],
-        "note": "Cast-Intro B9; color_pop; SFX legt party-fx (T8)"
+        "effects": [],
+        "note": "Cast-Intro B9; color_pop; SFX legt party-fx (T8) | R3: bewusst statisch, Name ruhig lesbar"
       },
       {
         "id": "v124",
         "asset": "20260905-phone-c004d1",
         "src_in": 0.0,
-        "src_out": 0.9,
-        "tl_in": 308.6,
+        "src_out": 1.4,
+        "tl_in": 296.4,
         "speed": 1.0,
         "effects": [
           {
-            "type": "color_pop",
-            "at": 0.0,
-            "dur": 0.4,
-            "peak": 1.9,
-            "note": "party-fx: Cast-Cut-Puls auf dem Miserlou-Beat"
+            "type": "kenburns",
+            "from": [
+              0,
+              0,
+              1.0
+            ],
+            "to": [
+              0,
+              0,
+              1.05
+            ],
+            "ease": "smooth"
           }
         ],
         "note": "Cast-Intro B9; color_pop; SFX legt party-fx (T8)"
@@ -1814,16 +2302,23 @@
         "id": "v125",
         "asset": "20260905-phone-3bff55",
         "src_in": 0.0,
-        "src_out": 0.9,
-        "tl_in": 309.5,
+        "src_out": 1.4,
+        "tl_in": 297.8,
         "speed": 1.0,
         "effects": [
           {
-            "type": "color_pop",
-            "at": 0.0,
-            "dur": 0.4,
-            "peak": 1.9,
-            "note": "party-fx: Cast-Cut-Puls auf dem Miserlou-Beat"
+            "type": "kenburns",
+            "from": [
+              0,
+              0,
+              1.0
+            ],
+            "to": [
+              0,
+              0,
+              1.05
+            ],
+            "ease": "smooth"
           }
         ],
         "note": "Cast-Intro B9; color_pop; SFX legt party-fx (T8)"
@@ -1832,34 +2327,33 @@
         "id": "v126",
         "asset": "20260905-phone-c64f1b",
         "src_in": 0.0,
-        "src_out": 0.9,
-        "tl_in": 310.4,
+        "src_out": 1.4,
+        "tl_in": 299.2,
         "speed": 1.0,
-        "effects": [
-          {
-            "type": "color_pop",
-            "at": 0.0,
-            "dur": 0.4,
-            "peak": 1.9,
-            "note": "party-fx: Cast-Cut-Puls auf dem Miserlou-Beat"
-          }
-        ],
-        "note": "Cast-Intro B9; color_pop; SFX legt party-fx (T8)"
+        "effects": [],
+        "note": "Cast-Intro B9; color_pop; SFX legt party-fx (T8) | R3: bewusst statisch, Name ruhig lesbar"
       },
       {
         "id": "v127",
         "asset": "20260905-phone-0731e1",
         "src_in": 0.0,
-        "src_out": 0.9,
-        "tl_in": 311.3,
+        "src_out": 1.4,
+        "tl_in": 300.6,
         "speed": 1.0,
         "effects": [
           {
-            "type": "color_pop",
-            "at": 0.0,
-            "dur": 0.4,
-            "peak": 1.9,
-            "note": "party-fx: Cast-Cut-Puls auf dem Miserlou-Beat"
+            "type": "kenburns",
+            "from": [
+              0,
+              0,
+              1.0
+            ],
+            "to": [
+              0,
+              0,
+              1.05
+            ],
+            "ease": "smooth"
           }
         ],
         "note": "Cast-Intro B9; color_pop; SFX legt party-fx (T8)"
@@ -1868,16 +2362,23 @@
         "id": "v128",
         "asset": "20260905-phone-bfd502",
         "src_in": 0.0,
-        "src_out": 0.9,
-        "tl_in": 312.2,
+        "src_out": 1.4,
+        "tl_in": 302.0,
         "speed": 1.0,
         "effects": [
           {
-            "type": "color_pop",
-            "at": 0.0,
-            "dur": 0.4,
-            "peak": 1.9,
-            "note": "party-fx: Cast-Cut-Puls auf dem Miserlou-Beat"
+            "type": "kenburns",
+            "from": [
+              0,
+              0,
+              1.0
+            ],
+            "to": [
+              0,
+              0,
+              1.05
+            ],
+            "ease": "smooth"
           }
         ],
         "note": "Cast-Intro B9; color_pop; SFX legt party-fx (T8)"
@@ -1886,34 +2387,33 @@
         "id": "v129",
         "asset": "20260905-phone-8aaf40",
         "src_in": 0.0,
-        "src_out": 0.9,
-        "tl_in": 313.1,
+        "src_out": 1.4,
+        "tl_in": 303.4,
         "speed": 1.0,
-        "effects": [
-          {
-            "type": "color_pop",
-            "at": 0.0,
-            "dur": 0.4,
-            "peak": 1.9,
-            "note": "party-fx: Cast-Cut-Puls auf dem Miserlou-Beat"
-          }
-        ],
-        "note": "Cast-Intro B9; color_pop; SFX legt party-fx (T8)"
+        "effects": [],
+        "note": "Cast-Intro B9; color_pop; SFX legt party-fx (T8) | R3: bewusst statisch, Name ruhig lesbar"
       },
       {
         "id": "v130",
         "asset": "20260905-phone-59d423",
         "src_in": 0.0,
-        "src_out": 1.5,
-        "tl_in": 314.0,
+        "src_out": 1.4,
+        "tl_in": 304.8,
         "speed": 1.0,
         "effects": [
           {
-            "type": "color_pop",
-            "at": 0.0,
-            "dur": 0.4,
-            "peak": 1.9,
-            "note": "party-fx: Cast-Cut-Puls auf dem Miserlou-Beat"
+            "type": "kenburns",
+            "from": [
+              0,
+              0,
+              1.0
+            ],
+            "to": [
+              0,
+              0,
+              1.05
+            ],
+            "ease": "smooth"
           }
         ],
         "note": "Cast-Intro B9; color_pop; SFX legt party-fx (T8); Sonderblau #4fd8ff, Stempel"
@@ -1923,7 +2423,7 @@
         "asset": "20260907-camera-8674da",
         "src_in": 1.0,
         "src_out": 2.6,
-        "tl_in": 315.5,
+        "tl_in": 306.2,
         "speed": 1.6,
         "effects": [
           {
@@ -1939,7 +2439,7 @@
         "asset": "20260907-camera-8674da",
         "src_in": 2.6,
         "src_out": 5.0,
-        "tl_in": 316.5,
+        "tl_in": 307.2,
         "speed": 1.0,
         "effects": [],
         "note": "Teil A normal weiter auf die Grimasse",
@@ -1950,7 +2450,7 @@
         "asset": "20260905-phone-33cc9e",
         "src_in": 0.0,
         "src_out": 1.2,
-        "tl_in": 318.9,
+        "tl_in": 309.6,
         "speed": 1.0,
         "effects": [],
         "note": "Gruppenfoto blau-violett"
@@ -1960,7 +2460,7 @@
         "asset": "20260907-camera-8674da",
         "src_in": 20.0,
         "src_out": 22.2,
-        "tl_in": 320.1,
+        "tl_in": 310.8,
         "speed": 1.0,
         "effects": [],
         "note": "Teil B - Arme hoch",
@@ -1971,9 +2471,24 @@
         "asset": "20260905-phone-df75af",
         "src_in": 0.0,
         "src_out": 1.8,
-        "tl_in": 322.3,
+        "tl_in": 313.0,
         "speed": 1.0,
-        "effects": [],
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.0,
+              0.06,
+              1.02
+            ],
+            "to": [
+              -0.03,
+              -0.03,
+              1.12
+            ],
+            "ease": "in"
+          }
+        ],
         "note": "Gruppe blau-rotes Neon; Text Gehen hier etwa schon die Lampen aus?"
       },
       {
@@ -1981,7 +2496,7 @@
         "asset": "20260907-camera-8674da",
         "src_in": 29.0,
         "src_out": 31.0,
-        "tl_in": 324.1,
+        "tl_in": 314.8,
         "speed": 1.0,
         "effects": [],
         "note": "Teil C - Micha im Delirium Lampen-Szene (bleibt wie sie ist)",
@@ -1992,19 +2507,61 @@
         "asset": "20260907-camera-faed4c",
         "src_in": 0.0,
         "src_out": 3.0,
-        "tl_in": 326.1,
+        "tl_in": 316.8,
         "speed": 1.0,
         "effects": [],
         "note": "MOV der mit dem Video reinkommt; Text Natuerlich ... (noch nicht)"
+      },
+      {
+        "id": "v144",
+        "asset": "20260907-camera-8794ae",
+        "src_in": 139.6,
+        "src_out": 142.0,
+        "tl_in": 319.8,
+        "speed": 1.6,
+        "effects": [
+          {
+            "type": "speedlines",
+            "note": "party-fx: Speed-Ramp in die Drehung"
+          }
+        ],
+        "note": "Karaoke-Gesang run-up (Speed-Ramp 1.6x)",
+        "intentional_repeat": true
+      },
+      {
+        "id": "v145",
+        "asset": "20260907-camera-8794ae",
+        "src_in": 142.0,
+        "src_out": 147.5,
+        "tl_in": 321.3,
+        "speed": 1.0,
+        "effects": [],
+        "note": "Hauptstelle dreht sich um; O-Ton-Clip -12 dB; endet auf 344.50 (Loop-Naht 2)",
+        "intentional_repeat": true
       },
       {
         "id": "v138",
         "asset": "20260905-phone-85ee91",
         "src_in": 0.0,
         "src_out": 1.2,
-        "tl_in": 329.1,
+        "tl_in": 326.8,
         "speed": 1.0,
-        "effects": [],
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.04,
+              0.03,
+              1.03
+            ],
+            "to": [
+              0.04,
+              -0.04,
+              1.12
+            ],
+            "ease": "smooth"
+          }
+        ],
         "note": "Dart, Arm hoch"
       },
       {
@@ -2012,7 +2569,7 @@
         "asset": "20260907-camera-cc0808",
         "src_in": 0.0,
         "src_out": 1.28,
-        "tl_in": 330.3,
+        "tl_in": 328.0,
         "speed": 1.6,
         "effects": [
           {
@@ -2035,7 +2592,7 @@
         "asset": "20260907-camera-cc0808",
         "src_in": 1.28,
         "src_out": 3.08,
-        "tl_in": 331.1,
+        "tl_in": 328.8,
         "speed": 1.0,
         "effects": [],
         "note": "Dance-Move Teil A normal",
@@ -2046,7 +2603,7 @@
         "asset": "20260905-phone-830ba1",
         "src_in": 0.0,
         "src_out": 1.0,
-        "tl_in": 332.9,
+        "tl_in": 330.6,
         "speed": 1.0,
         "effects": [],
         "note": "Bar-Bild, Blitz zwischen den Videos"
@@ -2056,7 +2613,7 @@
         "asset": "20260907-camera-cc0808",
         "src_in": 8.0,
         "src_out": 10.2,
-        "tl_in": 333.9,
+        "tl_in": 331.6,
         "speed": 1.0,
         "effects": [],
         "note": "Teil B - runtergehen",
@@ -2067,44 +2624,32 @@
         "asset": "20260905-phone-ed34d1",
         "src_in": 0.0,
         "src_out": 1.4,
-        "tl_in": 336.1,
+        "tl_in": 333.8,
         "speed": 1.0,
-        "effects": [],
-        "note": "rote japanische Leuchtschrift - absolutes Muss"
-      },
-      {
-        "id": "v144",
-        "asset": "20260907-camera-8794ae",
-        "src_in": 139.6,
-        "src_out": 142.0,
-        "tl_in": 337.5,
-        "speed": 1.6,
         "effects": [
           {
-            "type": "speedlines",
-            "note": "party-fx: Speed-Ramp in die Drehung"
+            "type": "kenburns",
+            "from": [
+              0.0,
+              0.0,
+              1.02
+            ],
+            "to": [
+              -0.03,
+              0.03,
+              1.1
+            ],
+            "ease": "smooth"
           }
         ],
-        "note": "Karaoke-Gesang run-up (Speed-Ramp 1.6x)",
-        "intentional_repeat": true
-      },
-      {
-        "id": "v145",
-        "asset": "20260907-camera-8794ae",
-        "src_in": 142.0,
-        "src_out": 147.5,
-        "tl_in": 339.0,
-        "speed": 1.0,
-        "effects": [],
-        "note": "Hauptstelle dreht sich um; O-Ton-Clip -12 dB; endet auf 344.50 (Loop-Naht 2)",
-        "intentional_repeat": true
+        "note": "rote japanische Leuchtschrift - absolutes Muss"
       },
       {
         "id": "v146",
         "asset": "20260907-camera-283b7c",
         "src_in": 0.0,
         "src_out": 2.2,
-        "tl_in": 344.5,
+        "tl_in": 335.2,
         "speed": 1.0,
         "effects": [],
         "note": "MOV Braeutigam drueckt jemanden, Daumen hoch"
@@ -2114,7 +2659,7 @@
         "asset": "20260907-camera-9bc26f",
         "src_in": 24.0,
         "src_out": 26.6,
-        "tl_in": 346.7,
+        "tl_in": 337.4,
         "speed": 1.0,
         "effects": [],
         "note": "MOV Braeutigam singt (gekuerzt); nur Musik"
@@ -2124,7 +2669,7 @@
         "asset": "20260905-camera-251729",
         "src_in": 8.0,
         "src_out": 12.4,
-        "tl_in": 349.3,
+        "tl_in": 340.0,
         "speed": 1.0,
         "effects": [
           {
@@ -2135,14 +2680,40 @@
             "note": "party-fx"
           }
         ],
-        "note": "MOV Tequila-Shot hochgehalten; O-Ton-Clip -13 dB"
+        "note": "MOV Tequila-Shot hochgehalten; O-Ton-Clip -13 dB",
+        "fit": "blur"
+      },
+      {
+        "id": "v113",
+        "asset": "20260905-phone-e70c57",
+        "src_in": 0.0,
+        "src_out": 1.6,
+        "tl_in": 344.4,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.05,
+              -0.03,
+              1.02
+            ],
+            "to": [
+              0.03,
+              0.04,
+              1.12
+            ],
+            "ease": "in"
+          }
+        ],
+        "note": "rote Leuchtschrift La Pod; Cut bei 284.60 deckt Loop-Naht 1"
       },
       {
         "id": "v149",
         "asset": "20260906-phone-5dec8d",
         "src_in": 0.0,
         "src_out": 1.6,
-        "tl_in": 353.7,
+        "tl_in": 346.0,
         "speed": 1.0,
         "effects": [],
         "note": "naechtlicher Kopfsteinpflaster-Platz"
@@ -2152,9 +2723,24 @@
         "asset": "20260906-phone-cb0594",
         "src_in": 0.0,
         "src_out": 2.0,
-        "tl_in": 355.3,
+        "tl_in": 347.6,
         "speed": 1.0,
-        "effects": [],
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.04,
+              -0.04,
+              1.03
+            ],
+            "to": [
+              -0.04,
+              0.05,
+              1.13
+            ],
+            "ease": "in"
+          }
+        ],
         "fit": "blur",
         "note": "Neon Delirium Village mit Elefant + Pfeil"
       },
@@ -2163,9 +2749,24 @@
         "asset": "20260906-phone-2dde02",
         "src_in": 0.0,
         "src_out": 1.8,
-        "tl_in": 357.3,
+        "tl_in": 349.6,
         "speed": 1.0,
-        "effects": [],
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.0,
+              0.06,
+              1.02
+            ],
+            "to": [
+              -0.03,
+              -0.03,
+              1.12
+            ],
+            "ease": "in"
+          }
+        ],
         "note": "The Dubliner"
       },
       {
@@ -2173,7 +2774,7 @@
         "asset": "20260906-phone-c3c909",
         "src_in": 0.0,
         "src_out": 1.6,
-        "tl_in": 359.1,
+        "tl_in": 351.4,
         "speed": 1.0,
         "effects": [],
         "note": "zwei Maenner posieren nachts; Text dezent"
@@ -2183,9 +2784,24 @@
         "asset": "20260906-phone-159fb6",
         "src_in": 0.0,
         "src_out": 1.4,
-        "tl_in": 360.7,
+        "tl_in": 353.0,
         "speed": 1.0,
-        "effects": [],
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.04,
+              0.03,
+              1.03
+            ],
+            "to": [
+              0.04,
+              -0.04,
+              1.12
+            ],
+            "ease": "smooth"
+          }
+        ],
         "note": "Blick von der Rueckbank"
       },
       {
@@ -2193,7 +2809,7 @@
         "asset": "20260907-camera-7a03f0",
         "src_in": 10.0,
         "src_out": 13.4,
-        "tl_in": 362.1,
+        "tl_in": 354.4,
         "speed": 1.0,
         "effects": [],
         "note": "MOV Taxi-POV ab ~10s; kein O-Ton, nur Musik"
@@ -2203,39 +2819,84 @@
         "asset": "20260906-phone-ab651c",
         "src_in": 0.0,
         "src_out": 2.4,
-        "tl_in": 365.5,
+        "tl_in": 357.8,
         "speed": 1.0,
-        "effects": [],
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.05,
+              -0.03,
+              1.02
+            ],
+            "to": [
+              0.03,
+              0.04,
+              1.12
+            ],
+            "ease": "in"
+          }
+        ],
         "note": "Gurken vor offenem Kuehlschrank; Text WTF?"
-      },
-      {
-        "id": "v156",
-        "asset": "20260906-phone-eb2bb6",
-        "src_in": 0.0,
-        "src_out": 1.8,
-        "tl_in": 367.9,
-        "speed": 1.0,
-        "effects": [],
-        "note": "Maenner luemmeln auf den Betten (Nachthaus 1)"
       },
       {
         "id": "v157",
         "asset": "20260906-phone-ba621b",
         "src_in": 0.0,
         "src_out": 2.2,
-        "tl_in": 369.7,
+        "tl_in": 360.2,
         "speed": 1.0,
         "effects": [],
         "note": "Gruppen-Selfie von oben, Crew-Shirts (Nachthaus 2)"
+      },
+      {
+        "id": "v156",
+        "asset": "20260906-phone-eb2bb6",
+        "src_in": 0.0,
+        "src_out": 1.8,
+        "tl_in": 362.4,
+        "speed": 1.0,
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.04,
+              -0.04,
+              1.03
+            ],
+            "to": [
+              -0.04,
+              0.05,
+              1.13
+            ],
+            "ease": "in"
+          }
+        ],
+        "note": "Maenner luemmeln auf den Betten (Nachthaus 1)"
       },
       {
         "id": "v158",
         "asset": "20260906-phone-b6e756",
         "src_in": 0.0,
         "src_out": 2.2,
-        "tl_in": 371.9,
+        "tl_in": 364.2,
         "speed": 1.0,
-        "effects": [],
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.0,
+              0.06,
+              1.02
+            ],
+            "to": [
+              -0.03,
+              -0.03,
+              1.12
+            ],
+            "ease": "in"
+          }
+        ],
         "note": "Crew-Shirts, Arme aus; Text Ich war es nicht."
       },
       {
@@ -2243,7 +2904,7 @@
         "asset": "20260906-phone-5f70d5",
         "src_in": 0.0,
         "src_out": 3.28,
-        "tl_in": 374.1,
+        "tl_in": 366.4,
         "speed": 1.0,
         "effects": [],
         "note": "albern am Kuehlschrank; Text dreizeilig Gurken; Text weg vor Schwarzblende; auf 377.38 bricht Miserlou ab"
@@ -2253,7 +2914,7 @@
         "asset": "generated-black",
         "src_in": 0.0,
         "src_out": 2.2,
-        "tl_in": 376.58,
+        "tl_in": 368.88,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
@@ -2269,7 +2930,7 @@
         "asset": "20260906-phone-5e04c0",
         "src_in": 0.0,
         "src_out": 5.4,
-        "tl_in": 377.98,
+        "tl_in": 370.28,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
@@ -2277,14 +2938,15 @@
           "hold": 0.0
         },
         "effects": [],
-        "note": "Christoph liegt da, Daumen hoch - hier blenden wir rein; Text Where is my mind?"
+        "note": "Christoph liegt da, Daumen hoch - hier blenden wir rein; Text Where is my mind?",
+        "fit": "pad"
       },
       {
         "id": "v162",
         "asset": "20260906-phone-5239b1",
         "src_in": 0.0,
         "src_out": 5.4,
-        "tl_in": 382.78,
+        "tl_in": 375.08,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
@@ -2292,14 +2954,15 @@
           "hold": 0.0
         },
         "effects": [],
-        "note": "Michael, hell, Airbnb"
+        "note": "Michael, hell, Airbnb",
+        "fit": "pad"
       },
       {
         "id": "v163",
         "asset": "20260906-phone-ce985f",
         "src_in": 0.0,
         "src_out": 5.8,
-        "tl_in": 387.58,
+        "tl_in": 379.88,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
@@ -2314,14 +2977,29 @@
         "asset": "20260906-phone-35286c",
         "src_in": 0.0,
         "src_out": 5.6,
-        "tl_in": 392.78,
+        "tl_in": 385.08,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
           "dur": 0.6,
           "hold": 0.0
         },
-        "effects": [],
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              0.05,
+              0.03,
+              1.12
+            ],
+            "to": [
+              -0.04,
+              -0.04,
+              1.0
+            ],
+            "ease": "in"
+          }
+        ],
         "note": "Gruppe auf den Sofas, der neue Tag"
       },
       {
@@ -2329,22 +3007,38 @@
         "asset": "20260908-unknown-46ec88",
         "src_in": 0.0,
         "src_out": 5.2,
-        "tl_in": 397.78,
+        "tl_in": 390.08,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
           "dur": 0.6,
           "hold": 0.0
         },
-        "effects": [],
-        "note": "Hagi mit Koffer am Bordstein"
+        "effects": [
+          {
+            "type": "kenburns",
+            "from": [
+              -0.04,
+              0.04,
+              1.12
+            ],
+            "to": [
+              0.04,
+              -0.03,
+              1.0
+            ],
+            "ease": "smooth"
+          }
+        ],
+        "note": "Hagi mit Koffer am Bordstein",
+        "fit": "blur"
       },
       {
         "id": "v166",
         "asset": "20260906-phone-85a96b",
         "src_in": 0.0,
-        "src_out": 5.4,
-        "tl_in": 402.38,
+        "src_out": 4.4,
+        "tl_in": 394.68,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
@@ -2359,7 +3053,7 @@
         "asset": "20260906-phone-3f78c2",
         "src_in": 0.0,
         "src_out": 5.2,
-        "tl_in": 407.18,
+        "tl_in": 398.48,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
@@ -2367,14 +3061,15 @@
           "hold": 0.0
         },
         "effects": [],
-        "note": "mehrere warten mit Rucksaecken"
+        "note": "mehrere warten mit Rucksaecken",
+        "fit": "pad"
       },
       {
         "id": "v168",
         "asset": "20260907-unknown-653744",
         "src_in": 0.0,
         "src_out": 5.6,
-        "tl_in": 411.78,
+        "tl_in": 403.08,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
@@ -2382,14 +3077,15 @@
           "hold": 0.0
         },
         "effects": [],
-        "note": "Auto-Schlaf angeschnallt (Zwang: zuerst von beiden)"
+        "note": "Auto-Schlaf angeschnallt (Zwang: zuerst von beiden)",
+        "fit": "blur"
       },
       {
         "id": "v169",
         "asset": "20260907-unknown-0ff60c",
         "src_in": 0.0,
         "src_out": 5.6,
-        "tl_in": 416.78,
+        "tl_in": 408.08,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
@@ -2397,14 +3093,15 @@
           "hold": 0.0
         },
         "effects": [],
-        "note": "Auto-Schlaf mit Nackenkissen (Zwang: danach, letztes)"
+        "note": "Auto-Schlaf mit Nackenkissen (Zwang: danach, letztes)",
+        "fit": "blur"
       },
       {
         "id": "v170",
         "asset": "jga-outro-card",
         "src_in": 0.0,
-        "src_out": 5.5,
-        "tl_in": 421.38,
+        "src_out": 8.0,
+        "tl_in": 412.68,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
@@ -2419,7 +3116,7 @@
         "asset": "generated-black",
         "src_in": 0.0,
         "src_out": 2.52,
-        "tl_in": 425.88,
+        "tl_in": 419.68,
         "speed": 1.0,
         "transition_in": {
           "type": "dissolve",
@@ -2435,437 +3132,136 @@
       {
         "id": "ov-letsgo",
         "png": "overlays/ov-letsgo.png",
-        "tl_in": 5.8,
-        "dur": 3.2,
+        "tl_in": 5.9,
+        "dur": 3.0,
         "anim": {
           "fade_in_s": "0.25",
-          "fade_out_s": "0.35"
+          "fade_out_s": "0.35",
+          "slide_from_py": "60",
+          "slide_in_s": "0.4"
         },
-        "template": "title-only",
-        "text": "Let's go",
-        "placement": "bottom-right",
-        "note": "gross bold schraeg Schatten; Let's und go nacheinander rein | PNG rendert design/party-fx"
+        "placement": "top-right",
+        "text": "Let's go"
       },
       {
         "id": "ov-sulemann",
         "png": "overlays/ov-sulemann.png",
         "tl_in": 32.2,
-        "dur": 3.2,
+        "dur": 3.0,
         "anim": {
           "fade_in_s": "0.25",
-          "fade_out_s": "0.35"
+          "fade_out_s": "0.35",
+          "slide_from_py": "60",
+          "slide_in_s": "0.4"
         },
-        "template": "subtitle-only",
-        "text": "Der Mann des Abends:\nSuleman Pizza-Star",
         "placement": "bottom-left",
-        "note": "zweizeilig; Schreibweise Sueleman/Suleman (design) | PNG rendert design/party-fx"
+        "text": "Der Mann des Abends\nPizzamann Sülemann"
       },
       {
         "id": "ov-biere",
         "png": "overlays/ov-biere.png",
         "tl_in": 103.0,
-        "dur": 2.8,
+        "dur": 2.6,
         "anim": {
           "fade_in_s": "0.25",
-          "fade_out_s": "0.35"
+          "fade_out_s": "0.35",
+          "slide_from_py": "60",
+          "slide_in_s": "0.4"
         },
-        "template": "title-only",
-        "text": "~250 Biere",
         "placement": "bottom-right",
-        "note": "handgemalt-dynamisch | PNG rendert design/party-fx"
+        "text": "500+ Biere"
       },
       {
         "id": "ov-praesente",
         "png": "overlays/ov-praesente.png",
-        "tl_in": 147.0,
+        "tl_in": 146.7,
         "dur": 2.4,
         "anim": {
           "fade_in_s": "0.25",
-          "fade_out_s": "0.35"
+          "fade_out_s": "0.35",
+          "slide_from_py": "60",
+          "slide_in_s": "0.4"
         },
-        "template": "subtitle-only",
-        "text": "Praesente fuer den Junggesellen",
-        "placement": "bottom-left",
-        "note": "PNG rendert design/party-fx"
+        "placement": "top-left",
+        "text": "Präsente für den Junggesellen"
       },
       {
         "id": "ov-geniesst",
         "png": "overlays/ov-geniesst.png",
-        "tl_in": 156.7,
+        "tl_in": 156.4,
         "dur": 2.8,
         "anim": {
           "fade_in_s": "0.25",
-          "fade_out_s": "0.35"
+          "fade_out_s": "0.35",
+          "slide_from_py": "60",
+          "slide_in_s": "0.4"
         },
-        "template": "subtitle-only",
-        "text": "Ein bisschen\ngeniesst er es\nja schon",
         "placement": "top-left",
-        "note": "dreizeilig, coole Schrift | PNG rendert design/party-fx"
-      },
-      {
-        "id": "ov-kunstfigur",
-        "png": "overlays/ov-kunstfigur.png",
-        "tl_in": 166.3,
-        "dur": 3.0,
-        "anim": {
-          "fade_in_s": "0.25",
-          "fade_out_s": "0.35"
-        },
-        "template": "title-only",
-        "text": "Die wandelnde Kunstfigur",
-        "placement": "bottom-right",
-        "note": "party-fx formuliert endgueltig | PNG rendert design/party-fx"
+        "text": "Ein bisschen\ngenießt er es\nja schon"
       },
       {
         "id": "ov-crewupdate",
         "png": "overlays/ov-crewupdate.png",
-        "tl_in": 183.73,
-        "dur": 1.7,
+        "tl_in": 183.43,
+        "dur": 1.9,
         "anim": {
-          "fade_in_s": "0.2",
-          "fade_out_s": "0.3"
+          "fade_in_s": "0.25",
+          "fade_out_s": "0.35",
+          "slide_from_py": "60",
+          "slide_in_s": "0.4"
         },
-        "template": "subtitle-only",
-        "text": "Crew-Update - die verlorenen Soehne stossen dazu",
         "placement": "bottom-left",
-        "note": "PNG rendert design/party-fx"
+        "text": "Crew-Update\nDie verlorenen Söhne stoßen dazu"
       },
       {
         "id": "ov-rooftop",
         "png": "overlays/ov-rooftop.png",
-        "tl_in": 225.4,
-        "dur": 2.0,
+        "tl_in": 220.0,
+        "dur": 2.2,
         "anim": {
           "fade_in_s": "0.25",
-          "fade_out_s": "0.35"
+          "fade_out_s": "0.35",
+          "slide_from_py": "60",
+          "slide_in_s": "0.4"
         },
-        "template": "title-only",
-        "text": "Rooftop Bar 58 - wir kommen",
         "placement": "top-left",
-        "note": "geile Schrift, nicht ueber die Gesichter | PNG rendert design/party-fx"
+        "text": "Rooftop Bar 58 — wir kommen"
       },
       {
         "id": "ov-hydrated",
         "png": "overlays/ov-hydrated.png",
-        "tl_in": 245.6,
-        "dur": 1.7,
+        "tl_in": 238.4,
+        "dur": 2.0,
         "anim": {
-          "fade_in_s": "0.2",
-          "fade_out_s": "0.3"
+          "fade_in_s": "0.25",
+          "fade_out_s": "0.35",
+          "drift_px": "16",
+          "drift_py": "10",
+          "drift_mode": "sine",
+          "drift_period_s": "0.35"
         },
-        "template": "title-only",
-        "text": "stay\nhydrated",
         "placement": "top-right",
-        "note": "zwei Elemente gegeneinander, Werbecharakter | PNG rendert design/party-fx"
+        "text": "stay\nhydrated"
       },
       {
         "id": "ov-christoph",
         "png": "overlays/ov-christoph.png",
-        "tl_in": 247.8,
-        "dur": 1.9,
-        "anim": {
-          "fade_in_s": "0.2",
-          "fade_out_s": "0.3"
-        },
-        "template": "title-only",
-        "text": "Wo ist Christoph???",
-        "placement": "bottom-right",
-        "note": "kleiner, drei Fragezeichen, nicht mittig | PNG rendert design/party-fx"
-      },
-      {
-        "id": "ov-token",
-        "png": "overlays/ov-token.png",
-        "tl_in": 279.2,
-        "dur": 1.9,
-        "anim": {
-          "fade_in_s": "0.2",
-          "fade_out_s": "0.3"
-        },
-        "template": "subtitle-only",
-        "text": "wolle Token kaufen ???",
-        "placement": "bottom-left",
-        "note": "wolle klein, Token gross, kaufen klein | PNG rendert design/party-fx"
-      },
-      {
-        "id": "ov-lampen",
-        "png": "overlays/ov-lampen.png",
-        "tl_in": 322.45,
-        "dur": 1.4,
-        "anim": {
-          "fade_in_s": "0.2",
-          "fade_out_s": "0.3"
-        },
-        "template": "subtitle-only",
-        "text": "Gehen hier etwa schon die Lampen aus?",
-        "placement": "bottom-right",
-        "note": "mit Abstand zum Rand, nicht ueber Gesichter | PNG rendert design/party-fx"
-      },
-      {
-        "id": "ov-natuerlich",
-        "png": "overlays/ov-natuerlich.png",
-        "tl_in": 326.4,
-        "dur": 2.2,
+        "tl_in": 240.7,
+        "dur": 2.0,
         "anim": {
           "fade_in_s": "0.25",
-          "fade_out_s": "0.35"
-        },
-        "template": "subtitle-only",
-        "text": "Natuerlich ... (noch nicht)",
-        "placement": "bottom-right",
-        "note": "noch nicht in Klammern | PNG rendert design/party-fx"
-      },
-      {
-        "id": "ov-weiterziehen",
-        "png": "overlays/ov-weiterziehen.png",
-        "tl_in": 359.25,
-        "dur": 1.3,
-        "anim": {
-          "fade_in_s": "0.2",
-          "fade_out_s": "0.3"
-        },
-        "template": "subtitle-only",
-        "text": "Noch ahnen sie nicht, wie toll der Abend wird",
-        "placement": "bottom-right",
-        "note": "dezent, party-fx formuliert | PNG rendert design/party-fx"
-      },
-      {
-        "id": "ov-wtf",
-        "png": "overlays/ov-wtf.png",
-        "tl_in": 365.8,
-        "dur": 1.8,
-        "anim": {
-          "fade_in_s": "0.25",
-          "fade_out_s": "0.35"
-        },
-        "template": "title-only",
-        "text": "WTF?",
-        "placement": "bottom-right",
-        "note": "gross, animiert | PNG rendert design/party-fx"
-      },
-      {
-        "id": "ov-ichwaresnicht",
-        "png": "overlays/ov-ichwaresnicht.png",
-        "tl_in": 372.2,
-        "dur": 1.6,
-        "anim": {
-          "fade_in_s": "0.25",
-          "fade_out_s": "0.35"
-        },
-        "template": "subtitle-only",
-        "text": "Ich war es nicht.",
-        "placement": "bottom-right",
-        "note": "Christoph-Gag | PNG rendert design/party-fx"
-      },
-      {
-        "id": "ov-gurken",
-        "png": "overlays/ov-gurken.png",
-        "tl_in": 374.3,
-        "dur": 2.1,
-        "anim": {
-          "fade_in_s": "0.25",
-          "fade_out_s": "0.35"
-        },
-        "template": "subtitle-only",
-        "text": "Der Michael mag Gurken.\nGib mir Gurken.\nDer Michael braucht Gurken.",
-        "placement": "bottom-left",
-        "note": "dreizeilig; weg bevor die Schwarzblende beginnt | PNG rendert design/party-fx"
-      },
-      {
-        "id": "ov-wimm",
-        "png": "overlays/ov-wimm.png",
-        "tl_in": 379.18,
-        "dur": 3.4,
-        "anim": {
-          "fade_in_s": "0.25",
-          "fade_out_s": "0.35"
-        },
-        "template": "subtitle-only",
-        "text": "Where is my mind?",
-        "placement": "bottom-left",
-        "note": "weg vor dem naechsten Fade | PNG rendert design/party-fx"
-      },
-      {
-        "id": "ov-cast-01-witte",
-        "png": "overlays/ov-cast-01-witte.png",
-        "tl_in": 306.8,
-        "dur": 1.2,
-        "anim": {
-          "fade_in_s": "0.12",
-          "fade_out_s": "0.5",
-          "slide_from_py": "-40",
-          "slide_in_s": "0.12"
-        },
-        "template": "title-only",
-        "text": "Witte",
-        "placement": "bottom-left",
-        "note": "Bangers, schraeg, Buchstaben einzeln rein. Name blendet ueber fade_out_s 0.5 sichtbar vor dem Cut aus; Overlay-dur 1.2 = QC-Untergrenze MIN_OVERLAY_READABLE_S > Fotofenster 0.9s, Name ragt ~0.3s (fade-out) ins Folgefoto - Beat-Grid/Anker-Mathematik bewusst unangetastet (T8). | PNG rendert design/party-fx"
-      },
-      {
-        "id": "ov-cast-02-christoph",
-        "png": "overlays/ov-cast-02-christoph.png",
-        "tl_in": 307.7,
-        "dur": 1.2,
-        "anim": {
-          "fade_in_s": "0.12",
-          "fade_out_s": "0.5",
-          "slide_from_py": "-40",
-          "slide_in_s": "0.12"
-        },
-        "template": "title-only",
-        "text": "Christoph",
-        "placement": "bottom-right",
-        "note": "Bangers, schraeg, Buchstaben einzeln rein. Name blendet ueber fade_out_s 0.5 sichtbar vor dem Cut aus; Overlay-dur 1.2 = QC-Untergrenze MIN_OVERLAY_READABLE_S > Fotofenster 0.9s, Name ragt ~0.3s (fade-out) ins Folgefoto - Beat-Grid/Anker-Mathematik bewusst unangetastet (T8). | PNG rendert design/party-fx"
-      },
-      {
-        "id": "ov-cast-03-matti",
-        "png": "overlays/ov-cast-03-matti.png",
-        "tl_in": 308.6,
-        "dur": 1.2,
-        "anim": {
-          "fade_in_s": "0.12",
-          "fade_out_s": "0.5",
-          "slide_from_py": "-40",
-          "slide_in_s": "0.12"
-        },
-        "template": "title-only",
-        "text": "Matti",
-        "placement": "bottom-left",
-        "note": "Bangers, schraeg, Buchstaben einzeln rein. Name blendet ueber fade_out_s 0.5 sichtbar vor dem Cut aus; Overlay-dur 1.2 = QC-Untergrenze MIN_OVERLAY_READABLE_S > Fotofenster 0.9s, Name ragt ~0.3s (fade-out) ins Folgefoto - Beat-Grid/Anker-Mathematik bewusst unangetastet (T8). | PNG rendert design/party-fx"
-      },
-      {
-        "id": "ov-cast-04-bartosz",
-        "png": "overlays/ov-cast-04-bartosz.png",
-        "tl_in": 309.5,
-        "dur": 1.2,
-        "anim": {
-          "fade_in_s": "0.12",
-          "fade_out_s": "0.5",
-          "slide_from_py": "-40",
-          "slide_in_s": "0.12"
-        },
-        "template": "title-only",
-        "text": "Bartosz",
-        "placement": "bottom-right",
-        "note": "Bangers, schraeg, Buchstaben einzeln rein. Name blendet ueber fade_out_s 0.5 sichtbar vor dem Cut aus; Overlay-dur 1.2 = QC-Untergrenze MIN_OVERLAY_READABLE_S > Fotofenster 0.9s, Name ragt ~0.3s (fade-out) ins Folgefoto - Beat-Grid/Anker-Mathematik bewusst unangetastet (T8). | PNG rendert design/party-fx"
-      },
-      {
-        "id": "ov-cast-05-hagi",
-        "png": "overlays/ov-cast-05-hagi.png",
-        "tl_in": 310.4,
-        "dur": 1.2,
-        "anim": {
-          "fade_in_s": "0.12",
-          "fade_out_s": "0.5",
-          "slide_from_py": "-40",
-          "slide_in_s": "0.12"
-        },
-        "template": "title-only",
-        "text": "Hagi",
-        "placement": "bottom-left",
-        "note": "Bangers, schraeg, Buchstaben einzeln rein. Name blendet ueber fade_out_s 0.5 sichtbar vor dem Cut aus; Overlay-dur 1.2 = QC-Untergrenze MIN_OVERLAY_READABLE_S > Fotofenster 0.9s, Name ragt ~0.3s (fade-out) ins Folgefoto - Beat-Grid/Anker-Mathematik bewusst unangetastet (T8). | PNG rendert design/party-fx"
-      },
-      {
-        "id": "ov-cast-06-bernhard",
-        "png": "overlays/ov-cast-06-bernhard.png",
-        "tl_in": 311.3,
-        "dur": 1.2,
-        "anim": {
-          "fade_in_s": "0.12",
-          "fade_out_s": "0.5",
-          "slide_from_py": "-40",
-          "slide_in_s": "0.12"
-        },
-        "template": "title-only",
-        "text": "Bernhard",
-        "placement": "bottom-right",
-        "note": "Bangers, schraeg, Buchstaben einzeln rein. Name blendet ueber fade_out_s 0.5 sichtbar vor dem Cut aus; Overlay-dur 1.2 = QC-Untergrenze MIN_OVERLAY_READABLE_S > Fotofenster 0.9s, Name ragt ~0.3s (fade-out) ins Folgefoto - Beat-Grid/Anker-Mathematik bewusst unangetastet (T8). | PNG rendert design/party-fx"
-      },
-      {
-        "id": "ov-cast-07-andre",
-        "png": "overlays/ov-cast-07-andre.png",
-        "tl_in": 312.2,
-        "dur": 1.2,
-        "anim": {
-          "fade_in_s": "0.12",
-          "fade_out_s": "0.5",
-          "slide_from_py": "-40",
-          "slide_in_s": "0.12"
-        },
-        "template": "title-only",
-        "text": "André",
-        "placement": "bottom-left",
-        "note": "Bangers, schraeg, Buchstaben einzeln rein. Name blendet ueber fade_out_s 0.5 sichtbar vor dem Cut aus; Overlay-dur 1.2 = QC-Untergrenze MIN_OVERLAY_READABLE_S > Fotofenster 0.9s, Name ragt ~0.3s (fade-out) ins Folgefoto - Beat-Grid/Anker-Mathematik bewusst unangetastet (T8). | PNG rendert design/party-fx"
-      },
-      {
-        "id": "ov-cast-08-skuub",
-        "png": "overlays/ov-cast-08-skuub.png",
-        "tl_in": 313.1,
-        "dur": 1.2,
-        "anim": {
-          "fade_in_s": "0.12",
-          "fade_out_s": "0.5",
-          "slide_from_py": "-40",
-          "slide_in_s": "0.12"
-        },
-        "template": "title-only",
-        "text": "Skuub",
-        "placement": "bottom-right",
-        "note": "Bangers, schraeg, Buchstaben einzeln rein. Name blendet ueber fade_out_s 0.5 sichtbar vor dem Cut aus; Overlay-dur 1.2 = QC-Untergrenze MIN_OVERLAY_READABLE_S > Fotofenster 0.9s, Name ragt ~0.3s (fade-out) ins Folgefoto - Beat-Grid/Anker-Mathematik bewusst unangetastet (T8). | PNG rendert design/party-fx"
-      },
-      {
-        "id": "ov-cast-09-micha",
-        "png": "overlays/ov-cast-09-micha.png",
-        "tl_in": 314.0,
-        "dur": 1.5,
-        "anim": {
-          "fade_in_s": "0.12",
           "fade_out_s": "0.35",
-          "slide_from_py": "-40",
-          "slide_in_s": "0.12"
+          "slide_from_py": "60",
+          "slide_in_s": "0.4"
         },
-        "template": "title-only",
-        "text": "Micha im Delirium",
         "placement": "bottom-left",
-        "note": "Bangers, schraeg, Buchstaben einzeln rein; Sonderblau #4fd8ff, Stempel 'Micha im Delirium'. Overlay endet exakt mit dem 1,5s-Foto (kein Ueberhang). | PNG rendert design/party-fx"
+        "text": "Wo ist Christoph???"
       },
       {
-        "id": "ov-fx-sticker-baer",
-        "png": "overlays/ov-fx-sticker-baer.png",
-        "tl_in": 126.0,
-        "dur": 1.6,
-        "anim": {
-          "fade_in_s": "0.2",
-          "fade_out_s": "0.25",
-          "drift_py": "-26",
-          "drift_mode": "linear",
-          "drift_dur_s": "1.2",
-          "slide_in_s": "0.2"
-        },
-        "template": "sticker",
-        "text": "*",
-        "note": "1390 Pappbaer - EINZIGER Akt-1-FX-Akzent (§0.6/§5). Stern-Sticker gold, sprudelt leicht hoch. Ziel-VideoClip v040 (125.3-128.5). | PNG rendert design/party-fx (recipe)"
-      },
-      {
-        "id": "ov-fx-delirium",
-        "png": "overlays/ov-fx-delirium.png",
-        "tl_in": 212.6,
+        "id": "ov-fx-herz-1706",
+        "png": "overlays/ov-fx-herz-1706.png",
+        "tl_in": 258.0,
         "dur": 1.5,
-        "anim": {
-          "fade_in_s": "0.15",
-          "fade_out_s": "0.2",
-          "drift_px": "7",
-          "drift_period_s": "0.14",
-          "slide_in_s": "0.2"
-        },
-        "template": "title-only",
-        "text": "Delirium",
-        "note": "1464 Delirium-Neon - 'Delirium' als zittrige Pink-Neon-Leuchtschrift (§5). drift_px 7 / period 0.14s = Zittern. Ziel-VideoClip v074 (212.2-214.4). | PNG rendert design/party-fx (recipe)"
-      },
-      {
-        "id": "ov-fx-krone-1707",
-        "png": "overlays/ov-fx-krone-1707.png",
-        "tl_in": 260.7,
-        "dur": 1.4,
         "anim": {
           "fade_in_s": "0.2",
           "fade_out_s": "0.25",
@@ -2875,25 +3271,288 @@
           "slide_in_s": "0.2"
         },
         "template": "sticker",
-        "text": "crown",
-        "note": "1707 Dachterrasse - goldene Krone (§5, Herzchen+Kronen). Sprudelt hoch. Ziel-VideoClip v100 (260.4-262.4). | PNG rendert design/party-fx (recipe)"
+        "text": "heart"
       },
       {
-        "id": "ov-fx-herz-1706",
-        "png": "overlays/ov-fx-herz-1706.png",
-        "tl_in": 268.7,
-        "dur": 1.5,
+        "id": "ov-token",
+        "png": "overlays/ov-token.png",
+        "tl_in": 268.6,
+        "dur": 2.0,
+        "anim": {
+          "fade_in_s": "0.25",
+          "fade_out_s": "0.35",
+          "slide_from_py": "60",
+          "slide_in_s": "0.4"
+        },
+        "placement": "bottom-left",
+        "text": "wolle Token kaufen ???"
+      },
+      {
+        "id": "ov-cast-01-witte",
+        "png": "overlays/ov-cast-01-witte.png",
+        "tl_in": 293.65,
+        "dur": 1.3,
+        "anim": {
+          "fade_in_s": "0.12",
+          "fade_out_s": "0.5",
+          "slide_from_py": "-40",
+          "slide_in_s": "0.12"
+        },
+        "placement": "bottom-left",
+        "text": "Witte"
+      },
+      {
+        "id": "ov-cast-02-christoph",
+        "png": "overlays/ov-cast-02-christoph.png",
+        "tl_in": 295.05,
+        "dur": 1.3,
+        "anim": {
+          "fade_in_s": "0.12",
+          "fade_out_s": "0.5",
+          "slide_from_py": "-40",
+          "slide_in_s": "0.12"
+        },
+        "placement": "bottom-right",
+        "text": "Christoph"
+      },
+      {
+        "id": "ov-cast-03-matti",
+        "png": "overlays/ov-cast-03-matti.png",
+        "tl_in": 296.45,
+        "dur": 1.3,
+        "anim": {
+          "fade_in_s": "0.12",
+          "fade_out_s": "0.5",
+          "slide_from_py": "-40",
+          "slide_in_s": "0.12"
+        },
+        "placement": "bottom-left",
+        "text": "Matti"
+      },
+      {
+        "id": "ov-cast-04-bartosz",
+        "png": "overlays/ov-cast-04-bartosz.png",
+        "tl_in": 297.85,
+        "dur": 1.3,
+        "anim": {
+          "fade_in_s": "0.12",
+          "fade_out_s": "0.5",
+          "slide_from_py": "-40",
+          "slide_in_s": "0.12"
+        },
+        "placement": "bottom-right",
+        "text": "Bartosz"
+      },
+      {
+        "id": "ov-cast-05-hagi",
+        "png": "overlays/ov-cast-05-hagi.png",
+        "tl_in": 299.25,
+        "dur": 1.3,
+        "anim": {
+          "fade_in_s": "0.12",
+          "fade_out_s": "0.5",
+          "slide_from_py": "-40",
+          "slide_in_s": "0.12"
+        },
+        "placement": "bottom-left",
+        "text": "Hagi"
+      },
+      {
+        "id": "ov-cast-06-bernhard",
+        "png": "overlays/ov-cast-06-bernhard.png",
+        "tl_in": 300.65,
+        "dur": 1.3,
+        "anim": {
+          "fade_in_s": "0.12",
+          "fade_out_s": "0.5",
+          "slide_from_py": "-40",
+          "slide_in_s": "0.12"
+        },
+        "placement": "bottom-right",
+        "text": "Bernhard"
+      },
+      {
+        "id": "ov-cast-07-andre",
+        "png": "overlays/ov-cast-07-andre.png",
+        "tl_in": 302.05,
+        "dur": 1.3,
+        "anim": {
+          "fade_in_s": "0.12",
+          "fade_out_s": "0.5",
+          "slide_from_py": "-40",
+          "slide_in_s": "0.12"
+        },
+        "placement": "bottom-left",
+        "text": "Andre"
+      },
+      {
+        "id": "ov-cast-08-skuub",
+        "png": "overlays/ov-cast-08-skuub.png",
+        "tl_in": 303.45,
+        "dur": 1.3,
+        "anim": {
+          "fade_in_s": "0.12",
+          "fade_out_s": "0.5",
+          "slide_from_py": "-40",
+          "slide_in_s": "0.12"
+        },
+        "placement": "bottom-right",
+        "text": "Skuub"
+      },
+      {
+        "id": "ov-cast-09-micha",
+        "png": "overlays/ov-cast-09-micha.png",
+        "tl_in": 304.85,
+        "dur": 1.3,
+        "anim": {
+          "fade_in_s": "0.12",
+          "fade_out_s": "0.5",
+          "slide_from_py": "-40",
+          "slide_in_s": "0.12"
+        },
+        "placement": "bottom-left",
+        "text": "Micha"
+      },
+      {
+        "id": "ov-lampen",
+        "png": "overlays/ov-lampen.png",
+        "tl_in": 313.1,
+        "dur": 1.6,
+        "anim": {
+          "fade_in_s": "0.25",
+          "fade_out_s": "0.35",
+          "slide_from_py": "60",
+          "slide_in_s": "0.4"
+        },
+        "placement": "bottom-right",
+        "text": "Gehen hier etwa schon\n\t\t\tdie Lampen aus"
+      },
+      {
+        "id": "ov-natuerlich",
+        "png": "overlays/ov-natuerlich.png",
+        "tl_in": 324.6,
+        "dur": 2.2,
+        "anim": {
+          "fade_in_s": "0.25",
+          "fade_out_s": "0.35",
+          "slide_from_py": "60",
+          "slide_in_s": "0.4"
+        },
+        "placement": "bottom-right",
+        "text": "natürlich\n(noch) nicht"
+      },
+      {
+        "id": "ov-weiterziehen",
+        "png": "overlays/ov-weiterziehen.png",
+        "tl_in": 349.7,
+        "dur": 1.6,
+        "anim": {
+          "fade_in_s": "0.25",
+          "fade_out_s": "0.35",
+          "slide_from_py": "60",
+          "slide_in_s": "0.4"
+        },
+        "placement": "bottom-left",
+        "text": "Noch ahnten sie nicht\nwie toll die Nacht wird"
+      },
+      {
+        "id": "ov-wtf",
+        "png": "overlays/ov-wtf.png",
+        "tl_in": 358.0,
+        "dur": 2.0,
+        "anim": {
+          "fade_in_s": "0.25",
+          "fade_out_s": "0.35",
+          "slide_from_py": "60",
+          "slide_in_s": "0.4"
+        },
+        "placement": "top-left",
+        "text": "WTF?"
+      },
+      {
+        "id": "ov-ichwaresnicht",
+        "png": "overlays/ov-ichwaresnicht.png",
+        "tl_in": 364.4,
+        "dur": 1.8,
+        "anim": {
+          "fade_in_s": "0.25",
+          "fade_out_s": "0.35",
+          "slide_from_py": "60",
+          "slide_in_s": "0.4"
+        },
+        "placement": "bottom-right",
+        "text": "Ich war es nicht."
+      },
+      {
+        "id": "ov-gurken",
+        "png": "overlays/ov-gurken.png",
+        "tl_in": 366.5,
+        "dur": 2.2,
+        "anim": {
+          "fade_in_s": "0.25",
+          "fade_out_s": "0.35",
+          "slide_from_py": "60",
+          "slide_in_s": "0.4"
+        },
+        "placement": "bottom-left",
+        "text": "Der Michael mag Gurken.\nGib mir Gurken.\nDer Michael braucht Gurken."
+      },
+      {
+        "id": "ov-raetkeinkaese",
+        "png": "overlays/ov-raetkeinkaese.png",
+        "tl_in": 367.4,
+        "dur": 1.6,
         "anim": {
           "fade_in_s": "0.2",
-          "fade_out_s": "0.25",
-          "drift_py": "-24",
-          "drift_mode": "linear",
-          "drift_dur_s": "1.1",
-          "slide_in_s": "0.2"
+          "fade_out_s": "0.3"
         },
-        "template": "sticker",
-        "text": "heart",
-        "note": "1706 'vor der Tuer' - Herzchen (§5, Herzchen+Kronen). Sprudelt hoch. Ziel-VideoClip v104 (268.4-270.8). | PNG rendert design/party-fx (recipe)"
+        "placement": "top-right",
+        "text": "Rät kein Käse"
+      },
+      {
+        "id": "ov-wimm",
+        "png": "overlays/ov-wimm.png",
+        "tl_in": 371.28,
+        "dur": 4.0,
+        "anim": {
+          "fade_in_s": "0.25",
+          "fade_out_s": "0.35",
+          "slide_from_py": "60",
+          "slide_in_s": "0.4"
+        },
+        "placement": "top-left",
+        "text": "Where is my mind?"
+      },
+      {
+        "id": "ov-fx-herzen",
+        "png": "overlays/ov-fx-herzen.png",
+        "tl_in": 283.9,
+        "dur": 3.5,
+        "anim": {
+          "fade_in_s": "0.3",
+          "fade_out_s": "0.5",
+          "slide_from_py": "40",
+          "drift_py": "-14",
+          "drift_mode": "sine",
+          "drift_period_s": "0.5"
+        },
+        "template": "fx",
+        "text": "hearts"
+      },
+      {
+        "id": "ov-fx-sterne",
+        "png": "overlays/ov-fx-sterne.png",
+        "tl_in": 329.0,
+        "dur": 2.0,
+        "anim": {
+          "fade_in_s": "0.25",
+          "fade_out_s": "0.4",
+          "drift_px": "12",
+          "drift_mode": "sine",
+          "drift_period_s": "0.6"
+        },
+        "template": "fx",
+        "text": "sparkles"
       }
     ],
     "map": [],
@@ -2903,45 +3562,45 @@
         "src": "music/01 Champions League Theme (Champions League Theme).m4a",
         "type": "music",
         "tl_in": 0.0,
-        "dur": 181.45,
+        "dur": 175.0,
         "src_in": 0.0,
         "gain_db": 0.0,
         "duck_fade_s": 0.0,
         "fade_in_s": 2.0,
-        "fade_out_s": 0.0
+        "fade_out_s": 1.5
       },
       {
         "id": "music-02-miserlou",
         "src": "music/01 Miserlou (loop-196).m4a",
         "type": "music",
-        "tl_in": 181.45,
-        "dur": 195.93,
+        "tl_in": 174.0,
+        "dur": 195.5,
         "src_in": 0.0,
         "gain_db": 0.0,
         "duck_fade_s": 0.0,
-        "fade_in_s": 0.0,
-        "fade_out_s": 0.0
+        "fade_in_s": 1.0,
+        "fade_out_s": 6.0
       },
       {
         "id": "music-03-wimm",
         "src": "music/07 Where Is My Mind_ (2007 Remaster).m4a",
         "type": "music",
-        "tl_in": 377.38,
-        "dur": 51.02,
+        "tl_in": 364.5,
+        "dur": 57.7,
         "src_in": 17.0,
         "gain_db": 0.0,
         "duck_fade_s": 0.0,
-        "fade_in_s": 0.0,
+        "fade_in_s": 4.0,
         "fade_out_s": 10.0,
-        "note": "dur reicht formal bis Filmende (QC _check_music_coverage); fade_out_s 10 blendet ~10s vor Schluss aus -> Stille unter der Danke-Karte bleibt praktisch erhalten (bewusste Abweichung von audio-plan §2.3: dort dur 45 / fade 4)"
+        "note": "R3: WIMM setzt sanft auf dem 'ich war es nicht'-Bild ein; Miserlou-Fadeout (6s) und WIMM-Fadein (4s) ueberlappen -> Crossfade"
       },
       {
         "id": "oton-01-img1460",
         "asset": "20260907-camera-5791b1",
         "type": "oton",
-        "tl_in": 202.4,
-        "dur": 3.4,
-        "src_in": 1.8,
+        "tl_in": 199.4,
+        "dur": 2.4,
+        "src_in": 2.8,
         "gain_db": -12.0,
         "duck_fade_s": 0.0,
         "fade_in_s": 0.3,
@@ -2952,7 +3611,7 @@
         "id": "oton-02-img1613",
         "asset": "20260907-camera-317b4d",
         "type": "oton",
-        "tl_in": 290.6,
+        "tl_in": 278.4,
         "dur": 9.0,
         "src_in": 13.0,
         "gain_db": -14.0,
@@ -2965,7 +3624,7 @@
         "id": "oton-03-img1637",
         "asset": "20260907-camera-8794ae",
         "type": "oton",
-        "tl_in": 337.5,
+        "tl_in": 319.8,
         "dur": 7.0,
         "src_in": 139.6,
         "gain_db": -12.0,
@@ -2978,7 +3637,7 @@
         "id": "oton-04-img4835",
         "asset": "20260905-camera-251729",
         "type": "oton",
-        "tl_in": 349.3,
+        "tl_in": 340.0,
         "dur": 4.4,
         "src_in": 8.0,
         "gain_db": -13.0,
@@ -2991,7 +3650,7 @@
         "id": "sfx-cast-01-witte-whoosh",
         "src": "music/sfx/sfx-cast-whoosh.wav",
         "type": "sfx",
-        "tl_in": 306.62,
+        "tl_in": 293.42,
         "dur": 0.42,
         "src_in": 0.0,
         "gain_db": -6.0,
@@ -3004,7 +3663,7 @@
         "id": "sfx-cast-01-witte-stamp",
         "src": "music/sfx/sfx-cast-stamp.wav",
         "type": "sfx",
-        "tl_in": 306.8,
+        "tl_in": 293.6,
         "dur": 0.4,
         "src_in": 0.0,
         "gain_db": 0.0,
@@ -3017,7 +3676,7 @@
         "id": "sfx-cast-02-christoph-whoosh",
         "src": "music/sfx/sfx-cast-whoosh.wav",
         "type": "sfx",
-        "tl_in": 307.52,
+        "tl_in": 294.82,
         "dur": 0.42,
         "src_in": 0.0,
         "gain_db": -6.0,
@@ -3030,7 +3689,7 @@
         "id": "sfx-cast-02-christoph-stamp",
         "src": "music/sfx/sfx-cast-stamp.wav",
         "type": "sfx",
-        "tl_in": 307.7,
+        "tl_in": 295.0,
         "dur": 0.4,
         "src_in": 0.0,
         "gain_db": 0.0,
@@ -3043,7 +3702,7 @@
         "id": "sfx-cast-03-matti-whoosh",
         "src": "music/sfx/sfx-cast-whoosh.wav",
         "type": "sfx",
-        "tl_in": 308.42,
+        "tl_in": 296.22,
         "dur": 0.42,
         "src_in": 0.0,
         "gain_db": -6.0,
@@ -3056,7 +3715,7 @@
         "id": "sfx-cast-03-matti-stamp",
         "src": "music/sfx/sfx-cast-stamp.wav",
         "type": "sfx",
-        "tl_in": 308.6,
+        "tl_in": 296.4,
         "dur": 0.4,
         "src_in": 0.0,
         "gain_db": 0.0,
@@ -3069,7 +3728,7 @@
         "id": "sfx-cast-04-bartosz-whoosh",
         "src": "music/sfx/sfx-cast-whoosh.wav",
         "type": "sfx",
-        "tl_in": 309.32,
+        "tl_in": 297.62,
         "dur": 0.42,
         "src_in": 0.0,
         "gain_db": -6.0,
@@ -3082,7 +3741,7 @@
         "id": "sfx-cast-04-bartosz-stamp",
         "src": "music/sfx/sfx-cast-stamp.wav",
         "type": "sfx",
-        "tl_in": 309.5,
+        "tl_in": 297.8,
         "dur": 0.4,
         "src_in": 0.0,
         "gain_db": 0.0,
@@ -3095,7 +3754,7 @@
         "id": "sfx-cast-05-hagi-whoosh",
         "src": "music/sfx/sfx-cast-whoosh.wav",
         "type": "sfx",
-        "tl_in": 310.22,
+        "tl_in": 299.02,
         "dur": 0.42,
         "src_in": 0.0,
         "gain_db": -6.0,
@@ -3108,7 +3767,7 @@
         "id": "sfx-cast-05-hagi-stamp",
         "src": "music/sfx/sfx-cast-stamp.wav",
         "type": "sfx",
-        "tl_in": 310.4,
+        "tl_in": 299.2,
         "dur": 0.4,
         "src_in": 0.0,
         "gain_db": 0.0,
@@ -3121,7 +3780,7 @@
         "id": "sfx-cast-06-bernhard-whoosh",
         "src": "music/sfx/sfx-cast-whoosh.wav",
         "type": "sfx",
-        "tl_in": 311.12,
+        "tl_in": 300.42,
         "dur": 0.42,
         "src_in": 0.0,
         "gain_db": -6.0,
@@ -3134,7 +3793,7 @@
         "id": "sfx-cast-06-bernhard-stamp",
         "src": "music/sfx/sfx-cast-stamp.wav",
         "type": "sfx",
-        "tl_in": 311.3,
+        "tl_in": 300.6,
         "dur": 0.4,
         "src_in": 0.0,
         "gain_db": 0.0,
@@ -3147,7 +3806,7 @@
         "id": "sfx-cast-07-andre-whoosh",
         "src": "music/sfx/sfx-cast-whoosh.wav",
         "type": "sfx",
-        "tl_in": 312.02,
+        "tl_in": 301.82,
         "dur": 0.42,
         "src_in": 0.0,
         "gain_db": -6.0,
@@ -3160,7 +3819,7 @@
         "id": "sfx-cast-07-andre-stamp",
         "src": "music/sfx/sfx-cast-stamp.wav",
         "type": "sfx",
-        "tl_in": 312.2,
+        "tl_in": 302.0,
         "dur": 0.4,
         "src_in": 0.0,
         "gain_db": 0.0,
@@ -3173,7 +3832,7 @@
         "id": "sfx-cast-08-skuub-whoosh",
         "src": "music/sfx/sfx-cast-whoosh.wav",
         "type": "sfx",
-        "tl_in": 312.92,
+        "tl_in": 303.22,
         "dur": 0.42,
         "src_in": 0.0,
         "gain_db": -6.0,
@@ -3186,7 +3845,7 @@
         "id": "sfx-cast-08-skuub-stamp",
         "src": "music/sfx/sfx-cast-stamp.wav",
         "type": "sfx",
-        "tl_in": 313.1,
+        "tl_in": 303.4,
         "dur": 0.4,
         "src_in": 0.0,
         "gain_db": 0.0,
@@ -3199,7 +3858,7 @@
         "id": "sfx-cast-09-micha-whoosh",
         "src": "music/sfx/sfx-cast-whoosh.wav",
         "type": "sfx",
-        "tl_in": 313.82,
+        "tl_in": 304.62,
         "dur": 0.42,
         "src_in": 0.0,
         "gain_db": -6.0,
@@ -3212,7 +3871,7 @@
         "id": "sfx-cast-09-micha-stamp",
         "src": "music/sfx/sfx-cast-stamp-micha.wav",
         "type": "sfx",
-        "tl_in": 314.0,
+        "tl_in": 304.8,
         "dur": 0.4,
         "src_in": 0.0,
         "gain_db": -1.0,
