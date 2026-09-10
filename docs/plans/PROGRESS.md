@@ -3294,8 +3294,40 @@ Clip-ID-Mapping in **`projects/michael-jga-2026/exports/JGA/editorial-notes-roun
 | R3-T4 | Bier-Zahl recherchieren | im round3-Notes vermerkt (500+ Biere / 50+ Brauereien) | ✅ fertig | `da0c046` |
 | R3-T5+T6 | **In R3-T7 gefaltet** — `audio-plan.md`/`beatsheet.md` bekommen einen Runde-3-Delta-Block, aber die konkreten Musik-/Beat-Zeiten setzt der Timeline-Umbau direkt (Länge verschiebt sich durch die Cuts, Henne-Ei). Kein eigener Agentenlauf. | Delta-Notiz in beiden Dateien, `timeline.json`-Audio konsistent | 🔄 | |
 | R3-T7 | `timeline.json` neu: alle Reorder/Cuts/Adds, `fit:blur` (Foto+Video), KB-Regie (Zoom+Pan gekoppelt, `ease` gemischt, ~2/3 bewegt), Text-Overlays neu verdrahtet + größer + neue Placements, Swaps (v117/118, v156/157, Rooftop-Order, v100 vor v098), La-Red ans Karaoke-Ende, Video-Trims (v069 +1s) + 5:48-Vorzug (v144/145 nach v137), Zoom/Ausschnitt-Fixes, Musik-Crossfades CL→Miserlou (~2:57) & Miserlou→WIMM (~6:11–6:13), Danke +2–3 s, Cast-Fenster ~1,4 s | `validate_semantics` + `qc.validate` leer, Länge ~7:0x, `brief.yaml` `target_duration_s` nachgezogen | 🔄 | |
-| R3-T8 | party-fx-Effektpass auf neuer Timeline (color_pop/speedlines/hearts/sparkles/Wackel, Cast-SFX auf neues Grid) | Overlays + Effekte gesetzt, FX-Budget | 🔄 | |
-| R3-T9 | `frameforge preview` neu, altes Preview ersetzen, Audio gegenhören, PROGRESS+Memory, Push | Neues Preview liegt, gepusht | 🔄 | |
+| R3-T8 | party-fx-Effektpass auf neuer Timeline (Speedlines-Blitz, Cast-Farb-Pop) | Overlays + Effekte gesetzt, QC leer | ✅ fertig | `ad6c9da` |
+| R3-T9 | `frameforge preview` neu, altes Preview ersetzen, PROGRESS+Memory, Push | Neues Preview liegt, gepusht | ✅ fertig | (dieser Commit) |
+| R3-T10 | **Freigabe → 4K-Final (Chunks) + Website + SSH-Upload** | wartet auf Christians Sichtung + Server-Pfad | ⛔ blockiert | |
 
 Reihenfolge: R3-T1 → R3-T2 → R3-T3 → R3-T7 (inkl. Audio) → R3-T8 → R3-T9. Commit nach jedem
-Task. Vor `frameforge preview`: `df -h /` + `sysctl -n vm.swapusage`, ≥ 4 GB frei.
+Task.
+
+**R3-T9 fertig (2026-09-10).** `frameforge preview michael-jga-2026 JGA` (nohup+disown, ~9 min,
+Ein-Pass-Graph 223 Inputs). Neues `exports/JGA/preview/JGA_preview.mp4`: **422,23 s = 7:02**,
+77,6 MB, 1920×1080, 12667 Frames + AAC. QC beim Preview-Gate leer, ffmpeg exit 0. Altes
+Runde-2-Preview (7:08) überschrieben (Backup im Scratchpad). Export-Phase bleibt `PREVIEWED` (8).
+Kontroll-Frames gesichtet (t=6/40/105/190/266/320/382): Blur-Extend auf Hochkant (Foto + Video)
+greift, „LET'S GO!"/„500+ BIERE" im neuen Bangers-Gold/Pink-Look, Speedlines-Blitz sichtbar,
+Ken Burns aktiv. **Wartet auf Christians Sichtung.**
+
+**Prüf-/Feedback-Punkte fürs Sichten:**
+- Ken Burns: jetzt „echte" Bewegung (Zoom+Pan gekoppelt, `ease:"in"`), ~1/3 Fotos bewusst
+  statisch. Gesamteindruck + Richtungswechsel prüfen.
+- Text-Overlays: Bangers überall, Gold-Front + harter Pink-Schatten, ~2× groß. Positionen
+  (letsgo oben rechts, praesente/wtf oben links, christoph unten links) + Lesbarkeit prüfen.
+- Musik-Übergänge: CL→Miserlou ~2:54 (1-s-Crossfade statt Loch — Miserlou läuft ~9 s unter den
+  letzten Akt-1-Bildern), Miserlou→WIMM ~6:04–6:11 (Crossfade). Gegenhören: keine toten Stellen
+  mehr, aber Miserlou-Downbeat sitzt nicht mehr exakt auf dem Crew-Update-Cut.
+- Aftermath: 2–3 Kopf-Anschnitte (v162/v168/v169 Bereich) evtl. noch `pad` statt `blur`.
+- „Delirium"-Bild-Wackel fehlt noch (Renderer kennt keinen Video-Jitter — Schema-Erweiterung
+  nötig, falls gewünscht).
+- Cast-Namen jetzt 2× groß + Fenster 1,4 s; Speedlines evtl. zu kräftig/dicht.
+
+**R3-T10 (blockiert, Frage an Christian):** nach `frameforge approve` → 4K-Final in Chunks
+(`render --resolution 3840x2160 --chunk-s ~90`, Muster
+`web/sites/norwegen-2026/deploy/render-web-versions.sh`) + 1080p-Streaming-Fassung. Dann
+Website `web/sites/michael-jga-2026/public/` (Video-Block + Download-Link wie
+`norwegen-2026/public/film-vlog.html`). **Videos liegen getrennt vom Website-Build** unter
+`/videos/` auf dem Server, benannt `JGA_1080p.mp4` + `JGA_4k.mp4`, per `rsync -avP` nach
+`user@host:<video-verzeichnis>/`. **Offen: exakter SSH-Host + Server-Pfad für
+`micha-jga.skubus.de/videos/`** (Norwegen-README hat nur einen Platzhalter), Traefik-Basic-Auth
+serverseitig. Zwei Videos-Sätze (Norwegen / JGA) strikt getrennt halten.
