@@ -225,6 +225,11 @@ def temperature_filter(temperature: float) -> str | None:
 # Übergangstypen, die als Crossfade (xfade) gerendert werden.
 _CROSSFADE_TYPES = {"fade", "dissolve", "slow_dissolve", "crossfade"}
 
+# Mindest-Zoom, den ein Ken-Burns mit Pan-Anteil bekommt, damit `zoompan` ueberhaupt ein
+# Crop-Fenster zum Schwenken hat (siehe `_kenburns_expr`). 1.08 = ~7,4 % Rand, das Motiv
+# bleibt fast bildfuellend, der Schwenk wird aber sichtbar.
+_PAN_MIN_ZOOM = 1.08
+
 
 def _kenburns_expr(clip, dur: float, fps: float, res: tuple[int, int]) -> str | None:
     """`zoompan`-Ausdruck für Ken-Burns (Zoom + Pan) auf einem Foto-Clip.
@@ -266,18 +271,34 @@ def _kenburns_expr(clip, dur: float, fps: float, res: tuple[int, int]) -> str | 
     # ein Standbild (fiel bei den neuen Ken-Burns-Varianten aus Runde 3 auf).
     z_from = max(1.0, z_from)
     z_to = max(1.0, z_to)
+    # **Pan erzwingt Crop-Fenster (Nutzer-Feedback 2026-09-10, Runde 3).** `zoompan`
+    # schneidet `iw/zoom` x `ih/zoom` aus dem Quellbild -- bei Zoom ~1.0 ist dieser
+    # Ausschnitt das ganze Bild, `x`/`y` sind auf `[0, iw-iw/zoom] = [0, ~0]` geclamped und
+    # der Schwenk bewegt sich real NICHT. Genau das war Christians Kernkritik: 11 Clips
+    # trugen `from/to`-Zoom 1.04 mit reinem Pan (`dx`/`dy` 0.03-0.06) und standen im Preview
+    # praktisch still. Traegt der Effekt einen Pan, aber keinen nennenswerten Zoom, wird ein
+    # Mindest-Zoom untergelegt, damit Schwenkraum entsteht (Motiv bleibt fast bildfuellend).
+    has_pan = abs(x_to - x_from) > 1e-4 or abs(y_to - y_from) > 1e-4
+    if has_pan and max(z_from, z_to) < _PAN_MIN_ZOOM:
+        z_from = max(z_from, _PAN_MIN_ZOOM)
+        z_to = max(z_to, _PAN_MIN_ZOOM)
     if abs(z_to - z_from) < 0.001:
         z_to = z_from + 0.001
     w, h = res
-    # Fortschritt 0..1 ueber die Clipdauer. `ease: "smooth"` legt eine Smoothstep-Kurve
-    # (3n²-2n³) darueber: die Bewegung startet und endet weich, statt hart mit konstanter
-    # Geschwindigkeit einzusetzen und abzureissen. Nutzer-Feedback (2026-08-08, Runde 2): der
-    # lineare Schwenk wirkte mechanisch und war ueber alle Fotos hinweg als immer gleiche
-    # Bewegung wiedererkennbar. Default bleibt "linear" -- bestehende Timelines rendern
-    # unveraendert, nur wer `ease` setzt, bekommt die neue Kurve.
+    # Fortschritt 0..1 ueber die Clipdauer, `ease` legt eine Kurve darueber:
+    #   "smooth"/"smoothstep"/"ease"  -> Smoothstep (3n²-2n³): weich rein UND weich raus.
+    #   "in"/"accel"                  -> pow(n, 1.7): langsam anlaufen, dann beschleunigen,
+    #                                    Bewegung laeuft bis zum Schnitt durch -- kein toter
+    #                                    Stillstand am Clip-Ende (Runde-3-Wunsch: "so langsam
+    #                                    anlaufen, dann ein bisschen schneller werden").
+    #   sonst (Default "linear")      -> konstante Geschwindigkeit, unveraendert.
+    # Bestehende Timelines ohne `ease` rendern unveraendert.
     n = f"min(1,on/{frames})"
-    if str(data.get("ease", "linear")).lower() in {"smooth", "smoothstep", "ease"}:
+    ease = str(data.get("ease", "linear")).lower()
+    if ease in {"smooth", "smoothstep", "ease"}:
         p = f"({n})*({n})*(3-2*({n}))"
+    elif ease in {"in", "accel", "ease-in", "ease_in"}:
+        p = f"pow({n},1.7)"
     else:
         p = n
     zoom_expr = f"{z_from:.4f}+({p})*{z_to - z_from:.6f}"

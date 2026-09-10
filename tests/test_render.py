@@ -1386,6 +1386,55 @@ def test_kenburns_ease_smooth_uses_smoothstep_curve():
     assert "3-2*" not in linear
 
 
+def test_kenburns_ease_in_uses_accelerating_curve():
+    """`ease: "in"` = pow(n, 1.7): langsam anlaufen, dann beschleunigen, Bewegung laeuft bis
+    zum Schnitt durch (Runde-3-Feedback: kein toter Stillstand am Clip-Ende wie bei smooth)."""
+    def graph_for(effect):
+        tl = _timeline(
+            video=[{"id": "c1", "asset": "photo1", "src_in": 0, "src_out": 2, "tl_in": 0,
+                    "effects": [effect]}]
+        )
+        return build_filtergraph(
+            tl, resolve_asset=lambda a: Path(f"/m/{a}.jpg"),
+            export_root=Path("/e"), project_root=Path("/p"),
+        ).filter_complex
+
+    accel = graph_for({"type": "kenburns", "from": [0, 0, 1.0], "to": [0, 0, 1.1], "ease": "in"})
+    assert "pow(min(1,on/50),1.7)" in accel
+    assert "3-2*" not in accel  # nicht smoothstep
+
+
+def test_kenburns_pan_without_zoom_gets_minimum_crop_window():
+    """Reiner Pan bei Zoom ~1.0 bewegt sich real nicht -- `zoompan` hat kein Crop-Fenster
+    (`x`/`y` auf [0, ~0] geclamped). Runde-3-Kernkritik: 11 Clips standen im Preview still.
+    Traegt der Effekt einen Pan aber keinen Zoom, wird ein Mindest-Zoom untergelegt."""
+    tl = _timeline(
+        video=[{"id": "c1", "asset": "photo1", "src_in": 0, "src_out": 2, "tl_in": 0,
+                "effects": [{"type": "kenburns", "from": [0.06, 0, 1.0], "to": [-0.06, 0, 1.0]}]}]
+    )
+    fc = build_filtergraph(
+        tl, resolve_asset=lambda a: Path(f"/m/{a}.jpg"),
+        export_root=Path("/e"), project_root=Path("/p"),
+    ).filter_complex
+    # Zoom startet bei mindestens 1.08 statt 1.00 -> `zoompan` hat Schwenkraum.
+    assert "1.0800+(" in fc
+    assert "1.0000+(" not in fc
+
+
+def test_kenburns_pan_with_real_zoom_keeps_its_zoom():
+    """Der Mindest-Zoom greift NUR bei fehlendem Zoom -- ein bewusst gesetzter Zoom (auch
+    heraus) bleibt unangetastet."""
+    tl = _timeline(
+        video=[{"id": "c1", "asset": "photo1", "src_in": 0, "src_out": 2, "tl_in": 0,
+                "effects": [{"type": "kenburns", "from": [0.05, 0, 1.12], "to": [-0.03, 0, 1.0]}]}]
+    )
+    fc = build_filtergraph(
+        tl, resolve_asset=lambda a: Path(f"/m/{a}.jpg"),
+        export_root=Path("/e"), project_root=Path("/p"),
+    ).filter_complex
+    assert "1.1200+(" in fc  # Zoom-out ab 1.12 bleibt
+
+
 def test_unsafe_face_crop_falls_back_to_blur_fill(monkeypatch):
     """Wenn kein Ausschnitt alle Gesichter ganz enthaelt, darf NICHT auf die Bildmitte gecroppt
     werden (das schneidet garantiert jemanden an) -- dann Blur-Fill. Nutzer-Regel Runde 3:
