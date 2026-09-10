@@ -13,11 +13,21 @@
 <link rel="stylesheet" href="/assets/css/base.css">
 <link rel="stylesheet" href="/assets/css/components.css">
 </head>
-<body>
+<body style="position:relative;isolation:isolate">
+<div class="ambient" aria-hidden="true">
+<span class="ambient__item" style="top:6%;left:1.5%;font-size:1.1rem;animation-duration:13s;animation-delay:0s">★</span>
+<span class="ambient__item ambient__item--pink" style="top:16%;right:2%;font-size:.9rem;animation-duration:15s;animation-delay:2.2s">★</span>
+<span class="ambient__item" style="top:28%;right:1%;font-size:1.5rem;animation-duration:17s;animation-delay:5s">♛</span>
+<span class="ambient__item ambient__item--pink" style="top:40%;left:2.5%;font-size:1rem;animation-duration:12s;animation-delay:1s">♛</span>
+<span class="ambient__item" style="top:52%;left:1%;font-size:1.2rem;animation-duration:16s;animation-delay:7s">★</span>
+<span class="ambient__item ambient__item--pink" style="top:64%;right:3%;font-size:1.3rem;animation-duration:14s;animation-delay:3.5s">♛</span>
+<span class="ambient__item" style="top:76%;right:1.5%;font-size:.85rem;animation-duration:18s;animation-delay:6s">★</span>
+<span class="ambient__item ambient__item--pink" style="top:88%;left:3%;font-size:1.4rem;animation-duration:15s;animation-delay:4s">♛</span>
+</div>
 <a class="visually-hidden" href="#inhalt">Zum Inhalt springen</a>
 <nav class="nav" aria-label="Hauptnavigation">
 <div class="nav__inner">
-<a class="nav__brand" href="/">Micha im Delirium</a>
+<a class="nav__brand" href="/">Micha im Delirium<span class="nav__brand__year"> 2026</span></a>
 <ul class="nav__list">
 <li><a class="nav__link" href="/" aria-current="page">Start</a></li>
 <li><a class="nav__link" href="/film.html">Der Film</a></li>
@@ -28,9 +38,6 @@
 
 <header class="page-header page-header--poster">
 <div class="page-header__media"><img src="/assets/img/poster.jpg" alt="JGA 2026 - Micha im Delirium, Brüssel: die Crew mit Sonnenbrille und Krone vor dem Delirium-Elefanten und dem Brüsseler Rathaus"></div>
-<div class="page-header__body">
-<p class="page-header__sub">Zehn Männer, eine Stadt mit sehr gutem Bier und ein Film, der ungefähr in der Mitte die Fassung verliert.</p>
-</div>
 </header>
 
 <main id="inhalt">
@@ -55,32 +62,28 @@
 <h2 id="crew" class="shout" style="text-align:center;margin-bottom:var(--sp-7)">Die Crew</h2>
 
 <ul class="cast-grid cast-grid--solo">
-<li class="cast-card cast-card--groom"><span class="cast-card__frame"><img src="/assets/img/cast/cast-04.jpg" alt="Micha mit Sonnenbrille" loading="lazy"></span><p class="cast-card__name">Micha</p><p class="cast-card__role">Der Anlass</p></li>
+<li class="cast-card cast-card--groom"><span class="cast-card__frame"><img src="/assets/img/cast/cast-04.jpg" alt="Micha mit Sonnenbrille" loading="lazy"></span><p class="cast-card__name">Micha</p><p class="cast-card__role">Junggeselle</p></li>
 </ul>
 
 <ul class="cast-grid" style="margin-top:var(--sp-6)">
-<li class="cast-card"><span class="cast-card__crown" aria-hidden="true">♛</span><span class="cast-card__frame"><img src="/assets/img/cast/cast-01.jpg" alt="Witte mit Sonnenbrille" loading="lazy"></span><p class="cast-card__name">Witte</p></li>
-<li class="cast-card"><span class="cast-card__crown" aria-hidden="true">♛</span><span class="cast-card__frame"><img src="/assets/img/cast/cast-02.jpg" alt="Christoph mit Sonnenbrille" loading="lazy"></span><p class="cast-card__name">Christoph</p></li>
-<li class="cast-card"><span class="cast-card__crown" aria-hidden="true">♛</span><span class="cast-card__frame"><img src="/assets/img/cast/cast-03.jpg" alt="Matti mit Sonnenbrille" loading="lazy"></span><p class="cast-card__name">Matti</p></li>
-<li class="cast-card"><span class="cast-card__crown" aria-hidden="true">♛</span><span class="cast-card__frame"><img src="/assets/img/cast/cast-05.jpg" alt="Bartosz mit Sonnenbrille" loading="lazy"></span><p class="cast-card__name">Bartosz</p></li>
+<li class="cast-card"><span class="cast-card__frame"><img src="/assets/img/cast/cast-01.jpg" alt="Witte mit Sonnenbrille" loading="lazy"></span><p class="cast-card__name">Witte</p></li>
+<li class="cast-card"><span class="cast-card__frame"><img src="/assets/img/cast/cast-02.jpg" alt="Christoph mit Sonnenbrille" loading="lazy"></span><p class="cast-card__name">Christoph</p></li>
+<li class="cast-card"><span class="cast-card__frame"><img src="/assets/img/cast/cast-03.jpg" alt="Matti mit Sonnenbrille" loading="lazy"></span><p class="cast-card__name">Matti</p></li>
+<li class="cast-card"><span class="cast-card__frame"><img src="/assets/img/cast/cast-05.jpg" alt="Bartosz mit Sonnenbrille" loading="lazy"></span><p class="cast-card__name">Bartosz</p></li>
 </ul>
 
 <ul class="cast-grid" style="margin-top:var(--sp-5)">
-<li class="cast-card"><span class="cast-card__crown" aria-hidden="true">♛</span><span class="cast-card__frame"><img src="/assets/img/cast/cast-06.jpg" alt="Hagi mit Sonnenbrille" loading="lazy"></span><p class="cast-card__name">Hagi</p></li>
-<li class="cast-card"><span class="cast-card__crown" aria-hidden="true">♛</span><span class="cast-card__frame"><img src="/assets/img/cast/cast-07.jpg" alt="Bernhard mit Sonnenbrille" loading="lazy"></span><p class="cast-card__name">Bernhard</p></li>
-<li class="cast-card"><span class="cast-card__crown" aria-hidden="true">♛</span><span class="cast-card__frame"><img src="/assets/img/cast/cast-08.jpg" alt="Andre mit Sonnenbrille" loading="lazy"></span><p class="cast-card__name">Andre</p></li>
-<li class="cast-card"><span class="cast-card__crown" aria-hidden="true">♛</span><span class="cast-card__frame"><img src="/assets/img/cast/cast-09.jpg" alt="Skuub mit Sonnenbrille" loading="lazy"></span><p class="cast-card__name">Skuub</p></li>
+<li class="cast-card"><span class="cast-card__frame"><img src="/assets/img/cast/cast-09.jpg" alt="Skuub mit Sonnenbrille" loading="lazy"></span><p class="cast-card__name">Skuub</p></li>
+<li class="cast-card"><span class="cast-card__frame"><img src="/assets/img/cast/cast-07.jpg" alt="Bernhard mit Sonnenbrille" loading="lazy"></span><p class="cast-card__name">Bernhard</p></li>
+<li class="cast-card"><span class="cast-card__frame"><img src="/assets/img/cast/cast-08.jpg" alt="Andre mit Sonnenbrille" loading="lazy"></span><p class="cast-card__name">Andre</p></li>
+<li class="cast-card"><span class="cast-card__frame"><img src="/assets/img/cast/cast-06.jpg" alt="Hagi mit Sonnenbrille" loading="lazy"></span><p class="cast-card__name">Hagi</p></li>
 </ul>
 
 <ul class="cast-grid cast-grid--solo" style="margin-top:var(--sp-6)">
 <li class="cast-card cast-card--guest"><p class="eyebrow" style="text-align:center">Special Guest</p><span class="cast-card__frame"><img src="/assets/img/cast/cast-10.jpg" alt="Der rosa Elefant, das Wahrzeichen der Delirium-Bar in Brüssel" loading="lazy"></span><p class="cast-card__name">Delirium</p><p class="cast-card__role">Der rosa Elefant</p></li>
 </ul>
 
-<p style="position:relative;text-align:center;margin-top:var(--sp-6)">
-<span class="sticker sticker--gold sticker--lg" style="top:-1.2rem;right:10%" aria-hidden="true">♛</span>
-<span class="sticker sticker--gold sticker--sm" style="top:.8rem;right:1%" aria-hidden="true">♛</span>
-<span class="marker-caption">Good friends, bad decisions</span>
-</p>
+<p style="text-align:center;margin-top:var(--sp-6)"><span class="marker-caption">Good friends, bad decisions</span></p>
 </section>
 
 <section class="section page" style="position:relative;text-align:center" aria-labelledby="film-titel">
