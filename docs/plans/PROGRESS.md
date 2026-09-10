@@ -3260,3 +3260,43 @@ Christian kann nach dem Sichten `frameforge approve` geben (dann T-Final).
 - **Hash-Merke:** in PROGRESS die Task-Zeile NICHT per `git commit --amend` mit dem eigenen
   Hash füllen (Hash ändert sich durch den Amend). Tick ohne Hash committen, Hash im
   Folgecommit nachtragen.
+
+### Plan 0004 — JGA Runde 3 (Rework nach 2. Preview-Feedback, 2026-09-10)
+
+Christian hat das 7:08-Preview (T9 / `ddd9a4d`) live gesichtet, Voice-Feedback mit Zeitmarken.
+Urteil: „deutlich besseres Ergebnis, mega gut" — **Feinschliff, kein Neubau.** Struktur bleibt
+(Intro+Akt 1 / Akt 2 / Aftermath, 3 Tracks unverändert). Vollständig transkribiert +
+Clip-ID-Mapping in **`projects/michael-jga-2026/exports/JGA/editorial-notes-round3.md`**
+(überschreibt Runde 1+2 punktuell). Kernpunkte:
+- **Ken Burns:** viele „Bewegungen" bewegen sich real nicht — reiner Pan bei Zoom ~1.0 hat
+  kein Crop-Fenster (11 Clips betroffen). Fix im Code (Mindest-Zoom bei Pan, neue Kurve
+  `ease:"in"`) + Regie (2/3 der Fotos bewegt, Zoom+Pan gekoppelt, Richtung wechseln, `ease`
+  mischen).
+- **Blur-Extend auch für Videos** (Hochkant-Party-Videos mit schwarzen Balken).
+- **Text-Overlays kompletter Neu-Look:** Bangers überall (auch Akt 1), Gold-Front +
+  **harter Pink-Schatten +10/+10 px**, ≥ 2× Größe (WIMM-Titel ~5×), Slant-Vorzeichen nach
+  Placement, Zitter-Effekt für „Stay hydrated"/„Delirium".
+- **FX vielfältiger:** Herzchen-Cluster (Knutsch-Szene), drehende Sterne, Speedlines/Glows
+  sichtbar machen.
+- **Musik-Lücken:** tote Stille ~2:56–3:01 (CL→Miserlou) und ~6:05–6:19 (Miserlou→WIMM) —
+  Crossfades, WIMM weich einblenden ab ~6:13, Danke-Karte 2–3 s länger.
+- **~15 Streichungen / Umsortierungen / Text-Umformulierungen** (Detail in round3-Notes §1–4).
+- **`ov-kunstfigur` / `ov-fx-krone-1707` / `ov-fx-delirium` löschen**; neu `ov-raetkeinkaese`,
+  `ov-wimm` als großer Titel.
+- **R4-T10 (blockiert):** nach Freigabe 4K-Final (Chunks) + Website + SSH-Upload — Ziel-Pfad/
+  Benennung offen, **Frage an Christian**. Zwei Videos getrennt halten.
+
+| # | Task | Abnahme | Status | Commit |
+|---|------|---------|--------|--------|
+| R3-T1 | `editorial-notes-round3.md` + diese Sektion + Bier-Recherche | Doku committed | ✅ fertig | — |
+| R3-T2 | `render.py`: Pan-Mindestzoom, `ease:"in"`, `fit:blur` auf Video verifiziert, `hearts`/`sparkles`-Effekt | `pytest` grün, `ruff`/`doctor` grün, Mini-Render geprüft | 🔄 | |
+| R3-T3 | `party-fx-recipe.py` Neu-Look (Bangers, Doppelebene, Größen, Slant, Streich/Neu-Overlays, Herz/Stern-Cluster), alle PNGs neu | PNGs gebaut, `ov-kunstfigur`/`ov-fx-krone`/`ov-fx-delirium` weg | 🔄 | |
+| R3-T4 | Bier-Zahl recherchieren | im round3-Notes vermerkt (500+ Biere / 50+ Brauereien) | ✅ fertig | — |
+| R3-T5 | `audio-plan` Runde 3: Crossfades CL→Miserlou & Miserlou→WIMM, WIMM weicher Fade-in ab ~6:13, Danke +2–3 s, Loop-Naht prüfen | audio-designer, Datei konsistent zu round3 §0.6 | 🔄 | |
+| R3-T6 | `beatsheet.md` Runde-3-Deltas einarbeiten (Reorder/Cuts/Texte/Timing) | story-architect bzw. Patch, Kapitelsummen = Musiklängen | 🔄 | |
+| R3-T7 | `timeline.json` neu: alle Reorder/Cuts/Adds, `fit:blur` (Foto+Video), KB-Regie, Text-Overlays neu verdrahtet, Swaps, La-Red ans Ende, 2. Gurkenbild zurück, Video-Trims/Vorzug 5:48, Zoom/Ausschnitt-Fixes | validate_semantics + QC-Gate grün, Länge ~7:0x | 🔄 | |
+| R3-T8 | party-fx-Effektpass auf neuer Timeline (color_pop/speedlines/hearts/sparkles/Wackel, Cast-SFX auf neues Grid) | Overlays + Effekte gesetzt, FX-Budget | 🔄 | |
+| R3-T9 | `frameforge preview` neu, altes Preview ersetzen, Audio gegenhören, PROGRESS+Memory, Push | Neues Preview liegt, gepusht | 🔄 | |
+
+Reihenfolge: R3-T1 → R3-T2 → R3-T3 → (R3-T5 ∥ R3-T6) → R3-T7 → R3-T8 → R3-T9. Commit nach
+jedem Task. Vor `frameforge preview`: `df -h /` + `sysctl -n vm.swapusage`, ≥ 4 GB frei.
