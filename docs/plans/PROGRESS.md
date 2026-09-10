@@ -3445,12 +3445,43 @@ punktuell). Kernpunkte:
 
 | # | Task | Abnahme | Status | Commit |
 |---|------|---------|--------|--------|
-| R5-T1 | `editorial-notes-round5.md` + diese Sektion + Memory | Doku committed | 🔄 | |
-| R5-T2 | `party-fx-recipe.py` → Runde 5: Front überall weiß, Texte/Größen/Placements laut §5, `ov-thanks` neu, Cast-Linien-Kern, PNGs neu | PNGs gebaut + Edge-Clip-Check sauber | ⬜ | |
-| R5-T3 | `render.py`-Check (End-Karte „bleibt stehen" durch QC/`validate_semantics`) | grün oder minimaler Fix | ⬜ | |
-| R5-T4 | `round5-timeline.py`: `v003`×2, `v008` raus, Reihenfolge-Swaps, KB-Ruhe, Overlay-Retimes, Speedlines, Outro-Karte, `brief.yaml` | `validate_semantics` + `qc.validate` leer | ⬜ | |
-| R5-T5 | Audio in `timeline.json`: `music-01` bis 3:03, `music-02` Stopp ~6:03, `music-03` im Schwarz, Intro-Sync | QC leer | ⬜ | |
-| R5-T6 | `frameforge preview` neu (Vordergrund!), altes 6:59,5-Preview ersetzen, Kontroll-Frames sichten, PROGRESS+Memory, Push | Neues Preview liegt, gepusht | ⬜ | |
+| R5-T1 | `editorial-notes-round5.md` + diese Sektion + Memory | Doku committed | ✅ fertig | `ccc8252` |
+| R5-T2 | `party-fx-recipe.py` → Runde 5: Front überall weiß, Texte/Größen/Placements laut §5, `ov-thanks` neu, Cast-Linien-Kern, PNGs neu | PNGs gebaut + Edge-Clip-Check sauber | ✅ fertig | `08275b2` |
+| R5-T3 | `render.py`-Check (End-Karte „bleibt stehen" durch QC/`validate_semantics`) | keine Änderung nötig — Overlay-PNGs sind formatfüllend bei x=0/y=0, End-Karte = `generated-black` + Overlay (bestehendes Muster). 134 Tests grün | ✅ fertig | (in `08275b2`) |
+| R5-T4 | `round5-timeline.py`: `v003`×2, `v008` raus, Reihenfolge-Swaps, KB-Ruhe, Overlay-Retimes, Speedlines, Outro-Karte, `brief.yaml` | `validate_semantics` + `qc.validate` leer, Länge 423,3 s | ✅ fertig | `08275b2` |
+| R5-T5 | Audio in `timeline.json`: `music-01` bis 3:03, `music-02` Stopp ~6:03, `music-03` im Schwarz, Intro-Sync | QC leer | ✅ fertig | (in `08275b2`) |
+| R5-T6 | `frameforge preview` neu (Vordergrund!), altes 6:59,5-Preview ersetzen, Kontroll-Frames sichten, PROGRESS+Memory, Push | Neues Preview liegt, gepusht | ✅ fertig | (dieser Commit) |
 | R5-T7 | **Freigabe → FHD (1080p) + 4K-Download (Chunks) + Website + SSH-Upload** | wartet auf Christians Sichtung + Server-Pfad | ⛔ blockiert | |
 
-Reihenfolge: R5-T1 → R5-T2 → R5-T3 → R5-T4/T5 → R5-T6.
+Reihenfolge erledigt: R5-T1 → R5-T2 → R5-T3 → R5-T4/T5 → R5-T6.
+
+**R5-T6 fertig (2026-09-11).** `frameforge preview michael-jga-2026 JGA` — **423,33 s = 7:03,3**,
+1920×1080, 30 fps, 73,15 MB, ffmpeg exit 0, QC-Gate sauber. Altes 6:59,5-Preview ersetzt
+(gitignored). **Fallstrick-Update:** der Vordergrund-Lauf lief ~14:30 min (Harness hat ihn nach
+10 min als Task weitergeführt — derselbe Prozess, sauber durchgelaufen, Exit 0). Kein `nohup`/
+Detach — das bleibt der Abbruch-Modus, nicht die Harness-Task-Weiterführung.
+Kontroll-Frames gesichtet (t=8/13/31,9/106/158,5/167,6/182,6/186,5/235,4/240/327,9/347,6/352,5/
+359,2/363,4/371,5/410,5/421): erstes Bild 8 s + Blur-Extension; „LET'S GO!"; 30-s-Anker (v011)
+bei 31,9 unverändert; **Front überall weiß** — `ov-geniesst` (war gelb) und `ov-wtf` (war pink)
+gefixt; `ov-hydrated` mittig + ×2; `ov-mok-detektor` 2-zeilig; `ov-gurken` „Der Micha mag
+Gurken. / Gib mir die Gurken. / Er braucht sie dringend."; `ov-raetkeinkaese` „Red kein Käse!";
+`ov-crewupdate` rechts, steigend; Schwarzblende 6:02 = reine Stille; Schluss-Karte
+„THANKS FOR WATCHING / No animals were harmed in the making of this movie." bleibt am Ende
+stehen (kein Schwarz-Ende).
+
+**Prüf-/Feintuning-Punkte fürs Sichten (bekannte kleine Abweichungen):**
+- `v069`/Miserlou-Cut sitzt bei **182,0 s = 3:02,0** (Toleranz 3:02–3:05 eingehalten; der
+  Akt-1-Tail wurde ~1,3 s geschrumpft, damit die Stille vor dem Cut ≤ 0,8 s bleibt).
+- `ov-crewupdate` „STOSSEN" berührt rechts fast den Rand (Bangers breit) — wie Runde 4.
+- `ov-geniesst` sitzt relativ hoch (y ~25 %); ragt nicht mehr raus, aber ggf. noch 2–3 %
+  tiefer.
+- `ov-thanks`-Disclaimer-Zeile ist klein (Font-Size 66 @ 4K) — lesbar, aber grenzwertig;
+  ggf. auf ~80 hoch.
+- Intro-Musik: `music-01` startet weiter bei `tl_in` 0 (erster Ausschlag ~2 s vor
+  `v003`-Einblenden). Christian-Wunsch „Ausschlag auf Bild-Einblenden" nur grob getroffen —
+  Feintuning über `src_in`-Offset möglich, falls es stört.
+- Near-static-KB-Set (v006/v013/v020/v028/v029/v034/v049/v135/v150/v167) hat bewusst fast
+  keinen Zoom — falls zu tot, `to`-Zoom in `round5-timeline.py` von 1.022 leicht hoch.
+
+Christian will danach **FHD (1080p) + 4K-Download-Version — erst nach Freigabe dieses Previews**
+(R5-T7).
