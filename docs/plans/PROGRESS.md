@@ -3410,3 +3410,47 @@ Kontroll-Frames gesichtet (t=7,5/33/103/168/186/236/300/353/359/373): 3-Ebenen-T
   Position/Größe gegenprüfen.
 
 Christian will "heute Nacht" die Umsetzung, "morgen früh ein fertiges neues Preview". ✅ liegt.
+
+---
+
+### Plan 0004 — JGA Runde 5 (Rework nach 4. Preview-Feedback, 2026-09-11)
+
+Christian hat das **6:59,5-Preview** (R4-T6 / `a31095a`) live gesichtet. Urteil: **"schon
+wirklich großartig … hier geht es mehr um Präzision."** Reiner Feinschliff. Vollständig
+transkribiert + Clip-Mapping in
+**`projects/michael-jga-2026/exports/JGA/editorial-notes-round5.md`** (überschreibt Runde 1–4
+punktuell). Kernpunkte:
+
+- **Text-Look:** 3-Ebenen bleibt, aber **Front IMMER weiß** — `ov-geniesst` (war gelb) +
+  `ov-wtf` (war pink) fixen, Gold/Orange-Front-Ausnahme entfällt komplett.
+- **Erstes Bild `v003` × 2** (4,0 → 8,0 s). Nur **`v008` (0:21) gestrichen**. 30-Sekunden-Anker
+  (`v011`) durch Trim von `v004`–`v007` halten.
+- **KB noch ruhiger:** nie zwei Fotos hintereinander beide Zoom-OUT; `v028`/`v029` + Near-static-
+  Set nur Mini-Zoom ohne Pan; `v039` Out; `v003`–`v015` fast unverändert; `v040` unangetastet.
+- **Reihenfolge:** Schoko-Block `v041b→v041→v043→v044→v045→v046` (macht R4-Swaps rückgängig);
+  `v097↔v100`; `v157↔v156`; `v159→v158` (Gurkenbild vor „Ich war es nicht"); `v117` vor `v122`.
+- **Audio:** `music-01` bis ~1 s vor 3:03 (≤1 s Stille); 3:03-Cut unverändert; **Miserlou
+  stoppt ~6:03** (nicht 6:15); **WIMM startet im Schwarz** (~1–2 s vor `v161`); Intro-Ausschlag
+  auf `v003`-Einblenden.
+- **Overlays:** `ov-hydrated` mittig + ×2; `ov-crewupdate` +10 % +Standzeit; `ov-geniesst`
+  weiß +10 % tiefer; `ov-wtf` weiß +20 % tiefer schräger; `ov-mok-detektor` 2-zeilig groß;
+  `ov-praesente`/`ov-christoph`/`ov-gurken`/`ov-raetkeinkaese` Text neu; `ov-token` rechts;
+  `ov-lampen`/`ov-natuerlich`/`ov-sulemann-*` +Standzeit; `ov-weiterziehen`→`v153`;
+  `ov-wimm`→`v162` tiefer + länger.
+- **FX:** Speedlines 5:15 + 5:21 raus, neu auf `v143` (5:29); Cast-Linien-Kern ~30 % größer
+  (oder kürzer).
+- **Outro:** `jga-outro-card` +1,5 s; neue Schluss-Karte **`ov-thanks`** ("THANKS FOR WATCHING"
+  / "No animals were harmed in the making of this movie."), **bleibt am Ende stehen**, nicht
+  auf Schwarz enden.
+
+| # | Task | Abnahme | Status | Commit |
+|---|------|---------|--------|--------|
+| R5-T1 | `editorial-notes-round5.md` + diese Sektion + Memory | Doku committed | 🔄 | |
+| R5-T2 | `party-fx-recipe.py` → Runde 5: Front überall weiß, Texte/Größen/Placements laut §5, `ov-thanks` neu, Cast-Linien-Kern, PNGs neu | PNGs gebaut + Edge-Clip-Check sauber | ⬜ | |
+| R5-T3 | `render.py`-Check (End-Karte „bleibt stehen" durch QC/`validate_semantics`) | grün oder minimaler Fix | ⬜ | |
+| R5-T4 | `round5-timeline.py`: `v003`×2, `v008` raus, Reihenfolge-Swaps, KB-Ruhe, Overlay-Retimes, Speedlines, Outro-Karte, `brief.yaml` | `validate_semantics` + `qc.validate` leer | ⬜ | |
+| R5-T5 | Audio in `timeline.json`: `music-01` bis 3:03, `music-02` Stopp ~6:03, `music-03` im Schwarz, Intro-Sync | QC leer | ⬜ | |
+| R5-T6 | `frameforge preview` neu (Vordergrund!), altes 6:59,5-Preview ersetzen, Kontroll-Frames sichten, PROGRESS+Memory, Push | Neues Preview liegt, gepusht | ⬜ | |
+| R5-T7 | **Freigabe → FHD (1080p) + 4K-Download (Chunks) + Website + SSH-Upload** | wartet auf Christians Sichtung + Server-Pfad | ⛔ blockiert | |
+
+Reihenfolge: R5-T1 → R5-T2 → R5-T3 → R5-T4/T5 → R5-T6.
