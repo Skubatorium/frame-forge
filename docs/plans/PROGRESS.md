@@ -3289,14 +3289,13 @@ Clip-ID-Mapping in **`projects/michael-jga-2026/exports/JGA/editorial-notes-roun
 | # | Task | Abnahme | Status | Commit |
 |---|------|---------|--------|--------|
 | R3-T1 | `editorial-notes-round3.md` + diese Sektion + Bier-Recherche | Doku committed | ✅ fertig | — |
-| R3-T2 | `render.py`: Pan-Mindestzoom, `ease:"in"`, `fit:blur` auf Video verifiziert, `hearts`/`sparkles`-Effekt | `pytest` grün, `ruff`/`doctor` grün, Mini-Render geprüft | 🔄 | |
-| R3-T3 | `party-fx-recipe.py` Neu-Look (Bangers, Doppelebene, Größen, Slant, Streich/Neu-Overlays, Herz/Stern-Cluster), alle PNGs neu | PNGs gebaut, `ov-kunstfigur`/`ov-fx-krone`/`ov-fx-delirium` weg | 🔄 | |
-| R3-T4 | Bier-Zahl recherchieren | im round3-Notes vermerkt (500+ Biere / 50+ Brauereien) | ✅ fertig | — |
-| R3-T5 | `audio-plan` Runde 3: Crossfades CL→Miserlou & Miserlou→WIMM, WIMM weicher Fade-in ab ~6:13, Danke +2–3 s, Loop-Naht prüfen | audio-designer, Datei konsistent zu round3 §0.6 | 🔄 | |
-| R3-T6 | `beatsheet.md` Runde-3-Deltas einarbeiten (Reorder/Cuts/Texte/Timing) | story-architect bzw. Patch, Kapitelsummen = Musiklängen | 🔄 | |
-| R3-T7 | `timeline.json` neu: alle Reorder/Cuts/Adds, `fit:blur` (Foto+Video), KB-Regie, Text-Overlays neu verdrahtet, Swaps, La-Red ans Ende, 2. Gurkenbild zurück, Video-Trims/Vorzug 5:48, Zoom/Ausschnitt-Fixes | validate_semantics + QC-Gate grün, Länge ~7:0x | 🔄 | |
+| R3-T2 | `render.py`: Pan-Mindestzoom, `ease:"in"`, `fit:blur` auf Video verifiziert | `pytest` grün (4 neue Tests), `doctor` grün, Mini-Render Portrait-Video ohne Balken | ✅ fertig | `0b4949f` |
+| R3-T3 | `party-fx-recipe.py` Neu-Look (Bangers, Doppelebene, Größen, Slant, Streich/Neu-Overlays, Herz/Stern-Cluster), alle 30 PNGs neu | PNGs gebaut + visuell geprüft, `ov-kunstfigur`/`ov-fx-krone`/`ov-fx-delirium` weg | ✅ fertig | `ffdba90`,`3fc7b22` |
+| R3-T4 | Bier-Zahl recherchieren | im round3-Notes vermerkt (500+ Biere / 50+ Brauereien) | ✅ fertig | `da0c046` |
+| R3-T5+T6 | **In R3-T7 gefaltet** — `audio-plan.md`/`beatsheet.md` bekommen einen Runde-3-Delta-Block, aber die konkreten Musik-/Beat-Zeiten setzt der Timeline-Umbau direkt (Länge verschiebt sich durch die Cuts, Henne-Ei). Kein eigener Agentenlauf. | Delta-Notiz in beiden Dateien, `timeline.json`-Audio konsistent | 🔄 | |
+| R3-T7 | `timeline.json` neu: alle Reorder/Cuts/Adds, `fit:blur` (Foto+Video), KB-Regie (Zoom+Pan gekoppelt, `ease` gemischt, ~2/3 bewegt), Text-Overlays neu verdrahtet + größer + neue Placements, Swaps (v117/118, v156/157, Rooftop-Order, v100 vor v098), La-Red ans Karaoke-Ende, Video-Trims (v069 +1s) + 5:48-Vorzug (v144/145 nach v137), Zoom/Ausschnitt-Fixes, Musik-Crossfades CL→Miserlou (~2:57) & Miserlou→WIMM (~6:11–6:13), Danke +2–3 s, Cast-Fenster ~1,4 s | `validate_semantics` + `qc.validate` leer, Länge ~7:0x, `brief.yaml` `target_duration_s` nachgezogen | 🔄 | |
 | R3-T8 | party-fx-Effektpass auf neuer Timeline (color_pop/speedlines/hearts/sparkles/Wackel, Cast-SFX auf neues Grid) | Overlays + Effekte gesetzt, FX-Budget | 🔄 | |
 | R3-T9 | `frameforge preview` neu, altes Preview ersetzen, Audio gegenhören, PROGRESS+Memory, Push | Neues Preview liegt, gepusht | 🔄 | |
 
-Reihenfolge: R3-T1 → R3-T2 → R3-T3 → (R3-T5 ∥ R3-T6) → R3-T7 → R3-T8 → R3-T9. Commit nach
-jedem Task. Vor `frameforge preview`: `df -h /` + `sysctl -n vm.swapusage`, ≥ 4 GB frei.
+Reihenfolge: R3-T1 → R3-T2 → R3-T3 → R3-T7 (inkl. Audio) → R3-T8 → R3-T9. Commit nach jedem
+Task. Vor `frameforge preview`: `df -h /` + `sysctl -n vm.swapusage`, ≥ 4 GB frei.
