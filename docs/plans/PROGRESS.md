@@ -3377,13 +3377,36 @@ steht komplett aus.** Kernpunkte:
 
 | # | Task | Abnahme | Status | Commit |
 |---|------|---------|--------|--------|
-| R4-T1 | `editorial-notes-round4.md` + diese Sektion + Memory | Doku committed | 🔄 | (dieser Commit) |
-| R4-T2 | `party-fx-recipe.py`: 3-Ebenen-Renderer, Neigungslogik, Größen ×2, `ov-mok-detektor` neu, `ov-fx-sterne` löschen, Texte korrigieren, `ov-fx-herzen` Cluster erweitern, alle PNGs neu | PNGs gebaut + visuell geprüft | ⬜ | |
-| R4-T3 | `render.py`-Check: reicht `ease:"in"`/`"linear"` für "eine Richtung, keine Beschleunigung"; `sparkles` aus Effektkatalog; `pytest`/`ruff`/`doctor` grün, `proto`+`test-timelapse-journey` unverändert | Tests grün, kein zwingendes neues Feature | ⬜ | |
-| R4-T4 | `timeline.json` neu: KB auf 1 Aktion/1 Richtung + Mini-Zoom überall, `fit:"blur"` global nachziehen, Streichungen, Swaps, Video-3:19-Vorzug, Cast-Fenster größer/länger, Overlays neu verdrahtet + Positionen, `brief.yaml` nachziehen | `validate_semantics` + `qc.validate` leer, Länge ~7:0x | ⬜ | |
-| R4-T5 | Audio: Intro-Sync auf Bild-Fade-in, Akt-1-Ausklang bis ~3:02 dehnen + neuer Titel 3:03, Miserlou→WIMM wie R3, Outro +2–3 s | in `timeline.json` konsistent, QC leer | ⬜ | |
-| R4-T6 | `frameforge preview` neu (nohup+disown), altes 7:02-Preview ersetzen, Kontroll-Frames sichten (schwarze Balken / Text-Look / KB-Ruhe), PROGRESS+Memory, Push | Neues Preview liegt, gepusht | ⬜ | |
+| R4-T1 | `editorial-notes-round4.md` + diese Sektion + Memory | Doku committed | ✅ fertig | `3608fad` |
+| R4-T2 | `party-fx-recipe.py`: 3-Ebenen-Renderer, Neigungslogik, Größen hoch, `ov-mok-detektor` neu, `ov-fx-sterne` löschen, Texte korrigieren, `ov-fx-herz-1706` Cluster erweitern, alle PNGs neu | PNGs gebaut + Edge-Clip-Check sauber | ✅ fertig | `7aeb6d5`,`43569be` |
+| R4-T3 | `render.py`-Check | keine Änderung nötig — `ease:"linear"`/`"in"` + `_PAN_MIN_ZOOM` schon da, kein `sparkles`/`hearts` im Renderer. 93 render-Tests + `doctor` grün | ✅ fertig | (in `7659620`) |
+| R4-T4 | `timeline.json` neu (`round4-timeline.py`): KB 1 Aktion/1 Richtung + Mini-Zoom, `fit:"blur"` auf allen 140 Fotos, Streichungen v089/v094/v106, Swaps v041b↔v043 + v044↔v045, v069+oton-01 an 3:03, Overlays neu verdrahtet + Positionen, `brief.yaml` nachgezogen | `validate_semantics` + `qc.validate` leer, Länge 419,5 s | ✅ fertig | `7659620` |
+| R4-T5 | Audio: `music-01` fade_in 2,0→0,6 (Ausschlag auf Bild-Einblenden) + Ende ~3:01,4; `music-02` tl_in 183,0 (3:03, ~1,6 s Stille davor); `music-03` weich rein ~6:06; Outro-Karte +2,5 s | in `timeline.json` konsistent, QC leer | ✅ fertig | (in `7659620`) |
+| R4-T6 | `frameforge preview` neu, altes 7:02-Preview ersetzen, Kontroll-Frames sichten, PROGRESS+Memory, Push | Neues Preview liegt, gepusht | ✅ fertig | (dieser Commit) |
 | R4-T7 | **Freigabe → 4K-Final (Chunks) + Website + SSH-Upload** (= altes R3-T10) | wartet auf Christians Sichtung + Server-Pfad | ⛔ blockiert | |
 
-Reihenfolge: R4-T1 → R4-T2 → R4-T3 → R4-T4 (inkl. Audio via R4-T5) → R4-T6. Commit nach jedem
-Task. Christian will "heute Nacht" die Umsetzung, "morgen früh ein fertiges neues Preview".
+Reihenfolge erledigt: R4-T1 → R4-T2 → R4-T3 → R4-T4/T5 → R4-T6.
+
+**R4-T6 fertig (2026-09-11).** `frameforge preview michael-jga-2026 JGA` — **419,53 s = 6:59,5**,
+1920×1080, 12586 Frames, 73,7 MB, ffmpeg exit 0, QC-Gate sauber. Altes 7:02-Preview ersetzt
+(gitignored, kein Commit). **Fallstrick bestätigt:** ein per `nohup &`/Background-Task
+gestarteter Lauf brach nach ~1 min ohne Meldung ab (0-Byte-Datei) — im **Vordergrund** lief er
+durch (~9 min). Also weiter im Vordergrund starten.
+Kontroll-Frames gesichtet (t=7,5/33/103/168/186/236/300/353/359/373): 3-Ebenen-Text
+(Weiß/Schwarz/Pink) überall, Neigung steigend (nie fallend), Blur-Extension auf **allen** Fotos
+(keine angeschnittenen Köpfe, keine schwarzen Balken), „CREW UPDATE" rechte Seite, „WTF?" pink
++ volles Bild, „WHERE IS MY / MIND?" Zeilen enger. Ken Burns ruhig (eine Richtung).
+
+**Prüf-/Feintuning-Punkte fürs Sichten (bekannte kleine Abweichungen):**
+- `ov-wimm` sitzt ~6:11–6:15 statt exakt „6:17–6:19" — ggf. +3 s später.
+- `ov-crewupdate` Text berührt rechts fast den Rand (Bangers „STOßEN"/„SÖHNE" breit).
+- Ken-Burns-Amplitude bewusst klein — falls zu wenig Bewegung, `PAN`/`ZD` in
+  `round4-timeline.py` hochziehen und neu bauen.
+- „stay hydrated"-Jitter läuft über `anim.drift_mode:"sine"` `period 0,45 s` — Stärke ggf.
+  über `drift_px`/`drift_py` justieren.
+- Musik: Downbeat Miserlou sitzt durch den 3:03-Start nicht mehr exakt auf dem
+  Crew-Update-Cut (Christian-Wunsch „Titel exakt 3:03" gewinnt).
+- `ov-sulemann-a`/`-b`, `ov-mok-detektor`, `ov-token` (2 Zeilen) zum ersten Mal real —
+  Position/Größe gegenprüfen.
+
+Christian will "heute Nacht" die Umsetzung, "morgen früh ein fertiges neues Preview". ✅ liegt.
