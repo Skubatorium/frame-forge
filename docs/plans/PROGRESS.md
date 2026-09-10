@@ -3331,3 +3331,59 @@ Website `web/sites/michael-jga-2026/public/` (Video-Block + Download-Link wie
 `user@host:<video-verzeichnis>/`. **Offen: exakter SSH-Host + Server-Pfad für
 `micha-jga.skubus.de/videos/`** (Norwegen-README hat nur einen Platzhalter), Traefik-Basic-Auth
 serverseitig. Zwei Videos-Sätze (Norwegen / JGA) strikt getrennt halten.
+
+---
+
+### Plan 0004 — JGA Runde 4 (Rework nach 3. Preview-Feedback, 2026-09-10)
+
+Christian hat das **7:02-Preview** (R3-T9 / `49cfced`) live gesichtet. Urteil: **"deutlich,
+deutlich besser, gefällt mir sehr gut."** Feinschliff, kein Neubau. Struktur bleibt.
+Vollständig transkribiert + Clip-Mapping in
+**`projects/michael-jga-2026/exports/JGA/editorial-notes-round4.md`** (überschreibt Runde 1–3
+punktuell). **Session endete am Wochen-Limit, bevor gebaut wurde — R4 ist reine Doku, Umsetzung
+steht komplett aus.** Kernpunkte:
+
+- **Text-Look NEU — 3 Ebenen** (überschreibt round3 Gold+Pink): Weiß-Front / Schwarz −3/−3 px /
+  Pink +10/+10 px. Bangers bleibt. Alle Overlays vereinheitlichen.
+- **Text-Neigung:** gerade oder von links-unten nach rechts-oben steigend — **nie nach
+  rechts-unten fallend** ("Texte stürzen ab"). Ersetzt das placement-abhängige Slant aus R3.
+- **Text-Größe:** regulär ×2 ggü. Preview `49cfced` (einzelne mehr; `ov-hydrated` −15 %).
+- **Ken Burns noch ruhiger:** pro Clip **nur eine Aktion** (rein ODER raus), **eine Richtung**,
+  Bewegung ab Frame 1 konstant oder leicht `ease:"in"`, keine Dreiecks-/Zickzack-Bewegung.
+  Auch "statische" Fotos bekommen Mini-Zoom. Global prüfen.
+- **Hochkant global:** alle Hochkantbilder als Hochkant + `fit:"blur"`, nicht reingezoomt.
+  Nachkontrolle auf schwarze Balken. Namentlich: 0:49–0:52, 1:24, 2:44, 2:48, 3:14, 3:58,
+  4:35, 5:59, 6:13 + alle Cast-Bilder.
+- **Musik:** (1) Intro — erster Audio-Ausschlag auf den Bild-Fade-in. (2) Neuer Soundtrack
+  **exakt bei 3:03** (Akt-1-Musik bis ~3:02 dehnen, max 1–2 s Stille) — ersetzt den ~2:57-
+  Crossfade aus R3. (3) Akt-2-Video ~3:19 an den 3:03-Titelstart vorziehen. (4) Miserlou→WIMM
+  wie R3. (5) Outro +2–3 s.
+- **FX:** `ov-fx-sterne` / `sparkles` **komplett raus** (bewegen sich nicht). `ov-fx-herzen`
+  mehr + verschiedene Größen, links+rechts. Stripes am Cast-Ende ~50 % weiter außen; Stripes
+  bei ~5:21 raus.
+- **Streichungen:** Bild 3:53 (Dach, gedoppelt), Bild nach `ov-christoph`, Bild 4:22
+  (Downtown, prüfen).
+- **Swaps:** 2:11↔2:14, 2:17↔2:18, 6:05-Bild↔Gurkenbild.
+- **Text-Umformulierungen:** `ov-sulemann` "Der Mann / des Abends" (o.l., gerade) +
+  "Pizzamann Sülemann Bestermann" (u.r., groß); `ov-praesente` "Süße Geschenke / für den /
+  Junggesellen"; `ov-crewupdate` "Crew Update / die verlorenen Söhne / stoßen dazu" (rechts);
+  `ov-gurken` "…mag Gurken. / Gib mir Gurken. / Er braucht sie dringend."; `ov-raetkeinkaese`
+  → **"Rede kein Käse!"**; Cast #9 nur **"Micha"**; neu `ov-mok-detektor` ("MOK Detektor",
+  Bild 2:48).
+- **Positions-Fixes:** `ov-letsgo` unten rechts / weit links reingezogen ("L" bei ~60 %);
+  `ov-rooftop` unten rechts; `ov-hydrated` ~20–25 % weiter nach rechts + Jitter ab Frame 1;
+  `ov-christoph` gerade, unten links; `ov-wimm` auf Bild ~6:17, Zeilen enger; `ov-weiterziehen`
+  auf Bild 5:52–5:53.
+
+| # | Task | Abnahme | Status | Commit |
+|---|------|---------|--------|--------|
+| R4-T1 | `editorial-notes-round4.md` + diese Sektion + Memory | Doku committed | 🔄 | (dieser Commit) |
+| R4-T2 | `party-fx-recipe.py`: 3-Ebenen-Renderer, Neigungslogik, Größen ×2, `ov-mok-detektor` neu, `ov-fx-sterne` löschen, Texte korrigieren, `ov-fx-herzen` Cluster erweitern, alle PNGs neu | PNGs gebaut + visuell geprüft | ⬜ | |
+| R4-T3 | `render.py`-Check: reicht `ease:"in"`/`"linear"` für "eine Richtung, keine Beschleunigung"; `sparkles` aus Effektkatalog; `pytest`/`ruff`/`doctor` grün, `proto`+`test-timelapse-journey` unverändert | Tests grün, kein zwingendes neues Feature | ⬜ | |
+| R4-T4 | `timeline.json` neu: KB auf 1 Aktion/1 Richtung + Mini-Zoom überall, `fit:"blur"` global nachziehen, Streichungen, Swaps, Video-3:19-Vorzug, Cast-Fenster größer/länger, Overlays neu verdrahtet + Positionen, `brief.yaml` nachziehen | `validate_semantics` + `qc.validate` leer, Länge ~7:0x | ⬜ | |
+| R4-T5 | Audio: Intro-Sync auf Bild-Fade-in, Akt-1-Ausklang bis ~3:02 dehnen + neuer Titel 3:03, Miserlou→WIMM wie R3, Outro +2–3 s | in `timeline.json` konsistent, QC leer | ⬜ | |
+| R4-T6 | `frameforge preview` neu (nohup+disown), altes 7:02-Preview ersetzen, Kontroll-Frames sichten (schwarze Balken / Text-Look / KB-Ruhe), PROGRESS+Memory, Push | Neues Preview liegt, gepusht | ⬜ | |
+| R4-T7 | **Freigabe → 4K-Final (Chunks) + Website + SSH-Upload** (= altes R3-T10) | wartet auf Christians Sichtung + Server-Pfad | ⛔ blockiert | |
+
+Reihenfolge: R4-T1 → R4-T2 → R4-T3 → R4-T4 (inkl. Audio via R4-T5) → R4-T6. Commit nach jedem
+Task. Christian will "heute Nacht" die Umsetzung, "morgen früh ein fertiges neues Preview".
