@@ -1,44 +1,39 @@
-"""Rezept fuer die Comic-/Party-FX-Overlays des Exports `JGA` (`michael-jga-2026`) — T8.
+"""Rezept fuer die Comic-/Party-FX-Overlays des Exports `JGA` (`michael-jga-2026`) — RUNDE 3.
 
 Muster: `projects/norwegen-2026/exports/vlog-edit/stage-caption-recipe.py`. Das Skript rendert
 NUR PNGs (ueber `frameforge.design`) nach `exports/JGA/overlays/`. Kein ffmpeg, kein Render.
-Das Compositing (Fade/Position/Timing/Slide) macht `frameforge render` aus `timeline.json`.
+Das Compositing (Fade/Position/Timing/Slide/Jitter) macht `frameforge render` aus `timeline.json`.
 
-Was dieses Skript erzeugt (Runde 2, T8 — erstes Preview mit voller FX-Schicht):
+Runde 3 (Christians 2. Preview-Feedback, `editorial-notes-round3.md`):
 
-1. Die **18 Text-Einblendungen** (`ov-*.png`), id/text/placement 1:1 aus den
-   `OverlayClip`-Eintraegen in `timeline.json` (`tracks.overlay`). Templates: die BESTEHENDEN
-   `title-only.svg` / `subtitle-only.svg`. Stil §0.6:
-   - Akt 1 -> Poppins SemiBold/Bold, klein, randstaendig, Creme, dezenter Schlagschatten,
-     minimal schraeg (-2 Grad).
-   - Akt 2 -> Bangers, gross, "funky", staerker schraeg (-3..-5 Grad), Gold/Creme, weicher
-     Schatten. Lange Zeilen kleiner (kein Wortumbruch in cairosvg -> `\n` -> `<tspan>`).
-   Der animierte Auftritt (Buchstaben/Slide/Fade) laeuft im Render ueber die `anim`-Keys des
-   Overlay-Clips (`slide_from_py`/`slide_in_s`/`fade_*`), nicht hier.
-
-2. Die **9 Cast-Intro-Namensstempel** (`ov-cast-*.png`, B9) aus `title-only.svg` (Bangers,
-   Creme, alternierend unten links/rechts, alternierend +/-5 Grad schraeg). "Stampft rein"
-   laeuft im Render ueber `slide_from_py` + kurzer `fade_in_s`. Micha zuletzt, Stempel
-   "Micha im Delirium" in Michas Sonderblau #4fd8ff (Plan 0004 §4.1).
-   Namen exakt: Witte · Christoph · Matti · Bartosz · Hagi · Bernhard · André · Skuub ·
-   Micha im Delirium. **André mit Akzent** — Bangers rendert den É-Glyph sauber (party-fx
-   hat das per Test-PNG geprueft, §0.9-Entscheidung: ueberall "André").
-
-3. Die **4 Comic-FX-Overlays** (`ov-fx-*.png`), sparsam an den im Beat-Sheet/§5 markierten
-   Stellen:
-   - `ov-fx-sticker-baer`  Stern-Sticker am Pappbaeren (1390) — der EINE Akt-1-Akzent.
-   - `ov-fx-delirium`      "Delirium" als zittrige Pink-Neon-Leuchtschrift (1464).
-   - `ov-fx-krone-1707`    goldene Krone auf der Dachterrasse (1707).
-   - `ov-fx-herz-1706`     Herzchen "vor der Tuer" (1706).
-   Speedlines (1621/1635/1637 run-ups) und color_pop (Cast-Cuts, 4835, Werbe-Look 1544)
-   sind `Effect`-Eintraege in `VideoClip.effects` — KEINE PNGs, die legt party-fx direkt in
-   `timeline.json`.
+* **Eine Schrift ueberall: Bangers** (auch Akt 1, auch "Where is my mind"). Kein Poppins mehr.
+* **Doppelebene fuer harten Schatten:** jeder Text = zwei Deckflaechen. Vorne Gold
+  (`#d9a441`), dahinter derselbe Text in **Pink** (`#ff2e8a`), **+10/+10 px** versetzt (bei
+  4K), KEIN Weichzeichner — Sticker-Optik. Ist die Frontfarbe Pink (WTF), wird der Schatten
+  Gold.
+* **Deutlich groesser:** alle Overlays ~2x der Runde-2-Groessen; "Where is my mind"-Titel ~5x,
+  "mind?" darin nochmal ~4x.
+* **Slant-Vorzeichen nach Placement:** `*-right` kippt nach links (negativ), `*-left` nach
+  rechts (positiv) — Christian: "Schrift rechts muss nach links gekippt sein".
+* **Geloescht:** `ov-kunstfigur` (kein Text an der Stelle), `ov-fx-krone-1707` (Krone raus),
+  `ov-fx-delirium` (steht im Foto; Bild wackelt stattdessen).
+* **Neu:** `ov-raetkeinkaese` ("Raet kein Kaese", Antwort auf den Gurken-Gag), `ov-wimm` als
+  grosser Titel.
+* **Text-/Positions-Aenderungen:** siehe TEXTS unten (Suelemann mit ue+nn, "500+ Biere",
+  Crew-Update zweizeilig, "natuerlich"/"(noch) nicht", "Noch ahnten sie nicht"/"wie toll die
+  Nacht wird", Lampen zweizeilig, letsgo top-right, praesente top-left, wtf top-left,
+  christoph bottom-left, ichwaresnicht bottom-right).
+* **FX-Cluster** statt Einzel-Icons: `ov-fx-herzen` (viele rosa Herzen, Knutsch-Szene),
+  `ov-fx-sterne` (drehende Gold/Pink-Sterne, an lebendigen Akt-2-Stellen). `ov-fx-herz-1706`
+  bleibt als kleiner Einzel-Sticker.
 
 Aufruf von Repo-Root:  ./.venv/bin/python projects/michael-jga-2026/exports/JGA/party-fx-recipe.py
 """
 
 from __future__ import annotations
 
+import random
+import re
 from pathlib import Path
 from xml.sax.saxutils import escape
 
@@ -53,7 +48,6 @@ W, H = RES
 
 TITLE_ONLY = Path("templates/svg/title-only.svg")
 SUBTITLE_ONLY = Path("templates/svg/subtitle-only.svg")
-STICKER = Path("templates/svg/sticker.svg")
 
 CREAM = "#fdf6ec"
 GOLD = "#d9a441"
@@ -61,67 +55,98 @@ GOLD_HI = "#ffcf5c"
 PINK = "#ff2e8a"
 PINK_HI = "#ff5cb8"
 MICHA_BLUE = "#4fd8ff"
-SHADOW_INK = "#0d0722"
+
+# Harter Versatz-Schatten (Sticker-Optik), bei 4K. Christian: "10 Pixel rechts, 10 runter".
+SHADOW_DX = 10
+SHADOW_DY = 10
 
 # placement -> (x%, y%, text-anchor). 6 % Sicherheitsrand zum Bildrand.
 PLACEMENT = {
-    "top-left": (6.0, 12.0, "start"),
-    "top-right": (94.0, 12.0, "end"),
-    "bottom-left": (6.0, 88.0, "start"),
-    "bottom-right": (94.0, 88.0, "end"),
-    "bottom": (50.0, 88.0, "middle"),
-    "top": (50.0, 12.0, "middle"),
+    "top-left": (6.0, 13.0, "start"),
+    "top-right": (94.0, 13.0, "end"),
+    "bottom-left": (6.0, 87.0, "start"),
+    "bottom-right": (94.0, 87.0, "end"),
+    "bottom": (50.0, 87.0, "middle"),
+    "top": (50.0, 13.0, "middle"),
     "center": (50.0, 46.0, "middle"),
 }
 
+_TEXT_RE = re.compile(r"<text\b([^>]*)>(.*?)</text>", re.S)
 
-def _text_block(text: str, x_pct: float, size: int) -> tuple[str, int]:
-    """Inner-Content fuer <text> — eine Zeile escaped, mehrere als <tspan>. Gibt (markup, n)."""
+
+def _slant_for(placement: str, magnitude: float = 4.0) -> float:
+    """Rechts platzierter Text kippt nach links (negativ), links nach rechts (positiv).
+    Christian Runde 3: "wenn die Schrift rechts ist, muss sie mehr nach links gekippt sein"."""
+    if placement.endswith("right"):
+        return -magnitude
+    if placement.endswith("left"):
+        return magnitude
+    return -magnitude  # zentrierte: leichte Linkskippung wie bisher
+
+
+def _text_block(text: str, x_pct: float, size: float) -> str:
+    """Inner-Content fuer <text> — eine Zeile escaped, mehrere als <tspan>."""
     lines = text.split("\n")
     if len(lines) == 1:
-        return escape(text), 1
-    lh = round(size * 1.15)
-    spans = [
+        return escape(text)
+    lh = round(size * 1.12)
+    return "".join(
         f'<tspan x="{x_pct}%" dy="{0 if i == 0 else lh}">{escape(line)}</tspan>'
         for i, line in enumerate(lines)
-    ]
-    return "".join(spans), len(lines)
-
-
-def _decorate(svg: str, pivot: tuple[int, int], slant_deg: float, *,
-              glow: str | None = None, glow_blur: int = 40) -> str:
-    """Fuegt Schlagschatten/Glow (<defs><filter>) + Schraegstellung (rotate um `pivot`) hinzu.
-
-    Reine String-Manipulation am fertigen SVG — kein neues Template, keine Token-Abuse.
-    """
-    px, py = pivot
-    if glow:
-        prim = (f'<feDropShadow dx="0" dy="0" stdDeviation="{glow_blur}" '
-                f'flood-color="{glow}" flood-opacity="0.9"/>')
-    else:
-        prim = (f'<feDropShadow dx="0" dy="{round(H * 0.004)}" stdDeviation="{round(H * 0.004)}" '
-                f'flood-color="{SHADOW_INK}" flood-opacity="0.5"/>')
-    defs = (f'<defs><filter id="fffx" x="-60%" y="-60%" width="220%" height="220%">'
-            f'{prim}</filter></defs>')
-    svg = svg.replace(">", ">" + defs, 1)  # direkt hinter dem oeffnenden <svg ...>
-    attr = f' transform="rotate({slant_deg} {px} {py})" filter="url(#fffx)"'
-    return svg.replace("<text ", "<text" + attr + " ")
+    )
 
 
 def _pivot(x_pct: float, y_pct: float) -> tuple[int, int]:
     return round(x_pct / 100 * W), round(y_pct / 100 * H)
 
 
+def _decorate(svg: str, pivot: tuple[int, int], slant_deg: float, *,
+              front_fill: str, shadow_fill: str,
+              glow: str | None = None, glow_blur: int = 44) -> str:
+    """Ersetzt das eine `<text>` des Templates durch zwei Deckflaechen: erst den versetzten
+    Pink-(bzw. Gold-)Schatten, dann die Frontface. Beide um `pivot` schraeg gestellt, damit
+    ein Wackel-`anim` im Render beide synchron bewegt (Christian: "im gleichen Rhythmus")."""
+    px, py = pivot
+    m = _TEXT_RE.search(svg)
+    if not m:
+        return svg
+    attrs, inner = m.group(1), m.group(2)
+    base_attrs = re.sub(r'\s*fill="[^"]*"', "", attrs)
+    rot = f"rotate({slant_deg:g} {px} {py})"
+
+    defs = ""
+    front_filter = ""
+    if glow:
+        defs = (
+            f'<defs><filter id="fffx" x="-80%" y="-80%" width="260%" height="260%">'
+            f'<feDropShadow dx="0" dy="0" stdDeviation="{glow_blur}" '
+            f'flood-color="{glow}" flood-opacity="0.9"/></filter></defs>'
+        )
+        front_filter = ' filter="url(#fffx)"'
+
+    shadow = (
+        f'<text{base_attrs} fill="{shadow_fill}" '
+        f'transform="{rot} translate({SHADOW_DX} {SHADOW_DY})">{inner}</text>'
+    )
+    front = f'<text{base_attrs} fill="{front_fill}"{front_filter} transform="{rot}">{inner}</text>'
+    svg = svg.replace(m.group(0), shadow + front, 1)
+    if defs:
+        svg = svg.replace(">", ">" + defs, 1)
+    return svg
+
+
 def render_text(out_name: str, template: Path, text: str, placement: str, *,
-                font: str, size: int, fill: str, slant: float,
-                glow: str | None = None, glow_blur: int = 40) -> None:
+                size: float, front: str = GOLD, slant: float | None = None,
+                inner_markup: str | None = None, glow: str | None = None) -> None:
     tokens = yaml.safe_load((ROOT / "design" / "tokens.yaml").read_text())
     x_pct, y_pct, anchor = PLACEMENT[placement]
+    if slant is None:
+        slant = _slant_for(placement)
+    shadow = GOLD if front == PINK else PINK
 
-    inner, n_lines = _text_block(text, x_pct, size)
-    # Bei mehrzeiligem Text an einer unteren/zentralen Position den Startpunkt anheben,
-    # damit der Block im sicheren Bereich bleibt.
-    lh_pct = (size * 1.15) / H * 100
+    inner = inner_markup if inner_markup is not None else _text_block(text, x_pct, size)
+    n_lines = text.count("\n") + 1
+    lh_pct = (size * 1.12) / H * 100
     y_eff = y_pct
     if n_lines > 1:
         if y_pct >= 80:
@@ -131,108 +156,124 @@ def render_text(out_name: str, template: Path, text: str, placement: str, *,
 
     extra = dict(
         text_x_pct=x_pct, text_y_pct=round(y_eff, 2), text_anchor=anchor,
-        font_display=font, font_text=font,
+        font_display="Bangers", font_text="Bangers",
     )
     if template == TITLE_ONLY:
-        extra.update(title=inner, title_size=size, text_color=fill)
+        extra.update(title=inner, title_size=size, text_color=front)
     else:
-        extra.update(subtitle=inner, subtitle_size=size, subtitle_fill=fill)
+        extra.update(subtitle=inner, subtitle_size=size, subtitle_fill=front)
 
     svg = build_svg_from_tokens(template, overlay_tokens(tokens, width=W, height=H, **extra))
-    svg = _decorate(svg, _pivot(x_pct, y_pct), slant, glow=glow, glow_blur=glow_blur)
+    svg = _decorate(svg, _pivot(x_pct, y_pct), slant, front_fill=front, shadow_fill=shadow, glow=glow)
     render_svg_to_png(svg, OUT_DIR / out_name)
     print(f"  {out_name}")
 
 
-def render_sticker(out_name: str, glyph: str, *, x_pct: float, y_pct: float,
-                   size: int, fill: str, glow: str) -> None:
-    tokens = yaml.safe_load((ROOT / "design" / "tokens.yaml").read_text())
-    svg = build_svg_from_tokens(
-        STICKER,
-        overlay_tokens(
-            tokens, width=W, height=H,
-            glyph=escape(glyph), sticker_x_pct=x_pct, sticker_y_pct=y_pct,
-            sticker_size=size, sticker_fill=fill,
-            sticker_glow_color=glow, sticker_glow_blur=round(H * 0.014, 1),
-            font_display="Apple Symbols",
-        ),
-    )
+def render_cluster(out_name: str, glyphs: list[str], fills: list[str], *,
+                   count: int, seed: int, size_lo: int, size_hi: int,
+                   area: tuple[float, float, float, float] = (10, 10, 90, 90)) -> None:
+    """Comic-FX-Cluster: viele Glyphen (Herzen/Sterne) verschiedener Groesse/Drehung ueber
+    eine Bildregion gestreut, mit weichem Glow. Deterministisch ueber `seed`. Christian
+    Runde 3: "nicht so kleine einzelne Icons, ein paar mehr Icons zusammen"."""
+    rnd = random.Random(seed)
+    x0, y0, x1, y1 = area
+    parts = [
+        f'<defs><filter id="cl" x="-60%" y="-60%" width="220%" height="220%">'
+        f'<feDropShadow dx="0" dy="0" stdDeviation="{round(H * 0.010)}" '
+        f'flood-color="{fills[0]}" flood-opacity="0.85"/></filter></defs>'
+    ]
+    for _ in range(count):
+        gx = rnd.uniform(x0, x1)
+        gy = rnd.uniform(y0, y1)
+        sz = rnd.randint(size_lo, size_hi)
+        rot = rnd.uniform(-35, 35)
+        fill = rnd.choice(fills)
+        glyph = escape(rnd.choice(glyphs))
+        px, py = gx / 100 * W, gy / 100 * H
+        parts.append(
+            f'<text x="{px:.0f}" y="{py:.0f}" font-family="Apple Symbols" font-size="{sz}" '
+            f'fill="{fill}" text-anchor="middle" dominant-baseline="middle" '
+            f'transform="rotate({rot:.1f} {px:.0f} {py:.0f})" filter="url(#cl)">{glyph}</text>'
+        )
+    svg = f'<svg width="{W}" height="{H}" xmlns="http://www.w3.org/2000/svg">{"".join(parts)}</svg>'
     render_svg_to_png(svg, OUT_DIR / out_name)
     print(f"  {out_name}")
 
 
 # ---------------------------------------------------------------------------
-# Akt 1 — Poppins, klein, randstaendig, Creme, -2 Grad, dunkler Schatten.
-ACT1 = [
-    ("ov-letsgo.png",     TITLE_ONLY,    "Let's go",                              "bottom-right", 92),
-    ("ov-sulemann.png",   SUBTITLE_ONLY, "Der Mann des Abends:\nSuleman Pizza-Star", "bottom-left", 60),
-    ("ov-biere.png",      TITLE_ONLY,    "~250 Biere",                            "bottom-right", 88),
-    ("ov-praesente.png",  SUBTITLE_ONLY, "Praesente fuer den Junggesellen",       "bottom-left",  54),
-    ("ov-geniesst.png",   SUBTITLE_ONLY, "Ein bisschen\ngeniesst er es\nja schon", "top-left",    60),
-    ("ov-kunstfigur.png", TITLE_ONLY,    "Die wandelnde Kunstfigur",              "bottom-right", 70),
+# Reine Text-Overlays. (out, template, text, placement, size @4K, front-fill)
+# Groessen ~2x Runde 2. Slant automatisch nach Placement.
+TEXTS = [
+    # -- Intro / Akt 1 --
+    ("ov-letsgo.png",     TITLE_ONLY,    "Let's go!",                       "top-right",    200, GOLD),
+    ("ov-sulemann.png",   SUBTITLE_ONLY, "Der Mann des Abends\nPizzamann Sülemann", "bottom-left", 130, GOLD),
+    ("ov-biere.png",      TITLE_ONLY,    "500+ Biere",                      "bottom-right", 190, GOLD),
+    ("ov-praesente.png",  SUBTITLE_ONLY, "Präsente für den\nJunggesellen",  "top-left",     120, GOLD),
+    ("ov-geniesst.png",   SUBTITLE_ONLY, "Ein bisschen\ngenießt er es\nja schon", "top-left", 118, GOLD),
+    # -- Akt 2 --
+    ("ov-crewupdate.png",   SUBTITLE_ONLY, "Crew-Update\nDie verlorenen Söhne stoßen dazu", "bottom-left", 108, CREAM),
+    ("ov-rooftop.png",      TITLE_ONLY,    "Rooftop Bar 58\nwir kommen!",     "top-left",     170, PINK),
+    ("ov-hydrated.png",     TITLE_ONLY,    "stay\nhydrated",                  "top",          230, GOLD),
+    ("ov-christoph.png",    TITLE_ONLY,    "Wo ist\nChristoph???",            "bottom-left",  180, GOLD),
+    ("ov-token.png",        SUBTITLE_ONLY, "wolle Token kaufen ???",          "bottom-left",  150, GOLD),
+    ("ov-lampen.png",       SUBTITLE_ONLY, "Gehen hier etwa schon\n        die Lampen aus?", "bottom-right", 108, CREAM),
+    ("ov-natuerlich.png",   SUBTITLE_ONLY, "natürlich\n(noch) nicht",         "bottom-right", 128, CREAM),
+    ("ov-weiterziehen.png", SUBTITLE_ONLY, "Noch ahnten sie nicht\nwie toll die Nacht wird", "bottom", 108, CREAM),
+    ("ov-wtf.png",          TITLE_ONLY,    "WTF?",                            "top-left",     460, PINK),
+    ("ov-ichwaresnicht.png", SUBTITLE_ONLY, "Ich war es\nnicht.",             "bottom-right", 190, CREAM),
+    ("ov-gurken.png",       SUBTITLE_ONLY, "Der Michael mag Gurken.\nGib mir Gurken.\nDer Michael braucht Gurken.", "bottom-left", 108, CREAM),
+    ("ov-raetkeinkaese.png", TITLE_ONLY,   "Rät kein Käse",                   "top-right",    120, GOLD),
 ]
 
-# Akt 2 — Bangers, gross/funky. (out, template, text, placement, size, fill, slant)
-ACT2 = [
-    ("ov-crewupdate.png",   SUBTITLE_ONLY, "Crew-Update - die verlorenen Soehne stossen dazu", "bottom-left", 66, CREAM, -3),
-    ("ov-rooftop.png",      TITLE_ONLY,    "Rooftop Bar 58 - wir kommen",          "top-left",     150, GOLD,  -4),
-    ("ov-hydrated.png",     TITLE_ONLY,    "stay\nhydrated",                       "top-right",    190, GOLD,  -4),
-    ("ov-christoph.png",    TITLE_ONLY,    "Wo ist Christoph???",                  "bottom-right", 150, CREAM, -4),
-    ("ov-token.png",        SUBTITLE_ONLY, "wolle Token kaufen ???",               "bottom-left",  130, GOLD,  -4),
-    ("ov-lampen.png",       SUBTITLE_ONLY, "Gehen hier etwa schon die Lampen aus?", "bottom-right", 92, CREAM, -3),
-    ("ov-natuerlich.png",   SUBTITLE_ONLY, "Natuerlich ... (noch nicht)",          "bottom-right", 108, CREAM, -4),
-    ("ov-weiterziehen.png", SUBTITLE_ONLY, "Noch ahnen sie nicht, wie toll der Abend wird", "bottom-right", 64, CREAM, -3),
-    ("ov-wtf.png",          TITLE_ONLY,    "WTF?",                                 "bottom-right", 240, GOLD,  -5),
-    ("ov-ichwaresnicht.png", SUBTITLE_ONLY, "Ich war es nicht.",                   "bottom-right", 120, CREAM, -4),
-    ("ov-gurken.png",       SUBTITLE_ONLY, "Der Michael mag Gurken.\nGib mir Gurken.\nDer Michael braucht Gurken.", "bottom-left", 92, CREAM, -3),
-]
-
-# B9 Cast — (nn, key, name, placement, slant, fill, size)
+# B9 Cast — (nn, key, name, placement, fill, size). Slant automatisch nach Placement
+# (bottom-left -> +, bottom-right -> -). Groesse 2x.
 CAST = [
-    ("01", "witte",    "Witte",             "bottom-left",  -5, CREAM,      200),
-    ("02", "christoph", "Christoph",         "bottom-right",  5, CREAM,      200),
-    ("03", "matti",     "Matti",             "bottom-left",  -5, CREAM,      200),
-    ("04", "bartosz",   "Bartosz",           "bottom-right",  5, CREAM,      200),
-    ("05", "hagi",      "Hagi",              "bottom-left",  -5, CREAM,      200),
-    ("06", "bernhard",  "Bernhard",          "bottom-right",  5, CREAM,      200),
-    ("07", "andre",     "André",             "bottom-left",  -5, CREAM,      200),
-    ("08", "skuub",     "Skuub",             "bottom-right",  5, CREAM,      200),
-    ("09", "micha",     "Micha im Delirium", "bottom-left",  -5, MICHA_BLUE, 120),
+    ("01", "witte",     "Witte",             "bottom-left",  CREAM,      260),
+    ("02", "christoph",  "Christoph",         "bottom-right", CREAM,      260),
+    ("03", "matti",      "Matti",             "bottom-left",  CREAM,      260),
+    ("04", "bartosz",    "Bartosz",           "bottom-right", CREAM,      260),
+    ("05", "hagi",       "Hagi",              "bottom-left",  CREAM,      260),
+    ("06", "bernhard",   "Bernhard",          "bottom-right", CREAM,      260),
+    ("07", "andre",      "André",             "bottom-left",  CREAM,      260),
+    ("08", "skuub",      "Skuub",             "bottom-right", CREAM,      260),
+    ("09", "micha",      "Micha im Delirium", "bottom-left",  MICHA_BLUE, 150),
 ]
 
 
 def main() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    print("Akt 1 (Poppins, dezent):")
-    for out, tpl, text, place, size in ACT1:
-        render_text(out, tpl, text, place, font="Poppins", size=size, fill=CREAM, slant=-2)
+    print("Text-Overlays (Bangers, Gold-Front + Pink-Schatten, 2x):")
+    for out, tpl, text, place, size, front in TEXTS:
+        render_text(out, tpl, text, place, size=size, front=front)
 
-    print("Akt 2 (Bangers, funky):")
-    for out, tpl, text, place, size, fill, slant in ACT2:
-        glow = PINK_HI if fill == PINK else None
-        render_text(out, tpl, text, place, font="Bangers", size=size, fill=fill, slant=slant)
+    print("Aftermath — grosser WIMM-Titel ('mind?' nochmal 4x):")
+    # "Where is my" normal, "mind?" ~4x in eigenem tspan; placement top-left.
+    x_pct = PLACEMENT["top-left"][0]
+    wimm_inner = (
+        f'<tspan x="{x_pct}%" dy="0">Where is my</tspan>'
+        f'<tspan x="{x_pct}%" dy="620" font-size="620">mind?</tspan>'
+    )
+    render_text("ov-wimm.png", TITLE_ONLY, "Where is my\nmind?", "top-left",
+                size=170, front=GOLD, inner_markup=wimm_inner)
 
-    print("Aftermath:")
-    render_text("ov-wimm.png", SUBTITLE_ONLY, "Where is my mind?", "bottom-left",
-                font="Poppins", size=64, fill=CREAM, slant=-2)
+    print("Cast-Intro-Namensstempel (B9, 2x, Slant nach Placement):")
+    for nn, key, name, place, fill, size in CAST:
+        render_text(f"ov-cast-{nn}-{key}.png", TITLE_ONLY, name, place, size=size, front=fill)
 
-    print("Cast-Intro-Namensstempel (B9):")
-    for nn, key, name, place, slant, fill, size in CAST:
-        render_text(f"ov-cast-{nn}-{key}.png", TITLE_ONLY, name, place,
-                    font="Bangers", size=size, fill=fill, slant=slant)
+    print("Comic-FX-Cluster:")
+    # Knutsch-Szene (~4:57): viele rosa Herzen, sprudeln aus der Mitte.
+    # Nur `♥` (U+2665) — `❤` (U+2764) hat in Apple Symbols via cairosvg keinen Glyph (Tofu).
+    render_cluster("ov-fx-herzen.png", ["♥"], [PINK, PINK_HI, "#ff8ac4"],
+                   count=40, seed=457, size_lo=110, size_hi=360, area=(16, 12, 84, 88))
+    # Drehende Gold/Pink-Sterne, an lebendigen Akt-2-Stellen. Nur `★` (Tofu-sicher).
+    render_cluster("ov-fx-sterne.png", ["★"], [GOLD, GOLD_HI, PINK_HI],
+                   count=18, seed=1621, size_lo=120, size_hi=320, area=(12, 12, 88, 78))
+    # Einzelner Herz-Sticker "vor der Tuer" (1706) bleibt.
+    render_cluster("ov-fx-herz-1706.png", ["♥"], [PINK, PINK_HI],
+                   count=3, seed=1706, size_lo=200, size_hi=300, area=(60, 20, 82, 40))
 
-    print("Comic-FX (sparsam):")
-    render_sticker("ov-fx-sticker-baer.png", "★", x_pct=70.0, y_pct=26.0,
-                   size=150, fill=GOLD, glow=GOLD_HI)
-    render_text("ov-fx-delirium.png", TITLE_ONLY, "Delirium", "center",
-                font="Bangers", size=170, fill=PINK, slant=-3, glow=PINK_HI, glow_blur=55)
-    render_sticker("ov-fx-krone-1707.png", "♛", x_pct=30.0, y_pct=24.0,
-                   size=240, fill=GOLD, glow=GOLD_HI)
-    render_sticker("ov-fx-herz-1706.png", "♥", x_pct=72.0, y_pct=30.0,
-                   size=240, fill=PINK, glow=PINK_HI)
-
-    total = len(ACT1) + len(ACT2) + 1 + len(CAST) + 4
+    total = len(TEXTS) + 1 + len(CAST) + 3
     print(f"{total} PNG(s) geschrieben nach {OUT_DIR}")
 
 
