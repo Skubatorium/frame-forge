@@ -32,6 +32,7 @@ Aufruf von Repo-Root:  ./.venv/bin/python projects/michael-jga-2026/exports/JGA/
 
 from __future__ import annotations
 
+import math
 import random
 import re
 from pathlib import Path
@@ -201,6 +202,38 @@ def render_cluster(out_name: str, glyphs: list[str], fills: list[str], *,
     print(f"  {out_name}")
 
 
+def render_speedlines(out_name: str, *, seed: int = 1621, n: int = 90,
+                      color: str = "#fdf6ec") -> None:
+    """Comic-Speedlines: viele duenne, zur Bildmitte hin ausgerichtete Striche mit freiem
+    Kern in der Mitte. `render.py` kennt keinen `speedlines`-Effekt (Runde-2-`Effect`-Eintraege
+    liefen ins Leere -> Christian: "Speedlines habe ich ueberhaupt nicht gesehen"). Deshalb als
+    kurzer Overlay-Blitz statt als Clip-Effekt."""
+    rnd = random.Random(seed)
+    cx, cy = W / 2, H / 2
+    inner = min(W, H) * 0.16   # freier Kern
+    outer = max(W, H) * 0.62
+    parts = []
+    for _ in range(n):
+        ang = rnd.uniform(0, 2 * math.pi)
+        r0 = inner * rnd.uniform(0.9, 1.6)
+        r1 = outer * rnd.uniform(0.75, 1.15)
+        x0 = cx + math.cos(ang) * r0
+        y0 = cy + math.sin(ang) * r0
+        x1 = cx + math.cos(ang) * r1
+        y1 = cy + math.sin(ang) * r1
+        w = rnd.choice([5, 7, 9, 12, 16])
+        op = rnd.uniform(0.35, 0.9)
+        col = rnd.choice([color, GOLD_HI, PINK_HI])
+        parts.append(
+            f'<line x1="{x0:.0f}" y1="{y0:.0f}" x2="{x1:.0f}" y2="{y1:.0f}" '
+            f'stroke="{col}" stroke-width="{w}" stroke-linecap="round" opacity="{op:.2f}"/>'
+        )
+    svg = (f'<svg width="{W}" height="{H}" xmlns="http://www.w3.org/2000/svg">'
+           f'{"".join(parts)}</svg>')
+    render_svg_to_png(svg, OUT_DIR / out_name)
+    print(f"  {out_name}")
+
+
 # ---------------------------------------------------------------------------
 # Reine Text-Overlays. (out, template, text, placement, size @4K, front-fill)
 # Groessen ~2x Runde 2. Slant automatisch nach Placement.
@@ -273,8 +306,10 @@ def main() -> None:
     # Einzelner Herz-Sticker "vor der Tuer" (1706) bleibt.
     render_cluster("ov-fx-herz-1706.png", ["♥"], [PINK, PINK_HI],
                    count=3, seed=1706, size_lo=200, size_hi=300, area=(60, 20, 82, 40))
+    # Speedlines-Blitz (render.py kennt keinen speedlines-Effekt) -- kurzer Overlay.
+    render_speedlines("ov-fx-speedlines.png")
 
-    total = len(TEXTS) + 1 + len(CAST) + 3
+    total = len(TEXTS) + 1 + len(CAST) + 4
     print(f"{total} PNG(s) geschrieben nach {OUT_DIR}")
 
 
