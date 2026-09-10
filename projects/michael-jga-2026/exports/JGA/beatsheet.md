@@ -1,5 +1,19 @@
 # Beat-Sheet — Export „JGA" · Micha im Delirium 2026 — **RUNDE 2**
 
+> **RUNDE-3-DELTA (2026-09-10).** `editorial-notes-round3.md` überschreibt punktuell.
+> Struktur/Akte/Musiktracks bleiben, aber der Feinschnitt ändert sich: ~8 Bilder gestrichen
+> (v042, v066, v068, v077, v121, v085, v095, v096), Rooftop-Sequenz neu geordnet, v100 vor
+> v098, v102/v104 in den Rooftop-Abgang vorgezogen, „La Red" (v113) ans Karaoke-Ende, Swaps
+> v117↔v118 und v156↔v157, das Karaoke-Gesangs-Video (v144/v145) als Antwort direkt hinter
+> die Lampen-Szene (v137). Ken Burns durchgängig neu (Zoom+Pan gekoppelt, Richtung wechselnd,
+> ~1/3 statisch, `ease` gemischt). Alle Hochkant-Motive **inkl. Videos** auf `fit:"blur"`.
+> Text-Overlays: neuer Comic-Doppelebene-Look (Bangers, Gold+Pink-Schatten, 2× groß), neue
+> Placements, `ov-kunstfigur`/`ov-fx-krone`/`ov-fx-delirium` raus, `ov-raetkeinkaese`/
+> `ov-fx-herzen`/`ov-fx-sterne` neu. Musik: Crossfades statt harter Schnitte (audio-plan.md
+> Runde-3-Delta). Danke-Karte 2–3 s länger. Neue Gesamtlänge ≈ 7:0x — der Timeline-Umbau
+> (R3-T7) setzt die konkreten Zeiten und zieht `brief.yaml` `target_duration_s` nach. Diese
+> Runde-2-Struktur unten bleibt die Referenz für Kapitelbögen und Muss-Shot-Bilanz.
+
 Löst die Runde-1-Fassung (8:53,9, Vivaldi + Galvanize + Ducking) vollständig ab.
 
 Quellen (in dieser Rangfolge):

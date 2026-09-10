@@ -1,5 +1,21 @@
 # Audio-Plan — `michael-jga-2026` / `JGA` — **RUNDE 2**
 
+> **RUNDE-3-DELTA (2026-09-10, `editorial-notes-round3.md` §0.6).** Tracks bleiben, aber:
+> - **Tote Stille ~2:56–3:01 (CL → Miserlou):** die CL-Theme-Aufnahme hat einen leisen
+>   Ausklang. `music-01-cltheme` `dur` 181,45 → **~175,0** + `fade_out_s` 1,5; `music-02`
+>   startet ~1 s vorher mit `fade_in_s` 1,0 → CL-Ende und Miserlou-Start berühren sich, kein
+>   Loch. 1–2 s Mini-Atem ok.
+> - **Tote Stille ~6:05–6:19 (Miserlou → WIMM):** `music-02` `fade_out_s` 6,0, Ende ~6:12;
+>   `music-03-wimm` `tl_in` = „ich war es nicht"-Bild + 0,3 s, **`fade_in_s` 4,0** (bisher 0 =
+>   harter Start), `src_in` 17,0, `fade_out_s` 10,0. Fades überlappen → Crossfade.
+> - **Danke-Karte 2–3 s länger** (Video-Clip `v170` `src_out` +2,5), Musik entsprechend
+>   länger, dann aus, Fade auf Schwarz. Ende „lassen wir so".
+> - Loop-Naht Miserlou (~284 s) noch hörbar — falls Zeit: längerer Crossfade in der
+>   Loop-Datei, sonst Naht unter einen harten Bild-Cut legen.
+> - O-Ton `oton-03-img1637` wird mit `v144`/`v145` **vorgezogen** (Antwort auf „Lampen aus?").
+> - Konkrete `tl_in`-Werte setzt der Timeline-Umbau (R3-T7) direkt, da die Filmlänge sich
+>   durch die Cuts verschiebt.
+
 Löst die Runde-1-Fassung ab (Vivaldi + Galvanize + Ducking). Grundlage:
 `editorial-notes-round2.md` §0. Alle Track-Werte **gemessen** über
 `frameforge.audio.analyze_and_cache` (librosa, Cache-Schlüssel = `sha256(Datei)`),
