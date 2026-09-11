@@ -3548,3 +3548,53 @@ an** ("final feintuning feedback folgt in nächster Session"). Erwartung: kein N
 Detailkorrekturen auf Basis des 7:05-Previews — analog zu Runde 4→5→6. Nächste Session zuerst
 `editorial-notes-round6.md` + diesen Abschnitt lesen, dann auf Christians Voice-Transkript
 warten (Muster: Runde 7 anlegen wie die vorherigen).
+
+---
+
+### Plan 0004 — JGA Runde 7 (finales Feintuning nach 6. Preview-Feedback, 2026-09-11)
+
+Christian hat das **7:05-Preview** (R6-T4) live gesichtet. Urteil: **"schon viel besser, sieht
+richtig gut aus … Bildreihenfolge, Schnitt alles super, die Längen sind gut."** Ausdrücklich als
+**finale Runde** angekündigt. Transkript + Mapping in
+**`projects/michael-jga-2026/exports/JGA/editorial-notes-round7.md`**.
+
+- **Intro-Schwarz `v000` +1,0 s.**
+- **Ken-Burns-Diversifizierung:** jeder 4. „echte" Zoom-Effekt (from-zoom ≠ to-zoom) auf
+  reinen diagonalen Pan (Zoom konstant) umgestellt — bricht das stur alternierende
+  Rein-/Raus-Zoom-Muster auf (Christian: „sehr viel reinzoomen, rauszoomen … nicht sehr starr
+  im 90-Grad-Winkel"). 34/134 betroffen.
+- **Akt-1→Akt-2-Übergang, Kurskorrektur ggü. Runde 6:** statt des 3-s-Crossfade-Überlapps jetzt
+  eine kurze Schwarzblende (1,5 s) zwischen `v057` und `v069`; `music-01` endet dort,
+  `music-02` startet exakt mit `v069` → **1,5 s echte Stille** als bewusste Trennung
+  (Christian: „die Trennung ein bisschen schärfer hinbekommen").
+- **`v092` (3:51, Zungen-Nahaufnahme neben Corona-Flasche) gestrichen** — „doppelt gemoppelt"
+  neben den Anstoß-Bildern davor.
+- **`ov-weiterziehen` von `v153` auf `v152` umgehängt** (das tatsächliche „zwei Personen,
+  schwarze Kleidung"-Bild — `v153` ist die dunkle Auto-Rückbank-Aufnahme). Standzeit hoch,
+  Taxi-Video `v154` danach zusätzlich gekürzt.
+- **`ov-mok-detektor`:** „MOK" bleibt, statt „DETEKTOR"/„AKTIV" jetzt „MODE: ON" (2-zeilig).
+- **`ov-gurken`:** Text gekürzt auf „Der Micha mag Gurken! / Gib mir die Gurken." (dritte
+  Zeile raus), kürzere Standzeit.
+- **`ov-thanks`:** Punkt am Ende von „…making of this movie" entfernt.
+
+| # | Task | Abnahme | Status | Commit |
+|---|------|---------|--------|--------|
+| R7-T1 | `editorial-notes-round7.md` + diese Sektion | Doku committed | ✅ fertig | (dieser Commit) |
+| R7-T2 | `party-fx-recipe.py` Runde 7: `ov-mok-detektor` „MOK"/„MODE: ON", `ov-gurken` gekürzt, `ov-thanks` Punkt raus | 33 PNGs gebaut, `ov-mok-detektor` visuell geprüft | ✅ fertig | (dieser Commit) |
+| R7-T3 | `round7-timeline.py`: `v000` +1 s, KB-Diversifizierung, `v092` raus, neue Schwarzblende `v057b` + Audio-Trennung, `ov-weiterziehen`→`v152`, `v154` kürzer, `brief.yaml` | `validate_semantics` + `qc.validate` leer, 650 Tests grün | ✅ fertig | (dieser Commit) |
+| R7-T4 | `frameforge preview` neu (Vordergrund!), altes 7:05-Preview ersetzen, Kontroll-Frames/Audio sichten, PROGRESS+Memory, Push | Neues Preview liegt, gepusht | 🔄 offen | |
+| R7-T5 | **Freigabe → FHD (1080p) + 4K-Download (Chunks) + Website + SSH-Upload** | wartet auf Christians Sichtung + Server-Pfad | ⛔ blockiert | |
+
+Ergebnis `round7-timeline.py`: Dauer **424,35 s = 7:04,35**, video 160 / overlay 34 / audio 25.
+`v057b` (neue Schwarzblende) bei 178,53, `v069` jetzt bei 180,03 (3:00,03). `music-01` endet
+178,53, `music-02` startet 180,03 → 1,50 s Stille. `v152` 1,3→3,4 s, `v153` 3,6→1,8 s, `v154`
+zusätzlich 0,8 s gekürzt. Anti-Bleed-Klemme musste nichts kürzen.
+
+**Notiz zur Kurskorrektur:** Runde 6 hatte die Akt-1/2-Stille explizit per 3-s-Überlapp-
+Crossfade eliminiert (Christians Hauptkritik seit Runde 3). Runde 7 dreht das auf Christians
+ausdrücklichen Wunsch teilweise zurück — keine durchgehende Verschmelzung mehr, sondern eine
+kurze, bewusste Schwarzblende + 1,5 s Stille als klarerer Akt-Trenner. Kein Widerspruch,
+sondern Geschmackskorrektur nach Sichtung des Ergebnisses.
+
+**Noch offen:** R7-T4 (Preview neu rendern, ~10-15 min Vordergrund, siehe HANDOVER-Fallstrick)
+und die Sichtung durch Christian.

@@ -29,6 +29,12 @@ Runde 6 (Christians 5. Preview-Feedback, `editorial-notes-round6.md`) — nur zw
   (Woerter klebten aneinander).
 * `ov-hydrated`: -35 %, oben rechts (war "uebertrieben" mittig + gross -> Werbecharakter).
 
+Runde 7 (Christians 6. Preview-Feedback, `editorial-notes-round7.md`) — drei PNG-Deltas:
+* `ov-mok-detektor`: 2-zeilig "MOK" (riesig, bleibt) / "MODE: ON" (statt "DETEKTOR"/"AKTIV").
+* `ov-gurken`: Text gekuerzt "Der Micha mag Gurken!" / "Gib mir die Gurken." (dritte Zeile
+  "Er braucht sie dringend" raus, "!" nach "Gurken").
+* `ov-thanks`: Punkt am Ende von "No animals were harmed in the making of this movie" raus.
+
 Aufruf von Repo-Root:  ./.venv/bin/python projects/michael-jga-2026/exports/JGA/party-fx-recipe.py
 """
 
@@ -284,7 +290,8 @@ TEXTS = [
     ("ov-weiterziehen.png", SUBTITLE_ONLY, "Noch ahnten sie nicht\nwie toll die Nacht wird", "bottom", 150, WHITE, -4),
     ("ov-ichwaresnicht.png", TITLE_ONLY,  "Ich war es\nnicht!",              "bottom-right",        230, WHITE, -4),
     # Runde 5: "Micha" statt "Michael", "die Gurken", groesser.
-    ("ov-gurken.png",      SUBTITLE_ONLY, "Der Micha mag Gurken.\nGib mir die Gurken.\nEr braucht sie dringend.", "bottom-left", 150, WHITE, -4),
+    # Runde 7: gekuerzt (war 3-zeilig, "zu viel Text, nur kurz zu sehen").
+    ("ov-gurken.png",      SUBTITLE_ONLY, "Der Micha mag Gurken!\nGib mir die Gurken.", "bottom-left", 150, WHITE, -4),
     # Runde 5: "Red kein Käse!" (Slang, war "Rede ..."), groesser, ~10 % tiefer.
     ("ov-raetkeinkaese.png", TITLE_ONLY,  "Red kein Käse!",                  "top-right-lo",        176, WHITE, -4),
 ]
@@ -311,14 +318,13 @@ def main() -> None:
     for out, tpl, text, place, size, front, slant in TEXTS:
         render_text(out, tpl, text, place, size=size, front=front, slant=slant)
 
-    print("ov-mok-detektor (Runde 6: 3-zeilig 'MOK'/'DETEKTOR'/'AKTIV', grosser Abstand nach MOK):")
+    print("ov-mok-detektor (Runde 7: 2-zeilig 'MOK' (bleibt) / 'MODE: ON'):")
     mx = PLACEMENT["top-left"][0]
     mok_inner = (
         f'<tspan x="{mx}%" dy="0">MOK</tspan>'
-        f'<tspan x="{mx}%" dy="300" font-size="150">DETEKTOR</tspan>'
-        f'<tspan x="{mx}%" dy="165" font-size="150">AKTIV</tspan>'
+        f'<tspan x="{mx}%" dy="300" font-size="170">MODE: ON</tspan>'
     )
-    render_text("ov-mok-detektor.png", TITLE_ONLY, "MOK\nDETEKTOR\nAKTIV", "top-left",
+    render_text("ov-mok-detektor.png", TITLE_ONLY, "MOK\nMODE: ON", "top-left",
                 size=380, front=WHITE, slant=0, inner_markup=mok_inner)
 
     print("ov-wtf (Runde 5: Front WEISS, +20 %, tiefer, schraeger + kursiv):")
@@ -334,15 +340,15 @@ def main() -> None:
     render_text("ov-wimm.png", TITLE_ONLY, "Where is my\nmind?", "wimm",
                 size=200, front=WHITE, slant=-6, inner_markup=wimm_inner)
 
-    print("ov-thanks (Runde 5: Schluss-Karte, bleibt am Filmende stehen):")
+    print("ov-thanks (Runde 7: Punkt am Ende raus):")
     tx = PLACEMENT["center"][0]
     thanks_inner = (
         f'<tspan x="{tx}%" dy="0">THANKS FOR WATCHING</tspan>'
         f'<tspan x="{tx}%" dy="150" font-size="66">'
-        f'No animals were harmed in the making of this movie.</tspan>'
+        f'No animals were harmed in the making of this movie</tspan>'
     )
     render_text("ov-thanks.png", TITLE_ONLY, "THANKS FOR WATCHING\n"
-                "No animals were harmed in the making of this movie.", "center",
+                "No animals were harmed in the making of this movie", "center",
                 size=170, front=WHITE, slant=0, inner_markup=thanks_inner)
 
     print("Cast-Intro-Namensstempel (Runde 4: gerade, gross):")
