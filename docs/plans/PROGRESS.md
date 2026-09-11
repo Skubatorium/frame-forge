@@ -3663,14 +3663,24 @@ die Freigabe."** Transkript in `projects/michael-jga-2026/exports/JGA/editorial-
 | R9-T1 | `editorial-notes-round9.md` + diese Sektion | Doku committed | ✅ fertig | (dieser Commit) |
 | R9-T2 | `party-fx-recipe.py` Runde 9 + `round9-timeline.py`: `v056` raus, Audio nachgezogen, `brief.yaml` | `validate_semantics` + `qc.validate` leer, 650 Tests grün | ✅ fertig | (dieser Commit) |
 | R9-T3 | `frameforge preview` neu, Kontroll-Frames sichten | Preview liegt | ✅ fertig | (dieser Commit) |
-| R9-T4 | `frameforge approve` + FHD-Render (1080p) + 4K-Render (Chunks) | beide Dateien liegen | 🔄 in Arbeit | |
+| R9-T4 | `frameforge approve` + FHD-Render (1080p) + 4K-Render (Chunks) | beide Dateien liegen | ✅ fertig | (dieser Commit) |
 
-**R9-T4 Zwischenstand:** `frameforge approve` durchgeführt (Phase APPROVED). FHD-Render
-**fertig**: `exports/JGA/final/JGA_1080p.mp4`, 1920×1080, 423,8 s, 192 MB, Chunk-Render
-(4 Chunks à ~110 s), verifiziert. 4K-Render **läuft** (nohup+disown, PID im Log
-`/tmp/jga_4k_render.log`, `--resolution 3840x2160 --crf 18 --preset medium --chunk-s 90`,
-5 Chunks) — Phase-Gate erlaubt zweiten Final-Render aus RENDERED heraus, solange die Timeline
-unverändert bleibt (`gate_render_final` in `state.py`).
+**R9-T4 fertig (2026-09-11).** `frameforge approve` durchgeführt (Phase APPROVED → RENDERED).
+Beide Final-Renders liegen, verifiziert:
+- `exports/JGA/final/JGA_1080p.mp4` — 1920×1080, 423,8 s, 192 MB (Chunk-Render, 4 Chunks à
+  ~110 s, `--crf 20 --preset medium`).
+- `exports/JGA/final/JGA_4k.mp4` — 3840×2160, 423,8 s, 733 MB (Chunk-Render, 5 Chunks à
+  ~90 s, `--crf 18 --preset medium`).
+- Reports `JGA_1080p.report.md` / `JGA_4k.report.md` liegen daneben.
+- Zweiter Final-Render aus RENDERED (nicht APPROVED) heraus lief anstandslos, weil die
+  Timeline zwischen beiden Renders unverändert blieb (`gate_render_final` in `state.py`
+  erlaubt das explizit für Zweitfassungen derselben Freigabe).
+- Beide Läufe **nohup+disown**, resumable Chunk-Render (Muster: `feedback_long_renders.md`).
+
+**Export `michael-jga-2026`/`JGA` ist damit fertig produziert.** Offen: Website
+(`web/sites/michael-jga-2026/public/`) + SSH-Upload nach `micha-jga.skubus.de/videos/`
+(`JGA_1080p.mp4` + `JGA_4k.mp4`, `rsync -avP`) — exakter SSH-Host/Server-Pfad weiterhin offen,
+Frage an Christian.
 
 **R9-T3 fertig (2026-09-11).** `frameforge preview` — **423,8 s = 7:03,8**, 1920×1080, exit 0.
 Kontroll-Frames: `ov-sulemann-b` nur noch „Pizzamann"/„Sülemann" (kein „Bestermann"),
