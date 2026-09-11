@@ -35,6 +35,10 @@ Runde 7 (Christians 6. Preview-Feedback, `editorial-notes-round7.md`) — drei P
   "Er braucht sie dringend" raus, "!" nach "Gurken").
 * `ov-thanks`: Punkt am Ende von "No animals were harmed in the making of this movie" raus.
 
+Runde 9 (Christians 8. Preview-Feedback) — zwei Text-Korrekturen:
+* `ov-sulemann-b`: "Bestermann"-Zeile raus, nur noch "Pizzamann"/"Sülemann".
+* `ov-praesente`: "jungen Gesellen" -> "Junggesellen" (ein Wort, Junggesellenabschied).
+
 Aufruf von Repo-Root:  ./.venv/bin/python projects/michael-jga-2026/exports/JGA/party-fx-recipe.py
 """
 
@@ -267,10 +271,12 @@ TEXTS = [
     # -- Intro / Akt 1 --  (out, template, text, placement, size@4K, front, slant)
     ("ov-letsgo.png",      TITLE_ONLY,    "Let's go!",                       "letsgo",              320, WHITE, -3),
     ("ov-sulemann-a.png",  SUBTITLE_ONLY, "Der Mann\ndes Abends",            "top-left",            150, WHITE, 0),
-    ("ov-sulemann-b.png",  TITLE_ONLY,    "Pizzamann\nSülemann\nBestermann", "bottom-right-half",   215, WHITE, -3),
+    # Runde 9: "Bestermann"-Zeile raus (war falsch/unnoetig), nur noch 2 Zeilen.
+    ("ov-sulemann-b.png",  TITLE_ONLY,    "Pizzamann\nSülemann",             "bottom-right-half",   215, WHITE, -3),
     ("ov-biere.png",       TITLE_ONLY,    "500+ Biere",                      "bottom-right",        360, WHITE, -3),
     # Runde 5: Text Singular, etwas groesser, Winkel bleibt (Christian: "vom Winkel her gut").
-    ("ov-praesente.png",   SUBTITLE_ONLY, "Süßes Geschenk\nfür den\njungen Gesellen", "top-left-lo", 182, WHITE, -12),
+    # Runde 9: "jungen Gesellen" -> "Junggesellen" (ein Wort, Junggesellenabschied).
+    ("ov-praesente.png",   SUBTITLE_ONLY, "Süßes Geschenk\nfür den\nJunggesellen", "top-left-lo", 182, WHITE, -12),
     # Runde 5: Front WEISS (war gelb), +10 %, ~10 % tiefer (Text ragte oben raus).
     ("ov-geniesst.png",    SUBTITLE_ONLY, "Ein bisschen\ngenießt er es\nja schon", "top-left-mid",  226, WHITE, -8),
     # -- Akt 2 --

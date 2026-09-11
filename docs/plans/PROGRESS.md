@@ -3644,6 +3644,31 @@ bestätigt.
 approve michael-jga-2026 JGA` → **R8-T4**: FHD (1080p) + 4K-Download (Chunks) + Website +
 SSH-Upload.
 
+---
+
+### Plan 0004 — JGA Runde 9 (zwei Text-Korrekturen + Streichung, FREIGABE erteilt, 2026-09-11)
+
+Christian: **"Da es sich hier nur um textliche Anpassungen handelt, kriegst du hiermit auch
+die Freigabe."** Transkript in `projects/michael-jga-2026/exports/JGA/editorial-notes-round9.md`.
+
+- `ov-sulemann-b`: "Bestermann"-Zeile raus (2 statt 3 Zeilen).
+- `ov-praesente`: "für den jungen Gesellen" → "für den Junggesellen" (Tippfehler/Wortwahl;
+  Christian hat zwischenzeitlich "die jungen Gesellen" gesagt, dann live per Folgenachricht auf
+  "für den Junggesellen" korrigiert — das ist die geltende Fassung).
+- `v056` ("Frietland"-Terrasse, ~2:55) gestrichen — strafft den Akt-1/2-Übergang.
+- **Danach: FHD (1080p) + 4K-Render, beide Dateien fertig für den Upload.**
+
+| # | Task | Abnahme | Status | Commit |
+|---|------|---------|--------|--------|
+| R9-T1 | `editorial-notes-round9.md` + diese Sektion | Doku committed | ✅ fertig | (dieser Commit) |
+| R9-T2 | `party-fx-recipe.py` Runde 9 + `round9-timeline.py`: `v056` raus, Audio nachgezogen, `brief.yaml` | `validate_semantics` + `qc.validate` leer, 650 Tests grün | ✅ fertig | (dieser Commit) |
+| R9-T3 | `frameforge preview` neu, Kontroll-Frames sichten | Preview liegt | 🔄 offen | |
+| R9-T4 | `frameforge approve` + FHD-Render (1080p) + 4K-Render (Chunks) | beide Dateien liegen | 🔄 offen | |
+
+Ergebnis `round9-timeline.py`: Dauer **423,75 s = 7:03,75**, video 159 / overlay 32 / audio 25.
+`v069` jetzt bei 2:58,03 (war 3:00,03), Stille am Akt-Übergang weiterhin 1,5 s. WIMM-Dauer
+automatisch auf neues Filmende nachgezogen (Lehre aus R8: nie vergessen).
+
 Ergebnis `round7-timeline.py`: Dauer **424,35 s = 7:04,35**, video 160 / overlay 34 / audio 25.
 `v057b` (neue Schwarzblende) bei 178,53, `v069` jetzt bei 180,03 (3:00,03). `music-01` endet
 178,53, `music-02` startet 180,03 → 1,50 s Stille. `v152` 1,3→3,4 s, `v153` 3,6→1,8 s, `v154`

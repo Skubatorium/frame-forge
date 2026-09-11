@@ -25,7 +25,7 @@ preset: jga-zweiteiler
 # RUNDE 3 (2026-09-10): chirurgischer Umbau — 8 Video-Streichungen + ein neues
 # Vitrinen-Foto (IMG_1391) + Cast-Portraits auf 1,4 s + Danke-Karte länger; real
 # gebaute timeline.duration = 422,2 s ≈ 7:02.
-target_duration_s: 425.8
+target_duration_s: 423.8
 language: de
 
 # ---------------------------------------------------------------- Overrides (über dem Preset)
