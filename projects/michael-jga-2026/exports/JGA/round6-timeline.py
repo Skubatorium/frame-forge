@@ -213,20 +213,23 @@ amap = {a.get("id"): a for a in AU}
 v069_tl = new_tl["v069"]
 v160_tl = new_tl["v160"]
 
+# Echter Ueberlapp-Crossfade (~3 s), damit KEIN Ton-Loch entsteht:
+# music-02 ist voll da, wenn music-01 zu faden beginnt.
+MIS_LEAD = 3.5   # Miserlou setzt so viele s vor dem v069-Cut ein
 cl = amap.get("music-01-cltheme")
 if cl:
     cl["tl_in"] = 0.0
     cl["src_in"] = 0.0
-    cl["dur"] = round(min(181.4, v069_tl + 1.0), 3)   # laeuft ~1 s in Akt 2 hinein
+    cl["dur"] = round(min(181.4, v069_tl - 0.5), 3)   # Ende ~0,5 s vor dem Cut
     cl["fade_in_s"] = 0.6
-    cl["fade_out_s"] = 2.5
+    cl["fade_out_s"] = 1.5                            # kurzer Ausblend, kein langes leises Schleifen
 
 mis = amap.get("music-02-miserlou")
 if mis:
-    mis["tl_in"] = round(v069_tl - 0.5, 3)            # setzt 0,5 s vor dem v069-Cut ein
+    mis["tl_in"] = round(v069_tl - MIS_LEAD, 3)       # ~3,5 s vor dem Cut -> voll, bevor CL fadet
     mis["src_in"] = 0.0
-    mis["fade_in_s"] = 1.5
-    mis["dur"] = round(v160_tl - (v069_tl - 0.5) - 0.2, 3)
+    mis["fade_in_s"] = 2.0
+    mis["dur"] = round(v160_tl - (v069_tl - MIS_LEAD) - 0.2, 3)
     mis["fade_out_s"] = 2.0
 
 wimm = amap.get("music-03-wimm")

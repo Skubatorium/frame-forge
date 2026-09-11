@@ -4373,23 +4373,23 @@
     "src": "music/01 Champions League Theme (Champions League Theme).m4a",
     "type": "music",
     "tl_in": 0.0,
-    "dur": 179.03,
+    "dur": 177.53,
     "src_in": 0.0,
     "gain_db": 0.0,
     "duck_fade_s": 0.0,
     "fade_in_s": 0.6,
-    "fade_out_s": 2.5
+    "fade_out_s": 1.5
    },
    {
     "id": "music-02-miserlou",
     "src": "music/01 Miserlou (loop-196).m4a",
     "type": "music",
-    "tl_in": 177.53,
-    "dur": 184.9,
+    "tl_in": 174.53,
+    "dur": 187.9,
     "src_in": 0.0,
     "gain_db": 0.0,
     "duck_fade_s": 0.0,
-    "fade_in_s": 1.5,
+    "fade_in_s": 2.0,
     "fade_out_s": 2.0
    },
    {
