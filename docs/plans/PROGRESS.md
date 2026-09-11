@@ -3485,3 +3485,36 @@ stehen (kein Schwarz-Ende).
 
 Christian will danach **FHD (1080p) + 4K-Download-Version — erst nach Freigabe dieses Previews**
 (R5-T7).
+
+---
+
+### Plan 0004 — JGA Runde 6 (Rework nach 5. Preview-Feedback, 2026-09-11)
+
+Christian hat das **7:03,3-Preview** (R5-T6 / `c7669ec`) live gesichtet. Urteil: **"schon
+wirklich großartig … Feinschliff."** Transkript + Mapping in
+**`projects/michael-jga-2026/exports/JGA/editorial-notes-round6.md`**. Zwei übergreifende
+Themen + Einzel-Fixes:
+
+- **Akt-1→Akt-2-Stille MUSS weg** (Hauptproblem, seit Runde 3 offen): `music-01` (CL) läuft
+  ~1 s in Akt 2 hinein, `music-02` (Miserlou) setzt 0,5 s vor dem `v069`-Cut ein → ~1,5 s
+  Überlappung, kein Loch. Dafür **`v007` (~0:23) + `v022` (~1:11) gestrichen** (~6 s). `v069`
+  rutscht von 3:02 auf ~2:58 (ok laut Christian).
+- **Kein Text ragt ins nächste Bild** (durchgängige Regel): Host-Foto wächst, textfreie
+  Nachbarn werden gekürzt. Betroffen: `ov-crewupdate` (Host `v058` +1,7 s), `ov-token`
+  (`v110` +1,1 s), `ov-natuerlich` (Video `v145` +1,8 s), `ov-weiterziehen` (auf `v153`,
+  +2,2 s; Taxi-`v154` vorne gekürzt), Gurken-Cluster (`v159` +1,0 s, `v158` +0,8 s).
+  **Ausnahme:** `ov-wimm` darf über zwei Fotos.
+- **Einzel:** Intro-Karte `v001` +2,0 s · `ov-mok-detektor` 3-zeilig „MOK/DETEKTOR/AKTIV" mit
+  Abstand · `ov-hydrated` −35 % + oben rechts · Schwarzblende `v160` +1,5 s (Musik danach).
+
+| # | Task | Abnahme | Status | Commit |
+|---|------|---------|--------|--------|
+| R6-T1 | `editorial-notes-round6.md` + diese Sektion | Doku committed | ✅ fertig | (dieser Commit) |
+| R6-T2 | `party-fx-recipe.py` Runde 6: `ov-mok-detektor` 3-zeilig, `ov-hydrated` klein/o.r. | PNGs gebaut, kein Edge-Clip | ✅ fertig | (dieser Commit) |
+| R6-T3 | `round6-timeline.py`: 2 Streichungen, Host-Verlängerungen + Nachbar-Kürzungen, `v001`/`v160` +, Anti-Bleed-Sicherung, Audio aneinanderschieben, `brief.yaml` | `validate_semantics` + `qc.validate` leer, 134 Tests grün | ✅ fertig | (dieser Commit) |
+| R6-T4 | `frameforge preview` neu (Vordergrund!), altes 7:03,3-Preview ersetzen, Kontroll-Frames sichten, PROGRESS+Memory, Push | Neues Preview liegt, gepusht | 🔄 | |
+| R6-T5 | **Freigabe → FHD (1080p) + 4K-Download (Chunks) + Website + SSH-Upload** | wartet auf Christians Sichtung + Server-Pfad | ⛔ blockiert | |
+
+Ergebnis `round6-timeline.py`: Dauer **425,05 s = 7:05,05**, video 160 / overlay 34 / audio 25.
+`music-01`-Ende 179,03 s / `music-02`-Start 177,53 s → 1,5 s Überlappung, kein stiller Spalt.
+`v069` bei 178,03 s (2:58,03). Anti-Bleed-Klemme musste nichts kürzen (Host-Streckung reichte).

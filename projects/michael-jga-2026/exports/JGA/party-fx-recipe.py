@@ -24,6 +24,11 @@ Runde 5 (Christians 4. Preview-Feedback, `editorial-notes-round5.md`) — Deltas
 * **Cast-Linien-/Speedlines-FX:** freier Kern ~30 % groesser (Striche lagen im Gesicht).
 * `ov-fx-herzen` / `ov-fx-herz-1706`: **unveraendert** (Runde-4-Stand ist gut).
 
+Runde 6 (Christians 5. Preview-Feedback, `editorial-notes-round6.md`) — nur zwei PNG-Deltas:
+* `ov-mok-detektor`: 3-zeilig "MOK" / "DETEKTOR" / "AKTIV", grosser Abstand nach "MOK"
+  (Woerter klebten aneinander).
+* `ov-hydrated`: -35 %, oben rechts (war "uebertrieben" mittig + gross -> Werbecharakter).
+
 Aufruf von Repo-Root:  ./.venv/bin/python projects/michael-jga-2026/exports/JGA/party-fx-recipe.py
 """
 
@@ -82,6 +87,8 @@ PLACEMENT = {
     "wtf": (6.0, 34.0, "start"),           # ov-wtf: deutlich tiefer als top-left-lo
     "top-right-lo": (94.0, 24.0, "end"),   # ov-raetkeinkaese: oben rechts, ~10 % tiefer
     "wimm": (6.0, 33.0, "start"),          # ov-wimm: Block ~20 % tiefer
+    # Runde 6:
+    "hydrated6": (94.0, 12.0, "end"),      # ov-hydrated: oben rechts, kleiner (Werbecharakter)
 }
 
 _TEXT_RE = re.compile(r"<text\b([^>]*)>(.*?)</text>", re.DOTALL)
@@ -264,8 +271,8 @@ TEXTS = [
     # Runde 5: +10 %.
     ("ov-crewupdate.png",  TITLE_ONLY,    "Crew Update\ndie verlorenen Söhne\nstoßen dazu", "top-right", 165, WHITE, -10),
     ("ov-rooftop.png",     TITLE_ONLY,    "Rooftop Bar 58\nwir kommen!",     "bottom-right-hi",     170, WHITE, -10),
-    # Runde 5: mittig (war rechts), x2 Groesse (R4-(-15 %) zurueckgenommen).
-    ("ov-hydrated.png",    TITLE_ONLY,    "stay\nhydrated",                  "hydrated",            390, WHITE, 0),
+    # Runde 6: -35 % ggue. R5, oben rechts (Werbecharakter) — war "uebertrieben" mittig+gross.
+    ("ov-hydrated.png",    TITLE_ONLY,    "stay\nhydrated",                  "hydrated6",           250, WHITE, 0),
     # Runde 5: Text "Wo ist eigentlich / Christoph?" (ein "?").
     ("ov-christoph.png",   TITLE_ONLY,    "Wo ist eigentlich\nChristoph?",   "bottom-left",         196, WHITE, 0),
     # Runde 5: rechte Seite (war links).
@@ -304,13 +311,14 @@ def main() -> None:
     for out, tpl, text, place, size, front, slant in TEXTS:
         render_text(out, tpl, text, place, size=size, front=front, slant=slant)
 
-    print("ov-mok-detektor (Runde 5: 2-zeilig, 'MOK' riesig / 'Detektor' klein):")
+    print("ov-mok-detektor (Runde 6: 3-zeilig 'MOK'/'DETEKTOR'/'AKTIV', grosser Abstand nach MOK):")
     mx = PLACEMENT["top-left"][0]
     mok_inner = (
         f'<tspan x="{mx}%" dy="0">MOK</tspan>'
-        f'<tspan x="{mx}%" dy="180" font-size="180">Detektor</tspan>'
+        f'<tspan x="{mx}%" dy="300" font-size="150">DETEKTOR</tspan>'
+        f'<tspan x="{mx}%" dy="165" font-size="150">AKTIV</tspan>'
     )
-    render_text("ov-mok-detektor.png", TITLE_ONLY, "MOK\nDetektor", "top-left",
+    render_text("ov-mok-detektor.png", TITLE_ONLY, "MOK\nDETEKTOR\nAKTIV", "top-left",
                 size=380, front=WHITE, slant=0, inner_markup=mok_inner)
 
     print("ov-wtf (Runde 5: Front WEISS, +20 %, tiefer, schraeger + kursiv):")
