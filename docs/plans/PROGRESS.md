@@ -3582,8 +3582,23 @@ richtig gut aus … Bildreihenfolge, Schnitt alles super, die Längen sind gut."
 | R7-T1 | `editorial-notes-round7.md` + diese Sektion | Doku committed | ✅ fertig | (dieser Commit) |
 | R7-T2 | `party-fx-recipe.py` Runde 7: `ov-mok-detektor` „MOK"/„MODE: ON", `ov-gurken` gekürzt, `ov-thanks` Punkt raus | 33 PNGs gebaut, `ov-mok-detektor` visuell geprüft | ✅ fertig | (dieser Commit) |
 | R7-T3 | `round7-timeline.py`: `v000` +1 s, KB-Diversifizierung, `v092` raus, neue Schwarzblende `v057b` + Audio-Trennung, `ov-weiterziehen`→`v152`, `v154` kürzer, `brief.yaml` | `validate_semantics` + `qc.validate` leer, 650 Tests grün | ✅ fertig | (dieser Commit) |
-| R7-T4 | `frameforge preview` neu (Vordergrund!), altes 7:05-Preview ersetzen, Kontroll-Frames/Audio sichten, PROGRESS+Memory, Push | Neues Preview liegt, gepusht | 🔄 offen | |
+| R7-T4 | `frameforge preview` neu (Vordergrund!), altes 7:05-Preview ersetzen, Kontroll-Frames/Audio sichten, PROGRESS+Memory, Push | Neues Preview liegt, gepusht | ✅ fertig | (dieser Commit) |
 | R7-T5 | **Freigabe → FHD (1080p) + 4K-Download (Chunks) + Website + SSH-Upload** | wartet auf Christians Sichtung + Server-Pfad | ⛔ blockiert | |
+
+**R7-T4 fertig (2026-09-11).** `frameforge preview` — **424,4 s = 7:04,4**, 1920×1080, 30 fps,
+70 MB, ffmpeg exit 0. Altes 7:05-Preview ersetzt. Kontroll-Frames + Audio-RMS geprüft:
+- Akt-1/2-Übergang: RMS zeigt sauberen Abfall ab ~176 s, echte Stille (RMS ≈ 0) von ~178 bis
+  ~180 s, danach Miserlou-Einsatz mit `v069` — Trennung wie gewünscht, kein Crossfade-Matsch
+  mehr, aber auch keine unangenehm lange Stille.
+- `ov-mok-detektor`: „MOK" groß / „MODE: ON" darunter, klar lesbar, kein Kleben.
+- `ov-weiterziehen`: sitzt jetzt korrekt auf dem „zwei Männer nachts"-Bild (`v152`), nicht mehr
+  auf der Auto-Rückbank-Aufnahme.
+- `ov-gurken`: „Der Micha mag Gurken! / Gib mir die Gurken." — kurz, zwei Zeilen.
+- `ov-thanks`: „No animals were harmed in the making of this movie" — kein Punkt mehr.
+Alle geprüften Punkte aus `editorial-notes-round7.md` visuell bestätigt.
+
+**JETZT: wartet auf Christians Sichtung des 7:04-Previews.** Bei Freigabe → `frameforge approve
+michael-jga-2026 JGA` → **R7-T5**: FHD (1080p) + 4K-Download (Chunks) + Website + SSH-Upload.
 
 Ergebnis `round7-timeline.py`: Dauer **424,35 s = 7:04,35**, video 160 / overlay 34 / audio 25.
 `v057b` (neue Schwarzblende) bei 178,53, `v069` jetzt bei 180,03 (3:00,03). `music-01` endet
