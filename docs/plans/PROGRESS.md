@@ -3600,6 +3600,34 @@ Alle geprüften Punkte aus `editorial-notes-round7.md` visuell bestätigt.
 **JETZT: wartet auf Christians Sichtung des 7:04-Previews.** Bei Freigabe → `frameforge approve
 michael-jga-2026 JGA` → **R7-T5**: FHD (1080p) + 4K-Download (Chunks) + Website + SSH-Upload.
 
+---
+
+### Plan 0004 — JGA Runde 8 (Korrektur eines Missverständnisses aus Runde 7, 2026-09-11)
+
+Christian: **"Video ist quasi fertig ... eine ganz kleine Sache."** R7 hatte `v092`
+(IMG_1543, Zunge raus neben Corona-Flasche) fälschlich gestrichen — das war laut eigener
+Timeline-Notiz genau das Bild, das mit `ov-hydrated` zusammengehört. Gemeint war stattdessen
+`v091` (Dachterrasse-Anstoßen, redundant zu `v090`). Transkript + Mapping in
+**`projects/michael-jga-2026/exports/JGA/editorial-notes-round8.md`**.
+
+- **`v091` raus, `v092`/IMG_1543 wieder rein**, `ov-hydrated` darauf verankert.
+- **`ov-christoph`** ("Wo ist eigentlich Christoph?", ~3:54) **komplett raus**.
+- **`ov-ichwaresnicht`** ("Ich war es nicht", ~6:01) **komplett raus** — "zu viel Text
+  hintereinander".
+- **`ov-raetkeinkaese`** ("Rät kein Käse") **länger stehen lassen**.
+- Rest bestätigt final gut, unverändert (`ov-gurken`, Reihenfolge, Aftermath, Dank-Karte).
+
+| # | Task | Abnahme | Status | Commit |
+|---|------|---------|--------|--------|
+| R8-T1 | `editorial-notes-round8.md` + diese Sektion | Doku committed | ✅ fertig | (dieser Commit) |
+| R8-T2 | `round8-timeline.py`: `v091` raus, `v092` wieder rein + `ov-hydrated`-Anker, `ov-christoph`/`ov-ichwaresnicht` raus, `ov-raetkeinkaese` länger, `brief.yaml` | `validate_semantics` + `qc.validate` leer, 650 Tests grün | ✅ fertig | (dieser Commit) |
+| R8-T3 | `frameforge preview` neu (Vordergrund!), Kontroll-Frames sichten, PROGRESS+Memory, Push | Neues Preview liegt, gepusht | 🔄 offen | |
+| R8-T4 | **Freigabe → FHD (1080p) + 4K-Download (Chunks) + Website + SSH-Upload** | wartet auf Christians Sichtung + Server-Pfad | ⛔ blockiert | |
+
+Ergebnis `round8-timeline.py`: Dauer **425,75 s = 7:05,75**, video 160 / overlay 32 / audio 25.
+`v092` bei 232,13 (dur 2,6), `ov-hydrated` bei 232,28 (dur 2,0), `ov-raetkeinkaese` dur 3,2.
+Anti-Bleed-Klemme musste nichts kürzen.
+
 Ergebnis `round7-timeline.py`: Dauer **424,35 s = 7:04,35**, video 160 / overlay 34 / audio 25.
 `v057b` (neue Schwarzblende) bei 178,53, `v069` jetzt bei 180,03 (3:00,03). `music-01` endet
 178,53, `music-02` startet 180,03 → 1,50 s Stille. `v152` 1,3→3,4 s, `v153` 3,6→1,8 s, `v154`

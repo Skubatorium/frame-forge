@@ -6,7 +6,7 @@
   3840,
   2160
  ],
- "duration": 424.35,
+ "duration": 425.75,
  "tracks": {
   "video": [
    {
@@ -2086,10 +2086,10 @@
     "fit": "blur"
    },
    {
-    "id": "v091",
-    "asset": "20260905-phone-8d1ede",
+    "id": "v092",
+    "asset": "20260905-phone-a05520",
     "src_in": 0.0,
-    "src_out": 1.2,
+    "src_out": 2.6,
     "tl_in": 232.13,
     "speed": 1.0,
     "effects": [
@@ -2098,17 +2098,17 @@
       "from": [
        0.0,
        0.0,
-       1.035
+       1.08
       ],
       "to": [
-       0.03,
-       0.0,
-       1.11
+       -0.0127,
+       0.0127,
+       1.035
       ],
-      "ease": "linear"
+      "ease": "in"
      }
     ],
-    "note": "zweites Corona-Bild, kurzer Blitz",
+    "note": "R8: wieder rein (war in R7 faelschlich gestrichen) -- Text Stay hydrated",
     "fit": "blur"
    },
    {
@@ -2116,7 +2116,7 @@
     "asset": "20260905-phone-c6a467",
     "src_in": 0.0,
     "src_out": 2.4,
-    "tl_in": 233.33,
+    "tl_in": 234.73,
     "speed": 1.0,
     "effects": [
      {
@@ -2142,7 +2142,7 @@
     "asset": "20260905-phone-4b7b47",
     "src_in": 0.0,
     "src_out": 2.2,
-    "tl_in": 235.73,
+    "tl_in": 237.13,
     "speed": 1.0,
     "effects": [
      {
@@ -2168,7 +2168,7 @@
     "asset": "20260908-unknown-757aac",
     "src_in": 0.0,
     "src_out": 2.0,
-    "tl_in": 237.93,
+    "tl_in": 239.33,
     "speed": 1.0,
     "effects": [
      {
@@ -2194,7 +2194,7 @@
     "asset": "20260905-phone-811d4b",
     "src_in": 0.0,
     "src_out": 1.8,
-    "tl_in": 239.93,
+    "tl_in": 241.33,
     "speed": 1.0,
     "effects": [
      {
@@ -2219,7 +2219,7 @@
     "asset": "20260905-phone-e7cb72",
     "src_in": 0.0,
     "src_out": 1.8,
-    "tl_in": 241.73,
+    "tl_in": 243.13,
     "speed": 1.0,
     "effects": [
      {
@@ -2244,7 +2244,7 @@
     "asset": "20260905-phone-b0ee14",
     "src_in": 0.0,
     "src_out": 1.8,
-    "tl_in": 243.53,
+    "tl_in": 244.93,
     "speed": 1.0,
     "effects": [
      {
@@ -2269,7 +2269,7 @@
     "asset": "20260905-phone-beacf6",
     "src_in": 0.0,
     "src_out": 1.4,
-    "tl_in": 245.33,
+    "tl_in": 246.73,
     "speed": 1.0,
     "effects": [
      {
@@ -2294,7 +2294,7 @@
     "asset": "20260905-phone-368a0b",
     "src_in": 0.0,
     "src_out": 2.4,
-    "tl_in": 246.73,
+    "tl_in": 248.13,
     "speed": 1.0,
     "effects": [
      {
@@ -2320,7 +2320,7 @@
     "asset": "20260908-unknown-6d898d",
     "src_in": 0.0,
     "src_out": 2.4,
-    "tl_in": 249.13,
+    "tl_in": 250.53,
     "speed": 1.0,
     "effects": [
      {
@@ -2346,7 +2346,7 @@
     "asset": "20260905-phone-f78961",
     "src_in": 0.0,
     "src_out": 2.0,
-    "tl_in": 251.53,
+    "tl_in": 252.93,
     "speed": 1.0,
     "effects": [
      {
@@ -2371,7 +2371,7 @@
     "asset": "20260905-phone-f792b0",
     "src_in": 0.0,
     "src_out": 1.6,
-    "tl_in": 253.53,
+    "tl_in": 254.93,
     "speed": 1.0,
     "effects": [
      {
@@ -2396,7 +2396,7 @@
     "asset": "20260905-phone-dc622a",
     "src_in": 0.0,
     "src_out": 1.6,
-    "tl_in": 255.13,
+    "tl_in": 256.53,
     "speed": 1.0,
     "effects": [
      {
@@ -2421,7 +2421,7 @@
     "asset": "20260905-phone-687176",
     "src_in": 0.0,
     "src_out": 2.0,
-    "tl_in": 256.73,
+    "tl_in": 258.13,
     "speed": 1.0,
     "effects": [
      {
@@ -2447,7 +2447,7 @@
     "asset": "20260905-phone-88ebf6",
     "src_in": 0.0,
     "src_out": 3.5,
-    "tl_in": 258.73,
+    "tl_in": 260.13,
     "speed": 1.0,
     "effects": [
      {
@@ -2473,7 +2473,7 @@
     "asset": "20260905-phone-4c48f5",
     "src_in": 0.0,
     "src_out": 1.0,
-    "tl_in": 262.23,
+    "tl_in": 263.63,
     "speed": 1.0,
     "effects": [
      {
@@ -2499,7 +2499,7 @@
     "asset": "20260905-phone-3ad32e",
     "src_in": 0.0,
     "src_out": 1.5,
-    "tl_in": 263.23,
+    "tl_in": 264.63,
     "speed": 1.0,
     "effects": [
      {
@@ -2525,7 +2525,7 @@
     "asset": "20260905-phone-b71a70",
     "src_in": 0.0,
     "src_out": 1.8,
-    "tl_in": 264.73,
+    "tl_in": 266.13,
     "speed": 1.0,
     "effects": [
      {
@@ -2551,7 +2551,7 @@
     "asset": "20260907-camera-ac36e9",
     "src_in": 28.0,
     "src_out": 30.6,
-    "tl_in": 266.53,
+    "tl_in": 267.93,
     "speed": 1.0,
     "effects": [],
     "note": "MOV ab ~28s (Was machst du); nur Musik"
@@ -2561,7 +2561,7 @@
     "asset": "20260907-camera-317b4d",
     "src_in": 13.0,
     "src_out": 22.0,
-    "tl_in": 269.13,
+    "tl_in": 270.53,
     "speed": 1.0,
     "effects": [],
     "note": "MOV ganze Szene zusammen; Fuesschen ~21s enthalten; O-Ton-Clip -14 dB"
@@ -2571,7 +2571,7 @@
     "asset": "20260905-phone-46e6b4",
     "src_in": 0.0,
     "src_out": 1.6,
-    "tl_in": 278.13,
+    "tl_in": 279.53,
     "speed": 1.0,
     "effects": [
      {
@@ -2596,7 +2596,7 @@
     "asset": "20260905-phone-210836",
     "src_in": 0.0,
     "src_out": 1.6,
-    "tl_in": 279.73,
+    "tl_in": 281.13,
     "speed": 1.0,
     "effects": [
      {
@@ -2621,7 +2621,7 @@
     "asset": "20260905-phone-15764f",
     "src_in": 0.0,
     "src_out": 1.4,
-    "tl_in": 281.33,
+    "tl_in": 282.73,
     "speed": 1.0,
     "effects": [
      {
@@ -2647,7 +2647,7 @@
     "asset": "20260905-phone-a5f421",
     "src_in": 0.0,
     "src_out": 1.6,
-    "tl_in": 282.73,
+    "tl_in": 284.13,
     "speed": 1.0,
     "effects": [
      {
@@ -2672,7 +2672,7 @@
     "asset": "20260905-phone-5d9169",
     "src_in": 0.0,
     "src_out": 1.4,
-    "tl_in": 284.33,
+    "tl_in": 285.73,
     "speed": 1.0,
     "effects": [
      {
@@ -2705,7 +2705,7 @@
     "asset": "20260905-phone-e368e5",
     "src_in": 0.0,
     "src_out": 1.4,
-    "tl_in": 285.73,
+    "tl_in": 287.13,
     "speed": 1.0,
     "effects": [
      {
@@ -2738,7 +2738,7 @@
     "asset": "20260905-phone-c004d1",
     "src_in": 0.0,
     "src_out": 1.4,
-    "tl_in": 287.13,
+    "tl_in": 288.53,
     "speed": 1.0,
     "effects": [
      {
@@ -2771,7 +2771,7 @@
     "asset": "20260905-phone-3bff55",
     "src_in": 0.0,
     "src_out": 1.4,
-    "tl_in": 288.53,
+    "tl_in": 289.93,
     "speed": 1.0,
     "effects": [
      {
@@ -2804,7 +2804,7 @@
     "asset": "20260905-phone-c64f1b",
     "src_in": 0.0,
     "src_out": 1.4,
-    "tl_in": 289.93,
+    "tl_in": 291.33,
     "speed": 1.0,
     "effects": [
      {
@@ -2837,7 +2837,7 @@
     "asset": "20260905-phone-0731e1",
     "src_in": 0.0,
     "src_out": 1.4,
-    "tl_in": 291.33,
+    "tl_in": 292.73,
     "speed": 1.0,
     "effects": [
      {
@@ -2870,7 +2870,7 @@
     "asset": "20260905-phone-bfd502",
     "src_in": 0.0,
     "src_out": 1.4,
-    "tl_in": 292.73,
+    "tl_in": 294.13,
     "speed": 1.0,
     "effects": [
      {
@@ -2903,7 +2903,7 @@
     "asset": "20260905-phone-8aaf40",
     "src_in": 0.0,
     "src_out": 1.4,
-    "tl_in": 294.13,
+    "tl_in": 295.53,
     "speed": 1.0,
     "effects": [
      {
@@ -2936,7 +2936,7 @@
     "asset": "20260905-phone-59d423",
     "src_in": 0.0,
     "src_out": 1.4,
-    "tl_in": 295.53,
+    "tl_in": 296.93,
     "speed": 1.0,
     "effects": [
      {
@@ -2969,7 +2969,7 @@
     "asset": "20260907-camera-8674da",
     "src_in": 1.0,
     "src_out": 2.6,
-    "tl_in": 296.93,
+    "tl_in": 298.33,
     "speed": 1.6,
     "effects": [],
     "note": "Teil A run-up (Speed-Ramp 1.6x), Grimassen",
@@ -2980,7 +2980,7 @@
     "asset": "20260907-camera-8674da",
     "src_in": 2.6,
     "src_out": 5.0,
-    "tl_in": 297.93,
+    "tl_in": 299.33,
     "speed": 1.0,
     "effects": [],
     "note": "Teil A normal weiter auf die Grimasse",
@@ -2991,7 +2991,7 @@
     "asset": "20260905-phone-33cc9e",
     "src_in": 0.0,
     "src_out": 1.2,
-    "tl_in": 300.33,
+    "tl_in": 301.73,
     "speed": 1.0,
     "effects": [
      {
@@ -3017,7 +3017,7 @@
     "asset": "20260907-camera-8674da",
     "src_in": 20.0,
     "src_out": 22.2,
-    "tl_in": 301.53,
+    "tl_in": 302.93,
     "speed": 1.0,
     "effects": [],
     "note": "Teil B - Arme hoch",
@@ -3028,7 +3028,7 @@
     "asset": "20260905-phone-df75af",
     "src_in": 0.0,
     "src_out": 1.8,
-    "tl_in": 303.73,
+    "tl_in": 305.13,
     "speed": 1.0,
     "effects": [
      {
@@ -3054,7 +3054,7 @@
     "asset": "20260907-camera-8674da",
     "src_in": 29.0,
     "src_out": 31.0,
-    "tl_in": 305.53,
+    "tl_in": 306.93,
     "speed": 1.0,
     "effects": [],
     "note": "Teil C - Micha im Delirium Lampen-Szene (bleibt wie sie ist)",
@@ -3065,7 +3065,7 @@
     "asset": "20260907-camera-faed4c",
     "src_in": 0.0,
     "src_out": 3.0,
-    "tl_in": 307.53,
+    "tl_in": 308.93,
     "speed": 1.0,
     "effects": [],
     "note": "MOV der mit dem Video reinkommt; Text Natuerlich ... (noch nicht)"
@@ -3075,7 +3075,7 @@
     "asset": "20260907-camera-8794ae",
     "src_in": 139.6,
     "src_out": 141.52,
-    "tl_in": 310.53,
+    "tl_in": 311.93,
     "speed": 1.6,
     "effects": [],
     "note": "Karaoke-Gesang run-up (Speed-Ramp 1.6x)",
@@ -3086,7 +3086,7 @@
     "asset": "20260907-camera-8794ae",
     "src_in": 142.0,
     "src_out": 149.3,
-    "tl_in": 311.73,
+    "tl_in": 313.13,
     "speed": 1.0,
     "effects": [],
     "note": "Hauptstelle dreht sich um; O-Ton-Clip -12 dB; endet auf 344.50 (Loop-Naht 2)",
@@ -3097,7 +3097,7 @@
     "asset": "20260905-phone-85ee91",
     "src_in": 0.0,
     "src_out": 1.0,
-    "tl_in": 319.03,
+    "tl_in": 320.43,
     "speed": 1.0,
     "effects": [
      {
@@ -3123,7 +3123,7 @@
     "asset": "20260907-camera-cc0808",
     "src_in": 0.0,
     "src_out": 1.28,
-    "tl_in": 320.03,
+    "tl_in": 321.43,
     "speed": 1.6,
     "effects": [
      {
@@ -3142,7 +3142,7 @@
     "asset": "20260907-camera-cc0808",
     "src_in": 1.28,
     "src_out": 3.08,
-    "tl_in": 320.83,
+    "tl_in": 322.23,
     "speed": 1.0,
     "effects": [],
     "note": "Dance-Move Teil A normal",
@@ -3153,7 +3153,7 @@
     "asset": "20260905-phone-830ba1",
     "src_in": 0.0,
     "src_out": 1.0,
-    "tl_in": 322.63,
+    "tl_in": 324.03,
     "speed": 1.0,
     "effects": [
      {
@@ -3179,7 +3179,7 @@
     "asset": "20260907-camera-cc0808",
     "src_in": 8.0,
     "src_out": 10.2,
-    "tl_in": 323.63,
+    "tl_in": 325.03,
     "speed": 1.0,
     "effects": [],
     "note": "Teil B - runtergehen",
@@ -3190,7 +3190,7 @@
     "asset": "20260905-phone-ed34d1",
     "src_in": 0.0,
     "src_out": 1.4,
-    "tl_in": 325.83,
+    "tl_in": 327.23,
     "speed": 1.0,
     "effects": [
      {
@@ -3216,7 +3216,7 @@
     "asset": "20260907-camera-283b7c",
     "src_in": 0.0,
     "src_out": 2.2,
-    "tl_in": 327.23,
+    "tl_in": 328.63,
     "speed": 1.0,
     "effects": [],
     "note": "MOV Braeutigam drueckt jemanden, Daumen hoch"
@@ -3226,7 +3226,7 @@
     "asset": "20260907-camera-9bc26f",
     "src_in": 24.0,
     "src_out": 26.6,
-    "tl_in": 329.43,
+    "tl_in": 330.83,
     "speed": 1.0,
     "effects": [],
     "note": "MOV Braeutigam singt (gekuerzt); nur Musik"
@@ -3236,7 +3236,7 @@
     "asset": "20260905-camera-251729",
     "src_in": 8.0,
     "src_out": 12.4,
-    "tl_in": 332.03,
+    "tl_in": 333.43,
     "speed": 1.0,
     "effects": [
      {
@@ -3255,7 +3255,7 @@
     "asset": "20260905-phone-e70c57",
     "src_in": 0.0,
     "src_out": 1.6,
-    "tl_in": 336.43,
+    "tl_in": 337.83,
     "speed": 1.0,
     "effects": [
      {
@@ -3281,7 +3281,7 @@
     "asset": "20260906-phone-5dec8d",
     "src_in": 0.0,
     "src_out": 1.6,
-    "tl_in": 338.03,
+    "tl_in": 339.43,
     "speed": 1.0,
     "effects": [
      {
@@ -3307,7 +3307,7 @@
     "asset": "20260906-phone-cb0594",
     "src_in": 0.0,
     "src_out": 2.0,
-    "tl_in": 339.63,
+    "tl_in": 341.03,
     "speed": 1.0,
     "effects": [
      {
@@ -3333,7 +3333,7 @@
     "asset": "20260906-phone-2dde02",
     "src_in": 0.0,
     "src_out": 1.8,
-    "tl_in": 341.63,
+    "tl_in": 343.03,
     "speed": 1.0,
     "effects": [
      {
@@ -3359,7 +3359,7 @@
     "asset": "20260906-phone-c3c909",
     "src_in": 0.0,
     "src_out": 3.4,
-    "tl_in": 343.43,
+    "tl_in": 344.83,
     "speed": 1.0,
     "effects": [
      {
@@ -3385,7 +3385,7 @@
     "asset": "20260906-phone-159fb6",
     "src_in": 0.0,
     "src_out": 1.8,
-    "tl_in": 346.83,
+    "tl_in": 348.23,
     "speed": 1.0,
     "effects": [
      {
@@ -3411,7 +3411,7 @@
     "asset": "20260907-camera-7a03f0",
     "src_in": 12.4,
     "src_out": 13.4,
-    "tl_in": 348.63,
+    "tl_in": 350.03,
     "speed": 1.0,
     "effects": [],
     "note": "MOV Taxi-POV ab ~10s; kein O-Ton, nur Musik"
@@ -3421,7 +3421,7 @@
     "asset": "20260906-phone-ab651c",
     "src_in": 0.0,
     "src_out": 2.4,
-    "tl_in": 349.63,
+    "tl_in": 351.03,
     "speed": 1.0,
     "effects": [
      {
@@ -3447,7 +3447,7 @@
     "asset": "20260906-phone-eb2bb6",
     "src_in": 0.0,
     "src_out": 1.5,
-    "tl_in": 352.03,
+    "tl_in": 353.43,
     "speed": 1.0,
     "effects": [
      {
@@ -3473,7 +3473,7 @@
     "asset": "20260906-phone-ba621b",
     "src_in": 0.0,
     "src_out": 1.9,
-    "tl_in": 353.53,
+    "tl_in": 354.93,
     "speed": 1.0,
     "effects": [
      {
@@ -3498,8 +3498,8 @@
     "id": "v159",
     "asset": "20260906-phone-5f70d5",
     "src_in": 0.0,
-    "src_out": 4.3,
-    "tl_in": 355.43,
+    "src_out": 4.9,
+    "tl_in": 356.83,
     "speed": 1.0,
     "effects": [
      {
@@ -3524,8 +3524,8 @@
     "id": "v158",
     "asset": "20260906-phone-b6e756",
     "src_in": 0.0,
-    "src_out": 3.0,
-    "tl_in": 359.73,
+    "src_out": 2.4,
+    "tl_in": 361.73,
     "speed": 1.0,
     "effects": [
      {
@@ -3551,7 +3551,7 @@
     "asset": "generated-black",
     "src_in": 0.0,
     "src_out": 3.7,
-    "tl_in": 361.93,
+    "tl_in": 363.33,
     "speed": 1.0,
     "transition_in": {
      "type": "dissolve",
@@ -3567,7 +3567,7 @@
     "asset": "20260906-phone-5e04c0",
     "src_in": 0.0,
     "src_out": 5.4,
-    "tl_in": 364.83,
+    "tl_in": 366.23,
     "speed": 1.0,
     "transition_in": {
      "type": "dissolve",
@@ -3598,7 +3598,7 @@
     "asset": "20260906-phone-5239b1",
     "src_in": 0.0,
     "src_out": 5.4,
-    "tl_in": 369.63,
+    "tl_in": 371.03,
     "speed": 1.0,
     "transition_in": {
      "type": "dissolve",
@@ -3629,7 +3629,7 @@
     "asset": "20260906-phone-ce985f",
     "src_in": 0.0,
     "src_out": 5.8,
-    "tl_in": 374.43,
+    "tl_in": 375.83,
     "speed": 1.0,
     "transition_in": {
      "type": "dissolve",
@@ -3660,7 +3660,7 @@
     "asset": "20260906-phone-35286c",
     "src_in": 0.0,
     "src_out": 5.6,
-    "tl_in": 379.63,
+    "tl_in": 381.03,
     "speed": 1.0,
     "transition_in": {
      "type": "dissolve",
@@ -3691,7 +3691,7 @@
     "asset": "20260908-unknown-46ec88",
     "src_in": 0.0,
     "src_out": 5.2,
-    "tl_in": 384.63,
+    "tl_in": 386.03,
     "speed": 1.0,
     "transition_in": {
      "type": "dissolve",
@@ -3722,7 +3722,7 @@
     "asset": "20260906-phone-85a96b",
     "src_in": 0.0,
     "src_out": 4.4,
-    "tl_in": 389.23,
+    "tl_in": 390.63,
     "speed": 1.0,
     "transition_in": {
      "type": "dissolve",
@@ -3753,7 +3753,7 @@
     "asset": "20260906-phone-3f78c2",
     "src_in": 0.0,
     "src_out": 5.2,
-    "tl_in": 393.03,
+    "tl_in": 394.43,
     "speed": 1.0,
     "transition_in": {
      "type": "dissolve",
@@ -3784,7 +3784,7 @@
     "asset": "20260907-unknown-653744",
     "src_in": 0.0,
     "src_out": 5.6,
-    "tl_in": 397.63,
+    "tl_in": 399.03,
     "speed": 1.0,
     "transition_in": {
      "type": "dissolve",
@@ -3815,7 +3815,7 @@
     "asset": "20260907-unknown-0ff60c",
     "src_in": 0.0,
     "src_out": 5.6,
-    "tl_in": 402.63,
+    "tl_in": 404.03,
     "speed": 1.0,
     "transition_in": {
      "type": "dissolve",
@@ -3846,7 +3846,7 @@
     "asset": "jga-outro-card",
     "src_in": 0.0,
     "src_out": 12.0,
-    "tl_in": 407.23,
+    "tl_in": 408.63,
     "speed": 1.0,
     "transition_in": {
      "type": "dissolve",
@@ -3861,7 +3861,7 @@
     "asset": "generated-black",
     "src_in": 0.0,
     "src_out": 2.52,
-    "tl_in": 418.23,
+    "tl_in": 419.63,
     "speed": 1.0,
     "transition_in": {
      "type": "dissolve",
@@ -3877,7 +3877,7 @@
     "asset": "generated-black",
     "src_in": 0.0,
     "src_out": 3.6,
-    "tl_in": 420.75,
+    "tl_in": 422.15,
     "intentional_repeat": true,
     "note": "Runde 5: Hintergrund fuer die Schluss-Karte ov-thanks; Film endet hier, nicht auf Schwarz."
    }
@@ -4010,7 +4010,7 @@
    {
     "id": "ov-hydrated",
     "png": "overlays/ov-hydrated.png",
-    "tl_in": 232.33,
+    "tl_in": 232.28,
     "dur": 2.0,
     "anim": {
      "fade_in_s": "0.2",
@@ -4025,23 +4025,9 @@
     "text": "stay\nhydrated"
    },
    {
-    "id": "ov-christoph",
-    "png": "overlays/ov-christoph.png",
-    "tl_in": 233.63,
-    "dur": 2.0,
-    "anim": {
-     "fade_in_s": "0.25",
-     "fade_out_s": "0.35",
-     "slide_from_py": "60",
-     "slide_in_s": "0.4"
-    },
-    "placement": "bottom-left",
-    "text": "Wo ist Christoph???"
-   },
-   {
     "id": "ov-fx-herz-1706",
     "png": "overlays/ov-fx-herz-1706.png",
-    "tl_in": 249.33,
+    "tl_in": 250.73,
     "dur": 1.5,
     "anim": {
      "fade_in_s": "0.2",
@@ -4057,7 +4043,7 @@
    {
     "id": "ov-token",
     "png": "overlays/ov-token.png",
-    "tl_in": 258.93,
+    "tl_in": 260.33,
     "dur": 3.0,
     "anim": {
      "fade_in_s": "0.25",
@@ -4071,7 +4057,7 @@
    {
     "id": "ov-fx-herzen",
     "png": "overlays/ov-fx-herzen.png",
-    "tl_in": 274.63,
+    "tl_in": 276.03,
     "dur": 3.5,
     "anim": {
      "fade_in_s": "0.3",
@@ -4087,7 +4073,7 @@
    {
     "id": "ov-cast-01-witte",
     "png": "overlays/ov-cast-01-witte.png",
-    "tl_in": 284.38,
+    "tl_in": 285.78,
     "dur": 1.3,
     "anim": {
      "fade_in_s": "0.12",
@@ -4101,7 +4087,7 @@
    {
     "id": "ov-cast-02-christoph",
     "png": "overlays/ov-cast-02-christoph.png",
-    "tl_in": 285.78,
+    "tl_in": 287.18,
     "dur": 1.3,
     "anim": {
      "fade_in_s": "0.12",
@@ -4115,7 +4101,7 @@
    {
     "id": "ov-cast-03-matti",
     "png": "overlays/ov-cast-03-matti.png",
-    "tl_in": 287.18,
+    "tl_in": 288.58,
     "dur": 1.3,
     "anim": {
      "fade_in_s": "0.12",
@@ -4129,7 +4115,7 @@
    {
     "id": "ov-cast-04-bartosz",
     "png": "overlays/ov-cast-04-bartosz.png",
-    "tl_in": 288.58,
+    "tl_in": 289.98,
     "dur": 1.3,
     "anim": {
      "fade_in_s": "0.12",
@@ -4143,7 +4129,7 @@
    {
     "id": "ov-cast-05-hagi",
     "png": "overlays/ov-cast-05-hagi.png",
-    "tl_in": 289.98,
+    "tl_in": 291.38,
     "dur": 1.3,
     "anim": {
      "fade_in_s": "0.12",
@@ -4157,7 +4143,7 @@
    {
     "id": "ov-cast-06-bernhard",
     "png": "overlays/ov-cast-06-bernhard.png",
-    "tl_in": 291.38,
+    "tl_in": 292.78,
     "dur": 1.3,
     "anim": {
      "fade_in_s": "0.12",
@@ -4171,7 +4157,7 @@
    {
     "id": "ov-cast-07-andre",
     "png": "overlays/ov-cast-07-andre.png",
-    "tl_in": 292.78,
+    "tl_in": 294.18,
     "dur": 1.3,
     "anim": {
      "fade_in_s": "0.12",
@@ -4185,7 +4171,7 @@
    {
     "id": "ov-cast-08-skuub",
     "png": "overlays/ov-cast-08-skuub.png",
-    "tl_in": 294.18,
+    "tl_in": 295.58,
     "dur": 1.3,
     "anim": {
      "fade_in_s": "0.12",
@@ -4199,7 +4185,7 @@
    {
     "id": "ov-cast-09-micha",
     "png": "overlays/ov-cast-09-micha.png",
-    "tl_in": 295.58,
+    "tl_in": 296.98,
     "dur": 1.3,
     "anim": {
      "fade_in_s": "0.12",
@@ -4213,7 +4199,7 @@
    {
     "id": "ov-fx-speedlines-v131",
     "png": "overlays/ov-fx-speedlines.png",
-    "tl_in": 296.93,
+    "tl_in": 298.33,
     "dur": 1.3,
     "anim": {
      "fade_in_s": "0.08",
@@ -4225,7 +4211,7 @@
    {
     "id": "ov-lampen",
     "png": "overlays/ov-lampen.png",
-    "tl_in": 303.83,
+    "tl_in": 305.23,
     "dur": 2.6,
     "anim": {
      "fade_in_s": "0.25",
@@ -4239,7 +4225,7 @@
    {
     "id": "ov-natuerlich",
     "png": "overlays/ov-natuerlich.png",
-    "tl_in": 315.03,
+    "tl_in": 316.43,
     "dur": 3.0,
     "anim": {
      "fade_in_s": "0.25",
@@ -4253,7 +4239,7 @@
    {
     "id": "ov-fx-speedlines-v143",
     "png": "overlays/ov-fx-speedlines.png",
-    "tl_in": 325.93,
+    "tl_in": 327.33,
     "dur": 1.3,
     "anim": {
      "fade_in_s": "0.1",
@@ -4264,7 +4250,7 @@
    {
     "id": "ov-weiterziehen",
     "png": "overlays/ov-weiterziehen.png",
-    "tl_in": 343.58,
+    "tl_in": 344.98,
     "dur": 3.0,
     "anim": {
      "fade_in_s": "0.25",
@@ -4278,7 +4264,7 @@
    {
     "id": "ov-wtf",
     "png": "overlays/ov-wtf.png",
-    "tl_in": 349.78,
+    "tl_in": 351.18,
     "dur": 2.1,
     "anim": {
      "fade_in_s": "0.25",
@@ -4292,7 +4278,7 @@
    {
     "id": "ov-gurken",
     "png": "overlays/ov-gurken.png",
-    "tl_in": 355.63,
+    "tl_in": 357.03,
     "dur": 2.4,
     "anim": {
      "fade_in_s": "0.25",
@@ -4306,8 +4292,8 @@
    {
     "id": "ov-raetkeinkaese",
     "png": "overlays/ov-raetkeinkaese.png",
-    "tl_in": 357.03,
-    "dur": 2.4,
+    "tl_in": 358.43,
+    "dur": 3.2,
     "anim": {
      "fade_in_s": "0.2",
      "fade_out_s": "0.3"
@@ -4316,23 +4302,9 @@
     "text": "Rät kein Käse"
    },
    {
-    "id": "ov-ichwaresnicht",
-    "png": "overlays/ov-ichwaresnicht.png",
-    "tl_in": 359.93,
-    "dur": 2.2,
-    "anim": {
-     "fade_in_s": "0.25",
-     "fade_out_s": "0.35",
-     "slide_from_py": "60",
-     "slide_in_s": "0.4"
-    },
-    "placement": "bottom-right",
-    "text": "Ich war es nicht."
-   },
-   {
     "id": "ov-wimm",
     "png": "overlays/ov-wimm.png",
-    "tl_in": 370.43,
+    "tl_in": 371.83,
     "dur": 7.0,
     "anim": {
      "fade_in_s": "0.25",
@@ -4346,7 +4318,7 @@
    {
     "id": "ov-thanks",
     "png": "overlays/ov-thanks.png",
-    "tl_in": 420.9,
+    "tl_in": 422.3,
     "dur": 3.45,
     "anim": {
      "fade_in_s": "0.4",
@@ -4387,7 +4359,7 @@
     "src": "music/07 Where Is My Mind_ (2007 Remaster).m4a",
     "type": "music",
     "tl_in": 362.93,
-    "dur": 60.52,
+    "dur": 61.92,
     "src_in": 17.0,
     "gain_db": 0.0,
     "duck_fade_s": 0.0,
@@ -4412,7 +4384,7 @@
     "id": "oton-02-img1613",
     "asset": "20260907-camera-317b4d",
     "type": "oton",
-    "tl_in": 269.13,
+    "tl_in": 270.53,
     "dur": 9.0,
     "src_in": 13.0,
     "gain_db": -14.0,
@@ -4425,7 +4397,7 @@
     "id": "oton-03-img1637",
     "asset": "20260907-camera-8794ae",
     "type": "oton",
-    "tl_in": 310.53,
+    "tl_in": 311.93,
     "dur": 7.0,
     "src_in": 139.6,
     "gain_db": -12.0,
@@ -4438,7 +4410,7 @@
     "id": "oton-04-img4835",
     "asset": "20260905-camera-251729",
     "type": "oton",
-    "tl_in": 332.03,
+    "tl_in": 333.43,
     "dur": 4.4,
     "src_in": 8.0,
     "gain_db": -13.0,
@@ -4451,7 +4423,7 @@
     "id": "sfx-cast-01-witte-whoosh",
     "src": "music/sfx/sfx-cast-whoosh.wav",
     "type": "sfx",
-    "tl_in": 282.55,
+    "tl_in": 283.95,
     "dur": 0.42,
     "src_in": 0.0,
     "gain_db": -6.0,
@@ -4464,7 +4436,7 @@
     "id": "sfx-cast-01-witte-stamp",
     "src": "music/sfx/sfx-cast-stamp.wav",
     "type": "sfx",
-    "tl_in": 284.33,
+    "tl_in": 285.73,
     "dur": 0.4,
     "src_in": 0.0,
     "gain_db": 0.0,
@@ -4477,7 +4449,7 @@
     "id": "sfx-cast-02-christoph-whoosh",
     "src": "music/sfx/sfx-cast-whoosh.wav",
     "type": "sfx",
-    "tl_in": 285.55,
+    "tl_in": 286.95,
     "dur": 0.42,
     "src_in": 0.0,
     "gain_db": -6.0,
@@ -4490,7 +4462,7 @@
     "id": "sfx-cast-02-christoph-stamp",
     "src": "music/sfx/sfx-cast-stamp.wav",
     "type": "sfx",
-    "tl_in": 285.73,
+    "tl_in": 287.13,
     "dur": 0.4,
     "src_in": 0.0,
     "gain_db": 0.0,
@@ -4503,7 +4475,7 @@
     "id": "sfx-cast-03-matti-whoosh",
     "src": "music/sfx/sfx-cast-whoosh.wav",
     "type": "sfx",
-    "tl_in": 286.95,
+    "tl_in": 288.35,
     "dur": 0.42,
     "src_in": 0.0,
     "gain_db": -6.0,
@@ -4516,7 +4488,7 @@
     "id": "sfx-cast-03-matti-stamp",
     "src": "music/sfx/sfx-cast-stamp.wav",
     "type": "sfx",
-    "tl_in": 287.13,
+    "tl_in": 288.53,
     "dur": 0.4,
     "src_in": 0.0,
     "gain_db": 0.0,
@@ -4529,7 +4501,7 @@
     "id": "sfx-cast-04-bartosz-whoosh",
     "src": "music/sfx/sfx-cast-whoosh.wav",
     "type": "sfx",
-    "tl_in": 288.35,
+    "tl_in": 289.75,
     "dur": 0.42,
     "src_in": 0.0,
     "gain_db": -6.0,
@@ -4542,7 +4514,7 @@
     "id": "sfx-cast-04-bartosz-stamp",
     "src": "music/sfx/sfx-cast-stamp.wav",
     "type": "sfx",
-    "tl_in": 288.53,
+    "tl_in": 289.93,
     "dur": 0.4,
     "src_in": 0.0,
     "gain_db": 0.0,
@@ -4555,7 +4527,7 @@
     "id": "sfx-cast-05-hagi-whoosh",
     "src": "music/sfx/sfx-cast-whoosh.wav",
     "type": "sfx",
-    "tl_in": 289.75,
+    "tl_in": 291.15,
     "dur": 0.42,
     "src_in": 0.0,
     "gain_db": -6.0,
@@ -4568,7 +4540,7 @@
     "id": "sfx-cast-05-hagi-stamp",
     "src": "music/sfx/sfx-cast-stamp.wav",
     "type": "sfx",
-    "tl_in": 289.93,
+    "tl_in": 291.33,
     "dur": 0.4,
     "src_in": 0.0,
     "gain_db": 0.0,
@@ -4581,7 +4553,7 @@
     "id": "sfx-cast-06-bernhard-whoosh",
     "src": "music/sfx/sfx-cast-whoosh.wav",
     "type": "sfx",
-    "tl_in": 291.15,
+    "tl_in": 292.55,
     "dur": 0.42,
     "src_in": 0.0,
     "gain_db": -6.0,
@@ -4594,7 +4566,7 @@
     "id": "sfx-cast-06-bernhard-stamp",
     "src": "music/sfx/sfx-cast-stamp.wav",
     "type": "sfx",
-    "tl_in": 291.33,
+    "tl_in": 292.73,
     "dur": 0.4,
     "src_in": 0.0,
     "gain_db": 0.0,
@@ -4607,7 +4579,7 @@
     "id": "sfx-cast-07-andre-whoosh",
     "src": "music/sfx/sfx-cast-whoosh.wav",
     "type": "sfx",
-    "tl_in": 292.55,
+    "tl_in": 293.95,
     "dur": 0.42,
     "src_in": 0.0,
     "gain_db": -6.0,
@@ -4620,7 +4592,7 @@
     "id": "sfx-cast-07-andre-stamp",
     "src": "music/sfx/sfx-cast-stamp.wav",
     "type": "sfx",
-    "tl_in": 292.73,
+    "tl_in": 294.13,
     "dur": 0.4,
     "src_in": 0.0,
     "gain_db": 0.0,
@@ -4633,7 +4605,7 @@
     "id": "sfx-cast-08-skuub-whoosh",
     "src": "music/sfx/sfx-cast-whoosh.wav",
     "type": "sfx",
-    "tl_in": 293.95,
+    "tl_in": 295.35,
     "dur": 0.42,
     "src_in": 0.0,
     "gain_db": -6.0,
@@ -4646,7 +4618,7 @@
     "id": "sfx-cast-08-skuub-stamp",
     "src": "music/sfx/sfx-cast-stamp.wav",
     "type": "sfx",
-    "tl_in": 294.13,
+    "tl_in": 295.53,
     "dur": 0.4,
     "src_in": 0.0,
     "gain_db": 0.0,
@@ -4659,7 +4631,7 @@
     "id": "sfx-cast-09-micha-whoosh",
     "src": "music/sfx/sfx-cast-whoosh.wav",
     "type": "sfx",
-    "tl_in": 295.35,
+    "tl_in": 296.75,
     "dur": 0.42,
     "src_in": 0.0,
     "gain_db": -6.0,
@@ -4672,7 +4644,7 @@
     "id": "sfx-cast-09-micha-stamp",
     "src": "music/sfx/sfx-cast-stamp-micha.wav",
     "type": "sfx",
-    "tl_in": 295.53,
+    "tl_in": 296.93,
     "dur": 0.4,
     "src_in": 0.0,
     "gain_db": -1.0,
