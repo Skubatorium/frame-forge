@@ -3542,3 +3542,9 @@ enden innerhalb ihres gestreckten Host-Fotos.
   der Größe) — lesbar, aber ggf. Font-Size leicht runter.
 
 Christian will danach **FHD (1080p) + 4K-Download — erst nach Freigabe dieses Previews** (R6-T5).
+
+**Session-Ende 2026-09-11: Christian kündigt finale Feintuning-Runde für die nächste Session
+an** ("final feintuning feedback folgt in nächster Session"). Erwartung: kein Neubau, letzte
+Detailkorrekturen auf Basis des 7:05-Previews — analog zu Runde 4→5→6. Nächste Session zuerst
+`editorial-notes-round6.md` + diesen Abschnitt lesen, dann auf Christians Voice-Transkript
+warten (Muster: Runde 7 anlegen wie die vorherigen).
