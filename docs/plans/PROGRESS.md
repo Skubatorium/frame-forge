@@ -3663,7 +3663,14 @@ die Freigabe."** Transkript in `projects/michael-jga-2026/exports/JGA/editorial-
 | R9-T1 | `editorial-notes-round9.md` + diese Sektion | Doku committed | ✅ fertig | (dieser Commit) |
 | R9-T2 | `party-fx-recipe.py` Runde 9 + `round9-timeline.py`: `v056` raus, Audio nachgezogen, `brief.yaml` | `validate_semantics` + `qc.validate` leer, 650 Tests grün | ✅ fertig | (dieser Commit) |
 | R9-T3 | `frameforge preview` neu, Kontroll-Frames sichten | Preview liegt | ✅ fertig | (dieser Commit) |
-| R9-T4 | `frameforge approve` + FHD-Render (1080p) + 4K-Render (Chunks) | beide Dateien liegen | 🔄 offen | |
+| R9-T4 | `frameforge approve` + FHD-Render (1080p) + 4K-Render (Chunks) | beide Dateien liegen | 🔄 in Arbeit | |
+
+**R9-T4 Zwischenstand:** `frameforge approve` durchgeführt (Phase APPROVED). FHD-Render
+**fertig**: `exports/JGA/final/JGA_1080p.mp4`, 1920×1080, 423,8 s, 192 MB, Chunk-Render
+(4 Chunks à ~110 s), verifiziert. 4K-Render **läuft** (nohup+disown, PID im Log
+`/tmp/jga_4k_render.log`, `--resolution 3840x2160 --crf 18 --preset medium --chunk-s 90`,
+5 Chunks) — Phase-Gate erlaubt zweiten Final-Render aus RENDERED heraus, solange die Timeline
+unverändert bleibt (`gate_render_final` in `state.py`).
 
 **R9-T3 fertig (2026-09-11).** `frameforge preview` — **423,8 s = 7:03,8**, 1920×1080, exit 0.
 Kontroll-Frames: `ov-sulemann-b` nur noch „Pizzamann"/„Sülemann" (kein „Bestermann"),
