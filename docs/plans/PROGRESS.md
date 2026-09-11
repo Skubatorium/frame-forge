@@ -3621,12 +3621,28 @@ Timeline-Notiz genau das Bild, das mit `ov-hydrated` zusammengehört. Gemeint wa
 |---|------|---------|--------|--------|
 | R8-T1 | `editorial-notes-round8.md` + diese Sektion | Doku committed | ✅ fertig | (dieser Commit) |
 | R8-T2 | `round8-timeline.py`: `v091` raus, `v092` wieder rein + `ov-hydrated`-Anker, `ov-christoph`/`ov-ichwaresnicht` raus, `ov-raetkeinkaese` länger, `brief.yaml` | `validate_semantics` + `qc.validate` leer, 650 Tests grün | ✅ fertig | (dieser Commit) |
-| R8-T3 | `frameforge preview` neu (Vordergrund!), Kontroll-Frames sichten, PROGRESS+Memory, Push | Neues Preview liegt, gepusht | 🔄 offen | |
+| R8-T3 | `frameforge preview` neu (Vordergrund!), Kontroll-Frames sichten, PROGRESS+Memory, Push | Neues Preview liegt, gepusht | ✅ fertig | (dieser Commit) |
 | R8-T4 | **Freigabe → FHD (1080p) + 4K-Download (Chunks) + Website + SSH-Upload** | wartet auf Christians Sichtung + Server-Pfad | ⛔ blockiert | |
 
 Ergebnis `round8-timeline.py`: Dauer **425,75 s = 7:05,75**, video 160 / overlay 32 / audio 25.
 `v092` bei 232,13 (dur 2,6), `ov-hydrated` bei 232,28 (dur 2,0), `ov-raetkeinkaese` dur 3,2.
 Anti-Bleed-Klemme musste nichts kürzen.
+
+**QC-Nachtrag:** erster Lauf schlug fehl (`music-03-wimm` war noch auf den alten, kürzeren
+`video_end` berechnet → 2,3 s Stille am Schluss, da `v092` den Film um ~1,4 s verlängert hat).
+Fix im selben (noch ungepushten) Commit nachgezogen: `round8-timeline.py` rechnet
+`music-03-wimm`-`dur` jetzt aus dem finalen `video_end`. `qc.validate` danach leer.
+
+**R8-T3 fertig (2026-09-11).** `frameforge preview` — **425,8 s = 7:05,8**, 1920×1080, 30 fps,
+69 MB, ffmpeg exit 0. Kontroll-Frames geprüft: `ov-hydrated` „STAY HYDRATED" sitzt korrekt auf
+`v092`/IMG_1543 (Zunge + Corona-Flasche, Sonnenuntergang), sichtbare Ken-Burns-Bewegung
+(„wackeln"); `ov-christoph` und `ov-ichwaresnicht` nicht mehr in der Overlay-Spur;
+`ov-raetkeinkaese` jetzt 3,2 s (war 2,4 s). Alle Punkte aus `editorial-notes-round8.md`
+bestätigt.
+
+**JETZT: wartet auf Christians Sichtung des 7:05,8-Previews.** Bei Freigabe → `frameforge
+approve michael-jga-2026 JGA` → **R8-T4**: FHD (1080p) + 4K-Download (Chunks) + Website +
+SSH-Upload.
 
 Ergebnis `round7-timeline.py`: Dauer **424,35 s = 7:04,35**, video 160 / overlay 34 / audio 25.
 `v057b` (neue Schwarzblende) bei 178,53, `v069` jetzt bei 180,03 (3:00,03). `music-01` endet
