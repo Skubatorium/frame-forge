@@ -3512,9 +3512,33 @@ Themen + Einzel-Fixes:
 | R6-T1 | `editorial-notes-round6.md` + diese Sektion | Doku committed | ✅ fertig | (dieser Commit) |
 | R6-T2 | `party-fx-recipe.py` Runde 6: `ov-mok-detektor` 3-zeilig, `ov-hydrated` klein/o.r. | PNGs gebaut, kein Edge-Clip | ✅ fertig | (dieser Commit) |
 | R6-T3 | `round6-timeline.py`: 2 Streichungen, Host-Verlängerungen + Nachbar-Kürzungen, `v001`/`v160` +, Anti-Bleed-Sicherung, Audio aneinanderschieben, `brief.yaml` | `validate_semantics` + `qc.validate` leer, 134 Tests grün | ✅ fertig | (dieser Commit) |
-| R6-T4 | `frameforge preview` neu (Vordergrund!), altes 7:03,3-Preview ersetzen, Kontroll-Frames sichten, PROGRESS+Memory, Push | Neues Preview liegt, gepusht | 🔄 | |
+| R6-T4 | `frameforge preview` neu (Vordergrund!), altes 7:03,3-Preview ersetzen, Kontroll-Frames sichten, PROGRESS+Memory, Push | Neues Preview liegt, gepusht | ✅ fertig | (dieser Commit) |
 | R6-T5 | **Freigabe → FHD (1080p) + 4K-Download (Chunks) + Website + SSH-Upload** | wartet auf Christians Sichtung + Server-Pfad | ⛔ blockiert | |
 
 Ergebnis `round6-timeline.py`: Dauer **425,05 s = 7:05,05**, video 160 / overlay 34 / audio 25.
-`music-01`-Ende 179,03 s / `music-02`-Start 177,53 s → 1,5 s Überlappung, kein stiller Spalt.
 `v069` bei 178,03 s (2:58,03). Anti-Bleed-Klemme musste nichts kürzen (Host-Streckung reichte).
+
+**R6-T4 fertig (2026-09-11).** `frameforge preview` — **425,1 s = 7:05**, 1920×1080, 30 fps,
+69 MB, ffmpeg exit 0, QC-Gate sauber. Altes 7:03,3-Preview ersetzt.
+**Audio-Übergang zweimal gerendert:** der erste R6-Lauf hatte noch ein ~1 s Ton-Loch bei
+~177 s (Butt-Join, Crossfade-Tal). Fix `08808f8`→Folgecommit: `music-02` (Miserlou) setzt
+**3,5 s vor dem `v069`-Cut** ein (fade_in 2,0), `music-01` endet 0,5 s vor dem Cut (fade_out
+1,5) → **3 s echte Überlappung**. Audio-RMS-Messung des zweiten Previews: min 0,141 über das
+ganze Übergangsfenster (168–190 s) — durchgehend Ton, **keine Stille mehr**.
+Kontroll-Frames gesichtet: `ov-mok-detektor` 3-zeilig „MOK/DETEKTOR/AKTIV" entzerrt;
+`ov-hydrated` klein oben rechts (Werbecharakter); `ov-weiterziehen` sitzt auf dem Taxi-Foto
+`v153` und ist vor dem Taxi-Video `v154` ausgeblendet (kein Bleed); `ov-crewupdate`/`ov-token`
+enden innerhalb ihres gestreckten Host-Fotos.
+
+**Prüf-/Feintuning-Punkte fürs Sichten:**
+- Akt-2-Start jetzt bei **2:58** (war 3:02) — durch die zwei Streichungen + das Audio-
+  Zusammenziehen. Miserlou-Groove läuft ~3,5 s vor dem `v069`-Cut an (über die letzten
+  Akt-1-Fotos) — bewusst, damit kein Loch. Falls das zu früh wirkt: `MIS_LEAD` in
+  `round6-timeline.py` verkleinern (dann wächst das Crossfade-Tal wieder).
+- Länge 7:05 (Ziel ~7:00) — die Host-Streckungen haben die zwei Streichungen fast
+  ausgeglichen. Falls kürzer gewünscht: textfreie Aftermath-Fotos (`v163`–`v169`, je 4–6 s)
+  trimmen.
+- `ov-mok-detektor` „DETEKTOR" rendert mit leichter Buchstaben-Streuung (Bangers-Kerning bei
+  der Größe) — lesbar, aber ggf. Font-Size leicht runter.
+
+Christian will danach **FHD (1080p) + 4K-Download — erst nach Freigabe dieses Previews** (R6-T5).
